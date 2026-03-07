@@ -1,0 +1,13 @@
+{
+  "crawl_hash": "d04e61591fc2b54fc72d3aad2dd15159",
+  "timestamp": "2025-11-30T00:40:27.027469",
+  "last_modified": "20251130_004027",
+  "constraints": {
+    "firstName": {
+      "minlength": 2,
+      "maxlength": 50,
+      "type": "text"
+    }
+  },
+  "version": 1
+}

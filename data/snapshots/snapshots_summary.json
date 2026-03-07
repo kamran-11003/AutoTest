@@ -1,0 +1,20 @@
+{
+  "total_snapshots": 3,
+  "snapshots": [
+    {
+      "url": "http://127.0.0.1:5001/",
+      "json": "data\\snapshots\\20260307_200139_127.0.0.1:5001_.json",
+      "html": "data\\snapshots\\20260307_200139_127.0.0.1:5001_.html"
+    },
+    {
+      "url": "http://127.0.0.1:5001/",
+      "json": "data\\snapshots\\20260307_200159_127.0.0.1:5001_.json",
+      "html": "data\\snapshots\\20260307_200159_127.0.0.1:5001_.html"
+    },
+    {
+      "url": "http://127.0.0.1:5001/login",
+      "json": "data\\snapshots\\20260307_200214_127.0.0.1:5001_login.json",
+      "html": "data\\snapshots\\20260307_200214_127.0.0.1:5001_login.html"
+    }
+  ]
+}

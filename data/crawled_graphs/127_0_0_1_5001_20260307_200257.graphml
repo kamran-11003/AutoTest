@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd"><key id="d6" for="edge" attr.name="label" attr.type="string"/>
+<key id="d5" for="edge" attr.name="action" attr.type="string"/>
+<key id="d4" for="node" attr.name="link_count" attr.type="long"/>
+<key id="d3" for="node" attr.name="form_count" attr.type="long"/>
+<key id="d2" for="node" attr.name="input_count" attr.type="long"/>
+<key id="d1" for="node" attr.name="title" attr.type="string"/>
+<key id="d0" for="node" attr.name="url" attr.type="string"/>
+<graph edgedefault="directed"><node id="fb871217">
+  <data key="d0">http://127.0.0.1:5001</data>
+  <data key="d1">Test Server v2</data>
+  <data key="d2">0</data>
+  <data key="d3">0</data>
+  <data key="d4">1</data>
+</node>
+<node id="93b50e53">
+  <data key="d0">http://127.0.0.1:5001/login</data>
+  <data key="d1">Login</data>
+  <data key="d2">2</data>
+  <data key="d3">1</data>
+  <data key="d4">0</data>
+</node>
+<edge source="fb871217" target="93b50e53">
+  <data key="d5">click</data>
+  <data key="d6">Link to http://127.0.0.1:5001/login</data>
+</edge>
+</graph></graphml>

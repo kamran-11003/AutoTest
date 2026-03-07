@@ -1,0 +1,1453 @@
+# Futureinternet-17-00476-V2
+
+**Source:** futureinternet-17-00476-v2.pdf  
+**Converted:** 2026-01-26 09:23:05
+
+---
+
+## Page 1
+
+future internet
+Article
+Integrating Large Language Models into Automated
+Software Testing
+YanetSáezIznaga1,*,† ,LuísRato2,* ,PedroSalgueiro2 andJavierLamarLeón2,†
+1 Dectech,RuaCircularNortedoParqueIndustrialeTecnológicodeÉvora,Lote2,7005-841Evora,Portugal
+2 VISTALab,ALGORITMIResearchCenter/LASI,UniversityofÉvora,7000-671Evora,Portugal;
+pds@uevora.pt(P.S.);jlamarleon@uevora.pt(J.L.L.)
+* Correspondence:yanet.saez@gmail.com(Y.S.I.);lmr@uevora.pt(L.R.)
+† Theseauthorscontributedequallytothiswork.
+Abstract
+ThisworkinvestigatestheuseofLLMstoenhanceautomationinsoftwaretesting,witha
+particularfocusongeneratinghigh-quality,context-awaretestscriptsfromnaturallanguage
+descriptions,whileaddressingbothtext-to-codeandtext+code-to-codegenerationtasks.
+TheCodestralMambamodelwasfine-tunedbyproposingawaytointegrateLoRAmatrices
+intoitsarchitecture,enablingefficientdomain-specificadaptationandpositioningMamba
+asaviablealternativetoTransformer-basedmodels. Themodelwastrainedandevaluated
+ontwobenchmarkdatasets: CONCODE/CodeXGLUEandtheproprietaryTestCase2Code
+dataset. Throughstructuredpromptengineering,thesystemwasoptimizedtogenerate
+syntacticallyvalidandsemanticallymeaningfulcodefortestcases. Experimentalresults
+demonstratethattheproposedmethodologysuccessfullyenablestheautomaticgeneration
+of code-based test cases using large language models. In addition, this work reports
+secondarybenefits,includingimprovementsintestcoverage,automationefficiency,and
+defectdetectionwhencomparedtotraditionalmanualapproaches.TheintegrationofLLMs
+intothesoftwaretestingpipelinealsoshowedpotentialforreducingtimeandcostwhile
+enhancingdeveloperproductivityandsoftwarequality. ThefindingssuggestthatLLM-
+drivenapproachescanbeeffectivelyalignedwithcontinuousintegrationanddeployment
+workflows. ThisworkcontributestothegrowingbodyofresearchonAI-assistedsoftware
+engineering and offers practical insights into the capabilities and limitations of current
+AcademicEditor:PaoloBellavista LLMtechnologiesfortestingautomation.
+Received:13September2025
+Keywords: automatedsoftwaretesting;largelanguagemodels;testcasegeneration;low-
+Revised:10October2025
+Accepted:15October2025 rankadaptationcodestralmambamodel
+Published:18October2025
+Citation: Iznaga,Y.S.;Rato,L.;
+Salgueiro,P.;León,J.L.Integrating
+LargeLanguageModelsinto 1. Introduction
+AutomatedSoftwareTesting.Future
+Ensuringthequalityandreliabilityofsoftwaresystemsisafoundationalconcernin
+Internet2025,17,476. https://
+modernsoftwareengineering. Asapplicationsbecomemorecomplexandintegratedinto
+doi.org/10.3390/fi17100476
+criticalsectors,rigoroustestingisessentialtovalidatecorrectnessandperformanceprior
+Copyright:©2025bytheauthors.
+todeployment. Traditionally, testingprocesseshavereliedheavilyonmanualtestcase
+LicenseeMDPI,Basel,Switzerland.
+generationandexecution—apracticethat,whileflexible,istimeconsuming,error-prone,
+Thisarticleisanopenaccessarticle
+anddifficulttoscaleinfast-paceddevelopmentenvironments[1,2].
+distributedunderthetermsand
+conditionsoftheCreativeCommons Toaddresstheselimitations,automatedtestinghasemergedasastandardpractice,
+Attribution(CCBY)license offeringefficiency,repeatability,andbroadertestcoverage. Awiderangeofautomation
+(https://creativecommons.org/ frameworksnowsupportsvarioustestingneeds,fromlow-levelunittestingtohigh-level
+licenses/by/4.0/).
+FutureInternet2025,17,476 https://doi.org/10.3390/fi17100476
+
+## Page 2
+
+FutureInternet2025,17,476 2of25
+system and interface validations [3]. However, these tools often require programming
+expertiseandongoingmaintenancetoadapttoevolvingsoftwarefeatures,limitingtheir
+accessibilityandlong-termscalability[1].
+Recent advancements in artificial intelligence (AI), particularly in machine learn-
+ing(ML)andnaturallanguageprocessing(NLP),presentpromisingalternatives. Large
+languagemodels(LLMs)suchasGPT-4[4],BERT[5],andT5[6]demonstratestrongca-
+pabilitiesinunderstandingcontextandgeneratinghuman-likelanguage,whichcanbe
+leveraged to automate test script creation [7,8]. These models enable users to generate
+testscriptsfromnaturallanguageinputs,reducingtheneedforprogrammingknowledge
+andexpeditingthetestingprocess[9,10]. Recentstudiesalsohighlightthegrowingrole
+ofLLM-basedagentsandParameter-EfficientFine-Tuning(PEFT)methodsinimproving
+adaptabilityandscalabilityinsoftwareengineeringcontexts[11,12].
+LLM-basedapproachesalsoofferadaptabilityacrossdifferentsystems,platforms,and
+programmingenvironments[13]. Theirabilitytounderstandandgeneralizesoftwarebe-
+haviormakesthemparticularlyusefulfordynamicapplicationsandcross-platformtestcase
+migration[14].Thisevolutionintestingautomationindicatesamovefromrigid,code-centric
+toolstowardmoreintuitive, context-awaresystemsthatalignwithmoderndevelopment
+methodologieswhileremainingpotentiallycomplementarytotraditionalapproaches.
+Despitetheseadvancements,asignificantgappersistsintheautomationoffunctional
+testcasegeneration,particularlyincreatingtestcasesthatcapturehigh-leveluserflows
+andcomplexsystembehaviors[15–19]. Addressingthischallengerequiresmodelsthatcan
+reasonacrossstructuredinputs,userrequirements,andmulti-layeredsoftwareinterfaces.
+Whilestate-spacemodels(SSMs),suchasMamba,offerpromisingcapabilitiesinhandling
+longsequenceswithhighthroughputandglobalcontext[20,21],general-purposeLLMs
+oftenfallshortincompleteness,correctness,andadaptabilitywhenappliedtofunctional
+testingindynamic,real-worldenvironments.
+1.1. KeyContributions
+Thisworkintroducesanovelapproachtoautomatesoftwaretestcasegenerationby
+leveragingtheCodestralMamba7Bmodel,whichwasfine-tunedwithLow-RankAdaptation
+(LoRA).UnliketraditionalTransformer-basedmodels,whichrelyonself-attentionmecha-
+nismsandoftenfacechallengesinscalability,computationalefficiency,andlong-sequence
+modeling,ourmethodexploitstheuniqueadvantagesofSSMs.Specifically,Mamba’slinear-
+timeinferenceandglobalcontextmodelingcapabilitiesenablemoreefficientandscalabletest
+casegenerationparticularlyforcomplex,real-worldsoftwaresystems.
+Therearefiveprimarycontributionsofthispaper:
+• Novel Integration of LoRA with a State-Space Model: We propose and evaluate a
+method for embedding LoRA matrices into the Codestral Mamba 7B architecture,
+enablingefficient,domain-specificadaptation. Thisapproachcontrastswithexisting
+Transformer-basedfine-tuningtechniques,whichoftenrequirefull-modelupdates
+orlackthelinearscalabilityofSSMs. ByfocusingonLoRA,weachievePEFTwhile
+preservingMamba’sinherentadvantagesinhandlinglongsequencesandmaintaining
+computationalefficiency.
+• Dual-DatasetEvaluationwithEmphasisonReal-WorldApplicability: Ourmethodis
+evaluatedonboththeCodeXGLUE/CONCODEbenchmarkandaproprietaryTest-
+Case2Codedataset,whichcomprisesreal-worldmanual-to-Pytestconversions. This
+dualevaluationdemonstratessuperiorperformanceinsyntacticaccuracy,semantic
+alignment,andtestcoveragecomparedtobaselineTransformermodels. Notably,our
+approachachievestheseimprovementswithoutthecomputationaloverheadtypically
+associatedwithfine-tuninglargeTransformerarchitectures.
+
+## Page 3
+
+FutureInternet2025,17,476 3of25
+• Prototype Development (Codestral Mamba_QA): We present a functional chatbot
+prototypethatintegratesthefine-tunedMambamodelintoauser-friendlyinterface,
+showcasing its potential for seamless integration into real-world software testing
+pipelines. Thisprototypehighlightsthepracticalapplicabilityofourmethod,offering
+a scalable and efficient alternative to existing tools like GitHub Copilot or GPT-4-
+basedsolutions.
+• ComputationalEfficiencyandScalability: TheLoRA-basedfine-tuningapproachsig-
+nificantlyreducesthenumberoftrainableparameters,enablingrapidadaptation(e.g.,
+200epochsinjust20minfortheproprietaryTestCase2Codedataset). Thisefficiency
+isparticularlyadvantageousforindustrialapplications,wherequickiterationand
+lowresourceconsumptionarecritical. Incontrast,Transformer-basedmodelsoften
+requireextensivecomputationalresourcesforfine-tuning,limitingtheirscalabilityin
+resource-constrainedenvironments.
+• CompatibilitywithCI/CDWorkflows: TheresultsdemonstratethatLoRA-enhanced
+state-space models can be effectively integrated into Continuous Integration and
+ContinuousDelivery(CI/CD)workflows.Thisalignmentpresentsastrongalternative
+toTransformer-basedmethods,whichoftenfacelimitationswhendealingwiththe
+dynamicandrapidlyevolvingnatureofmodernsoftwarepipelines. Byenhancing
+bothefficiencyandadaptability,theproposedapproachpromotesmoresustainable
+andscalabletestautomationpractices.
+1.2. WhyThisMatters
+WhileTransformer-basedmodels(e.g.,CodeT5[22],GitHubCopilot[23],GPT-4[4])
+have dominated the field of automated test generation, their reliance on self-attention
+mechanismsintroducescomputationalbottlenecks,particularlyforlong-sequencetasks
+andlarge-scaledeployments. Incontrast,state-spacemodelslikeMambaofferlinear-time
+inferenceandglobalcontextmodeling,makingtheminherentlymorescalableandefficient
+forreal-worldapplications. BycombiningMambawithLoRA,wenotonlyretainthese
+advantagesbutalsointroduceaPEFTstrategythatoutperformstraditionalapproachesin
+bothperformanceandresourceutilization.
+Thisworkthusbridgesacriticalgapintheliterature,demonstratingthatstate-space
+modelswhenfine-tunedwithLoRAcansurpassTransformer-basedmethodsinautomated
+testgeneration,particularlyforcomplex,dynamicsoftwareenvironments.
+1.3. PaperOrganization
+Theremainderofthispaperisstructuredasfollows:
+• Section2(RelatedWork): reviewsthestate-of-the-artinautomatedsoftwaretesting
+andtheapplicationofLLMsfortestcasegeneration.
+• Section 3 (Materials and Methods): details the model architecture, datasets, and
+promptengineeringstrategy.
+• Section 4 (Experiments and Results): presents the experimental setup, evaluation
+metrics,andanalysisofresults.
+• Section 5 (Discussion): interprets the findings of the present work and critically
+examinesitslimitations.
+• Section6(Conclusions): concludesthestudyandoutlinesdirectionsforfuturere-
+search.
+• AppendicesA–C:AppendixAprovidestwonon-sensitivedatasetsamplesillustrating
+datastructureandcontenttoensuretransparencyandreproducibility. AppendixB
+presentsarepresentativeprompt–responsepairfromtheproprietaryTestCase2Code
+datasetusedforfine-tuningtheCodestralMamba7Bmodel,clarifyingtheprompt
+
+## Page 4
+
+FutureInternet2025,17,476 4of25
+engineeringprocess. AppendixCincludesrepresentativeprompt–responseexamples
+ofmodel-generatedPytestcode(TablesA1–A6),demonstratingthemodel’sbehav-
+ior under varying configurations and its ability to produce precise, reusable, and
+semanticallycoherenttestcases.
+2. RelatedWork
+2.1. AutomatedSoftwareTesting: FromTraditionalFrameworkstoAI-AssistedApproaches
+Theevolutionofautomatedsoftwaretestinghasbeencloselytiedtotheadoptionof
+agileandDevOpspractices,whererapiditerationcyclesdemandefficientandreliablevali-
+dationmechanisms. TraditionalframeworkssuchasSeleniumandJUnit[24]havelaidthe
+groundworkfortestautomation,yettheneedforextensivescriptinganddomainexpertise
+oftenconstrainstheireffectiveness. Whilethesetoolsexcelinstructuredenvironments,
+theystruggletoscaleindynamiccodebaseswhererequirementsevolvecontinuously[25].
+TheTestingPyramid[26]advocatesforabalanceddistributionofunit,integration,and
+end-to-endtests,butmanualimplementationremainsabottleneck,particularlyforcomplex
+system-levelvalidations.
+2.2. Transformer-BasedLLMsinTestAutomation: StrengthsandLimitations
+The advent of Transformer-based LLMs such as GPT-4 [4], CodeBERT [27], and
+CodeT5 [22] has revolutionized AI-assisted software development by enabling natural
+language-to-codegeneration.Thesemodelshavedemonstratedproficiencyintasksranging
+fromcodesynthesis[28]tovulnerabilitydetection[29]withtoolslikeGitHubCopilot[23]
+andUniXcoder[30]furtherrefiningthealignmentbetweenhumanintentandexecutable
+outputs. However,theirapplicationtofunctionaltestautomation,wheretestcasesmust
+capturehigh-leveluserflowsandcross-componentinteractions,revealscriticallimitations:
+• ComputationalInefficiency: Transformerarchitecturesrelyonself-attentionmech-
+anisms with quadratic complexity (O(n2)), which becomes prohibitive for long-
+sequencetaskssuchasend-to-endtestsuites[16].
+• ContextWindowConstraints: Limitedtokenwindows(e.g.,8KforGPT-4)restrictthe
+models’abilitytoprocessextensivetestscenariosormaintainglobalcontextacross
+interconnectedsoftwaremodules[14].
+• Unit-Level Focus: Most prior work [31–33] has concentrated on unit-level testing,
+leavingagapingeneratingtestcasesforsystem-levelbehaviors[15,17].
+• Fine-Tuning Overhead: Adapting large Transformer models (e.g., CodeT5’s 220M
+parameters) to domain-specific tasks requires full fine-tuning, which is resource-
+intensiveandimpracticalformanyindustrialsettings[22].
+2.3. State-SpaceModels: AParadigmShiftforLong-SequenceTasks
+Toaddressthesechallenges,SSMssuchasMamba[21]haveemergedasacompelling
+alternative. UnlikeTransformers,SSMsemploylinear-timeinferenceandglobalcontext
+modeling,makingtheminherentlymorescalablefortasksrequiringlong-rangedependen-
+cies. Keyadvantagesincludethefollowing:
+• Linear Scalability: Selective SSM blocks process sequences in O(n) time, enabling
+theefficienthandlingoflargetestsuiteswithoutthecomputationalbottlenecksof
+self-attention[20].
+• ExtendedContextRetention: SSMsmaintainstateacrossentiresequences,improving
+coherenceingeneratedtestcasesthatspanmultiplesoftwarelayers[18].
+Despite these strengths, SSMs remain underexplored in test automation with existing
+researchprimarilyfocusingongeneralcodesynthesisratherthanfunctionalvalidation[19].
+
+## Page 5
+
+FutureInternet2025,17,476 5of25
+2.4. PEFT:BridgingtheGapforFunctionalTesting
+AlthoughSSMsofferarchitecturaladvantages,theiradaptationtospecializeddomains,
+suchasfunctionaltestgeneration,requiresfine-tuningstrategiesthatbalanceperformanceand
+computationalcost.LoRA[34]addressesthisneedbyinjectingtrainablelow-rankmatrices
+intopretrainedmodels,reducingthenumberofupdatedparametersbyordersofmagnitude.
+RecentstudiesonPEFTtechniquesfurtherhighlighttheirvalueinoptimizinglargemodelsfor
+domain-specificapplicationswithoutprohibitiveresourcecosts[12,35,36].Priorapplications
+of LoRA have focused on Transformer-based models [34], but its integration with SSMs
+remains largely unexplored. This gap presents an opportunity to combine the scalability
+ofSSMswiththeefficiencyofPEFT,whichisasynergythatourworkexploitstoadvance
+automatedtestgeneration.
+2.5. PositioningOurWorkintheLandscape
+Thisstudydistinguishesitselffromexistingresearchinthefollowingaspects:
+• First Integration of LoRA with SSMs for Testing: Unlike prior work that applies
+LoRAtoTransformers(e.g.,CodeT5),weleverageittofine-tuneCodestralMamba7B,
+demonstratingthatSSMscansurpassTransformer-basedmodelsinbothperformance
+andresourceefficiencyforfunctionaltestautomation.
+• Focus on Real-World Functional Testing: While datasets like CodeXGLUE/CON-
+CODE[37]evaluategeneralcodesynthesis,ourproprietaryTestCase2Codedataset
+targetsend-to-endtestscripts,providingamorerealisticbenchmarkforindustrial
+applications.
+• Prototype-DrivenValidation: WedevelopCodestralMamba_QA,achatbotprototype
+thatshowcasesthepracticaldeploymentofLoRA-fine-tunedSSMsinCI/CDpipelines,
+acapabilitylackinginTransformer-basedtoolslikeCopilot,whichrelyonexternal
+APIsandlackproject-specificadaptability.
+2.6. SummaryofResearchGaps
+Table 1 summarizes key limitations in prior work and how our approach ad-
+dressesthem.
+Table1. Researchgapsinautomatedtestgenerationandourcontributions.
+Approach Limitations OurSolution
+TransformerLLMs(e.g., Highquadraticcost,shortcon- Linear-timeSSM(Mamba)
+GPT-4,CodeT5) text,limitedtounittests. with LoRA for scalable
+functionaltestgeneration.
+Conventional SSMs No domain tuning; weak real- LoRA fine-tuning with
+(e.g.,Mamba) worldvalidation. proprietaryTestCase2Code
+dataset.
+LoRAonTransformers InheritsTransformerlimits(e.g., LoRAonSSMsenablingef-
+contextlength). ficient global context han-
+dling.
+PublicDatasets Unit-level only; lack function- TestCase2Code: manual-
+al/systemtests. to-Pytest conversions for
+system-levelvalidation.
+3. MaterialsandMethods
+Software testing ensures software systems conform to specified requirements and
+performreliably[38,39]. Testconstructssuchasindividualtests,testcases,andtestsuites
+support structured validation across different testing levels and techniques, including
+
+## Page 6
+
+FutureInternet2025,17,476 6of25
+black-box,white-box,andgray-box,andtheyareoftenaugmentedbydesignstrategieslike
+boundaryvalueanalysisandfuzzing[40–43].
+Whilemanualandrule-basedapproacheshavehistoricallydominatedtestgeneration,
+largelanguagemodels(LLMs)nowenableanautomated,context-awaregenerationoftest
+code.Theirabilitytounderstandbothnaturallanguageandsourcecodefacilitatesthescalable,
+dynamiccreationoftestsuitesalignedwithfunctionalandexploratorytestinggoals.
+3.1. LLMArchitectureGroundedinState-SpaceModels
+ThisworkemploystheCodestralMamba7Bmodel,whichisastate-spacemodel(SSM)
+optimizedforefficientlong-rangesequencemodeling[20,21].ByintegratingselectiveSSM
+blockswithmulti-layerperceptrons,Mambaenableslinear-timeinference.Thisarchitecture
+buildsonthefindingspresentedin[44]. Itsimplementationispubliclyavailableathttps:
+//github.com/state-spaces/mamba(accessedon9October2025),promotingreproducibility
+andencouragingfurtherexploration. Themodel’sextendedcontextcapacitysupportsthe
+effectiveretrievalandutilizationofinformationfromlargeinputssuchascodebasesand
+documentation,therebyenhancingperformanceintaskslikedebuggingandtestgeneration
+(MistralAI,CodestralMamba,availableat:https://mistral.ai/en/news/codestral-mamba,
+accessedon9October2025.NVIDIADeveloperBlog,RevolutionizingCodeCompletionwith
+CodestralMamba:TheNext-GenCodingLLM,availableat:https://developer.nvidia.com/
+blog/revolutionizing-code-completion-with-codestral-mamba-the-next-gen-coding-llm/,ac-
+cessedon9October2025).
+3.2. IntegratingLoRAFine-TuningintotheMamba-2Architecture
+To specialize the Mamba-2 architecture for functional test generation, we employ
+LoRA[34],whichisaPEFTtechniquethatsignificantlyreducesthenumberoftrainable
+parameterswhilemaintainingthemodel’sgeneral-purposecapabilities. Ratherthanup-
+datingtheentiresetofpretrainedweights,LoRAinjectstrainablelow-rankmatricesinto
+selectedprojectionlayers,allowingforefficienttask-specificadaptation.
+InthecontextofMamba-2,LoRAisseamlesslyintegratedintotheinputprojection
+matrices(W(xzBC∆) andtheoutputprojectionmatrix(W(o))(seeFigure1),whicharekey
+components in the Selective State-Space Model (SSSM) blocks. The original projection
+weights can be expressed as a combination of the pretrained weights and a low-rank
+update. ThisdecompositionisformalizedinEquation(1):
+W =W +∆W, ∆W = BA (1)
+pretrained
+where A ∈ Rr×d and B ∈ RL×r, and r is the rank of the low-rank decomposition with
+r ≪ min(d,(h·d )). This decomposition introduces only a small number of trainable
+head
+parameterscomparedtotheMambamodel’stotalparametercount,resultinginalightweight
+adaptationmechanismthatpreservesitscomputationalefficiency.Themodifiedinputprojec-
+tion,referredtoastheLoRA-adjustedinputtransformation,isformallydefinedinEquation(2):
+x =W u+BAu (2)
+p pretrained
+An analogous formulation is applied to the output projection, following the same
+decomposition principle. This structured approach enables the targeted adaptation of
+themodeltothespecificdomainofsoftwaretestingwhilepreservingtheintegrityofthe
+originalpretrainedweightsandavoidingthecomputationalcostoffull-modelfine-tuning.
+By leveraging LoRA within Mamba-2’s architecture, we achieve an efficient and
+modularspecializationpipeline,wheregeneral-purposelanguagecapabilitiesareretained,
+andonlytask-relevantcomponentsarefine-tuned. Thisisespeciallyadvantageousinthe
+
+## Page 7
+
+FutureInternet2025,17,476 7of25
+domainofautomatedtestgeneration,wherescalability,lowresourceconsumption,and
+contextual understanding are critical. As shown in Figure 1, this architecture supports
+fine-grainedcontroloveradaptation,enablingprecisealignmentbetweensoftwareartifacts
+(e.g.,functiondefinitions,comments)andtheresultingtestcasegeneration.
+Figure1. IntegrationofLoRAintotheMamba-2SSMarchitecture. Low-rankupdatesare
+appliedtotheinputandoutputprojectionmatricestoenableefficientfine-tuning. The
+redarrowsindicatethelayerswheretheLoRAmatricesareinserted,correspondingtothe
+inputandoutputlinearprojections. Theblackarrowsrepresentthedataflowbetween
+sequentialcomponentswithineachSSMblock.
+Insummary,theintegrationofLoRAintoMamba-2establishesaflexibleanddomain-
+adaptiveframeworkforautomatedtestcasegeneration. Thiscombinationbringstogether
+thelong-contextmodelingandscalabilityofSSMswiththeefficiencyandmodularityof
+low-rankfine-tuning,enablingthegenerationofhigh-quality,context-awarefunctional
+testsdirectlyfromsourcecode.
+3.3. Datasets
+Thisworkemploystwodifferentdatasetstosupportmodeltrainingandevaluation:
+TheCONCODEdataset[45]fromtheCodeXGLUEbenchmark[37]andtheproprietary
+
+## Page 8
+
+FutureInternet2025,17,476 8of25
+TestCase2Codedataset. CodeXGLUE/CONCODEispartoftheCodeXGLUEbenchmark
+suite,whichisacomprehensiveplatformforevaluatingmodelsondiversecodeintelli-
+gencetasks. Forourexperiments,weusethetext-to-codegenerationtask,specificallythe
+CONCODEdataset(https://github.com/microsoft/CodeXGLUE/tree/main/,accessed
+on9October2025), whichconsistsof100Ktrainingsamples, 2Kdevelopmentsamples,
+and2Ktestingsamples. Eachexampleincludesanaturallanguagedescription,contextual
+classinformation,andthecorrespondingJavacodesnippet. Thestructuredformat,with
+fieldslikenlandcode,facilitatescontext-awarecodegeneration,makingitwellsuitedfor
+benchmarkinglargelanguagemodelsinsourcecodesynthesisfromtextualprompts.
+TheproprietaryTestCase2Codedatasetwasdevelopedtoaddressthelackofdatasets
+containingfunctionaltestcaseswritteninPytest,whichispairedwiththeircorresponding
+manual descriptions. It comprises 870 real-world examples collected from an enterprise
+softwaretestingenvironment,totaling2,610filesorganizedintotriplets: manualtestcase
+(m.txt),associatedsourcecodeinJSX/JavaScript(c.txt),andthecorrespondingPytest-
+basedautomatedtest(a.txt).TheoverallstructureofthedatasetisoutlinedinTable2.
+Table2.StructureoftheTestCase2Codedataset.Eachsamplefoldercontainscorresponding
+manualtests,sourcecode,andautomaticallygeneratedPytestcases.
+File Description ExampleType
+a.txt AutomatedtestgeneratedinPytestformat Output
+c.txt SourcecodeimplementedinJavaScript Input
+m.txt Manualtestdescription Input
+Themanualtestcasecorpuscomprises86,803wordsin870files,withavocabularyof
+939uniquetermsandalexicaldiversityscoreof92.44,reflectingaspecializedyetvaried
+linguistic structure. The Pytest corpus, in turn, contains 20,600 words with an average
+lexicaldiversityof0.66,illustratingabalancebetweensyntacticrepetitionandfunctional
+variability. These statistics demonstrate a consistent yet expressive dataset capable of
+supportingrobustlanguage-to-codelearning.
+Toensureproperevaluationandmitigateoverfittingrisksassociatedwiththedataset’s
+limitedsize, astratifiedpartitioningwasapplied: 770samples(88.5%)wereallocatedfor
+training and 100 samples (11.5%) were allocated for testing. Both subsets were extracted
+fromdifferentfunctionalsectionsofthesameenterpriseproject,ensuringthateachtestcase
+representsauniquetestingscenario.Thispartitioningstrategypreservesdomainconsistency
+whilepreventingdataleakageandguaranteeingthatnotestcaseisduplicatedacrosssubsets.
+Statisticalcomparisonofthetwopartitionsbasedonwordfrequencydistributions,lexical
+diversity, and code length (Welch’s t-test, p < 0.01) confirmed that they are significantly
+different,ensuringgenuinemodelgeneralizationacrossunseenfunctionalcontexts.
+Althoughthedatasetisrelativelysmallandnotpubliclyaccessible,itservesasacontrolled
+benchmarkforassessingmodelperformanceinrealistic,domain-specificautomatedtesting
+contexts.Itscompactnessfavorsefficientfine-tuningwhilepreservinglinguisticandstructural
+variabilityadequateforstudyinggeneralizationpatterns.Infuturework,weplantoexpand
+thedatasetandexploreregularizationtechniquestofurtherminimizeoverfittingrisks.
+Topromotetransparencyandreproducibility,non-sensitivedatasetsamplesarepro-
+videdinAppendixA,illustratingtheirinternalorganizationwithoutdisclosinganypropri-
+etaryinformation. Thedatasetremainsaninternal,non-publicresourceduetoconfidential-
+ityconstraints,thoughaformalanonymizationandreleaseprocessisunderconsideration
+forfuturepublicdissemination.
+
+## Page 9
+
+FutureInternet2025,17,476 9of25
+3.4. PromptEngineeringStrategy
+The fine-tuning of the Codestral Mamba 7B model followed a systematic prompt
+engineering methodology in the Instruct format, where the user provides task-oriented
+instructionsandtheassistantgeneratesthecorrespondingoutput. Thisstructureensures
+alignment between the intended task and the model’s syntactically coherent response,
+fosteringconsistencyduringbothtrainingandinference.
+FortheproprietaryTestCase2Codedataset,eachpromptcombinedamanualtestcase
+descriptionwithitsassociated.jsxsourcefiletoguidethegenerationofautomatedtest
+scripts in Pytest. The instructional component provided by the user remained constant
+acrossallsamplesandwasdefinedasfollows:
+“Usingtheprovidedtestcasemanualandthecorresponding.jsxfileascontext,generate
+atestcasebasedonthePytestlibrary. Ensurethetestcaseiscomprehensiveandfollows
+bestpracticeswithPytest.”
+Onlytheembeddedmanualtestcaseandthecorresponding.jsxfilevariedbetween
+samples,providingdomain-specificcontextwhilepreservingauniformstructurethrough-
+outthedataset. Thisstandardizeddesignwasessentialforestablishingastablelearning
+signalduringfine-tuning,enablingthemodeltoeffectivelytranslateheterogeneousnatural-
+languagedescriptionsandUIsourcecodeintoexecutablePytestimplementations.
+Figure2illustratesthisstructuredprompt–responseinteraction,wheretheuserblock
+representstheinputinstructionwithcontextualelements,andtheassistantblockdenotes
+the model-generated Pytest test case. This formulation enhanced reproducibility and
+interpretabilityacrossthetrainingprocess.
+Toensuretransparencyandreproducibility,thegeneralprompttemplateandarep-
+resentativeexampleareprovidedinAppendixB.Thisexampleillustratesthestructured
+formatusedduringtraining,allowingresearcherstounderstandandreplicatetheexperi-
+mentalsetupwhilepreservingdataconfidentiality.
+Figure 2. Prompt-based test case generation using the TestCase2Code dataset. The or-
+angearrowrepresentstheuserpromptinput,whilethegreenarrowindicatesthemodel-
+generatedtestcaseoutput.
+4. ExperimentsandResults
+4.1. ExperimentalSetup
+TheCodestralMamba7Bmodelwasfine-tunedusingtheCodeXGLUEandproprietary
+TestCase2Codedataset. Allexperimentsemployedaconsistentsetofhyperparametersto
+ensurecomparabilityandreliability.Thecoremodelsettingssuchaslearningrate(6×10−5),
+batchsize(1),sequencelength(1024tokens),andoptimizer(AdamW)remainedfixedacross
+
+## Page 10
+
+FutureInternet2025,17,476 10of25
+bothdatasets. LoRAwasappliedwitharankof128,andcross-entropywithmaskingwas
+usedasthelossfunctionduringtraining,whichwasconductedover200epochs.
+Training was performed on the Vision supercomputer (https://vision.uevora.pt/,
+accessedon9October2025)attheUniversityofÉvora,utilizingasingleNVIDIAA100
+GPU(40GBVRAM),32CPUcores,and122GBofRAM.Themodelfeaturedapproximately
+286milliontrainableparametersand7.3billionfrozenparameterswithLoRAmatrices
+occupying624.12MiBofGPUmemory. Thishigh-performancesetupenabledtheefficient
+processingoflarge-scalemodelfine-tuning.
+TheimplementationleveragedtheofficialCodestralMamba7BreleasefromHugging
+Face(https://huggingface.co/mistralai/Mamba-Codestral-7B-v0.1,accessedon9October
+2025),incorporatingarchitecturalfeaturessuchasRMSnormalization,fusedoperations,
+and64-layerMambablocks. Detailedlayer-wiseconfigurationsandparameterdimensions
+aresummarizedinTables3and4,respectively.
+Table3. LayerconfigurationsoftheCodestralMamba7Bmodel.
+LayerName Operation
+embedding Embedding(32,768,4096)
+layers ModuleList(64xBlock)
+in_proj LoRALinear(4096,18,560,r=128)
+conv1d Conv1d(10,240,10,240,kernel=4,stride=1)
+act SiLU()
+norm RMSNorm()
+out_proj LoRALinear(8192,4096,r=128)
+Table4. ParameterdimensionsoftheCodestralMamba7Bmodel.
+LayerName LayerSize
+EmbeddingLayer
+model.backbone.embedding.weight [32,768,4096]
+FirstBlock(layers0)
+model.backbone.layers.0.norm.weight [4096]
+model.backbone.layers.0.mixer.dt_bias [128]
+model.backbone.layers.0.mixer.A_log [128]
+model.backbone.layers.0.mixer.D [128]
+model.backbone.layers.0.mixer.in_proj.lora_A.weight [128,4096]
+model.backbone.layers.0.mixer.in_proj.lora_B.weight [18,560,128]
+model.backbone.layers.0.mixer.in_proj.frozen_W.weight [18,560,4096]
+model.backbone.layers.0.mixer.conv1d.weight [10,240,1,4]
+model.backbone.layers.0.mixer.conv1d.bias [10,240]
+model.backbone.layers.0.mixer.norm.weight [8192]
+model.backbone.layers.0.mixer.out_proj.lora_A.weight [128,8192]
+model.backbone.layers.0.mixer.out_proj.lora_B.weight [4096,128]
+model.backbone.layers.0.mixer.out_proj.frozen_W.weight [4096,8192]
+SubsequentBlocks
+(model.backbone.layers.1tomodel.backbone.layers.63)
+... ...
+FinalNormalizationandOutputLayer
+model.backbone.norm_f.weight [4096]
+model.lm_head.weight [32,768,4096]
+4.2. Results
+ThispaperpresentsthefirstintegrationofLoRA,aPEFTtechnique,intotheCodestral
+Mambaframeworktoevaluateitscapacityforgeneratingaccurateandcontextuallyrelevant
+code from natural language descriptions. Model performance was assessed using two
+
+## Page 11
+
+FutureInternet2025,17,476 11of25
+datasets,CONCODE/CodeXGLUEandTestCase2Code,focusingonhowLoRAimproves
+codegenerationqualityandadaptability.
+4.2.1. ModelPerformanceontheCONCODE/CodeXGLUEDataset
+TheCONCODE/CodeXGLUEdatasetwasusedtobenchmarktheCodestralMamba
+model against leading text-to-code generation systems using Exact Match (EM), BLEU,
+andCodeBLEUmetrics. Unlikeconventionalfine-tuningthatmayoverwritepretrained
+knowledge,LoRAenablestargetedadaptationwhilepreservingthemodel’sgeneralrea-
+soningabilities. Thisbalancebetweenspecializationandretentionenhancesrobustness
+andcontextualaccuracy.
+ThisexperimentprimarilyaimedtovalidatethefeasibilityandefficiencyofLoRA
+integration rather than to exceed state-of-the-art benchmarks. Therefore, no extensive
+hyperparameter tuning or architectural adjustments were applied. Embedding LoRA
+matricesenabledrapidadaptationtodomain-specificdatawhilemaintainingthemodel’s
+general-purposecapabilities.
+AsshowninTable5,theLoRA-enhancedCodestralMambaachievedmarkedgains
+overitsbaselinewithEM=22%, BLEU=40%, andCodeBLEU=41%. Thefine-tuning
+process required only 1.5 h for 200 epochs, confirming its computational efficiency. Al-
+thoughimprovementsovertop-performingmodelsremainmoderate,theysubstantiatethe
+study’sobjective—demonstratingLoRA’seffectivenessinextendingMamba’sadaptability
+tonoveltasks.
+Table5. Performancecomparisonoftext-to-codegenerationmodelsontheCONCODE/-
+CodeXGLUEdataset.
+Model ModelSize EM% BLEU% CodeBLEU%
+Seq2Seq 384M 3.05 21.31 26.39
+Seq2Action+MAML 355M 10.05 24.40 29.46
+GPT-2 1.5B 17.35 25.37 29.69
+CodeGPT 124M 18.25 28.69 32.71
+CodeGPT-adapted 124M 20.10 32.79 35.98
+PLBART 140M 18.75 - 38.52
+CodeT5-base 220M 22.30 - 43.20
+NatGen 220M 22.25 - 43.73
+CodestralMamba 7B 0.00 0.05 18.99
+CodestralMamba(LoRA) 286M 22.00 40.00 41.00
+4.2.2. ModelPerformanceontheTestCase2CodeDataset
+TheproprietaryTestCase2Codedataset, derivedfromrealenterpriseprojects, pro-
+videdadomain-specificbenchmarkforassessingtestcasegeneration. AsshowninTable6,
+thebaselineCodestralMambaexhibitedlimitedaccuracyacrossn-gram,weightedn-gram,
+SyntaxMatch(SM),DataflowMatch(DM),andCodeBLEUmetrics.AfterLoRAfine-tuning,
+substantialimprovementswereobserved: n-gramrosefrom4.8%to56.2%,w-ngramfrom
+11.8%to67.3%,SMfrom39.5%to91.0%,DMfrom51.4%to84.3%,andCodeBLEUfrom
+26.9%to74.7%. Themodelthusachievedsuperiorsyntacticandsemanticalignmentwith
+referencetestcases.
+Fine-tuningremainedhighlyefficient,completing200epochsin20min,demonstrating
+LoRA’ssuitabilityforiterativerefinementandrapiddeployment.
+
+## Page 12
+
+FutureInternet2025,17,476 12of25
+Table6. ComparisonofperformancemetricsfortheCodestralMambamodelinitsbaseline
+andLoRAfine-tunedconfigurationsevaluatedontheTestCase2Codedataset.
+Model n-gram% w-ngram% SM% DM% CodeBLEU%
+CodestralMamba 4.8 11.8 39.5 51.4 26.9
+CodestralMamba(LoRA) 56.2 67.3 91.0 84.3 74.7
+4.2.3. InterpretationofResults
+ResultsacrossbothdatasetsconfirmthatLoRAsignificantlyenhancestheCodestral
+Mambamodel’sabilitytogeneratecoherent,contextuallyrelevant,andexecutablecode.
+Thefine-tuningprocesswasbotheffectiveandcomputationallylightweight,underscoring
+itspracticalityforcontinuoustestingenvironments. Thesefindingsvalidatethefeasibility
+of LoRA-based adaptation for large models, paving the way for scalable, efficient, and
+domain-specificautomationinsoftwaretestingworkflows.
+4.2.4. PracticalPerformanceEvaluation
+Thissectionpresentsthepracticalevaluationofthefine-tunedCodestralMambamodel
+throughitsintegrationintotheCodestralMamba_QAchatbot,whichwasimplementedas
+asecureweb-basedservice. Unlikepurelyquantitativeassessments,thisanalysisreliedon
+expertinspectionandthevisualexaminationofmodeloutputs. AsillustratedinFigure2,
+theevaluationfollowedaprompt–responseparadigminwhichthesysteminput(userrole)
+combinedtask-specificinstructionsandmanualtestcasedescriptionswithassociated.jsx
+files,whilethefine-tunedmodel,guidedbythesystemprompt,generatedthesystemresponse
+(assistantrole)namely,executablePytestscripts.
+The model was fine-tuned using the proprietary TestCase2Code dataset, ensuring
+strictseparationbetweentrainingandtestsubsets. Testsemployedbothdatasetcasesand
+newlydesignedinstructionstoassessthemodel’sabilitytoproducesyntacticallyvalid
+andfunctionallycoherenttestscripts. ExperimentsexploredvariationsinLoRAscaling,
+temperature,andpromptdesign,providinginsightsintoadaptabilityandrobustnessunder
+realisticconditions.
+Importantly,thechatbotiscurrentlydeployedwithinthecollaboratingenterpriseas
+a secure prototype supporting internal quality assurance workflows. This deployment
+enablesiterativevalidationofthemodel’sreal-timeperformanceingeneratingtestcases
+andreducingmanualeffort. Althoughqualitativeandexploratoryinnature,theresults
+demonstratestrongpotentialforintegrationintocontinuoustestingpipelines.
+Theevaluationconsideredseveralconfigurableelementsinfluencinggenerationbe-
+havior:
+• SystemPrompt: predefinedinstructionsaligningmodelbehaviorwithPytest-based
+testgenerationbestpractices.
+• Temperature: controlsoutputvariability;lowervaluespromotedeterminism,while
+highervaluesintroducecreativityanddiversity.
+• LoRAScalingFactor: determinesthestrengthoffine-tuningadaptation;highervalues
+increasedomainspecificity.
+• SystemInput: user-providedinstruction,testcasedescription,orboth,servingasthe
+basisforgeneration.
+• SystemResponse: model-generatedoutput,typicallystructuredPytestcodeand,in
+somecases,explanatorylogic.
+Toillustratethemodel’sbehavioracrossconfigurations,representativeexamplesof
+prompt–responsepairsarepresentedinAppendixC(TablesA1–A6). Theseincludescenar-
+iossuchasbaselinequeryinterpretation,LoRA-enhancedtestgeneration,temperatureand
+
+## Page 13
+
+FutureInternet2025,17,476 13of25
+scalinginfluence,extendedtestcoverage,cross-projectadaptability,andautomatedbug
+prevention. Together,theseexamplesdemonstratethemodel’scapacitytogenerateprecise,
+reusable,andsemanticallycoherentPytestcodeacrossdiversetestingcontexts.
+5. Discussion
+Thisstudydemonstratestheeffectiveuseoflargelanguagemodelsforautomating
+functionalsoftwaretesting,emphasizingthegenerationofpreciseandcontext-awaretest
+cases. IntegratingtheCodestralMambamodelwithLoRAyieldedsubstantialimprove-
+mentsinCodeBLEUandsemanticmatchingscores,confirmingthemodel’scapabilityto
+translatenatural-languageinputsintoexecutable,functionallycoherentPytestscripts.
+Evaluationacrosstwodatasets: CONCODE/CodeXGLUEandtheproprietaryTest-
+Case2Coderevealedcomplementarystrengths. Theformervalidatedgeneralizationacross
+diversecodingdomains,whilethelatterassesseddomain-specificrobustnessinreal-world
+enterprisecontexts. TheLoRA-enhancedmodelpreservedbroadadaptabilitywhileeffec-
+tivelyspecializingtoproject-specificrequirements,demonstratingthebenefitsofPEFT.
+TheintroductionoftheTestCase2Codedatasetrepresentsasignificantcontribution
+towardrealisticbenchmarking. Constructedfromrealprojectartifacts,itincludespaired
+manual and automated test cases, enabling rigorous assessment under conditions that
+closely mirror industrial practice. On this dataset, the fine-tuned model achieved no-
+tablegainsinsyntacticprecisionandfunctionalcoherence,reinforcingitsapplicabilityfor
+enterprise-leveltestingworkflows.
+Beyondmodeloptimization,theinternallydeployedCodestralMamba_QAchatbot
+ensures secure, organization-specific integration. Its operation without external depen-
+denciessafeguardsdataconfidentialitywhilesupportingadaptiveinteractions. Dynamic
+hyperparametertuningenhancesresponsivenessandefficiency,whileastructuredrepos-
+itoryforLoRAmatricesenablesproject-levelmodelmanagement,promotingscalability
+andmaintainability.
+Nonetheless,certainlimitationsmeritconsideration. Althoughinternaldeployment
+mitigates security risks, the potential exposure of sensitive logic during fine-tuning or
+inference remains a concern. Biases arising from uneven data representation may also
+influencetestcoverageorprioritization. Furthermore, maintainingalignmentbetween
+evolvingsoftwaresystemsandfine-tunedmodelsrequiresperiodicre-adaptationtosustain
+performanceandrelevance.
+Overall,thesefindingshighlightboththepracticalbenefitsandethicalimperativesof
+deployingLoRA-enhancedstate-spacemodelsinautomatedsoftwaretesting. Thestudy
+underscoresthedualneedfortechnicalperformanceandresponsibledeployment,paving
+thewayforscalable,secure,andsustainableAI-driventestingsolutions.
+6. Conclusions
+Thisworkdemonstratestheviabilityofleveraginglargelanguagemodels,specifically
+theCodestralMambaarchitecture,incombinationwithLoRA,toadvanceautomatedtest
+casegeneration. Thecentralcontributionliesinthecomparativeevaluationbetweenthe
+baselineCodestralMambamodelanditsLoRA-enhancedcounterpartacrosstwodatasets:
+CONCODE/CodeXGLUEandthenewlyproposedTestCase2Codebenchmark. Results
+show that fine-tuning with LoRA yields improvements in both syntactic precision and
+functionalcorrectness. Thesefindingsprovideclearempiricalevidenceoftheeffectiveness
+ofPEFTinsoftwaretestingcontexts.
+Inadditiontothemainfindings,thisworkofferscomplementarycontributionsthat
+reinforcethepracticalrelevanceoftheapproach. TheproprietaryTestCase2Codedataset,
+constructedfromreal-worldprojectdata,providesastartingpointforevaluatingthealign-
+
+## Page 14
+
+FutureInternet2025,17,476 14of25
+mentbetweenmanualandautomatedfunctionaltestcases. Althoughthisdatasetisnot
+publiclyavailable,anditsuseisthereforelimitedtothescopeofthiswork,itnevertheless
+highlightsthepotentialofproject-specificdataforadvancingresearchinautomatedtesting.
+Furthermore,thedevelopmentofadomain-adaptedAIchatbotandthestructuredmanage-
+mentofLoRAmatricesdemonstratehowthesemethodscanbeoperationalizedinpractice,
+supportingtheadaptability,scalability,andlong-termmaintainabilityoffine-tunedmodels.
+Takentogether,thesecontributionshighlightthetransformativepotentialofLoRA-
+augmentedlargelanguagemodelsinsoftwareengineering. Byimprovingaccuracy,com-
+putationalefficiency,andadaptability,thisworklaysasolidfoundationforthebroader
+adoptionofAI-drivensolutionsinsoftwarequalityassurance. Thedemonstratedresults
+establishapathwaytowardmoreintelligent,reliable,andsustainabletestautomationprac-
+tices,positioningthisapproachasapromisingdirectionforfutureresearchandindustrial
+deployment.
+FutureWork
+Thisstudydemonstratesnotableprogressinautomatedtestcasegenerationusingthe
+CodestralMambamodelwithLoRA.Nonetheless,severalresearchdirectionsremainopen
+toenhanceitsgeneralization,applicability,andreproducibility.Expandingdatasetdiversity
+isakeypriority,particularlybyextendingbeyondselectivefileinclusiontowardfullproject
+repositoriesfromplatformssuchasGitLab. Suchdatasetswouldproviderichercontextual
+information,strengtheningcross-domaingeneralizationandreducingoverfittingrisks.
+TheproprietaryTestCase2Codedatasetremainsrestrictedduetoconfidentialitycon-
+straints; however, the release of a fully anonymized or synthetic version is planned to
+ensure compliance with data protection standards while supporting transparency and
+reproducibility. This process will involve generating synthetic samples and metadata
+consistentwiththeoriginaldatasetschema,enablingfutureopen-accessresearch.
+Furtherinvestigationswillexploreadaptivefine-tuningstrategiestobalanceperfor-
+manceandcomputationalefficiency,facilitatingadoptionbyteamswithlimitedresources.
+Complementaryevaluationmetricssuchasmaintainability,readability,andintegration
+effort,combinedwithdeveloperandtesterfeedback,willhelpalignmodelevaluationwith
+real-worldsoftwareengineeringneeds.
+The chatbot developed in this study has been deployed within the collaborating
+enterpriseasanearly-stageprototype,allowingiterativevalidationofthemodel’spractical
+utilityingeneratingautomatedtestcasesandreducingmanualtestingeffort. Whilethe
+current assessment is qualitative, it demonstrates strong potential for integration into
+continuous testing pipelines. Future work will include a formal user study involving
+softwareprofessionalstoquantitativelyassessusability,accuracy,andreal-worldimpact.
+Finally,researchintocontinuousadaptationmechanismsandstandardizedintegra-
+tion frameworks could enable the seamless incorporation of such models into CI/CD
+environments,ensuringsustainedrelevanceandfacilitatingbroaderindustrialadoption.
+AuthorContributions: Conceptualization, methodology, andcode, Y.S.I.andJ.L.L.; reviewand
+editing,L.R.andP.S.Allauthorshavereadandagreedtothepublishedversionofthemanuscript.
+Funding:Thisresearchreceivednoexternalfunding.
+DataAvailabilityStatement:Thedatasetusedinthisstudyisproprietaryandnotpubliclyavailable
+duetoconfidentialityrestrictions.Representativedatawereusedsolelyforresearchpurposesand
+arenotshareable.
+ConflictsofInterest:AuthorYanetSáezIznagawasemployedbythecompanyDecsis.Theremaining
+authors declare that the research was conducted in the absence of any commercial or financial
+relationshipsthatcouldbeconstruedasapotentialconflictofinterest.
+
+## Page 15
+
+FutureInternet2025,17,476 15of25
+Abbreviations
+Thefollowingabbreviationsareusedinthismanuscript:
+AI ArtificialIntelligence
+LoRA Low-RankAdaptation
+LLMs LargeLanguageModels
+SSMs State-Space-Models
+CI/CD ContinuousIntegration/ContinuousDelivery
+PEFT Parameter-EfficientFine-Tuning
+AppendixA.IllustrativeDatasetSamples
+Toenhancetransparencyandfacilitatecomprehensionofthedatasetstructure,this
+appendix presents two anonymized, non-sensitive examples from the TestCase2Code
+dataset. Eachinstanceisorganizedintothreefiles: manualtestcase(m.txt),associated
+sourcecode(c.txt),andautomatedPytestscript(a.txt),illustratingthetripletformat
+employedthroughoutthecorpus.
+AppendixA.1. Sample17: ChartRenderingValidationScenario
+AppendixA.1.1. ManualTestCase: 17m.txt
+ListingA1. ManualtestcasedescriptionforSample17.
+Test Case: Validate Pie Chart Rendering and Data Presence
+1
+1. Step: Click on the bar chart button.
+2
+Expected Result: The bar chart is displayed successfully.
+3
+2. Step: Click on the pie chart button to switch the view.
+4
+Expected Result: The pie chart is displayed successfully on the page.
+5
+3. Step: Verify the presence of chart data.
+6
+Expected Result: The chart data is present, and no data is missing from the pie
+7
+chart.
+AppendixA.1.2. Pytest-BasedAutomatedTest: 17a.txt
+ListingA2. Pytestimplementationofthechartvalidationscenario.
+class TestCase(unittest.TestCase):
+1
+@classmethod
+2
+def setUpClass(inst):
+3
+inst.driver = login()
+4
+inst.driver=selectcompany(driver=inst.driver)
+5
+6
+@pytest.mark.order(4)
+7
+def test_piechart(self):
+8
+# Click on the bar chart button and verify chart
+9
+self.driver.find_element(By.XPATH,
+10
+‘‘/html/body/div/div/div[1]/div/div[2]/div[4]/div/div[2]/button[3]/img’’).click()
+time.sleep(5)
+11
+12
+# Click on the pie chart button and verify chart
+13
+attach(data=self.driver.get_screenshot_as_png())
+14
+self.assertTrue(search_chart(self.driver, typechart=‘‘canva’’), ‘‘Missing
+15
+data chart’’)
+AppendixA.1.3. SourceCodeComponent: 17c.txt
+ListingA3. Partialreactimplementationforchartrendering.
+import React, { useEffect, useState } from ‘‘react’’;
+1
+import Header from ‘‘@components/header/Header/Header’’;
+2
+import Loading from ‘‘@components/Loading/Loading’’;
+3
+import Card from ‘‘@components/general/Card/Card’’;
+4
+
+## Page 16
+
+FutureInternet2025,17,476 16of25
+import formatValues from ‘‘@utils/helpers/currency.helper’’;
+5
+import { IconLabel } from ‘‘@components/form’’;
+6
+import ChartsCard from
+7
+‘‘@views/platform/modules/components/ChartsCard/ChartsCard’’;
+import { useSelector } from ‘‘react-redux’’;
+8
+import { fetchDefaultParameters, throwResponseErrors } from
+9
+‘‘@utils/helpers/response.helper’’;
+import moment from ‘‘moment’’;
+10
+import { calculateTimeRange, encodeBody } from ‘‘@utils/helpers/filters.helpers’’;
+11
+import { INITIAL_DATA } from ‘‘@utils/constants/config.constants’’;
+12
+import {
+13
+ENTERPRISE_SALES_TYPE_NUMBER_OF_INVOICES_BIG_NUMBER,
+14
+ENTERPRISE_PURCHASES_TYPE_NUMBER_OF_INVOICES_BIG_NUMBER,
+15
+} from ‘‘@utils/constants/enterprise.constants’’;
+16
+import styles from ‘‘./HomePage.module.scss’’;
+17
+18
+function returnSectionName(section, type = ‘‘main’’ || ‘‘secondary’’) {
+19
+switch (section) {
+20
+case ‘‘Empresarial’’:
+21
+if (type === ‘‘main’’) return ‘‘Ingreso Total’’;
+22
+if (type === ‘‘secondary’’) return ‘‘Ingreso Mejores Clientes’’;
+23
+return ‘‘’’;
+24
+case ‘‘Contable’’:
+25
+if (type === ‘‘main’’) return ‘‘Ingreso Total’’;
+26
+if (type === ‘‘secondary’’) return ‘‘Mejor Mes’’;
+27
+return ‘‘’’;
+28
+}
+29
+}
+30
+[...]
+31
+AppendixA.2. Sample72: PasswordChangeInterfaceValidation
+AppendixA.2.1. ManualTestCase: 72m.txt
+ListingA4. ManualtestcasedescriptionforSample72.
+Test Case: Verify Presence of Textboxes on Change Password Page
+1
+1. Step: Locate the ‘‘Current Password’’ text box using its ID.
+2
+Expected Result: The ‘‘Current Password’’ text box is present on the page.
+3
+2. Step: Capture a screenshot of the page.
+4
+Expected Result: A screenshot is taken and attached to the test report.
+5
+3. Step: Locate the ‘‘New Password’’ text box using its ID.
+6
+Expected Result: The ‘‘New Password’’ text box is present on the page.
+7
+4. Step: Capture a screenshot of the page.
+8
+Expected Result: A screenshot is taken and attached to the test report.
+9
+5. Step: Locate the ‘‘Confirm Password’’ text box using its ID.
+10
+Expected Result: The ‘‘Confirm Password’’ text box is present on the page.
+11
+6. Step: Capture a screenshot of the page.
+12
+Expected Result: A screenshot is taken and attached to the test report.
+13
+AppendixA.2.2. Pytest-BasedAutomatedTest: 72a.txt
+ListingA5. Pytestimplementationverifyingtextboxesonthepasswordchangepage.
+1
+@pytest.mark.order(3)
+2
+def test_textboxs(self):
+3
+#Find current password tex box
+4
+tb1= self.driver.find_element(By.ID,‘‘oldPassword’’)
+5
+attach(data=self.driver.get_screenshot_as_png())
+6
+self.assertTrue(tb1, ‘‘Current password tex box is present’’)
+7
+#Find new password tex box
+8
+tb2= self.driver.find_element(By.ID,‘‘newPassword’’)
+9
+attach(data=self.driver.get_screenshot_as_png())
+10
+self.assertTrue(tb2, ‘‘New password tex box is present’’)
+11
+
+## Page 17
+
+FutureInternet2025,17,476 17of25
+#Find confirm password tex box
+12
+tb3= self.driver.find_element(By.ID,‘‘passwordConfirmation’’)
+13
+attach(data=self.driver.get_screenshot_as_png())
+14
+self.assertTrue(tb3, ‘‘Confirm password tex box is present’’)
+15
+AppendixA.2.3. SourceCodeComponent: 72c.txt
+ListingA6. Partialreactimplementationforthechangepasswordpage.
+import React, { useEffect, useState } from ‘‘react’’;
+1
+import { useNavigate } from ‘‘react-router-dom’’;
+2
+import { Button, PasswordInput } from ‘‘@components/form’’;
+3
+import Spacer from ‘‘@components/general/Spacer/Spacer’’;
+4
+import { useDispatch } from ‘‘react-redux’’;
+5
+import { setModalState } from ‘‘@store/modal/Modal.slice’’;
+6
+import { setLoading } from ‘‘@store/loading/Loading.slice’’;
+7
+import { fetchDefaultParameters, throwResponseErrors } from
+8
+‘‘@utils/helpers/response.helper’’;
+import Header from ‘‘@components/header/Header/Header’’;
+9
+import SimpleHeader from ‘‘@components/header/Header/SimpleHeader’’;
+10
+import { isPasswordValid } from ‘‘@utils/helpers/formValidation.helpers’’;
+11
+12
+import styles from ‘‘./PasswordChangePage.module.scss’’;
+13
+14
+function PasswordChangePage() {
+15
+const dispatch = useDispatch();
+16
+const navigate = useNavigate();
+17
+18
+const defaultErrors = { oldPassword: {}, newPassword: {}, passwordConfirmation:
+19
+{} };
+const [form, setForm] = useState({
+20
+oldPassword: ‘‘’’,
+21
+newPassword: ‘‘’’,
+22
+passwordConfirmation: ‘‘’’,
+23
+});
+24
+25
+const [errors, setErrors] = useState(defaultErrors);
+26
+27
+useEffect(() => {
+28
+dispatch(setLoading(false));
+29
+}, []);
+30
+31
+const onChange = (event) => {
+32
+const fieldName = event.target.name;
+33
+const fieldValue = event.target.value;
+34
+35
+setForm({
+36
+...form,
+37
+[fieldName]: fieldValue,
+38
+});
+39
+};
+40
+[...]
+41
+AppendixB.RepresentativePrompt–ResponsePair
+ThisappendixpresentsarepresentativepromptresponsepairfromtheTestCase2Code
+datasetusedduringthefine-tuningoftheCodestralMamba7Bmodel. Asillustratedin
+Figure 2, each sample consists of a fixed instruction provided by the “user” and the
+corresponding“assistant”output. Whiletheinstructionremainsconstantacrossall
+training samples, the embedded manual test case and associated .jsx source file vary
+incontent.
+
+## Page 18
+
+FutureInternet2025,17,476 18of25
+role: user
+content:
+Usingtheprovidedmanualtestcaseandthecorresponding.jsxfileascontext,
+generateacomprehensiveautomatedtestbasedonthePytestframework,follow-
+ingbestpracticesforfunctionaltesting.
+ManualTestCase(excerpt)
+Validatethatthepasswordchangeformverifiesthecurrentpasswordandrequiresconfir-
+mationofthenewpasswordbeforesubmission.
+SourceCode(excerpt: 72c.txt)
+%[language=JavaScript]
+1
+function PasswordChangePage() {
+2
+const [form, setForm] = useState({
+3
+oldPassword: ‘‘’’,
+4
+newPassword: ‘‘’’,
+5
+passwordConfirmation: ‘‘’’,
+6
+});
+7
+return (
+8
+<>
+9
+<PasswordInput id=‘‘oldPassword’’ label=‘‘Current Password’’ />
+10
+<PasswordInput id=‘‘newPassword’’ label=‘‘New Password’’ />
+11
+<PasswordInput id=‘‘passwordConfirmation’’ label=‘‘Confirm
+12
+Password’’ />
+</>
+13
+);
+14
+}
+15
+role: assistant
+content:
+AutomatedfunctionaltestimplementedinPythonusingthePytestframework.
+import pytest
+1
+from pages.password_change import PasswordChangePage
+2
+3
+def test_password_change_validation(setup_driver):
+4
+page = PasswordChangePage(setup_driver)
+5
+page.open()
+6
+page.enter_old_password(‘‘wrong_password’’)
+7
+page.enter_new_password(‘‘newpass123’’)
+8
+page.enter_confirmation(‘‘newpass123’’)
+9
+page.submit()
+10
+assert page.error_message_displayed(‘‘Invalid current password’’)
+11
+This structure exemplifies the fixed prompt formulation applied during training,
+ensuringalignmentbetweennaturallanguagedescriptions,sourcecodecontext,andthe
+resultingexecutablePytesttestcases.
+AppendixC.RepresentativePromptResponseExamplesof
+Model-GeneratedPytestCode
+AppendixC.1. EvaluationoftheSuccessfulLoginQuery
+Inthebaselinescenario,theCodestralMambamodel,configuredwithaLoRAscale
+factorof0andtemperatureof0,waspromptedwith“successfullogin”. Insteadofproduc-
+ingexecutablecode,itgeneratedageneraltextualexplanationcoveringauthentication,
+accessvalidation, andsessionhandling. Thisbehaviorreflectsthemodel’sinterpretive
+
+## Page 19
+
+FutureInternet2025,17,476 19of25
+modepriortofine-tuning,favoringdescriptiveresponsesoverstructuredautomation. A
+detailedoutputexampleisshowninTableA1.
+TableA1. Evaluationofthesuccessfulloginquery.
+SystemConfiguration: LoRAScaleFactor: 0,Temperature: 0,SystemPrompt: None
+SystemInput: successfullogin
+System-GeneratedOutput:
+A successful login is when a user is able to access a system or website by
+1
+entering their username and password. This typically indicates that the user
+has been authenticated and is now authorized to use the system or website.
+2
+In a successful login, the user’s credentials are verified and they are granted
+3
+access to the system or website. The user is then able to perform actions
+such as viewing data, making changes, or performing other tasks that are
+available to them within the system or website.
+4
+It’s important to note that a successful login does not necessarily mean that the
+5
+user’s session is active. The user’s session may have expired, or they may
+have logged out of the system or website. Therefore, it’s always a good
+practice to check the session status and ensure that the user is still
+logged in before performing any actions.
+AppendixC.2. LoRAAutomatedandManualTestCaseGeneration
+Toevaluatetheimpactoffine-tuning, thestructuredprompt“successfullogintest
+case” was processed using a LoRA scale factor of 2 and temperature of 0. The model
+generatedbothahuman-readable,step-by-stepmanualtestandafunctionalPytestscript.
+ThisoutputillustrateshowLoRAfine-tuningenhancesthemodel’scapacitytoabstracttest
+patternsandproduceexecutabletestinglogicbasedonimplicitrequirements(TableA2).
+TableA2. LoRA-automatedandmanualtestcasegeneration.
+SystemConfiguration: LoRAScaleFactor: 2,Temperature: 0,SystemPrompt: None
+SystemInput: successfullogintestcase
+System-GeneratedOutput:
+1. Accesstheloginpage.
+2. Entertheusernameandpassword.
+3. Clickontheloginbutton.
+4. Verifythatyouareredirectedtothehomepage.
+1 @pytest.mark.order(5)
+2 def test_successlogin(self):
+3 self.driver.get(f"{url}")
+4 time.sleep(3)
+5 username = self.driver.find_element(By.ID, "email")
+6 password = self.driver.find_element(By.ID, "password")
+7 attach(data=self.driver.get_screenshot_as_png())
+8 self.assertTrue(self.driver.find_element(By.ID, "email"))
+9 attach(data=self.driver.get_screenshot_as_png())
+10 self.assertTrue(self.driver.find_element(By.ID, "password"))
+11 attach(data=self.driver.get_screenshot_as_png())
+12 self.assertTrue(self.driver.find_element(By.ID, "s2OU4WwTFzAvqv077oCG"))
+13
+14 username.send_keys(user)
+15 password.send_keys(passw)
+16 self.driver.find_element(By.ID, "s2OU4WwTFzAvqv077oCG").send_keys(Keys.ENTER)
+17 time.sleep(3)
+18 attach(data=self.driver.get_screenshot_as_png())
+19 self.assertEqual(self.driver.current_url, f"{url}select-company")
+
+## Page 20
+
+FutureInternet2025,17,476 20of25
+AppendixC.3. InfluenceofTemperatureandLoRAScaling
+Adjusting LoRA scaling and temperature produced notable differences in output
+depthandreasoning. Withascalefactorof3.0andtemperatureof0.5,themodelgenerated
+moredetailedtestcasesincorporatinginferredbusinesslogicandcomprehensivelocator
+usagewithoutexplicitinstructions. Thesevariants,presentedinTableA3,highlightthe
+model’sadaptabilityandcontextualreasoningunderincreasedcreativelatitude.
+TableA3. InfluenceoftemperatureandLoRAontestcasegeneration.
+SystemConfiguration:LoRAScaleFactor:3,Temperature:0.5,SystemPrompt:None
+SystemInput:successfullogintestcase
+FirstSystem-GeneratedOutput:
+1 @pytest.mark.order(10)
+2 def test_successlogin(self):
+3 # locate password form by_name
+4 username = self.driver.find_element(By.ID, "email")
+5 password = self.driver.find_element(By.ID, "password")
+6
+7 # verify elements are present
+8 attach(data=self.driver.get_screenshot_as_png())
+9 self.assertTrue(self.driver.find_element(By.ID, "email"))
+10 attach(data=self.driver.get_screenshot_as_png())
+11 self.assertTrue(self.driver.find_element(By.ID, "password"))
+12 attach(data=self.driver.get_screenshot_as_png())
+13 self.assertTrue(
+14 self.driver.find_element(
+15 By.ID, "s2OU4WwTFzAvqv077oCG"))
+16
+17 # send_keys() to simulate key strokes
+18 username.send_keys(user)
+19 # send_keys() to simulate key strokes
+20 password.send_keys(passw)
+21 self.driver.find_element(
+22 By.ID, "s2OU4WwTFzAvqv077oCG").send_keys(
+23 Keys.ENTER)
+24 time.sleep(3)
+25 attach(data=self.driver.get_screenshot_as_png())
+26 # Verify access to company selection
+27 self.assertEqual(self.driver.current_url, f"{url}select-company")
+SecondSystem-GeneratedOutput:
+1 @pytest.mark.order(10)
+2 def test_successlogin(self):
+3 # locate password form by_name
+4 username = self.driver.find_element(By.ID, "email")
+5 password = self.driver.find_element(By.ID, "password")
+6
+7 # verify elements are present
+8 attach(data=self.driver.get_screenshot_as_png())
+9 self.assertTrue(self.driver.find_element(By.ID, "s2OU4WwTFzAvqv077oCG"))
+10 self.assertTrue(self.driver.find_element(By.ID, "password"))
+11 self.assertTrue(
+12 self.driver.find_element(
+13 By.XPATH,
+14 "/html/body/div/div/div[1]/div/div[2]/div[1]/div[1]/div[1]/h2"))
+15 self.assertTrue(
+16 self.driver.find_element(
+17 By.XPATH,
+18 "/html/body/div/div/div[1]/div/div[2]/div[1]/div[1]/div[1]/form/p"))
+19
+20 # send_keys() to simulate key strokes
+21 username.send_keys(user)
+22 # send_keys() to simulate key strokes
+23 password.send_keys(passw)
+24 self.driver.find_element(
+25 By.XPATH,
+26 "/html/body/div/div/div[1]/div/div[2]/div[1]/div[1]/div[1]/form/button").send_keys(
+27 Keys.ENTER)
+28 time.sleep(3)
+29 attach(data=self.driver.get_screenshot_as_png())
+30 # Verify access to company selection
+31 self.assertEqual(self.driver.current_url, f"{url}select-company")
+
+## Page 21
+
+FutureInternet2025,17,476 21of25
+AppendixC.4. EnhancingTestCoveragewithLoRA
+Theexperimentfurtherexploredtestcoverageexpansion. UsingaLoRAscalefactor
+of3andtemperatureof0,themodelwaspromptedtogenerateadditionalcasescomple-
+menting a base scenario. The resulting outputs, summarized in Table A4, demonstrate
+extendedcoveragethroughnewinputpathsandvalidationconditions, evidencingthe
+model’scapacitytoreasonaboutfunctionaldiversityandcompleteness.
+TableA4. EnhancingtestcoveragewithLoRA.
+SystemConfiguration: LoRAScaleFactor: 3,Temperature: 0,SystemPrompt: None
+SystemInput: Canyougenerate2automatedtestcasestoimprovetestcoverage,
+consideringyourfine-tuningonthisproject?
+1 @pytest.mark.order(3)
+2 def test_reportype_values(self):
+3 # Click on the report type filter
+4 self.driver.find_element(
+5 By.ID, "sales-report-type-filter").send_keys(Keys.ENTER)
+6 # Click on the option "Income"
+7 self.driver.find_element(
+8 By.XPATH,
+9
+"/html/body/div/div/div[1]/div/div[2]/div[4]/div[3]/div/div[1]/p[1]/label/span").click()
+10 time.sleep(5)
+11 # Click on the download button
+12 self.driver.find_element(
+13 By.XPATH,
+14 "/html/body/div/div/div[1]/div/div[2]/div[5]/div[1]/button").send_keys(
+15 Keys.ENTER)
+16 time.sleep(3)
+17 # Verify that the report was downloaded
+18 file = "Income.csv"
+19 self.assertTrue(
+20 os.path.isfile(
+21 os.path.join(
+22 self.download_dir,
+23 file)),
+24 "The file does not exist in the specified directory")
+25
+26 @pytest.mark.order(4)
+27 def test_reportype_values(self):
+28 # Click on the report type filter
+29 self.driver.find_element(
+30 By.ID, "sales-report-type-filter").send_keys(Keys.ENTER)
+31 # Click on the option "Expenses"
+32 self.driver.find_element(
+33 By.XPATH,
+34
+"/html/body/div/div/div[1]/div/div[2]/div[4]/div[3]/div/div[1]/p[2]/label/span").click()
+35 time.sleep(5)
+36 # Click on the download button
+37 self.driver.find_element(
+38 By.XPATH,
+39 "/html/body/div/div/div[1]/div/div[2]/div[5]/div[1]/button").send_keys(
+40 Keys.ENTER)
+41 time.sleep(3)
+42 # Verify that the report was downloaded
+43 file = "Expenses.csv"
+44 self.assertTrue(
+45 os.path.isfile(
+46 os.path.join(
+47 self.download_dir,
+48 file)),
+49 "The file does not exist in the specified directory" )
+
+## Page 22
+
+FutureInternet2025,17,476 22of25
+AppendixC.5. Cross-ProjectTestGeneration
+GeneralizationacrossprojectswasassessedusingmanualteststepsandJSXcontext
+from a different system, ALICE4u (more information on ALICE4u is available at https:
+//www.alice.healthcare/, accessedon9October2025). WithaLoRAscalefactorof1.0
+and temperature of 0, the model successfully generated a tailored Pytest case for the
+foreignenvironment(TableA5),confirmingitspotentialforcross-projectadaptabilityand
+transferlearning.
+TableA5. Evaluationofcross-projecttestgenerationusingLoRA.
+SystemConfiguration: LoRAScaleFactor: 1,Temperature: 0,SystemPrompt:
+"Usingtheprovidedtestcasemanualandthecorresponding.jsxfileascontext,
+generateatestcasebasedonthePytestlibrary. Ensurethetestcaseiscomprehensive
+andfollowsbestpracticeswithPytest."
+SystemInput: "TestCase: TechnicalDirector_Admin_Validpasswordandmail. Step:
+Accesstheloginpageandfillinthefields. ExpectedResult: Accesstheinstitution."and.jsxfile.
+1 @pytest.mark.order(1)
+2 def test_login_page(self):
+3 # Access the login page
+4 self.driver.get(f"{self.driver.current_url}login")
+5 time.sleep(2)
+6
+7 # Find the username and password input fields
+8 username = self.driver.find_element(By.ID, "username")
+9 password = self.driver.find_element(By.ID, "password")
+10
+11 # Fill in the fields
+12 username.send_keys("admin@example.com")
+13 password.send_keys("admin")
+14
+15 # Find the submit button and click it
+16 submit = self.driver.find_element(By.ID, "submit")
+17 submit.click()
+18 time.sleep(5)
+19
+20 # Verify that the user is redirected to the institution selection page
+21 self.assertEqual(self.driver.current_url,
+f"{self.driver.current_url}select-institution")
+AppendixC.6. BugPreventionThroughAutomatedTesting
+Finally,toassessthemodel’sroleindefectprevention,apromptdescribingaknown
+bug, missing input validation, was submitted. With a LoRA scale factor of 2 and tem-
+peratureof0,themodelautonomouslyproducedatestenforcinginputconstraintsand
+verifyingerrormessagehandling. AsshowninTableA6,thisdemonstratesthemodel’s
+capacitytocontributetoregressionpreventionandtest-drivendevelopmentpractices.
+
+## Page 23
+
+FutureInternet2025,17,476 23of25
+TableA6. Bugpreventionviaautomatedtesting.
+SystemConfiguration: LoRAScaleFactor: 2,Temperature: 0,SystemPrompt: None
+SystemInput: CreatecodeinPytesttoavoidthisbug: Title: Validationofthefield.
+Description: Thereisnotvalidationofthefield: “Teléfono”.
+ActualResult: fieldvalueissaved. Steps:
+1. GotoManage/Company
+2. Populatethefieldwithspecialcharacters.
+3. Clickonthe“Save”button.
+1 @pytest.mark.order(7)
+2 def test_phone(self):
+3 # Go to company management
+4 self.driver.find_element(
+5 By.XPATH, "/html/body/div/div/div[1]/div/nav/div[2]/button").send_keys(Keys.ENTER)
+6 self.driver.find_element(
+7 By.XPATH,
+"/html/body/div/div/div[1]/div/nav/div[2]/ul/li[1]/button").send_keys(Keys.ENTER)
+8 self.driver.find_element(
+9 By.XPATH,
+10 "/html/body/div/div/div[1]/div/nav/div[2]/ul/li[1]/ul/li[1]/a").send_keys(
+11 Keys.ENTER)
+12 time.sleep(2)
+13 # Fill phone field with special characters
+14 self.driver.find_element(
+15 By.XPATH,
+16
+"/html/body/div/div/div[1]/div/div[2]/div[3]/form/div[2]/div[2]/div/input").send_keys(
+17 Keys.CONTROL + "a")
+18 time.sleep(2)
+19 self.driver.find_element(
+20 By.XPATH,
+21
+"/html/body/div/div/div[1]/div/div[2]/div[3]/form/div[2]/div[2]/div/input").send_keys(
+22 Keys.DELETE)
+23 time.sleep(2)
+24 self.driver.find_element(
+25 By.XPATH,
+26
+"/html/body/div/div/div[1]/div/div[2]/div[3]/form/div[2]/div[2]/div/input").send_keys(
+27 "!\"#$%&’()*+,-./:;<=>?@[\\]^_‘{|}~")
+28 time.sleep(2)
+29 # Click on the save button
+30 self.driver.find_element(
+31 By.XPATH,
+32 "/html/body/div/div/div[1]/div/div[2]/div[3]/form/div[3]/button[1]").send_keys(
+33 Keys.ENTER)
+34 time.sleep(2)
+35 # Verify if the validation message is displayed
+36 msg = self.driver.find_element(
+37 By.XPATH,
+38 "/html/body/div/div/div[1]/div/div[2]/div[3]/form/div[2]/div[2]/p")
+39 attach(data=self.driver.get_screenshot_as_png())
+40 self.assertTrue(msg.is_displayed(), "Validation message is displayed: The information
+entered does not comply with the required format")
+References
+1. Demir,B.;Aksoy,A. ImplementingStrategicAutomationinSoftwareDevelopmentTestingtoDriveQualityandEfficiency. Sage
+Sci.Rev.Appl.Mach.Learn.2024,7,94–119.
+2. Umar,M.A.;Chen,Z. AStudyofAutomatedSoftwareTesting:AutomationToolsandFrameworks. Int.J.Comput.Sci.Eng.2019,
+8,215–223.
+3. Sewnet,A.;Kifle,M.;Tilahun,S.L. TheApplicabilityofAutomatedTestingFrameworksforMobileApplicationTesting: A
+SystematicLiteratureReview. Computers2023,12,97.[CrossRef]
+4. OpenAI. GPT-4TechnicalReport. arXiv2023,arXiv:2303.08774.
+5. Devlin,J.;Chang,M.W.;Lee,K.;Toutanova,K. BERT:Pre-trainingofDeepBidirectionalTransformersforLanguageUnderstand-
+ing. InProceedingsoftheNAACL-HLT,Minneapolis,MN,USA,2–7June2019;pp.4171–4186.
+6. Raffel,C.;Shazeer,N.;Roberts,A.;Lee,K.;Narang,S.;Matena,M.;Zhou,Y.;Li,W.;Liu,P.J. ExploringtheLimitsofTransfer
+LearningwithaUnifiedText-to-TextTransformer. J.Mach.Learn.Res.2020,21,1–67.
+7. Ramadan,A.;Yasin,H.;Pektas,B. TheRoleofArtificialIntelligenceandMachineLearninginSoftwareTesting. arXiv2024,
+arXiv:2409.02693.
+
+## Page 24
+
+FutureInternet2025,17,476 24of25
+8. Khaliq,Z.;Farooq,S.U.;Khan,D.A. ArtificialIntelligenceinSoftwareTesting:Impact,Problems,ChallengesandProspect. arXiv
+2022,arXiv:2201.05371.
+9. Alagarsamy,S.;Tantithamthavorn,C.;Arora,C.;Aleti,A. EnhancingLargeLanguageModelsforText-to-TestcaseGeneration.
+arXiv2024,arXiv:2402.11910.[CrossRef]
+10. Fang,W.;Wang,K.;Wang,W. AutomatedTestCaseGenerationforWebAssemblyUsingLargeLanguageModels. InProceedings
+oftheInternationalConferenceonLearningRepresentations,Vienna,Austria,7–11May2024.
+11. Jin,H.;Huang,L.;Cai,H.;Yan,J.;Li,B.;Chen,H. FromLLMstoLLM-basedAgentsforSoftwareEngineering: ASurveyof
+CurrentChallengesandFuture. arXiv2024,arXiv:2408.02479.
+12. Haque,M.Z.;Afrin,S.;Mastropaolo,A. ASystematicLiteratureReviewofParameter-EfficientFine-TuningforLargeCode
+Models. arXiv2025,arXiv:2504.21569.
+13. Shtokal,A.;Smołka,J. ComparativeanalysisofframeworksusedinautomatedtestingonexampleofTestNGandWebdriverIO.
+J.Comput.Sci.Inst.2021,19,100–106.[CrossRef]
+14. Yu,S.;Fang,C.;Ling,Y.;Wu,C.;Chen,Z.Llmfortestscriptgenerationandmigration:Challenges,capabilities,andopportunities.
+InProceedingsofthe2023IEEE23rdInternationalConferenceonSoftwareQuality,Reliability,andSecurity(QRS),ChiangMai,
+Thailand,22–26October2023;pp.206–217.
+15. Zhang,J.;Liu,X.;Chen,J. SoftwareTestingWithLargeLanguageModels:Survey,Landscape,andVision. IEEETrans.Softw.Eng.
+2024,50,911–936.
+16. Liu, Z.; Chen, C.; Wang, J.; Chen, M.; Wu, B.; Che, X.; Wang, D.; Wang, Q. Make llm a testing expert: Bringing human-
+likeinteractiontomobileguitestingviafunctionality-awaredecisions. InProceedingsoftheIEEE/ACM46thInternational
+ConferenceonSoftwareEngineering,Lisbon,Portugal,14–20April2024;pp.1–13.
+17. Dantas,V. LargeLanguageModelPoweredTestCaseGenerationforSoftwareApplications. TechnicalDisclosureCommons,26
+September2023. Availableonline:https://www.tdcommons.org/dpubs_series/6279(accessedon26September2024).
+18. Xue,Z.;Li,L.;Tian,S.;Chen,X.;Li,P.;Chen,L.;Jiang,T.;Zhang,M. LLM4Fin: FullyAutomatingLLM-PoweredTestCase
+GenerationforFinTechSoftwareAcceptanceTesting. InProceedingsofthe33rdACMSIGSOFTInternationalSymposiumon
+SoftwareTestingandAnalysis,Vienna,Austria,16–20September2024;pp.1643–1655.
+19. Karmarkar,H.;Agrawal,S.;Chauhan,A.;Shete,P. Navigatingconfidentialityintestautomation:Acasestudyinllmdriventest
+datageneration. InProceedingsofthe2024IEEEInternationalConferenceonSoftwareAnalysis,EvolutionandReengineering
+(SANER),Rovaniemi,Finland,12–15March2024;pp.337–348.
+20. Chao,R.;Cheng,W.-H.;LaQuatra,M.;Siniscalchi,S.M.;Yang,C.-H.H.;Fu,S.-W.;Tsao,Y. AnInvestigationofIncorporating
+MambaforSpeechEnhancement. InProceedingsofthe2024IEEESpokenLanguageTechnologyWorkshop(SLT),Macao,2–5
+December2024;IEEE:Piscataway,NJ,USA,2024;pp.302–308.
+21. Gu,A.;Dao,T. Mamba:Linear-timesequencemodelingwithselectivestatespaces. arXiv 2023,arXiv:2312.00752.
+22. Wang,Y.;Wang,W.;Joty,S.;Hoi,S.C. Codet5:Identifier-awareunifiedpre-trainedencoder-decodermodelsforcodeunderstand-
+ingandgeneration. arXiv2021,arXiv:2109.00859.
+23. Siroš,I.;Singelée,D.;Preneel,B. GitHubCopilot:TheperfectCodecompLeeter? arXiv2024,arXiv:2406.11326.
+24. Kaur,K.;Khatri,S.K.;Datta,R. Analysisofvarioustestingtechniques. Int.J.Syst.Assur.Eng.Manag.2014,5,276–290.[CrossRef]
+25. Cohn,M. SucceedingwithAgile;Addison-WesleyProfessional:Boston,MA,USA,2009;p.504.
+26. El-Morabea,K.;El-Garem,H.TestingPyramid. ModularizingLegacyProjectsUsingTDD:Test-DrivenDevelopmentwithXCTest
+foriOS;Springer:Cham,Switzerland,2021;pp.65–83.
+27. Feng,Z.;Guo,D.;Tang,D.;Duan,N.;Feng,X.;Gong,M.;Shou,L.;Qin,B.;Liu,T.;Jiang,D.;etal. Codebert:Apre-trainedmodel
+forprogrammingandnaturallanguages. arXiv2020,arXiv:2002.08155.
+28. Harman,M.;McMinn,P. ATheoreticalandEmpiricalStudyofSearch-BasedTesting:Local,Global,andHybridSearch. IEEE
+Trans.Softw.Eng.2010,36,226–247.[CrossRef]
+29. Guo,D.;Ren,S.;Lu,S.;Feng,Z.;Tang,D.;Liu,S.;Zhou,L.;Duan,N.;Svyatkovskiy,A.;Fu,S.;etal. Graphcodebert:Pre-training
+coderepresentationswithdataflow. arXiv2020,arXiv:2009.08366.
+30. Guo,D.;Lu,S.;Duan,N.;Wang,Y.;Zhou,M.;Yin,J. Unixcoder:Unifiedcross-modalpre-trainingforcoderepresentation. arXiv
+2022,arXiv:2203.03850.
+31. Delgado-Pérez,P.;Ramírez,A.;Valle-Gómez,K.;Medina-Bulo,I.;Romero,J.Interevo-TR:InteractiveEvolutionaryTestGeneration
+withReadabilityAssessment. IEEETrans.Softw.Eng.2023,49,2580–2596.[CrossRef]
+32. Xiao,X.;Li,S.;Xie,T.;Tillmann,N.CharacteristicStudiesofLoopProblemsforStructuralTestGenerationviaSymbolicExecution.
+InProceedingsofthe28thIEEE/ACMInternationalConferenceonAutomatedSoftwareEngineering(ASE),SiliconValley,CA,
+USA,11–15November2013;pp.246–256.
+33. Tang,Y.;Liu,Z.;Zhou,Z.;Luo,X. ChatGPTvsSBST:AComparativeAssessmentofUnitTestSuiteGeneration. arXiv2023,
+arXiv:2307.00588.[CrossRef]
+
+## Page 25
+
+FutureInternet2025,17,476 25of25
+34. Hu,E.J.;Shen,Y.;Wallis,P.;Allen-Zhu,Z.;Li,Y.;Wang,S.;Chen,W. LoRA:Low-RankAdaptationofLargeLanguageModels.
+arXiv 2021,arXiv:2106.09685.
+35. Storhaug,A.;Mahmood,T.;Zhang,Y.;Patel,R.;Singh,A.;Müller,L.;Chen,X.;Oliveira,R.;Kim,J.;Rossi,F.;etal. Parameter-
+EfficientFine-TuningofLargeLanguageModels. arXiv2024,arXiv:2411.02462.
+36. Huang,K.;Zhang,J.;Bao,X.;Wang,X.;Liu,Y. ComprehensiveFine-TuningLargeLanguageModelsofCodeforAutomated
+ProgramRepair. IEEETrans.Softw.Eng.2025,51,904–928.[CrossRef]
+37. Lu,S.;Guo,D.;Cao,Z.;Duan,N.;Li,M.;Liu,S.;Sun,M.;Wang,D.;Tang,J.;Li,G.;etal. CodeXGLUE:AMachineLearning
+BenchmarkDatasetforCodeUnderstandingandGeneration. arXiv2021,arXiv:2102.04664.
+38. Parihar,M.;Bharti,A. ASurveyofSoftwareTestingTechniquesAndAnalysis. Int.J.Res.2019,6,153–158.
+39. Wallace,D.R.;Fujii,R.U. SoftwareVerificationandValidation:AnOverview. IEEESoftw.1989,6,10–17.[CrossRef]
+40. Beizer,B. SoftwareTestingTechniques;VanNostrandReinhold:NewYork,NY,USA,1990.
+41. Myers,G.J.;Sandler,C.;Badgett,T. TheArtofSoftwareTesting;JohnWiley&Sons:Hoboken,NJ,USA,2011.
+42. Jorgensen,P.C. SoftwareTesting:ACraftsman’sApproach,4thed.;CRCPress:BocaRaton,FL,USA,2013.
+43. Ognawala,S.;Petrovska,A.;Beckers,K. AnExploratorySurveyofHybridTestingTechniquesInvolvingSymbolicExecutionand
+Fuzzing. arXiv 2017,arXiv:1712.06843.
+44. Dao,T.;Gu,A. TransformersareSSMs:Generalizedmodelsandefficientalgorithmsthroughstructuredstatespaceduality. arXiv
+2024,arXiv:2405.21060.
+45. Iyer,S.;Konstas,I.;Cheung,A.;Zettlemoyer,L.Mappinglanguagetocodeinprogrammaticcontext. arXiv 2018,arXiv:1808.09588.
+Disclaimer/Publisher’sNote: Thestatements, opinionsanddatacontainedinallpublicationsaresolelythoseoftheindividual
+author(s)andcontributor(s)andnotofMDPIand/ortheeditor(s).MDPIand/ortheeditor(s)disclaimresponsibilityforanyinjuryto
+peopleorpropertyresultingfromanyideas,methods,instructionsorproductsreferredtointhecontent.
+

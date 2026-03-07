@@ -1,0 +1,1032 @@
+# Make Llm A Testing Expert Bringing Human-Like Interaction To Mobile Gui Testing Via Functionality-Aware Decisions
+
+**Source:** Make_LLM_a_Testing_Expert_Bringing_Human-Like_Interaction_to_Mobile_GUI_Testing_via_Functionality-Aware_Decisions.pdf  
+**Converted:** 2026-01-26 09:23:31
+
+---
+
+## Page 1
+
+2024 IEEE/ACM 46th International Conference on Software Engineering (ICSE)
+Make LLM a Testing Expert: Bringing Human-like Interaction to
+Mobile GUI Testing via Functionality-aware Decisions
+ZheLiu1,2,ChunyangChen3,JunjieWang1,2,∗,MengzhuoChen1,2,BoyuWu2,4,
+XingChe1,2,DandanWang1,2,QingWang1,2,5,∗
+1StateKeyLaboratoryofIntelligentGame,Beijing,China
+InstituteofSoftwareChineseAcademyofSciences,Beijing,China;
+2UniversityofChineseAcademyofSciences,Beijing,China;∗Correspondingauthor;
+3TechnicalUniversityofMunich,Munich,Germany;4DiDiGlobalInc;
+5Science&TechnologyonIntegratedInformationSystemLaboratory
+liuzhe181@mails.ucas.ac.cn,Chunyang.chen@monash.edu,junjie@iscas.ac.cn,wq@iscas.ac.cn
+ABSTRACT 1 INTRODUCTION
+AutomatedGraphicalUserInterface(GUI)testingplaysacrucial Inrecentyears,mobileappshavebecomeanindispensablepartof
+roleinensuringappquality,especiallyasmobileapplicationshave ourdailylife,withmillionsofappsavailablefordownloadfrom
+becomeanintegralpartofourdailylives.Despitethegrowing appstoresliketheGooglePlayStore[4]andAppleAppStore[3].
+popularityoflearning-basedtechniquesinautomatedGUItesting Withtheriseofappimportanceinourdailylife,ithasbecome
+duetotheirabilitytogeneratehuman-likeinteractions,theystill increasinglycriticalforappdeveloperstoensurethattheirapps
+sufferfromseverallimitations,suchaslowtestingcoverage,inad- areofhighqualityandperformasexpectedforusers.Toavoid
+equategeneralizationcapabilities,andheavyrelianceontraining time-consumingandlabor-extensivemanualtesting,automated
+data.InspiredbythesuccessofLargeLanguageModels(LLMs)like GUI(GraphicalUserInterface)testingiswidelyusedforquality
+ChatGPTinnaturallanguageunderstandingandquestionanswer- assuranceofmobileapps[43,44,47,77,78,83],i.e.,dynamicallyex-
+ing,weformulatethemobileGUItestingproblemasaQ&Atask. ploringmobileappsbyexecutingdifferentactionssuchasscrolling
+WeproposeGPTDroid,askingLLMtochatwiththemobileappsby andclickingtoverifytheappfunctionality.
+passingtheGUIpageinformationtoLLMtoelicittestingscripts, Unfortunately,existingGUItestingtoolssuchasprobability-
+andexecutingthemtokeeppassingtheappfeedbacktoLLM,it- based or model-based ones [31, 56, 63] suffer from low testing
+eratingthewholeprocess.Withinthisframework,wehavealso coverage,meaningthattheymaymissimportantbugsandissues.
+introducedafunctionality-awarememorypromptingmechanism Thisisbecauseofthecomplexanddynamicnatureofmodernmo-
+thatequipstheLLMwiththeabilitytoretaintestingknowledge bileapps[18,22,31,52,55,56],whichcanhavehundredsoreven
+ofthewholeprocessandconductlong-term,functionality-based thousandsofdifferentscreens,eachwithitsownuniquesetofinter-
+reasoningtoguideexploration.Weevaluateiton93appsfrom actionsandpossibleuseractionsandlogic.Inaddition,testinputs
+GooglePlayanddemonstratethatitoutperformsthebestbaseline generatedbythesemethodsaresignificantlydifferentfromreal
+by32%inactivitycoverage,anddetects31%morebugsatafaster users’interactiontraces[53],resultinginlowtestingcoverage.To
+rate.Moreover,GPTDroididentifies53newbugsonGooglePlay, addresstheselimitations,therehasbeenagrowinginterestinusing
+ofwhich35havebeenconfirmedandfixed. deeplearning(DL)[34,79]andreinforcementlearning(RL)[50,54]
+techniquesforautomatedmobileGUItesting.Bylearningfrom
+humantesters’behavior,thesemethodsaimtogeneratehuman-
+KEYWORDS
+likeactionsandinteractionsthatcanbeusedtotesttheapp’sGUI
+AutomatedGUItesting,Largelanguagemodel
+morethoroughlyandeffectively.Theseapproachesarebasedon
+theideathatthemorecloselytheactionsperformedbythetesting
+ACMReferenceFormat:
+ZheLiu1,2,ChunyangChen3,JunjieWang1,2,∗,MengzhuoChen1,2,Boyu algorithmmimicthoseofahumanuser,themorecomprehensive
+Wu2,4,,XingChe1,2,DandanWang1,2,QingWang1,2,5,∗.2024.MakeLLMa andeffectivethetestingwillbe.
+TestingExpert:BringingHuman-likeInteractiontoMobileGUITestingvia Nevertheless,therearestillsomelimitationswiththeseDLor
+Functionality-awareDecisions.In2024IEEE/ACM46thInternationalConfer- RL-basedGUItestingmethods.First,learningalgorithmsrequire
+enceonSoftwareEngineering(ICSE’24),April14–20,2024,Lisbon,Portugal. largeamountsofdatawhichisdifficulttocollectfromreal-world
+ACM,NewYork,NY,USA,13pages.https://doi.org/10.1145/3597503.3639180 users’interactions.Second,learningalgorithmsaredesignedto
+learnandpredictfromtrainingdata,sotheymaynotgeneralize
+welltonew,unseensituations,asappsareconstantlyevolvingand
+updating.Third,mobileappscanbenon-deterministic,meaning
+thattheoutcomeofanactionmaynotbethesameeverytime
+itisperformed(e.g.,clickingthe“delete”buttonfromalistwith
+This work is licensed under a Creative Commons Attribution International 4.0 License. thelastcontentwouldproduceanemptylistforwhichthedelete
+ICSE’24,April14–20,2024,Lisbon,Portugal buttonnolongerworks)whichspecificallymakesitdifficultfor
+©2024Copyrightheldbytheowner/author(s).
+ACMISBN979-8-4007-0217-4/24/04. RLalgorithmstolearnandmakeaccuratepredictions.Therefore,
+https://doi.org/10.1145/3597503.3639180
+1222
+
+## Page 2
+
+ZheLiu1,2,ChunyangChen3,JunjieWang1,2,∗,MengzhuoChen1,2,BoyuWu2,4,
+ICSE’24,April14–20,2024,Lisbon,Portugal XingChe1,2,DandanWang1,2,QingWang1,2,5,∗
+anothermoreeffectiveapproachtogeneratehuman-likeactionsis
+highlyneededtotestmobileappsthoroughly.
+LargeLanguageModels(LLMs)[17,58,68,84]suchasGPT-3/4
+haveemergedasapowerfultoolfornaturallanguageunderstand-
+ingandquestionanswering.RecentadvancesinLLMhavetriggered
+variousstudiesexaminingtheuseofthesemodelsforsoftwarede-
+velopmenttasks[30,37,73]TheChatGPT[58](ChatGenerative
+Pre-trainedTransformer)fromOpenAI,hasbillionsofparameters
+andistrainedonavastdatasetcomprisingtestscriptsandbug
+reports.Itsexceptionalperformanceacrossdiversedomainsand
+topicsdemonstratestheLLM’sabilitytocomprehendhumanknowl-
+edgeandinteractwithhumansasaknowledgeableexpert.Inspired
+byChatGPT,weformulatetheGUItestingproblemasaquestions
+&answering(Q&A)task,i.e.,askingtheLLMtoplaytheroleasa
+humantestertotestthetargetapp.
+WeproposeGPTDroidforautomatedGUItesting,whichasks
+LLMtochatwithmobileappsbypassingtheGUIpageinformation
+toLLMtoelicittestingscriptsandexecutethemtokeeppassingthe
+appfeedbacktoLLM,iteratingthewholeprocess.Toconvertthe
+visualinformationoftheappGUIintothecorrespondingnatural
+language description, we first extract the semantic information
+oftheappandGUIpagebydecompilingthetargetappandview
+hierarchyfiles,anddesignlinguisticpatternstoencodetheinfor-
+mationasthepromptofLLM.Wethenutilizefew-shotlearningby
+providingdemonstrationswiththeoutputtemplatetofacilitatethe
+Figure1:DemonstratedexampleofhowGPTDroidworks.
+LLMgeneratingdesiredexecutivecommandstoexecutetheapp.
+Nevertheless,therearetwomainchallengesduringtheinter-
+OneexamplechatlogcanbeseeninFigure1.LLMcanunder-
+active Q&A GUI testing process. The first is the local dilemma.
+standtheappGUI,andprovidedetailedactionstonavigatetheapp
+DifferentfromtheLLM-basedprogramrepairorunittestgenera-
+(e.g.,A1-A5atFigure1).Tocompensateforitswrongprediction(A2
+tionwhichmainlytargetsadeterminedpieceofsoftware,GPTDroid
+formulatestheGUItestingasamulti-turntaskandtheLLMfaces
+atFigure1),thereal-timefeedbackbyGPTDroidguidesittoregen-
+eratetheinputuntiltriggeringavalidpagetransition.Itremains
+varyingGUIpages,i.e.,interactingbetweenLLMandmobileapp
+cleartestinglogicevenafteralongtestingtracetomakecomplex
+toexplorevariouspagesoftheapp.Duringtheinteractionprocess,
+reasoningofactions(A3,A4atFigure1),anditcanprioritizetotest
+itishardfortheLLMtoclearlyandaccuratelyrememberthehis-
+importantfunctionsearlier(e.g.,A5atFigure1).Amoredetailed
+toricalexplorations,especiallythosethathappenedlongbefore.
+Becauseofthis,theLLMmightonlyrelyontherecentinteractive
+analysisof GPTDroid’scapabilityisinSection5.
+informationtomakethedecision,whileomittingtheglobalview-
+Toevaluatetheeffectivenessof GPTDroid,wecarryoutanex-
+perimenton93popularAndroidappsinGooglePlaywith143bugs.
+points,whichcanmaketheexplorationfallintoalocaldilemma
+Comparedwith10common-usedandstate-of-the-artbaselines,
+andhinderitfromachievinghighercoverage.Thesecondisthe
+low-leveldilemma.BeingfedwiththedescriptiveGUIinformation,
+GPTDroidcanachievemorethan32%boostinactivitycoverage
+and20%boostincodecoveragethanthebestbaseline,resulting
+theLLMcaneasilyfocusmoreonthelow-levelsemanticsasthe
+widgetsoractivities,yetlessonthehigh-levelsemanticsasthe
+in75%activitycoverageand66%codecoverage.AsGPTDroidcan
+covermoreactivities,themethodcandetect31%morebugswith
+functionalitieswhichisachievedwithsequencesofoperationswith
+afasterspeedthanthebestbaseline.Apartfromtheaccuracyof
+thewidgets/activities.However,thefunctionalaspectofthemobile
+appisofhighinteresttotestersandusers,andhaslongbeenan
+ourGPTDroid,wealsoevaluatetheusefulnessofourGPTDroid
+bydetectingunseencrashbugsinreal-worldappsfromGoogle
+obstacletoexistingtechniques.
+Play.Among223apps,weobtain53crashbugswith35ofthem
+To overcome these challenges, within GPTDroid, we develop
+beingconfirmedandfixedbydevelopers,whiletheremainingare
+afunctionality-awarememorymechanism.Itbuildsatestingse-
+stillpending.Torevealreasonsbehindthepromisingperformance
+quencememorizertorecordalltheinteractivetestinginformation
+of our approach, we further investigate the experiment results
+intermsoftheexploredactivitiesandwidgets.Italsoqueriesthe
+qualitativelyandsummarize4findingsincludingfunction-aware
+LLMaboutthefunction-levelprogressofthetestingduringthe
+explorationthroughlongmeaningfultestingtrace,function-aware
+iterativeprocess,e.g.,whichfunctionisundertest,toenablethe
+prioritization,validtextinputandcompoundaction.
+LLMtoconducttheexplicitreasoningbyitself.Andtheinforma-
+Thecontributionsofthispaperareasfollows:
+tionisthenencodedintoafunctionality-awarememoryprompt
+andfedintotheLLMtoenabletheLLMindecidingthemeaningful • Vision.ThefirstworktoformulatetheautomaticGUItest-
+operationsequencetoexploretheapp’sfunctionalityandconduct ingproblemtoaninteractivequestion&answeringtaskto
+globalexplorationtocoverunexploredareas. lettheLLMconductthewholeapptestingbyunderstanding
+1223
+
+## Page 3
+
+MakeLLMaTestingExpert:BringingHuman-likeInteractiontoMobileGUITestingviaFunctionality-awareDecisions ICSE’24,April14–20,2024,Lisbon,Portugal
+theGUIsemanticinformationandautomaticallyinferring
+possibleoperationsteps.
+• Technique. A function-aware automatic GUI testing ap-
+proachGPTDroid 1whichdesignsthefunction-awaremem-
+ory mechanism to enable the LLM to focus more on the
+globalandfunctionalviewpointsofthemobileapp.
+• Evaluation.Effectivenessandusefulnessevaluationofthe
+GPTDroidinthereal-worldappswithpracticalbugsdetected
+(Section3and4).
+• Insight.Detailedqualitativeanalysisrevealingthereasons
+whyLLMcangeneratehuman-likeandfunctionality-aware
+actionsforapptesting(Section5).
+2 APPROACH
+WemodeltheGUItestingasaQuestion&Answering(Q&A)prob-
+lem,i.e.,askingtheLLMtoplayaroleasahumantester,anden-
+ablingtheinteractionsbetweentheLLMandtheappundertesting.
+Torealizethis,weproposeGPTDroid,asdemonstratedinFigure2,
+withnestedloops.
+Intheouterloop,itextractstheGUIcontextinformationofthe
+Figure2:OverviewofGPTDroid.
+currentGUIpage,encodesthemintopromptquestionsforLLM,
+decodesLLM’sfeedbackanswerintoactionableoperationscriptsto
+howweorganizetheinformationintothestylethatLLMcanbetter
+executetheapp,anditeratesthewholeprocess.Specifically,ineach
+understand.GUIcontextrelatestotheinformationoftheapp,the
+iterationofthetesting,GPTDroidfirstobtainstheviewhierarchy
+GUIpagecurrentlytested,andallthewidgetsonthepage.Theapp
+fileofthemobileappandextractstheGUIcontextincludingthe
+informationisextractedfromtheAndroidMaincast.xmlfile,while
+appinformation,informationofthecurrentGUIpage,anddetails
+theothertwotypesofinformationareextractedfromtheview
+ofeachwidgetinthepage.Wethendesignlinguisticpatternsfor
+hierarchyfile,whichcanbeobtainedbyUIAutomator[67].Table1
+generatingtheGUIpromptasinputofLLM.Weutilizetheideaof
+presentsthesummarizedviewofthem.
+few-shotlearningtoenabletheLLM’soutputtoconformwithour
+Appinformationprovidesthemacro-levelsemanticsofthe
+expectedstandardswhichcanbedirectlyexecutedintheapp,by
+appundertesting,whichfacilitatestheLLMtogainageneralper-
+providingthedemonstrationsasreference.
+spectiveaboutthefunctionsoftheapp.Theextractedinformation
+In the inner loop, it builds a testing sequence memorizer to
+includesthenameoftheappandthenameofallitsactivities.
+recordallthedetailedinteractivetestinginformation,e.g.,theex-
+PageGUIinformationprovidesthesemanticsofthecurrent
+ploredactivitiesandwidgets.Duringtheprocess,thememorizer
+pageundertestingduringtheinteractiveprocess,whichfacilitates
+alsostoresthefunctionality-levelprogressoftesting,e.g.,which
+theLLMtocapturethecurrentsnapshot.Weextracttheactivity
+functionisundertest,whichisderivedbyqueryingtheLLMand
+nameofthepage,allthewidgetsrepresentedbythe“text”field
+istoenableLLMtoconducttheexplicitreasoningbyitself.We
+or“resource-id”field(thefirstnon-emptyoneinorder),andthe
+alsodesignlinguisticpatternstoencodetheinformationintothe
+widgetpositionofthepage.Fortheposition,inspiredbythescreen
+functionality-awarememoryprompt,toequipLLMwiththecapa-
+reader[61,69,86],wefirstobtainthecoordinatesofeachwidget
+bilityofretainingknowledgeofthewholetestingandconducting
+inorderfromtoptobottomandfromlefttoright,andthewidgets
+thelong-termreasoning.Thepromptinboththeouterloopand
+whoseordinateisbelowthemiddleofthepageismarkedaslower,
+innerloopwouldtogetherinputintotheLLMforqueryingthenext
+andtherestismarkedasupper.
+operation.
+Widgetinformationdenotesthemicro-levelsemanticsofthe
+GUIpage,i.e.,theinherentmeaningofallitswidgets,whichfacili-
+2.1 GUIContextExtraction tatestheLLMinprovidingactionableoperationalstepsrelatedto
+Despiteitsexcellenceonvarioustasks,theperformanceofLLMcan thesewidgets.Theextractedinformationincludes“text”,“hint-text”,
+besignificantlyinfluencedbythequalityofitsinput,i.e.,whether and“resource-id”field(thefirstnon-emptyoneinorder),“class”
+theinputcanpreciselydescribewhattoask[16,35,89].Inthesce- field,and“clickable”field.Toavoidtheemptytextualfieldsofa
+narioofthisinteractivemobileGUItesting,weneedtoaccurately widget,wealsoextracttheinformationfromnearbywidgetsto
+depicttheGUIpagecurrentlyundertest,aswellasitscontained provideamorethoroughperspective,whichincludesthe“text”of
+widgetsinformationfromamoremicroperspective,andtheapp parentnodewidgetsandsiblingnodewidgets.
+informationfromamoremacroperspective.ThisSectiondescribes
+whichinformationwillbeextracted,andSection2.2willdescribe 2.2 GUIPromptingandExecutiveCommand
+Generation
+1Wereleasethesourcecode,dataset,anddetailedexperimentalresultsonourwebsite
+Withtheextractedinformation,wedesignlinguisticpatternsto
+https://github.com/franklinbill/GPTDroid.Andwefurtherprovideademovideohttps:
+//youtu.be/ZeCrowmvxCgtofacilitatetheunderstandingofGPTDroid. generate prompts for inputting into the LLM. We first conduct
+1224
+
+## Page 4
+
+ZheLiu1,2,ChunyangChen3,JunjieWang1,2,∗,MengzhuoChen1,2,BoyuWu2,4,
+ICSE’24,April14–20,2024,Lisbon,Portugal XingChe1,2,DandanWang1,2,QingWang1,2,5,∗
+Table1:ExtractedGUIinformationandexamples.
+Id Attribute Description Examples
+GUIcontext-Appinformation
+1 AppName Nameoftheappundertesting AppName=“MoneyTracker”
+2 Activities Listofnamesforallactivitiesoftheapp,obtainedfromAndroidManifest.xmlfile Activities=[“Main”,“AddAccount”,“Import”,“Income”,...]
+GUIcontext-pageGUIinformation
+3 ActivityName ActivitynameofthecurrentGUIpage ActivityName=“AddPersonalInformation”
+4 Widgets Listofallwidgetsincurrentpage,representedwithtext/id Widgets=[“EditAccount”,“btn_income”,...]
+5 Position Relativepositionofwidgets,obtainedthroughtheircoordinates Upper=[“Welcome”,...],Lower=[“AddIncome”,...]
+GUIcontext-widgetinformation
+6 WidgetText Widgettext,obtainedbyfield‘text’or‘hint-text’ WidgetText=“WelcometotheMoneyTracker!”
+7 WidgetID WidgetID,obtainedbyfield‘resource-id’. WidgetID=“add_account”
+8 WidgetCategory Category:TextView,EditText,ImageView,etc,obtainedbyfield‘class’ WidgetCategory=“TextView”
+9 WidgetAction Widgetaction,obtainedbyfield‘clickable’,suchasclick,input,etc. WidgetAction=“Click”
+10 NearbyWidget Nearbywidgets,obtainedbythetextofparentwidgetsandsiblingwidgets NearbyWidget=“yourincome:[SEP]$”
+Table2:TheexampleoflinguisticpatternsofGUIpromptsandgenerationrules.
+Id Patterntype Sampleoflinguisticpatterns/rules Instantiation
+GUIcontextpatterns:GUIContext
+1 Appinformation Wewanttotestthe<AppName>App.Ithasthefollowingactiv- Wewanttotest“Moneytracker”App.Ithasthefollowingactivities,including
+ities,including<Activities>. “Main”,“AddAccount”,“Import”,“Setting”,....
+2 Page GUI informa- Thecurrentpageis<ActivityName>,ithas<Widgets>.Theupper Thecurrentpageis“Main”,ithas“Income”,“Add”,“Delete”,....Theupperpart
+tion partoftheappis<Position>,thelowerpartis<Position>. oftheappis“Welcometo...,Delete,...”,thelowerpartoftheappis“Income,...”.
+3 Widgetinformation Thewidgetswhichcanbeoperatedare<WidgetText/WidgetID>. Thewidgetswhichcanbeoperatedare“Add”,“Delete”,“EditAccount”,....“Add”
+<WidgetText/WidgetID>is<WidgetCategory>whichcan<Wid- isButtonwhichcanbeclickedanditsnearbywidgetis“Addaccount,...”,“Delete”
+getAction>anditsnearbywidgetis<NearbyWidget>. isTextViewwhichcanbeclickedanditsnearbywidgetis....
+Operation&feedbackquestionpatterns:OperationQuestion
+4 Querying general Actionoperationquestion+<OutputTemplate> Whatoperationisrequired?(<Operation>[click/double-click/longpress/
+action scroll]+<WidgetName>)
+5 Queryingtextinput Inputoperationquestion+<OutputTemplate> Pleasegeneratetheinputtextinsequence,andtheoperationafterinput.(<Widget
+name>+<InputContent>,...)andprovided(<Operation[click]>+<Widgetname>)
+6 Testingfeedback Feedbackquestion Thereisno<WidgetText/WidgetID>onthecurrentpage,pleasereselect.
+Promptgenerationrules
+1 StartPrompt:GUIContext[1,2,3]+OperationQuestion[4/5]
+2 TestPrompt:Wesuccessfullydidtheaboveoperation.GUIContext[2,3]+OperationQuestion[4/5]
+3 FeedbackPrompt:Sorry,<OperationQuestion>[6]+<GUIContext>[3]+<OperationQuestion>[4/5]
+Notes:“[1,2,...,6]”meanstheidofeachpattern.Ifthereis“EditText”onthepage,GPTDroidselects“Queryingtextinput”pattern.Fortheotherwidgets,GPTDroidselects“Queryinggeneralaction”pattern.
+preprocessingfortheinformation,tofacilitatethefollow-upde- fortestingtheapp,anddetailsareinSection2.2.3.Notethat,we
+sign.WetokenizeattributesbytheunderscoreandCamelCase[6] separatethepatternsforqueryinggeneralaction(e.g.,click)and
+consideringthenamingconventioninappdevelopment. textinput(e.g.,inputcertaintext)withpattern-Id4and5respec-
+tively,toenablethegeneratedcommandscanbettermatchthe
+2.2.1 LinguisticPatternsofGUIPrompt. Todesignthepat- widgetsintheGUIpage.Forthefeedbackquestion,afterdeciding
+terns, each of the five annotators is asked to write the prompt
+thepreviousoperationisnotapplicable,weinformtheLLMthat
+sentencefollowingregularprompttemplate[14,16,26],andques-
+thereisnosuchwidgetonthecurrentpage,andletitre-try.
+tionstheLLMforgeneratingtheoperationsteps.Wethencheck
+towhatextenttherecommendedoperationisreasonableconsider- 2.2.2 PromptGenerationRules. Sincethedesignedpatterns
+ingthewholetestingprocess.Withthepromptsentences,thefive describeinformationfromdifferentpointsofview,wecombinethe
+annotatorsthenconductcardsorting[60]anddiscussiontoderive patternsfromdifferentviewpointsandgeneratethepromptrules
+thelinguisticpatterns.AsshowninTable2,thisprocesscomesout asshowninTable2.Wedesignthreekindsofpromptsrespectively
+with6linguisticpatternscorrespondingwiththethreesub-types forstartingthetest,routineinquiry,andgettingfeedbackincase
+ofinformationinTable1andtwooperation&feedbackpatterns. oferroroccurred.Notethat,duetotherobustnessoftheLLM,the
+PatternrelatedtoGUIcontext(Table2-Id1,2,3)Wedesign promptsentencedoesn’tneedtofollowthegrammarcompletely.
+threepatternstodescribetheoverviewoftheGUIpagecurrently Testpromptisthemostcommonlyusedpromptforinforming
+undertesting,respectivelycorrespondingtotheappinformation, theLLMofthecurrentstatusandqueryforthenextoperation.
+pageGUIinformation,andwidgetinformationinTable1. Specifically,wetelltheLLMtheGUIcontext,i.e.,theinformation
+Patternrelatedtooperation&feedbackquestion(Table aboutthecurrentGUIpageanddetailedwidgetinformation;then
+2-Id4,5,6)Wealsodesignpatternstodescribeoperationandfeed- asktheLLMwhichoperationisrequired.
+backquestions.Fortheoperationalquestions,weasktheLLMwhat FeedbackpromptisusedforinformingtheLLMerroroccurred
+operationisrequired.Wealsoprovidetheoutputtemplateinthe andre-tryforqueryingthenextoperation.Specifically,wefirsttell
+prompttoenabletheLLMtogenerateadesiredexecutivecommand LLMitsgenerationoperationcannotcorrespondtothewidgeton
+1225
+
+## Page 5
+
+MakeLLMaTestingExpert:BringingHuman-likeInteractiontoMobileGUITestingviaFunctionality-awareDecisions ICSE’24,April14–20,2024,Lisbon,Portugal
+thepage;re-provideitthedetailedwidgetinformationofthepage canconducttheexplorationfromtheviewpointsofthefunctionali-
+andlettheLLMrecommendtheoperationagain. ties.HenceweneedtomakeLLMunderstandwhatfunctioniscur-
+Besidestheabovetwokindsofprompts,weadditionallydesign rentlybeingtestedderivedfromtheexploredactivitiesandwidgets.
+startprompttostartthetestingoftheappandonlyuseditonce. Specifically,wedesignaprompttoaskLLMwhatfunctionalityis
+Differentfromthetestprompt,itprovidestheLLMwiththeapp currentlybeingtestedandwhetherithasbeencompletedinSection
+informationincludingallactivitiesforaglobaloverview. 2.3.3.AndtheLLMwouldprovideuswiththefunctionality-level
+progressas<Functionname>+<Status>,inwhich‘YES’denotesit
+2.2.3 Executive Command Generation. After inputting the hascompletedtestingthespecificfunctionality.
+generatedprompt,LLMwilloutputthenaturallanguagesentence To facilitate the LLM to make reasonable functionality-level
+ofoperation,e.g.,input3500forprice,inputsalaryintitlewidget decisions,wealsoprovidetheLLMwiththelistoffunctionalities
+oftheappintheprompt.Thisinformationisfirstextractedfrom
+andpersonalincategorywidget,thenclicksubmitwhichdepictsthe
+exampleoutputforthesecondimageinFigure1.Consideringthat the app description file and the activity names to serve as the
+atestingoperationcanbeexpressedindifferentwaysandwith initialseed,andwillcontinuouslylettheLLMoutputtherefined
+differentwords,itischallengingtomapnaturallanguagetesting informationduringtheiterativetestingprocess.
+operationstotheappforexecution.Therefore,weutilizetheidea
+2.3.2 Testing Sequence Memorizer. We design a testing se-
+ofin-contextlearningtoprovideLLMwiththeoutputtemplate,
+quencememorizertokeeptherecordoftesting,includingtheset
+includingavailableoperationsandoperationprimitives,whichcan
+oftestedfunctions(inSection2.3.1),thetestingpathofactivity,
+bemappeddirectlytotheinstructionsforexecutingtheapp.
+thesetoftestedactivitieswithpagevisitsnumber,thesetoftested
+Availableoperations.Weidentifyfivecommonlyusedstan-
+widgetsofthecurrentpagewithwidgetsvisitsnumber.
+dardoperationsformobileapplications,includingclick,double-
+Specifically,duringtheiteration,whenanoperationisconducted,
+click,longpress,scrollandinput.Althoughthereareothercus-
+wecanobtainthestatusofthefunction(<Functionname>+<Status>),
+tomizations,suchascustomgestures,theyarenotcommon,and
+theoperationofthewidget(<Operation>+<Widgetname>),and
+weleavethemforfuturework.
+thetestpathofactivity(<Activity1>+<Operation>+<Activity2>)).
+Outputtemplates.Wedesigndifferentoperationprimitivesfor
+Thentheoperationmemorizerisupdatedaccordingly.Indetail,the
+theabove-mentionedoperationstorepresentwidgetsandexecutive
+visitnumberofthewidgetisupdatedbyfindingthesamewidgetin
+commands.Theabovefiveoperationscanbedividedintotwomain
+theoperationmemorizerwiththe“text”fieldand“resource-id”field
+categories,i.e.,action(thefirstfouroperations)andinput.Forthe
+ofthewidget.Thevisitnumberofactivityisupdatedbyfinding
+actioncategory,weformulateitas<Operation>[click/double-click
+thesameactivityinthememorizerwiththe“ActivityName”field.
+/ long press / scroll] + <Widget name>, e.g., Operation: “Click”.
+Widget: “ADD INCOME”.. For the input category, the GUI page 2.3.3 Functionality-awareMemoryPrompt. Basedonthein-
+usuallyinvolvestextfieldwidgetsforenteringspecificvalues,and formationinthetestingsequencememorizer,wefurtherconstruct
+thefollow-upoperations(usuallyforsubmittingthetextinput).We afunctionality-awarememoryprompttofacilitatetheLLMtokeep
+formulateditas<Widgetname>+<Inputcontent>,e.g.,Widget: aneyeonthefunctionalityduringrecommendingthenextopera-
+“Price”,Input:“3500”,followedby<Operation>+<Widgetname>, tion.Itconsistsofthreeparts,includingtheexploredfunctionalities,
+e.g., Operation: “Click”. Widget: “Submit” . Table 4 provides an thecoveredactivities,andtherecentlytestedoperations,andit
+exampleanswerfromLLMforthesetwocategories. wouldrefertothetestingsequencememorizerineachiterationto
+fetchthelatestinformation.WefollowthesameprocedureinSec-
+tion2.2toderivethesepromptpatterns.Thedetailsandexamples
+2.3 Functionality-awareMemoryPrompting
+ofthepromptsareshowninTable3.
+Withthecontextextraction,GUIpromptingandexecutivecom-
+Patternrelatedtoexploredfunctionalities(Table3-Id1).
+mandgenerationintheprevioustwosections,GPTDroidcanal- Thisdescribeswhichfunctionshavebeenexplored,thenumber
+readyconducttheautomatedGUItesting.ThisSectionproposesthe ofexplorations,andwhetheritisfinishedintestingthefunction.
+function-awarememoryprompting,whichfurtherimprovesthe SincetheGUIpromptinthepreviousSectiononlydemonstrates
+capabilityoftheapproachinretainingtheknowledgeduringthe thewidgetsandactivitiesinthecurrentGUIpage,itcouldnot
+iterativetestingprocessandunderstandingthefunctionalaspects provide the high-level viewpoints of the functionality which is
+ofthemobileapp,soastogeneratethefunction-awareoperations accomplishedbyasequenceofoperationsonthewidgets/activities.
+toguidetheoperationfromglobalviewpoints. Therefore,thispromptcanremindtheLLMaboutthefunctional
+Toachievethis,webuildatestingsequencememorizer(Section aspectsoftheapp,andfacilitatetheLLMindecidingthemeaningful
+2.3.2)torecordalldetailedtestinginformation.Wealsoquerythe operationsequencetoexploretheapp’sfunctionality.Specifically,
+LLMaboutthefunction-levelprogressofthetesting(Section2.3.1) GPTDroidextractsthetestedfunctionsfromthetestingsequence
+ineachiterativetestingstep,andstoreitintothememorizer.We memorizer, including the visit times of function pages, and the
+thendesignlinguisticpatternstoencodetheinformationintothe testingstatusofthefunctions.
+functionality-awarememoryprompt(Section2.3.3),andquerythe Patternrelatedtocoveredactivities.(Table3-Id2)Thisde-
+LLMtogetherwiththepromptintheprevioussection. scribesthesequenceofcoveredactivitiesduringthetestingprocess.
+Sincethebasiccomponentofthemobileappistheactivitywhich
+2.3.1 Functionality-levelProgress. Duetotheimportanceof isrecordedintheAndroidManifest.xml file,thispromptaimsat
+functionalitiesforappusers,wehopeourautomatedGUItesting providingtheactivityviewpointsoftestinghistorytoenablethe
+1226
+
+## Page 6
+
+ZheLiu1,2,ChunyangChen3,JunjieWang1,2,∗,MengzhuoChen1,2,BoyuWu2,4,
+ICSE’24,April14–20,2024,Lisbon,Portugal XingChe1,2,DandanWang1,2,QingWang1,2,5,∗
+Table3:Theexampleoflinguisticpatternsoffunctionality-awarememorypromptsandgenerationrules.
+Id Type Sampleoflinguisticpatterns/rules Instantiation
+Long-termfunctionality-awarememorypatterns:𝐹𝑢𝑛𝑐𝑡𝑖𝑜𝑛𝑀𝑒𝑚𝑜𝑟𝑦
+1 Exploredfunction- Listoftestedfunctions:<FunctionName>+<VisitsTime>+ Listoftestedfunctions:“Function1:Addyourincome.Visits:3.Status:
+alities <Status>,<FunctionName>+<VisitsTime>+<Status>... Finished”,“Function2:Deleteinformation.Visits:2.Status:Finished”,...
+2 Coveredactivities. Pathoftestedactivities:<ActivityName>+<VisitsTime>,<Ac- Pathoftestedactivities:“Activity:Main.Visits:3”,“Activity:Account.
+tivityName>+<VisitsTime>,... Visits:4”,“Activity:AddAccount.Visits:3”,...
+3 Recently tested Historyoflatesttestedpagesandoperations:Latest5thstep Historyoflatesttestedpagesandoperations:Latest5thsteptested
+operations testedthe<ActivityName>page.Thefollowingwidgetswithvisits the“Exchange”page.Thefollowingwidgetswithvisitstimeofthispage
+timeofthispagehavebeentested:<WidgetName>+<VisitsTime>, havebeentested:“Widget:Addexchange,Visits:2”,“Widget:Submitex-
+....Thefollowingexecutivecommandachievethepagetransition: change,Visits:1”,‘Widget:Cancel,Visits:1”....Thefollowingexecutive
+<Operation>+<WidgetName>. commandachievethepagetransition:“Click”the"Exchange".
+Latest4thsteptestedthe<ActivityName>page.Thefollowing... Latest4thsteptestedthe“main”page.Thefollowingwidgets...
+... ...
+Latest1ststeptestedthe<ActivityName>page.Thefollowing... Latest1ststeptestedthe“AddAccount”page.Thefollowingwidgets...
+Functionquestionpatterns:𝐹𝑢𝑛𝑐𝑡𝑖𝑜𝑛𝑄𝑢𝑒𝑠𝑡𝑖𝑜𝑛
+4 Functionality in- Functionalityinquiry+<OutputTemplate> Whatisthefunctionscurrentlybeingtested?Arewetestinganewfunc-
+quiry tion?(<FunctionName>+<Status>)
+Functionality-awarememorypromptgenerationrules
+1 Functionality-awarememoryPrompt:FunctionMemory[1,2,3]+FunctionQuestion[4]
+LLMbettercapturethetestedfunctionalitiesandtocovermore Table4:TheexampleofhowpromptsworkinGPTDroid.
+unexploredareas.Specifically,wemergetheadjacentsameactivity
+andactivitysequence,andupdatethenumberofvisitsaccordingly.
+Prompttype Instantiation
+Patternrelatedtorecentlytestedoperations.(Table3-Id3) Example1:Forgeneralactionoperation
+Thisdenotesthelatesttestpagewiththedetailedvisitingstatus
+GUIcontext StartPrompt:[Wewanttotest“Moneytracker”App,Ithas
+ofallitscontainedwidgets,aswellastheoperationsleavingthe thefollowingactivities,including....]orTestPrompt:[We
+page.Thisinformationisthefirst-handandfine-grainedtesting successfullydidtheaboveoperation.]orFeedbackprompt:
+recording, which can facilitate the LLM in capturing the latest [Thereisno“Exchange”onthecurrentpage,pleasereselect.]
+[Thecurrentpageis“AddAccount”,ithas....Theupperpart
+statusofthetestingprogress,andmakeinformeddecisionsabout
+oftheappis...,thelowerpart...The“Exchange”isButton...]
+exploringacertainfunctionality.Specifically,GPTDroidextracts
+Functionality- [Listoftestedfunctions: “Function1: Add your income.
+thewidgetstestedoneachGUIpageandtheirvisittimesfromthe awarememory ...”, ...] [Pathoftestedactivities: “Activity: Main. Visits:
+testingsequencememorizer.Forthecurrenttestpage,wewillselect 3”, ... ] [Historyoflatesttestedpagesandoperations:
+theoperationpagesofthelastestkstepsandthecorresponding Latest5thstep tested the “Exchange” page. The following
+operations.Foreachpage,weprovideLLMwiththeactivityname
+widgets...Latest1ststeptestedthe“AddAccount”page....]
+ofthecurrentpageandthenumberofvisitstoeachwidgetwhen Function ques- Whatisthefunctionscurrentlybeingtested?Arewetestinga
+tion newfunction?(<Functionname>+<Status>)
+thepageisaccessed.Wesetkas5basedontheempiricalexperience.
+Patternrelatedtofunctionalityinquiry:(Table3-Id4)We Actionquestion Whatoperationisrequired?(<Operation>[click/double-click
+asktheLLMwhatfunctioniscurrentlytested,andalsoprovidethe
+/longpress/scroll]+<WidgetName>)
+outputtemplateintheprompttoenabletheLLMtogeneratethe LLMAnswer Function:"Addincome".Status:Yes.
+Operation:"Click".Widget:"ADDINCOME".
+functionnameanditsstatus,withdetailsinSection2.3.1.
+PromptGenerationRules.Wecombinetheabovethreepat- Example2:Fortextinputoperation
+ternsforprovidingLLMwithfunctionalityaspectsoftestinginfor- GUIcontext StartPrompt:[...]orTestPrompt:.orFeedbackprompt:..
+mationfromdifferentviewpoints,andgeneratethepromptrules functionality- [Listoftestedfunctions:“Function1:Add...”,...][Pathof
+asshowninTable3.WeprovideexamplesofhowtheGUIcontext awarememory testedactivities:...][Historyoflatesttestedpages...]
+promptsandmemorypromptsworktoenableapptesting. Function ques- Whatisthefunctionscurrentlybeingtested?Arewetestinga
+tion newfunction?(<Functionname>+<Status>)
+2.4 Implementation Inputquestion Pleasegeneratetheinputtextinsequence,andtheoperation
+GPTDroidisimplementedasafullyautomatedGUIapptestingtool, a
+<
+f
+O
+te
+p
+r
+e
+i
+r
+n
+a
+p
+ti
+u
+o
+t
+n
+.
+>
+(<
++
+W
+<
+i
+W
+dg
+id
+et
+ge
+n
+t
+a
+n
+m
+a
+e
+m
+>
+e
++
+>
+<
+)
+InputContent>,...andprovided
+whichusesorextendsthefollowingtools:VirtualBox[9]andthe
+LLMAnswer Function:"Addincome".Status:No.
+Pythonlibrarypyvbox[7]forrunningandcontrollingtheAndroid- Widget:"Price".Input:"3500".Widget:"Title".Input:"salary".
+x86OS,AndroidUIAutomator[67]forextractingtheviewhierarchy Widget:"Category".Input:"personal".Operation:"Click".Wid-
+get:"Submit".
+file,andAndroidDebugBridge(ADB)[1]forinteractingwiththe
+appundertest(Section2.1).FortheLLM(Section2.2),weusethe
+3 EFFECTIVENESSEVALUATION
+pre-trainedChatGPTmodelwhichwasreleasedontheOpenAI
+website2.ThebasicmodelofChatGPTisthegpt-3.5-turbomodel In order to verify the performance of GPTDroid, we evaluate it
+whichisextremelypowerfulandgoodatansweringquestions. byinvestigatingtheactivityandcodecoverage(RQ1),aswellas
+thenumberofdetectedbugs(RQ2).Wealsopresenttheablation
+2https://platform.openai.com/docs/models/gpt-3-5 studyofeachmoduleinGPTDroid(RQ3).Notethat,thisSection
+1227
+
+## Page 7
+
+MakeLLMaTestingExpert:BringingHuman-likeInteractiontoMobileGUITestingviaFunctionality-awareDecisions ICSE’24,April14–20,2024,Lisbon,Portugal
+utilizesthepreviously-detectedbugsintheapp’srepositoriesto learning-basedmethods,tofacilitateunderstanding.Forrandom-
+demonstratetheeffectivenessof GPTDroid,andthenextSection /rule-basedmethods,weuseMonkey[20]andDroidbot[33],Time-
+willevaluatetheusefulnessof GPTDroidindetectingnewbugs. Machine[21].Formodel-basedmethods,weuseWCTester[83,88],
+Stoat[62],Ape[25],Fastbot[13],ComboDroid[70].Forlearning-
+3.1 ExperimentalSetup basedmethods,weuseHumanoid[34]andQ-testing[50].
+Theexperimentaldatasetcomesfromtwosources.Thefirstisfrom Foramorethoroughcomparison,weadditionallyinclude5other
+theappsintheThemisbenchmark[63],whichcontains20open- baselines,inwhichtheoriginallyproposedtechniquesaimaten-
+sourceappswith34bugsinGitHub.Consideringthesmallnumber hancingtheautomatedGUItesting,andcanbeutilizedbyintegrat-
+ofappsinthebenchmark,wecollectaseconddatasetfollowing ingwiththeabove-mentionedautomatedtestingtools.Specifically,
+similarproceduresasthebenchmark. QTypist[37]isusedtogeneratevalidtextinputtoenhancethe
+coverageofautomatedtestingtools.Toller[71]isatoolconsist-
+ingofinfrastructureenhancementstotheAndroidoperatingsys-
+Table5:Datasetofeffectivenessevaluation.
+tem.Vet[71]isusedtoidentifyexplorationtarpitsbyrecognizing
+theirpatternsintheUItraces,soastooptimizetheexploration
+Statistics #Activities #Bugs #Download #Update
+sequences.Weusetheexperimentalsetupastheiroriginalpaper
+Min 7 1 50K+ 05/22
+Max 33 9 100M+ 05/23 toderivethefollowing5baselines,i.e,QTypistisintegratedwith
+Median 17 4 5M+ - DroidbotandApe(Droidbot+QT,Ape+QT),Tollerisintegrated
+Average 15 1.5 10M+ -
+withStoat(Stoat+TO),VetisintegratedwithWCTesterandApe
+All 1398 143 - - (WCTester+VE,Ape+VE).
+Wedeploythebaselinesandourapproachona64-bitUbuntu
+Indetail,wecrawlthe50mostpopularappsofeachcategory 18.04machine(64cores,AMDCPU)andevaluatethemonGoogle
+fromGooglePlay[4],andwekeeptheoneswithatleastoneupdate Android7.1emulators.Eachemulatorisconfiguredwith2GBRAM,
+afterMay.2022,resultingin407appsin12GooglePlaycategories. 1GBSDCard,1GBinternalstorage,andX86ABIimage.Different
+Then,weuse10commonlyusedandstate-of-the-artautomated types of external files (including PNGs / MP3s / PDFs / TXTs /
+GUItestingtools(detailsareinSection3.2)toruntheseapps,in DOCXs) are stored on the SDCard to facilitate file access from
+turn, to ensure that they work properly. We then filter out the apps.Followingcommonpractice[25,33],weregisteredseparate
+unusableappsbythefollowingcriteria:(1)Theywouldconstantly accountsforeachbugthatrequiresloginandwrotetheloginscripts,
+crashontheemulator.(2)Oneormoretoolscannotrunonthem. andduringtestingresettheaccountdatabeforeeachruntoavoid
+(3)Theregistrationandloginfunctionscannotbeskippedwith possibleinterference.Inordertoensurefairandreasonableuseof
+scripts[21,38,42,63,87].(4)Theydonothaveissuerecordsorpull resources,wesetuptherunningtimeofeachtoolinoneappto
+requestsonGitHub. 60minutes,whichiswidelyusedinotherGUItestingstudies[22,
+Thereare73apps(with109bugs)remainingforthiseffectiveness 25,33,63].Weruneachtoolthreetimesandobtainthehighest
+evaluation.Notethat,sameasthebenchmark,allbugsarecrash performancetomitigatepotentialbias.
+bugs.Specifically,foreachapp,weselecttheversioninwhichthe
+bugsareconfirmedbydevelopers(mergedGitHubpullrequests)
+asourexperimentaldata,followingthepracticeofthebenchmark. 3.3 ResultsandAnalysis
+Thedetailsofall93experimentalapps(20+73)andrelatedbugs 3.3.1 PerformanceofCoverage(RQ1). Table6showsthenum-
+areshowninTable5. berofcoveredwidgets,numberofcoveredactivities,andaverage
+Notethat,thereare101appsthatarefilteredoutforeffectiveness activitycoverageof GPTDroidandthebaselines.Wecanseethat
+evaluation,yetcansuccessfullyrunwithourproposedapproach. GPTDroidcoversfarmorewidgetsandactivitiesthanthebaselines,
+WeapplythemtothemanualpromptgenerationinSection2.2.1. andtheaverageactivitycoverageachieves75%andaveragecode
+And this ensures that there is no overlap between the apps in coverageachieves66%acrossthe93apps.Itis32%(0.75vs.0.57)
+approachdesignandevaluation. activitycoveragehigherevencomparedwiththebestbaseline(Ape
+Weemployactivitycoverage,codecoverageandthenumberof withQTypist).Meanwhile,ontheThemisbenchmarkandGoogle
+detectedbugs,whicharewidelyusedmetricsforevaluatingGUI Playdatasets,itwas28%(0.69vs.0.54)and33%(0.77vs.0.58)higher
+testing[11,27,34,36,70,72].Wealsopresentthenumberofcovered thanthebestbaseline.ThisindicatestheeffectivenessofGPTDroid
+activitiesandwidgetswhicharealsocommonly-usedmetricsin incoveringmoreactivitiesandcodes,thusbringinghighercon-
+Table6.WetreattheactivitiesdefinedintheAndroidManifest.xml fidencetotheappqualityandpotentiallyuncoveringmorebugs.
+file of an Android app as the whole set of activities [2, 50, 62]. Section5willfurtheranalyzewhyGPTDroidperformswell.
+Duringthetestingprocess,wecollecttheuniqueactivitynameand Figure3additionallydemonstratestheaverageactivitycoverage
+widgetIDoftheGUIpagewithwhichtheoperationinteracts,and withvaryingtimes.Wecanseethat,ateverytimepoint,GPTDroid
+treatthemastheactivitynumberandwidgetnumber. achieveshigheractivitycoveragethanthebaselines,anditachieves
+highcoveragewithinabout24minutes.Thisagainindicatesthe
+3.2 Baselines effectivenessandefficiencyofGPTDroidincoveringmoreactivities
+TodemonstratetheadvantageofGPTDroid,wecompareitwith10 withlesstime,whichisvaluableconsideringthetestingbudget.
+common-usedandstate-of-the-artautomatedtestingtechniques. Amongthebaselines,themodel-basedandlearning-basedap-
+Weroughlydividethemintorandom-/rule-based,model-based,and proacheshaverelativelyhigherperformance.Yetthemodel-based
+1228
+
+## Page 8
+
+ZheLiu1,2,ChunyangChen3,JunjieWang1,2,∗,MengzhuoChen1,2,BoyuWu2,4,
+ICSE’24,April14–20,2024,Lisbon,Portugal XingChe1,2,DandanWang1,2,QingWang1,2,5,∗
+Table6:Performanceofactivitycoverage(RQ1).
+Random-/rule-based Model-based Learning-based
+Metric MK DB DB+QT TM WC WC+VE ST ST+TO AP AP+QT AP+VE FB CD HM Q-t GPTDroid
+#Widgets 691 1707 2522 3811 1745 2465 2830 3087 2964 3496 3406 2944 3210 3022 2261 5243
+#Activities 266 461 573 811 545 573 615 671 741 853 811 755 783 657 685 1049
+Avg.activitycoverage 0.25 0.33 0.41 0.56 0.39 0.41 0.44 0.48 0.53 0.57 0.56 0.54 0.55 0.47 0.49 0.75
+Avg.codecoverage 0.17 0.28 0.36 0.53 0.31 0.33 0.40 0.44 0.45 0.55 0.52 0.47 0.48 0.43 0.41 0.66
+Notes:“MK”isMonkey,“DB”isDroidbot,“DB+QT”isDroidbotwithQTypist,“TM”isTimeMachine,“WC”isWCTester,“WC+VE”isWCTesterwithVet,“ST”isStoat,“ST+TO”isStoatwithToller,“AP”is
+Ape,“AP+QT”isApewithQTypist,“AP+VE”isApewithVet,“FB”isFastbot,“CD”isComboDroid,“HM”isHumanoid,“Q-t”isQ-testing.
+indicatestheeffectivenessofGPTDroidindetectingbugsandhelps
+toensureappquality.
+Wecanalsoseethat,ineverytimepoint,GPTDroiddetectsmore
+bugsthanthebaselines,andreachesthehighestvalueinabout27
+minutes,saving35%(17vs.26)ofthetestingtimecomparedwith
+thebestbaseline(alsowithmoredetectedbugs).Thisagainproves
+theeffectivenessandefficiencyof GPTDroid,whichisvaluablefor
+savingmoretimeforfollow-upbugfixing.Wewillconductafurther
+discussionaboutthereasonbehindthesuperiorperformancein
+Section3.3.3.
+Table7:Contributionofdifferentmodules(RQ3)
+Figure3:Activitycoveragewithvaryingtime(RQ1).
+Module Activitycoverage Codecoverage
+approachescan’tcapturetheGUIsemanticinformationandthe GPTDroid 0.75 0.66
+explorationcouldnotwellunderstandtheinherentbusinesslogic w/oGUIContext 0.17 0.14
+oftheapp.Learning-basedapproachesonlyuselittlecontextinfor- w/oFunctionMemory 0.34 0.28
+mationforguidingtheexploration,anddon’thavethemechanism
+forenablingthemodelconsideringtheapp’sfunctionalities.
+3.3.3 AblationStudy(RQ3). ContributionofModules.Table
+Wefurtheranalyzethepotentialreasonsfortheuncoveredcases.
+7showstheperformanceof GPTDroidandits2variants.Indetail,
+First, some widgets or inputs do not have meaningful “text” or
+forGPTDroidw/oGUIContext(Sec2.1),wereplacetheGUIcontext
+“resource-id”,whichhinderstheapproachofeffectivelyunderstand-
+informationwiththerawviewhierarchyfileandextractedthe
+ingtheGUIpage.Second,someapprequiresspecificoperations,
+widgetsname.ForGPTDroidw/oFunctionMemory (Sec2.3),we
+e.g.,databaseconnection,longpressanddragwidgetstoafixed
+removethefunctionality-awarememoryprompting.
+location,whichisdifficultifnotimpossibletobeautomatically
+WecanseethatGPTDroid’sactivityandcodecoveragearemuch
+achieved.
+higherthanallothervariants,indicatingthenecessityofthede-
+signedmodulesandtheadvantageofourapproach.Comparedwith
+GPTDroid,GPTDroidw/oGUIContextresultsinthelargestperfor-
+mancedecline,i.e.,77%drop(0.17vs.0.75)inactivitycoverage.
+ThisfurtherindicatesthattheGUIcontextextractioncanhelpLLM
+understandthestructureandsemanticinformationofGUIpages
+andmakereasonablejudgments.GPTDroidw/oFunctionMemory
+alsoundergoesabigperformancedecrease,i.e.,55%(0.34vs.0.75)
+inactivitycoverage.Thisimpliesourproposedfunctionality-aware
+memorypromptcanhelpretaintheknowledgeduringthetesting
+processandgainglobalviewpointstoreachtheuncoveredareas.
+ContributionofSub-modules.Table5furtherdemonstrates
+theperformanceof GPTDroidandits8variants.Weremovethe
+Figure4:Bugdetectionwithvaryingtime(RQ2). part of prompt when querying LLM, i.e., the first four variants
+respectivelyremovepattern1,2,3,5,6ofTable2,andthelastthree
+3.3.2 PerformanceofBugDetection(RQ2). Figure4shows variantsrespectivelyremovepattern1,2,3ofTable3.
+theoverallnumberofdetectedbugsof GPTDroidandbaselines Theexperimentalresultsdemonstratethatremovinganyofthe
+withvaryingtimes.GPTDroiddetects95bugsforthe93apps,31% sub-modules would result in a noticeable performance decline,
+(95vs.66)higherthanthebestbaseline(StoatwithToller).Wealso indicating the necessity and effectiveness of the designed sub-
+comparethesimilaritiesanddifferencesofthebugsbetweenStoat modules.Removingtheexploredfunctionalities(GPTDroidw/o-
+withTollerandourapproach,andtheresultsshowthatallbugs Explored Function) has the greatest impact on the performance,
+detectedbyStoatwithTollerarealsodetectedbyGPTDroid.This reducingtheactivitycoverageby51%(0.37vs.0.75).Thisindicates
+1229
+
+## Page 9
+
+MakeLLMaTestingExpert:BringingHuman-likeInteractiontoMobileGUITestingviaFunctionality-awareDecisions ICSE’24,April14–20,2024,Lisbon,Portugal
+Weusethesamehardwareandsoftwareconfigurationsasthepre-
+viousevaluationSection.Whenthecrashbugsaredetected,we
+reportthemtothedevelopmentteamthroughonlineissuereports
+oremails.
+4.2 ResultsandAnalysis
+Forthe223apps,GPTDroiddetects135bugsinvolving115apps,of
+which53bugsinvolving41appsarenewly-detectedbugs.Further-
+more,only9ofthesenewbugsweredetectedbythreebaselines.We
+submitthese53bugstodevelopers,and35ofthemhavebeenfixed/-
+Figure5:Contributionofdifferentsub-modules(RQ3). confirmedsofar(20fixedand15confirmed),whiletheremaining
+arestillpending(noneofthemisrejected).Thisfurtherindicates
+byexplicitlyqueryingtheLLMaboutthefunctionalityaspectsof theeffectivenessofourproposedGPTDroidinbugdetection.Due
+thetestingprogress,theapproachcanbemoreawareofwhatfunc- tospacelimit,Table8presentsthesefixed/confirmedbugs,andthe
+tionalityisundertestandeffectivelyplantheexplorationpathto fulllistscanbefoundonourwebsite1.
+covermorefunctionalities. Wefurtheranalyzethedetailsofthesebugs,and17ofthemin-
+volvemultipletextinputsorcompoundoperations.Besides,wealso
+observethatthereare11bugswithmorethan20operationsbefore
+triggeringthebug,countingfromtheMainActivity page,which
+indicatestheabilityof GPTDroidintestingdeeperfeatures.Fur-
+thermore,wefindatleast28bugsrelatedtothemainbusinesslogic
+oftheapp.Thisfurtherdemonstratesthecapabilitiesof GPTDroid,
+andweprovideanalysisinSection5.
+Table8:Confirmedorfixedbugs
+Figure6:Differentnumberoftestedoperations(RQ3).
+Id APPName Category Download Status TM ST+TO HM
+InfluenceofDifferentNumberofRecentTestedOpera- 1 PerfectPia Music 50M+ confirmed
+tions.Figure6demonstratestheperformanceunderthedifferent 2
+3
+M
+N
+u
+o
+si
+x
+c
+S
+P
+e
+l
+c
+a
+u
+yer M
+T
+u
+oo
+si
+l
+c 5
+1
+0
+0
+M
+M
++
++
+con
+fi
+fi
+x
+r
+e
+m
+d
+ed
+✓
+numberoflatesttestedoperations.Wecanseethattheactivityand 4 INSTA Finance 10M+ fixed ✓
+5 Degoo Tool 10M+ fixed
+codecoverageincreasewiththemoretestedpagesinthelatest
+6 Proxy Tool 10M+ confirmed
+testedoperations,i.e.,5stepsoftestedpagesandoperations.And 7 Secure Tool 10M+ fixed
+8 Revolut Finance 10M+ fixed
+afterthat,theperformancewouldgraduallydecreaseevenincreas- 9 Thunder Tool 10M+ confirmed ✓ ✓
+ingthenumberoftestedpages.Italsofurtherverifiedthatthe5 10 ApowerMir Tool 5M+ fixed
+11 MediaFire Product 5M+ confirmed ✓
+stepsselectedbyourpilotstudyareeffectiveandvaluable. 12 WAVMoney Finance 1M+ fixed
+13 Postegro Commun 500K+ fixed
+14 DeezerMP Music 500K+ fixed ✓
+4 USEFULNESSEVALUATION 15 MTG Utilities 500K+ fixed
+16 Yucata Tool 500K+ confirmed
+4.1 ExperimentalSetup 17 ClassySha Tool 500K+ fixed
+18 Linphone Commun 500K+ confirmed ✓ ✓
+ThisSectionfurtherevaluatestheusefulnessofGPTDroidindetect- 19 OFF Health 500K+ confirmed
+20 Paytm Finance 100K+ confirmed
+ingnewcrashbugs.Weemployasimilarexperimentalsetuptothe 21 Transdroid Tool 100K+ confirmed ✓ ✓
+previoussection.Tomakeitbrief,weonlycomparethebestbase- 22 Transistor Music 10K+ fixed
+23 Onkyo Music 10K+ fixed ✓
+lines,i.e.,TimeMachine,StoatwithTollerandHumanoid,thebest 24 Democracy News 10K+ confirmed
+onefromeachtypeofmethodfollowingtheirbugdetectionperfor- 25 NewPipe Media 10K+ confirmed ✓
+26 LessPass Product 10K+ confirmed
+manceasshowninFigure4.Notethat,forcoverage,thetopthree 27 CEToolbox Medical 10K+ confirmed
+28 OSM Health 10K+ fixed
+aredifferentsetsofbaselines,yetthisSectionisconcernedabout 29 Monse Finance 10K+ fixed ✓
+theircapabilityindetectingbugs,soweusetheirbugdetection 30 Fitb Health 10K+ confirmed
+31 KHAN Education 10K+ fixed
+performanceasthecriteria. 32 Leaprt Tool 10K+ fixed
+Webeginwiththemostpopularandrecentlyupdated317apps 33 Penly Product 10K+ fixed
+34 Rocket Product 10K+ fixed
+from12categoriesasinthepreviousSection.Thenwereusethe 35 Fkowy Tool 10K+ fixed
+fourcriteriainSection3.1forfilteringouttheunusableapps.Dif-
+ferently,weloosencriteria4,whichonlyrequirestheapptohave
+waysforbugreporting,sincetheissuerecordsorpullrequestsare 5 INSIGHTSFROMEXPERIMENTRESULTS
+notmandatoryinthisSection.Thisresultsin223appsforuseful- ThisSectionsummarizes4kindsofcapabilitiesofGPTDroidinclud-
+nessevaluation.Notethat,thisSectionaimsatevaluatingwhether inghigh-level(i.e.,longmeaningfultesttrace,testcaseprioritiza-
+GPTDroidcandetectnewbugsintheapps,thustheoverlapbe- tion)andlow-levelones(i.e.,validtextinput,compoundactions),to
+tweentheappsofthisSectionandthepreviousSectionisallowed. unveilthemysteryofwhyGPTDroidoutperformsexistingmethod.
+1230
+
+## Page 10
+
+ZheLiu1,2,ChunyangChen3,JunjieWang1,2,∗,MengzhuoChen1,2,BoyuWu2,4,
+ICSE’24,April14–20,2024,Lisbon,Portugal XingChe1,2,DandanWang1,2,QingWang1,2,5,∗
+Figure7:Examplesofourinsightsfromexperiments.
+Functionality-awareexplorationthroughthelongmean- Compoundactions.GPTDroidcanconductcomplexcompound
+ingfultestingtrace.GPTDroidcanautomaticallygeneratethetest operationsguidedbytheLLM.Asshownin(Figure7(c),toaddthe
+caseswithalongsequenceofoperationswhichtogetheraccomplish “Cablecrunch”information,itfirstinputsthetext,selectsthedate,
+abusinesslogicoftheapp,andthisisquiteimportantforcovering setsthe“SETS”and“REPS”byclickingtheupperorlowerbutton,
+theappfeaturesandensuringitsquality.AsshowninFigure7(a), thenclickthesubmitbuttoninthelowerrightcorner.Thanksto
+inSmartMeterapp[8],totestacommonly-usedappfeature“delete ourdesignedexecutivecommandgenerationmethodwithfew-shot
+equipment”,theautomatedtoolfirstneedstoclick“FindDevices” learningandoutputtemplate,GPTDroidcanaccuratelymapthe
+onthedevicepage,thenselectadevice(Bluetoothisturnedonand LLM’soutputintotheactionsrelatedtoGUIwidgets.
+therearecandidatedevices)andclick“AddDevices”foraddingit
+inthedevicepage,inputtherelatedinformationandclick“Start” 6 RELATEDWORK
+tostartthedevice,thenturnoffthisdeviceinthedevicepage,long
+AutomatedGUItesting.Toensurethequalityofmobileapps,
+pressitandclick“Delete”fromthepop-upmenu.Onlywiththis
+manyresearchersstudytheautomaticgenerationoflarge-scale
+longsequenceofoperationsthattouchesthe“deletingequipment”
+testscriptstotestapps[74].Monkey[20]isthepopularrandom-
+feature,acrashcanberevealed.Ourfunctionality-awarememory
+basedautomatedGUItestingtool,whichemitspseudo-random
+promptcanenabletheLLMtocapturethelong-termdependencies
+streamsofUIeventsandsomesystemevents.However,therandom-
+amongGUIpagestoconductthefunctionality-guidedexploration.
+basedtestingstrategycannotformulateareasonabletestingpath
+Function-awareprioritization.WealsoobservethatGPTDroid
+accordingtothecharacteristicsoftheapp,resultinginlowtest
+usuallyprioritizestestingthe“important”functions,whichisvalu-
+coverage.Toimprovethetestcoverage,researchersproposemodel-
+ableforreachingahigheractivitycoverageandcoveringmorekey
+based[21,25,44,47,62,70,77,78,83]automatedGUItestingmeth-
+activitieswithrelativelylesstime.AsshowninFigure7(b),onthe
+ods,designcorrespondingmodelsthroughtheresearchandanalysis
+MainpageoftheMoniapp[5],thebaselinetoolstendtofirstclick
+oflarge-scaleapps.Althoughmodel-basedautomatedGUItesting
+the“Setting”buttonfollowingtheexplorationorderfromupperto
+toolscanimprovetestcoverage,thecoverageisstilllowbecause
+lower,whichleadsthetestingeasilytrappedintothesettingpage
+it does not consider the semantic information of the app’s GUI
+cycle.GPTDroidchoosestofirstclickthe“AddIncome”buttonto
+andPage.Researchersfurtherproposedhuman-liketestingstrate-
+exploretheaddincomefunctionalitywhichisthekeyfeatureofthe
+giesanddesignedlearning-based[34,50]automatedGUItesting
+app.ThisisfacilitatedbythesemanticunderstandingoftheGUI
+methods.Althoughthelearning-basedapproachcanimprovethe
+pageandthefunctionality-awarememorydesignedinGPTDroid.
+testcoveragebylearningtheinteractiveprocessesorusingthe
+Validtextinputs.GPTDroidcanautomaticallyfillinvalidtext
+ideaofreinforcementlearning.However,itisstillunabletobetter
+contenttotheinputwidgetwhichisessentiallythekeyforpassing
+understandthesemanticinformationofthepageandplanthepath
+thepageasseeninFigure7(c).Similartopriorwork[37],ourmodel
+accordingtotheactualsituationoftheapp.Weaimatproposinga
+cangeneratesemantictextinput(e.g.,income,date,etc)accordingly.
+moreeffectiveapproachtogeneratehuman-likeactionsforthor-
+Besidessingletextinput,itcanalsosuccessfullyfillinmultiple
+oughlyandmoreeffectivelytestingtheapp,accomplishingitwith
+inputwidgetsatthesametimewhicharecorrelatedtoeachother
+LLM.Therearealsostudiesthattriedtofindbugsinsimilarappsto
+likethedepartureandarrivalcitiesanddatesintheflightbooking
+movebeyondcrashes[39–41,65],yetitcannotrevealthecrashes
+app.Wehavedesignedaprompt,especiallyforqueryingthetext
+automaticallyasthiswork.Techniquesrelatedtotestmigration
+inputandutilizethefew-shotlearningbyprovidingdemonstrations
+[12,64]cangeneratemeaningfuloperationsequencesborrowed
+withtheoutputtemplatetofacilitatetheLLMgeneratingdesired
+fromthesourceapp,yetitisquitedemandingtorequirethetest
+executivecommands,whichcanbeaccuratelymappedtotheGUI
+casesofanapp,andbycomparison,GPTDroidcangeneratemore
+widgetsoftextinputstoenableittoexecuteautomatically.
+meaningfultesttracesfromscratch.
+1231
+
+## Page 11
+
+MakeLLMaTestingExpert:BringingHuman-likeInteractiontoMobileGUITestingviaFunctionality-awareDecisions ICSE’24,April14–20,2024,Lisbon,Portugal
+LLM for Software Engineering. Considering the powerful [11] YauhenLeanidavichArnatovich,LipoWang,NgocMinhNgo,andCharlieSoh.
+performanceofLLM,researchershavesuccessfullyleverageditto 2018.Mobolic:AnautomatedapproachtoexercisingmobileapplicationGUIs
+usingsymbiosisofonlinetestingtechniqueandcustomatedinputgeneration.
+solvevarioustasksinthefieldofsoftwareengineering[10,29,45,
+Software:PracticeandExperience48,5(2018),1107–1142.
+46,48,49,51,57,59,66,75,80–82,85].Supportedbycodenatural- [12] FarnazBehrangandAlessandroOrso.2019. TestMigrationBetweenMobile
+ness[28],researchersappliedtheLLMstocodewritingindifferent AppswithSimilarFunctionality.InASE2019.
+[13] TianqinCai,ZhaoZhang,andPingYang.2020.Fastbot:AMulti-AgentModel-
+programminglanguages[15,23,24,76].Intesting,LLMFuzz[19] BasedTestGenerationSystemBeijingBytedanceNetworkTechnologyCo.,Ltd..
+usedLLMstogenerateinputprogramsforfuzzingDeepLearning InProceedingsoftheIEEE/ACM1stInternationalConferenceonAutomationof
+libraries.Xiaetal.[73]appliedLLMforautomaticprogramrepair SoftwareTest.93–96.
+[14] Andrew Cantino. 2016. Prompt Engineering Tips and Tricks with GPT-
+toimprovetheaccuracyofthegeneratedrepairpatches.Lemieuxet 3. https://blog.andrewcantino.com/blog/2021/04/21/prompt-engineering-tips-
+al.[32]leveragedLLMinescapingthecoverageplateausintestgen- and-tricks/.
+[15] MarkChen,JerryTworek,HeewooJun,QimingYuan,HenriquePondedeOliveira
+eration.Kangetal.[30]exploredtheLLM-basedbugreproduction.
+Pinto,JaredKaplan,HarriEdwards,YuriBurda,NicholasJoseph,GregBrockman,
+AsimilarworkQTypist[37]leveragedtheLLMtogeneratethe etal.2021. Evaluatinglargelanguagemodelstrainedoncode. arXivpreprint
+textinputsforpassingaGUIpageinordertoimprovethetesting arXiv:2107.03374(2021).
+[16] XiangChen,NingyuZhang,XinXie,ShuminDeng,YunzhiYao,ChuanqiTan,Fei
+coverageofmobiletesting.Differentfromitssolefocusontext Huang,LuoSi,andHuajunChen.2022.Knowprompt:Knowledge-awareprompt-
+inputgenerationtoboostexistingGUItestingtools,GPTDroidis tuningwithsynergisticoptimizationforrelationextraction.InProceedingsofthe
+acompleteGUItestingtoolinaskingLLMtoproposedifferent ACMWebConference2022.2778–2788.
+[17] AakankshaChowdhery,SharanNarang,JacobDevlin,MaartenBosma,Gaurav
+actionstointeractwiththetargetappincludingclickingbuttons, Mishra,AdamRoberts,PaulBarham,HyungWonChung,CharlesSutton,Se-
+fillingin textandevenmore complicated compoundactions. It bastianGehrmann,etal.2022.Palm:Scalinglanguagemodelingwithpathways.
+makesthisworkmoregeneralizedforwildmobileapptesting.
+arXivpreprintarXiv:2204.02311(2022).
+[18] BiplabDeka,ZifengHuang,ChadFranzen,JoshuaHibschman,DanielAfergan,
+YangLi,JeffreyNichols,andRanjithaKumar.2017.Rico:AMobileAppDataset
+forBuildingData-DrivenDesignApplications.InUIST.
+7 CONCLUSION [19] YinlinDeng,ChunqiuStevenXia,HaoranPeng,ChenyuanYang,andLingming
+AutomatedGUItestinghasmademuchprogress,yetstillsuffers Zhang.2022.FuzzingDeep-LearningLibrariesviaLargeLanguageModels.arXiv
+preprintarXiv:2212.14834(2022).
+fromlowactivitycoverageandmaymisscriticalbugs.Thispaper [20] AndroidDevelopers.2012.Ui/applicationexercisermonkey.
+aimsatgeneratinghuman-likeactionstofacilitateapptestingmore [21] ZhenDong,MarcelBöhme,LuciaCojocaru,andAbhikRoychoudhury.2020.
+thoroughly and effectively. Inspired by ChatGPT, we formulate
+Time-traveltestingofandroidapps.InICSE.IEEE.
+[22] LinglingFan,TingSu,SenChen,GuozhuMeng,YangLiu,LihuaXu,GeguangPu,
+theGUItestingproblemasaQ&AtaskandproposeGPTDroid.It andZhendongSu.2018.Large-scaleanalysisofframework-specificexceptions
+extractstheGUIcontextandfunctionality-awarememory,encodes inandroidapps.InICSE.IEEE,408–419.
+[23] ZhangyinFeng,DayaGuo,DuyuTang,NanDuan,XiaochengFeng,MingGong,
+themintopromptquestionstoasktheLLM,decodestheLLM’s
+LinjunShou,BingQin,TingLiu,DaxinJiang,etal.2020.Codebert:Apre-trained
+feedbackanswerintoactionableoperationstoexecutetheapp,and modelforprogrammingandnaturallanguages.EMNLP(2020).
+iteratesthewholeprocess.Resultson93popularappsdemonstrate [24] DanielFried,ArmenAghajanyan,JessyLin,SidaWang,EricWallace,FredaShi,
+RuiqiZhong,Wen-tauYih,LukeZettlemoyer,andMikeLewis.2022.Incoder:A
+thatGPTDroidcanachieve75%activitycoverage,with32%higher generativemodelforcodeinfillingandsynthesis.arXivpreprintarXiv:2204.05999
+thanthebestbaseline,andcandetect31%morebugswithfaster (2022).
+[25] TianxiaoGu,ChengnianSun,XiaoxingMa,ChunCao,ChangXu,YuanYao,
+speedthanthebestbaseline.GPTDroidalsodetects53newbugson
+QirunZhang,JianLu,andZhendongSu.2019.PracticalGUItestingofAndroid
+GooglePlaywith35ofthembeingconfirmed/fixed.Inthefuture,we applicationsviamodelabstractionandrefinement.InICSE.IEEE.
+plantoexploremoreadvancedpromptengineeringdesigntobetter [26] YuxianGu,XuHan,ZhiyuanLiu,andMinlieHuang.2021. Ppt:Pre-trained
+prompttuningforfew-shotlearning.(2021).
+exploitthepowerofLLM,andmayalsofine-tuneopen-sourceLLM
+[27] YuyuHe,LeiZhang,ZheminYang,YinzhiCao,KekeLian,ShuaiLi,WeiYang,
+forthisspecifictasksforbetterperformance. ZhiboZhang,MinYang,YuanZhang,etal.2020.TextExerciser:feedback-driven
+textinputexercisingforandroidapplications.In2020IEEESymposiumonSecurity
+andPrivacy(SP).IEEE,1071–1087.
+ACKNOWLEDGMENTS [28] AbramHindle,EarlTBarr,MarkGabel,ZhendongSu,andPremkumarDevanbu.
+2016.Onthenaturalnessofsoftware.Commun.ACM59,5(2016),122–131.
+ThisworkwassupportedbytheNationalNaturalScienceFounda- [29] SungminKang,BeiChen,ShinYoo,andJian-GuangLou.2023. Explainable
+tionofChinaGrantNo.62232016,No.62072442andNo.62272445, AutomatedDebuggingviaLargeLanguageModel-drivenScientificDebugging.
+YouthInnovationPromotionAssociationChineseAcademyofSci-
+arXivpreprintarXiv:2304.02195(2023).
+[30] SungminKang,JuyeonYoon,andShinYoo.2022. LargeLanguageModels
+ences,BasicResearchProgramofISCASGrantNo.ISCAS-JCZD- areFew-shotTesters:ExploringLLM-basedGeneralBugReproduction.CoRR
+202304,andMajorProgramofISCASGrantNo.ISCAS-ZD-202302. abs/2209.11515(2022).
+[31] PingfanKong,LiLi,JunGao,KuiLiu,TegawendéFBissyandé,andJacquesKlein.
+2018.Automatedtestingofandroidapps:Asystematicliteraturereview.IEEE
+REFERENCES
+TransactionsonReliability68,1(2018),45–66.
+[32] CarolineLemieux,JeevanaPriyaInala,ShuvenduKLahiri,andSiddharthaSen.
+[1] 2023. AndroidDebugBridge(adb). https://developer.android.com/studio/ 2023. CODAMOSA:Escapingcoverageplateausintestgenerationwithpre-
+command-line/adb.html#forwardports. trainedlargelanguagemodels.(2023).
+[2] 2023.Androiddevelopment.http://developer.android.com/reference/android. [33] YuanchunLi,ZiyueYang,YaoGuo,andXiangqunChen.2017. Droidbot:a
+[3] 2023.AppStore.https://www.apple.com.cn/app-store/. lightweightui-guidedtestinputgeneratorforandroid.InICSE.IEEE.
+[4] 2023.Googleplay.https://play.google.com/store/apps/. [34] YuanchunLi,ZiyueYang,YaoGuo,andXiangqunChen.2019. Humanoid:a
+[5] 2023.Moni.https://play.google.com/store/apps/details?id=Moni. deeplearning-basedapproachtoautomatedblack-boxAndroidapptesting.In
+[6] 2023.pascalcase.https://en.wikipedia.org/wiki/Camel_case. 201934thIEEE/ACMInternationalConferenceonAutomatedSoftwareEngineering
+[7] 2023.pyvbox.https://pypi.org/project/pyvbox/. (ASE).IEEE,1070–1073.
+[8] 2023.SmartMeter.https://play.google.com/store/apps/details?id=SmartMeter. [35] JinzhiLiao,XiangZhao,JianmingZheng,XinyiLi,FeiCai,andJiuyangTang.2022.
+[9] 2023.virtualbox.https://www.virtualbox.org/. PTAU:PromptTuningforAttributingUnanswerableQuestions.InProceedings
+[10] Saranya Alagarsamy, Chakkrit Tantithamthavorn, and Aldeida Aleti. 2023. ofthe45thInternationalACMSIGIRConferenceonResearchandDevelopmentin
+A3Test:Assertion-AugmentedAutomatedTestCaseGeneration.arXivpreprint InformationRetrieval.1219–1229.
+arXiv:2302.10352(2023).
+1232
+
+## Page 12
+
+ZheLiu1,2,ChunyangChen3,JunjieWang1,2,∗,MengzhuoChen1,2,BoyuWu2,4,
+ICSE’24,April14–20,2024,Lisbon,Portugal XingChe1,2,DandanWang1,2,QingWang1,2,5,∗
+[36] PengLiu,XiangyuZhang,MarcoPistoia,YunhuiZheng,ManoelMarques,and (2023).
+LingfeiZeng.2017.Automatictextinputgenerationformobiletesting.InICSE. [60] DonnaSpencer.2009.Cardsorting:Designingusablecategories.RosenfeldMedia.
+IEEE. [61] AbigaleStangl,NitinVerma,KennethRFleischmann,MeredithRingelMorris,
+[37] ZheLiu,ChunyangChen,JunjieWang,XingChe,YuekaiHuang,JunHu,and andDannaGurari.2021.GoingBeyondOne-Size-Fits-AllImageDescriptionsto
+QingWang.2023.FillintheBlank:Context-awareAutomatedTextInputGener- SatisfytheInformationWantsofPeopleWhoareBlindorHaveLowVision.In
+ationforMobileGUITesting.InICSE. The23rdInternationalACMSIGACCESSConferenceonComputersandAccessibility.
+[38] ZheLiu,ChunyangChen,JunjieWang,YuekaiHuang,JunHu,andQingWang. 1–15.
+2022. Nighthawk:FullyAutomatedLocalizingUIDisplayIssuesviaVisual [62] TingSu,GuozhuMeng,YutingChen,KeWu,WeimingYang,YaoYao,Geguang
+Understanding.IEEETransactionsonSoftwareEngineering,1–16. https://doi.org/ Pu,YangLiu,andZhendongSu.2017.Guided,stochasticmodel-basedGUItesting
+10.1109/TSE.2022.3150876 ofAndroidapps.InProceedingsofthe201711thJointMeetingonFoundationsof
+[39] ZheLiu,ChunyangChen,JunjieWang,YuhuiSu,YuekaiHuang,JunHu,and SoftwareEngineering.245–256.
+QingWang.2023.ExpedeHerculem:AugmentingActivityTransitionGraph [63] TingSu,JueWang,andZhendongSu.2021. BenchmarkingautomatedGUI
+forAppsviaGraphConvolutionNetwork.In2023IEEE/ACM45thInternational testingforAndroidagainstreal-worldbugs.InFSE.
+ConferenceonSoftwareEngineering(ICSE).IEEE,1983–1995. [64] SagharTalebipour,YixueZhao,LukaDojcilovic,ChenggangLi,andNenadMed-
+[40] Zhe Liu, Chunyang Chen, Junjie Wang, Yuhui Su, and Qing Wang. 2022. vidovic.2021.UITestMigrationAcrossMobilePlatforms.InASE.IEEE,756–767.
+NaviDroid:atoolforguidingmanualAndroidtestingviahintmoves.InPro- [65] ShinHweiTanandZiqiangLi.2020.CollaborativebugfindingforAndroidapps.
+ceedingsoftheACM/IEEE44thInternationalConferenceonSoftwareEngineering: InICSE’20.ACM,1335–1347.
+CompanionProceedings.154–158. [66] MicheleTufano,DawnDrain,AlexeySvyatkovskiy,andNeelSundaresan.2022.
+[41] ZheLiu,ChunyangChen,JunjieWang,andQingWang.2022. GuidedBug Generatingaccurateassertstatementsforunittestcasesusingpretrainedtrans-
+Crush:AssistManualGUITestingofAndroidAppsviaHintMoves.InCHI2022. formers.InProceedingsofthe3rdACM/IEEEInternationalConferenceonAutoma-
+https://doi.org/10.1145/3491102.3501903 tionofSoftwareTest.54–64.
+[42] ZhengweiLv,ChaoPeng,ZhaoZhang,TingSu,KaiLiu,andPingYang.2022. [67] UIAutomator.2021. PythonwrapperofAndroiduiautomatortesttool. https:
+Fastbot2:ReusableAutomatedModel-basedGUITestingforAndroidEnhanced //github.com/xiaocong/uiautomator.
+byReinforcementLearning.InICSE. [68] AshishVaswani,NoamShazeer,NikiParmar,JakobUszkoreit,LlionJones,
+[43] AravindMachiry,RohanTahiliani,andMayurNaik.2013.Dynodroid:Aninput AidanNGomez,ŁukaszKaiser,andIlliaPolosukhin.2017. Attentionisall
+generationsystemforandroidapps.InProceedingsofthe20139thJointMeeting youneed.Advancesinneuralinformationprocessingsystems(2017).
+onFoundationsofSoftwareEngineering.224–234. [69] BryanWang,GangLi,XinZhou,ZhourongChen,ToviGrossman,andYang
+[44] KeMao,MarkHarman,andYueJia.2016.Sapienz:Multi-objectiveautomatedtest- Li.2021.Screen2words:AutomaticmobileUIsummarizationwithmultimodal
+ingforAndroidapplications.InProceedingsofthe25thInternationalSymposium learning.InThe34thAnnualACMSymposiumonUserInterfaceSoftwareand
+onSoftwareTestingandAnalysis.94–105. Technology.498–510.
+[45] AntonioMastropaolo,NathanCooper,DavidNader-Palacio,SimoneScalabrino, [70] JueWang,YanyanJiang,ChangXu,ChunCao,XiaoxingMa,andJianLu.2020.
+DenysPoshyvanyk,RoccoOliveto,andGabrieleBavota.2023.UsingTransfer Combodroid:generatinghigh-qualitytestinputsforandroidappsviausecase
+LearningforCode-RelatedTasks.IEEETrans.SoftwareEng.49,4(2023),1580– combinations.InICSE.469–480.
+1598. [71] WenyuWang,WingLam,andTaoXie.2021. Aninfrastructureapproachto
+[46] AntonioMastropaolo,SimoneScalabrino,NathanCooper,DavidNader-Palacio, improvingeffectivenessofAndroidUItestingtools.InProceedingsofthe30th
+DenysPoshyvanyk,RoccoOliveto,andGabrieleBavota.2021. Studyingthe ACMSIGSOFTInternationalSymposiumonSoftwareTestingandAnalysis.165–
+UsageofText-To-TextTransferTransformertoSupportCode-RelatedTasks. 176.
+In43rdIEEE/ACMInternationalConferenceonSoftwareEngineering,ICSE2021, [72] WenyuWang,WeiYang,TianyinXu,andTaoXie.2021. Vet:identifyingand
+Madrid,Spain,22-30May2021.IEEE,336–347. avoidingUIexplorationtarpits.InFSE.83–94.
+[47] NarimanMirzaei,JoshuaGarcia,HamidBagheri,AlirezaSadeghi,andSamMalek. [73] ChunqiuStevenXiaandLingmingZhang.2022.Lesstraining,morerepairing
+2016.ReducingcombinatoricsinGUItestingofandroidapplications.InICSE. please:revisitingautomatedprogramrepairviazero-shotlearning.InFSE.959–
+IEEE. 971.
+[48] NoorNashid,MiftaSintaha,andAliMesbah.2023.Retrieval-BasedPromptSelec- [74] QingXieandAtifMMemon.2007.Designingandcomparingautomatedtest
+tionforCode-RelatedFew-ShotLearning.InProceedingsofthe45thInternational oraclesforGUI-basedsoftwareapplications.TOSEM(2007).
+ConferenceonSoftwareEngineering(ICSE’23). [75] ZhuokuiXie,YinghaoChen,ChenZhi,ShuiguangDeng,andJianweiYin.2023.
+[49] PengyuNie,RahulBanerjee,JunyiJessyLi,RaymondJMooney,andMilos ChatUniTest:aChatGPT-basedautomatedunittestgenerationtool.arXivpreprint
+Gligoric.2023. LearningDeepSemanticsforTestCompletion. arXivpreprint arXiv:2305.04764(2023).
+arXiv:2302.10166(2023). [76] FrankFXu,UriAlon,GrahamNeubig,andVincentJosuaHellendoorn.2022.A
+[50] MinxuePan,AnHuang,GuoxinWang,TianZhang,andXuandongLi.2020. systematicevaluationoflargelanguagemodelsofcode.InProceedingsofthe6th
+Reinforcementlearningbasedcuriosity-driventestingofAndroidapplications. ACMSIGPLANInternationalSymposiumonMachineProgramming.1–10.
+InProceedingsofthe29thACMSIGSOFTInternationalSymposiumonSoftware [77] ShengqianYang,HaoweiWu,HailongZhang,YanWang,ChandrasekarSwami-
+TestingandAnalysis.153–164. nathan,DacongYan,andAtanasRountev.2018.Staticwindowtransitiongraphs
+[51] HammondPearce,BenjaminTan,BaleeghAhmad,RameshKarri,andBren- forAndroid.AutomatedSoftwareEngineering25,4(2018),833–873.
+danDolan-Gavitt.2022.ExaminingZero-ShotVulnerabilityRepairwithLarge [78] WeiYang,MukulRPrasad,andTaoXie.2013.Agrey-boxapproachforautomated
+LanguageModels.In2023IEEESymposiumonSecurityandPrivacy(SP).IEEE GUI-modelgenerationofmobileapplications.InInternationalConferenceon
+ComputerSociety,1–18. FundamentalApproachestoSoftwareEngineering.Springer,250–265.
+[52] FabianoPecorelli,GemmaCatolino,FilomenaFerrucci,AndreaDeLucia,and [79] HusamNYasin,SitiHafizahAbHamid,andRajaJamilahRajaYusof.2021.
+FabioPalomba.2022.SoftwaretestingandAndroidapplications:alarge-scale Droidbotx:TestcasegenerationtoolforandroidapplicationsusingQ-learning.
+empiricalstudy.EmpiricalSoftwareEngineering27,2(2022),1–41. Symmetry(2021).
+[53] ChaoPeng,ZhaoZhang,ZhengweiLv,andPingYang.2022. MUBot:Learn- [80] GuixinYe,ZhanyongTang,ShinHweiTan,SongfangHuang,DingyiFang,Xi-
+ingtoTestLarge-ScaleCommercialAndroidAppslikeaHuman.In2022IEEE aoyangSun,LizhongBian,HaiboWang,andZhengWang.2021. Automated
+InternationalConferenceonSoftwareMaintenanceandEvolution(ICSME).IEEE, conformancetestingforJavaScriptenginesviadeepcompilerfuzzing.InProceed-
+543–552. ingsofthe42ndACMSIGPLANinternationalconferenceonprogramminglanguage
+[54] AndreaRomdhana,AlessioMerlo,MarianoCeccato,andPaoloTonella.2022. designandimplementation.435–450.
+Deepreinforcementlearningforblack-boxtestingofandroidapps. TOSEM [81] WeiYuan,QuanjunZhang,TiekeHe,ChunrongFang,NguyenQuocVietHung,
+(2022). XiaodongHao,andHongzhiYin.2022.CIRCLE:continualrepairacrossprogram-
+[55] JuliaRubin,MichaelIGordon,NguyenNguyen,andMartinRinard.2015.Covert minglanguages.InProceedingsofthe31stACMSIGSOFTInternationalSymposium
+communicationinmobileapplications(t).In201530thIEEE/ACMInternational onSoftwareTestingandAnalysis.678–690.
+ConferenceonAutomatedSoftwareEngineering(ASE).IEEE,647–657. [82] ZhiqiangYuan,YilingLou,MingweiLiu,ShijiDing,KaixinWang,YixuanChen,
+[56] KonstantinRubinovandLucianoBaresi.2018.Whatarewemissingwhentesting andXinPeng.2023.NoMoreManualTests?EvaluatingandImprovingChatGPT
+ourandroidapps?Computer51,4(2018),60–68. forUnitTestGeneration.arXivpreprintarXiv:2305.04207(2023).
+[57] MaxSchäfer,SarahNadi,AryazEghbali,andFrankTip.2023. Adaptivetest [83] XiaZeng,DengfengLi,WujieZheng,FanXia,YuetangDeng,WingLam,Wei
+generationusingalargelanguagemodel.arXivpreprintarXiv:2302.06527(2023). Yang,andTaoXie.2016.Automatedtestinputgenerationforandroid:Arewe
+[58] JSchulman,BZoph,CKim,JHilton,JMenick,JWeng,JFCUribe,LFedus,LMetz, reallythereyetinanindustrialcase?.InFSE.
+MPokorny,etal.2022.ChatGPT:Optimizinglanguagemodelsfordialogue. [84] SusanZhang,StephenRoller,NamanGoyal,MikelArtetxe,MoyaChen,Shuohui
+[59] MohammedLatifSiddiq,JoannaSantos,RidwanulHasanTanvir,NoshinUlfat, Chen,ChristopherDewan,MonaDiab,XianLi,XiVictoriaLin,etal.2022.Opt:
+FahmidAlRifat,andViniciusCarvalhoLopes.2023.ExploringtheEffectivenessof Openpre-trainedtransformerlanguagemodels.arXivpreprintarXiv:2205.01068
+LargeLanguageModelsinGeneratingUnitTests.arXivpreprintarXiv:2305.00418 (2022).
+1233
+
+## Page 13
+
+MakeLLMaTestingExpert:BringingHuman-likeInteractiontoMobileGUITestingviaFunctionality-awareDecisions ICSE’24,April14–20,2024,Lisbon,Portugal
+[85] TingZhang,IvanaClairineIrsan,FerdianThung,DongGyunHan,DavidLo,
+andLingxiaoJiang.2022. iTiger:anautomaticissuetitlegenerationtool.In
+Proceedingsofthe30thACMJointEuropeanSoftwareEngineeringConferenceand
+SymposiumontheFoundationsofSoftwareEngineering.1637–1641.
+[86] XiaoyiZhang,LiliandeGreef,AmandaSwearngin,SamuelWhite,KyleMurray,
+LisaYu,QiShan,JeffreyNichols,JasonWu,ChrisFleizach,etal.2021.Screen
+recognition:Creatingaccessibilitymetadataformobileapplicationsfrompixels.
+InProceedingsofthe2021CHIConferenceonHumanFactorsinComputingSystems.
+1–15.
+[87] LiuZhe,ChenChunyang,WangJunjie,HuangYuekai,HuJun,andWangQing.
+2020.OwlEyes:SpottingUIDisplayIssuesviaVisualUnderstanding.In202035rd
+IEEE/ACMInternationalConferenceonAutomatedSoftwareEngineering(ASE).
+IEEE.
+[88] HaibingZheng,DengfengLi,BeihaiLiang,XiaZeng,WujieZheng,Yuetang
+Deng,WingLam,WeiYang,andTaoXie.2017.Automatedtestinputgeneration
+forandroid:Towardsgettingthereinanindustrialcase.InICSE.IEEE.
+[89] KaiyangZhou,JingkangYang,ChenChangeLoy,andZiweiLiu.2022.Learning
+topromptforvision-languagemodels.InternationalJournalofComputerVision
+(2022),1–12.
+1234
+

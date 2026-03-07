@@ -1,0 +1,177 @@
+# Crawler Configuration - Intelligent SPA Crawler
+crawler:
+  max_depth: 999  # Unlimited - crawl until nothing new
+  max_pages: 9999  # Unlimited - discover entire site
+  timeout_per_page: 30  # seconds - Reduced for faster failures (fallback handles slow sites)
+  headless: false
+  browser: chromium
+  
+  # NEW: Rate limiting for human-like behavior
+  min_delay: 0.5  # Minimum delay between actions (seconds)
+  max_delay: 2.0  # Maximum delay between actions (seconds)
+  
+  # NEW: Multi-step form wizard detection
+  detect_wizards: true  # Enable wizard detection
+  max_wizard_steps: 5  # Maximum wizard steps to navigate
+  
+  # NEW: File upload testing
+  detect_file_uploads: true  # Detect file input fields
+  test_files_dir: "data/test_files"
+  
+  # NEW: Shadow DOM support
+  detect_shadow_dom: true  # Extract elements from Web Components
+  
+  # NEW: Modal handling
+  auto_dismiss_modals: true  # Automatically dismiss blocking modals
+  
+  # Wait strategies for SPAs
+  wait_for: domcontentloaded  # Faster and more reliable than networkidle for heavy sites
+  additional_wait: 5000  # Extra time for React/Vue hydration (increased for e-commerce)
+  
+  # Adaptive timing
+  spa_wait_times:
+    react: 6000
+    vue: 5000
+    angular: 7000
+    default: 3000
+
+# URL Normalization - Simple Regex (No DOM Hashing)
+url_normalization:
+  enabled: true
+  # Generic patterns that work for any site
+  patterns:
+    - pattern: '/\d+'  # /user/123 -> /user/:id
+      replacement: '/:id'
+    - pattern: '/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}'  # UUIDs
+      replacement: '/:uuid'
+    - pattern: '/[a-z0-9]{24}'  # MongoDB ObjectIDs
+      replacement: '/:objectid'
+    # DISABLED: Too aggressive - matches legitimate paths like /nestedframes, /browser-windows
+    # - pattern: '/[a-zA-Z0-9_-]{10,}'  # Slugs/tokens
+    #   replacement: '/:slug'
+
+# AI Enrichment (Gemini) - REQUIRED for intelligent crawling
+ai_enrichment:
+  enabled: true
+  max_calls_per_crawl: 9999  # Unlimited - use AI everywhere
+  rate_limit_delay: 1  # seconds between calls
+  max_dom_size: 10000  # Larger context for better understanding
+  api_key_env: GEMINI_API_KEY
+  
+  # AI capabilities
+  capabilities:
+    detect_components: true  # Find React/Vue components
+    generate_form_data: true  # Create realistic test data
+    find_navigation: true  # Discover hidden navigation
+    detect_interactive_elements: true  # Find all clickables
+
+# Form Detection
+form_detection:
+  strategies:
+    - semantic  # <form> tags
+    - container  # <div> wrapping inputs
+    - clustering  # proximity-based
+    - event_driven  # onChange/onSubmit
+    - checkbox_tree  # hierarchical checkboxes
+    - ai_powered  # Gemini fallback
+  
+  deduplication: true
+  min_inputs_for_form: 2
+
+# Link Extraction - Pure Action-Verify-Back (No <a> tag dependency)
+link_extraction:
+  same_origin_only: true
+  
+  # Action-Verify-Back - PRIMARY and ONLY navigation method
+  action_verify_back:
+    enabled: true
+    max_clickables_per_page: 999  # Unlimited - click everything
+    parallel_batch_size: 10  # Faster parallel processing
+    
+    # 🧠 INTELLIGENT FILTERING: Prevent clicking duplicate components
+    # Example: 100 product cards → click only 1 representative
+    intelligent_filtering: true  # HIGHLY RECOMMENDED
+    
+    # 📸 PAGE SNAPSHOTS: Save HTML + clickables for debugging
+    # Helps debug filtering logic and understand what's being clicked
+    save_snapshots: true  # Recommended for testing/debugging
+    
+    # Intelligent element detection
+    selectors:
+      - '*[onclick]'  # JS click handlers
+      - '*[role="button"]'  # ARIA buttons
+      - '*[role="link"]'  # ARIA links
+      - 'button'  # All buttons
+      - 'a'  # Traditional links (if any)
+      - 'div[class*="button"]'  # Styled divs as buttons
+      - 'div[class*="link"]'  # Styled divs as links
+      - 'div[class*="nav"]'  # Navigation divs
+      - 'div[class*="menu"]'  # Menu items
+      - 'div[class*="item"]'  # List items
+      - 'li[class*="nav"]'  # Nav list items
+      - '[class*="clickable"]'  # Anything marked clickable
+      - '[style*="cursor: pointer"]'  # Cursor pointer elements
+    
+    # Smart interaction
+    expand_hidden: true  # Open accordions, dropdowns, modals
+    use_ai_detection: true  # Let Gemini find navigation
+  
+  exclude_patterns:
+    - '/logout'
+    - '/signout'
+    - '/delete'
+    - '/remove'
+
+# State Management - Full HTML Comparison (No Hashing)
+state_management:
+  hash_algorithm: sha256
+  hybrid_hashing: false  # Disabled - use full HTML comparison
+  use_full_html: true  # Compare document.body.innerHTML
+  checkpoint_interval: 10  # Save progress more often
+  
+  # Deduplication strategy
+  comparison_method: 'rendered_html'  # Compare full rendered HTML
+  ignore_dynamic_content: true  # Ignore timestamps, counters
+  similarity_threshold: 0.95  # 95% similar = same state
+
+# Interaction Simulation - Intelligent User Behavior
+interaction:
+  enabled: true
+  click_links: true
+  submit_forms: false  # Dry-run mode
+  expand_accordions: true  # CRITICAL for nested navigation
+  open_modals: true
+  hover_menus: true
+  handle_dropdowns: true  # Open all dropdowns
+  scroll_to_load: true  # Infinite scroll handling
+  
+  # AI-generated realistic data (from Gemini)
+  use_ai_data: true  # Let Gemini generate contextual data
+  synthetic_data:  # Fallback if AI fails
+    text: 'Test User'
+    email: 'test@example.com'
+    password: 'Test@123456'
+    number: '42'
+    tel: '+1234567890'
+    url: 'https://example.com'
+    date: '2024-12-31'
+    time: '14:30'
+    color: '#FF5733'
+
+# Logging
+logging:
+  level: INFO  # DEBUG, INFO, WARNING, ERROR
+  console: true
+  file: true
+  log_dir: data/logs
+  max_logs_per_page: 5
+
+# Export
+export:
+  formats:
+    - json
+    - csv
+    - graphml
+  output_dir: data/crawled_graphs
+  screenshot_dir: data/screenshots
+  include_screenshots: false

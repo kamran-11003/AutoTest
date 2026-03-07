@@ -1,0 +1,41 @@
+{
+  "crawl_to_tests": {
+    "02ff119c3c5f43dc1f09ee2942c073c5": "tests_20260305_205349.json",
+    "8b10e62399f2a75e3df9cf7eb02494ad": "tests_20260307_202310.json"
+  },
+  "crawl_to_constraints": {},
+  "crawl_metadata": {
+    "02ff119c3c5f43dc1f09ee2942c073c5": {
+      "crawl_file": "127_0_0_1_5001_20260305_205322.json",
+      "registered_at": "2026-03-07T19:44:52.899851",
+      "metadata": {
+        "url": " http://127.0.0.1:5001",
+        "timestamp": "2026-03-07T19:44:52.899851"
+      }
+    },
+    "8b10e62399f2a75e3df9cf7eb02494ad": {
+      "crawl_file": "127_0_0_1_5001_20260307_200257.json",
+      "registered_at": "2026-03-07T20:33:12.792246",
+      "metadata": {
+        "url": "http://127.0.0.1:5001",
+        "timestamp": "2026-03-07T20:33:12.792246"
+      }
+    }
+  },
+  "version_history": {
+    "02ff119c3c5f43dc1f09ee2942c073c5": [
+      {
+        "test_file": "tests_20260305_205349.json",
+        "version": 2,
+        "timestamp": "2026-03-05T21:22:34.761401"
+      }
+    ],
+    "8b10e62399f2a75e3df9cf7eb02494ad": [
+      {
+        "test_file": "tests_20260307_202310.json",
+        "version": 1,
+        "timestamp": "2026-03-07T20:33:12.800243"
+      }
+    ]
+  }
+}
