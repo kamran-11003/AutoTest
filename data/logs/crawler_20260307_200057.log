@@ -1,0 +1,9 @@
+2026-03-07 20:01:23 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 6 detection strategies
+2026-03-07 20:01:23 | crawler.state_manager | INFO | StateManager initialized (normalization=ON)
+2026-03-07 20:01:23 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-07 20:01:49 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-07 20:01:49 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 0 buttons, 1 links
+2026-03-07 20:02:00 | crawler.state_manager | INFO | ✅ New state: fb871217 | / | 0 inputs, 0 forms
+2026-03-07 20:02:07 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-07 20:02:07 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 2 inputs, 1 forms, 1 buttons, 0 links
+2026-03-07 20:02:14 | crawler.state_manager | INFO | ✅ New state: 93b50e53 | /login | 2 inputs, 1 forms

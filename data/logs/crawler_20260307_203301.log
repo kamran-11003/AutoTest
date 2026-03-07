@@ -1,0 +1,30 @@
+2026-03-07 20:33:13 | app.components.graph_viz | INFO | GraphVisualizer initialized
+2026-03-07 20:33:13 | app.components.graph_viz | INFO | ✅ Added 2 nodes
+2026-03-07 20:33:13 | app.components.graph_viz | INFO | ✅ Graph: 2 nodes, 1 edges
+2026-03-07 20:33:13 | app.components.graph_viz | INFO | 📊 Saved: data\temp_graph.html
+2026-03-07 20:33:13 | app.utils.exporter | INFO | Exporter initialized: data/crawled_graphs
+2026-03-07 20:33:24 | app.components.graph_viz | INFO | GraphVisualizer initialized
+2026-03-07 20:33:24 | app.components.graph_viz | INFO | ✅ Added 2 nodes
+2026-03-07 20:33:24 | app.components.graph_viz | INFO | ✅ Graph: 2 nodes, 1 edges
+2026-03-07 20:33:24 | app.components.graph_viz | INFO | 📊 Saved: data\temp_graph.html
+2026-03-07 20:33:24 | app.utils.exporter | INFO | Exporter initialized: data/crawled_graphs
+2026-03-07 20:38:46 | app.components.graph_viz | INFO | GraphVisualizer initialized
+2026-03-07 20:38:46 | app.components.graph_viz | INFO | ✅ Added 2 nodes
+2026-03-07 20:38:46 | app.components.graph_viz | INFO | ✅ Graph: 2 nodes, 1 edges
+2026-03-07 20:38:46 | app.components.graph_viz | INFO | 📊 Saved: data\temp_graph.html
+2026-03-07 20:38:47 | app.utils.exporter | INFO | Exporter initialized: data/crawled_graphs
+2026-03-07 20:40:52 | app.components.graph_viz | INFO | GraphVisualizer initialized
+2026-03-07 20:40:52 | app.components.graph_viz | INFO | ✅ Added 2 nodes
+2026-03-07 20:40:52 | app.components.graph_viz | INFO | ✅ Graph: 2 nodes, 1 edges
+2026-03-07 20:40:53 | app.components.graph_viz | INFO | 📊 Saved: data\temp_graph.html
+2026-03-07 20:40:53 | app.utils.exporter | INFO | Exporter initialized: data/crawled_graphs
+2026-03-07 20:41:01 | app.components.graph_viz | INFO | GraphVisualizer initialized
+2026-03-07 20:41:01 | app.components.graph_viz | INFO | ✅ Added 2 nodes
+2026-03-07 20:41:01 | app.components.graph_viz | INFO | ✅ Graph: 2 nodes, 1 edges
+2026-03-07 20:41:01 | app.components.graph_viz | INFO | 📊 Saved: data\temp_graph.html
+2026-03-07 20:41:01 | app.utils.exporter | INFO | Exporter initialized: data/crawled_graphs
+2026-03-07 20:47:00 | app.components.graph_viz | INFO | GraphVisualizer initialized
+2026-03-07 20:47:00 | app.components.graph_viz | INFO | ✅ Added 2 nodes
+2026-03-07 20:47:00 | app.components.graph_viz | INFO | ✅ Graph: 2 nodes, 1 edges
+2026-03-07 20:47:00 | app.components.graph_viz | INFO | 📊 Saved: data\temp_graph.html
+2026-03-07 20:47:01 | app.utils.exporter | INFO | Exporter initialized: data/crawled_graphs

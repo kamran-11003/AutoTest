@@ -5,10 +5,8 @@ Single login form with 2 fields: username + password.
 
 INTENTIONAL BUGS (for black-box test detection):
 -------------------------------------------------
-  BUG-1 [BVA off-by-one]  : HTML declares minlength=6 for password, but server
-                             requires len >= 8. So 6- and 7-char passwords are
-                             rejected by the server even though the browser
-                             considers them valid.
+  BUG-1 [BVA off-by-one]  : FIXED — server now correctly enforces len >= 6,
+                             matching the HTML minlength=6.
 
   BUG-2 [ECP reserved val]: Username "admin" is always rejected, even when it
                              meets all other constraints.
@@ -20,7 +18,7 @@ INTENTIONAL BUGS (for black-box test detection):
 
 Valid credentials for passing tests:
   username : 3-15 chars, letters only (no digits), not "admin"
-  password : 8-30 chars (server min is 8, not 6 as declared in HTML)
+  password : 6-30 chars (BUG-1 fixed: server min now matches HTML minlength=6)
 
 Run:
     python test_server/server.py
@@ -110,9 +108,9 @@ def login():
             errors.append("Username cannot exceed 15 characters.")
 
         # ── password length ────────────────────────────────────────────
-        # NOTE: HTML says minlength=6 but server enforces >= 8  <- BUG-1
-        if password and len(password) < 8:
-            errors.append("Password must be at least 8 characters.")
+        # BUG-1 FIXED: server now enforces >= 6, matching the HTML minlength=6
+        if password and len(password) < 6:
+            errors.append("Password must be at least 6 characters.")
         if password and len(password) > 30:
             errors.append("Password cannot exceed 30 characters.")
 

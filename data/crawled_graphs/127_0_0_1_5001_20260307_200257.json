@@ -1,0 +1,146 @@
+{
+  "nodes": [
+    {
+      "id": "fb871217",
+      "hash": "fb871217",
+      "url": "http://127.0.0.1:5001",
+      "normalized_url": "/",
+      "title": "Test Server v2",
+      "input_count": 0,
+      "button_count": 0,
+      "link_count": 1,
+      "form_count": 0,
+      "inputs": [],
+      "buttons": [],
+      "links": [
+        "http://127.0.0.1:5001/login"
+      ],
+      "forms": [],
+      "timestamp": "2026-03-07T20:02:00.064470",
+      "metadata": {}
+    },
+    {
+      "id": "93b50e53",
+      "hash": "93b50e53",
+      "url": "http://127.0.0.1:5001/login",
+      "normalized_url": "/login",
+      "title": "Login",
+      "input_count": 2,
+      "button_count": 1,
+      "link_count": 0,
+      "form_count": 1,
+      "inputs": [
+        {
+          "type": "text",
+          "name": "username",
+          "id": "username",
+          "label": "Username (3-15 characters)",
+          "placeholder": "e.g. johndoe",
+          "required": true,
+          "pattern": null,
+          "minLength": 3,
+          "maxLength": 15,
+          "min": null,
+          "max": null,
+          "step": null,
+          "visible": true,
+          "parent_form": "loginForm",
+          "selector": "input[name=\"username\"]",
+          "disabled": false
+        },
+        {
+          "type": "password",
+          "name": "password",
+          "id": "password",
+          "label": "Password (min 6 chars)",
+          "placeholder": "@@@@@@",
+          "required": true,
+          "pattern": null,
+          "minLength": 6,
+          "maxLength": 30,
+          "min": null,
+          "max": null,
+          "step": null,
+          "visible": true,
+          "parent_form": "loginForm",
+          "selector": "input[name=\"password\"]",
+          "disabled": false
+        }
+      ],
+      "buttons": [
+        "Login"
+      ],
+      "links": [],
+      "forms": [
+        {
+          "signature": "b3755583",
+          "inputs": [
+            {
+              "type": "text",
+              "name": "username",
+              "id": "username",
+              "label": "Username (3-15 characters)",
+              "placeholder": "e.g. johndoe",
+              "required": true,
+              "pattern": null,
+              "minLength": 3,
+              "maxLength": 15,
+              "min": null,
+              "max": null,
+              "step": null,
+              "visible": true,
+              "parent_form": "#loginForm",
+              "selector": "#username",
+              "disabled": false
+            },
+            {
+              "type": "password",
+              "name": "password",
+              "id": "password",
+              "label": "Password (min 6 chars)",
+              "placeholder": "@@@@@@",
+              "required": true,
+              "pattern": null,
+              "minLength": 6,
+              "maxLength": 30,
+              "min": null,
+              "max": null,
+              "step": null,
+              "visible": true,
+              "parent_form": "#loginForm",
+              "selector": "#password",
+              "disabled": false
+            }
+          ],
+          "submit_button": "Login",
+          "action": "http://127.0.0.1:5001/login",
+          "method": "post",
+          "selector": "#loginForm",
+          "detection_method": "semantic"
+        }
+      ],
+      "timestamp": "2026-03-07T20:02:14.397210",
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "from_hash": "fb871217",
+      "to_hash": "93b50e53",
+      "source": "fb871217",
+      "target": "93b50e53",
+      "action": "click",
+      "element": "a[href=\"http://127.0.0.1:5001/login\"]",
+      "label": "Link to http://127.0.0.1:5001/login",
+      "timestamp": "2026-03-07T20:02:00.065545"
+    }
+  ],
+  "stats": {
+    "node_count": 2,
+    "edge_count": 1,
+    "isolated_nodes": 0,
+    "is_connected": true,
+    "max_depth": 1,
+    "avg_depth": 0.5
+  }
+}

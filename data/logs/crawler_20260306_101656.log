@@ -1,0 +1,2 @@
+2026-03-07 19:59:05 | crawler.intelligent_link_filter | INFO | IntelligentLinkFilter initialized
+2026-03-07 19:59:05 | crawler.page_snapshot | INFO | PageSnapshot initialized (output: data/snapshots)

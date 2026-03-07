@@ -1,0 +1,14 @@
+2026-03-07 20:01:21 | crawler.gemini_key_rotator | INFO | 🔑 Loaded 11 Gemini API keys for rotation
+2026-03-07 20:01:23 | crawler.gemini_key_rotator | INFO | 🔑 Loaded 11 Gemini API keys for rotation
+2026-03-07 20:01:23 | crawler.gemini_key_rotator | INFO | 🔑 Loaded 11 Gemini API keys for rotation
+2026-03-07 20:01:48 | crawler.gemini_key_rotator | INFO | 🔄 Rotated API key: ...vvdOTYio → ...7HOuUVAQ (reason: rate_limit)
+2026-03-07 20:01:49 | crawler.gemini_key_rotator | INFO | 🔄 Rotated API key: ...vvdOTYio → ...7HOuUVAQ (reason: rate_limit)
+2026-03-07 20:01:50 | crawler.gemini_key_rotator | INFO | 🔄 Rotated API key: ...7HOuUVAQ → ...2mnOgfck (reason: rate_limit)
+2026-03-07 20:01:51 | crawler.gemini_key_rotator | INFO | 🔄 Rotated API key: ...2mnOgfck → ...zHeHct_A (reason: rate_limit)
+2026-03-07 20:02:07 | crawler.gemini_key_rotator | INFO | 🔄 Rotated API key: ...zHeHct_A → ...PNLPMFTg (reason: rate_limit)
+2026-03-07 20:02:08 | crawler.gemini_key_rotator | INFO | 🔄 Rotated API key: ...PNLPMFTg → ...ArWsdYOE (reason: rate_limit)
+2026-03-07 20:02:09 | crawler.gemini_key_rotator | INFO | 🔄 Rotated API key: ...ArWsdYOE → ...z7HsJIRg (reason: rate_limit)
+2026-03-07 20:04:10 | crawler.gemini_key_rotator | INFO | 🔑 Loaded 11 Gemini API keys for rotation
+2026-03-07 20:05:36 | crawler.gemini_key_rotator | INFO | 🔄 Rotated API key: ...vvdOTYio → ...7HOuUVAQ (reason: rate_limit)
+2026-03-07 20:23:20 | crawler.gemini_key_rotator | INFO | 🔑 Loaded 11 Gemini API keys for rotation
+2026-03-07 20:24:12 | crawler.gemini_key_rotator | INFO | 🔄 Rotated API key: ...vvdOTYio → ...7HOuUVAQ (reason: rate_limit)
