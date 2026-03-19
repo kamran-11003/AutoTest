@@ -1,0 +1,868 @@
+{
+  "url": "https://qa-tester-practice-website.vercel.app/form-testing.html",
+  "title": "Form Testing - QA Tester Practice Website",
+  "timestamp": "20260319_213930",
+  "crawl_stats": {
+    "total_clickables": 56,
+    "after_filtering": 31,
+    "filtered_out": 25,
+    "reduction_percentage": 44.64,
+    "discovered_urls": 4
+  },
+  "clickable_elements": {
+    "before_filtering": [
+      {
+        "tag": "A",
+        "text": "Home",
+        "class": "",
+        "id": "nav-home",
+        "href": "https://qa-tester-practice-website.vercel.app/index.html",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Form Testing",
+        "class": "active",
+        "id": "nav-forms",
+        "href": "https://qa-tester-practice-website.vercel.app/form-testing.html",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Input Controls",
+        "class": "",
+        "id": "nav-inputs",
+        "href": "https://qa-tester-practice-website.vercel.app/input-controls.html",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Hover & UI",
+        "class": "",
+        "id": "nav-hover",
+        "href": "https://qa-tester-practice-website.vercel.app/hover-ui.html",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Links & Navigation",
+        "class": "",
+        "id": "nav-links",
+        "href": "https://qa-tester-practice-website.vercel.app/links-navigation.html",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "qa-testing@example.com",
+        "class": "",
+        "id": "",
+        "href": "mailto:qa-testing@example.com",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "+1 (234) 567-890",
+        "class": "",
+        "id": "",
+        "href": "tel:+1234567890",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Back to Top",
+        "class": "",
+        "id": "",
+        "href": "https://qa-tester-practice-website.vercel.app/form-testing.html#main-navigation",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Home",
+        "class": "",
+        "id": "",
+        "href": "https://qa-tester-practice-website.vercel.app/index.html",
+        "confidence": "high"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Submit Registration",
+        "class": "btn-primary",
+        "id": "submit-button",
+        "href": "",
+        "confidence": "high"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Reset Form",
+        "class": "btn-secondary",
+        "id": "reset-button",
+        "href": "",
+        "confidence": "high"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Disabled Button",
+        "class": "btn-disabled",
+        "id": "disabled-button",
+        "href": "",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Home",
+        "class": "",
+        "id": "",
+        "href": "https://qa-tester-practice-website.vercel.app/index.html",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "A",
+        "text": "Form Testing",
+        "class": "",
+        "id": "",
+        "href": "https://qa-tester-practice-website.vercel.app/form-testing.html",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "A",
+        "text": "Input Controls",
+        "class": "",
+        "id": "",
+        "href": "https://qa-tester-practice-website.vercel.app/input-controls.html",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "A",
+        "text": "Hover & UI",
+        "class": "",
+        "id": "",
+        "href": "https://qa-tester-practice-website.vercel.app/hover-ui.html",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "A",
+        "text": "Links & Navigation",
+        "class": "",
+        "id": "",
+        "href": "https://qa-tester-practice-website.vercel.app/links-navigation.html",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "INPUT",
+        "text": "",
+        "class": "",
+        "id": "",
+        "href": "",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "INPUT",
+        "text": "",
+        "class": "",
+        "id": "",
+        "href": "",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "INPUT",
+        "text": "",
+        "class": "",
+        "id": "",
+        "href": "",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "INPUT",
+        "text": "",
+        "class": "",
+        "id": "",
+        "href": "",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "INPUT",
+        "text": "",
+        "class": "",
+        "id": "",
+        "href": "",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "INPUT",
+        "text": "",
+        "class": "",
+        "id": "",
+        "href": "",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "INPUT",
+        "text": "",
+        "class": "",
+        "id": "",
+        "href": "",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "INPUT",
+        "text": "",
+        "class": "",
+        "id": "",
+        "href": "",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "INPUT",
+        "text": "male",
+        "class": "",
+        "id": "",
+        "href": "",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "LABEL",
+        "text": "Male",
+        "class": "",
+        "id": "",
+        "href": "",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "INPUT",
+        "text": "female",
+        "class": "",
+        "id": "",
+        "href": "",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "LABEL",
+        "text": "Female",
+        "class": "",
+        "id": "",
+        "href": "",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "INPUT",
+        "text": "other",
+        "class": "",
+        "id": "",
+        "href": "",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "LABEL",
+        "text": "Other",
+        "class": "",
+        "id": "",
+        "href": "",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "INPUT",
+        "text": "prefer-not",
+        "class": "",
+        "id": "",
+        "href": "",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "INPUT",
+        "text": "automation",
+        "class": "",
+        "id": "",
+        "href": "",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "LABEL",
+        "text": "Test Automation",
+        "class": "",
+        "id": "",
+        "href": "",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "INPUT",
+        "text": "manual",
+        "class": "",
+        "id": "",
+        "href": "",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "LABEL",
+        "text": "Manual Testing",
+        "class": "",
+        "id": "",
+        "href": "",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "INPUT",
+        "text": "performance",
+        "class": "",
+        "id": "",
+        "href": "",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "LABEL",
+        "text": "Performance Testing",
+        "class": "",
+        "id": "",
+        "href": "",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "INPUT",
+        "text": "security",
+        "class": "",
+        "id": "",
+        "href": "",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "LABEL",
+        "text": "Security Testing",
+        "class": "",
+        "id": "",
+        "href": "",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "INPUT",
+        "text": "api",
+        "class": "",
+        "id": "",
+        "href": "",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "INPUT",
+        "text": "",
+        "class": "",
+        "id": "",
+        "href": "",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "INPUT",
+        "text": "",
+        "class": "",
+        "id": "",
+        "href": "",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "INPUT",
+        "text": "on",
+        "class": "",
+        "id": "",
+        "href": "",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "LABEL",
+        "text": "I agree to the terms and conditions *",
+        "class": "",
+        "id": "",
+        "href": "",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "INPUT",
+        "text": "on",
+        "class": "",
+        "id": "",
+        "href": "",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "LABEL",
+        "text": "Subscribe to newsletter",
+        "class": "",
+        "id": "",
+        "href": "",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Submit Registration",
+        "class": "",
+        "id": "",
+        "href": "",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Reset Form",
+        "class": "",
+        "id": "",
+        "href": "",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Disabled Button",
+        "class": "",
+        "id": "",
+        "href": "",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "INPUT",
+        "text": "This field is read-only",
+        "class": "",
+        "id": "",
+        "href": "",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "INPUT",
+        "text": "This field is disabled",
+        "class": "",
+        "id": "",
+        "href": "",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "A",
+        "text": "qa-testing@example.com",
+        "class": "",
+        "id": "",
+        "href": "mailto:qa-testing@example.com",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "A",
+        "text": "+1 (234) 567-890",
+        "class": "",
+        "id": "",
+        "href": "tel:+1234567890",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "A",
+        "text": "Back to Top",
+        "class": "",
+        "id": "",
+        "href": "https://qa-tester-practice-website.vercel.app/form-testing.html#main-navigation",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "A",
+        "text": "Home",
+        "class": "",
+        "id": "",
+        "href": "https://qa-tester-practice-website.vercel.app/index.html",
+        "confidence": "unknown"
+      }
+    ],
+    "after_filtering": [
+      {
+        "tag": "A",
+        "text": "Home",
+        "class": "",
+        "id": "nav-home",
+        "href": "https://qa-tester-practice-website.vercel.app/index.html"
+      },
+      {
+        "tag": "A",
+        "text": "Input Controls",
+        "class": "",
+        "id": "nav-inputs",
+        "href": "https://qa-tester-practice-website.vercel.app/input-controls.html"
+      },
+      {
+        "tag": "A",
+        "text": "Hover & UI",
+        "class": "",
+        "id": "nav-hover",
+        "href": "https://qa-tester-practice-website.vercel.app/hover-ui.html"
+      },
+      {
+        "tag": "A",
+        "text": "Links & Navigation",
+        "class": "",
+        "id": "nav-links",
+        "href": "https://qa-tester-practice-website.vercel.app/links-navigation.html"
+      },
+      {
+        "tag": "INPUT",
+        "text": "",
+        "class": "",
+        "id": "",
+        "href": ""
+      },
+      {
+        "tag": "INPUT",
+        "text": "male",
+        "class": "",
+        "id": "",
+        "href": ""
+      },
+      {
+        "tag": "LABEL",
+        "text": "Male",
+        "class": "",
+        "id": "",
+        "href": ""
+      },
+      {
+        "tag": "INPUT",
+        "text": "female",
+        "class": "",
+        "id": "",
+        "href": ""
+      },
+      {
+        "tag": "LABEL",
+        "text": "Female",
+        "class": "",
+        "id": "",
+        "href": ""
+      },
+      {
+        "tag": "INPUT",
+        "text": "other",
+        "class": "",
+        "id": "",
+        "href": ""
+      },
+      {
+        "tag": "LABEL",
+        "text": "Other",
+        "class": "",
+        "id": "",
+        "href": ""
+      },
+      {
+        "tag": "INPUT",
+        "text": "prefer-not",
+        "class": "",
+        "id": "",
+        "href": ""
+      },
+      {
+        "tag": "INPUT",
+        "text": "automation",
+        "class": "",
+        "id": "",
+        "href": ""
+      },
+      {
+        "tag": "LABEL",
+        "text": "Test Automation",
+        "class": "",
+        "id": "",
+        "href": ""
+      },
+      {
+        "tag": "INPUT",
+        "text": "manual",
+        "class": "",
+        "id": "",
+        "href": ""
+      },
+      {
+        "tag": "LABEL",
+        "text": "Manual Testing",
+        "class": "",
+        "id": "",
+        "href": ""
+      },
+      {
+        "tag": "INPUT",
+        "text": "performance",
+        "class": "",
+        "id": "",
+        "href": ""
+      },
+      {
+        "tag": "LABEL",
+        "text": "Performance Testing",
+        "class": "",
+        "id": "",
+        "href": ""
+      },
+      {
+        "tag": "INPUT",
+        "text": "security",
+        "class": "",
+        "id": "",
+        "href": ""
+      },
+      {
+        "tag": "LABEL",
+        "text": "Security Testing",
+        "class": "",
+        "id": "",
+        "href": ""
+      },
+      {
+        "tag": "INPUT",
+        "text": "api",
+        "class": "",
+        "id": "",
+        "href": ""
+      },
+      {
+        "tag": "INPUT",
+        "text": "on",
+        "class": "",
+        "id": "",
+        "href": ""
+      },
+      {
+        "tag": "LABEL",
+        "text": "I agree to the terms and conditions *",
+        "class": "",
+        "id": "",
+        "href": ""
+      },
+      {
+        "tag": "LABEL",
+        "text": "Subscribe to newsletter",
+        "class": "",
+        "id": "",
+        "href": ""
+      },
+      {
+        "tag": "INPUT",
+        "text": "This field is read-only",
+        "class": "",
+        "id": "",
+        "href": ""
+      },
+      {
+        "tag": "INPUT",
+        "text": "This field is disabled",
+        "class": "",
+        "id": "",
+        "href": ""
+      },
+      {
+        "tag": "A",
+        "text": "qa-testing@example.com",
+        "class": "",
+        "id": "",
+        "href": "mailto:qa-testing@example.com"
+      },
+      {
+        "tag": "A",
+        "text": "+1 (234) 567-890",
+        "class": "",
+        "id": "",
+        "href": "tel:+1234567890"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Submit Registration",
+        "class": "btn-primary",
+        "id": "submit-button",
+        "href": ""
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Reset Form",
+        "class": "btn-secondary",
+        "id": "reset-button",
+        "href": ""
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Disabled Button",
+        "class": "btn-disabled",
+        "id": "disabled-button",
+        "href": ""
+      }
+    ],
+    "filtered_out": [
+      {
+        "tag": "A",
+        "text": "Form Testing",
+        "class": "active",
+        "id": "nav-forms",
+        "href": "https://qa-tester-practice-website.vercel.app/form-testing.html",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Back to Top",
+        "class": "",
+        "id": "",
+        "href": "https://qa-tester-practice-website.vercel.app/form-testing.html#main-navigation",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Home",
+        "class": "",
+        "id": "",
+        "href": "https://qa-tester-practice-website.vercel.app/index.html",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Home",
+        "href": "https://qa-tester-practice-website.vercel.app/index.html",
+        "type": "",
+        "shadow": false,
+        "shadowPath": "",
+        "selector": null
+      },
+      {
+        "tag": "A",
+        "text": "Form Testing",
+        "href": "https://qa-tester-practice-website.vercel.app/form-testing.html",
+        "type": "",
+        "shadow": false,
+        "shadowPath": "",
+        "selector": null
+      },
+      {
+        "tag": "A",
+        "text": "Input Controls",
+        "href": "https://qa-tester-practice-website.vercel.app/input-controls.html",
+        "type": "",
+        "shadow": false,
+        "shadowPath": "",
+        "selector": null
+      },
+      {
+        "tag": "A",
+        "text": "Hover & UI",
+        "href": "https://qa-tester-practice-website.vercel.app/hover-ui.html",
+        "type": "",
+        "shadow": false,
+        "shadowPath": "",
+        "selector": null
+      },
+      {
+        "tag": "A",
+        "text": "Links & Navigation",
+        "href": "https://qa-tester-practice-website.vercel.app/links-navigation.html",
+        "type": "",
+        "shadow": false,
+        "shadowPath": "",
+        "selector": null
+      },
+      {
+        "tag": "INPUT",
+        "text": "",
+        "href": "",
+        "type": "email",
+        "shadow": false,
+        "shadowPath": "",
+        "selector": null
+      },
+      {
+        "tag": "INPUT",
+        "text": "",
+        "href": "",
+        "type": "password",
+        "shadow": false,
+        "shadowPath": "",
+        "selector": null
+      },
+      {
+        "tag": "INPUT",
+        "text": "",
+        "href": "",
+        "type": "password",
+        "shadow": false,
+        "shadowPath": "",
+        "selector": null
+      },
+      {
+        "tag": "INPUT",
+        "text": "",
+        "href": "",
+        "type": "tel",
+        "shadow": false,
+        "shadowPath": "",
+        "selector": null
+      },
+      {
+        "tag": "INPUT",
+        "text": "",
+        "href": "",
+        "type": "date",
+        "shadow": false,
+        "shadowPath": "",
+        "selector": null
+      },
+      {
+        "tag": "INPUT",
+        "text": "",
+        "href": "",
+        "type": "number",
+        "shadow": false,
+        "shadowPath": "",
+        "selector": null
+      },
+      {
+        "tag": "INPUT",
+        "text": "",
+        "href": "",
+        "type": "url",
+        "shadow": false,
+        "shadowPath": "",
+        "selector": null
+      },
+      {
+        "tag": "INPUT",
+        "text": "",
+        "href": "",
+        "type": "file",
+        "shadow": false,
+        "shadowPath": "",
+        "selector": null
+      },
+      {
+        "tag": "INPUT",
+        "text": "",
+        "href": "",
+        "type": "search",
+        "shadow": false,
+        "shadowPath": "",
+        "selector": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Submit Registration",
+        "href": "",
+        "type": "submit",
+        "shadow": false,
+        "shadowPath": "",
+        "selector": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Reset Form",
+        "href": "",
+        "type": "reset",
+        "shadow": false,
+        "shadowPath": "",
+        "selector": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Disabled Button",
+        "href": "",
+        "type": "button",
+        "shadow": false,
+        "shadowPath": "",
+        "selector": null
+      }
+    ]
+  },
+  "discovered_urls": [
+    "https://qa-tester-practice-website.vercel.app/input-controls.html",
+    "https://qa-tester-practice-website.vercel.app/hover-ui.html",
+    "https://qa-tester-practice-website.vercel.app/index.html",
+    "https://qa-tester-practice-website.vercel.app/links-navigation.html"
+  ]
+}

@@ -1,0 +1,49 @@
+2026-03-19 21:26:33 | __main__ | INFO | 
+📂 STEP 1: Loading Test Cases
+2026-03-19 21:26:33 | __main__ | INFO | --------------------------------------------------------------------------------
+2026-03-19 21:26:33 | __main__ | INFO | ✓ Loaded 25 test cases from tests_20260307_200310.json
+2026-03-19 21:26:33 | __main__ | INFO | 
+🔍 STEP 2: Classifying Test Subtypes
+2026-03-19 21:26:33 | __main__ | INFO | --------------------------------------------------------------------------------
+2026-03-19 21:26:33 | __main__ | INFO | 
+⚖️  STEP 3: Scoring Tests by Failure Probability
+2026-03-19 21:26:33 | __main__ | INFO | --------------------------------------------------------------------------------
+2026-03-19 21:26:33 | __main__ | INFO | 
+🚀 STEP 4: Executing Tests with Adaptive Runner
+2026-03-19 21:26:33 | __main__ | INFO | --------------------------------------------------------------------------------
+2026-03-19 21:26:34 | execution.rl_agent.dqn_agent | INFO | RL model loaded (ε=0.112)
+2026-03-19 21:26:36 | execution.cache_manager | WARNING | Redis cache unavailable: Error 10061 connecting to 127.0.0.1:6379. No connection could be made because the target machine actively refused it.. Running without cache.
+2026-03-19 21:26:36 | __main__ | INFO | 📋 Executing 5 tests with full optimization pipeline...
+2026-03-19 21:26:36 | execution.adaptive_runner | INFO | 
+=== Test Failure Probability Report (Top 10) ===
+Priority   Test ID              Type            Risk     Risk Factors                                                
+------------------------------------------------------------------------------------------------------------------------
+55         bva_length_b3755583  BVA             45.00%   Subtype: BVA/numeric_boundaries (base risk: 0.70, confidence: 50%); Generic BVA test
+55         bva_length_b3755583  BVA             45.00%   Subtype: BVA/numeric_boundaries (base risk: 0.70, confidence: 50%); Generic BVA test
+55         bva_length_b3755583  BVA             45.00%   Subtype: BVA/numeric_boundaries (base risk: 0.70, confidence: 50%); Generic BVA test
+55         bva_length_b3755583  BVA             45.00%   Subtype: BVA/numeric_boundaries (base risk: 0.70, confidence: 50%); Generic BVA test
+55         bva_length_b3755583  BVA             45.00%   Subtype: BVA/numeric_boundaries (base risk: 0.70, confidence: 50%); Generic BVA test
+------------------------------------------------------------------------------------------------------------------------
+Average failure probability: 45.00%
+
+2026-03-19 21:26:36 | execution.adaptive_runner | INFO | 
+================================================================================
+TEST CLASSIFICATION REPORT
+================================================================================
+
+Classification | Count | Risk
+--------------------------------------------------
+BVA/numeric_boundaries         |     5 |      70%
+
+================================================================================
+
+2026-03-19 21:26:39 | execution.adaptive_runner | INFO | [1/5] bva_length_b3755583_username_0 → error (conf=0%, oracle=heuristic)
+2026-03-19 21:26:39 | execution.adaptive_runner | INFO | [2/5] bva_length_b3755583_username_1 → error (conf=0%, oracle=heuristic)
+2026-03-19 21:26:41 | execution.adaptive_runner | ERROR | Server unreachable after 3 consecutive network errors — aborting run. Please start the test server and try again.
+2026-03-19 21:26:41 | execution.rl_agent.dqn_agent | INFO | RL model saved → data\rl_model\dqn_checkpoint.pth
+2026-03-19 21:26:41 | execution.adaptive_runner | INFO | Execution complete: 0/5 passed | 0 LLM calls ($0.000) | stop_reason=server_unreachable
+2026-03-19 21:26:41 | __main__ | INFO | 
+✅ STEP 5: Results Summary
+2026-03-19 21:26:41 | __main__ | INFO | --------------------------------------------------------------------------------
+2026-03-19 21:26:41 | __main__ | INFO | 
+💾 Results saved to data\test_results\execution_20260319_212641.json

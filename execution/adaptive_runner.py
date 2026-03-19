@@ -22,6 +22,9 @@ from execution.base_runner  import BaseRunner
 from execution.llm_oracle   import LLMOracle
 from execution.rl_agent.dqn_agent import DQNAgent
 from execution.reporter     import Reporter
+from execution.cache_manager import TestCacheManager
+from execution.failure_probability_scorer import TestFailureScorer
+from execution.test_subtype_classifier import TestSubtypeClassifier
 from app.utils.logger_config import setup_logger
 
 logger = setup_logger(__name__)
@@ -49,17 +52,27 @@ class AdaptiveRunner:
         rl_mode:      bool  = True,
         headless:     bool  = True,
         progress_cb:  Optional[Callable] = None,
+        use_cache:    bool  = True,
+        use_scoring:  bool  = True,
     ):
         self.api_budget   = api_budget
         self.time_limit_s = time_limit_s
         self.rl_mode      = rl_mode
         self.headless     = headless
         self.progress_cb  = progress_cb
+        self.use_cache    = use_cache
+        self.use_scoring  = use_scoring
 
         self.runner   = BaseRunner()
         self.llm      = LLMOracle()
         self.agent    = DQNAgent() if rl_mode else None
         self.reporter = Reporter()
+        
+        # Initialize cache manager for test result caching
+        self.cache = TestCacheManager() if use_cache else None
+        
+        # Initialize failure probability scorer for test prioritization
+        self.scorer = TestFailureScorer() if use_scoring else None
 
     # ── Public entry point ─────────────────────────────────────────────────
 
@@ -162,6 +175,43 @@ class AdaptiveRunner:
                 else:
                     state  = None
                     action = 0
+
+                # ── Check cache before executing ────────────────────────
+                test_id = test_case.get("id", "unknown")
+                form_url = test_case.get("form_url", "")
+                cached_result = None
+                
+                if self.use_cache and self.cache:
+                    cached_result = self.cache.get_cached_result(test_id)
+                    if cached_result:
+                        logger.info(f"[{test_id}] Using cached result (status: {cached_result['status']})")
+                        # Create test result from cache
+                        result = TestResult(
+                            test_id=test_id,
+                            status=TestStatus.PASSED if cached_result["status"] == "passed" else TestStatus.FAILED,
+                            duration_ms=cached_result.get("execution_time_ms", 0),
+                            oracle_method=OracleMethod.HEURISTIC,
+                            confidence=cached_result.get("confidence", 100),
+                            evidence=f"[CACHED] {cached_result.get('evidence', 'Cached result')}",
+                            test_type=test_case.get("type", ""),
+                            form_url=form_url,
+                        )
+                        report.skipped += 1
+                        report.results.append(result)
+                        
+                        # Simulate heuristic output
+                        heuristic = {
+                            "confidence": cached_result.get("confidence", 100),
+                            "outcome": "success" if cached_result["status"] == "passed" else "error",
+                            "evidence": cached_result.get("evidence", ""),
+                        }
+                        conf = heuristic["confidence"]
+                        unclear = False
+                        
+                        # Skip to next test (don't execute runner or oracles)
+                        if self.progress_cb:
+                            await self.progress_cb(idx + 1, total, result)
+                        continue
 
                 # ── Execute test ───────────────────────────────────────
                 try:
@@ -283,6 +333,19 @@ class AdaptiveRunner:
                     report.skipped += 1
 
                 report.results.append(result)
+                
+                # ── Store result to cache ──────────────────────────────
+                if self.use_cache and self.cache and result.status == TestStatus.PASSED:
+                    # Only cache passed results (failed/error results are typically test infrastructure issues)
+                    self.cache.store_result(
+                        test_id=result.test_id,
+                        status=result.status.value,
+                        execution_time_ms=result.duration_ms,
+                        form_url=result.form_url,
+                        confidence=result.confidence,
+                        oracle_method=result.oracle_method.value,
+                        evidence=result.evidence,
+                    )
 
                 # ── RL: compute reward + learn ─────────────────────────
                 if self.rl_mode and self.agent and state is not None:
@@ -338,7 +401,10 @@ class AdaptiveRunner:
     # ── Helpers ────────────────────────────────────────────────────────────
 
     def _flatten_and_sort(self, suite: Dict) -> List[dict]:
-        """Flatten {type: [cases]} into a priority-sorted flat list."""
+        """
+        Flatten {type: [cases]} into a priority-sorted flat list.
+        Apply failure probability scoring to prioritize risky tests first.
+        """
         flat = []
         test_cases = suite.get("test_cases", suite)   # handle both formats
         if isinstance(test_cases, dict):
@@ -351,7 +417,25 @@ class AdaptiveRunner:
         elif isinstance(test_cases, list):
             flat = test_cases
 
-        flat.sort(key=lambda x: PRIORITY.get(x.get("type", "UseCase"), 1), reverse=True)
+        # Use failure probability scoring if enabled
+        if self.use_scoring and self.scorer:
+            scores = self.scorer.score_tests(flat)
+            # Create lookup dict for priority
+            priority_map = {s.test_id: s.priority for s in scores}
+            # Sort by probability score (ascending priority = higher risk first)
+            flat.sort(key=lambda x: priority_map.get(x.get("id", ""), 9999))
+            
+            # Show priority report
+            logger.info(self.scorer.report_scores(scores, limit=10))
+            
+            # Show subtype classification report
+            if self.scorer.subtype_classifier:
+                subtype_report = self.scorer.subtype_classifier.get_report(flat)
+                logger.info(subtype_report)
+        else:
+            # Fall back to simple test type priority
+            flat.sort(key=lambda x: PRIORITY.get(x.get("type", "UseCase"), 1), reverse=True)
+        
         return flat
 
     def _compute_reward(

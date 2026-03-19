@@ -175,3 +175,53 @@ export:
   output_dir: data/crawled_graphs
   screenshot_dir: data/screenshots
   include_screenshots: false
+
+# ==================== TEST EXECUTION OPTIMIZATION ====================
+
+# Test Result Caching
+test_cache:
+  enabled: true  # Enable Redis caching of test results
+  skip_passed_tests: true  # Don't re-run tests that passed in previous crawls
+  cache_ttl_hours: 24  # Cache validity (invalidates after this time)
+  invalidate_on_ui_change: true  # Clear cache if UI structure changes
+  
+  # Cache storage (Redis)
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    db: 0
+    password: null
+    ttl_seconds: 86400
+
+# Test Failure Probability Prioritization
+test_execution:
+  # Execute risky tests first
+  prioritize_by_risk: true  # Rank tests by failure probability
+  
+  # Risk factors considered:
+  # - Input complexity (special chars, boundary values)
+  # - Field types (password, email, file upload = higher risk)
+  # - Test type (BVA > ECP > StateTransition > DecisionTable > UseCase)
+  # - Form complexity (multi-step, wizards, file uploads)
+  # - Validation rules (regex, min/max, cross-field)
+  
+  # Execution strategy
+  api_budget: 30  # Max LLM oracle calls
+  time_limit_seconds: 600  # Max execution time
+  use_rl_agent: true  # Use RL to optimize oracle selection
+  headless_mode: true
+  
+  # Caching behavior
+  use_cache: true  # Check cache before executing
+  store_passed_results: true  # Cache successful test results
+  cache_stats_reporting: true  # Show cache hit/skip statistics
+  
+  # RL Agent Configuration
+  rl_agent:
+    enabled: true
+    epsilon_start: 1.0
+    epsilon_end: 0.01
+    epsilon_decay: 0.995
+    learning_rate: 0.001
+    target_update_freq: 1000
+    batch_size: 32
