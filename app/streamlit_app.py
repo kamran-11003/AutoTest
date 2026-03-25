@@ -359,7 +359,7 @@ def main():
         
         # Start crawl button
         if not st.session_state.crawl_running:
-            if st.button("▶️ Start Crawl", type="primary", use_container_width=True):
+            if st.button("▶️ Start Crawl", type="primary", width='stretch'):
                 st.session_state.crawl_running = True
                 st.rerun()
         else:
@@ -732,7 +732,7 @@ def display_node_components(node: dict, results: dict):
                             })
                         
                         df_form_inputs = pd.DataFrame(inputs_data)
-                        st.dataframe(df_form_inputs, use_container_width=True, height=min(300, len(inputs) * 35 + 38))
+                        st.dataframe(df_form_inputs, width='stretch', height=min(300, len(inputs) * 35 + 38))
                     else:
                         st.info("No input fields detected in this form")
         else:
@@ -762,7 +762,7 @@ def display_node_components(node: dict, results: dict):
                     })
             
             df_links = pd.DataFrame(links_data)
-            st.dataframe(df_links, use_container_width=True, height=300)
+            st.dataframe(df_links, width='stretch', height=300)
             if len(links) > 50:
                 st.info(f"Showing first 50 of {len(links)} links")
         else:
@@ -781,7 +781,7 @@ def display_node_components(node: dict, results: dict):
                 }
                 for inp in inputs
             ])
-            st.dataframe(df_inputs, use_container_width=True, height=300)
+            st.dataframe(df_inputs, width='stretch', height=300)
         else:
             st.info("No input fields found on this page")
     
@@ -797,7 +797,7 @@ def display_node_components(node: dict, results: dict):
                 }
                 for btn in buttons
             ])
-            st.dataframe(df_buttons, use_container_width=True, height=300)
+            st.dataframe(df_buttons, width='stretch', height=300)
         else:
             st.info("No buttons found on this page")
 
@@ -827,7 +827,7 @@ def display_pages_table(results: dict):
         
         if pages_data:
             df = pd.DataFrame(pages_data)
-            st.dataframe(df, use_container_width=True, height=400)
+            st.dataframe(df, width='stretch', height=400)
             st.caption(f"📊 Total: {len(pages_data)} unique pages discovered")
         else:
             st.info("No pages found")
@@ -883,7 +883,7 @@ def display_elements_table(results: dict):
                 filtered_forms = [f for f in all_forms if f['Detection'] in detection_filter]
             
             df_forms = pd.DataFrame(filtered_forms)
-            st.dataframe(df_forms, use_container_width=True, height=400)
+            st.dataframe(df_forms, width='stretch', height=400)
             
             # Show statistics
             col1, col2, col3 = st.columns(3)
@@ -935,7 +935,7 @@ def display_elements_table(results: dict):
                 filtered_elements = [e for e in elements if e['Type'] in type_filter]
             
             df_elements = pd.DataFrame(filtered_elements)
-            st.dataframe(df_elements, use_container_width=True, height=400)
+            st.dataframe(df_elements, width='stretch', height=400)
         else:
             st.info("No input elements found in crawl results")
 
@@ -963,7 +963,7 @@ def display_test_cases(results: dict):
     
     with col1:
         # Button to generate tests
-        if st.button("🚀 Generate Test Cases", type="primary", use_container_width=True):
+        if st.button("🚀 Generate Test Cases", type="primary", width='stretch'):
             with st.spinner("Generating test cases..."):
                 try:
                     from test_generator.test_orchestrator import TestOrchestrator
@@ -1008,7 +1008,7 @@ def display_test_cases(results: dict):
     with col2:
         # AI Refinement button
         if st.session_state.generated_tests:
-            if st.button("✨ Refine with AI", type="secondary", use_container_width=True):
+            if st.button("✨ Refine with AI", type="secondary", width='stretch'):
                 with st.spinner("Refining tests with Gemini AI..."):
                     try:
                         from test_generator.ai_refiner import GeminiTestRefiner
@@ -1175,7 +1175,7 @@ def display_test_cases(results: dict):
         
         col1, col2 = st.columns(2)
         with col1:
-            if st.button("📄 Export Tests (JSON)", use_container_width=True):
+            if st.button("📄 Export Tests (JSON)", width='stretch'):
                 timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
                 # Export to dedicated test directory, not crawled_graphs
                 test_dir = Path("data/exported_tests")
@@ -1186,7 +1186,7 @@ def display_test_cases(results: dict):
                 st.success(f"✅ Exported: {filepath}")
         
         with col2:
-            if st.button("📊 Export Tests (CSV)", use_container_width=True):
+            if st.button("📊 Export Tests (CSV)", width='stretch'):
                 timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
                 all_tests = []
                 for test_type, tests in test_cases.items():
@@ -1688,24 +1688,24 @@ def display_export_options(results: dict):
     col1, col2 = st.columns(2)
     
     with col1:
-        if st.button("📄 Export JSON", use_container_width=True):
+        if st.button("📄 Export JSON", width='stretch'):
             filepath = exporter.export_json(results, f"{_slug}.json")
             st.success(f"✅ Exported: {filepath}")
     
     with col2:
-        if st.button("📊 Export CSV", use_container_width=True):
+        if st.button("📊 Export CSV", width='stretch'):
             filepath = exporter.export_csv(results.get('states', []), f"{_slug}.csv")
             st.success(f"✅ Exported: {filepath}")
     
     col3, col4 = st.columns(2)
     
     with col3:
-        if st.button("📝 Export Elements CSV", use_container_width=True):
+        if st.button("📝 Export Elements CSV", width='stretch'):
             filepath = exporter.export_elements_csv(results.get('states', []), f"{_slug}_elements.csv")
             st.success(f"✅ Exported: {filepath}")
     
     with col4:
-        if st.button("📋 Export Forms CSV", use_container_width=True):
+        if st.button("📋 Export Forms CSV", width='stretch'):
             # Export all forms to CSV
             states = results.get('states', [])
             forms_data = []
@@ -1737,7 +1737,7 @@ def display_export_options(results: dict):
                 st.success(f"✅ Exported: {filepath}")
             else:
                 st.warning("⚠️ No forms to export")
-        if st.button("📋 Export Report", use_container_width=True):
+        if st.button("📋 Export Report", width='stretch'):
             filepath = exporter.export_markdown_report(results, f"report_{timestamp}.md")
             st.success(f"✅ Exported: {filepath}")
 
@@ -1796,7 +1796,7 @@ def display_execute_tests(results: dict):
     # ── Run button ─────────────────────────────────────────────────────────
     run_col, status_col = st.columns([1, 3])
     with run_col:
-        run_clicked = st.button("▶️ Run Tests", type="primary", use_container_width=True)
+        run_clicked = st.button("▶️ Run Tests", type="primary", width='stretch')
 
     if "exec_report" in st.session_state:
         with status_col:

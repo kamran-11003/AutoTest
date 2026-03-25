@@ -40,9 +40,9 @@ class UnifiedAIClient:
             
             genai.configure(api_key=api_key)
             self.client = genai
-            self.model = genai.GenerativeModel('gemini-2.0-flash')
+            self.model = genai.GenerativeModel('gemini-3.1-flash-lite-preview')
             
-            logger.info("✅ Gemini AI initialized (gemini-2.0-flash)")
+            logger.info("✅ Gemini AI initialized (gemini-3.1-flash-lite-preview)")
         except Exception as e:
             logger.error(f"❌ Gemini init failed: {e}")
             raise
@@ -438,6 +438,6 @@ Respond with ONLY the value."""
         """Get current provider info"""
         return {
             'provider': self.provider,
-            'model': self.model if isinstance(self.model, str) else 'gemini-2.0-flash-exp',
+            'model': self.model if isinstance(self.model, str) else 'gemini-3.1-flash-lite-preview',
             'cost': 'Free tier (15 req/min)' if self.provider == 'gemini' else 'FREE (local)'
         }

@@ -98,9 +98,9 @@ class AIEnricher:
                     else:
                         try:
                             genai.configure(api_key=current_key)
-                            self.model = genai.GenerativeModel('gemini-2.0-flash')
+                            self.model = genai.GenerativeModel('gemini-3.1-flash-lite-preview')
                             self.provider = 'gemini'
-                            logger.info(f"✅ Gemini AI enrichment enabled with {self.key_rotator.get_stats()['total_keys']} API keys (gemini-2.0-flash)")
+                            logger.info(f"✅ Gemini AI enrichment enabled with {self.key_rotator.get_stats()['total_keys']} API keys (gemini-3.1-flash-lite-preview)")
                         except Exception as e:
                             logger.error(f"❌ Error configuring Gemini: {e}")
                             self.enabled = False
@@ -274,7 +274,7 @@ Be conservative - only identify elements you're confident about. If unsure, retu
                     if new_key:
                         logger.info(f"🔄 Switching to next Gemini API key")
                         genai.configure(api_key=new_key)
-                        self.model = genai.GenerativeModel('gemini-2.0-flash')
+                        self.model = genai.GenerativeModel('gemini-3.1-flash-lite-preview')
                         retry_count += 1
                         continue
                     
@@ -285,7 +285,7 @@ Be conservative - only identify elements you're confident about. If unsure, retu
                         await asyncio.sleep(retry_delay)
                         self.key_rotator.reset()
                         genai.configure(api_key=self.key_rotator.get_current_key())
-                        self.model = genai.GenerativeModel('gemini-2.0-flash')
+                        self.model = genai.GenerativeModel('gemini-3.1-flash-lite-preview')
                         retry_count += 1
                         continue
                     else:

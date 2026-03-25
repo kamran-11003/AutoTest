@@ -106,7 +106,7 @@ class LLMOracle:
         try:
             import google.generativeai as genai
             genai.configure(api_key=api_key)
-            model = genai.GenerativeModel("gemini-2.0-flash")
+            model = genai.GenerativeModel("gemini-3.1-flash-lite-preview")
 
             with open(save_path, "rb") as f:
                 img_bytes = f.read()
