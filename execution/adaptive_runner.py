@@ -25,6 +25,9 @@ from execution.reporter     import Reporter
 from execution.cache_manager import TestCacheManager
 from execution.failure_probability_scorer import TestFailureScorer
 from execution.test_subtype_classifier import TestSubtypeClassifier
+from execution.rl_performance_tracker import RLPerformanceTracker
+from execution.heuristics_logger import HeuristicsLogger
+from execution.rl_heuristics_optimizer import RLHeuristicsOptimizer
 from app.utils.logger_config import setup_logger
 
 logger = setup_logger(__name__)
@@ -73,6 +76,15 @@ class AdaptiveRunner:
         
         # Initialize failure probability scorer for test prioritization
         self.scorer = TestFailureScorer() if use_scoring else None
+        
+        # Initialize performance tracker for RL metrics logging
+        self.perf_tracker = RLPerformanceTracker()
+        
+        # Initialize heuristics logger for transparency
+        self.heuristics_logger = HeuristicsLogger()
+        
+        # Initialize RL heuristics optimizer for score updates
+        self.heuristics_optimizer = RLHeuristicsOptimizer()
 
     # ── Public entry point ─────────────────────────────────────────────────
 
@@ -350,6 +362,17 @@ class AdaptiveRunner:
                 # ── RL: compute reward + learn ─────────────────────────
                 if self.rl_mode and self.agent and state is not None:
                     reward = self._compute_reward(result, action, conf, idx, total, report, _llm_forced_off_this_step)
+                    
+                    # Log RL outcome per test subtype
+                    test_subtype = self.scorer.subtype_classifier.classify(test_case).subtype if self.scorer and self.scorer.subtype_classifier else "unknown"
+                    self.heuristics_logger.log_rl_outcome(
+                        test_id=result.test_id,
+                        subtype=test_subtype,
+                        rl_action=action,
+                        result_status=result.status.value,
+                        reward=reward,
+                    )
+                    
                     next_elapsed = time.perf_counter() - start_wall
                     next_state   = DQNAgent.build_state(
                         tests_run          = idx + 1,
@@ -387,6 +410,52 @@ class AdaptiveRunner:
         # Save RL model (learns across sessions)
         if self.rl_mode and self.agent:
             self.agent.save()
+        
+        # Record execution metrics in performance tracker
+        if self.rl_mode and self.agent:
+            pass_rate = report.passed / report.total if report.total > 0 else 0
+            factor_changes = []  # Would be populated if you're adjusting factors dynamically
+            
+            self.perf_tracker.record_execution(
+                pass_rate=pass_rate,
+                heuristic_decisions=report.heuristic_decisions,
+                llm_decisions=report.llm_decisions,
+                api_calls_used=report.api_calls_used,
+                api_cost=report.api_cost,
+                execution_time_seconds=report.duration_s,
+                epsilon=self.agent.epsilon,
+                q_learning_rate=self.agent.learning_rate,
+                discount_factor=self.agent.discount_factor,
+                factor_changes=factor_changes,
+                notes=f"Stop reason: {report.stop_reason} | {report.passed}/{report.total} passed"
+            )
+            
+            # Generate and save summary report
+            self.perf_tracker.save_summary_report()
+            logger.info(f"Performance metrics saved to {self.perf_tracker.output_dir}")
+            
+            # Generate and save heuristics analysis report
+            self.heuristics_logger.save_analysis_report()
+            stats = self.heuristics_logger.get_statistics()
+            logger.info(
+                f"Heuristics analysis: {stats['total_tests']} tests, "
+                f"{stats['heuristic_percentage']:.1f}% heuristic, "
+                f"{stats['llm_percentage']:.1f}% LLM, "
+                f"avg reward: {stats['average_reward']:+.2f}"
+            )
+            
+            # Compute heuristic score updates based on RL learning
+            subtype_stats = self.heuristics_logger.get_subtype_statistics()
+            if subtype_stats:
+                self.heuristics_optimizer.compute_updates(subtype_stats)
+                self.heuristics_optimizer.save_report()
+                opt_stats = self.heuristics_optimizer.get_statistics()
+                logger.info(
+                    f"Heuristics optimization: {opt_stats.get('total_subtypes_optimized', 0)} subtypes updated | "
+                    f"Risk increases: {opt_stats.get('risk_increases', 0)} | "
+                    f"Risk decreases: {opt_stats.get('risk_decreases', 0)} | "
+                    f"Avg change: {opt_stats.get('average_risk_change', 0):+.4f}"
+                )
 
         # Write HTML + JSON report
         self.reporter.write(report, crawl_id)
@@ -424,6 +493,42 @@ class AdaptiveRunner:
             priority_map = {s.test_id: s.priority for s in scores}
             # Sort by probability score (ascending priority = higher risk first)
             flat.sort(key=lambda x: priority_map.get(x.get("id", ""), 9999))
+            
+            # Log all heuristic factors for each test
+            for score in scores:
+                test_case = next((t for t in flat if t.get("id") == score.test_id), None)
+                if test_case:
+                    subtype_info = self.scorer.subtype_classifier.classify(test_case)
+                    
+                    # Calculate individual factors
+                    input_risk = self.scorer._assess_input_complexity(test_case.get("test_data", {}))
+                    field_risk = self.scorer._assess_field_types(test_case.get("form", {}), test_case.get("test_data", {}))
+                    form_risk = self.scorer._assess_form_complexity(test_case.get("form", {}))
+                    validation_risk = self.scorer._assess_validation_rules(test_case.get("form", {}))
+                    boundary_risk = self.scorer._assess_boundary_values(test_case)
+                    
+                    self.heuristics_logger.log_heuristics(
+                        test_id=score.test_id,
+                        test_type=score.test_type,
+                        subtype=subtype_info.subtype,
+                        subtype_risk=subtype_info.base_risk,
+                        input_complexity_risk=input_risk,
+                        field_type_risk=field_risk,
+                        form_complexity_risk=form_risk,
+                        validation_rules_risk=validation_risk,
+                        boundary_values_risk=boundary_risk,
+                        final_failure_probability=score.failure_probability,
+                        priority=score.priority,
+                        factors_explanation=score.risk_factors,
+                    )
+                    
+                    # Record initial risk scores for heuristics optimizer
+                    self.heuristics_optimizer.record_initial_scores(
+                        subtype=subtype_info.subtype,
+                        test_type=score.test_type,
+                        initial_risk=subtype_info.base_risk,
+                        initial_confidence=0.75,  # Default confidence in scoring
+                    )
             
             # Show priority report
             logger.info(self.scorer.report_scores(scores, limit=10))

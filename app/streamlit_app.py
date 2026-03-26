@@ -359,7 +359,7 @@ def main():
         
         # Start crawl button
         if not st.session_state.crawl_running:
-            if st.button("▶️ Start Crawl", type="primary", width='stretch'):
+            if st.button("▶️ Start Crawl", type="primary"):
                 st.session_state.crawl_running = True
                 st.rerun()
         else:
@@ -732,7 +732,7 @@ def display_node_components(node: dict, results: dict):
                             })
                         
                         df_form_inputs = pd.DataFrame(inputs_data)
-                        st.dataframe(df_form_inputs, width='stretch', height=min(300, len(inputs) * 35 + 38))
+                        st.dataframe(df_form_inputs, use_container_width=True, height=min(300, len(inputs) * 35 + 38))
                     else:
                         st.info("No input fields detected in this form")
         else:
@@ -762,7 +762,7 @@ def display_node_components(node: dict, results: dict):
                     })
             
             df_links = pd.DataFrame(links_data)
-            st.dataframe(df_links, width='stretch', height=300)
+            st.dataframe(df_links, use_container_width=True, height=300)
             if len(links) > 50:
                 st.info(f"Showing first 50 of {len(links)} links")
         else:
@@ -781,7 +781,7 @@ def display_node_components(node: dict, results: dict):
                 }
                 for inp in inputs
             ])
-            st.dataframe(df_inputs, width='stretch', height=300)
+            st.dataframe(df_inputs, use_container_width=True, height=300)
         else:
             st.info("No input fields found on this page")
     
@@ -797,7 +797,7 @@ def display_node_components(node: dict, results: dict):
                 }
                 for btn in buttons
             ])
-            st.dataframe(df_buttons, width='stretch', height=300)
+            st.dataframe(df_buttons, use_container_width=True, height=300)
         else:
             st.info("No buttons found on this page")
 
@@ -827,7 +827,7 @@ def display_pages_table(results: dict):
         
         if pages_data:
             df = pd.DataFrame(pages_data)
-            st.dataframe(df, width='stretch', height=400)
+            st.dataframe(df, use_container_width=True, height=400)
             st.caption(f"📊 Total: {len(pages_data)} unique pages discovered")
         else:
             st.info("No pages found")
@@ -883,7 +883,7 @@ def display_elements_table(results: dict):
                 filtered_forms = [f for f in all_forms if f['Detection'] in detection_filter]
             
             df_forms = pd.DataFrame(filtered_forms)
-            st.dataframe(df_forms, width='stretch', height=400)
+            st.dataframe(df_forms, use_container_width=True, height=400)
             
             # Show statistics
             col1, col2, col3 = st.columns(3)
@@ -935,7 +935,7 @@ def display_elements_table(results: dict):
                 filtered_elements = [e for e in elements if e['Type'] in type_filter]
             
             df_elements = pd.DataFrame(filtered_elements)
-            st.dataframe(df_elements, width='stretch', height=400)
+            st.dataframe(df_elements, use_container_width=True, height=400)
         else:
             st.info("No input elements found in crawl results")
 
@@ -963,7 +963,7 @@ def display_test_cases(results: dict):
     
     with col1:
         # Button to generate tests
-        if st.button("🚀 Generate Test Cases", type="primary", width='stretch'):
+        if st.button("🚀 Generate Test Cases", type="primary"):
             with st.spinner("Generating test cases..."):
                 try:
                     from test_generator.test_orchestrator import TestOrchestrator
@@ -1008,7 +1008,7 @@ def display_test_cases(results: dict):
     with col2:
         # AI Refinement button
         if st.session_state.generated_tests:
-            if st.button("✨ Refine with AI", type="secondary", width='stretch'):
+            if st.button("✨ Refine with AI", type="secondary"):
                 with st.spinner("Refining tests with Gemini AI..."):
                     try:
                         from test_generator.ai_refiner import GeminiTestRefiner
@@ -1175,7 +1175,7 @@ def display_test_cases(results: dict):
         
         col1, col2 = st.columns(2)
         with col1:
-            if st.button("📄 Export Tests (JSON)", width='stretch'):
+            if st.button("📄 Export Tests (JSON)"):
                 timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
                 # Export to dedicated test directory, not crawled_graphs
                 test_dir = Path("data/exported_tests")
@@ -1186,7 +1186,7 @@ def display_test_cases(results: dict):
                 st.success(f"✅ Exported: {filepath}")
         
         with col2:
-            if st.button("📊 Export Tests (CSV)", width='stretch'):
+            if st.button("📊 Export Tests (CSV)"):
                 timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
                 all_tests = []
                 for test_type, tests in test_cases.items():
@@ -1688,24 +1688,24 @@ def display_export_options(results: dict):
     col1, col2 = st.columns(2)
     
     with col1:
-        if st.button("📄 Export JSON", width='stretch'):
+        if st.button("📄 Export JSON"):
             filepath = exporter.export_json(results, f"{_slug}.json")
             st.success(f"✅ Exported: {filepath}")
     
     with col2:
-        if st.button("📊 Export CSV", width='stretch'):
+        if st.button("📊 Export CSV"):
             filepath = exporter.export_csv(results.get('states', []), f"{_slug}.csv")
             st.success(f"✅ Exported: {filepath}")
     
     col3, col4 = st.columns(2)
     
     with col3:
-        if st.button("📝 Export Elements CSV", width='stretch'):
+        if st.button("📝 Export Elements CSV"):
             filepath = exporter.export_elements_csv(results.get('states', []), f"{_slug}_elements.csv")
             st.success(f"✅ Exported: {filepath}")
     
     with col4:
-        if st.button("📋 Export Forms CSV", width='stretch'):
+        if st.button("📋 Export Forms CSV"):
             # Export all forms to CSV
             states = results.get('states', [])
             forms_data = []
@@ -1737,7 +1737,7 @@ def display_export_options(results: dict):
                 st.success(f"✅ Exported: {filepath}")
             else:
                 st.warning("⚠️ No forms to export")
-        if st.button("📋 Export Report", width='stretch'):
+        if st.button("📋 Export Report"):
             filepath = exporter.export_markdown_report(results, f"report_{timestamp}.md")
             st.success(f"✅ Exported: {filepath}")
 
@@ -1762,6 +1762,54 @@ def display_execute_tests(results: dict):
     test_cases = generated_tests.get("test_cases", {})
     total_tc = sum(len(v) for v in test_cases.values() if isinstance(v, list))
     st.success(f"✅ Test suite loaded — **{total_tc} test cases** ready to execute")
+
+    st.markdown("---")
+
+    # ── Test Type Selection ────────────────────────────────────────────────
+    st.subheader("🎯 Select Test Types to Execute")
+    
+    # Count tests by type
+    type_counts = {}
+    for test_type, cases in test_cases.items():
+        if isinstance(cases, list):
+            type_counts[test_type] = len(cases)
+    
+    if type_counts:
+        # Display test type counts in columns
+        type_cols = st.columns(len(type_counts))
+        for idx, (test_type, count) in enumerate(sorted(type_counts.items())):
+            with type_cols[idx]:
+                st.metric(test_type, count)
+        
+        st.markdown("---")
+        
+        # Multi-select for test types
+        selected_types = st.multiselect(
+            "Choose test types to execute:",
+            options=sorted(type_counts.keys()),
+            default=sorted(type_counts.keys()),
+            help="Select one or more test types. Only selected types will be executed."
+        )
+        
+        if not selected_types:
+            st.warning("⚠️ Please select at least one test type to execute")
+            return
+        
+        # Filter test cases by selected types
+        filtered_tests = {}
+        for test_type in selected_types:
+            if test_type in test_cases:
+                filtered_tests[test_type] = test_cases[test_type]
+        
+        filtered_count = sum(len(v) for v in filtered_tests.values() if isinstance(v, list))
+        st.info(f"📌 **{filtered_count} test cases** selected from **{len(selected_types)} type(s)** for execution")
+        
+        # Create filtered test suite
+        filtered_test_suite = generated_tests.copy()
+        filtered_test_suite["test_cases"] = filtered_tests
+    else:
+        filtered_test_suite = generated_tests
+        filtered_count = total_tc
 
     st.markdown("---")
 
@@ -1796,7 +1844,7 @@ def display_execute_tests(results: dict):
     # ── Run button ─────────────────────────────────────────────────────────
     run_col, status_col = st.columns([1, 3])
     with run_col:
-        run_clicked = st.button("▶️ Run Tests", type="primary", width='stretch')
+        run_clicked = st.button("▶️ Run Tests", type="primary")
 
     if "exec_report" in st.session_state:
         with status_col:
@@ -1810,7 +1858,7 @@ def display_execute_tests(results: dict):
 
     if run_clicked:
         # Safety: require test suite
-        if total_tc == 0:
+        if filtered_count == 0:
             st.error("No test cases to run.")
             return
 
@@ -1850,7 +1898,7 @@ def display_execute_tests(results: dict):
             sync_progress(current, total, result)
 
         # ── Execute ────────────────────────────────────────────────────
-        with st.spinner("Executing tests …"):
+        with st.spinner(f"Executing {filtered_count} tests …"):
             try:
                 sys.path.insert(0, str(Path(".").resolve()))
                 from execution.adaptive_runner import AdaptiveRunner
@@ -1866,7 +1914,7 @@ def display_execute_tests(results: dict):
                 loop = asyncio.new_event_loop()
                 asyncio.set_event_loop(loop)
                 report = loop.run_until_complete(
-                    runner.execute(generated_tests, crawl_id=crawl_id)
+                    runner.execute(filtered_test_suite, crawl_id=crawl_id)
                 )
                 loop.close()
 
