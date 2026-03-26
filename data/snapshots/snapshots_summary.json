@@ -1,55 +1,30 @@
 {
-  "total_snapshots": 10,
+  "total_snapshots": 5,
   "snapshots": [
     {
-      "url": "https://qa-tester-practice-website.vercel.app/",
-      "json": "data\\snapshots\\20260319_213708_qa-tester-practice-website.vercel.app_.json",
-      "html": "data\\snapshots\\20260319_213708_qa-tester-practice-website.vercel.app_.html"
+      "url": "https://the-qa-testers-gauntlet.vercel.app/",
+      "json": "data\\snapshots\\20260325_180008_the-qa-testers-gauntlet.vercel.app_.json",
+      "html": "data\\snapshots\\20260325_180008_the-qa-testers-gauntlet.vercel.app_.html"
     },
     {
-      "url": "https://qa-tester-practice-website.vercel.app/",
-      "json": "data\\snapshots\\20260319_213739_qa-tester-practice-website.vercel.app_.json",
-      "html": "data\\snapshots\\20260319_213739_qa-tester-practice-website.vercel.app_.html"
+      "url": "https://the-qa-testers-gauntlet.vercel.app/",
+      "json": "data\\snapshots\\20260325_180040_the-qa-testers-gauntlet.vercel.app_.json",
+      "html": "data\\snapshots\\20260325_180040_the-qa-testers-gauntlet.vercel.app_.html"
     },
     {
-      "url": "https://qa-tester-practice-website.vercel.app/hover-ui.html",
-      "json": "data\\snapshots\\20260319_213829_qa-tester-practice-website.vercel.app_hover-ui.htm.json",
-      "html": "data\\snapshots\\20260319_213829_qa-tester-practice-website.vercel.app_hover-ui.htm.html"
+      "url": "https://the-qa-testers-gauntlet.vercel.app/interactive.html",
+      "json": "data\\snapshots\\20260325_180111_the-qa-testers-gauntlet.vercel.app_interactive.htm.json",
+      "html": "data\\snapshots\\20260325_180111_the-qa-testers-gauntlet.vercel.app_interactive.htm.html"
     },
     {
-      "url": "https://qa-tester-practice-website.vercel.app/form-testing.html",
-      "json": "data\\snapshots\\20260319_213930_qa-tester-practice-website.vercel.app_form-testing.json",
-      "html": "data\\snapshots\\20260319_213930_qa-tester-practice-website.vercel.app_form-testing.html"
+      "url": "https://the-qa-testers-gauntlet.vercel.app/index.html",
+      "json": "data\\snapshots\\20260325_180156_the-qa-testers-gauntlet.vercel.app_index.html.json",
+      "html": "data\\snapshots\\20260325_180156_the-qa-testers-gauntlet.vercel.app_index.html.html"
     },
     {
-      "url": "https://qa-tester-practice-website.vercel.app/input-controls.html",
-      "json": "data\\snapshots\\20260319_214052_qa-tester-practice-website.vercel.app_input-contro.json",
-      "html": "data\\snapshots\\20260319_214052_qa-tester-practice-website.vercel.app_input-contro.html"
-    },
-    {
-      "url": "https://qa-tester-practice-website.vercel.app/index.html",
-      "json": "data\\snapshots\\20260319_214124_qa-tester-practice-website.vercel.app_index.html.json",
-      "html": "data\\snapshots\\20260319_214124_qa-tester-practice-website.vercel.app_index.html.html"
-    },
-    {
-      "url": "https://qa-tester-practice-website.vercel.app/links-navigation.html",
-      "json": "data\\snapshots\\20260319_214203_qa-tester-practice-website.vercel.app_links-naviga.json",
-      "html": "data\\snapshots\\20260319_214203_qa-tester-practice-website.vercel.app_links-naviga.html"
-    },
-    {
-      "url": "https://qa-tester-practice-website.vercel.app/non-existent-page.html",
-      "json": "data\\snapshots\\20260319_214214_qa-tester-practice-website.vercel.app_non-existent.json",
-      "html": "data\\snapshots\\20260319_214214_qa-tester-practice-website.vercel.app_non-existent.html"
-    },
-    {
-      "url": "https://qa-tester-practice-website.vercel.app/path/to/nowhere.html",
-      "json": "data\\snapshots\\20260319_214225_qa-tester-practice-website.vercel.app_path_to_nowh.json",
-      "html": "data\\snapshots\\20260319_214225_qa-tester-practice-website.vercel.app_path_to_nowh.html"
-    },
-    {
-      "url": "https://qa-tester-practice-website.vercel.app/missing-page.html",
-      "json": "data\\snapshots\\20260319_214236_qa-tester-practice-website.vercel.app_missing-page.json",
-      "html": "data\\snapshots\\20260319_214236_qa-tester-practice-website.vercel.app_missing-page.html"
+      "url": "https://the-qa-testers-gauntlet.vercel.app/forms.html",
+      "json": "data\\snapshots\\20260325_180240_the-qa-testers-gauntlet.vercel.app_forms.html.json",
+      "html": "data\\snapshots\\20260325_180240_the-qa-testers-gauntlet.vercel.app_forms.html.html"
     }
   ]
 }

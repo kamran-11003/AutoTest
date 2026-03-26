@@ -1,0 +1,446 @@
+{
+  "url": "https://the-qa-testers-gauntlet.vercel.app/interactive.html",
+  "title": "The QA Tester's Gauntlet - Dynamic Events",
+  "timestamp": "20260325_180111",
+  "crawl_stats": {
+    "total_clickables": 26,
+    "after_filtering": 8,
+    "filtered_out": 18,
+    "reduction_percentage": 69.23,
+    "discovered_urls": 3
+  },
+  "clickable_elements": {
+    "before_filtering": [
+      {
+        "tag": "A",
+        "text": "Dashboard",
+        "class": "",
+        "id": "nav-dashboard",
+        "href": "https://the-qa-testers-gauntlet.vercel.app/index.html",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "The Form Factory",
+        "class": "",
+        "id": "nav-forms",
+        "href": "https://the-qa-testers-gauntlet.vercel.app/forms.html",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Dynamic Events",
+        "class": "",
+        "id": "nav-interactive",
+        "href": "https://the-qa-testers-gauntlet.vercel.app/interactive.html",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "The Data Vault",
+        "class": "",
+        "id": "nav-data",
+        "href": "https://the-qa-testers-gauntlet.vercel.app/data-vault.html",
+        "confidence": "high"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Start Test",
+        "class": "btn-primary",
+        "id": "start-test-btn",
+        "href": "",
+        "confidence": "high"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "-",
+        "class": "btn-counter",
+        "id": "counter1-dec",
+        "href": "",
+        "confidence": "high"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "+",
+        "class": "btn-counter",
+        "id": "counter1-inc",
+        "href": "",
+        "confidence": "high"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "-",
+        "class": "btn-counter",
+        "id": "counter2-dec",
+        "href": "",
+        "confidence": "high"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "+",
+        "class": "btn-counter",
+        "id": "counter2-inc",
+        "href": "",
+        "confidence": "high"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "-",
+        "class": "btn-counter",
+        "id": "counter3-dec",
+        "href": "",
+        "confidence": "high"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "+",
+        "class": "btn-counter",
+        "id": "counter3-inc",
+        "href": "",
+        "confidence": "high"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Add Element",
+        "class": "btn-primary",
+        "id": "add-element-btn",
+        "href": "",
+        "confidence": "high"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Clear All",
+        "class": "btn-secondary",
+        "id": "clear-elements-btn",
+        "href": "",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Dashboard",
+        "class": "",
+        "id": "",
+        "href": "https://the-qa-testers-gauntlet.vercel.app/index.html",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "A",
+        "text": "The Form Factory",
+        "class": "",
+        "id": "",
+        "href": "https://the-qa-testers-gauntlet.vercel.app/forms.html",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "A",
+        "text": "Dynamic Events",
+        "class": "",
+        "id": "",
+        "href": "https://the-qa-testers-gauntlet.vercel.app/interactive.html",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "A",
+        "text": "The Data Vault",
+        "class": "",
+        "id": "",
+        "href": "https://the-qa-testers-gauntlet.vercel.app/data-vault.html",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Start Test",
+        "class": "",
+        "id": "",
+        "href": "",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "-",
+        "class": "",
+        "id": "",
+        "href": "",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "+",
+        "class": "",
+        "id": "",
+        "href": "",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "-",
+        "class": "",
+        "id": "",
+        "href": "",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "+",
+        "class": "",
+        "id": "",
+        "href": "",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "-",
+        "class": "",
+        "id": "",
+        "href": "",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "+",
+        "class": "",
+        "id": "",
+        "href": "",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Add Element",
+        "class": "",
+        "id": "",
+        "href": "",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Clear All",
+        "class": "",
+        "id": "",
+        "href": "",
+        "confidence": "unknown"
+      }
+    ],
+    "after_filtering": [
+      {
+        "tag": "A",
+        "text": "Dashboard",
+        "class": "",
+        "id": "nav-dashboard",
+        "href": "https://the-qa-testers-gauntlet.vercel.app/index.html"
+      },
+      {
+        "tag": "A",
+        "text": "The Form Factory",
+        "class": "",
+        "id": "nav-forms",
+        "href": "https://the-qa-testers-gauntlet.vercel.app/forms.html"
+      },
+      {
+        "tag": "A",
+        "text": "The Data Vault",
+        "class": "",
+        "id": "nav-data",
+        "href": "https://the-qa-testers-gauntlet.vercel.app/data-vault.html"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Start Test",
+        "class": "btn-primary",
+        "id": "start-test-btn",
+        "href": ""
+      },
+      {
+        "tag": "BUTTON",
+        "text": "-",
+        "class": "btn-counter",
+        "id": "counter1-dec",
+        "href": ""
+      },
+      {
+        "tag": "BUTTON",
+        "text": "+",
+        "class": "btn-counter",
+        "id": "counter1-inc",
+        "href": ""
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Add Element",
+        "class": "btn-primary",
+        "id": "add-element-btn",
+        "href": ""
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Clear All",
+        "class": "btn-secondary",
+        "id": "clear-elements-btn",
+        "href": ""
+      }
+    ],
+    "filtered_out": [
+      {
+        "tag": "A",
+        "text": "Dynamic Events",
+        "class": "",
+        "id": "nav-interactive",
+        "href": "https://the-qa-testers-gauntlet.vercel.app/interactive.html",
+        "confidence": "high"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "-",
+        "class": "btn-counter",
+        "id": "counter2-dec",
+        "href": "",
+        "confidence": "high"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "+",
+        "class": "btn-counter",
+        "id": "counter2-inc",
+        "href": "",
+        "confidence": "high"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "-",
+        "class": "btn-counter",
+        "id": "counter3-dec",
+        "href": "",
+        "confidence": "high"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "+",
+        "class": "btn-counter",
+        "id": "counter3-inc",
+        "href": "",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Dashboard",
+        "href": "https://the-qa-testers-gauntlet.vercel.app/index.html",
+        "type": "",
+        "shadow": false,
+        "shadowPath": "",
+        "selector": null
+      },
+      {
+        "tag": "A",
+        "text": "The Form Factory",
+        "href": "https://the-qa-testers-gauntlet.vercel.app/forms.html",
+        "type": "",
+        "shadow": false,
+        "shadowPath": "",
+        "selector": null
+      },
+      {
+        "tag": "A",
+        "text": "Dynamic Events",
+        "href": "https://the-qa-testers-gauntlet.vercel.app/interactive.html",
+        "type": "",
+        "shadow": false,
+        "shadowPath": "",
+        "selector": null
+      },
+      {
+        "tag": "A",
+        "text": "The Data Vault",
+        "href": "https://the-qa-testers-gauntlet.vercel.app/data-vault.html",
+        "type": "",
+        "shadow": false,
+        "shadowPath": "",
+        "selector": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Start Test",
+        "href": "",
+        "type": "submit",
+        "shadow": false,
+        "shadowPath": "",
+        "selector": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "-",
+        "href": "",
+        "type": "submit",
+        "shadow": false,
+        "shadowPath": "",
+        "selector": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "+",
+        "href": "",
+        "type": "submit",
+        "shadow": false,
+        "shadowPath": "",
+        "selector": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "-",
+        "href": "",
+        "type": "submit",
+        "shadow": false,
+        "shadowPath": "",
+        "selector": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "+",
+        "href": "",
+        "type": "submit",
+        "shadow": false,
+        "shadowPath": "",
+        "selector": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "-",
+        "href": "",
+        "type": "submit",
+        "shadow": false,
+        "shadowPath": "",
+        "selector": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "+",
+        "href": "",
+        "type": "submit",
+        "shadow": false,
+        "shadowPath": "",
+        "selector": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Add Element",
+        "href": "",
+        "type": "submit",
+        "shadow": false,
+        "shadowPath": "",
+        "selector": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Clear All",
+        "href": "",
+        "type": "submit",
+        "shadow": false,
+        "shadowPath": "",
+        "selector": null
+      }
+    ]
+  },
+  "discovered_urls": [
+    "https://the-qa-testers-gauntlet.vercel.app/forms.html",
+    "https://the-qa-testers-gauntlet.vercel.app/data-vault.html",
+    "https://the-qa-testers-gauntlet.vercel.app/index.html"
+  ]
+}

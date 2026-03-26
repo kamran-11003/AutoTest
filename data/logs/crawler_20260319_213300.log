@@ -1,0 +1,88 @@
+2026-03-19 21:36:41 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 6 detection strategies
+2026-03-19 21:36:41 | crawler.state_manager | INFO | StateManager initialized (normalization=ON)
+2026-03-19 21:36:41 | crawler.intelligent_link_filter | INFO | IntelligentLinkFilter initialized
+2026-03-19 21:36:41 | crawler.page_snapshot | INFO | PageSnapshot initialized (output: data/snapshots)
+2026-03-19 21:36:41 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-19 21:36:41 | crawler.page_loader | INFO | PageLoader initialized: chromium, headless=False
+2026-03-19 21:36:42 | crawler.page_loader | INFO | 📂 Loaded session from: auth_session.json
+2026-03-19 21:36:42 | crawler.page_loader | INFO | ✅ Font bypass and animation disable injected
+2026-03-19 21:36:42 | crawler.page_loader | INFO | ✅ Browser started successfully
+2026-03-19 21:36:42 | crawler.page_loader | INFO | 🌐 Loading: https://qa-tester-practice-website.vercel.app/
+2026-03-19 21:37:08 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260319_213708_qa-tester-practice-website.vercel.app_
+   ├─ Total clickables: 28
+   ├─ After filtering: 11 (60.71% reduction)
+   └─ Discovered: 5 URLs
+2026-03-19 21:37:16 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-19 21:37:16 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 0 buttons, 10 links
+2026-03-19 21:37:39 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260319_213739_qa-tester-practice-website.vercel.app_
+   ├─ Total clickables: 28
+   ├─ After filtering: 11 (60.71% reduction)
+   └─ Discovered: 5 URLs
+2026-03-19 21:37:39 | crawler.state_manager | INFO | ✅ New state: fb871217 | / | 0 inputs, 0 forms
+2026-03-19 21:37:39 | crawler.page_loader | INFO | 🌐 Loading: https://qa-tester-practice-website.vercel.app/hover-ui.html
+2026-03-19 21:37:49 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-19 21:37:49 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 3 inputs, 1 forms, 10 buttons, 9 links
+2026-03-19 21:38:29 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260319_213829_qa-tester-practice-website.vercel.app_hover-ui.htm
+   ├─ Total clickables: 58
+   ├─ After filtering: 23 (60.34% reduction)
+   └─ Discovered: 4 URLs
+2026-03-19 21:38:29 | crawler.state_manager | INFO | ✅ New state: 70350953 | /hover-ui.html | 3 inputs, 1 forms
+2026-03-19 21:38:29 | crawler.page_loader | INFO | 🌐 Loading: https://qa-tester-practice-website.vercel.app/form-testing.html
+2026-03-19 21:38:39 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-19 21:38:39 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 27 inputs, 2 forms, 3 buttons, 8 links
+2026-03-19 21:39:30 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260319_213930_qa-tester-practice-website.vercel.app_form-testing
+   ├─ Total clickables: 56
+   ├─ After filtering: 31 (44.64% reduction)
+   └─ Discovered: 4 URLs
+2026-03-19 21:39:30 | crawler.state_manager | INFO | ✅ New state: 09bace41 | /form-testing.html | 27 inputs, 2 forms
+2026-03-19 21:39:30 | crawler.page_loader | INFO | 🌐 Loading: https://qa-tester-practice-website.vercel.app/input-controls.html
+2026-03-19 21:39:40 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-19 21:39:40 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 43 inputs, 4 forms, 0 buttons, 8 links
+2026-03-19 21:40:52 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260319_214052_qa-tester-practice-website.vercel.app_input-contro
+   ├─ Total clickables: 81
+   ├─ After filtering: 50 (38.27% reduction)
+   └─ Discovered: 4 URLs
+2026-03-19 21:40:52 | crawler.state_manager | INFO | ✅ New state: af52d0f1 | /input-controls.html | 43 inputs, 4 forms
+2026-03-19 21:40:52 | crawler.page_loader | INFO | 🌐 Loading: https://qa-tester-practice-website.vercel.app/index.html
+2026-03-19 21:41:03 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-19 21:41:03 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 0 buttons, 10 links
+2026-03-19 21:41:24 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260319_214124_qa-tester-practice-website.vercel.app_index.html
+   ├─ Total clickables: 28
+   ├─ After filtering: 10 (64.29% reduction)
+   └─ Discovered: 4 URLs
+2026-03-19 21:41:24 | crawler.state_manager | INFO | ✅ New state: 0a0b69ff | /index.html | 0 inputs, 0 forms
+2026-03-19 21:41:24 | crawler.page_loader | INFO | 🌐 Loading: https://qa-tester-practice-website.vercel.app/links-navigation.html
+2026-03-19 21:41:34 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-19 21:41:34 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 0 buttons, 30 links
+2026-03-19 21:41:35 | crawler.intelligent_link_filter | INFO | 🎯 Filtered 49 → 48 (saved 1 clicks)
+2026-03-19 21:42:03 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260319_214203_qa-tester-practice-website.vercel.app_links-naviga
+   ├─ Total clickables: 112
+   ├─ After filtering: 17 (84.82% reduction)
+   └─ Discovered: 8 URLs
+2026-03-19 21:42:03 | crawler.state_manager | INFO | ✅ New state: a8585ec1 | /links-navigation.html | 0 inputs, 0 forms
+2026-03-19 21:42:03 | crawler.page_loader | INFO | 🌐 Loading: https://qa-tester-practice-website.vercel.app/non-existent-page.html
+2026-03-19 21:42:10 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-19 21:42:10 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 0 buttons, 1 links
+2026-03-19 21:42:14 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260319_214214_qa-tester-practice-website.vercel.app_non-existent
+   ├─ Total clickables: 3
+   ├─ After filtering: 1 (66.67% reduction)
+   └─ Discovered: 0 URLs
+2026-03-19 21:42:14 | crawler.state_manager | INFO | ✅ New state: 82844d02 | /non-existent-page.html | 0 inputs, 0 forms
+2026-03-19 21:42:14 | crawler.page_loader | INFO | 🌐 Loading: https://qa-tester-practice-website.vercel.app/path/to/nowhere.html
+2026-03-19 21:42:21 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-19 21:42:21 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 0 buttons, 1 links
+2026-03-19 21:42:25 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260319_214225_qa-tester-practice-website.vercel.app_path_to_nowh
+   ├─ Total clickables: 3
+   ├─ After filtering: 1 (66.67% reduction)
+   └─ Discovered: 0 URLs
+2026-03-19 21:42:25 | crawler.state_manager | INFO | ✅ New state: df2c25c6 | /path/to/nowhere.html | 0 inputs, 0 forms
+2026-03-19 21:42:25 | crawler.page_loader | INFO | 🌐 Loading: https://qa-tester-practice-website.vercel.app/missing-page.html
+2026-03-19 21:42:32 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-19 21:42:32 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 0 buttons, 1 links
+2026-03-19 21:42:37 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260319_214236_qa-tester-practice-website.vercel.app_missing-page
+   ├─ Total clickables: 3
+   ├─ After filtering: 1 (66.67% reduction)
+   └─ Discovered: 0 URLs
+2026-03-19 21:42:37 | crawler.state_manager | INFO | ✅ New state: 24968212 | /missing-page.html | 0 inputs, 0 forms
+2026-03-19 21:42:37 | crawler.page_snapshot | INFO | 📋 Snapshot summary saved: data\snapshots\snapshots_summary.json
+2026-03-19 21:42:37 | crawler.page_loader | INFO | 🛑 Browser closed

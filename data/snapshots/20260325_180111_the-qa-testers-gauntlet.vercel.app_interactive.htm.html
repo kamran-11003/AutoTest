@@ -1,0 +1,106 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The QA Tester's Gauntlet - Dynamic Events</title>
+    <link rel="stylesheet" href="styles.css">
+<style>
+                    *, *::before, *::after {
+                        animation-duration: 0.001s !important;
+                        animation-delay: 0s !important;
+                        transition-duration: 0.001s !important;
+                        transition-delay: 0s !important;
+                    }
+                </style><style>
+                            *, *::before, *::after {
+                                animation-duration: 0s !important;
+                                animation-delay: 0s !important;
+                                transition-duration: 0s !important;
+                                transition-delay: 0s !important;
+                            }
+                        </style></head>
+<body>
+    <header class="sticky-header" id="main-header" data-testid="main-header">
+        <div class="container">
+            <h1 id="site-title" data-testid="site-title">The QA Tester's Gauntlet</h1>
+            <nav id="main-nav" data-testid="main-nav">
+                <a href="index.html" id="nav-dashboard" name="nav-dashboard" data-testid="nav-dashboard">Dashboard</a>
+                <a href="forms.html" id="nav-forms" name="nav-forms" data-testid="nav-forms">The Form Factory</a>
+                <a href="interactive.html" id="nav-interactive" name="nav-interactive" data-testid="nav-interactive">Dynamic Events</a>
+                <a href="data-vault.html" id="nav-data" name="nav-data" data-testid="nav-data">The Data Vault</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="card" id="waiter-section" data-testid="waiter-section">
+            <h2 id="waiter-heading" data-testid="waiter-heading">The Waiter</h2>
+            <p id="waiter-description" data-testid="waiter-description">Test your automation's patience with timed elements</p>
+
+            <button id="start-test-btn" name="start-test-btn" data-testid="start-test-btn" class="btn-primary">Start Test</button>
+
+            <div id="progress-container" name="progress-container" data-testid="progress-container" class="progress-container hidden">
+                <div class="progress-bar">
+                    <div id="progress-fill" name="progress-fill" data-testid="progress-fill" class="progress-fill"></div>
+                </div>
+                <span id="progress-text" data-testid="progress-text">0%</span>
+            </div>
+
+            <button id="download-results-btn" name="download-results-btn" data-testid="download-results-btn" class="btn-success hidden">Download Results</button>
+        </section>
+
+        <section class="card" id="counter-section" data-testid="counter-section">
+            <h2 id="counter-heading" data-testid="counter-heading">The Counter Trio</h2>
+
+            <div class="counter-group">
+                <div class="counter-item">
+                    <h3 id="counter1-heading" data-testid="counter1-heading">Standard Counter</h3>
+                    <div class="counter-display" id="counter1-display" data-testid="counter1-display">0</div>
+                    <div class="counter-controls">
+                        <button id="counter1-dec" name="counter1-dec" data-testid="counter1-dec" class="btn-counter">-</button>
+                        <button id="counter1-inc" name="counter1-inc" data-testid="counter1-inc" class="btn-counter">+</button>
+                    </div>
+                </div>
+
+                <div class="counter-item">
+                    <h3 id="counter2-heading" data-testid="counter2-heading">Reset at 10</h3>
+                    <div class="counter-display" id="counter2-display" data-testid="counter2-display">0</div>
+                    <div class="counter-controls">
+                        <button id="counter2-dec" name="counter2-dec" data-testid="counter2-dec" class="btn-counter">-</button>
+                        <button id="counter2-inc" name="counter2-inc" data-testid="counter2-inc" class="btn-counter">+</button>
+                    </div>
+                </div>
+
+                <div class="counter-item">
+                    <h3 id="counter3-heading" data-testid="counter3-heading">Hidden Value</h3>
+                    <div class="counter-display" id="counter3-display" data-testid="counter3-display">0</div>
+                    <div class="counter-controls">
+                        <button id="counter3-dec" name="counter3-dec" data-testid="counter3-dec" class="btn-counter">-</button>
+                        <button id="counter3-inc" name="counter3-inc" data-testid="counter3-inc" class="btn-counter">+</button>
+                    </div>
+                    <input type="hidden" id="counter3-hidden" name="counter3-hidden" data-testid="counter3-hidden" value="0">
+                </div>
+            </div>
+        </section>
+
+        <section class="card" id="shadow-section" data-testid="shadow-section">
+            <h2 id="shadow-heading" data-testid="shadow-heading">The Shadow Box</h2>
+            <p id="shadow-description" data-testid="shadow-description">Content hidden within Shadow DOM</p>
+
+            <div id="shadow-host" name="shadow-host" data-testid="shadow-host"></div>
+        </section>
+
+        <section class="card" id="dynamic-section" data-testid="dynamic-section">
+            <h2 id="dynamic-heading" data-testid="dynamic-heading">Dynamic Content Generator</h2>
+            <p id="dynamic-description" data-testid="dynamic-description">Test handling of dynamically added elements</p>
+
+            <button id="add-element-btn" name="add-element-btn" data-testid="add-element-btn" class="btn-primary">Add Element</button>
+            <button id="clear-elements-btn" name="clear-elements-btn" data-testid="clear-elements-btn" class="btn-secondary">Clear All</button>
+
+            <div id="dynamic-container" name="dynamic-container" data-testid="dynamic-container" class="dynamic-container"></div>
+        </section>
+    </main>
+
+    <script src="interactive.js"></script>
+
+
+</body></html>

@@ -1,0 +1,115 @@
+2026-03-19 21:45:45 | execution.rl_agent.dqn_agent | INFO | RL model loaded (ε=0.112)
+2026-03-19 21:45:47 | execution.cache_manager | WARNING | Redis cache unavailable: Error 10061 connecting to 127.0.0.1:6379. No connection could be made because the target machine actively refused it.. Running without cache.
+2026-03-19 21:45:47 | execution.adaptive_runner | INFO | 
+=== Test Failure Probability Report (Top 10) ===
+Priority   Test ID              Type            Risk     Risk Factors                                                
+------------------------------------------------------------------------------------------------------------------------
+35         ecp_text_06a8aa15_f  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_text_06a8aa15_f  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_text_06a8aa15_f  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_text_0cd38b3e_f  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_email_0cd38b3e_  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_email_0cd38b3e_  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_email_0cd38b3e_  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_email_0cd38b3e_  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_email_0cd38b3e_  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_email_0cd38b3e_  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+------------------------------------------------------------------------------------------------------------------------
+Average failure probability: 44.87%
+
+2026-03-19 21:45:47 | execution.adaptive_runner | INFO | 
+================================================================================
+TEST CLASSIFICATION REPORT
+================================================================================
+
+Classification | Count | Risk
+--------------------------------------------------
+BVA/numeric_boundaries         |   169 |      70%
+ECP/invalid_partition          |    96 |      65%
+ECP/boundary_partition         |    40 |      60%
+BVA/string_boundaries          |    53 |      60%
+DECISION TABLE/unknown         |    60 |      50%
+STATE TRANSITION/unknown       |    11 |      50%
+USE CASE/unknown               |     6 |      50%
+ECP/valid_partition            |   107 |      30%
+
+================================================================================
+
+2026-03-19 21:46:01 | execution.adaptive_runner | INFO | [1/542] ecp_text_06a8aa15_focus-input-1_long → failed (conf=85%, oracle=heuristic)
+2026-03-19 21:46:03 | execution.adaptive_runner | INFO | [2/542] ecp_text_06a8aa15_focus-input-2_long → failed (conf=85%, oracle=heuristic)
+2026-03-19 21:46:05 | execution.adaptive_runner | INFO | [3/542] ecp_text_06a8aa15_focus-textarea_long → failed (conf=85%, oracle=heuristic)
+2026-03-19 21:46:07 | execution.adaptive_runner | INFO | [4/542] ecp_text_0cd38b3e_full-name_long → passed (conf=65%, oracle=heuristic)
+2026-03-19 21:46:11 | execution.adaptive_runner | INFO | [5/542] ecp_email_0cd38b3e_email-address_invalid_missing_at_0 → passed (conf=65%, oracle=heuristic)
+2026-03-19 21:46:14 | execution.adaptive_runner | INFO | [6/542] ecp_email_0cd38b3e_email-address_invalid_missing_at_1 → passed (conf=65%, oracle=heuristic)
+2026-03-19 21:46:16 | execution.adaptive_runner | INFO | [7/542] ecp_email_0cd38b3e_email-address_invalid_missing_domain_0 → passed (conf=65%, oracle=heuristic)
+2026-03-19 21:46:19 | execution.adaptive_runner | INFO | [8/542] ecp_email_0cd38b3e_email-address_invalid_missing_domain_1 → passed (conf=65%, oracle=heuristic)
+2026-03-19 21:46:21 | execution.adaptive_runner | INFO | [9/542] ecp_email_0cd38b3e_email-address_invalid_special_chars_0 → passed (conf=65%, oracle=heuristic)
+2026-03-19 21:46:24 | execution.adaptive_runner | INFO | [10/542] ecp_email_0cd38b3e_email-address_invalid_special_chars_1 → passed (conf=65%, oracle=heuristic)
+2026-03-19 21:46:26 | execution.adaptive_runner | INFO | [11/542] ecp_email_0cd38b3e_email-address_invalid_empty_1 → passed (conf=65%, oracle=heuristic)
+2026-03-19 21:46:30 | execution.adaptive_runner | INFO | [12/542] ecp_email_0cd38b3e_email-address_invalid_spaces_0 → passed (conf=65%, oracle=heuristic)
+2026-03-19 21:46:34 | execution.adaptive_runner | WARNING | LLM disabled for session after 3 consecutive failures (all keys quota-exhausted). Heuristic-only for remaining tests.
+2026-03-19 21:46:34 | execution.adaptive_runner | INFO | [13/542] ecp_email_0cd38b3e_email-address_invalid_spaces_1 → passed (conf=65%, oracle=heuristic)
+2026-03-19 21:46:36 | execution.adaptive_runner | INFO | [14/542] ecp_text_0cd38b3e_password-field_long → passed (conf=65%, oracle=heuristic)
+2026-03-19 21:46:39 | execution.adaptive_runner | INFO | [15/542] ecp_text_0cd38b3e_confirm-password_long → passed (conf=65%, oracle=heuristic)
+2026-03-19 21:46:41 | execution.adaptive_runner | INFO | [16/542] ecp_phone_0cd38b3e_phone-number_invalid_too_short_0 → passed (conf=65%, oracle=heuristic)
+2026-03-19 21:46:44 | execution.adaptive_runner | INFO | [17/542] ecp_phone_0cd38b3e_phone-number_invalid_too_short_1 → passed (conf=65%, oracle=heuristic)
+2026-03-19 21:46:46 | execution.adaptive_runner | INFO | [18/542] ecp_phone_0cd38b3e_phone-number_invalid_letters_0 → passed (conf=65%, oracle=heuristic)
+2026-03-19 21:46:48 | execution.adaptive_runner | INFO | [19/542] ecp_phone_0cd38b3e_phone-number_invalid_letters_1 → passed (conf=65%, oracle=heuristic)
+2026-03-19 21:46:51 | execution.adaptive_runner | INFO | [20/542] ecp_phone_0cd38b3e_phone-number_invalid_empty_1 → passed (conf=65%, oracle=heuristic)
+2026-03-19 21:46:53 | execution.adaptive_runner | INFO | [21/542] ecp_date_0cd38b3e_birth-date_invalid → passed (conf=65%, oracle=heuristic)
+2026-03-19 21:46:56 | execution.adaptive_runner | INFO | [22/542] ecp_number_0cd38b3e_age-number_invalid → passed (conf=65%, oracle=heuristic)
+2026-03-19 21:46:59 | execution.adaptive_runner | INFO | [23/542] ecp_url_0cd38b3e_website-url_invalid_no_protocol_0 → passed (conf=65%, oracle=heuristic)
+2026-03-19 21:47:01 | execution.adaptive_runner | INFO | [24/542] ecp_url_0cd38b3e_website-url_invalid_no_protocol_1 → passed (conf=65%, oracle=heuristic)
+2026-03-19 21:47:03 | execution.adaptive_runner | INFO | [25/542] ecp_url_0cd38b3e_website-url_invalid_format_0 → passed (conf=65%, oracle=heuristic)
+2026-03-19 21:47:06 | execution.adaptive_runner | INFO | [26/542] ecp_url_0cd38b3e_website-url_invalid_format_1 → passed (conf=65%, oracle=heuristic)
+2026-03-19 21:47:08 | execution.adaptive_runner | INFO | [27/542] ecp_url_0cd38b3e_website-url_invalid_empty_1 → passed (conf=65%, oracle=heuristic)
+2026-03-19 21:47:11 | execution.adaptive_runner | INFO | [28/542] ecp_text_0cd38b3e_bio-textarea_long → passed (conf=65%, oracle=heuristic)
+2026-03-19 21:47:13 | execution.adaptive_runner | INFO | [29/542] ecp_file_0cd38b3e_resume-upload_large → passed (conf=65%, oracle=heuristic)
+2026-03-19 21:47:16 | execution.adaptive_runner | INFO | [30/542] ecp_text_0cd38b3e_search-skills_long → passed (conf=65%, oracle=heuristic)
+2026-03-19 21:47:18 | execution.adaptive_runner | INFO | [31/542] ecp_text_b2d6d46e_readonly-input_long → passed (conf=65%, oracle=heuristic)
+2026-03-19 21:47:20 | execution.adaptive_runner | INFO | [32/542] ecp_text_b2d6d46e_disabled-input_long → passed (conf=65%, oracle=heuristic)
+2026-03-19 21:47:22 | execution.adaptive_runner | INFO | [33/542] ecp_text_b2d6d46e_readonly-textarea_long → passed (conf=65%, oracle=heuristic)
+2026-03-19 21:47:24 | execution.adaptive_runner | INFO | [34/542] ecp_text_37d0c0cb_input-text_long → passed (conf=65%, oracle=heuristic)
+2026-03-19 21:47:27 | execution.adaptive_runner | INFO | [35/542] ecp_text_37d0c0cb_input-password_long → passed (conf=65%, oracle=heuristic)
+2026-03-19 21:47:29 | execution.adaptive_runner | INFO | [36/542] ecp_email_37d0c0cb_input-email_invalid_missing_at_0 → passed (conf=65%, oracle=heuristic)
+2026-03-19 21:47:32 | execution.adaptive_runner | INFO | [37/542] ecp_email_37d0c0cb_input-email_invalid_missing_at_1 → passed (conf=65%, oracle=heuristic)
+2026-03-19 21:47:34 | execution.adaptive_runner | INFO | [38/542] ecp_email_37d0c0cb_input-email_invalid_missing_domain_0 → passed (conf=65%, oracle=heuristic)
+2026-03-19 21:47:37 | execution.adaptive_runner | INFO | [39/542] ecp_email_37d0c0cb_input-email_invalid_missing_domain_1 → passed (conf=65%, oracle=heuristic)
+2026-03-19 21:47:39 | execution.adaptive_runner | INFO | [40/542] ecp_email_37d0c0cb_input-email_invalid_special_chars_0 → passed (conf=65%, oracle=heuristic)
+2026-03-19 21:47:42 | execution.adaptive_runner | INFO | [41/542] ecp_email_37d0c0cb_input-email_invalid_special_chars_1 → passed (conf=65%, oracle=heuristic)
+2026-03-19 21:47:44 | execution.adaptive_runner | INFO | [42/542] ecp_email_37d0c0cb_input-email_invalid_empty_1 → passed (conf=65%, oracle=heuristic)
+2026-03-19 21:47:47 | execution.adaptive_runner | INFO | [43/542] ecp_email_37d0c0cb_input-email_invalid_spaces_0 → passed (conf=65%, oracle=heuristic)
+2026-03-19 21:47:49 | execution.adaptive_runner | INFO | [44/542] ecp_email_37d0c0cb_input-email_invalid_spaces_1 → passed (conf=65%, oracle=heuristic)
+2026-03-19 21:47:52 | execution.adaptive_runner | INFO | [45/542] ecp_number_37d0c0cb_input-number_invalid → passed (conf=65%, oracle=heuristic)
+2026-03-19 21:47:54 | execution.adaptive_runner | INFO | [46/542] ecp_phone_37d0c0cb_input-tel_invalid_too_short_0 → passed (conf=65%, oracle=heuristic)
+2026-03-19 21:47:57 | execution.adaptive_runner | INFO | [47/542] ecp_phone_37d0c0cb_input-tel_invalid_too_short_1 → passed (conf=65%, oracle=heuristic)
+2026-03-19 21:47:59 | execution.adaptive_runner | INFO | [48/542] ecp_phone_37d0c0cb_input-tel_invalid_letters_0 → passed (conf=65%, oracle=heuristic)
+2026-03-19 21:48:02 | execution.adaptive_runner | INFO | [49/542] ecp_phone_37d0c0cb_input-tel_invalid_letters_1 → passed (conf=65%, oracle=heuristic)
+2026-03-19 21:48:04 | execution.adaptive_runner | INFO | [50/542] ecp_phone_37d0c0cb_input-tel_invalid_empty_1 → passed (conf=65%, oracle=heuristic)
+2026-03-19 21:48:07 | execution.adaptive_runner | INFO | [51/542] ecp_url_37d0c0cb_input-url_invalid_no_protocol_0 → passed (conf=65%, oracle=heuristic)
+2026-03-19 21:48:09 | execution.adaptive_runner | INFO | [52/542] ecp_url_37d0c0cb_input-url_invalid_no_protocol_1 → passed (conf=65%, oracle=heuristic)
+2026-03-19 21:48:12 | execution.adaptive_runner | INFO | [53/542] ecp_url_37d0c0cb_input-url_invalid_format_0 → passed (conf=65%, oracle=heuristic)
+2026-03-19 21:48:14 | execution.adaptive_runner | INFO | [54/542] ecp_url_37d0c0cb_input-url_invalid_format_1 → passed (conf=65%, oracle=heuristic)
+2026-03-19 21:48:17 | execution.adaptive_runner | INFO | [55/542] ecp_url_37d0c0cb_input-url_invalid_empty_1 → passed (conf=65%, oracle=heuristic)
+2026-03-19 21:48:19 | execution.adaptive_runner | INFO | [56/542] ecp_text_37d0c0cb_input-search_long → passed (conf=65%, oracle=heuristic)
+2026-03-19 21:48:22 | execution.adaptive_runner | INFO | [57/542] ecp_date_37d0c0cb_input-date_invalid → passed (conf=65%, oracle=heuristic)
+2026-03-19 21:48:24 | execution.adaptive_runner | INFO | [58/542] ecp_time_37d0c0cb_input-time_invalid → passed (conf=65%, oracle=heuristic)
+2026-03-19 21:48:27 | execution.adaptive_runner | INFO | [59/542] ecp_datetime-local_37d0c0cb_input-datetime-local_invalid → passed (conf=65%, oracle=heuristic)
+2026-03-19 21:48:29 | execution.adaptive_runner | INFO | [60/542] ecp_month_37d0c0cb_input-month_invalid → passed (conf=65%, oracle=heuristic)
+2026-03-19 21:48:32 | execution.adaptive_runner | INFO | [61/542] ecp_week_37d0c0cb_input-week_invalid → passed (conf=65%, oracle=heuristic)
+2026-03-19 21:48:34 | execution.adaptive_runner | INFO | [62/542] ecp_color_37d0c0cb_input-color_invalid → passed (conf=65%, oracle=heuristic)
+2026-03-19 21:48:37 | execution.adaptive_runner | INFO | [63/542] ecp_number_37d0c0cb_input-range_invalid → passed (conf=65%, oracle=heuristic)
+2026-03-19 21:48:39 | execution.adaptive_runner | INFO | [64/542] ecp_file_37d0c0cb_input-file_large → passed (conf=65%, oracle=heuristic)
+2026-03-19 21:48:42 | execution.adaptive_runner | INFO | [65/542] ecp_file_37d0c0cb_input-file-multiple_large → passed (conf=65%, oracle=heuristic)
+2026-03-19 21:48:44 | execution.adaptive_runner | INFO | [66/542] ecp_text_5b6238f8_tab-input-3_long → passed (conf=65%, oracle=heuristic)
+2026-03-19 21:48:46 | execution.adaptive_runner | INFO | [67/542] ecp_text_5b6238f8_tab-input-1_long → passed (conf=65%, oracle=heuristic)
+2026-03-19 21:48:48 | execution.adaptive_runner | INFO | [68/542] ecp_text_5b6238f8_tab-input-2_long → passed (conf=65%, oracle=heuristic)
+2026-03-19 21:48:50 | execution.adaptive_runner | INFO | [69/542] ecp_text_5b6238f8_tab-input-negative_long → passed (conf=65%, oracle=heuristic)
+2026-03-19 21:48:53 | execution.adaptive_runner | INFO | [70/542] ecp_boolean_0cd38b3e_interest-automation_interest-automation → error (conf=40%, oracle=heuristic)
+2026-03-19 21:48:55 | execution.adaptive_runner | INFO | [71/542] ecp_boolean_0cd38b3e_interest-automation_interest-automation_unchecked → error (conf=40%, oracle=heuristic)
+2026-03-19 21:48:58 | execution.adaptive_runner | INFO | [72/542] ecp_boolean_0cd38b3e_interest-manual_interest-manual → error (conf=40%, oracle=heuristic)
+2026-03-19 21:49:00 | execution.adaptive_runner | INFO | [73/542] ecp_boolean_0cd38b3e_interest-manual_interest-manual_unchecked → error (conf=40%, oracle=heuristic)
+2026-03-19 21:49:03 | execution.adaptive_runner | INFO | [74/542] ecp_boolean_0cd38b3e_interest-performance_interest-performance → error (conf=40%, oracle=heuristic)
+2026-03-19 21:49:03 | execution.adaptive_runner | INFO | Hard stop at test 75/542: oracle unclear for last 5 tests
+2026-03-19 21:49:03 | execution.rl_agent.dqn_agent | INFO | RL model saved → data\rl_model\dqn_checkpoint.pth
+2026-03-19 21:49:04 | execution.adaptive_runner | INFO | Execution complete: 66/542 passed | 3 LLM calls ($0.006) | stop_reason=rl_stop
