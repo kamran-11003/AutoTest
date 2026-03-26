@@ -11,6 +11,7 @@ Enhances test cases by:
 import os
 import json
 import logging
+import re
 from typing import List, Dict, Any
 import google.generativeai as genai
 from datetime import datetime
@@ -73,7 +74,7 @@ class GeminiTestRefiner:
         try:
             key = self.api_keys[self.current_key_index]
             genai.configure(api_key=key)
-            self.model = genai.GenerativeModel('gemini-2.0-flash')
+            self.model = genai.GenerativeModel('gemini-3.1-flash-lite-preview')
             logger.info(f"Initialized Gemini model with key #{self.current_key_index + 1}")
         except Exception as e:
             logger.error(f"Failed to initialize Gemini model: {e}")
@@ -172,10 +173,11 @@ class GeminiTestRefiner:
         """Use AI to refine a batch of tests"""
         prompt = self._build_refinement_prompt(batch, test_type, crawl_data)
         
-        # Configure generation for JSON output
+        # Configure generation for reliable JSON output
+        # Very low temperature for consistent, deterministic JSON
         generation_config = {
-            "temperature": 0.7,
-            "top_p": 0.95,
+            "temperature": 0.1,  # Very low for consistent JSON
+            "top_p": 0.8,
             "max_output_tokens": 8192,
         }
         
@@ -188,204 +190,226 @@ class GeminiTestRefiner:
         return refined_batch
     
     def _build_refinement_prompt(self, batch: List[Dict], test_type: str, crawl_data: Dict = None) -> str:
-        """Build comprehensive prompt with full crawl context for intelligent test refinement"""
+        """Build simple, direct prompt for test refinement"""
         
-        # Extract DETAILED website context from crawl data
-        website_context = ""
-        forms_detail = ""
-        fields_detail = ""
-        
+        # Extract field names from crawl data
+        fields_list = []
         if crawl_data:
             nodes = crawl_data.get('nodes', [])
-            edges = crawl_data.get('edges', [])
-            
-            # Get ALL forms with their fields
-            all_forms = []
             for node in nodes:
-                page_url = node.get('url', '')
-                page_title = node.get('title', 'Untitled')
                 for form in node.get('forms', []):
-                    form_info = {
-                        'page': page_title,
-                        'url': page_url,
-                        'action': form.get('action', ''),
-                        'method': form.get('method', 'GET'),
-                        'inputs': []
-                    }
                     for inp in form.get('inputs', []):
-                        form_info['inputs'].append({
-                            'type': inp.get('type', ''),
-                            'name': inp.get('name', ''),
-                            'id': inp.get('id', ''),
-                            'label': inp.get('label', ''),
-                            'placeholder': inp.get('placeholder', ''),
-                            'required': inp.get('required', False)
-                        })
-                    all_forms.append(form_info)
-            
-            # Build detailed forms context
-            if all_forms:
-                forms_detail = "\nFORMS DISCOVERED:\n"
-                for i, form in enumerate(all_forms[:10], 1):  # First 10 forms
-                    forms_detail += f"\nForm {i} on '{form['page']}':\n"
-                    forms_detail += f"  Action: {form['action']}\n"
-                    forms_detail += f"  Fields: {len(form['inputs'])}\n"
-                    for inp in form['inputs'][:5]:  # First 5 fields per form
-                        field_desc = f"    - {inp['type']}"
-                        if inp['label']:
-                            field_desc += f" | Label: {inp['label']}"
-                        if inp['name']:
-                            field_desc += f" | Name: {inp['name']}"
-                        if inp['placeholder']:
-                            field_desc += f" | Placeholder: {inp['placeholder']}"
-                        if inp['required']:
-                            field_desc += " | REQUIRED"
-                        forms_detail += field_desc + "\n"
-            
-            # Get page navigation structure
-            pages_detail = "\nPAGE STRUCTURE:\n"
-            for node in nodes[:10]:  # First 10 pages
-                pages_detail += f"- {node.get('title', 'Untitled')} @ {node.get('url', '')}\n"
-                pages_detail += f"  Forms: {len(node.get('forms', []))}, Inputs: {len(node.get('inputs', []))}, Links: {len(node.get('links', []))}\n"
-            
-            website_context = f"""
-CRAWLED WEBSITE DATA (Use this to understand ACTUAL fields and context):
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-• Total Pages: {len(nodes)}
-• Total Transitions: {len(edges)}
-• Total Forms: {len(all_forms)}
-• Total Input Fields: {sum(len(f['inputs']) for f in all_forms)}
-{pages_detail}
-{forms_detail}
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-"""
+                        label = inp.get('label') or inp.get('name') or inp.get('id')
+                        if label:
+                            fields_list.append(label)
+            fields_list = list(set(fields_list))[:20]  # Unique, max 20
         
-        prompt = f"""You are an expert QA engineer performing COMPREHENSIVE test case refinement.
+        fields_str = ", ".join(fields_list) if fields_list else "See test cases for field names"
+        
+        # Create example showing ALL fields must be preserved
+        example_in = batch[0] if batch else {"id": "example", "type": "text", "test_value": "value"}
+        example_out = dict(example_in)
+        example_out["action"] = "kept"
+        example_out["description"] = "Updated description if needed"
+        
+        prompt = f"""Refine these test cases. CRITICAL: Preserve ALL original fields!
 
-{website_context}
+ORIGINAL TEST STRUCTURE (preserve all these fields):
+{json.dumps(example_in, indent=2)}
 
-CURRENT TEST CASES ({test_type}):
+FIELDS IN SYSTEM: {fields_str}
+
+TEST CASES TO REFINE:
 {json.dumps(batch, indent=2)}
 
-YOUR MISSION - PERFORM ALL 4 ACTIONS:
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+INSTRUCTIONS:
+1. For each test, return ALL original fields UNCHANGED (id, type, test_value, expected_result, etc.)
+2. Only update: field_label (use actual field names), description (make more specific)
+3. Add action field: kept, updated, or added
+4. Add new tests only if you identify missing scenarios
+5. Never remove or change original fields like test_value, type, expected_result
 
-1. 🔍 ANALYZE EXISTING TESTS:
-   - Review each test for completeness and accuracy
-   - Check if field_label matches actual fields from crawl data
-   - Verify test values are appropriate for field types
-   - Check if descriptions are clear and specific
+EXAMPLE OUTPUT (shows ALL fields preserved from input):
+{json.dumps(example_out, indent=2)}
 
-2. UPD️ UPDATE/FIX EXISTING TESTS:
-   - Replace "Unknown Field", generic labels with ACTUAL field names from crawl data
-   - Update test_value if it doesn't match field type (e.g., number for text field)
-   - Improve descriptions to be specific: "Verify [FieldName] accepts [value] and [expected behavior]"
-   - Fix expected_result if incorrect
-   - Mark updated tests with "action": "updated"
-
-3. ➕ ADD NEW MISSING TEST CASES:
-   - Identify fields from crawl data that aren't being tested
-   - Generate NEW test cases for untested scenarios:
-     * Missing boundary values
-     * Missing equivalence partitions
-     * Untested form fields
-     * Missing negative tests
-     * Security tests (SQL injection, XSS for text fields)
-   - Mark new tests with "action": "added"
-
-4. DEL️ MARK REDUNDANT/INVALID TESTS FOR DELETION:
-   - Duplicate tests (same field, same test type, same values)
-   - Tests for non-existent fields
-   - Invalid test configurations
-   - Mark with "action": "delete", "delete_reason": "explanation"
-
-RESPONSE FORMAT (JSON array with ALL tests):
-[
-  {{
-    "action": "kept|updated|added|delete",
-    "delete_reason": "reason if action=delete",
-    ...all_original_test_fields...,
-    "description": "Enhanced specific description",
-    "field_label": "Actual field name from crawl data",
-    "test_value": "Updated if needed",
-    "expected_result": "Updated if needed",
-    "ai_notes": "What was changed and why",
-    "validation_rules": ["Rule 1", "Rule 2"],
-    "edge_cases_covered": ["Scenario 1", "Scenario 2"]
-  }}
-]
-
-CRITICAL RULES:
-✓ Return COMPLETE test objects (all original fields + enhancements)
-✓ Use ACTUAL field names/labels from the crawl data above
-✓ Generate 20-30% MORE tests than provided (add missing scenarios)
-✓ Mark action as "updated", "added", "delete", or "kept"
-✓ Return ONLY valid JSON array, no markdown, no code blocks, no explanation
-✓ Be aggressive about adding missing test coverage
-✓ Start response with [ and end with ] - PURE JSON ONLY
-
-EXAMPLE OUTPUT (DO NOT INCLUDE THIS TEXT, ONLY JSON):
-[{{"action":"updated","id":"BVA_001",...}},{{"action":"added","id":"BVA_003",...}}]
-
-Now return the refined test cases as a pure JSON array:"""
+CRITICAL REQUIREMENTS:
+- Every returned test must have ALL its original fields
+- If action=updated, only field_label and description should change
+- If action=added, generate complete new test with all required fields
+- Return ONLY a JSON array
+- Start with [ and end with ]"""
         
         return prompt
     
+    def _repair_json(self, json_text: str) -> str:
+        """Aggressively repair common JSON issues"""
+        
+        # Remove control characters
+        json_text = re.sub(r'[\x00-\x1f\x7f]', ' ', json_text)
+        
+        # Fix missing commas between objects in array
+        json_text = re.sub(r'}\s*{', '}, {', json_text)
+        json_text = re.sub(r']\s*{', '], {', json_text)
+        json_text = re.sub(r'}\s*\[', '}, [', json_text)
+        
+        # Remove trailing commas before ] or }
+        json_text = re.sub(r',(\s*[}\]])', r'\1', json_text)
+        
+        # Fix common quote issues
+        # Don't try to fix internal quotes - too risky
+        # Just ensure outer structure is valid
+        
+        # Ensure arrays start and end properly
+        json_text = json_text.strip()
+        if not json_text.startswith('['):
+            # Find first [
+            first_bracket = json_text.find('[')
+            if first_bracket >= 0:
+                json_text = json_text[first_bracket:]
+        
+        if not json_text.endswith(']'):
+            # Find last ]
+            last_bracket = json_text.rfind(']')
+            if last_bracket >= 0:
+                json_text = json_text[:last_bracket + 1]
+        
+        return json_text
+    
     def _parse_ai_response(self, response_text: str, original_batch: List[Dict]) -> List[Dict]:
-        """Parse AI response - handle updated, new, and deleted tests"""
+        """Parse AI response with robust error handling"""
         try:
-            # Remove markdown code blocks if present
-            response_text = response_text.replace('```json', '').replace('```', '')
+            # Remove markdown code blocks
+            response_text = response_text.replace('```json', '').replace('```', '').strip()
             
-            # Try to extract JSON from response
+            # Try to extract JSON array
             json_start = response_text.find('[')
             json_end = response_text.rfind(']') + 1
             
-            if json_start >= 0 and json_end > json_start:
-                json_text = response_text[json_start:json_end]
-                
-                # Clean up common JSON issues
-                json_text = json_text.strip()
-                
+            if json_start < 0 or json_end <= json_start:
+                print(f"    ⚠️  No JSON array found - keeping originals")
+                return original_batch
+            
+            json_text = response_text[json_start:json_end].strip()
+            
+            # Attempt to repair JSON
+            json_text = self._repair_json(json_text)
+            
+            # Try to parse repaired JSON
+            try:
                 ai_tests = json.loads(json_text)
+            except json.JSONDecodeError as e:
+                # If repair didn't help, try to extract individual objects
+                print(f"    ⚠️  JSON parse failed ({str(e)[:30]}), extracting individual tests...")
                 
-                # Track statistics
-                stats = {'kept': 0, 'updated': 0, 'added': 0, 'deleted': 0}
+                # Find all { } pairs that might be test objects
+                ai_tests = []
+                depth = 0
+                current_obj = []
+                in_string = False
+                escape_next = False
                 
-                # Filter out deleted tests and count actions
-                refined_tests = []
-                for test in ai_tests:
-                    action = test.get('action', 'kept')
-                    stats[action] = stats.get(action, 0) + 1
-                    
-                    # Add metadata
-                    test['ai_enhanced'] = True
-                    test['enhanced_at'] = datetime.now().isoformat()
-                    
-                    # Skip deleted tests
-                    if action == 'delete':
-                        print(f"    DEL️  Deleted: {test.get('id', 'unknown')} - {test.get('delete_reason', 'no reason')}")
+                for i, char in enumerate(json_text):
+                    if escape_next:
+                        escape_next = False
+                        current_obj.append(char)
                         continue
                     
-                    # Log updates and additions
-                    if action == 'updated':
-                        print(f"    UPD️  Updated: {test.get('id', 'unknown')} - {test.get('field_label', '')}")
-                    elif action == 'added':
-                        print(f"    ➕ Added: {test.get('id', 'NEW')} - {test.get('description', '')[:60]}")
+                    if char == '\\\\':
+                        escape_next = True
+                        current_obj.append(char)
+                        continue
                     
+                    if char == '"' and depth > 0:
+                        in_string = not in_string
+                    
+                    if char == '{' and not in_string:
+                        depth += 1
+                        current_obj = [char]
+                    elif char == '}' and not in_string:
+                        current_obj.append(char)
+                        depth -= 1
+                        if depth == 0 and current_obj:
+                            try:
+                                obj_str = ''.join(current_obj)
+                                test_obj = json.loads(obj_str)
+                                ai_tests.append(test_obj)
+                            except:
+                                pass
+                            current_obj = []
+                    elif depth > 0:
+                        current_obj.append(char)
+                
+                if not ai_tests:
+                    print(f"    ❌ Could not extract any tests - keeping originals")
+                    return original_batch
+            
+            # Process extracted tests
+            stats = {'kept': 0, 'updated': 0, 'added': 0, 'deleted': 0}
+            refined_tests = []
+            
+            # Create a map of original tests by ID for field restoration
+            original_map = {test.get('id'): test for test in original_batch}
+            
+            for test in ai_tests:
+                if not isinstance(test, dict):
+                    continue
+                
+                test_id = test.get('id')
+                action = test.get('action', 'kept')
+                stats[action] = stats.get(action, 0) + 1
+                
+                # If this test was in the original batch, restore any missing critical fields
+                if test_id in original_map and action in ['kept', 'updated']:
+                    original = original_map[test_id]
+                    # Restore critical fields that should never be lost
+                    for critical_field in ['type', 'test_value', 'expected_result', 'page', 'form_name']:
+                        if critical_field not in test and critical_field in original:
+                            test[critical_field] = original[critical_field]
+                
+                # Add metadata
+                test['ai_enhanced'] = True
+                test['enhanced_at'] = datetime.now().isoformat()
+                
+                # Skip deleted tests
+                if action == 'delete':
+                    print(f"    ❌ Deleted: {test_id}")
+                    continue
+                
+                # Log updates and additions
+                if action == 'updated':
+                    print(f"    ✏️ Updated: {test_id}")
+                elif action == 'added':
+                    print(f"    ➕ Added: {test_id}")
+                
+                # Validate test has critical fields before adding
+                # Must have: id, test_value (or we use original)
+                if test_id in original_map and action in ['kept', 'updated']:
+                    # If AI didn't get critical fields, use the original instead
+                    if not test.get('test_value'):
+                        test = dict(original_map[test_id])
+                        test['action'] = action
+                        test['ai_enhanced'] = True
+                        test['enhanced_at'] = datetime.now().isoformat()
+                        test['ai_notes'] = 'Kept original due to incomplete refinement'
+                
+                # Only add if test has test_value and id
+                if test.get('id') and test.get('test_value') is not None:
                     refined_tests.append(test)
-                
-                # Print summary
-                print(f"\n    >> Refinement Stats: {stats['kept']} kept, {stats['updated']} updated, {stats['added']} added, {stats['deleted']} deleted")
-                print(f"    >> Total: {len(original_batch)} → {len(refined_tests)} ({len(refined_tests) - len(original_batch):+d})")
-                
-                return refined_tests
-            else:
-                print("    ⚠️  Could not parse JSON from AI response - keeping originals")
-                logger.warning("Could not parse JSON from AI response")
-                return original_batch
+                elif test.get('id'):
+                    # Has ID but missing test_value - use original
+                    if test_id in original_map:
+                        orig = dict(original_map[test_id])
+                        orig['action'] = action
+                        orig['ai_enhanced'] = True
+                        refined_tests.append(orig)
+            
+            # Print summary
+            print(f"\n    >> Refinement Stats: {stats['kept']} kept, {stats['updated']} updated, {stats['added']} added, {stats['deleted']} deleted")
+            print(f"    >> Total: {len(original_batch)} → {len(refined_tests)} ({len(refined_tests) - len(original_batch):+d})")
+            
+            return refined_tests if refined_tests else original_batch
         
         except Exception as e:
-            print(f"    FAIL Parse error: {str(e)[:50]} - keeping originals")
+            print(f"    ❌ Error: {str(e)[:40]} - keeping originals")
             logger.error(f"Error parsing AI response: {e}")
             return original_batch

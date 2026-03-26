@@ -34,7 +34,7 @@ def display_constraint_editor(form_data: Dict, results: Dict):
     
     # Regenerate button at top
     if st.button("🔄 Regenerate Tests with Updated Constraints", 
-                 use_container_width=True,
+                 width='stretch',
                  type="primary",
                  disabled=not st.session_state.get('constraints_updated', False)):
         with st.spinner("Regenerating ALL tests with updated constraints..."):

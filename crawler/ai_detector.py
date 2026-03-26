@@ -36,7 +36,7 @@ class GeminiElementDetector:
             raise ValueError("No Gemini API key available")
         
         genai.configure(api_key=current_key)
-        self.model = genai.GenerativeModel('gemini-2.0-flash')
+        self.model = genai.GenerativeModel('gemini-3.1-flash-lite-preview')
         self.current_key = current_key
         
         # Redis cache for distributed caching
@@ -48,7 +48,7 @@ class GeminiElementDetector:
         self._api_call_count = 0
         self._cache_hits = 0
         
-        logger.info("🤖 Gemini element detector initialized (model: gemini-2.0-flash)")
+        logger.info("🤖 Gemini element detector initialized (model: gemini-3.1-flash-lite-preview)")
         if self.redis_cache.enabled:
             logger.info("   💾 Redis caching enabled for distributed cache sharing")
     
@@ -100,7 +100,7 @@ class GeminiElementDetector:
     def _reconfigure_api(self, new_key: str):
         """Reconfigure Gemini API with new key"""
         genai.configure(api_key=new_key)
-        self.model = genai.GenerativeModel('gemini-2.0-flash-exp')
+        self.model = genai.GenerativeModel('gemini-3.1-flash-lite-preview')
         self.current_key = new_key
     
     def _extract_retry_delay(self, error_message: str) -> Optional[float]:

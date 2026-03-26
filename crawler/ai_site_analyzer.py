@@ -34,7 +34,7 @@ class AISiteAnalyzer:
             raise ValueError("No Gemini API key available")
         
         genai.configure(api_key=current_key)
-        self.model = genai.GenerativeModel('gemini-2.0-flash')
+        self.model = genai.GenerativeModel('gemini-3.1-flash-lite-preview')
         
         # Redis cache for persistent site analysis
         self.redis_cache = get_redis_cache()
@@ -236,7 +236,7 @@ Identify repeated component structures:
                         
                         # Reconfigure Gemini with new key
                         genai.configure(api_key=new_key)
-                        self.model = genai.GenerativeModel('gemini-2.0-flash')
+                        self.model = genai.GenerativeModel('gemini-3.1-flash-lite-preview')
                         
                         await asyncio.sleep(1)  # Brief pause before retry
                         continue
