@@ -116,7 +116,7 @@ def main():
                 'Pages': c['nodes'],
                 'Edges': c['edges']
             } for c in crawls])
-            st.dataframe(comparison_df, width='stretch', hide_index=True)
+            st.dataframe(comparison_df, use_container_width=True, hide_index=True)
     
     # Display metadata
     st.markdown(f"### 📁 {selected_crawl['file']}")
@@ -190,7 +190,7 @@ def main():
         if filter_inputs:
             pages_df = pages_df[pages_df['Inputs'] > 0]
         
-        st.dataframe(pages_df, width='stretch', hide_index=True, height=400)
+        st.dataframe(pages_df, use_container_width=True, hide_index=True, height=400)
         
         # Download button
         csv = pages_df.to_csv(index=False)
@@ -198,8 +198,7 @@ def main():
             label="📥 Download Pages as CSV",
             data=csv,
             file_name=f"pages_{selected_crawl['file'].replace('.json', '.csv')}",
-            mime="text/csv",
-            width='stretch'
+            mime="text/csv"
         )
     
     with tab3:
@@ -288,7 +287,7 @@ def main():
                         'To': target[:20] + '...' if len(str(target)) > 20 else target
                     })
                 
-                st.dataframe(pd.DataFrame(edge_samples), width='stretch', hide_index=True)
+                st.dataframe(pd.DataFrame(edge_samples), use_container_width=True, hide_index=True)
         else:
             st.warning("⚠️ No edges found in this crawl")
         
@@ -300,8 +299,7 @@ def main():
             label="📥 Download Full JSON",
             data=json_str,
             file_name=selected_crawl['file'],
-            mime="application/json",
-            width='stretch'
+            mime="application/json"
         )
 
 if __name__ == "__main__":

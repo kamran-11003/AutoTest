@@ -1,0 +1,42 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><link rel="stylesheet" href="/static/prism.css"><link rel="stylesheet" href="/static/style.css"><title>UI Test Automation Playground</title><script>function byid(id) 
+{
+    return document.getElementById(id);
+}
+
+function setStatus(txt)
+{
+    byid("opstatus").innerText = txt;
+}</script><style>
+                    *, *::before, *::after {
+                        animation-duration: 0.001s !important;
+                        animation-delay: 0s !important;
+                        transition-duration: 0.001s !important;
+                        transition-delay: 0s !important;
+                    }
+                </style></head><body><nav class="navbar navbar-expand-lg navbar-light bg-light"><a class="navbar-brand" href="/">UITAP</a><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="navbarSupportedContent"><ul class="navbar-nav mr-auto"><li class="nav-item active"><a class="nav-link" href="/home">Home</a></li><li class="nav-item"><a class="nav-link" href="/resources">Resources</a></li></ul></div></nav><section id="description"><div class="container"><div class="row"><div class="col-sm"><h1 id="title">UI Test Automation<br>Playground</h1><blockquote class="blockquote" id="citation"><p class="mb-0">Quality is not an act, it is a habit.</p><footer class="blockquote-footer">Aristotle</footer></blockquote><div class="alert alert-warning" role="alert"><span>The purpose of this website is to provide a platform for sharpening UI test automation skills. Use it to practice with your test automation tool. Use it to learn test automation techniques.</span></div><p>Different automation pitfalls appearing in modern web applications are described and emulated below.</p></div><div class="col-sm"><img class="img-fluid" src="/static/cube.png" alt="Responsive image"><p class="text-center"><small>
+<a href="http://pngimg.com/download/46552">Rubik's Cube </a> is licensed under 
+<a href="https://creativecommons.org/licenses/by-nc/4.0/">CC 4.0 BY-NC</a>
+</small></p></div></div></div></section><section id="overview"><div class="container"><div class="row"><div class="col-sm"><h3><a href="/dynamicid">Dynamic ID</a></h3><p>Make sure you are not recording dynamic IDs of elements</p></div><div class="col-sm"><h3> <a href="/classattr">Class Attribute</a></h3><p>Check that class attribute based XPath is well formed</p></div><div class="col-sm"><h3> <a href="/hiddenlayers">Hidden Layers</a></h3><p>Verify that your test does not interact with elements invisible because of z-order</p></div><div class="col-sm"><h3><a href="/loaddelay" onclick="$('#spinner').show(); return true;">Load Delay</a><i class="fa fa-spinner fa-spin" id="spinner" style="display:none"></i></h3><p>Ensure that a test is capable of waiting for a page to load</p></div></div><div class="row"><div class="col-sm"><h3> <a href="/ajax">AJAX Data</a></h3><p>Some elements may appear on a page after loading data with AJAX request</p></div><div class="col-sm"><h3> <a href="/clientdelay">Client Side Delay</a></h3><p>Some elements may appear after client-side time consuming JavaScript calculations</p></div><div class="col-sm"><h3><a href="/click">Click</a></h3><p> Event based click on an element may not always work</p></div><div class="col-sm"><h3> <a href="/textinput">Text Input</a></h3><p>Entering text into an edit field may not have effect</p></div></div><div class="row"><div class="col-sm"><h3> <a href="/scrollbars">Scrollbars</a></h3><p>Scrolling an element into view may be a tricky task</p></div><div class="col-sm"><h3> <a href="/dynamictable">Dynamic Table</a></h3><p>Verify cell value in a dynamic table</p></div><div class="col-sm"><h3> <a href="/verifytext">Verify Text</a></h3><p>Finding an element by displayed text has nuances</p></div><div class="col-sm"><h3> <a href="/progressbar">Progress Bar</a></h3><p>Follow the progress of a lengthy process and continue upon completion</p></div></div><div class="row"><div class="col-sm"><h3> <a href="/visibility">Visibility</a></h3><p>Check if element is visible on screen</p></div><div class="col-sm"><h3> <a href="/sampleapp">Sample App</a></h3><p>Demo application with dynamically generated element attributes</p></div><div class="col-sm"><h3> <a href="/mouseover">Mouse Over</a></h3><p>Placing mouse over an element may change DOM and make the element unavailable</p></div><div class="col-sm"><h3> <a href="/nbsp">Non-Breaking Space</a></h3><p>Non-breaking space looks like a normal one on screen. It may lead to confusion when building XPath</p></div></div><div class="row"><div class="col-sm"><h3> <a href="/overlapped">Overlapped Element</a></h3><p>Make element visible to enter text</p></div><div class="col-sm"><h3> <a href="/shadowdom">Shadow DOM</a></h3><p>Look inside Shadow DOM component    </p></div><div class="col-sm"><h3> <a href="/alerts">Alerts</a></h3><p>Accept alerts, confirmations and prompts   </p></div><div class="col-sm"><h3><a href="/upload">File Upload</a></h3><p>Upload files</p></div></div><div class="row"><div class="col-sm"><h3> <a href="/animation">Animated Button</a></h3><p>Wait for animation to stop before clicking a button</p></div><div class="col-sm"><h3> <a href="/disabledinput">Disabled Input</a></h3><p>Wait for edit field to become enabled   </p></div><div class="col-sm"><h3> <a href="/autowait">Auto Wait</a></h3><p>Wait for an element to become interactable   </p></div><div class="col-sm"><h3> <a href="/frames">Frames</a></h3><p>Find elements inside nested frames</p></div></div><div class="row"><div class="col-sm"><h3> <a href="/geolocation">Geo Location</a></h3><p>Handle browser permission prompts for geolocation access</p></div><div class="col-sm"></div><div class="col-sm"></div><div class="col-sm"></div></div></div></section><div class="container">
+    <footer id="footer">
+        <div id="footer-content">
+            <div id="github">
+                <span></span>
+            </div>
+            <div id="fork">
+                <a href="https://github.com/inflectra/ui-test-automation-playground">Fork the website on GitHub</a>.
+            </div>
+        <div>Supported by <a href="https://www.inflectra.com/Rapise/">Rapise</a> test automation team. Copyright © 2020 - 2026 <a href="https://www.inflectra.com/">Inflectra Corporation</a>.</div>
+        </div>
+        <div id="license">
+            This work is licensed under the <a rel="license" href="https://www.apache.org/licenses/LICENSE-2.0">Apache License 2.0</a>.
+        </div>
+    </footer>
+</div>
+<script async="" defer="" src="https://buttons.github.io/buttons.js"></script>
+<script src="/static/prism.js"></script>
+
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body></html>

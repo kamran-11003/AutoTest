@@ -1,0 +1,131 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Command Center - QA Alchemist's Laboratory</title>
+    <link rel="stylesheet" href="styles.css">
+<style>
+                    *, *::before, *::after {
+                        animation-duration: 0.001s !important;
+                        animation-delay: 0s !important;
+                        transition-duration: 0.001s !important;
+                        transition-delay: 0s !important;
+                    }
+                </style></head>
+<body>
+    <!-- Sidebar Navigation -->
+    <nav id="side-nav" data-testid="side-nav">
+        <div class="logo">⚗️ QA Alchemist</div>
+        <ul class="nav-links">
+            <li>
+                <a href="index.html" id="nav-command-center" name="nav-command-center" data-testid="nav-command-center" class="active">
+                    🎯 Command Center
+                </a>
+            </li>
+            <li>
+                <a href="transmutation.html" id="nav-form-factory" name="nav-form-factory" data-testid="nav-form-factory">
+                    📝 Form Factory
+                </a>
+            </li>
+            <li>
+                <a href="anomalies.html" id="nav-anomalies" name="nav-anomalies" data-testid="nav-anomalies">
+                    🔬 Anomalies Lab
+                </a>
+            </li>
+            <li>
+                <a href="archive.html" id="nav-archive" name="nav-archive" data-testid="nav-archive">
+                    📚 Scraper's Crypt
+                </a>
+            </li>
+            <li>
+                <a href="security.html" id="nav-vault" name="nav-vault" data-testid="nav-vault">
+                    🔒 The Vault
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <header class="page-header">
+            <h1 class="page-title">Command Center</h1>
+            <p class="page-subtitle">Welcome to the QA Alchemist's Laboratory - Your testing playground</p>
+        </header>
+
+        <!-- Dynamic Hover Map Section -->
+        <section class="glass-container">
+            <h2 style="color: var(--neon-purple-light); margin-bottom: 1.5rem;">🗺️ Dynamic Hover Map</h2>
+            <p style="color: var(--text-muted); margin-bottom: 1.5rem;">
+                Hover over each cell to reveal its secret key. Each key is randomly generated and disappears when you move away.
+            </p>
+            
+            <div class="grid grid-3x3" id="hover-map" data-testid="hover-map">
+                <div class="hover-cell" id="cell-1" name="cell-1" data-testid="cell-1" data-row="1" data-col="1">
+                    <span class="secret-key" id="key-1" name="key-1" data-testid="key-1"></span>
+                </div>
+                <div class="hover-cell" id="cell-2" name="cell-2" data-testid="cell-2" data-row="1" data-col="2">
+                    <span class="secret-key" id="key-2" name="key-2" data-testid="key-2"></span>
+                </div>
+                <div class="hover-cell" id="cell-3" name="cell-3" data-testid="cell-3" data-row="1" data-col="3">
+                    <span class="secret-key" id="key-3" name="key-3" data-testid="key-3"></span>
+                </div>
+                <div class="hover-cell" id="cell-4" name="cell-4" data-testid="cell-4" data-row="2" data-col="1">
+                    <span class="secret-key" id="key-4" name="key-4" data-testid="key-4"></span>
+                </div>
+                <div class="hover-cell" id="cell-5" name="cell-5" data-testid="cell-5" data-row="2" data-col="2">
+                    <span class="secret-key" id="key-5" name="key-5" data-testid="key-5"></span>
+                </div>
+                <div class="hover-cell" id="cell-6" name="cell-6" data-testid="cell-6" data-row="2" data-col="3">
+                    <span class="secret-key" id="key-6" name="key-6" data-testid="key-6"></span>
+                </div>
+                <div class="hover-cell" id="cell-7" name="cell-7" data-testid="cell-7" data-row="3" data-col="1">
+                    <span class="secret-key" id="key-7" name="key-7" data-testid="key-7"></span>
+                </div>
+                <div class="hover-cell" id="cell-8" name="cell-8" data-testid="cell-8" data-row="3" data-col="2">
+                    <span class="secret-key" id="key-8" name="key-8" data-testid="key-8"></span>
+                </div>
+                <div class="hover-cell" id="cell-9" name="cell-9" data-testid="cell-9" data-row="3" data-col="3">
+                    <span class="secret-key" id="key-9" name="key-9" data-testid="key-9"></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Toast Notification Section -->
+        <section class="glass-container">
+            <h2 style="color: var(--neon-emerald-light); margin-bottom: 1.5rem;">🔔 Notification Toast</h2>
+            <p style="color: var(--text-muted); margin-bottom: 1.5rem;">
+                Click the button below to trigger a toast notification that appears in the corner and automatically disappears after 4 seconds.
+            </p>
+            
+            <button class="btn btn-secondary" id="toast-trigger" name="toast-trigger" data-testid="toast-trigger">
+                🚀 Trigger Toast Notification
+            </button>
+        </section>
+
+        <!-- Info Section -->
+        <section class="glass-container">
+            <h2 style="color: var(--neon-purple-light); margin-bottom: 1.5rem;">ℹ️ Testing Information</h2>
+            <div class="glass-section">
+                <h3 style="color: var(--neon-emerald-light); margin-bottom: 0.5rem;">Secret Code for Vault</h3>
+                <p style="color: var(--text-secondary);">
+                    Remember this secret code for Page 5 (The Vault): <strong style="color: var(--neon-purple-light);">ALCHEMIST2026</strong>
+                </p>
+            </div>
+            <div class="glass-section">
+                <h3 style="color: var(--neon-emerald-light); margin-bottom: 0.5rem;">QA Automation Tips</h3>
+                <ul style="color: var(--text-secondary); margin-left: 1.5rem;">
+                    <li>All interactive elements have <code>id</code>, <code>name</code>, and <code>data-testid</code> attributes</li>
+                    <li>Toast notifications are temporary - use explicit waits to capture them</li>
+                    <li>Hover map keys are dynamically generated on each hover</li>
+                    <li>Navigate through all 5 pages to explore different testing scenarios</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <!-- Toast Container (dynamically populated) -->
+    <div class="toast-container" id="toast-container" data-testid="toast-container"></div>
+
+    <script src="index.js"></script>
+
+
+</body></html>

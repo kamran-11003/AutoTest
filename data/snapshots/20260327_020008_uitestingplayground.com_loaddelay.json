@@ -1,0 +1,283 @@
+{
+  "url": "http://uitestingplayground.com/loaddelay",
+  "title": "Load Delays",
+  "timestamp": "20260327_020008",
+  "crawl_stats": {
+    "total_clickables": 16,
+    "after_filtering": 4,
+    "filtered_out": 12,
+    "reduction_percentage": 75.0,
+    "discovered_urls": 1
+  },
+  "clickable_elements": {
+    "before_filtering": [
+      {
+        "tag": "A",
+        "text": "UITAP",
+        "class": "navbar-brand",
+        "id": "",
+        "href": "http://uitestingplayground.com/",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Home",
+        "class": "nav-link",
+        "id": "",
+        "href": "http://uitestingplayground.com/home",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Resources",
+        "class": "nav-link",
+        "id": "",
+        "href": "http://uitestingplayground.com/resources",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Fork the website on GitHub",
+        "class": "",
+        "id": "",
+        "href": "https://github.com/inflectra/ui-test-automation-playground",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Rapise",
+        "class": "",
+        "id": "",
+        "href": "https://www.inflectra.com/Rapise/",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Inflectra Corporation",
+        "class": "",
+        "id": "",
+        "href": "https://www.inflectra.com/",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Apache License 2.0",
+        "class": "",
+        "id": "",
+        "href": "https://www.apache.org/licenses/LICENSE-2.0",
+        "confidence": "high"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Button Appearing After Delay",
+        "class": "btn btn-primary",
+        "id": "",
+        "href": "",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "UITAP",
+        "class": "",
+        "id": "",
+        "href": "http://uitestingplayground.com/",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "A",
+        "text": "Home",
+        "class": "",
+        "id": "",
+        "href": "http://uitestingplayground.com/home",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "A",
+        "text": "Resources",
+        "class": "",
+        "id": "",
+        "href": "http://uitestingplayground.com/resources",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Button Appearing After Delay",
+        "class": "",
+        "id": "",
+        "href": "",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "A",
+        "text": "Fork the website on GitHub",
+        "class": "",
+        "id": "",
+        "href": "https://github.com/inflectra/ui-test-automation-playground",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "A",
+        "text": "Rapise",
+        "class": "",
+        "id": "",
+        "href": "https://www.inflectra.com/Rapise/",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "A",
+        "text": "Inflectra Corporation",
+        "class": "",
+        "id": "",
+        "href": "https://www.inflectra.com/",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "A",
+        "text": "Apache License 2.0",
+        "class": "",
+        "id": "",
+        "href": "https://www.apache.org/licenses/LICENSE-2.0",
+        "confidence": "unknown"
+      }
+    ],
+    "after_filtering": [
+      {
+        "tag": "A",
+        "text": "UITAP",
+        "class": "navbar-brand",
+        "id": "",
+        "href": "http://uitestingplayground.com/"
+      },
+      {
+        "tag": "A",
+        "text": "Home",
+        "class": "nav-link",
+        "id": "",
+        "href": "http://uitestingplayground.com/home"
+      },
+      {
+        "tag": "A",
+        "text": "Resources",
+        "class": "nav-link",
+        "id": "",
+        "href": "http://uitestingplayground.com/resources"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Button Appearing After Delay",
+        "class": "btn btn-primary",
+        "id": "",
+        "href": ""
+      }
+    ],
+    "filtered_out": [
+      {
+        "tag": "A",
+        "text": "Fork the website on GitHub",
+        "class": "",
+        "id": "",
+        "href": "https://github.com/inflectra/ui-test-automation-playground",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Rapise",
+        "class": "",
+        "id": "",
+        "href": "https://www.inflectra.com/Rapise/",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Inflectra Corporation",
+        "class": "",
+        "id": "",
+        "href": "https://www.inflectra.com/",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Apache License 2.0",
+        "class": "",
+        "id": "",
+        "href": "https://www.apache.org/licenses/LICENSE-2.0",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "UITAP",
+        "href": "http://uitestingplayground.com/",
+        "type": "",
+        "shadow": false,
+        "shadowPath": "",
+        "selector": null
+      },
+      {
+        "tag": "A",
+        "text": "Home",
+        "href": "http://uitestingplayground.com/home",
+        "type": "",
+        "shadow": false,
+        "shadowPath": "",
+        "selector": null
+      },
+      {
+        "tag": "A",
+        "text": "Resources",
+        "href": "http://uitestingplayground.com/resources",
+        "type": "",
+        "shadow": false,
+        "shadowPath": "",
+        "selector": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Button Appearing After Delay",
+        "href": "",
+        "type": "button",
+        "shadow": false,
+        "shadowPath": "",
+        "selector": null
+      },
+      {
+        "tag": "A",
+        "text": "Fork the website on GitHub",
+        "href": "https://github.com/inflectra/ui-test-automation-playground",
+        "type": "",
+        "shadow": false,
+        "shadowPath": "",
+        "selector": null
+      },
+      {
+        "tag": "A",
+        "text": "Rapise",
+        "href": "https://www.inflectra.com/Rapise/",
+        "type": "",
+        "shadow": false,
+        "shadowPath": "",
+        "selector": null
+      },
+      {
+        "tag": "A",
+        "text": "Inflectra Corporation",
+        "href": "https://www.inflectra.com/",
+        "type": "",
+        "shadow": false,
+        "shadowPath": "",
+        "selector": null
+      },
+      {
+        "tag": "A",
+        "text": "Apache License 2.0",
+        "href": "https://www.apache.org/licenses/LICENSE-2.0",
+        "type": "",
+        "shadow": false,
+        "shadowPath": "",
+        "selector": null
+      }
+    ]
+  },
+  "discovered_urls": [
+    "http://uitestingplayground.com/"
+  ]
+}

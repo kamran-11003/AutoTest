@@ -1,0 +1,39 @@
+{
+  "timestamp": "2026-03-26T23:03:14.603992",
+  "last_updated": "2026-03-26T23:03:14.603992",
+  "crawl_hash": "50bb35c4ecca0ce0b9274d853f211dfa",
+  "test_results": {
+    "metadata": {
+      "source_file": "C:\\Users\\LENOVO\\AppData\\Local\\Temp\\tmpvuhuld2c.json",
+      "total_nodes": 1,
+      "total_edges": 1,
+      "total_forms": 0
+    },
+    "test_cases": {
+      "bva": [],
+      "ecp": [],
+      "decision_table": [],
+      "state_transition": [],
+      "use_case": []
+    },
+    "summary": {
+      "total_test_cases": 0,
+      "bva_count": 0,
+      "ecp_count": 0,
+      "decision_table_count": 0,
+      "state_transition_count": 0,
+      "use_case_count": 0
+    }
+  },
+  "metadata": {
+    "ai_refined": false
+  },
+  "crawl_summary": {
+    "total_nodes": 1,
+    "total_edges": 1,
+    "total_forms": 0
+  },
+  "version": 1,
+  "ai_refined": false,
+  "refinement_history": []
+}

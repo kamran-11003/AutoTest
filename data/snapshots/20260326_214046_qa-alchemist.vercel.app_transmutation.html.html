@@ -1,0 +1,263 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Factory - QA Alchemist's Laboratory</title>
+    <link rel="stylesheet" href="styles.css">
+<style>
+                    *, *::before, *::after {
+                        animation-duration: 0.001s !important;
+                        animation-delay: 0s !important;
+                        transition-duration: 0.001s !important;
+                        transition-delay: 0s !important;
+                    }
+                </style><style>
+                            *, *::before, *::after {
+                                animation-duration: 0s !important;
+                                animation-delay: 0s !important;
+                                transition-duration: 0s !important;
+                                transition-delay: 0s !important;
+                            }
+                        </style></head>
+
+<body>
+    <!-- Sidebar Navigation -->
+    <nav id="side-nav" data-testid="side-nav">
+        <div class="logo">⚗️ QA Alchemist</div>
+        <ul class="nav-links">
+            <li>
+                <a href="index.html" id="nav-command-center" name="nav-command-center" data-testid="nav-command-center">
+                    🎯 Command Center
+                </a>
+            </li>
+            <li>
+                <a href="transmutation.html" id="nav-form-factory" name="nav-form-factory" data-testid="nav-form-factory" class="active">
+                    📝 Form Factory
+                </a>
+            </li>
+            <li>
+                <a href="anomalies.html" id="nav-anomalies" name="nav-anomalies" data-testid="nav-anomalies">
+                    🔬 Anomalies Lab
+                </a>
+            </li>
+            <li>
+                <a href="archive.html" id="nav-archive" name="nav-archive" data-testid="nav-archive">
+                    📚 Scraper's Crypt
+                </a>
+            </li>
+            <li>
+                <a href="security.html" id="nav-vault" name="nav-vault" data-testid="nav-vault">
+                    🔒 The Vault
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <header class="page-header">
+            <h1 class="page-title">The Form Factory</h1>
+            <p class="page-subtitle">A comprehensive testing ground with 20+ input types and conditional logic</p>
+        </header>
+
+        <form id="transmutation-form" name="transmutation-form" data-testid="transmutation-form" class="glass-container">
+
+            <!-- Text Cluster -->
+            <section class="glass-section">
+                <h2 style="color: var(--neon-purple-light); margin-bottom: 1rem;">👤 Text Cluster</h2>
+
+                <div class="grid grid-2-col">
+                    <div class="form-group">
+                        <label for="first-name" class="form-label">First Name</label>
+                        <input type="text" id="first-name" name="first-name" data-testid="first-name" class="form-input" placeholder="Enter your first name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="last-name" class="form-label">Last Name</label>
+                        <input type="text" id="last-name" name="last-name" data-testid="last-name" class="form-input" placeholder="Enter your last name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nickname" class="form-label">Nickname</label>
+                        <input type="text" id="nickname" name="nickname" data-testid="nickname" class="form-input" placeholder="Your preferred nickname">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="secret-code" class="form-label">Secret Code (Hidden)</label>
+                        <input type="password" id="secret-code" name="secret-code" data-testid="secret-code" class="form-input" placeholder="Enter secret code">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Cluster -->
+            <section class="glass-section">
+                <h2 style="color: var(--neon-emerald-light); margin-bottom: 1rem;">📧 Contact Cluster</h2>
+
+                <div class="grid grid-2-col">
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email Address</label>
+                        <input type="email" id="email" name="email" data-testid="email" class="form-input" placeholder="your.email@example.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone" class="form-label">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" data-testid="phone" class="form-input" placeholder="+1 (555) 123-4567">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="website" class="form-label">Personal Website</label>
+                        <input type="url" id="website" name="website" data-testid="website" class="form-input" placeholder="https://yourwebsite.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="instagram" class="form-label">Instagram Handle</label>
+                        <input type="text" id="instagram" name="instagram" data-testid="instagram" class="form-input" placeholder="@yourusername">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Selection Cluster -->
+            <section class="glass-section">
+                <h2 style="color: var(--neon-purple-light); margin-bottom: 1rem;">🎨 Selection Cluster</h2>
+
+                <div class="grid grid-2-col">
+                    <div class="form-group">
+                        <label for="experience-level" class="form-label">
+                            Experience Level: <span id="experience-value" name="experience-value" data-testid="experience-value" style="color: var(--neon-purple-light);">50</span>
+                        </label>
+                        <input type="range" id="experience-level" name="experience-level" data-testid="experience-level" min="0" max="100" value="50">
+                        <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem;">
+                            💡 Hint: Set to exactly 75 to reveal the submit button!
+                        </p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ui-theme" class="form-label">UI Theme Color</label>
+                        <input type="color" id="ui-theme" name="ui-theme" data-testid="ui-theme" class="form-input" value="#a855f7">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="start-month" class="form-label">Start Month</label>
+                        <input type="month" id="start-month" name="start-month" data-testid="start-month" class="form-input">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="start-week" class="form-label">Start Week</label>
+                        <input type="week" id="start-week" name="start-week" data-testid="start-week" class="form-input">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Logic Cluster -->
+            <section class="glass-section">
+                <h2 style="color: var(--neon-emerald-light); margin-bottom: 1rem;">🧠 Logic Cluster</h2>
+
+                <div class="grid grid-2-col">
+                    <!-- Radio Buttons -->
+                    <div class="form-group">
+                        <label class="form-label">Specialization</label>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" id="spec-frontend" name="specialization" data-testid="spec-frontend" value="frontend">
+                                Frontend Testing
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" id="spec-backend" name="specialization" data-testid="spec-backend" value="backend">
+                                Backend Testing
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" id="spec-mobile" name="specialization" data-testid="spec-mobile" value="mobile">
+                                Mobile Testing
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" id="spec-api" name="specialization" data-testid="spec-api" value="api">
+                                API Testing
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Checkboxes -->
+                    <div class="form-group">
+                        <label class="form-label">Known Frameworks</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="framework-selenium" name="framework-selenium" data-testid="framework-selenium" value="selenium">
+                                Selenium
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="framework-cypress" name="framework-cypress" data-testid="framework-cypress" value="cypress">
+                                Cypress
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="framework-playwright" name="framework-playwright" data-testid="framework-playwright" value="playwright">
+                                Playwright
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="framework-puppeteer" name="framework-puppeteer" data-testid="framework-puppeteer" value="puppeteer">
+                                Puppeteer
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="framework-testcafe" name="framework-testcafe" data-testid="framework-testcafe" value="testcafe">
+                                TestCafe
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="framework-webdriverio" name="framework-webdriverio" data-testid="framework-webdriverio" value="webdriverio">
+                                WebdriverIO
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Datalist (Autocomplete) -->
+                <div class="form-group">
+                    <label for="favorite-language" class="form-label">Favorite Programming Language</label>
+                    <input type="text" id="favorite-language" name="favorite-language" data-testid="favorite-language" class="form-input" list="languages" placeholder="Start typing...">
+                    <datalist id="languages" name="languages" data-testid="languages">
+                        <option value="JavaScript">
+                        </option><option value="Python">
+                        </option><option value="Java">
+                        </option><option value="C#">
+                        </option><option value="Ruby">
+                        </option><option value="Go">
+                        </option><option value="TypeScript">
+                        </option><option value="Kotlin">
+                        </option><option value="Swift">
+                        </option><option value="Rust">
+                    </option></datalist>
+                </div>
+            </section>
+
+            <!-- File Cluster -->
+            <section class="glass-section">
+                <h2 style="color: var(--neon-purple-light); margin-bottom: 1rem;">📁 File Cluster</h2>
+
+                <div class="file-upload-area" id="file-upload-area" name="file-upload-area" data-testid="file-upload-area">
+                    <div class="file-upload-icon">📤</div>
+                    <p style="color: var(--text-secondary); margin-bottom: 0.5rem;">
+                        <strong>Drag &amp; Drop your files here</strong>
+                    </p>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">
+                        or click to browse
+                    </p>
+                    <input type="file" id="file-input" name="file-input" data-testid="file-input" multiple="" style="display: none;">
+                </div>
+
+                <div id="file-list" name="file-list" data-testid="file-list" style="margin-top: 1rem; color: var(--text-secondary);"></div>
+            </section>
+
+            <!-- Submit Button (Conditional) -->
+            <div class="text-center">
+                <button type="submit" id="finalize-button" name="finalize-button" data-testid="finalize-button" class="btn btn-primary hidden">
+                    ✨ Finalize Transmutation
+                </button>
+
+                <p id="submit-hint" name="submit-hint" data-testid="submit-hint" style="color: var(--neon-emerald-light); margin-top: 1rem;">
+                    🔒 Submit button will appear when Experience Level = 75
+                </p>
+            </div>
+        </form>
+    </main>
+
+    <script src="transmutation.js"></script>
+
+
+</body></html>

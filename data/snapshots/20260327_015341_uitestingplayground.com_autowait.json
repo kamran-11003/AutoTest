@@ -1,0 +1,427 @@
+{
+  "url": "http://uitestingplayground.com/autowait",
+  "title": "Auto Wait",
+  "timestamp": "20260327_015341",
+  "crawl_stats": {
+    "total_clickables": 27,
+    "after_filtering": 8,
+    "filtered_out": 19,
+    "reduction_percentage": 70.37,
+    "discovered_urls": 2
+  },
+  "clickable_elements": {
+    "before_filtering": [
+      {
+        "tag": "A",
+        "text": "UITAP",
+        "class": "navbar-brand",
+        "id": "",
+        "href": "http://uitestingplayground.com/",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Home",
+        "class": "nav-link",
+        "id": "",
+        "href": "http://uitestingplayground.com/home",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Resources",
+        "class": "nav-link",
+        "id": "",
+        "href": "http://uitestingplayground.com/resources",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Fork the website on GitHub",
+        "class": "",
+        "id": "",
+        "href": "https://github.com/inflectra/ui-test-automation-playground",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Rapise",
+        "class": "",
+        "id": "",
+        "href": "https://www.inflectra.com/Rapise/",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Inflectra Corporation",
+        "class": "",
+        "id": "",
+        "href": "https://www.inflectra.com/",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Apache License 2.0",
+        "class": "",
+        "id": "",
+        "href": "https://www.apache.org/licenses/LICENSE-2.0",
+        "confidence": "high"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Apply 3s",
+        "class": "btn btn-secondary",
+        "id": "applyButton3",
+        "href": "",
+        "confidence": "high"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Apply 5s",
+        "class": "btn btn-secondary",
+        "id": "applyButton5",
+        "href": "",
+        "confidence": "high"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Apply 10s",
+        "class": "btn btn-secondary",
+        "id": "applyButton10",
+        "href": "",
+        "confidence": "high"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Button",
+        "class": "btn btn-primary",
+        "id": "target",
+        "href": "",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "UITAP",
+        "class": "",
+        "id": "",
+        "href": "http://uitestingplayground.com/",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "A",
+        "text": "Home",
+        "class": "",
+        "id": "",
+        "href": "http://uitestingplayground.com/home",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "A",
+        "text": "Resources",
+        "class": "",
+        "id": "",
+        "href": "http://uitestingplayground.com/resources",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "INPUT",
+        "text": "on",
+        "class": "",
+        "id": "",
+        "href": "",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "INPUT",
+        "text": "on",
+        "class": "",
+        "id": "",
+        "href": "",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "INPUT",
+        "text": "on",
+        "class": "",
+        "id": "",
+        "href": "",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "INPUT",
+        "text": "on",
+        "class": "",
+        "id": "",
+        "href": "",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "INPUT",
+        "text": "on",
+        "class": "",
+        "id": "",
+        "href": "",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Apply 3s",
+        "class": "",
+        "id": "",
+        "href": "",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Apply 5s",
+        "class": "",
+        "id": "",
+        "href": "",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Apply 10s",
+        "class": "",
+        "id": "",
+        "href": "",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Button",
+        "class": "",
+        "id": "",
+        "href": "",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "A",
+        "text": "Fork the website on GitHub",
+        "class": "",
+        "id": "",
+        "href": "https://github.com/inflectra/ui-test-automation-playground",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "A",
+        "text": "Rapise",
+        "class": "",
+        "id": "",
+        "href": "https://www.inflectra.com/Rapise/",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "A",
+        "text": "Inflectra Corporation",
+        "class": "",
+        "id": "",
+        "href": "https://www.inflectra.com/",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "A",
+        "text": "Apache License 2.0",
+        "class": "",
+        "id": "",
+        "href": "https://www.apache.org/licenses/LICENSE-2.0",
+        "confidence": "unknown"
+      }
+    ],
+    "after_filtering": [
+      {
+        "tag": "A",
+        "text": "UITAP",
+        "class": "navbar-brand",
+        "id": "",
+        "href": "http://uitestingplayground.com/"
+      },
+      {
+        "tag": "A",
+        "text": "Home",
+        "class": "nav-link",
+        "id": "",
+        "href": "http://uitestingplayground.com/home"
+      },
+      {
+        "tag": "A",
+        "text": "Resources",
+        "class": "nav-link",
+        "id": "",
+        "href": "http://uitestingplayground.com/resources"
+      },
+      {
+        "tag": "INPUT",
+        "text": "on",
+        "class": "",
+        "id": "",
+        "href": ""
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Apply 3s",
+        "class": "btn btn-secondary",
+        "id": "applyButton3",
+        "href": ""
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Apply 5s",
+        "class": "btn btn-secondary",
+        "id": "applyButton5",
+        "href": ""
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Apply 10s",
+        "class": "btn btn-secondary",
+        "id": "applyButton10",
+        "href": ""
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Button",
+        "class": "btn btn-primary",
+        "id": "target",
+        "href": ""
+      }
+    ],
+    "filtered_out": [
+      {
+        "tag": "A",
+        "text": "Fork the website on GitHub",
+        "class": "",
+        "id": "",
+        "href": "https://github.com/inflectra/ui-test-automation-playground",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Rapise",
+        "class": "",
+        "id": "",
+        "href": "https://www.inflectra.com/Rapise/",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Inflectra Corporation",
+        "class": "",
+        "id": "",
+        "href": "https://www.inflectra.com/",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Apache License 2.0",
+        "class": "",
+        "id": "",
+        "href": "https://www.apache.org/licenses/LICENSE-2.0",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "UITAP",
+        "href": "http://uitestingplayground.com/",
+        "type": "",
+        "shadow": false,
+        "shadowPath": "",
+        "selector": null
+      },
+      {
+        "tag": "A",
+        "text": "Home",
+        "href": "http://uitestingplayground.com/home",
+        "type": "",
+        "shadow": false,
+        "shadowPath": "",
+        "selector": null
+      },
+      {
+        "tag": "A",
+        "text": "Resources",
+        "href": "http://uitestingplayground.com/resources",
+        "type": "",
+        "shadow": false,
+        "shadowPath": "",
+        "selector": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Apply 3s",
+        "href": "",
+        "type": "button",
+        "shadow": false,
+        "shadowPath": "",
+        "selector": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Apply 5s",
+        "href": "",
+        "type": "button",
+        "shadow": false,
+        "shadowPath": "",
+        "selector": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Apply 10s",
+        "href": "",
+        "type": "button",
+        "shadow": false,
+        "shadowPath": "",
+        "selector": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Button",
+        "href": "",
+        "type": "button",
+        "shadow": false,
+        "shadowPath": "",
+        "selector": null
+      },
+      {
+        "tag": "A",
+        "text": "Fork the website on GitHub",
+        "href": "https://github.com/inflectra/ui-test-automation-playground",
+        "type": "",
+        "shadow": false,
+        "shadowPath": "",
+        "selector": null
+      },
+      {
+        "tag": "A",
+        "text": "Rapise",
+        "href": "https://www.inflectra.com/Rapise/",
+        "type": "",
+        "shadow": false,
+        "shadowPath": "",
+        "selector": null
+      },
+      {
+        "tag": "A",
+        "text": "Inflectra Corporation",
+        "href": "https://www.inflectra.com/",
+        "type": "",
+        "shadow": false,
+        "shadowPath": "",
+        "selector": null
+      },
+      {
+        "tag": "A",
+        "text": "Apache License 2.0",
+        "href": "https://www.apache.org/licenses/LICENSE-2.0",
+        "type": "",
+        "shadow": false,
+        "shadowPath": "",
+        "selector": null
+      }
+    ]
+  },
+  "discovered_urls": [
+    "http://uitestingplayground.com/home",
+    "http://uitestingplayground.com/"
+  ]
+}

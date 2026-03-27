@@ -1,0 +1,176 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Vault - QA Alchemist's Laboratory</title>
+    <link rel="stylesheet" href="styles.css">
+<style>
+                    *, *::before, *::after {
+                        animation-duration: 0.001s !important;
+                        animation-delay: 0s !important;
+                        transition-duration: 0.001s !important;
+                        transition-delay: 0s !important;
+                    }
+                </style><style>
+                            *, *::before, *::after {
+                                animation-duration: 0s !important;
+                                animation-delay: 0s !important;
+                                transition-duration: 0s !important;
+                                transition-delay: 0s !important;
+                            }
+                        </style></head>
+
+<body>
+    <!-- Sidebar Navigation -->
+    <nav id="side-nav" data-testid="side-nav">
+        <div class="logo">⚗️ QA Alchemist</div>
+        <ul class="nav-links">
+            <li>
+                <a href="index.html" id="nav-command-center" name="nav-command-center" data-testid="nav-command-center">
+                    🎯 Command Center
+                </a>
+            </li>
+            <li>
+                <a href="transmutation.html" id="nav-form-factory" name="nav-form-factory" data-testid="nav-form-factory">
+                    📝 Form Factory
+                </a>
+            </li>
+            <li>
+                <a href="anomalies.html" id="nav-anomalies" name="nav-anomalies" data-testid="nav-anomalies">
+                    🔬 Anomalies Lab
+                </a>
+            </li>
+            <li>
+                <a href="archive.html" id="nav-archive" name="nav-archive" data-testid="nav-archive">
+                    📚 Scraper's Crypt
+                </a>
+            </li>
+            <li>
+                <a href="security.html" id="nav-vault" name="nav-vault" data-testid="nav-vault" class="active">
+                    🔒 The Vault
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <header class="page-header">
+            <h1 class="page-title">The Vault</h1>
+            <p class="page-subtitle">Security testing scenarios with authentication, iframes, and alerts</p>
+        </header>
+
+        <!-- Mock Login Section -->
+        <!-- Credentials: username="alchemist" password="test2026" -->
+        <section class="glass-container">
+            <h2 style="color: var(--neon-purple-light); margin-bottom: 1rem;">🔐 Mock Login</h2>
+            <p style="color: var(--text-muted); margin-bottom: 1.5rem;">
+                Enter the correct credentials to unlock the vault. Check the HTML comments for hints!
+            </p>
+
+            <form id="login-form" name="login-form" data-testid="login-form" style="max-width: 500px;">
+                <div class="form-group">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" id="username" name="username" data-testid="username" class="form-input" placeholder="Enter username" autocomplete="username">
+                </div>
+
+                <div class="form-group">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" id="password" name="password" data-testid="password" class="form-input" placeholder="Enter password" autocomplete="current-password">
+                </div>
+
+                <button type="submit" id="login-button" name="login-button" data-testid="login-button" class="btn btn-primary">
+                    🔓 Unlock Vault
+                </button>
+
+                <div id="login-message" name="login-message" data-testid="login-message" style="margin-top: 1rem; color: var(--text-secondary);">
+                </div>
+            </form>
+        </section>
+
+        <!-- iFrame Challenge Section -->
+        <section class="glass-container" id="iframe-section" name="iframe-section" data-testid="iframe-section" style="display: none;">
+            <h2 style="color: var(--neon-emerald-light); margin-bottom: 1rem;">📜 Terms of Service Challenge</h2>
+            <p style="color: var(--text-muted); margin-bottom: 1.5rem;">
+                Read the Terms of Service and click the Accept button inside the iframe to proceed.
+            </p>
+
+            <div class="iframe-container">
+                <iframe id="terms-iframe" name="terms-iframe" data-testid="terms-iframe" src="terms.html" height="400">
+                </iframe>
+            </div>
+
+            <div id="iframe-status" name="iframe-status" data-testid="iframe-status" style="margin-top: 1rem; color: var(--text-secondary);">
+                ⏳ Waiting for acceptance...
+            </div>
+        </section>
+
+        <!-- Alert/Prompt Challenge Section -->
+        <section class="glass-container" id="alert-section" name="alert-section" data-testid="alert-section" style="display: none;">
+            <h2 style="color: var(--neon-purple-light); margin-bottom: 1rem;">⚠️ Alert &amp; Prompt Challenge</h2>
+            <p style="color: var(--text-muted); margin-bottom: 1.5rem;">
+                Click the button below to trigger a prompt asking for the secret code from Page 1 (Command Center).
+            </p>
+
+            <button class="btn btn-secondary" id="prompt-trigger" name="prompt-trigger" data-testid="prompt-trigger">
+                🔑 Enter Secret Code
+            </button>
+
+            <div id="prompt-result" name="prompt-result" data-testid="prompt-result" style="margin-top: 1rem; color: var(--text-secondary);">
+            </div>
+        </section>
+
+        <!-- Success Section -->
+        <section class="glass-container" id="success-section" name="success-section" data-testid="success-section" style="display: none;">
+            <div style="text-align: center; padding: 2rem;">
+                <h2 style="color: var(--neon-emerald-light); font-size: 3rem; margin-bottom: 1rem;">
+                    🎉 Vault Unlocked!
+                </h2>
+                <p style="color: var(--text-secondary); font-size: 1.2rem; margin-bottom: 1.5rem;">
+                    Congratulations! You've successfully completed all security challenges.
+                </p>
+                <div class="glass-section" style="max-width: 600px; margin: 0 auto;">
+                    <h3 style="color: var(--neon-purple-light); margin-bottom: 1rem;">🏆 Achievement Unlocked</h3>
+                    <p style="color: var(--text-secondary);">
+                        You have mastered:
+                    </p>
+                    <ul style="color: var(--text-secondary); text-align: left; margin: 1rem auto; max-width: 400px;">
+                        <li>✅ Form authentication</li>
+                        <li>✅ iFrame context switching</li>
+                        <li>✅ Alert and prompt handling</li>
+                        <li>✅ Cross-page data reference</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testing Tips -->
+        <section class="glass-container">
+            <h2 style="color: var(--neon-emerald-light); margin-bottom: 1rem;">🛡️ Security Testing Tips</h2>
+            <div class="glass-section">
+                <h3 style="color: var(--neon-purple-light); margin-bottom: 0.5rem;">Login Testing</h3>
+                <p style="color: var(--text-secondary);">
+                    Test both valid and invalid credentials. The correct username is "alchemist" and password is
+                    "test2026" (check HTML comments).
+                </p>
+            </div>
+            <div class="glass-section">
+                <h3 style="color: var(--neon-purple-light); margin-bottom: 0.5rem;">iFrame Handling</h3>
+                <p style="color: var(--text-secondary);">
+                    Use <code>driver.switch_to.frame()</code> in Selenium or <code>frame.locator()</code> in Playwright
+                    to interact with iframe content.
+                </p>
+            </div>
+            <div class="glass-section">
+                <h3 style="color: var(--neon-purple-light); margin-bottom: 0.5rem;">Alert/Prompt Handling</h3>
+                <p style="color: var(--text-secondary);">
+                    The secret code is "ALCHEMIST2026" (found on Page 1). Use alert handling methods to interact with
+                    the prompt.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <script src="security.js"></script>
+
+
+</body></html>

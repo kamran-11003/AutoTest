@@ -16,6 +16,9 @@ from typing import Optional, List  # NEW: Add type hints
 if sys.platform == 'win32':
     asyncio.set_event_loop_policy(asyncio.WindowsProactorEventLoopPolicy())
 
+# Add parent directory to path for imports
+sys.path.insert(0, str(Path(__file__).parent.parent))
+
 from crawler.orchestrator import CrawlerOrchestrator
 from app.components.graph_viz import GraphVisualizer
 from app.utils.exporter import Exporter

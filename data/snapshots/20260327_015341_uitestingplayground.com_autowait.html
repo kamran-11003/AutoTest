@@ -1,0 +1,256 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><link rel="stylesheet" href="/static/prism.css"><link rel="stylesheet" href="/static/style.css"><title>Auto Wait</title><script>function byid(id) 
+{
+    return document.getElementById(id);
+}
+
+function setStatus(txt)
+{
+    byid("opstatus").innerText = txt;
+}</script><style>
+                    *, *::before, *::after {
+                        animation-duration: 0.001s !important;
+                        animation-delay: 0s !important;
+                        transition-duration: 0.001s !important;
+                        transition-delay: 0s !important;
+                    }
+                </style><style>
+                            *, *::before, *::after {
+                                animation-duration: 0s !important;
+                                animation-delay: 0s !important;
+                                transition-duration: 0s !important;
+                                transition-delay: 0s !important;
+                            }
+                        </style></head><body><nav class="navbar navbar-expand-lg navbar-light bg-light"><a class="navbar-brand" href="/">UITAP</a><button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="navbar-collapse collapse" id="navbarSupportedContent" style=""><ul class="navbar-nav mr-auto"><li class="nav-item"><a class="nav-link" href="/home">Home</a></li><li class="nav-item"><a class="nav-link" href="/resources">Resources</a></li></ul></div></nav><section><div class="container"><h3>Auto Wait</h3><p>Before clicking an element or entering text we may need to wait until the element becomes interactable.</p><h4>Scenario</h4><ul><li>Choose an element type from the combobox.</li><li>Check the checkboxes to set the element's properties.</li><li>Then click one of the Apply buttons to immediately apply the settings and restore interactable state of the element after a delay.</li><li>Interact with the element in the Playground section (click, select item, enter text).</li><li>Observe the status messages.</li></ul><div class="row"><div class="col-6"><h4>Settings</h4><form><!-- ComboBox--><div class="mb-3"><label class="form-label" for="element-type">Choose an element type:&nbsp;</label><select class="form-select" id="element-type" name="element-type"><option value="button">Button</option><option value="input">Input</option><option value="textarea">Textarea</option><option value="select">Select</option><option value="label">Label</option></select><!-- Checkboxes (No bullets in the list)--><ul class="list-unstyled indented-right"><li class="form-check"><input class="form-check-input" type="checkbox" id="visible" name="visible" checked=""><label class="form-check-label" for="visible">Visible</label></li><li class="form-check"><input class="form-check-input" type="checkbox" id="enabled" name="enabled" checked=""><label class="form-check-label" for="enabled">Enabled</label></li><li class="form-check"><input class="form-check-input" type="checkbox" id="editable" name="editable" checked=""><label class="form-check-label" for="editable">Editable</label></li><li class="form-check"><input class="form-check-input" type="checkbox" id="ontop" name="ontop" checked=""><label class="form-check-label" for="ontop">On Top</label></li><li class="form-check"><input class="form-check-input" type="checkbox" id="nonzero" name="nonzero" checked=""><label class="form-check-label" for="nonzero">Non Zero Size                                        </label></li></ul></div><button class="btn btn-secondary" id="applyButton3" type="button" onclick="applySettings(3)">Apply 3s</button><span>&nbsp;</span><button class="btn btn-secondary" id="applyButton5" type="button" onclick="applySettings(5)">Apply 5s</button><span>&nbsp;</span><button class="btn btn-secondary" id="applyButton10" type="button" onclick="applySettings(10)">Apply 10s                                                     </button></form></div><div class="col-6"><h4>Playground</h4><div id="element-container"><button class="btn btn-primary" id="target" type="button" onclick="targetClicked()">Button   </button></div><div id="opstatus">---</div></div></div></div></section><script>var options = {
+    visible: true,
+    enabled: true,
+    editable: true,
+    ontop: true
+};
+
+// Process checkbox clicks
+document.querySelectorAll('.form-check-input').forEach(checkbox => {
+    checkbox.addEventListener('change', function() {
+    console.log(this.id + ' checkbox clicked. Checked: ' + this.checked);
+    options[this.id] = this.checked;
+    });
+});
+
+// Handle combobox change and check all checkboxes
+document.getElementById('element-type').addEventListener('change', function() {
+    console.log('Combobox selection changed. Checking all checkboxes.');
+    document.querySelectorAll('.form-check-input').forEach(checkbox => {
+        checkbox.checked = true;
+        options[checkbox.id] = true;
+    });
+
+    var parentElement = document.getElementById('element-container');
+    var childElement = document.getElementById('target');
+    parentElement.removeChild(childElement);
+
+    if (this.value == "input")
+    {
+        var input = document.createElement('input');
+        input.type = 'text';
+        input.id = 'target';
+        input.className = 'form-control';
+        input.onclick = targetClicked;
+        parentElement.appendChild(input);
+        input.addEventListener('change', function(event) {
+            setStatus("Text: " + this.value);
+        });                       
+    }
+    else if (this.value == "textarea")
+    {
+        var textarea = document.createElement('textarea');
+        textarea.id = 'target';
+        textarea.className = 'form-control';
+        textarea.onclick = targetClicked;
+        parentElement.appendChild(textarea);
+        textarea.addEventListener('change', function(event) {
+            setStatus("Text: " + this.value);
+        });                     
+    }
+    else if (this.value == "select")
+    {
+        var select = document.createElement('select');
+        select.id = 'target';
+        select.className = 'form-select';
+        var optionItems = ['Item 1', 'Item 2', 'Item 3'];
+        optionItems.forEach(function(item) {
+            var option = document.createElement('option');
+            option.value = item;
+            option.textContent = item;
+            select.appendChild(option);                    
+        });
+        parentElement.appendChild(select);
+        select.addEventListener('change', function(event) {
+            setStatus("Selected: " + this.value);
+        });
+        select.addEventListener('click', function(event) {
+            if (event.detail == 1)
+            {
+                setStatus("Target clicked.");
+            }
+        });                                       
+    }
+    else if (this.value == "label")
+    {
+        var label = document.createElement('label');
+        label.id = 'target';
+        label.className = 'form-label';
+        label.onclick = targetClicked;
+        label.innerHTML = "This is a Label";
+        parentElement.appendChild(label);
+    }
+    else
+    {
+        var button = document.createElement('button');
+        button.id = 'target';
+        button.className = 'btn btn-primary';
+        button.onclick = targetClicked;
+        button.innerHTML = 'Button';
+        parentElement.appendChild(button);
+    }
+    setStatus("");
+});  
+
+var lastWidth;
+var lastHeight;
+var lastPadding;
+var lastBorder;
+
+function applyOptions()
+{
+    var element = document.getElementById('target');
+    element.style.visibility = options.visible ? 'visible' : 'hidden';
+    if (element.tagName != 'LABEL')
+    {
+        element.disabled = !options.enabled;
+    }
+    if (element.tagName == 'INPUT' || element.tagName == 'TEXTAREA')
+    {
+        element.readOnly = !options.editable;
+    }
+
+    if (!options.ontop)
+    {
+        createOverlayElement();
+    }
+    else
+    {
+        deleteOverlayElement();
+    }
+
+    if (!options.nonzero)
+    {
+        const computedStyle = window.getComputedStyle(element);
+        lastWidth = computedStyle.width;
+        lastHeight = computedStyle.height;
+        lastPadding = computedStyle.padding;
+        lastBorder = computedStyle.border;
+        element.style.width = "0px";
+        element.style.height = "0px";
+        element.style.padding = "0px";
+        element.style.border = "none"; 
+        if (element.tagName == 'LABEL')
+        {
+            element.style.overflow = 'hidden'; 
+        }
+        else if (element.tagName == 'BUTTON')
+        {
+            element.style.pointerEvents = 'none';
+        }
+    }
+    else 
+    {
+        if (element.style.width == "0px")
+        {
+            element.style.width = lastWidth;
+            element.style.height = lastHeight;
+            element.style.padding = lastPadding;
+            element.style.border = lastBorder;
+            if (element.tagName == 'LABEL')
+            {
+                element.style.overflow = 'auto'; 
+            } 
+            else if (element.tagName == 'BUTTON')
+            {
+                element.style.pointerEvents = 'auto';
+            }                       
+        }
+    }
+}
+
+function applySettings(timeout)
+{
+    setStatus(`Target element settings applied for ${timeout} seconds.`);
+    applyOptions();
+
+    setTimeout(function() {
+
+        setStatus("Target element state restored.");
+        document.querySelectorAll('.form-check-input').forEach(checkbox => {
+            checkbox.checked = true;
+            options[checkbox.id] = true;
+        });         
+        applyOptions();
+    }, timeout * 1000);
+}   
+
+function createOverlayElement()
+{
+    var targetElement = document.getElementById('target');
+    var targetRect = targetElement.getBoundingClientRect();
+    var overlayElement = document.createElement('div');
+
+    overlayElement.id = 'overlay';
+
+    overlayElement.style.position = 'absolute';
+    overlayElement.style.top = targetRect.top + 'px';
+    overlayElement.style.left = targetRect.left + 'px';
+    overlayElement.style.width = targetRect.width + 'px';
+    overlayElement.style.height = targetRect.height + 'px';
+
+    overlayElement.style.zIndex = '1000'; // Higher than the target's z-index
+    overlayElement.style.backgroundColor = 'rgba(255, 0, 0, 0.5)'; // Semi-transparent red
+
+    document.body.appendChild(overlayElement);
+}  
+
+function deleteOverlayElement()
+{
+    var overlayElement = document.getElementById('overlay');
+    if (overlayElement)
+    {
+        overlayElement.remove();
+    }
+}
+
+function targetClicked()
+{
+    setStatus("Target clicked.");
+}
+</script><div class="container">
+    <footer id="footer">
+        <div id="footer-content">
+            <div id="github">
+                <span></span>
+            </div>
+            <div id="fork">
+                <a href="https://github.com/inflectra/ui-test-automation-playground">Fork the website on GitHub</a>.
+            </div>
+        <div>Supported by <a href="https://www.inflectra.com/Rapise/">Rapise</a> test automation team. Copyright © 2020 - 2026 <a href="https://www.inflectra.com/">Inflectra Corporation</a>.</div>
+        </div>
+        <div id="license">
+            This work is licensed under the <a rel="license" href="https://www.apache.org/licenses/LICENSE-2.0">Apache License 2.0</a>.
+        </div>
+    </footer>
+</div>
+<script async="" defer="" src="https://buttons.github.io/buttons.js"></script>
+<script src="/static/prism.js"></script>
+
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body></html>

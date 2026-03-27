@@ -1,0 +1,1205 @@
+{
+  "url": "https://qa-tester-practice-website.vercel.app/links-navigation.html",
+  "title": "Links & Navigation - QA Tester Practice Website",
+  "timestamp": "20260326_221931",
+  "crawl_stats": {
+    "total_clickables": 112,
+    "after_filtering": 17,
+    "filtered_out": 95,
+    "reduction_percentage": 84.82,
+    "discovered_urls": 8
+  },
+  "clickable_elements": {
+    "before_filtering": [
+      {
+        "tag": "A",
+        "text": "Home",
+        "class": "",
+        "id": "nav-home",
+        "href": "https://qa-tester-practice-website.vercel.app/index.html",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Form Testing",
+        "class": "",
+        "id": "nav-forms",
+        "href": "https://qa-tester-practice-website.vercel.app/form-testing.html",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Input Controls",
+        "class": "",
+        "id": "nav-inputs",
+        "href": "https://qa-tester-practice-website.vercel.app/input-controls.html",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Hover & UI",
+        "class": "",
+        "id": "nav-hover",
+        "href": "https://qa-tester-practice-website.vercel.app/hover-ui.html",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Links & Navigation",
+        "class": "active",
+        "id": "nav-links",
+        "href": "https://qa-tester-practice-website.vercel.app/links-navigation.html",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Internal Links Section",
+        "class": "",
+        "id": "link-to-internal",
+        "href": "https://qa-tester-practice-website.vercel.app/links-navigation.html#internal-links-section",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "External Links Section",
+        "class": "",
+        "id": "link-to-external",
+        "href": "https://qa-tester-practice-website.vercel.app/links-navigation.html#external-links-section",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Site Navigation Section",
+        "class": "",
+        "id": "link-to-site-nav",
+        "href": "https://qa-tester-practice-website.vercel.app/links-navigation.html#site-navigation-section",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Broken Links Section",
+        "class": "",
+        "id": "link-to-broken",
+        "href": "https://qa-tester-practice-website.vercel.app/links-navigation.html#broken-links-section",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Special Links Section",
+        "class": "",
+        "id": "link-to-special",
+        "href": "https://qa-tester-practice-website.vercel.app/links-navigation.html#special-links-section",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Link States Section",
+        "class": "",
+        "id": "link-to-states",
+        "href": "https://qa-tester-practice-website.vercel.app/links-navigation.html#link-states-section",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Example.com (Opens in new tab)",
+        "class": "",
+        "id": "external-example",
+        "href": "https://www.example.com/",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Wikipedia (Opens in new tab)",
+        "class": "",
+        "id": "external-wikipedia",
+        "href": "https://www.wikipedia.org/",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "GitHub (Opens in new tab)",
+        "class": "",
+        "id": "external-github",
+        "href": "https://www.github.com/",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "MDN Web Docs (Opens in new tab)",
+        "class": "",
+        "id": "external-mdn",
+        "href": "https://developer.mozilla.org/",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "W3C (Opens in same tab)",
+        "class": "",
+        "id": "external-w3c",
+        "href": "https://www.w3.org/",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Go to Home",
+        "class": "nav-card-link",
+        "id": "nav-card-home",
+        "href": "https://qa-tester-practice-website.vercel.app/index.html",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Go to Forms",
+        "class": "nav-card-link",
+        "id": "nav-card-forms",
+        "href": "https://qa-tester-practice-website.vercel.app/form-testing.html",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Go to Inputs",
+        "class": "nav-card-link",
+        "id": "nav-card-inputs",
+        "href": "https://qa-tester-practice-website.vercel.app/input-controls.html",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Go to Hover UI",
+        "class": "nav-card-link",
+        "id": "nav-card-hover",
+        "href": "https://qa-tester-practice-website.vercel.app/hover-ui.html",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Broken Internal Link 1",
+        "class": "",
+        "id": "broken-link-1",
+        "href": "https://qa-tester-practice-website.vercel.app/non-existent-page.html",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Broken Internal Link 2",
+        "class": "",
+        "id": "broken-link-2",
+        "href": "https://qa-tester-practice-website.vercel.app/missing-page.html",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Broken External Link",
+        "class": "",
+        "id": "broken-link-3",
+        "href": "https://this-domain-does-not-exist-12345.com/",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Broken Absolute Path Link",
+        "class": "",
+        "id": "broken-link-4",
+        "href": "https://qa-tester-practice-website.vercel.app/path/to/nowhere.html",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Send Email to test@example.com",
+        "class": "",
+        "id": "email-link-1",
+        "href": "mailto:test@example.com",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Email with Subject\n                        Line",
+        "class": "",
+        "id": "email-link-2",
+        "href": "mailto:support@example.com?subject=QA%20Testing%20Inquiry",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Call +1 (234) 567-890",
+        "class": "",
+        "id": "tel-link-1",
+        "href": "tel:+1234567890",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Call +9 (876) 543-210",
+        "class": "",
+        "id": "tel-link-2",
+        "href": "tel:+9876543210",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Download Sample PDF",
+        "class": "",
+        "id": "download-link-1",
+        "href": "https://qa-tester-practice-website.vercel.app/links-navigation.html#",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Download Text File",
+        "class": "",
+        "id": "download-link-2",
+        "href": "https://qa-tester-practice-website.vercel.app/links-navigation.html#",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Jump to Top",
+        "class": "",
+        "id": "anchor-link-top",
+        "href": "https://qa-tester-practice-website.vercel.app/links-navigation.html#top",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Jump to Footer",
+        "class": "",
+        "id": "anchor-link-footer",
+        "href": "https://qa-tester-practice-website.vercel.app/links-navigation.html#site-footer",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Home Page Welcome Section",
+        "class": "",
+        "id": "anchor-link-home-section",
+        "href": "https://qa-tester-practice-website.vercel.app/index.html#welcome-section",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Default Link Style",
+        "class": "default-link",
+        "id": "default-link",
+        "href": "https://qa-tester-practice-website.vercel.app/links-navigation.html#",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Visited Link Style",
+        "class": "visited-link",
+        "id": "visited-link",
+        "href": "https://qa-tester-practice-website.vercel.app/links-navigation.html#",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Active Link (click and hold)",
+        "class": "active-link",
+        "id": "active-link",
+        "href": "https://qa-tester-practice-website.vercel.app/links-navigation.html#",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Disabled Link",
+        "class": "disabled-link",
+        "id": "disabled-link",
+        "href": "https://qa-tester-practice-website.vercel.app/links-navigation.html#",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Link Styled as Button",
+        "class": "button-link",
+        "id": "button-link",
+        "href": "https://qa-tester-practice-website.vercel.app/links-navigation.html#",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Home",
+        "class": "",
+        "id": "breadcrumb-home",
+        "href": "https://qa-tester-practice-website.vercel.app/index.html",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Links &\n                            Navigation",
+        "class": "",
+        "id": "breadcrumb-current",
+        "href": "https://qa-tester-practice-website.vercel.app/links-navigation.html",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "« Previous",
+        "class": "page-link",
+        "id": "page-prev",
+        "href": "https://qa-tester-practice-website.vercel.app/links-navigation.html#",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "1",
+        "class": "page-link page-active",
+        "id": "page-1",
+        "href": "https://qa-tester-practice-website.vercel.app/links-navigation.html#",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "2",
+        "class": "page-link",
+        "id": "page-2",
+        "href": "https://qa-tester-practice-website.vercel.app/links-navigation.html#",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "3",
+        "class": "page-link",
+        "id": "page-3",
+        "href": "https://qa-tester-practice-website.vercel.app/links-navigation.html#",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "4",
+        "class": "page-link",
+        "id": "page-4",
+        "href": "https://qa-tester-practice-website.vercel.app/links-navigation.html#",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "5",
+        "class": "page-link",
+        "id": "page-5",
+        "href": "https://qa-tester-practice-website.vercel.app/links-navigation.html#",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Next »",
+        "class": "page-link",
+        "id": "page-next",
+        "href": "https://qa-tester-practice-website.vercel.app/links-navigation.html#",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Home",
+        "class": "",
+        "id": "sitemap-home",
+        "href": "https://qa-tester-practice-website.vercel.app/index.html",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Form Testing",
+        "class": "",
+        "id": "sitemap-forms",
+        "href": "https://qa-tester-practice-website.vercel.app/form-testing.html",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Input Controls",
+        "class": "",
+        "id": "sitemap-inputs",
+        "href": "https://qa-tester-practice-website.vercel.app/input-controls.html",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Hover & UI",
+        "class": "",
+        "id": "sitemap-hover",
+        "href": "https://qa-tester-practice-website.vercel.app/hover-ui.html",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Links & Navigation",
+        "class": "",
+        "id": "sitemap-links",
+        "href": "https://qa-tester-practice-website.vercel.app/links-navigation.html",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "qa-testing@example.com",
+        "class": "",
+        "id": "",
+        "href": "mailto:qa-testing@example.com",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "+1 (234) 567-890",
+        "class": "",
+        "id": "",
+        "href": "tel:+1234567890",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Back to Top",
+        "class": "",
+        "id": "",
+        "href": "https://qa-tester-practice-website.vercel.app/links-navigation.html#main-navigation",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Home",
+        "class": "",
+        "id": "",
+        "href": "https://qa-tester-practice-website.vercel.app/index.html",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Home",
+        "class": "",
+        "id": "",
+        "href": "https://qa-tester-practice-website.vercel.app/index.html",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "A",
+        "text": "Form Testing",
+        "class": "",
+        "id": "",
+        "href": "https://qa-tester-practice-website.vercel.app/form-testing.html",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "A",
+        "text": "Input Controls",
+        "class": "",
+        "id": "",
+        "href": "https://qa-tester-practice-website.vercel.app/input-controls.html",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "A",
+        "text": "Hover & UI",
+        "class": "",
+        "id": "",
+        "href": "https://qa-tester-practice-website.vercel.app/hover-ui.html",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "A",
+        "text": "Links & Navigation",
+        "class": "",
+        "id": "",
+        "href": "https://qa-tester-practice-website.vercel.app/links-navigation.html",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "A",
+        "text": "Internal Links Section",
+        "class": "",
+        "id": "",
+        "href": "https://qa-tester-practice-website.vercel.app/links-navigation.html#internal-links-section",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "A",
+        "text": "External Links Section",
+        "class": "",
+        "id": "",
+        "href": "https://qa-tester-practice-website.vercel.app/links-navigation.html#external-links-section",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "A",
+        "text": "Site Navigation Section",
+        "class": "",
+        "id": "",
+        "href": "https://qa-tester-practice-website.vercel.app/links-navigation.html#site-navigation-section",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "A",
+        "text": "Broken Links Section",
+        "class": "",
+        "id": "",
+        "href": "https://qa-tester-practice-website.vercel.app/links-navigation.html#broken-links-section",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "A",
+        "text": "Special Links Section",
+        "class": "",
+        "id": "",
+        "href": "https://qa-tester-practice-website.vercel.app/links-navigation.html#special-links-section",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "A",
+        "text": "Link States Section",
+        "class": "",
+        "id": "",
+        "href": "https://qa-tester-practice-website.vercel.app/links-navigation.html#link-states-section",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "A",
+        "text": "Example.com (Opens in new tab)",
+        "class": "",
+        "id": "",
+        "href": "https://www.example.com/",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "A",
+        "text": "Wikipedia (Opens in new tab)",
+        "class": "",
+        "id": "",
+        "href": "https://www.wikipedia.org/",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "A",
+        "text": "GitHub (Opens in new tab)",
+        "class": "",
+        "id": "",
+        "href": "https://www.github.com/",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "A",
+        "text": "MDN Web Docs (Opens in new tab)",
+        "class": "",
+        "id": "",
+        "href": "https://developer.mozilla.org/",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "A",
+        "text": "W3C (Opens in same tab)",
+        "class": "",
+        "id": "",
+        "href": "https://www.w3.org/",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "A",
+        "text": "Go to Home",
+        "class": "",
+        "id": "",
+        "href": "https://qa-tester-practice-website.vercel.app/index.html",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "A",
+        "text": "Go to Forms",
+        "class": "",
+        "id": "",
+        "href": "https://qa-tester-practice-website.vercel.app/form-testing.html",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "A",
+        "text": "Go to Inputs",
+        "class": "",
+        "id": "",
+        "href": "https://qa-tester-practice-website.vercel.app/input-controls.html",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "A",
+        "text": "Go to Hover UI",
+        "class": "",
+        "id": "",
+        "href": "https://qa-tester-practice-website.vercel.app/hover-ui.html",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "A",
+        "text": "Broken Internal Link 1",
+        "class": "",
+        "id": "",
+        "href": "https://qa-tester-practice-website.vercel.app/non-existent-page.html",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "A",
+        "text": "Broken Internal Link 2",
+        "class": "",
+        "id": "",
+        "href": "https://qa-tester-practice-website.vercel.app/missing-page.html",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "A",
+        "text": "Broken External Link",
+        "class": "",
+        "id": "",
+        "href": "https://this-domain-does-not-exist-12345.com/",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "A",
+        "text": "Broken Absolute Path Link",
+        "class": "",
+        "id": "",
+        "href": "https://qa-tester-practice-website.vercel.app/path/to/nowhere.html",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "A",
+        "text": "Send Email to test@example.com",
+        "class": "",
+        "id": "",
+        "href": "mailto:test@example.com",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "A",
+        "text": "Email with Subject\n                        Line",
+        "class": "",
+        "id": "",
+        "href": "mailto:support@example.com?subject=QA%20Testing%20Inquiry",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "A",
+        "text": "Call +1 (234) 567-890",
+        "class": "",
+        "id": "",
+        "href": "tel:+1234567890",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "A",
+        "text": "Call +9 (876) 543-210",
+        "class": "",
+        "id": "",
+        "href": "tel:+9876543210",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "A",
+        "text": "Download Sample PDF",
+        "class": "",
+        "id": "",
+        "href": "https://qa-tester-practice-website.vercel.app/links-navigation.html#",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "A",
+        "text": "Download Text File",
+        "class": "",
+        "id": "",
+        "href": "https://qa-tester-practice-website.vercel.app/links-navigation.html#",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "A",
+        "text": "Jump to Top",
+        "class": "",
+        "id": "",
+        "href": "https://qa-tester-practice-website.vercel.app/links-navigation.html#top",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "A",
+        "text": "Jump to Footer",
+        "class": "",
+        "id": "",
+        "href": "https://qa-tester-practice-website.vercel.app/links-navigation.html#site-footer",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "A",
+        "text": "Home Page Welcome Section",
+        "class": "",
+        "id": "",
+        "href": "https://qa-tester-practice-website.vercel.app/index.html#welcome-section",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "A",
+        "text": "Default Link Style",
+        "class": "",
+        "id": "",
+        "href": "https://qa-tester-practice-website.vercel.app/links-navigation.html#",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "A",
+        "text": "Visited Link Style",
+        "class": "",
+        "id": "",
+        "href": "https://qa-tester-practice-website.vercel.app/links-navigation.html#",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "A",
+        "text": "Active Link (click and hold)",
+        "class": "",
+        "id": "",
+        "href": "https://qa-tester-practice-website.vercel.app/links-navigation.html#",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "A",
+        "text": "Disabled Link",
+        "class": "",
+        "id": "",
+        "href": "https://qa-tester-practice-website.vercel.app/links-navigation.html#",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "A",
+        "text": "Link Styled as Button",
+        "class": "",
+        "id": "",
+        "href": "https://qa-tester-practice-website.vercel.app/links-navigation.html#",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "A",
+        "text": "Home",
+        "class": "",
+        "id": "",
+        "href": "https://qa-tester-practice-website.vercel.app/index.html",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "A",
+        "text": "Links &\n                            Navigation",
+        "class": "",
+        "id": "",
+        "href": "https://qa-tester-practice-website.vercel.app/links-navigation.html",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "A",
+        "text": "« Previous",
+        "class": "",
+        "id": "",
+        "href": "https://qa-tester-practice-website.vercel.app/links-navigation.html#",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "A",
+        "text": "1",
+        "class": "",
+        "id": "",
+        "href": "https://qa-tester-practice-website.vercel.app/links-navigation.html#",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "A",
+        "text": "2",
+        "class": "",
+        "id": "",
+        "href": "https://qa-tester-practice-website.vercel.app/links-navigation.html#",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "A",
+        "text": "3",
+        "class": "",
+        "id": "",
+        "href": "https://qa-tester-practice-website.vercel.app/links-navigation.html#",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "A",
+        "text": "4",
+        "class": "",
+        "id": "",
+        "href": "https://qa-tester-practice-website.vercel.app/links-navigation.html#",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "A",
+        "text": "5",
+        "class": "",
+        "id": "",
+        "href": "https://qa-tester-practice-website.vercel.app/links-navigation.html#",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "A",
+        "text": "Next »",
+        "class": "",
+        "id": "",
+        "href": "https://qa-tester-practice-website.vercel.app/links-navigation.html#",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "A",
+        "text": "Home",
+        "class": "",
+        "id": "",
+        "href": "https://qa-tester-practice-website.vercel.app/index.html",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "A",
+        "text": "Form Testing",
+        "class": "",
+        "id": "",
+        "href": "https://qa-tester-practice-website.vercel.app/form-testing.html",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "A",
+        "text": "Input Controls",
+        "class": "",
+        "id": "",
+        "href": "https://qa-tester-practice-website.vercel.app/input-controls.html",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "A",
+        "text": "Hover & UI",
+        "class": "",
+        "id": "",
+        "href": "https://qa-tester-practice-website.vercel.app/hover-ui.html",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "A",
+        "text": "Links & Navigation",
+        "class": "",
+        "id": "",
+        "href": "https://qa-tester-practice-website.vercel.app/links-navigation.html",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "A",
+        "text": "qa-testing@example.com",
+        "class": "",
+        "id": "",
+        "href": "mailto:qa-testing@example.com",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "A",
+        "text": "+1 (234) 567-890",
+        "class": "",
+        "id": "",
+        "href": "tel:+1234567890",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "A",
+        "text": "Back to Top",
+        "class": "",
+        "id": "",
+        "href": "https://qa-tester-practice-website.vercel.app/links-navigation.html#main-navigation",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "A",
+        "text": "Home",
+        "class": "",
+        "id": "",
+        "href": "https://qa-tester-practice-website.vercel.app/index.html",
+        "confidence": "unknown"
+      }
+    ],
+    "after_filtering": [
+      {
+        "tag": "A",
+        "text": "Home",
+        "class": "",
+        "id": "nav-home",
+        "href": "https://qa-tester-practice-website.vercel.app/index.html"
+      },
+      {
+        "tag": "A",
+        "text": "Form Testing",
+        "class": "",
+        "id": "nav-forms",
+        "href": "https://qa-tester-practice-website.vercel.app/form-testing.html"
+      },
+      {
+        "tag": "A",
+        "text": "Input Controls",
+        "class": "",
+        "id": "nav-inputs",
+        "href": "https://qa-tester-practice-website.vercel.app/input-controls.html"
+      },
+      {
+        "tag": "A",
+        "text": "Hover & UI",
+        "class": "",
+        "id": "nav-hover",
+        "href": "https://qa-tester-practice-website.vercel.app/hover-ui.html"
+      },
+      {
+        "tag": "A",
+        "text": "Go to Home",
+        "class": "nav-card-link",
+        "id": "nav-card-home",
+        "href": "https://qa-tester-practice-website.vercel.app/index.html"
+      },
+      {
+        "tag": "A",
+        "text": "Go to Forms",
+        "class": "nav-card-link",
+        "id": "nav-card-forms",
+        "href": "https://qa-tester-practice-website.vercel.app/form-testing.html"
+      },
+      {
+        "tag": "A",
+        "text": "Go to Inputs",
+        "class": "nav-card-link",
+        "id": "nav-card-inputs",
+        "href": "https://qa-tester-practice-website.vercel.app/input-controls.html"
+      },
+      {
+        "tag": "A",
+        "text": "Go to Hover UI",
+        "class": "nav-card-link",
+        "id": "nav-card-hover",
+        "href": "https://qa-tester-practice-website.vercel.app/hover-ui.html"
+      },
+      {
+        "tag": "A",
+        "text": "Broken Internal Link 1",
+        "class": "",
+        "id": "broken-link-1",
+        "href": "https://qa-tester-practice-website.vercel.app/non-existent-page.html"
+      },
+      {
+        "tag": "A",
+        "text": "Broken Internal Link 2",
+        "class": "",
+        "id": "broken-link-2",
+        "href": "https://qa-tester-practice-website.vercel.app/missing-page.html"
+      },
+      {
+        "tag": "A",
+        "text": "Broken Absolute Path Link",
+        "class": "",
+        "id": "broken-link-4",
+        "href": "https://qa-tester-practice-website.vercel.app/path/to/nowhere.html"
+      },
+      {
+        "tag": "A",
+        "text": "Email with Subject\n                        Line",
+        "class": "",
+        "id": "email-link-2",
+        "href": "mailto:support@example.com?subject=QA%20Testing%20Inquiry"
+      },
+      {
+        "tag": "A",
+        "text": "Home Page Welcome Section",
+        "class": "",
+        "id": "anchor-link-home-section",
+        "href": "https://qa-tester-practice-website.vercel.app/index.html#welcome-section"
+      },
+      {
+        "tag": "A",
+        "text": "Send Email to test@example.com",
+        "class": "",
+        "id": "email-link-1",
+        "href": "mailto:test@example.com"
+      },
+      {
+        "tag": "A",
+        "text": "Call +1 (234) 567-890",
+        "class": "",
+        "id": "tel-link-1",
+        "href": "tel:+1234567890"
+      },
+      {
+        "tag": "A",
+        "text": "Call +9 (876) 543-210",
+        "class": "",
+        "id": "tel-link-2",
+        "href": "tel:+9876543210"
+      },
+      {
+        "tag": "A",
+        "text": "qa-testing@example.com",
+        "class": "",
+        "id": "",
+        "href": "mailto:qa-testing@example.com"
+      }
+    ],
+    "filtered_out": [
+      {
+        "tag": "A",
+        "text": "Links & Navigation",
+        "class": "active",
+        "id": "nav-links",
+        "href": "https://qa-tester-practice-website.vercel.app/links-navigation.html",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Internal Links Section",
+        "class": "",
+        "id": "link-to-internal",
+        "href": "https://qa-tester-practice-website.vercel.app/links-navigation.html#internal-links-section",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "External Links Section",
+        "class": "",
+        "id": "link-to-external",
+        "href": "https://qa-tester-practice-website.vercel.app/links-navigation.html#external-links-section",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Site Navigation Section",
+        "class": "",
+        "id": "link-to-site-nav",
+        "href": "https://qa-tester-practice-website.vercel.app/links-navigation.html#site-navigation-section",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Broken Links Section",
+        "class": "",
+        "id": "link-to-broken",
+        "href": "https://qa-tester-practice-website.vercel.app/links-navigation.html#broken-links-section",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Special Links Section",
+        "class": "",
+        "id": "link-to-special",
+        "href": "https://qa-tester-practice-website.vercel.app/links-navigation.html#special-links-section",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Link States Section",
+        "class": "",
+        "id": "link-to-states",
+        "href": "https://qa-tester-practice-website.vercel.app/links-navigation.html#link-states-section",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Example.com (Opens in new tab)",
+        "class": "",
+        "id": "external-example",
+        "href": "https://www.example.com/",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Wikipedia (Opens in new tab)",
+        "class": "",
+        "id": "external-wikipedia",
+        "href": "https://www.wikipedia.org/",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "GitHub (Opens in new tab)",
+        "class": "",
+        "id": "external-github",
+        "href": "https://www.github.com/",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "MDN Web Docs (Opens in new tab)",
+        "class": "",
+        "id": "external-mdn",
+        "href": "https://developer.mozilla.org/",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "W3C (Opens in same tab)",
+        "class": "",
+        "id": "external-w3c",
+        "href": "https://www.w3.org/",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Broken External Link",
+        "class": "",
+        "id": "broken-link-3",
+        "href": "https://this-domain-does-not-exist-12345.com/",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Download Sample PDF",
+        "class": "",
+        "id": "download-link-1",
+        "href": "https://qa-tester-practice-website.vercel.app/links-navigation.html#",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Download Text File",
+        "class": "",
+        "id": "download-link-2",
+        "href": "https://qa-tester-practice-website.vercel.app/links-navigation.html#",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Jump to Top",
+        "class": "",
+        "id": "anchor-link-top",
+        "href": "https://qa-tester-practice-website.vercel.app/links-navigation.html#top",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Jump to Footer",
+        "class": "",
+        "id": "anchor-link-footer",
+        "href": "https://qa-tester-practice-website.vercel.app/links-navigation.html#site-footer",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Default Link Style",
+        "class": "default-link",
+        "id": "default-link",
+        "href": "https://qa-tester-practice-website.vercel.app/links-navigation.html#",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Visited Link Style",
+        "class": "visited-link",
+        "id": "visited-link",
+        "href": "https://qa-tester-practice-website.vercel.app/links-navigation.html#",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Active Link (click and hold)",
+        "class": "active-link",
+        "id": "active-link",
+        "href": "https://qa-tester-practice-website.vercel.app/links-navigation.html#",
+        "confidence": "high"
+      }
+    ]
+  },
+  "discovered_urls": [
+    "https://qa-tester-practice-website.vercel.app/form-testing.html",
+    "https://qa-tester-practice-website.vercel.app/missing-page.html",
+    "https://qa-tester-practice-website.vercel.app/path/to/nowhere.html",
+    "https://qa-tester-practice-website.vercel.app/index.html#welcome-section",
+    "https://qa-tester-practice-website.vercel.app/non-existent-page.html",
+    "https://qa-tester-practice-website.vercel.app/index.html",
+    "https://qa-tester-practice-website.vercel.app/hover-ui.html",
+    "https://qa-tester-practice-website.vercel.app/input-controls.html"
+  ]
+}

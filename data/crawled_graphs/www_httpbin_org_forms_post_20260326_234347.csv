@@ -1,0 +1,3 @@
+url,normalized_url,title,input_count,form_count,link_count
+https://www.httpbin.org/forms/post,/forms/post,,12,1,1
+https://www.httpbin.org/post,/post,405 Method Not Allowed,0,0,0

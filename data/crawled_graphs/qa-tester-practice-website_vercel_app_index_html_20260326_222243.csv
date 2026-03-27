@@ -1,0 +1,9 @@
+url,normalized_url,title,input_count,form_count,link_count
+https://qa-tester-practice-website.vercel.app/index.html,/index.html,Home - QA Tester Practice Website,0,0,5
+https://qa-tester-practice-website.vercel.app/form-testing.html,/form-testing.html,Form Testing - QA Tester Practice Website,27,2,5
+https://qa-tester-practice-website.vercel.app/links-navigation.html,/links-navigation.html,Links & Navigation - QA Tester Practice Website,0,0,8
+https://qa-tester-practice-website.vercel.app/hover-ui.html,/hover-ui.html,Hover & UI Interactions - QA Tester Practice Website,3,1,5
+https://qa-tester-practice-website.vercel.app/input-controls.html,/input-controls.html,Input Controls - QA Tester Practice Website,43,4,5
+https://qa-tester-practice-website.vercel.app/missing-page.html,/missing-page.html,404: NOT_FOUND,0,0,0
+https://qa-tester-practice-website.vercel.app/path/to/nowhere.html,/path/to/nowhere.html,404: NOT_FOUND,0,0,0
+https://qa-tester-practice-website.vercel.app/non-existent-page.html,/non-existent-page.html,404: NOT_FOUND,0,0,0

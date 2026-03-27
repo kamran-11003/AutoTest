@@ -1,0 +1,226 @@
+{
+  "url": "https://www.httpbin.org/forms/post",
+  "title": "",
+  "timestamp": "20260326_234111",
+  "crawl_stats": {
+    "total_clickables": 13,
+    "after_filtering": 9,
+    "filtered_out": 4,
+    "reduction_percentage": 30.77,
+    "discovered_urls": 1
+  },
+  "clickable_elements": {
+    "before_filtering": [
+      {
+        "tag": "BUTTON",
+        "text": "Submit order",
+        "class": "",
+        "id": "",
+        "href": "",
+        "confidence": "high"
+      },
+      {
+        "tag": "INPUT",
+        "text": "",
+        "class": "",
+        "id": "",
+        "href": "",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "INPUT",
+        "text": "",
+        "class": "",
+        "id": "",
+        "href": "",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "INPUT",
+        "text": "",
+        "class": "",
+        "id": "",
+        "href": "",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "INPUT",
+        "text": "small",
+        "class": "",
+        "id": "",
+        "href": "",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "INPUT",
+        "text": "medium",
+        "class": "",
+        "id": "",
+        "href": "",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "INPUT",
+        "text": "large",
+        "class": "",
+        "id": "",
+        "href": "",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "INPUT",
+        "text": "bacon",
+        "class": "",
+        "id": "",
+        "href": "",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "INPUT",
+        "text": "cheese",
+        "class": "",
+        "id": "",
+        "href": "",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "INPUT",
+        "text": "onion",
+        "class": "",
+        "id": "",
+        "href": "",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "INPUT",
+        "text": "mushroom",
+        "class": "",
+        "id": "",
+        "href": "",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "INPUT",
+        "text": "",
+        "class": "",
+        "id": "",
+        "href": "",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Submit order",
+        "class": "",
+        "id": "",
+        "href": "",
+        "confidence": "unknown"
+      }
+    ],
+    "after_filtering": [
+      {
+        "tag": "BUTTON",
+        "text": "Submit order",
+        "class": "",
+        "id": "",
+        "href": ""
+      },
+      {
+        "tag": "INPUT",
+        "text": "",
+        "class": "",
+        "id": "",
+        "href": ""
+      },
+      {
+        "tag": "INPUT",
+        "text": "small",
+        "class": "",
+        "id": "",
+        "href": ""
+      },
+      {
+        "tag": "INPUT",
+        "text": "medium",
+        "class": "",
+        "id": "",
+        "href": ""
+      },
+      {
+        "tag": "INPUT",
+        "text": "large",
+        "class": "",
+        "id": "",
+        "href": ""
+      },
+      {
+        "tag": "INPUT",
+        "text": "bacon",
+        "class": "",
+        "id": "",
+        "href": ""
+      },
+      {
+        "tag": "INPUT",
+        "text": "cheese",
+        "class": "",
+        "id": "",
+        "href": ""
+      },
+      {
+        "tag": "INPUT",
+        "text": "onion",
+        "class": "",
+        "id": "",
+        "href": ""
+      },
+      {
+        "tag": "INPUT",
+        "text": "mushroom",
+        "class": "",
+        "id": "",
+        "href": ""
+      }
+    ],
+    "filtered_out": [
+      {
+        "tag": "INPUT",
+        "text": "",
+        "href": "",
+        "type": "tel",
+        "shadow": false,
+        "shadowPath": "",
+        "selector": null
+      },
+      {
+        "tag": "INPUT",
+        "text": "",
+        "href": "",
+        "type": "email",
+        "shadow": false,
+        "shadowPath": "",
+        "selector": null
+      },
+      {
+        "tag": "INPUT",
+        "text": "",
+        "href": "",
+        "type": "time",
+        "shadow": false,
+        "shadowPath": "",
+        "selector": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Submit order",
+        "href": "",
+        "type": "submit",
+        "shadow": false,
+        "shadowPath": "",
+        "selector": null
+      }
+    ]
+  },
+  "discovered_urls": [
+    "https://www.httpbin.org/post"
+  ]
+}

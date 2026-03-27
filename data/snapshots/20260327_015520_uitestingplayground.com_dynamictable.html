@@ -1,0 +1,46 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><link rel="stylesheet" href="/static/prism.css"><link rel="stylesheet" href="/static/style.css"><title>Dynamic Table</title><script>function byid(id) 
+{
+    return document.getElementById(id);
+}
+
+function setStatus(txt)
+{
+    byid("opstatus").innerText = txt;
+}</script><style>
+                    *, *::before, *::after {
+                        animation-duration: 0.001s !important;
+                        animation-delay: 0s !important;
+                        transition-duration: 0.001s !important;
+                        transition-delay: 0s !important;
+                    }
+                </style><style>
+                            *, *::before, *::after {
+                                animation-duration: 0s !important;
+                                animation-delay: 0s !important;
+                                transition-duration: 0s !important;
+                                transition-delay: 0s !important;
+                            }
+                        </style></head><body><nav class="navbar navbar-expand-lg navbar-light bg-light"><a class="navbar-brand" href="/">UITAP</a><button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="navbar-collapse collapse" id="navbarSupportedContent" style=""><ul class="navbar-nav mr-auto"><li class="nav-item"><a class="nav-link" href="/home">Home</a></li><li class="nav-item"><a class="nav-link" href="/resources">Resources</a></li></ul></div></nav><section><div class="container"><h3>Dynamic Table</h3><p>Below you see a table where columns and rows change their position upon page reload. Values in cells are random. The table is based on DIVs with ARIA attributes. See <a href="https://www.w3.org/TR/wai-aria-practices/examples/table/table.html">WAI-ARIA table design pattern</a> for details.</p><h4>Scenario</h4><ul><li>For Chrome process get value of CPU load.</li><li>Compare it with value in the yellow label.</li></ul><h4>Playground</h4><div role="table" aria-label="Tasks" aria-describedby="table_desc"><div id="table_desc">Task Manager</div><div role="rowgroup"><div role="row"><span role="columnheader">Name</span><span role="columnheader">CPU</span><span role="columnheader">Network</span><span role="columnheader">Memory</span><span role="columnheader">Disk</span></div></div><div role="rowgroup"><div role="row"><span role="cell">Chrome</span><span role="cell">3.8%</span><span role="cell">6.7 Mbps</span><span role="cell">89.6 MB</span><span role="cell">0.6 MB/s</span></div><div role="row"><span role="cell">Firefox</span><span role="cell">9.2%</span><span role="cell">0.2 Mbps</span><span role="cell">81.8 MB</span><span role="cell">0.3 MB/s</span></div><div role="row"><span role="cell">System</span><span role="cell">6.1%</span><span role="cell">7.7 Mbps</span><span role="cell">85.1 MB</span><span role="cell">0.6 MB/s</span></div><div role="row"><span role="cell">Internet Explorer</span><span role="cell">8.9%</span><span role="cell">8.5 Mbps</span><span role="cell">42.1 MB</span><span role="cell">0.4 MB/s</span></div></div></div><br><p class="bg-warning">Chrome CPU: 3.8%</p></div></section><div class="container">
+    <footer id="footer">
+        <div id="footer-content">
+            <div id="github">
+                <span></span>
+            </div>
+            <div id="fork">
+                <a href="https://github.com/inflectra/ui-test-automation-playground">Fork the website on GitHub</a>.
+            </div>
+        <div>Supported by <a href="https://www.inflectra.com/Rapise/">Rapise</a> test automation team. Copyright © 2020 - 2026 <a href="https://www.inflectra.com/">Inflectra Corporation</a>.</div>
+        </div>
+        <div id="license">
+            This work is licensed under the <a rel="license" href="https://www.apache.org/licenses/LICENSE-2.0">Apache License 2.0</a>.
+        </div>
+    </footer>
+</div>
+<script async="" defer="" src="https://buttons.github.io/buttons.js"></script>
+<script src="/static/prism.js"></script>
+
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body></html>

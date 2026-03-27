@@ -1,0 +1,112 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><link rel="stylesheet" href="/static/prism.css"><link rel="stylesheet" href="/static/style.css"><title>Mouse Over</title><script>function byid(id) 
+{
+    return document.getElementById(id);
+}
+
+function setStatus(txt)
+{
+    byid("opstatus").innerText = txt;
+}</script><style>
+                    *, *::before, *::after {
+                        animation-duration: 0.001s !important;
+                        animation-delay: 0s !important;
+                        transition-duration: 0.001s !important;
+                        transition-delay: 0s !important;
+                    }
+                </style><style>
+                            *, *::before, *::after {
+                                animation-duration: 0s !important;
+                                animation-delay: 0s !important;
+                                transition-duration: 0s !important;
+                                transition-delay: 0s !important;
+                            }
+                        </style></head><body><nav class="navbar navbar-expand-lg navbar-light bg-light"><a class="navbar-brand" href="/">UITAP</a><button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="navbar-collapse collapse" id="navbarSupportedContent" style=""><ul class="navbar-nav mr-auto"><li class="nav-item"><a class="nav-link" href="/home">Home</a></li><li class="nav-item"><a class="nav-link" href="/resources">Resources</a></li></ul></div></nav><section><div class="container"><h3>Mouse Over</h3><p>Placing mouse over an element may lead to changes in the DOM tree. For example the  element may be modified or replaced. It means if you keep a reference to the original element and will try to click on it - it may not work (stale element problem).</p><p>This puzzle complicates both recording and playback of a test.</p><h4>Scenario</h4><ul><li>Record 2 consecutive link clicks.</li><li>Execute the test and make sure that click count is increasing by 2.</li></ul><h4>Playground</h4><div><p>The link below will be replaced and new title assigned to it when you place mouse over it. Click on it to increase the click count.</p><a class="text-primary" title="Click me" onmouseenter="linkActive(this)">Click me</a></div><div><p>The link above clicked <span id="clickCount" class="badge badge-light">0</span> times.</p></div><div><p>The link below will be replaced with identical one when you place mouse over it. Click on it to increase the click count.</p><a class="text-primary" title="Link Button" onmouseenter="linkButtonActive(this)">Link Button</a></div><div><p>The link above clicked <span id="clickButtonCount" class="badge badge-light">0</span> times.</p></div></div></section><script>function linkActive(el)
+{ 
+    var newEl = el.cloneNode(true);
+    newEl.setAttribute("title", "Active Link");
+    newEl.setAttribute("onmouseenter", "");
+    newEl.setAttribute("onmouseleave", "linkInactive(this)");
+    newEl.setAttribute("onclick", "linkClicked(this)")
+    newEl.setAttribute("class", "text-warning");
+
+    var parentNode = el.parentNode;
+    parentNode.removeChild(el);
+    parentNode.appendChild(newEl);
+} 
+
+function linkInactive(el)
+{
+    var newEl = el.cloneNode(true);
+    newEl.setAttribute("title", el.innerText);
+    newEl.setAttribute("onmouseenter", "linkActive(this)");
+    newEl.setAttribute("onmouseleave", "");
+    newEl.setAttribute("onclick", "")
+    newEl.setAttribute("class", "text-primary");
+
+    var parentNode = el.parentNode;
+    parentNode.removeChild(el);
+    parentNode.appendChild(newEl);
+}
+
+function linkClicked(el)
+{
+    var badge = document.getElementById("clickCount");
+    badge.innerText = parseInt(badge.innerText) + 1;
+}
+
+function linkButtonActive(el)
+{ 
+    var newEl = el.cloneNode(true);
+    newEl.setAttribute("onmouseenter", "");
+    newEl.setAttribute("onmouseleave", "linkButtonInactive(this)");
+    newEl.setAttribute("onclick", "linkButtonClicked(this)")
+    newEl.setAttribute("class", "text-warning");
+
+    var parentNode = el.parentNode;
+    parentNode.removeChild(el);
+    parentNode.appendChild(newEl);
+} 
+
+function linkButtonInactive(el)
+{
+    var newEl = el.cloneNode(true);
+    newEl.setAttribute("onmouseenter", "linkButtonActive(this)");
+    newEl.setAttribute("onmouseleave", "");
+    newEl.setAttribute("onclick", "")
+    newEl.setAttribute("class", "text-primary");
+
+    var parentNode = el.parentNode;
+    parentNode.removeChild(el);
+    parentNode.appendChild(newEl);
+}
+
+function linkButtonClicked(el)
+{
+    var badge = document.getElementById("clickButtonCount");
+    badge.innerText = parseInt(badge.innerText) + 1;
+}            
+
+</script><div class="container">
+    <footer id="footer">
+        <div id="footer-content">
+            <div id="github">
+                <span></span>
+            </div>
+            <div id="fork">
+                <a href="https://github.com/inflectra/ui-test-automation-playground">Fork the website on GitHub</a>.
+            </div>
+        <div>Supported by <a href="https://www.inflectra.com/Rapise/">Rapise</a> test automation team. Copyright © 2020 - 2026 <a href="https://www.inflectra.com/">Inflectra Corporation</a>.</div>
+        </div>
+        <div id="license">
+            This work is licensed under the <a rel="license" href="https://www.apache.org/licenses/LICENSE-2.0">Apache License 2.0</a>.
+        </div>
+    </footer>
+</div>
+<script async="" defer="" src="https://buttons.github.io/buttons.js"></script>
+<script src="/static/prism.js"></script>
+
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body></html>

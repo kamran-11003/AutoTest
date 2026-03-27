@@ -1,0 +1,334 @@
+{
+  "url": "https://weather-app-plum-eight-15.vercel.app/",
+  "title": "Weather Dashboard",
+  "timestamp": "20260326_230229",
+  "crawl_stats": {
+    "total_clickables": 20,
+    "after_filtering": 8,
+    "filtered_out": 12,
+    "reduction_percentage": 60.0,
+    "discovered_urls": 0
+  },
+  "clickable_elements": {
+    "before_filtering": [
+      {
+        "tag": "A",
+        "text": "Dashboard",
+        "class": "block py-2 px-4 bg-blue-700 rounded-md hover:bg-blue-600 font-medium transition duration-300 ease-in-out",
+        "id": "",
+        "href": "https://weather-app-plum-eight-15.vercel.app/#weatherInfo",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Table",
+        "class": "block py-2 px-4 bg-blue-700 rounded-md hover:bg-blue-600 font-medium transition duration-300 ease-in-out",
+        "id": "",
+        "href": "https://weather-app-plum-eight-15.vercel.app/#forecastTable",
+        "confidence": "high"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Get Weather",
+        "class": "bg-blue-500 text-white px-6 py-2 rounded-lg shadow hover:bg-blue-600 transition duration-300 ease-in-out",
+        "id": "getWeatherBtn",
+        "href": "",
+        "confidence": "high"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Use My Location",
+        "class": "bg-green-500 text-white px-6 py-2 rounded-lg shadow hover:bg-green-600 transition duration-300 ease-in-out",
+        "id": "geolocationBtn",
+        "href": "",
+        "confidence": "high"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Sort Ascending",
+        "class": "bg-blue-500 text-white px-2 py-1 rounded-lg shadow hover:bg-blue-600 transition duration-300 ease-in-out",
+        "id": "sortAscBtn",
+        "href": "",
+        "confidence": "high"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Sort Descending",
+        "class": "bg-blue-500 text-white px-2 py-1 rounded-lg shadow hover:bg-blue-600 transition duration-300 ease-in-out",
+        "id": "sortDescBtn",
+        "href": "",
+        "confidence": "high"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Show Only Rainy Days",
+        "class": "bg-blue-500 text-white px-2 py-1 rounded-lg shadow hover:bg-blue-600 transition duration-300 ease-in-out",
+        "id": "filterRainBtn",
+        "href": "",
+        "confidence": "high"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Highest Temperature Day",
+        "class": "bg-blue-500 text-white px-2 py-1 rounded-lg shadow hover:bg-blue-600 transition duration-300 ease-in-out",
+        "id": "highestTempBtn",
+        "href": "",
+        "confidence": "high"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Send",
+        "class": "bg-blue-500 text-white px-6 py-2 rounded-lg shadow hover:bg-blue-600 transition duration-300 ease-in-out",
+        "id": "sendChatBtn",
+        "href": "",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Dashboard",
+        "class": "",
+        "id": "",
+        "href": "https://weather-app-plum-eight-15.vercel.app/#weatherInfo",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "A",
+        "text": "Table",
+        "class": "",
+        "id": "",
+        "href": "https://weather-app-plum-eight-15.vercel.app/#forecastTable",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "INPUT",
+        "text": "",
+        "class": "",
+        "id": "",
+        "href": "",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Get Weather",
+        "class": "",
+        "id": "",
+        "href": "",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Use My Location",
+        "class": "",
+        "id": "",
+        "href": "",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Sort Ascending",
+        "class": "",
+        "id": "",
+        "href": "",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Sort Descending",
+        "class": "",
+        "id": "",
+        "href": "",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Show Only Rainy Days",
+        "class": "",
+        "id": "",
+        "href": "",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Highest Temperature Day",
+        "class": "",
+        "id": "",
+        "href": "",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "INPUT",
+        "text": "",
+        "class": "",
+        "id": "",
+        "href": "",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Send",
+        "class": "",
+        "id": "",
+        "href": "",
+        "confidence": "unknown"
+      }
+    ],
+    "after_filtering": [
+      {
+        "tag": "INPUT",
+        "text": "",
+        "class": "",
+        "id": "",
+        "href": ""
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Get Weather",
+        "class": "bg-blue-500 text-white px-6 py-2 rounded-lg shadow hover:bg-blue-600 transition duration-300 ease-in-out",
+        "id": "getWeatherBtn",
+        "href": ""
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Use My Location",
+        "class": "bg-green-500 text-white px-6 py-2 rounded-lg shadow hover:bg-green-600 transition duration-300 ease-in-out",
+        "id": "geolocationBtn",
+        "href": ""
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Sort Ascending",
+        "class": "bg-blue-500 text-white px-2 py-1 rounded-lg shadow hover:bg-blue-600 transition duration-300 ease-in-out",
+        "id": "sortAscBtn",
+        "href": ""
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Sort Descending",
+        "class": "bg-blue-500 text-white px-2 py-1 rounded-lg shadow hover:bg-blue-600 transition duration-300 ease-in-out",
+        "id": "sortDescBtn",
+        "href": ""
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Show Only Rainy Days",
+        "class": "bg-blue-500 text-white px-2 py-1 rounded-lg shadow hover:bg-blue-600 transition duration-300 ease-in-out",
+        "id": "filterRainBtn",
+        "href": ""
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Highest Temperature Day",
+        "class": "bg-blue-500 text-white px-2 py-1 rounded-lg shadow hover:bg-blue-600 transition duration-300 ease-in-out",
+        "id": "highestTempBtn",
+        "href": ""
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Send",
+        "class": "bg-blue-500 text-white px-6 py-2 rounded-lg shadow hover:bg-blue-600 transition duration-300 ease-in-out",
+        "id": "sendChatBtn",
+        "href": ""
+      }
+    ],
+    "filtered_out": [
+      {
+        "tag": "A",
+        "text": "Dashboard",
+        "class": "block py-2 px-4 bg-blue-700 rounded-md hover:bg-blue-600 font-medium transition duration-300 ease-in-out",
+        "id": "",
+        "href": "https://weather-app-plum-eight-15.vercel.app/#weatherInfo",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Table",
+        "class": "block py-2 px-4 bg-blue-700 rounded-md hover:bg-blue-600 font-medium transition duration-300 ease-in-out",
+        "id": "",
+        "href": "https://weather-app-plum-eight-15.vercel.app/#forecastTable",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "Dashboard",
+        "href": "https://weather-app-plum-eight-15.vercel.app/#weatherInfo",
+        "type": "",
+        "shadow": false,
+        "shadowPath": "",
+        "selector": null
+      },
+      {
+        "tag": "A",
+        "text": "Table",
+        "href": "https://weather-app-plum-eight-15.vercel.app/#forecastTable",
+        "type": "",
+        "shadow": false,
+        "shadowPath": "",
+        "selector": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Get Weather",
+        "href": "",
+        "type": "submit",
+        "shadow": false,
+        "shadowPath": "",
+        "selector": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Use My Location",
+        "href": "",
+        "type": "submit",
+        "shadow": false,
+        "shadowPath": "",
+        "selector": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Sort Ascending",
+        "href": "",
+        "type": "submit",
+        "shadow": false,
+        "shadowPath": "",
+        "selector": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Sort Descending",
+        "href": "",
+        "type": "submit",
+        "shadow": false,
+        "shadowPath": "",
+        "selector": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Show Only Rainy Days",
+        "href": "",
+        "type": "submit",
+        "shadow": false,
+        "shadowPath": "",
+        "selector": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Highest Temperature Day",
+        "href": "",
+        "type": "submit",
+        "shadow": false,
+        "shadowPath": "",
+        "selector": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Send",
+        "href": "",
+        "type": "submit",
+        "shadow": false,
+        "shadowPath": "",
+        "selector": null
+      }
+    ]
+  },
+  "discovered_urls": []
+}

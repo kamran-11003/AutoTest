@@ -2,3 +2,49 @@
 2026-03-25 17:35:36 | crawler.ai_site_analyzer | INFO | 🔍 Analyzing site structure for qa-testing-hu.vercel.app (ONE-TIME analysis)
 2026-03-25 17:59:23 | crawler.ai_site_analyzer | INFO | 🧠 AI Site Analyzer initialized (pattern detection + URL normalization)
 2026-03-25 18:00:08 | crawler.ai_site_analyzer | INFO | 🔍 Analyzing site structure for the-qa-testers-gauntlet.vercel.app (ONE-TIME analysis)
+2026-03-26 10:09:16 | crawler.ai_site_analyzer | INFO | 🧠 AI Site Analyzer initialized (pattern detection + URL normalization)
+2026-03-26 10:10:09 | crawler.ai_site_analyzer | INFO | 🔍 Analyzing site structure for the-qa-testers-gauntlet.vercel.app (ONE-TIME analysis)
+2026-03-26 10:16:08 | crawler.ai_site_analyzer | INFO | 🧠 AI Site Analyzer initialized (pattern detection + URL normalization)
+2026-03-26 10:16:44 | crawler.ai_site_analyzer | INFO | 🔍 Analyzing site structure for the-qa-testers-gauntlet.vercel.app (ONE-TIME analysis)
+2026-03-26 16:53:57 | crawler.ai_site_analyzer | INFO | 🧠 AI Site Analyzer initialized (pattern detection + URL normalization)
+2026-03-26 16:54:20 | crawler.ai_site_analyzer | INFO | 🔍 Analyzing site structure for qa-testing-hu.vercel.app (ONE-TIME analysis)
+2026-03-26 20:29:54 | crawler.ai_site_analyzer | INFO | 🧠 AI Site Analyzer initialized (pattern detection + URL normalization)
+2026-03-26 20:30:08 | crawler.ai_site_analyzer | INFO | 🧠 AI Site Analyzer initialized (pattern detection + URL normalization)
+2026-03-26 20:30:38 | crawler.ai_site_analyzer | INFO | 🔍 Analyzing site structure for the-qa-testers-gauntlet.vercel.app (ONE-TIME analysis)
+2026-03-26 20:33:00 | crawler.ai_site_analyzer | INFO | 🧠 AI Site Analyzer initialized (pattern detection + URL normalization)
+2026-03-26 20:33:46 | crawler.ai_site_analyzer | INFO | 🔍 Analyzing site structure for the-qa-testers-gauntlet.vercel.app (ONE-TIME analysis)
+2026-03-26 20:58:31 | crawler.ai_site_analyzer | INFO | 🧠 AI Site Analyzer initialized (pattern detection + URL normalization)
+2026-03-26 20:58:51 | crawler.ai_site_analyzer | INFO | 🔍 Analyzing site structure for qa-testing-hu.vercel.app (ONE-TIME analysis)
+2026-03-26 21:25:53 | crawler.ai_site_analyzer | INFO | 🧠 AI Site Analyzer initialized (pattern detection + URL normalization)
+2026-03-26 21:26:09 | crawler.ai_site_analyzer | INFO | 🔍 Analyzing site structure for qa-testing-hu.vercel.app (ONE-TIME analysis)
+2026-03-26 21:36:57 | crawler.ai_site_analyzer | INFO | 🧠 AI Site Analyzer initialized (pattern detection + URL normalization)
+2026-03-26 21:37:24 | crawler.ai_site_analyzer | INFO | 🔍 Analyzing site structure for qa-alchemist.vercel.app (ONE-TIME analysis)
+2026-03-26 22:16:23 | crawler.ai_site_analyzer | INFO | 🧠 AI Site Analyzer initialized (pattern detection + URL normalization)
+2026-03-26 22:17:00 | crawler.ai_site_analyzer | INFO | 🔍 Analyzing site structure for qa-tester-practice-website.vercel.app (ONE-TIME analysis)
+2026-03-26 23:01:14 | crawler.ai_site_analyzer | INFO | 🧠 AI Site Analyzer initialized (pattern detection + URL normalization)
+2026-03-26 23:01:47 | crawler.ai_site_analyzer | INFO | 🔍 Analyzing site structure for weather-app-plum-eight-15.vercel.app (ONE-TIME analysis)
+2026-03-26 23:03:41 | crawler.ai_site_analyzer | INFO | 🧠 AI Site Analyzer initialized (pattern detection + URL normalization)
+2026-03-26 23:04:45 | crawler.ai_site_analyzer | INFO | 🔍 Analyzing site structure for testproject-one-chi.vercel.app (ONE-TIME analysis)
+2026-03-26 23:09:47 | crawler.ai_site_analyzer | INFO | 🧠 AI Site Analyzer initialized (pattern detection + URL normalization)
+2026-03-26 23:11:17 | crawler.ai_site_analyzer | INFO | 🔍 Analyzing site structure for getbootstrap.com (ONE-TIME analysis)
+2026-03-26 23:30:57 | crawler.ai_site_analyzer | INFO | 🧠 AI Site Analyzer initialized (pattern detection + URL normalization)
+2026-03-26 23:32:57 | crawler.ai_site_analyzer | INFO | 🔍 Analyzing site structure for getbootstrap.com (ONE-TIME analysis)
+2026-03-26 23:40:18 | crawler.ai_site_analyzer | INFO | 🧠 AI Site Analyzer initialized (pattern detection + URL normalization)
+2026-03-26 23:40:46 | crawler.ai_site_analyzer | INFO | 🔍 Analyzing site structure for www.httpbin.org (ONE-TIME analysis)
+2026-03-26 23:40:56 | crawler.ai_site_analyzer | INFO | 🧠 AI Site Analyzer initialized (pattern detection + URL normalization)
+2026-03-26 23:41:26 | crawler.ai_site_analyzer | INFO | 🔍 Analyzing site structure for www.httpbin.org (ONE-TIME analysis)
+2026-03-26 23:41:27 | crawler.ai_site_analyzer | ERROR | ❌ AI site analysis error after 11 attempts: 400 API key expired. Please renew the API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key expired. Please renew the API key."
+]
+2026-03-26 23:41:37 | crawler.ai_site_analyzer | INFO | 🧠 AI Site Analyzer initialized (pattern detection + URL normalization)
+2026-03-26 23:42:02 | crawler.ai_site_analyzer | INFO | 🔍 Analyzing site structure for www.httpbin.org (ONE-TIME analysis)
+2026-03-26 23:42:54 | crawler.ai_site_analyzer | INFO | 🧠 AI Site Analyzer initialized (pattern detection + URL normalization)
+2026-03-26 23:43:17 | crawler.ai_site_analyzer | INFO | 🔍 Analyzing site structure for www.httpbin.org (ONE-TIME analysis)
+2026-03-27 01:50:17 | crawler.ai_site_analyzer | INFO | 🧠 AI Site Analyzer initialized (pattern detection + URL normalization)
+2026-03-27 01:51:26 | crawler.ai_site_analyzer | INFO | 🔍 Analyzing site structure for uitestingplayground.com (ONE-TIME analysis)

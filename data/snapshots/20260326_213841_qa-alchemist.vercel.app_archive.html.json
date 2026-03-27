@@ -1,0 +1,411 @@
+{
+  "url": "https://qa-alchemist.vercel.app/archive.html",
+  "title": "Scraper's Crypt - QA Alchemist's Laboratory",
+  "timestamp": "20260326_213841",
+  "crawl_stats": {
+    "total_clickables": 24,
+    "after_filtering": 11,
+    "filtered_out": 13,
+    "reduction_percentage": 54.17,
+    "discovered_urls": 4
+  },
+  "clickable_elements": {
+    "before_filtering": [
+      {
+        "tag": "A",
+        "text": "🎯 Command Center",
+        "class": "",
+        "id": "nav-command-center",
+        "href": "https://qa-alchemist.vercel.app/index.html",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "📝 Form Factory",
+        "class": "",
+        "id": "nav-form-factory",
+        "href": "https://qa-alchemist.vercel.app/transmutation.html",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "🔬 Anomalies Lab",
+        "class": "",
+        "id": "nav-anomalies",
+        "href": "https://qa-alchemist.vercel.app/anomalies.html",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "📚 Scraper's Crypt",
+        "class": "active",
+        "id": "nav-archive",
+        "href": "https://qa-alchemist.vercel.app/archive.html",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "🔒 The Vault",
+        "class": "",
+        "id": "nav-vault",
+        "href": "https://qa-alchemist.vercel.app/security.html",
+        "confidence": "high"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "← Previous",
+        "class": "page-btn",
+        "id": "prev-page",
+        "href": "",
+        "confidence": "high"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "1",
+        "class": "page-btn active",
+        "id": "page-1",
+        "href": "",
+        "confidence": "high"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "2",
+        "class": "page-btn ",
+        "id": "page-2",
+        "href": "",
+        "confidence": "high"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "3",
+        "class": "page-btn ",
+        "id": "page-3",
+        "href": "",
+        "confidence": "high"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "4",
+        "class": "page-btn ",
+        "id": "page-4",
+        "href": "",
+        "confidence": "high"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "5",
+        "class": "page-btn ",
+        "id": "page-5",
+        "href": "",
+        "confidence": "high"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Next →",
+        "class": "page-btn",
+        "id": "next-page",
+        "href": "",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "🎯 Command Center",
+        "class": "",
+        "id": "",
+        "href": "https://qa-alchemist.vercel.app/index.html",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "A",
+        "text": "📝 Form Factory",
+        "class": "",
+        "id": "",
+        "href": "https://qa-alchemist.vercel.app/transmutation.html",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "A",
+        "text": "🔬 Anomalies Lab",
+        "class": "",
+        "id": "",
+        "href": "https://qa-alchemist.vercel.app/anomalies.html",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "A",
+        "text": "📚 Scraper's Crypt",
+        "class": "",
+        "id": "",
+        "href": "https://qa-alchemist.vercel.app/archive.html",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "A",
+        "text": "🔒 The Vault",
+        "class": "",
+        "id": "",
+        "href": "https://qa-alchemist.vercel.app/security.html",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "← Previous",
+        "class": "",
+        "id": "",
+        "href": "",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "1",
+        "class": "",
+        "id": "",
+        "href": "",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "2",
+        "class": "",
+        "id": "",
+        "href": "",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "3",
+        "class": "",
+        "id": "",
+        "href": "",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "4",
+        "class": "",
+        "id": "",
+        "href": "",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "5",
+        "class": "",
+        "id": "",
+        "href": "",
+        "confidence": "unknown"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Next →",
+        "class": "",
+        "id": "",
+        "href": "",
+        "confidence": "unknown"
+      }
+    ],
+    "after_filtering": [
+      {
+        "tag": "A",
+        "text": "🎯 Command Center",
+        "class": "",
+        "id": "nav-command-center",
+        "href": "https://qa-alchemist.vercel.app/index.html"
+      },
+      {
+        "tag": "A",
+        "text": "📝 Form Factory",
+        "class": "",
+        "id": "nav-form-factory",
+        "href": "https://qa-alchemist.vercel.app/transmutation.html"
+      },
+      {
+        "tag": "A",
+        "text": "🔬 Anomalies Lab",
+        "class": "",
+        "id": "nav-anomalies",
+        "href": "https://qa-alchemist.vercel.app/anomalies.html"
+      },
+      {
+        "tag": "A",
+        "text": "🔒 The Vault",
+        "class": "",
+        "id": "nav-vault",
+        "href": "https://qa-alchemist.vercel.app/security.html"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "← Previous",
+        "class": "page-btn",
+        "id": "prev-page",
+        "href": ""
+      },
+      {
+        "tag": "BUTTON",
+        "text": "1",
+        "class": "page-btn active",
+        "id": "page-1",
+        "href": ""
+      },
+      {
+        "tag": "BUTTON",
+        "text": "2",
+        "class": "page-btn ",
+        "id": "page-2",
+        "href": ""
+      },
+      {
+        "tag": "BUTTON",
+        "text": "3",
+        "class": "page-btn ",
+        "id": "page-3",
+        "href": ""
+      },
+      {
+        "tag": "BUTTON",
+        "text": "4",
+        "class": "page-btn ",
+        "id": "page-4",
+        "href": ""
+      },
+      {
+        "tag": "BUTTON",
+        "text": "5",
+        "class": "page-btn ",
+        "id": "page-5",
+        "href": ""
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Next →",
+        "class": "page-btn",
+        "id": "next-page",
+        "href": ""
+      }
+    ],
+    "filtered_out": [
+      {
+        "tag": "A",
+        "text": "📚 Scraper's Crypt",
+        "class": "active",
+        "id": "nav-archive",
+        "href": "https://qa-alchemist.vercel.app/archive.html",
+        "confidence": "high"
+      },
+      {
+        "tag": "A",
+        "text": "🎯 Command Center",
+        "href": "https://qa-alchemist.vercel.app/index.html",
+        "type": "",
+        "shadow": false,
+        "shadowPath": "",
+        "selector": null
+      },
+      {
+        "tag": "A",
+        "text": "📝 Form Factory",
+        "href": "https://qa-alchemist.vercel.app/transmutation.html",
+        "type": "",
+        "shadow": false,
+        "shadowPath": "",
+        "selector": null
+      },
+      {
+        "tag": "A",
+        "text": "🔬 Anomalies Lab",
+        "href": "https://qa-alchemist.vercel.app/anomalies.html",
+        "type": "",
+        "shadow": false,
+        "shadowPath": "",
+        "selector": null
+      },
+      {
+        "tag": "A",
+        "text": "📚 Scraper's Crypt",
+        "href": "https://qa-alchemist.vercel.app/archive.html",
+        "type": "",
+        "shadow": false,
+        "shadowPath": "",
+        "selector": null
+      },
+      {
+        "tag": "A",
+        "text": "🔒 The Vault",
+        "href": "https://qa-alchemist.vercel.app/security.html",
+        "type": "",
+        "shadow": false,
+        "shadowPath": "",
+        "selector": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "← Previous",
+        "href": "",
+        "type": "submit",
+        "shadow": false,
+        "shadowPath": "",
+        "selector": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "1",
+        "href": "",
+        "type": "submit",
+        "shadow": false,
+        "shadowPath": "",
+        "selector": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "2",
+        "href": "",
+        "type": "submit",
+        "shadow": false,
+        "shadowPath": "",
+        "selector": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "3",
+        "href": "",
+        "type": "submit",
+        "shadow": false,
+        "shadowPath": "",
+        "selector": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "4",
+        "href": "",
+        "type": "submit",
+        "shadow": false,
+        "shadowPath": "",
+        "selector": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "5",
+        "href": "",
+        "type": "submit",
+        "shadow": false,
+        "shadowPath": "",
+        "selector": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Next →",
+        "href": "",
+        "type": "submit",
+        "shadow": false,
+        "shadowPath": "",
+        "selector": null
+      }
+    ]
+  },
+  "discovered_urls": [
+    "https://qa-alchemist.vercel.app/transmutation.html",
+    "https://qa-alchemist.vercel.app/anomalies.html",
+    "https://qa-alchemist.vercel.app/index.html",
+    "https://qa-alchemist.vercel.app/security.html"
+  ]
+}

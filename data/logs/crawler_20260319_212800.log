@@ -99,3 +99,1105 @@
 2026-03-25 18:02:40 | crawler.state_manager | INFO | ✅ New state: 5ead1b12 | /forms.html | 23 inputs, 1 forms
 2026-03-25 18:02:40 | crawler.page_snapshot | INFO | 📋 Snapshot summary saved: data\snapshots\snapshots_summary.json
 2026-03-25 18:02:41 | crawler.page_loader | INFO | 🛑 Browser closed
+2026-03-26 10:09:16 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 6 detection strategies
+2026-03-26 10:09:16 | crawler.state_manager | INFO | StateManager initialized (normalization=ON)
+2026-03-26 10:09:16 | crawler.intelligent_link_filter | INFO | IntelligentLinkFilter initialized
+2026-03-26 10:09:16 | crawler.page_snapshot | INFO | PageSnapshot initialized (output: data/snapshots)
+2026-03-26 10:09:16 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-26 10:09:16 | crawler.page_loader | INFO | PageLoader initialized: chromium, headless=False
+2026-03-26 10:09:34 | crawler.page_loader | INFO | 📂 Loaded session from: auth_session.json
+2026-03-26 10:09:35 | crawler.page_loader | INFO | ✅ Font bypass and animation disable injected
+2026-03-26 10:09:35 | crawler.page_loader | INFO | ✅ Browser started successfully
+2026-03-26 10:09:35 | crawler.page_loader | INFO | 🌐 Loading: https://the-qa-testers-gauntlet.vercel.app/
+2026-03-26 10:10:09 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260326_101009_the-qa-testers-gauntlet.vercel.app_
+   ├─ Total clickables: 17
+   ├─ After filtering: 13 (23.53% reduction)
+   └─ Discovered: 4 URLs
+2026-03-26 10:10:15 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 10:10:15 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 0 buttons, 4 links
+2026-03-26 10:10:44 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260326_101044_the-qa-testers-gauntlet.vercel.app_
+   ├─ Total clickables: 17
+   ├─ After filtering: 13 (23.53% reduction)
+   └─ Discovered: 4 URLs
+2026-03-26 10:10:44 | crawler.state_manager | INFO | ✅ New state: fb871217 | / | 0 inputs, 0 forms
+2026-03-26 10:10:44 | crawler.page_loader | INFO | 🌐 Loading: https://the-qa-testers-gauntlet.vercel.app/interactive.html
+2026-03-26 10:10:53 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 10:10:53 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 10 buttons, 4 links
+2026-03-26 10:11:06 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-26 10:11:08 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 10:11:08 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 10 buttons, 4 links
+2026-03-26 10:11:08 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-26 10:11:08 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-26 10:11:11 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 10:11:11 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 10 buttons, 4 links
+2026-03-26 10:11:12 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 10:11:12 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 10 buttons, 4 links
+2026-03-26 10:11:15 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-26 10:11:17 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 10:11:17 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 11 buttons, 4 links
+2026-03-26 10:11:18 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260326_101118_the-qa-testers-gauntlet.vercel.app_interactive.htm
+   ├─ Total clickables: 26
+   ├─ After filtering: 8 (69.23% reduction)
+   └─ Discovered: 3 URLs
+2026-03-26 10:11:18 | crawler.state_manager | INFO | ✅ New state: 1c763506 | /interactive.html | 0 inputs, 0 forms
+2026-03-26 10:11:18 | crawler.state_manager | INFO | ✅ New state: 937dad75 | /interactive.html | 0 inputs, 0 forms
+2026-03-26 10:11:18 | crawler.page_loader | INFO | 🌐 Loading: https://the-qa-testers-gauntlet.vercel.app/data-vault.html
+2026-03-26 10:11:25 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-26 10:11:26 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 2 buttons, 4 links
+2026-03-26 10:11:35 | crawler.page_loader | INFO | 🌐 Loading: https://the-qa-testers-gauntlet.vercel.app/index.html
+2026-03-26 10:11:43 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 10:11:43 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 0 buttons, 4 links
+2026-03-26 10:12:05 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260326_101204_the-qa-testers-gauntlet.vercel.app_index.html
+   ├─ Total clickables: 17
+   ├─ After filtering: 12 (29.41% reduction)
+   └─ Discovered: 3 URLs
+2026-03-26 10:12:05 | crawler.state_manager | INFO | ✅ New state: 0a0b69ff | /index.html | 0 inputs, 0 forms
+2026-03-26 10:12:05 | crawler.page_loader | INFO | 🌐 Loading: https://the-qa-testers-gauntlet.vercel.app/forms.html
+2026-03-26 10:12:14 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 10:12:14 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 23 inputs, 1 forms, 1 buttons, 4 links
+2026-03-26 10:12:17 | crawler.intelligent_link_filter | INFO | 🎯 Filtered 24 → 18 (saved 6 clicks)
+2026-03-26 10:12:51 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260326_101251_the-qa-testers-gauntlet.vercel.app_forms.html
+   ├─ Total clickables: 71
+   ├─ After filtering: 17 (76.06% reduction)
+   └─ Discovered: 3 URLs
+2026-03-26 10:12:51 | crawler.state_manager | INFO | ✅ New state: 5ead1b12 | /forms.html | 23 inputs, 1 forms
+2026-03-26 10:12:51 | crawler.page_snapshot | INFO | 📋 Snapshot summary saved: data\snapshots\snapshots_summary.json
+2026-03-26 10:12:52 | crawler.page_loader | INFO | 🛑 Browser closed
+2026-03-26 10:16:08 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 6 detection strategies
+2026-03-26 10:16:08 | crawler.state_manager | INFO | StateManager initialized (normalization=ON)
+2026-03-26 10:16:08 | crawler.intelligent_link_filter | INFO | IntelligentLinkFilter initialized
+2026-03-26 10:16:08 | crawler.page_snapshot | INFO | PageSnapshot initialized (output: data/snapshots)
+2026-03-26 10:16:08 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-26 10:16:08 | crawler.page_loader | INFO | PageLoader initialized: chromium, headless=False
+2026-03-26 10:16:09 | crawler.page_loader | INFO | 📂 Loaded session from: auth_session.json
+2026-03-26 10:16:09 | crawler.page_loader | INFO | ✅ Font bypass and animation disable injected
+2026-03-26 10:16:09 | crawler.page_loader | INFO | ✅ Browser started successfully
+2026-03-26 10:16:09 | crawler.page_loader | INFO | 🌐 Loading: https://the-qa-testers-gauntlet.vercel.app/
+2026-03-26 10:16:44 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260326_101644_the-qa-testers-gauntlet.vercel.app_
+   ├─ Total clickables: 17
+   ├─ After filtering: 13 (23.53% reduction)
+   └─ Discovered: 4 URLs
+2026-03-26 10:16:49 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 10:16:49 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 0 buttons, 4 links
+2026-03-26 10:17:18 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260326_101718_the-qa-testers-gauntlet.vercel.app_
+   ├─ Total clickables: 17
+   ├─ After filtering: 13 (23.53% reduction)
+   └─ Discovered: 4 URLs
+2026-03-26 10:17:18 | crawler.state_manager | INFO | ✅ New state: fb871217 | / | 0 inputs, 0 forms
+2026-03-26 10:17:18 | crawler.page_loader | INFO | 🌐 Loading: https://the-qa-testers-gauntlet.vercel.app/interactive.html
+2026-03-26 10:17:26 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 10:17:26 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 10 buttons, 4 links
+2026-03-26 10:17:38 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-26 10:17:38 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-26 10:17:40 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 10:17:40 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 10 buttons, 4 links
+2026-03-26 10:17:40 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-26 10:17:42 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 10:17:42 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 10 buttons, 4 links
+2026-03-26 10:17:43 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 10:17:43 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 10 buttons, 4 links
+2026-03-26 10:17:48 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-26 10:17:49 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 10:17:49 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 11 buttons, 4 links
+2026-03-26 10:17:49 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260326_101749_the-qa-testers-gauntlet.vercel.app_interactive.htm
+   ├─ Total clickables: 26
+   ├─ After filtering: 8 (69.23% reduction)
+   └─ Discovered: 3 URLs
+2026-03-26 10:17:49 | crawler.state_manager | INFO | ✅ New state: 1c763506 | /interactive.html | 0 inputs, 0 forms
+2026-03-26 10:17:49 | crawler.state_manager | INFO | ✅ New state: 937dad75 | /interactive.html | 0 inputs, 0 forms
+2026-03-26 10:17:49 | crawler.page_loader | INFO | 🌐 Loading: https://the-qa-testers-gauntlet.vercel.app/data-vault.html
+2026-03-26 10:17:56 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-26 10:17:58 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 2 buttons, 4 links
+2026-03-26 10:18:06 | crawler.page_loader | INFO | 🌐 Loading: https://the-qa-testers-gauntlet.vercel.app/index.html
+2026-03-26 10:18:14 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 10:18:14 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 0 buttons, 4 links
+2026-03-26 10:18:35 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260326_101835_the-qa-testers-gauntlet.vercel.app_index.html
+   ├─ Total clickables: 17
+   ├─ After filtering: 12 (29.41% reduction)
+   └─ Discovered: 3 URLs
+2026-03-26 10:18:35 | crawler.state_manager | INFO | ✅ New state: 0a0b69ff | /index.html | 0 inputs, 0 forms
+2026-03-26 10:18:35 | crawler.page_loader | INFO | 🌐 Loading: https://the-qa-testers-gauntlet.vercel.app/forms.html
+2026-03-26 10:18:46 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 10:18:46 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 23 inputs, 1 forms, 1 buttons, 4 links
+2026-03-26 10:18:48 | crawler.intelligent_link_filter | INFO | 🎯 Filtered 24 → 18 (saved 6 clicks)
+2026-03-26 10:19:21 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260326_101921_the-qa-testers-gauntlet.vercel.app_forms.html
+   ├─ Total clickables: 71
+   ├─ After filtering: 17 (76.06% reduction)
+   └─ Discovered: 3 URLs
+2026-03-26 10:19:21 | crawler.state_manager | INFO | ✅ New state: 5ead1b12 | /forms.html | 23 inputs, 1 forms
+2026-03-26 10:19:21 | crawler.page_snapshot | INFO | 📋 Snapshot summary saved: data\snapshots\snapshots_summary.json
+2026-03-26 10:19:22 | crawler.page_loader | INFO | 🛑 Browser closed
+2026-03-26 16:53:58 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 6 detection strategies
+2026-03-26 16:53:58 | crawler.state_manager | INFO | StateManager initialized (normalization=ON)
+2026-03-26 16:53:58 | crawler.intelligent_link_filter | INFO | IntelligentLinkFilter initialized
+2026-03-26 16:53:58 | crawler.page_snapshot | INFO | PageSnapshot initialized (output: data/snapshots)
+2026-03-26 16:53:58 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-26 16:53:58 | crawler.page_loader | INFO | PageLoader initialized: chromium, headless=False
+2026-03-26 16:53:59 | crawler.page_loader | INFO | 📂 Loaded session from: auth_session.json
+2026-03-26 16:54:00 | crawler.page_loader | INFO | ✅ Font bypass and animation disable injected
+2026-03-26 16:54:00 | crawler.page_loader | INFO | ✅ Browser started successfully
+2026-03-26 16:54:00 | crawler.page_loader | INFO | 🌐 Loading: https://qa-testing-hu.vercel.app/
+2026-03-26 16:54:12 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-26 16:54:15 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 16:54:15 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 10 inputs, 1 forms, 4 buttons, 0 links
+2026-03-26 16:54:18 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-26 16:54:19 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 16:54:19 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 7 buttons, 0 links
+2026-03-26 16:54:20 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260326_165419_qa-testing-hu.vercel.app_
+   ├─ Total clickables: 15
+   ├─ After filtering: 4 (73.33% reduction)
+   └─ Discovered: 0 URLs
+2026-03-26 16:54:23 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 16:54:23 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 3 buttons, 4 links
+2026-03-26 16:54:30 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-26 16:54:31 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 16:54:31 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 10 inputs, 1 forms, 4 buttons, 0 links
+2026-03-26 16:54:35 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-26 16:54:35 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 16:54:35 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 7 buttons, 0 links
+2026-03-26 16:54:36 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260326_165436_qa-testing-hu.vercel.app_
+   ├─ Total clickables: 15
+   ├─ After filtering: 4 (73.33% reduction)
+   └─ Discovered: 0 URLs
+2026-03-26 16:54:36 | crawler.state_manager | INFO | ✅ New state: d20f876a | / | 0 inputs, 0 forms
+2026-03-26 16:54:36 | crawler.state_manager | INFO | ✅ New state: c55e711a | / | 10 inputs, 1 forms
+2026-03-26 16:54:36 | crawler.state_manager | INFO | ✅ New state: 76a7af9a | / | 0 inputs, 0 forms
+2026-03-26 16:54:36 | crawler.page_snapshot | INFO | 📋 Snapshot summary saved: data\snapshots\snapshots_summary.json
+2026-03-26 16:54:36 | crawler.page_loader | INFO | 🛑 Browser closed
+2026-03-26 20:29:54 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 6 detection strategies
+2026-03-26 20:29:54 | crawler.state_manager | INFO | StateManager initialized (normalization=ON)
+2026-03-26 20:29:54 | crawler.intelligent_link_filter | INFO | IntelligentLinkFilter initialized
+2026-03-26 20:29:54 | crawler.page_snapshot | INFO | PageSnapshot initialized (output: data/snapshots)
+2026-03-26 20:29:54 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-26 20:29:54 | crawler.page_loader | INFO | PageLoader initialized: chromium, headless=False
+2026-03-26 20:29:55 | crawler.page_loader | INFO | 📂 Loaded session from: auth_session.json
+2026-03-26 20:29:55 | crawler.page_loader | INFO | ✅ Font bypass and animation disable injected
+2026-03-26 20:29:55 | crawler.page_loader | INFO | ✅ Browser started successfully
+2026-03-26 20:29:55 | crawler.page_loader | INFO | 🌐 Loading: https://the-qa-testers-gauntlet.vercel.app/forms.html
+2026-03-26 20:30:04 | crawler.intelligent_link_filter | INFO | 🎯 Filtered 24 → 18 (saved 6 clicks)
+2026-03-26 20:30:08 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 6 detection strategies
+2026-03-26 20:30:08 | crawler.state_manager | INFO | StateManager initialized (normalization=ON)
+2026-03-26 20:30:08 | crawler.intelligent_link_filter | INFO | IntelligentLinkFilter initialized
+2026-03-26 20:30:08 | crawler.page_snapshot | INFO | PageSnapshot initialized (output: data/snapshots)
+2026-03-26 20:30:08 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-26 20:30:08 | crawler.page_loader | INFO | PageLoader initialized: chromium, headless=False
+2026-03-26 20:30:09 | crawler.page_loader | INFO | 📂 Loaded session from: auth_session.json
+2026-03-26 20:30:09 | crawler.page_loader | INFO | ✅ Font bypass and animation disable injected
+2026-03-26 20:30:09 | crawler.page_loader | INFO | ✅ Browser started successfully
+2026-03-26 20:30:09 | crawler.page_loader | INFO | 🌐 Loading: https://the-qa-testers-gauntlet.vercel.app/forms.html
+2026-03-26 20:30:15 | crawler.page_loader | ERROR | ❌ Error loading https://the-qa-testers-gauntlet.vercel.app/forms.html: Target page, context or browser has been closed
+2026-03-26 20:30:15 | crawler.page_loader | INFO | 🛑 Browser closed
+2026-03-26 20:30:38 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260326_203038_the-qa-testers-gauntlet.vercel.app_forms.html
+   ├─ Total clickables: 71
+   ├─ After filtering: 17 (76.06% reduction)
+   └─ Discovered: 3 URLs
+2026-03-26 20:30:45 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 20:30:45 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 23 inputs, 1 forms, 1 buttons, 4 links
+2026-03-26 20:30:47 | crawler.intelligent_link_filter | INFO | 🎯 Filtered 24 → 18 (saved 6 clicks)
+2026-03-26 20:31:22 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260326_203122_the-qa-testers-gauntlet.vercel.app_forms.html
+   ├─ Total clickables: 71
+   ├─ After filtering: 17 (76.06% reduction)
+   └─ Discovered: 3 URLs
+2026-03-26 20:31:22 | crawler.state_manager | INFO | ✅ New state: 5ead1b12 | /forms.html | 23 inputs, 1 forms
+2026-03-26 20:31:22 | crawler.page_loader | INFO | 🌐 Loading: https://the-qa-testers-gauntlet.vercel.app/interactive.html
+2026-03-26 20:31:31 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 20:31:31 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 10 buttons, 4 links
+2026-03-26 20:31:44 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-26 20:31:46 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 20:31:46 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 10 buttons, 4 links
+2026-03-26 20:31:46 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-26 20:31:46 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-26 20:31:49 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 20:31:49 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 10 buttons, 4 links
+2026-03-26 20:31:49 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 20:31:49 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 10 buttons, 4 links
+2026-03-26 20:31:54 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-26 20:31:56 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 20:31:56 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 11 buttons, 4 links
+2026-03-26 20:31:56 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260326_203156_the-qa-testers-gauntlet.vercel.app_interactive.htm
+   ├─ Total clickables: 26
+   ├─ After filtering: 8 (69.23% reduction)
+   └─ Discovered: 3 URLs
+2026-03-26 20:31:56 | crawler.state_manager | INFO | ✅ New state: 1c763506 | /interactive.html | 0 inputs, 0 forms
+2026-03-26 20:31:56 | crawler.state_manager | INFO | ✅ New state: 937dad75 | /interactive.html | 0 inputs, 0 forms
+2026-03-26 20:31:56 | crawler.page_loader | INFO | 🌐 Loading: https://the-qa-testers-gauntlet.vercel.app/data-vault.html
+2026-03-26 20:32:03 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-26 20:32:05 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 2 buttons, 4 links
+2026-03-26 20:32:13 | crawler.page_loader | INFO | 🌐 Loading: https://the-qa-testers-gauntlet.vercel.app/index.html
+2026-03-26 20:32:21 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 20:32:21 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 0 buttons, 4 links
+2026-03-26 20:32:42 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260326_203242_the-qa-testers-gauntlet.vercel.app_index.html
+   ├─ Total clickables: 17
+   ├─ After filtering: 12 (29.41% reduction)
+   └─ Discovered: 3 URLs
+2026-03-26 20:32:42 | crawler.state_manager | INFO | ✅ New state: 0a0b69ff | /index.html | 0 inputs, 0 forms
+2026-03-26 20:32:42 | crawler.page_snapshot | INFO | 📋 Snapshot summary saved: data\snapshots\snapshots_summary.json
+2026-03-26 20:32:44 | crawler.page_loader | INFO | 🛑 Browser closed
+2026-03-26 20:33:00 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 6 detection strategies
+2026-03-26 20:33:00 | crawler.state_manager | INFO | StateManager initialized (normalization=ON)
+2026-03-26 20:33:00 | crawler.intelligent_link_filter | INFO | IntelligentLinkFilter initialized
+2026-03-26 20:33:00 | crawler.page_snapshot | INFO | PageSnapshot initialized (output: data/snapshots)
+2026-03-26 20:33:00 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-26 20:33:00 | crawler.page_loader | INFO | PageLoader initialized: chromium, headless=False
+2026-03-26 20:33:01 | crawler.page_loader | INFO | 📂 Loaded session from: auth_session.json
+2026-03-26 20:33:02 | crawler.page_loader | INFO | ✅ Font bypass and animation disable injected
+2026-03-26 20:33:02 | crawler.page_loader | INFO | ✅ Browser started successfully
+2026-03-26 20:33:02 | crawler.page_loader | INFO | 🌐 Loading: https://the-qa-testers-gauntlet.vercel.app/forms.html
+2026-03-26 20:33:11 | crawler.intelligent_link_filter | INFO | 🎯 Filtered 24 → 18 (saved 6 clicks)
+2026-03-26 20:33:46 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260326_203346_the-qa-testers-gauntlet.vercel.app_forms.html
+   ├─ Total clickables: 71
+   ├─ After filtering: 17 (76.06% reduction)
+   └─ Discovered: 3 URLs
+2026-03-26 20:33:52 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 20:33:52 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 23 inputs, 1 forms, 1 buttons, 4 links
+2026-03-26 20:33:54 | crawler.intelligent_link_filter | INFO | 🎯 Filtered 24 → 18 (saved 6 clicks)
+2026-03-26 20:34:29 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260326_203429_the-qa-testers-gauntlet.vercel.app_forms.html
+   ├─ Total clickables: 71
+   ├─ After filtering: 17 (76.06% reduction)
+   └─ Discovered: 3 URLs
+2026-03-26 20:34:29 | crawler.state_manager | INFO | ✅ New state: 5ead1b12 | /forms.html | 23 inputs, 1 forms
+2026-03-26 20:34:29 | crawler.page_loader | INFO | 🌐 Loading: https://the-qa-testers-gauntlet.vercel.app/interactive.html
+2026-03-26 20:34:38 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 20:34:38 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 10 buttons, 4 links
+2026-03-26 20:34:51 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-26 20:34:52 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 20:34:52 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 10 buttons, 4 links
+2026-03-26 20:34:52 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-26 20:34:52 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-26 20:34:55 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 20:34:55 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 10 buttons, 4 links
+2026-03-26 20:34:56 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 20:34:56 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 10 buttons, 4 links
+2026-03-26 20:35:01 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-26 20:35:03 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 20:35:03 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 11 buttons, 4 links
+2026-03-26 20:35:03 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260326_203503_the-qa-testers-gauntlet.vercel.app_interactive.htm
+   ├─ Total clickables: 26
+   ├─ After filtering: 8 (69.23% reduction)
+   └─ Discovered: 3 URLs
+2026-03-26 20:35:03 | crawler.state_manager | INFO | ✅ New state: 1c763506 | /interactive.html | 0 inputs, 0 forms
+2026-03-26 20:35:03 | crawler.state_manager | INFO | ✅ New state: 937dad75 | /interactive.html | 0 inputs, 0 forms
+2026-03-26 20:35:03 | crawler.page_loader | INFO | 🌐 Loading: https://the-qa-testers-gauntlet.vercel.app/data-vault.html
+2026-03-26 20:35:10 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-26 20:35:12 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 2 buttons, 4 links
+2026-03-26 20:35:21 | crawler.page_loader | INFO | 🌐 Loading: https://the-qa-testers-gauntlet.vercel.app/index.html
+2026-03-26 20:35:29 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 20:35:29 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 0 buttons, 4 links
+2026-03-26 20:35:49 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260326_203549_the-qa-testers-gauntlet.vercel.app_index.html
+   ├─ Total clickables: 17
+   ├─ After filtering: 12 (29.41% reduction)
+   └─ Discovered: 3 URLs
+2026-03-26 20:35:49 | crawler.state_manager | INFO | ✅ New state: 0a0b69ff | /index.html | 0 inputs, 0 forms
+2026-03-26 20:35:49 | crawler.page_snapshot | INFO | 📋 Snapshot summary saved: data\snapshots\snapshots_summary.json
+2026-03-26 20:35:50 | crawler.page_loader | INFO | 🛑 Browser closed
+2026-03-26 20:58:31 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 6 detection strategies
+2026-03-26 20:58:31 | crawler.state_manager | INFO | StateManager initialized (normalization=ON)
+2026-03-26 20:58:31 | crawler.intelligent_link_filter | INFO | IntelligentLinkFilter initialized
+2026-03-26 20:58:31 | crawler.page_snapshot | INFO | PageSnapshot initialized (output: data/snapshots)
+2026-03-26 20:58:31 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-26 20:58:31 | crawler.page_loader | INFO | PageLoader initialized: chromium, headless=False
+2026-03-26 20:58:33 | crawler.page_loader | INFO | 📂 Loaded session from: auth_session.json
+2026-03-26 20:58:33 | crawler.page_loader | INFO | ✅ Font bypass and animation disable injected
+2026-03-26 20:58:33 | crawler.page_loader | INFO | ✅ Browser started successfully
+2026-03-26 20:58:33 | crawler.page_loader | INFO | 🌐 Loading: https://qa-testing-hu.vercel.app/
+2026-03-26 20:58:44 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-26 20:58:46 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 20:58:46 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 10 inputs, 1 forms, 4 buttons, 0 links
+2026-03-26 20:58:49 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-26 20:58:50 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 20:58:50 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 7 buttons, 0 links
+2026-03-26 20:58:51 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260326_205851_qa-testing-hu.vercel.app_
+   ├─ Total clickables: 15
+   ├─ After filtering: 4 (73.33% reduction)
+   └─ Discovered: 0 URLs
+2026-03-26 20:58:54 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 20:58:54 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 3 buttons, 4 links
+2026-03-26 20:59:00 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-26 20:59:01 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 20:59:01 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 10 inputs, 1 forms, 4 buttons, 0 links
+2026-03-26 20:59:05 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-26 20:59:06 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 20:59:06 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 7 buttons, 0 links
+2026-03-26 20:59:06 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260326_205906_qa-testing-hu.vercel.app_
+   ├─ Total clickables: 15
+   ├─ After filtering: 4 (73.33% reduction)
+   └─ Discovered: 0 URLs
+2026-03-26 20:59:06 | crawler.state_manager | INFO | ✅ New state: d20f876a | / | 0 inputs, 0 forms
+2026-03-26 20:59:06 | crawler.state_manager | INFO | ✅ New state: c55e711a | / | 10 inputs, 1 forms
+2026-03-26 20:59:06 | crawler.state_manager | INFO | ✅ New state: 76a7af9a | / | 0 inputs, 0 forms
+2026-03-26 20:59:06 | crawler.page_snapshot | INFO | 📋 Snapshot summary saved: data\snapshots\snapshots_summary.json
+2026-03-26 20:59:06 | crawler.page_loader | INFO | 🛑 Browser closed
+2026-03-26 21:25:53 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 6 detection strategies
+2026-03-26 21:25:53 | crawler.state_manager | INFO | StateManager initialized (normalization=ON)
+2026-03-26 21:25:53 | crawler.intelligent_link_filter | INFO | IntelligentLinkFilter initialized
+2026-03-26 21:25:53 | crawler.page_snapshot | INFO | PageSnapshot initialized (output: data/snapshots)
+2026-03-26 21:25:53 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-26 21:25:53 | crawler.page_loader | INFO | PageLoader initialized: chromium, headless=False
+2026-03-26 21:25:53 | crawler.page_loader | INFO | 📂 Loaded session from: auth_session.json
+2026-03-26 21:25:54 | crawler.page_loader | INFO | ✅ Font bypass and animation disable injected
+2026-03-26 21:25:54 | crawler.page_loader | INFO | ✅ Browser started successfully
+2026-03-26 21:25:54 | crawler.page_loader | INFO | 🌐 Loading: https://qa-testing-hu.vercel.app/
+2026-03-26 21:26:03 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-26 21:26:05 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 21:26:05 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 10 inputs, 1 forms, 4 buttons, 0 links
+2026-03-26 21:26:08 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-26 21:26:09 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 21:26:09 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 7 buttons, 0 links
+2026-03-26 21:26:09 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260326_212609_qa-testing-hu.vercel.app_
+   ├─ Total clickables: 15
+   ├─ After filtering: 4 (73.33% reduction)
+   └─ Discovered: 0 URLs
+2026-03-26 21:26:11 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 21:26:11 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 3 buttons, 4 links
+2026-03-26 21:26:17 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-26 21:26:17 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 21:26:17 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 10 inputs, 1 forms, 4 buttons, 0 links
+2026-03-26 21:26:20 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-26 21:26:21 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 21:26:21 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 7 buttons, 0 links
+2026-03-26 21:26:21 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260326_212621_qa-testing-hu.vercel.app_
+   ├─ Total clickables: 15
+   ├─ After filtering: 4 (73.33% reduction)
+   └─ Discovered: 0 URLs
+2026-03-26 21:26:21 | crawler.state_manager | INFO | ✅ New state: d20f876a | / | 0 inputs, 0 forms
+2026-03-26 21:26:21 | crawler.state_manager | INFO | ✅ New state: c55e711a | / | 10 inputs, 1 forms
+2026-03-26 21:26:21 | crawler.state_manager | INFO | ✅ New state: 76a7af9a | / | 0 inputs, 0 forms
+2026-03-26 21:26:21 | crawler.page_snapshot | INFO | 📋 Snapshot summary saved: data\snapshots\snapshots_summary.json
+2026-03-26 21:26:21 | crawler.page_loader | INFO | 🛑 Browser closed
+2026-03-26 21:36:57 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 6 detection strategies
+2026-03-26 21:36:57 | crawler.state_manager | INFO | StateManager initialized (normalization=ON)
+2026-03-26 21:36:57 | crawler.intelligent_link_filter | INFO | IntelligentLinkFilter initialized
+2026-03-26 21:36:57 | crawler.page_snapshot | INFO | PageSnapshot initialized (output: data/snapshots)
+2026-03-26 21:36:57 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-26 21:36:57 | crawler.page_loader | INFO | PageLoader initialized: chromium, headless=False
+2026-03-26 21:36:58 | crawler.page_loader | INFO | 📂 Loaded session from: auth_session.json
+2026-03-26 21:36:58 | crawler.page_loader | INFO | ✅ Font bypass and animation disable injected
+2026-03-26 21:36:58 | crawler.page_loader | INFO | ✅ Browser started successfully
+2026-03-26 21:36:58 | crawler.page_loader | INFO | 🌐 Loading: https://qa-alchemist.vercel.app/
+2026-03-26 21:37:24 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260326_213724_qa-alchemist.vercel.app_
+   ├─ Total clickables: 21
+   ├─ After filtering: 7 (66.67% reduction)
+   └─ Discovered: 5 URLs
+2026-03-26 21:37:33 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 21:37:33 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 1 buttons, 5 links
+2026-03-26 21:37:52 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260326_213752_qa-alchemist.vercel.app_
+   ├─ Total clickables: 21
+   ├─ After filtering: 7 (66.67% reduction)
+   └─ Discovered: 5 URLs
+2026-03-26 21:37:52 | crawler.state_manager | INFO | ✅ New state: 1aa1238b | / | 0 inputs, 0 forms
+2026-03-26 21:37:52 | crawler.page_loader | INFO | 🌐 Loading: https://qa-alchemist.vercel.app/archive.html
+2026-03-26 21:38:04 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 21:38:04 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 7 buttons, 5 links
+2026-03-26 21:38:27 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-26 21:38:29 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 21:38:29 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 7 buttons, 5 links
+2026-03-26 21:38:29 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-26 21:38:29 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-26 21:38:31 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 21:38:31 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 7 buttons, 5 links
+2026-03-26 21:38:32 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 21:38:32 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 7 buttons, 5 links
+2026-03-26 21:38:36 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-26 21:38:38 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 21:38:38 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 7 buttons, 5 links
+2026-03-26 21:38:38 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-26 21:38:40 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 21:38:40 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 7 buttons, 5 links
+2026-03-26 21:38:41 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260326_213841_qa-alchemist.vercel.app_archive.html
+   ├─ Total clickables: 24
+   ├─ After filtering: 11 (54.17% reduction)
+   └─ Discovered: 4 URLs
+2026-03-26 21:38:41 | crawler.state_manager | INFO | ✅ New state: a2b6ea1c | /archive.html | 0 inputs, 0 forms
+2026-03-26 21:38:41 | crawler.page_loader | INFO | 🌐 Loading: https://qa-alchemist.vercel.app/security.html
+2026-03-26 21:38:52 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 21:38:52 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 2 inputs, 1 forms, 2 buttons, 5 links
+2026-03-26 21:39:03 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-26 21:39:05 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 21:39:05 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 2 inputs, 1 forms, 2 buttons, 5 links
+2026-03-26 21:39:06 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260326_213906_qa-alchemist.vercel.app_security.html
+   ├─ Total clickables: 14
+   ├─ After filtering: 6 (57.14% reduction)
+   └─ Discovered: 4 URLs
+2026-03-26 21:39:06 | crawler.state_manager | INFO | ✅ New state: 08a39826 | /security.html | 2 inputs, 1 forms
+2026-03-26 21:39:06 | crawler.page_loader | INFO | 🌐 Loading: https://qa-alchemist.vercel.app/anomalies.html
+2026-03-26 21:39:18 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 21:39:18 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 2 buttons, 5 links
+2026-03-26 21:39:30 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-26 21:39:31 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 21:39:31 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 2 buttons, 5 links
+2026-03-26 21:39:37 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-26 21:39:39 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 21:39:39 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 2 buttons, 5 links
+2026-03-26 21:39:39 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-26 21:39:40 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 21:39:40 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 2 buttons, 5 links
+2026-03-26 21:39:41 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260326_213940_qa-alchemist.vercel.app_anomalies.html
+   ├─ Total clickables: 16
+   ├─ After filtering: 8 (50.0% reduction)
+   └─ Discovered: 4 URLs
+2026-03-26 21:39:41 | crawler.state_manager | INFO | ✅ New state: 8d7ebb4f | /anomalies.html | 0 inputs, 0 forms
+2026-03-26 21:39:41 | crawler.page_loader | INFO | 🌐 Loading: https://qa-alchemist.vercel.app/transmutation.html
+2026-03-26 21:39:52 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 21:39:52 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 24 inputs, 1 forms, 1 buttons, 5 links
+2026-03-26 21:40:47 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260326_214046_qa-alchemist.vercel.app_transmutation.html
+   ├─ Total clickables: 48
+   ├─ After filtering: 31 (35.42% reduction)
+   └─ Discovered: 4 URLs
+2026-03-26 21:40:47 | crawler.state_manager | INFO | ✅ New state: d74b9721 | /transmutation.html | 24 inputs, 1 forms
+2026-03-26 21:40:47 | crawler.page_loader | INFO | 🌐 Loading: https://qa-alchemist.vercel.app/index.html
+2026-03-26 21:40:58 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 21:40:58 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 1 buttons, 5 links
+2026-03-26 21:41:13 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260326_214112_qa-alchemist.vercel.app_index.html
+   ├─ Total clickables: 21
+   ├─ After filtering: 6 (71.43% reduction)
+   └─ Discovered: 4 URLs
+2026-03-26 21:41:13 | crawler.state_manager | INFO | ✅ New state: 08300bd4 | /index.html | 0 inputs, 0 forms
+2026-03-26 21:41:13 | crawler.page_snapshot | INFO | 📋 Snapshot summary saved: data\snapshots\snapshots_summary.json
+2026-03-26 21:41:14 | crawler.page_loader | INFO | 🛑 Browser closed
+2026-03-26 22:16:23 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 6 detection strategies
+2026-03-26 22:16:23 | crawler.state_manager | INFO | StateManager initialized (normalization=ON)
+2026-03-26 22:16:23 | crawler.intelligent_link_filter | INFO | IntelligentLinkFilter initialized
+2026-03-26 22:16:23 | crawler.page_snapshot | INFO | PageSnapshot initialized (output: data/snapshots)
+2026-03-26 22:16:23 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-26 22:16:23 | crawler.page_loader | INFO | PageLoader initialized: chromium, headless=False
+2026-03-26 22:16:31 | crawler.page_loader | INFO | 📂 Loaded session from: auth_session.json
+2026-03-26 22:16:31 | crawler.page_loader | INFO | ✅ Font bypass and animation disable injected
+2026-03-26 22:16:31 | crawler.page_loader | INFO | ✅ Browser started successfully
+2026-03-26 22:16:31 | crawler.page_loader | INFO | 🌐 Loading: https://qa-tester-practice-website.vercel.app/index.html
+2026-03-26 22:17:00 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260326_221700_qa-tester-practice-website.vercel.app_index.html
+   ├─ Total clickables: 28
+   ├─ After filtering: 10 (64.29% reduction)
+   └─ Discovered: 4 URLs
+2026-03-26 22:17:09 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 22:17:09 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 0 buttons, 10 links
+2026-03-26 22:17:34 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260326_221734_qa-tester-practice-website.vercel.app_index.html
+   ├─ Total clickables: 28
+   ├─ After filtering: 10 (64.29% reduction)
+   └─ Discovered: 4 URLs
+2026-03-26 22:17:34 | crawler.state_manager | INFO | ✅ New state: 0a0b69ff | /index.html | 0 inputs, 0 forms
+2026-03-26 22:17:34 | crawler.page_loader | INFO | 🌐 Loading: https://qa-tester-practice-website.vercel.app/form-testing.html
+2026-03-26 22:17:46 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 22:17:46 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 27 inputs, 2 forms, 3 buttons, 8 links
+2026-03-26 22:18:44 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260326_221844_qa-tester-practice-website.vercel.app_form-testing
+   ├─ Total clickables: 56
+   ├─ After filtering: 31 (44.64% reduction)
+   └─ Discovered: 4 URLs
+2026-03-26 22:18:45 | crawler.state_manager | INFO | ✅ New state: 09bace41 | /form-testing.html | 27 inputs, 2 forms
+2026-03-26 22:18:45 | crawler.page_loader | INFO | 🌐 Loading: https://qa-tester-practice-website.vercel.app/links-navigation.html
+2026-03-26 22:18:56 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 22:18:56 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 0 buttons, 30 links
+2026-03-26 22:18:58 | crawler.intelligent_link_filter | INFO | 🎯 Filtered 49 → 48 (saved 1 clicks)
+2026-03-26 22:19:31 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260326_221931_qa-tester-practice-website.vercel.app_links-naviga
+   ├─ Total clickables: 112
+   ├─ After filtering: 17 (84.82% reduction)
+   └─ Discovered: 8 URLs
+2026-03-26 22:19:31 | crawler.state_manager | INFO | ✅ New state: a8585ec1 | /links-navigation.html | 0 inputs, 0 forms
+2026-03-26 22:19:31 | crawler.page_loader | INFO | 🌐 Loading: https://qa-tester-practice-website.vercel.app/hover-ui.html
+2026-03-26 22:19:42 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 22:19:42 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 3 inputs, 1 forms, 10 buttons, 9 links
+2026-03-26 22:20:28 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260326_222028_qa-tester-practice-website.vercel.app_hover-ui.htm
+   ├─ Total clickables: 58
+   ├─ After filtering: 23 (60.34% reduction)
+   └─ Discovered: 4 URLs
+2026-03-26 22:20:28 | crawler.state_manager | INFO | ✅ New state: 70350953 | /hover-ui.html | 3 inputs, 1 forms
+2026-03-26 22:20:28 | crawler.page_loader | INFO | 🌐 Loading: https://qa-tester-practice-website.vercel.app/input-controls.html
+2026-03-26 22:20:40 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 22:20:40 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 43 inputs, 4 forms, 0 buttons, 8 links
+2026-03-26 22:22:04 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260326_222204_qa-tester-practice-website.vercel.app_input-contro
+   ├─ Total clickables: 81
+   ├─ After filtering: 50 (38.27% reduction)
+   └─ Discovered: 4 URLs
+2026-03-26 22:22:04 | crawler.state_manager | INFO | ✅ New state: af52d0f1 | /input-controls.html | 43 inputs, 4 forms
+2026-03-26 22:22:04 | crawler.page_loader | INFO | 🌐 Loading: https://qa-tester-practice-website.vercel.app/missing-page.html
+2026-03-26 22:22:12 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 22:22:12 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 0 buttons, 1 links
+2026-03-26 22:22:17 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260326_222217_qa-tester-practice-website.vercel.app_missing-page
+   ├─ Total clickables: 3
+   ├─ After filtering: 1 (66.67% reduction)
+   └─ Discovered: 0 URLs
+2026-03-26 22:22:17 | crawler.state_manager | INFO | ✅ New state: 24968212 | /missing-page.html | 0 inputs, 0 forms
+2026-03-26 22:22:17 | crawler.page_loader | INFO | 🌐 Loading: https://qa-tester-practice-website.vercel.app/path/to/nowhere.html
+2026-03-26 22:22:24 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 22:22:24 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 0 buttons, 1 links
+2026-03-26 22:22:29 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260326_222229_qa-tester-practice-website.vercel.app_path_to_nowh
+   ├─ Total clickables: 3
+   ├─ After filtering: 1 (66.67% reduction)
+   └─ Discovered: 0 URLs
+2026-03-26 22:22:29 | crawler.state_manager | INFO | ✅ New state: df2c25c6 | /path/to/nowhere.html | 0 inputs, 0 forms
+2026-03-26 22:22:29 | crawler.page_loader | INFO | 🌐 Loading: https://qa-tester-practice-website.vercel.app/non-existent-page.html
+2026-03-26 22:22:37 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 22:22:37 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 0 buttons, 1 links
+2026-03-26 22:22:42 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260326_222242_qa-tester-practice-website.vercel.app_non-existent
+   ├─ Total clickables: 3
+   ├─ After filtering: 1 (66.67% reduction)
+   └─ Discovered: 0 URLs
+2026-03-26 22:22:42 | crawler.state_manager | INFO | ✅ New state: 82844d02 | /non-existent-page.html | 0 inputs, 0 forms
+2026-03-26 22:22:42 | crawler.page_snapshot | INFO | 📋 Snapshot summary saved: data\snapshots\snapshots_summary.json
+2026-03-26 22:22:43 | crawler.page_loader | INFO | 🛑 Browser closed
+2026-03-26 23:01:14 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 6 detection strategies
+2026-03-26 23:01:14 | crawler.state_manager | INFO | StateManager initialized (normalization=ON)
+2026-03-26 23:01:14 | crawler.intelligent_link_filter | INFO | IntelligentLinkFilter initialized
+2026-03-26 23:01:14 | crawler.page_snapshot | INFO | PageSnapshot initialized (output: data/snapshots)
+2026-03-26 23:01:14 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-26 23:01:14 | crawler.page_loader | INFO | PageLoader initialized: chromium, headless=False
+2026-03-26 23:01:25 | crawler.page_loader | INFO | 📂 Loaded session from: auth_session.json
+2026-03-26 23:01:26 | crawler.page_loader | INFO | ✅ Font bypass and animation disable injected
+2026-03-26 23:01:26 | crawler.page_loader | INFO | ✅ Browser started successfully
+2026-03-26 23:01:26 | crawler.page_loader | INFO | 🌐 Loading: https://weather-app-plum-eight-15.vercel.app/#weatherInfo
+2026-03-26 23:01:47 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260326_230147_weather-app-plum-eight-15.vercel.app_#weatherInfo
+   ├─ Total clickables: 20
+   ├─ After filtering: 8 (60.0% reduction)
+   └─ Discovered: 0 URLs
+2026-03-26 23:01:52 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 23:01:52 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 3 inputs, 0 forms, 7 buttons, 2 links
+2026-03-26 23:02:07 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260326_230207_weather-app-plum-eight-15.vercel.app_#weatherInfo
+   ├─ Total clickables: 20
+   ├─ After filtering: 8 (60.0% reduction)
+   └─ Discovered: 0 URLs
+2026-03-26 23:02:07 | crawler.state_manager | INFO | ✅ New state: d26d1854 | / | 3 inputs, 0 forms
+2026-03-26 23:02:07 | crawler.page_loader | INFO | 🌐 Loading: https://weather-app-plum-eight-15.vercel.app/
+2026-03-26 23:02:15 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 23:02:15 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 3 inputs, 0 forms, 7 buttons, 2 links
+2026-03-26 23:02:29 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260326_230229_weather-app-plum-eight-15.vercel.app_
+   ├─ Total clickables: 20
+   ├─ After filtering: 8 (60.0% reduction)
+   └─ Discovered: 0 URLs
+2026-03-26 23:02:29 | crawler.page_snapshot | INFO | 📋 Snapshot summary saved: data\snapshots\snapshots_summary.json
+2026-03-26 23:02:29 | crawler.page_loader | INFO | 🛑 Browser closed
+2026-03-26 23:03:41 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 6 detection strategies
+2026-03-26 23:03:41 | crawler.state_manager | INFO | StateManager initialized (normalization=ON)
+2026-03-26 23:03:41 | crawler.intelligent_link_filter | INFO | IntelligentLinkFilter initialized
+2026-03-26 23:03:41 | crawler.page_snapshot | INFO | PageSnapshot initialized (output: data/snapshots)
+2026-03-26 23:03:41 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-26 23:03:41 | crawler.page_loader | INFO | PageLoader initialized: chromium, headless=False
+2026-03-26 23:03:43 | crawler.page_loader | INFO | 📂 Loaded session from: auth_session.json
+2026-03-26 23:03:43 | crawler.page_loader | INFO | ✅ Font bypass and animation disable injected
+2026-03-26 23:03:43 | crawler.page_loader | INFO | ✅ Browser started successfully
+2026-03-26 23:03:43 | crawler.page_loader | INFO | 🌐 Loading: https://testproject-one-chi.vercel.app/
+2026-03-26 23:03:51 | crawler.intelligent_link_filter | INFO | 🎯 Filtered 41 → 35 (saved 6 clicks)
+2026-03-26 23:03:55 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-26 23:03:58 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 23:03:58 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 13 buttons, 1 links
+2026-03-26 23:04:02 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-26 23:04:04 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 23:04:04 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 13 buttons, 1 links
+2026-03-26 23:04:07 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-26 23:04:10 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 23:04:10 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 13 buttons, 1 links
+2026-03-26 23:04:25 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-26 23:04:28 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 23:04:28 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 13 buttons, 1 links
+2026-03-26 23:04:28 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-26 23:04:30 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 23:04:30 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 13 buttons, 1 links
+2026-03-26 23:04:33 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-26 23:04:35 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 23:04:35 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 13 buttons, 1 links
+2026-03-26 23:04:35 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-26 23:04:38 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 23:04:38 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 13 buttons, 1 links
+2026-03-26 23:04:43 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-26 23:04:45 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 23:04:45 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 13 buttons, 1 links
+2026-03-26 23:04:45 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260326_230445_testproject-one-chi.vercel.app_
+   ├─ Total clickables: 154
+   ├─ After filtering: 30 (80.52% reduction)
+   └─ Discovered: 1 URLs
+2026-03-26 23:04:50 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 23:04:50 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 13 buttons, 1 links
+2026-03-26 23:04:55 | crawler.intelligent_link_filter | INFO | 🎯 Filtered 41 → 35 (saved 6 clicks)
+2026-03-26 23:04:58 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-26 23:05:00 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 23:05:00 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 13 buttons, 1 links
+2026-03-26 23:05:04 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-26 23:05:06 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 23:05:06 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 13 buttons, 1 links
+2026-03-26 23:05:10 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-26 23:05:12 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 23:05:12 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 13 buttons, 1 links
+2026-03-26 23:05:28 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-26 23:05:30 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 23:05:30 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 13 buttons, 1 links
+2026-03-26 23:05:30 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-26 23:05:32 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 23:05:32 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 13 buttons, 1 links
+2026-03-26 23:05:36 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-26 23:05:39 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 23:05:39 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 13 buttons, 1 links
+2026-03-26 23:05:39 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-26 23:05:41 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 23:05:41 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 13 buttons, 1 links
+2026-03-26 23:05:47 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-26 23:05:49 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 23:05:49 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 13 buttons, 1 links
+2026-03-26 23:05:49 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260326_230549_testproject-one-chi.vercel.app_
+   ├─ Total clickables: 154
+   ├─ After filtering: 30 (80.52% reduction)
+   └─ Discovered: 1 URLs
+2026-03-26 23:05:49 | crawler.state_manager | INFO | ✅ New state: 360f2072 | / | 0 inputs, 0 forms
+2026-03-26 23:05:49 | crawler.page_snapshot | INFO | 📋 Snapshot summary saved: data\snapshots\snapshots_summary.json
+2026-03-26 23:05:50 | crawler.page_loader | INFO | 🛑 Browser closed
+2026-03-26 23:09:47 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 6 detection strategies
+2026-03-26 23:09:47 | crawler.state_manager | INFO | StateManager initialized (normalization=ON)
+2026-03-26 23:09:47 | crawler.intelligent_link_filter | INFO | IntelligentLinkFilter initialized
+2026-03-26 23:09:47 | crawler.page_snapshot | INFO | PageSnapshot initialized (output: data/snapshots)
+2026-03-26 23:09:47 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-26 23:09:48 | crawler.page_loader | INFO | PageLoader initialized: chromium, headless=False
+2026-03-26 23:09:49 | crawler.page_loader | INFO | 📂 Loaded session from: auth_session.json
+2026-03-26 23:09:50 | crawler.page_loader | INFO | ✅ Font bypass and animation disable injected
+2026-03-26 23:09:50 | crawler.page_loader | INFO | ✅ Browser started successfully
+2026-03-26 23:09:50 | crawler.page_loader | INFO | 🌐 Loading: https://getbootstrap.com/docs/5.1/forms/form-control/
+2026-03-26 23:10:06 | crawler.intelligent_link_filter | INFO | 🎯 Filtered 92 → 76 (saved 16 clicks)
+2026-03-26 23:11:17 | crawler.page_snapshot | ERROR | Error capturing snapshot: [Errno 22] Invalid argument: 'data\\snapshots\\20260326_231117_getbootstrap.com_docs_5.1_forms_form-control_?.json'
+2026-03-26 23:11:18 | crawler.page_loader | INFO | 🌐 Loading: https://getbootstrap.com/docs/5.1/forms/form-control/
+2026-03-26 23:12:08 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 23:12:08 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 20 inputs, 1 forms, 27 buttons, 144 links
+2026-03-26 23:12:16 | crawler.intelligent_link_filter | INFO | 🎯 Filtered 177 → 161 (saved 16 clicks)
+2026-03-26 23:14:27 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-26 23:14:31 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 23:14:31 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 20 inputs, 1 forms, 27 buttons, 144 links
+2026-03-26 23:18:06 | crawler.page_snapshot | ERROR | Error capturing snapshot: [Errno 22] Invalid argument: 'data\\snapshots\\20260326_231805_getbootstrap.com_docs_5.1_forms_form-control_?.json'
+2026-03-26 23:18:06 | crawler.state_manager | INFO | ✅ New state: a900acff | /docs/5.1/forms/form-control | 20 inputs, 1 forms
+2026-03-26 23:18:06 | crawler.page_loader | INFO | 🌐 Loading: https://getbootstrap.com/docs/5.1/components/progress/
+2026-03-26 23:18:46 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 23:18:46 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 1 inputs, 0 forms, 23 buttons, 144 links
+2026-03-26 23:19:08 | crawler.intelligent_link_filter | INFO | 🎯 Filtered 174 → 159 (saved 15 clicks)
+2026-03-26 23:24:53 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-26 23:24:56 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 23:24:56 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 1 inputs, 0 forms, 23 buttons, 144 links
+2026-03-26 23:25:13 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-26 23:25:16 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 23:25:16 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 1 inputs, 0 forms, 23 buttons, 144 links
+2026-03-26 23:25:16 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260326_232516_getbootstrap.com_docs_5.1_components_progress_
+   ├─ Total clickables: 373
+   ├─ After filtering: 113 (69.71% reduction)
+   └─ Discovered: 30 URLs
+2026-03-26 23:25:17 | crawler.state_manager | INFO | ✅ New state: 93811d27 | /docs/5.1/components/progress | 1 inputs, 0 forms
+2026-03-26 23:25:17 | crawler.page_loader | INFO | 🌐 Loading: https://getbootstrap.com/docs/5.1/customize/color/
+2026-03-26 23:26:01 | crawler.dom_analyzer | WARNING | ⚠️  AI vision form detection failed: Timeout 3000ms exceeded.
+2026-03-26 23:26:01 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 1 inputs, 0 forms, 17 buttons, 141 links
+2026-03-26 23:26:17 | crawler.intelligent_link_filter | INFO | 🎯 Filtered 169 → 154 (saved 15 clicks)
+2026-03-26 23:30:57 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 6 detection strategies
+2026-03-26 23:30:57 | crawler.state_manager | INFO | StateManager initialized (normalization=ON)
+2026-03-26 23:30:57 | crawler.intelligent_link_filter | INFO | IntelligentLinkFilter initialized
+2026-03-26 23:30:57 | crawler.page_snapshot | INFO | PageSnapshot initialized (output: data/snapshots)
+2026-03-26 23:30:57 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-26 23:30:57 | crawler.page_loader | INFO | PageLoader initialized: chromium, headless=False
+2026-03-26 23:31:02 | crawler.page_loader | INFO | 📂 Loaded session from: auth_session.json
+2026-03-26 23:31:03 | crawler.page_loader | INFO | ✅ Font bypass and animation disable injected
+2026-03-26 23:31:03 | crawler.page_loader | INFO | ✅ Browser started successfully
+2026-03-26 23:31:03 | crawler.page_loader | INFO | 🌐 Loading: https://getbootstrap.com/docs/5.1/forms/form-control/
+2026-03-26 23:31:32 | crawler.intelligent_link_filter | INFO | 🎯 Filtered 92 → 76 (saved 16 clicks)
+2026-03-26 23:32:11 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-26 23:32:12 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-26 23:32:17 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 23:32:17 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 1 inputs, 0 forms, 17 buttons, 141 links
+2026-03-26 23:32:19 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 23:32:19 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 20 inputs, 1 forms, 27 buttons, 144 links
+2026-03-26 23:32:57 | crawler.page_snapshot | ERROR | Error capturing snapshot: [Errno 22] Invalid argument: 'data\\snapshots\\20260326_233257_getbootstrap.com_docs_5.1_forms_form-control_?.json'
+2026-03-26 23:33:10 | crawler.page_loader | INFO | 🌐 Loading: https://getbootstrap.com/docs/5.1/forms/form-control/
+2026-03-26 23:34:03 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 23:34:03 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 20 inputs, 1 forms, 27 buttons, 144 links
+2026-03-26 23:34:17 | crawler.intelligent_link_filter | INFO | 🎯 Filtered 177 → 161 (saved 16 clicks)
+2026-03-26 23:35:17 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-26 23:35:22 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 23:35:22 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 1 inputs, 0 forms, 17 buttons, 141 links
+2026-03-26 23:35:49 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-26 23:35:51 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 23:35:51 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 1 inputs, 0 forms, 17 buttons, 141 links
+2026-03-26 23:36:04 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-26 23:36:07 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 23:36:07 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 1 inputs, 0 forms, 17 buttons, 141 links
+2026-03-26 23:36:23 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-26 23:36:25 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 23:36:25 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 1 inputs, 0 forms, 17 buttons, 141 links
+2026-03-26 23:36:25 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260326_233625_getbootstrap.com_docs_5.1_customize_color_
+   ├─ Total clickables: 362
+   ├─ After filtering: 115 (68.23% reduction)
+   └─ Discovered: 15 URLs
+2026-03-26 23:36:25 | crawler.state_manager | INFO | ✅ New state: 39aebcdf | /docs/5.1/customize/color | 1 inputs, 0 forms
+2026-03-26 23:36:25 | crawler.page_loader | INFO | 🌐 Loading: https://getbootstrap.com/docs/5.1/components/carousel/
+2026-03-26 23:36:46 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-26 23:36:48 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 23:36:48 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 20 inputs, 1 forms, 27 buttons, 144 links
+2026-03-26 23:37:06 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 23:37:06 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 1 inputs, 0 forms, 48 buttons, 155 links
+2026-03-26 23:37:18 | crawler.intelligent_link_filter | INFO | 🎯 Filtered 199 → 184 (saved 15 clicks)
+2026-03-26 23:40:18 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 6 detection strategies
+2026-03-26 23:40:18 | crawler.state_manager | INFO | StateManager initialized (normalization=ON)
+2026-03-26 23:40:18 | crawler.intelligent_link_filter | INFO | IntelligentLinkFilter initialized
+2026-03-26 23:40:18 | crawler.page_snapshot | INFO | PageSnapshot initialized (output: data/snapshots)
+2026-03-26 23:40:18 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-26 23:40:18 | crawler.page_loader | INFO | PageLoader initialized: chromium, headless=False
+2026-03-26 23:40:21 | crawler.page_loader | INFO | 📂 Loaded session from: auth_session.json
+2026-03-26 23:40:21 | crawler.page_snapshot | ERROR | Error capturing snapshot: Target page, context or browser has been closed
+2026-03-26 23:40:21 | crawler.page_snapshot | INFO | 📋 Snapshot summary saved: data\snapshots\snapshots_summary.json
+2026-03-26 23:40:21 | crawler.page_loader | INFO | ✅ Font bypass and animation disable injected
+2026-03-26 23:40:21 | crawler.page_loader | INFO | ✅ Browser started successfully
+2026-03-26 23:40:21 | crawler.page_loader | INFO | 🌐 Loading: https://www.httpbin.org/forms/post
+2026-03-26 23:40:22 | crawler.page_loader | INFO | 🛑 Browser closed
+2026-03-26 23:40:46 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260326_234046_www.httpbin.org_forms_post
+   ├─ Total clickables: 13
+   ├─ After filtering: 9 (30.77% reduction)
+   └─ Discovered: 1 URLs
+2026-03-26 23:40:53 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 23:40:53 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 12 inputs, 1 forms, 1 buttons, 0 links
+2026-03-26 23:40:56 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 6 detection strategies
+2026-03-26 23:40:56 | crawler.state_manager | INFO | StateManager initialized (normalization=ON)
+2026-03-26 23:40:56 | crawler.intelligent_link_filter | INFO | IntelligentLinkFilter initialized
+2026-03-26 23:40:56 | crawler.page_snapshot | INFO | PageSnapshot initialized (output: data/snapshots)
+2026-03-26 23:40:56 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-26 23:40:56 | crawler.page_loader | INFO | PageLoader initialized: chromium, headless=False
+2026-03-26 23:40:58 | crawler.page_loader | INFO | 📂 Loaded session from: auth_session.json
+2026-03-26 23:41:00 | crawler.page_loader | INFO | ✅ Font bypass and animation disable injected
+2026-03-26 23:41:00 | crawler.page_loader | INFO | ✅ Browser started successfully
+2026-03-26 23:41:00 | crawler.page_loader | INFO | 🌐 Loading: https://www.httpbin.org/forms/post
+2026-03-26 23:41:11 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260326_234111_www.httpbin.org_forms_post
+   ├─ Total clickables: 13
+   ├─ After filtering: 9 (30.77% reduction)
+   └─ Discovered: 1 URLs
+2026-03-26 23:41:11 | crawler.state_manager | INFO | ✅ New state: 8bb879a1 | /forms/post | 12 inputs, 1 forms
+2026-03-26 23:41:11 | crawler.page_loader | INFO | 🌐 Loading: https://www.httpbin.org/post
+2026-03-26 23:41:20 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 23:41:20 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 0 buttons, 0 links
+2026-03-26 23:41:22 | crawler.page_snapshot | INFO | 📋 Snapshot summary saved: data\snapshots\snapshots_summary.json
+2026-03-26 23:41:22 | crawler.page_loader | INFO | 🛑 Browser closed
+2026-03-26 23:41:26 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260326_234126_www.httpbin.org_forms_post
+   ├─ Total clickables: 13
+   ├─ After filtering: 9 (30.77% reduction)
+   └─ Discovered: 1 URLs
+2026-03-26 23:41:30 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 23:41:30 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 12 inputs, 1 forms, 1 buttons, 0 links
+2026-03-26 23:41:37 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 6 detection strategies
+2026-03-26 23:41:37 | crawler.state_manager | INFO | StateManager initialized (normalization=ON)
+2026-03-26 23:41:37 | crawler.intelligent_link_filter | INFO | IntelligentLinkFilter initialized
+2026-03-26 23:41:37 | crawler.page_snapshot | INFO | PageSnapshot initialized (output: data/snapshots)
+2026-03-26 23:41:37 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-26 23:41:38 | crawler.page_loader | INFO | PageLoader initialized: chromium, headless=False
+2026-03-26 23:41:40 | crawler.page_loader | INFO | 📂 Loaded session from: auth_session.json
+2026-03-26 23:41:41 | crawler.page_loader | INFO | ✅ Font bypass and animation disable injected
+2026-03-26 23:41:41 | crawler.page_loader | INFO | ✅ Browser started successfully
+2026-03-26 23:41:41 | crawler.page_loader | INFO | 🌐 Loading: https://www.httpbin.org/forms/post
+2026-03-26 23:41:43 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-26 23:41:49 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260326_234149_www.httpbin.org_forms_post
+   ├─ Total clickables: 13
+   ├─ After filtering: 9 (30.77% reduction)
+   └─ Discovered: 1 URLs
+2026-03-26 23:41:49 | crawler.state_manager | INFO | ✅ New state: 8bb879a1 | /forms/post | 12 inputs, 1 forms
+2026-03-26 23:41:49 | crawler.page_loader | INFO | 🌐 Loading: https://www.httpbin.org/post
+2026-03-26 23:41:49 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 23:41:49 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 1 inputs, 0 forms, 48 buttons, 155 links
+2026-03-26 23:41:56 | crawler.dom_analyzer | ERROR | Error extracting inputs: Target page, context or browser has been closed
+2026-03-26 23:41:56 | crawler.dom_analyzer | ERROR | Error extracting buttons: Target page, context or browser has been closed
+2026-03-26 23:41:56 | crawler.dom_analyzer | ERROR | Error extracting links: Target page, context or browser has been closed
+2026-03-26 23:41:56 | crawler.dom_analyzer | ERROR | Error in semantic detection: Target page, context or browser has been closed
+2026-03-26 23:41:56 | crawler.dom_analyzer | WARNING | ⚠️  AI vision form detection failed: Target page, context or browser has been closed
+2026-03-26 23:41:56 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 0 buttons, 0 links
+2026-03-26 23:41:56 | crawler.page_snapshot | INFO | 📋 Snapshot summary saved: data\snapshots\snapshots_summary.json
+2026-03-26 23:41:57 | crawler.page_loader | INFO | 🛑 Browser closed
+2026-03-26 23:42:02 | crawler.page_snapshot | ERROR | Error capturing snapshot: Target page, context or browser has been closed
+2026-03-26 23:42:03 | crawler.dom_analyzer | ERROR | Error extracting inputs: Target page, context or browser has been closed
+2026-03-26 23:42:03 | crawler.dom_analyzer | ERROR | Error extracting buttons: Target page, context or browser has been closed
+2026-03-26 23:42:03 | crawler.dom_analyzer | ERROR | Error extracting links: Target page, context or browser has been closed
+2026-03-26 23:42:03 | crawler.dom_analyzer | ERROR | Error in semantic detection: Target page, context or browser has been closed
+2026-03-26 23:42:03 | crawler.dom_analyzer | WARNING | ⚠️  AI vision form detection failed: Target page, context or browser has been closed
+2026-03-26 23:42:03 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 0 buttons, 0 links
+2026-03-26 23:42:03 | crawler.page_snapshot | INFO | 📋 Snapshot summary saved: data\snapshots\snapshots_summary.json
+2026-03-26 23:42:03 | crawler.page_loader | INFO | 🛑 Browser closed
+2026-03-26 23:42:19 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-26 23:42:23 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 23:42:23 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 1 inputs, 0 forms, 48 buttons, 155 links
+2026-03-26 23:42:26 | crawler.page_snapshot | ERROR | Error capturing snapshot: Target page, context or browser has been closed
+2026-03-26 23:42:26 | crawler.page_loader | INFO | 🌐 Loading: https://getbootstrap.com/docs/5.1/layout/columns/
+2026-03-26 23:42:26 | crawler.page_loader | ERROR | ❌ Error loading https://getbootstrap.com/docs/5.1/layout/columns/: Target page, context or browser has been closed
+2026-03-26 23:42:26 | crawler.page_loader | INFO | 🌐 Loading: https://getbootstrap.com/docs/5.1/getting-started/contribute/
+2026-03-26 23:42:26 | crawler.page_loader | ERROR | ❌ Error loading https://getbootstrap.com/docs/5.1/getting-started/contribute/: Target page, context or browser has been closed
+2026-03-26 23:42:26 | crawler.page_loader | INFO | 🌐 Loading: https://getbootstrap.com/docs/5.1/utilities/shadows/
+2026-03-26 23:42:26 | crawler.page_loader | ERROR | ❌ Error loading https://getbootstrap.com/docs/5.1/utilities/shadows/: Target page, context or browser has been closed
+2026-03-26 23:42:26 | crawler.page_loader | INFO | 🌐 Loading: https://getbootstrap.com/docs/5.1/utilities/opacity/
+2026-03-26 23:42:26 | crawler.page_loader | ERROR | ❌ Error loading https://getbootstrap.com/docs/5.1/utilities/opacity/: Target page, context or browser has been closed
+2026-03-26 23:42:26 | crawler.page_loader | INFO | 🌐 Loading: https://getbootstrap.com/docs/5.1/content/reboot/
+2026-03-26 23:42:26 | crawler.page_loader | ERROR | ❌ Error loading https://getbootstrap.com/docs/5.1/content/reboot/: Target page, context or browser has been closed
+2026-03-26 23:42:26 | crawler.page_loader | INFO | 🌐 Loading: https://getbootstrap.com/docs/5.1/components/modal/
+2026-03-26 23:42:26 | crawler.page_loader | ERROR | ❌ Error loading https://getbootstrap.com/docs/5.1/components/modal/: Target page, context or browser has been closed
+2026-03-26 23:42:26 | crawler.page_loader | INFO | 🌐 Loading: https://getbootstrap.com/docs/5.1/layout/breakpoints/
+2026-03-26 23:42:26 | crawler.page_loader | ERROR | ❌ Error loading https://getbootstrap.com/docs/5.1/layout/breakpoints/: Target page, context or browser has been closed
+2026-03-26 23:42:26 | crawler.page_loader | INFO | 🌐 Loading: https://getbootstrap.com/docs/5.1/forms/validation/
+2026-03-26 23:42:26 | crawler.page_loader | ERROR | ❌ Error loading https://getbootstrap.com/docs/5.1/forms/validation/: Target page, context or browser has been closed
+2026-03-26 23:42:26 | crawler.page_loader | INFO | 🌐 Loading: https://getbootstrap.com/docs/5.1/helpers/colored-links/
+2026-03-26 23:42:26 | crawler.page_loader | ERROR | ❌ Error loading https://getbootstrap.com/docs/5.1/helpers/colored-links/: Target page, context or browser has been closed
+2026-03-26 23:42:26 | crawler.page_loader | INFO | 🌐 Loading: https://getbootstrap.com/docs/5.1/customize/css-variables/
+2026-03-26 23:42:26 | crawler.page_loader | ERROR | ❌ Error loading https://getbootstrap.com/docs/5.1/customize/css-variables/: Target page, context or browser has been closed
+2026-03-26 23:42:26 | crawler.page_loader | INFO | 🌐 Loading: https://getbootstrap.com/docs/5.1/utilities/text/
+2026-03-26 23:42:26 | crawler.page_loader | ERROR | ❌ Error loading https://getbootstrap.com/docs/5.1/utilities/text/: Target page, context or browser has been closed
+2026-03-26 23:42:26 | crawler.page_loader | INFO | 🌐 Loading: https://getbootstrap.com/docs/5.1/utilities/sizing/
+2026-03-26 23:42:26 | crawler.page_loader | ERROR | ❌ Error loading https://getbootstrap.com/docs/5.1/utilities/sizing/: Target page, context or browser has been closed
+2026-03-26 23:42:26 | crawler.page_loader | INFO | 🌐 Loading: https://getbootstrap.com/docs/5.1/layout/gutters/
+2026-03-26 23:42:26 | crawler.page_loader | ERROR | ❌ Error loading https://getbootstrap.com/docs/5.1/layout/gutters/: Target page, context or browser has been closed
+2026-03-26 23:42:26 | crawler.page_loader | INFO | 🌐 Loading: https://getbootstrap.com/docs/5.1/getting-started/parcel/
+2026-03-26 23:42:26 | crawler.page_loader | ERROR | ❌ Error loading https://getbootstrap.com/docs/5.1/getting-started/parcel/: Target page, context or browser has been closed
+2026-03-26 23:42:26 | crawler.page_loader | INFO | 🌐 Loading: https://getbootstrap.com/
+2026-03-26 23:42:26 | crawler.page_loader | ERROR | ❌ Error loading https://getbootstrap.com/: Target page, context or browser has been closed
+2026-03-26 23:42:26 | crawler.page_loader | INFO | 🌐 Loading: https://getbootstrap.com/docs/5.1/components/offcanvas/
+2026-03-26 23:42:26 | crawler.page_loader | ERROR | ❌ Error loading https://getbootstrap.com/docs/5.1/components/offcanvas/: Target page, context or browser has been closed
+2026-03-26 23:42:26 | crawler.page_loader | INFO | 🌐 Loading: https://getbootstrap.com/docs/5.1/forms/select/
+2026-03-26 23:42:26 | crawler.page_loader | ERROR | ❌ Error loading https://getbootstrap.com/docs/5.1/forms/select/: Target page, context or browser has been closed
+2026-03-26 23:42:26 | crawler.page_loader | INFO | 🌐 Loading: https://getbootstrap.com/docs/5.0/components/progress/
+2026-03-26 23:42:26 | crawler.page_loader | ERROR | ❌ Error loading https://getbootstrap.com/docs/5.0/components/progress/: Target page, context or browser has been closed
+2026-03-26 23:42:26 | crawler.page_loader | INFO | 🌐 Loading: https://getbootstrap.com/docs/5.2/customize/color/
+2026-03-26 23:42:26 | crawler.page_loader | ERROR | ❌ Error loading https://getbootstrap.com/docs/5.2/customize/color/: Target page, context or browser has been closed
+2026-03-26 23:42:26 | crawler.page_snapshot | INFO | 📋 Snapshot summary saved: data\snapshots\snapshots_summary.json
+2026-03-26 23:42:27 | crawler.page_loader | INFO | 🛑 Browser closed
+2026-03-26 23:42:54 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 6 detection strategies
+2026-03-26 23:42:54 | crawler.state_manager | INFO | StateManager initialized (normalization=ON)
+2026-03-26 23:42:54 | crawler.intelligent_link_filter | INFO | IntelligentLinkFilter initialized
+2026-03-26 23:42:54 | crawler.page_snapshot | INFO | PageSnapshot initialized (output: data/snapshots)
+2026-03-26 23:42:54 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-26 23:42:54 | crawler.page_loader | INFO | PageLoader initialized: chromium, headless=False
+2026-03-26 23:42:55 | crawler.page_loader | INFO | 📂 Loaded session from: auth_session.json
+2026-03-26 23:42:55 | crawler.page_loader | INFO | ✅ Font bypass and animation disable injected
+2026-03-26 23:42:55 | crawler.page_loader | INFO | ✅ Browser started successfully
+2026-03-26 23:42:55 | crawler.page_loader | INFO | 🌐 Loading: https://www.httpbin.org/forms/post
+2026-03-26 23:43:17 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260326_234317_www.httpbin.org_forms_post
+   ├─ Total clickables: 13
+   ├─ After filtering: 9 (30.77% reduction)
+   └─ Discovered: 1 URLs
+2026-03-26 23:43:22 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 23:43:22 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 12 inputs, 1 forms, 1 buttons, 0 links
+2026-03-26 23:43:37 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260326_234337_www.httpbin.org_forms_post
+   ├─ Total clickables: 13
+   ├─ After filtering: 9 (30.77% reduction)
+   └─ Discovered: 1 URLs
+2026-03-26 23:43:37 | crawler.state_manager | INFO | ✅ New state: 8bb879a1 | /forms/post | 12 inputs, 1 forms
+2026-03-26 23:43:37 | crawler.page_loader | INFO | 🌐 Loading: https://www.httpbin.org/post
+2026-03-26 23:43:44 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-26 23:43:44 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 0 buttons, 0 links
+2026-03-26 23:43:46 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260326_234346_www.httpbin.org_post
+   ├─ Total clickables: 0
+   ├─ After filtering: 0 (0% reduction)
+   └─ Discovered: 0 URLs
+2026-03-26 23:43:46 | crawler.state_manager | INFO | ✅ New state: 7f5f988b | /post | 0 inputs, 0 forms
+2026-03-26 23:43:46 | crawler.page_snapshot | INFO | 📋 Snapshot summary saved: data\snapshots\snapshots_summary.json
+2026-03-26 23:43:47 | crawler.page_loader | INFO | 🛑 Browser closed
+2026-03-27 01:50:17 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 6 detection strategies
+2026-03-27 01:50:17 | crawler.state_manager | INFO | StateManager initialized (normalization=ON)
+2026-03-27 01:50:17 | crawler.intelligent_link_filter | INFO | IntelligentLinkFilter initialized
+2026-03-27 01:50:17 | crawler.page_snapshot | INFO | PageSnapshot initialized (output: data/snapshots)
+2026-03-27 01:50:17 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-27 01:50:17 | crawler.page_loader | INFO | PageLoader initialized: chromium, headless=False
+2026-03-27 01:50:18 | crawler.page_loader | INFO | 📂 Loaded session from: auth_session.json
+2026-03-27 01:50:18 | crawler.page_loader | INFO | ✅ Font bypass and animation disable injected
+2026-03-27 01:50:18 | crawler.page_loader | INFO | ✅ Browser started successfully
+2026-03-27 01:50:18 | crawler.page_loader | INFO | 🌐 Loading: http://uitestingplayground.com/
+2026-03-27 01:51:26 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260327_015126_uitestingplayground.com_
+   ├─ Total clickables: 68
+   ├─ After filtering: 27 (60.29% reduction)
+   └─ Discovered: 25 URLs
+2026-03-27 01:51:37 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-27 01:51:37 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 1 buttons, 34 links
+2026-03-27 01:52:40 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260327_015240_uitestingplayground.com_
+   ├─ Total clickables: 68
+   ├─ After filtering: 27 (60.29% reduction)
+   └─ Discovered: 25 URLs
+2026-03-27 01:52:40 | crawler.state_manager | INFO | ✅ New state: fa6da8bd | / | 0 inputs, 0 forms
+2026-03-27 01:52:40 | crawler.page_loader | INFO | 🌐 Loading: http://uitestingplayground.com/sampleapp
+2026-03-27 01:52:53 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-27 01:52:53 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 2 inputs, 0 forms, 2 buttons, 7 links
+2026-03-27 01:53:05 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-27 01:53:06 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-27 01:53:06 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 2 inputs, 0 forms, 2 buttons, 7 links
+2026-03-27 01:53:06 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260327_015306_uitestingplayground.com_sampleapp
+   ├─ Total clickables: 18
+   ├─ After filtering: 5 (72.22% reduction)
+   └─ Discovered: 2 URLs
+2026-03-27 01:53:06 | crawler.state_manager | INFO | ✅ New state: 5e206a33 | /sampleapp | 2 inputs, 0 forms
+2026-03-27 01:53:06 | crawler.page_loader | INFO | 🌐 Loading: http://uitestingplayground.com/autowait
+2026-03-27 01:53:18 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-27 01:53:18 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 6 inputs, 1 forms, 5 buttons, 7 links
+2026-03-27 01:53:32 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-27 01:53:33 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-27 01:53:33 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 6 inputs, 1 forms, 5 buttons, 7 links
+2026-03-27 01:53:34 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-27 01:53:35 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-27 01:53:35 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 6 inputs, 1 forms, 5 buttons, 7 links
+2026-03-27 01:53:38 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-27 01:53:39 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-27 01:53:39 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 6 inputs, 1 forms, 5 buttons, 7 links
+2026-03-27 01:53:40 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-27 01:53:41 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-27 01:53:41 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 6 inputs, 1 forms, 5 buttons, 7 links
+2026-03-27 01:53:41 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260327_015341_uitestingplayground.com_autowait
+   ├─ Total clickables: 27
+   ├─ After filtering: 8 (70.37% reduction)
+   └─ Discovered: 2 URLs
+2026-03-27 01:53:41 | crawler.state_manager | INFO | ✅ New state: e4a2c3d8 | /autowait | 6 inputs, 1 forms
+2026-03-27 01:53:41 | crawler.page_loader | INFO | 🌐 Loading: http://uitestingplayground.com/verifytext
+2026-03-27 01:53:53 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-27 01:53:53 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 1 buttons, 7 links
+2026-03-27 01:54:03 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260327_015403_uitestingplayground.com_verifytext
+   ├─ Total clickables: 14
+   ├─ After filtering: 3 (78.57% reduction)
+   └─ Discovered: 2 URLs
+2026-03-27 01:54:03 | crawler.state_manager | INFO | ✅ New state: 42a574e7 | /verifytext | 0 inputs, 0 forms
+2026-03-27 01:54:03 | crawler.page_loader | INFO | 🌐 Loading: http://uitestingplayground.com/textinput
+2026-03-27 01:54:15 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-27 01:54:15 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 1 inputs, 0 forms, 2 buttons, 7 links
+2026-03-27 01:54:28 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260327_015428_uitestingplayground.com_textinput
+   ├─ Total clickables: 17
+   ├─ After filtering: 5 (70.59% reduction)
+   └─ Discovered: 2 URLs
+2026-03-27 01:54:28 | crawler.state_manager | INFO | ✅ New state: 085f0117 | /textinput | 1 inputs, 0 forms
+2026-03-27 01:54:28 | crawler.page_loader | INFO | 🌐 Loading: http://uitestingplayground.com/mouseover
+2026-03-27 01:54:41 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-27 01:54:41 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 1 buttons, 7 links
+2026-03-27 01:54:54 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-27 01:54:55 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-27 01:54:55 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 1 buttons, 7 links
+2026-03-27 01:54:57 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-27 01:54:58 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-27 01:54:58 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 1 buttons, 7 links
+2026-03-27 01:54:58 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260327_015458_uitestingplayground.com_mouseover
+   ├─ Total clickables: 16
+   ├─ After filtering: 5 (68.75% reduction)
+   └─ Discovered: 2 URLs
+2026-03-27 01:54:58 | crawler.state_manager | INFO | ✅ New state: 5ea6261f | /mouseover | 0 inputs, 0 forms
+2026-03-27 01:54:58 | crawler.page_loader | INFO | 🌐 Loading: http://uitestingplayground.com/dynamictable
+2026-03-27 01:55:10 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-27 01:55:10 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 1 buttons, 8 links
+2026-03-27 01:55:20 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260327_015520_uitestingplayground.com_dynamictable
+   ├─ Total clickables: 16
+   ├─ After filtering: 3 (81.25% reduction)
+   └─ Discovered: 2 URLs
+2026-03-27 01:55:20 | crawler.state_manager | INFO | ✅ New state: be3577b2 | /dynamictable | 0 inputs, 0 forms
+2026-03-27 01:55:20 | crawler.page_loader | INFO | 🌐 Loading: http://uitestingplayground.com/home
+2026-03-27 01:55:33 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-27 01:55:33 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 1 buttons, 34 links
+2026-03-27 01:56:34 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260327_015634_uitestingplayground.com_home
+   ├─ Total clickables: 68
+   ├─ After filtering: 27 (60.29% reduction)
+   └─ Discovered: 25 URLs
+2026-03-27 01:56:34 | crawler.state_manager | INFO | ✅ New state: cc441b6c | /home | 0 inputs, 0 forms
+2026-03-27 01:56:34 | crawler.page_loader | INFO | 🌐 Loading: http://uitestingplayground.com/geolocation
+2026-03-27 01:56:47 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-27 01:56:47 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 2 buttons, 7 links
+2026-03-27 01:57:00 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-27 01:57:01 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-27 01:57:01 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 2 buttons, 7 links
+2026-03-27 01:57:01 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260327_015701_uitestingplayground.com_geolocation
+   ├─ Total clickables: 16
+   ├─ After filtering: 4 (75.0% reduction)
+   └─ Discovered: 2 URLs
+2026-03-27 01:57:01 | crawler.state_manager | INFO | ✅ New state: 5fcd81e2 | /geolocation | 0 inputs, 0 forms
+2026-03-27 01:57:01 | crawler.page_loader | INFO | 🌐 Loading: http://uitestingplayground.com/overlapped
+2026-03-27 01:57:13 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-27 01:57:13 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 3 inputs, 0 forms, 1 buttons, 7 links
+2026-03-27 01:57:23 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260327_015723_uitestingplayground.com_overlapped
+   ├─ Total clickables: 17
+   ├─ After filtering: 4 (76.47% reduction)
+   └─ Discovered: 2 URLs
+2026-03-27 01:57:23 | crawler.state_manager | INFO | ✅ New state: 837329d0 | /overlapped | 3 inputs, 0 forms
+2026-03-27 01:57:27 | crawler.state_manager | INFO | 💾 Checkpoint saved: data\checkpoints\checkpoint_10.json
+2026-03-27 01:57:27 | crawler.page_loader | INFO | 🌐 Loading: http://uitestingplayground.com/shadowdom
+2026-03-27 01:57:39 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-27 01:57:39 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 1 buttons, 7 links
+2026-03-27 01:57:49 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260327_015749_uitestingplayground.com_shadowdom
+   ├─ Total clickables: 17
+   ├─ After filtering: 4 (76.47% reduction)
+   └─ Discovered: 2 URLs
+2026-03-27 01:57:49 | crawler.state_manager | INFO | ✅ New state: f9bbc276 | /shadowdom | 0 inputs, 0 forms
+2026-03-27 01:57:49 | crawler.page_loader | INFO | 🌐 Loading: http://uitestingplayground.com/click
+2026-03-27 01:58:02 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-27 01:58:02 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 2 buttons, 7 links
+2026-03-27 01:58:14 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260327_015814_uitestingplayground.com_click
+   ├─ Total clickables: 16
+   ├─ After filtering: 4 (75.0% reduction)
+   └─ Discovered: 2 URLs
+2026-03-27 01:58:14 | crawler.state_manager | INFO | ✅ New state: 5d1e5661 | /click | 0 inputs, 0 forms
+2026-03-27 01:58:14 | crawler.page_loader | INFO | 🌐 Loading: http://uitestingplayground.com/scrollbars
+2026-03-27 01:58:27 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-27 01:58:27 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 2 buttons, 7 links
+2026-03-27 01:58:39 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260327_015839_uitestingplayground.com_scrollbars
+   ├─ Total clickables: 16
+   ├─ After filtering: 4 (75.0% reduction)
+   └─ Discovered: 2 URLs
+2026-03-27 01:58:39 | crawler.state_manager | INFO | ✅ New state: d762a3fd | /scrollbars | 0 inputs, 0 forms
+2026-03-27 01:58:39 | crawler.page_loader | INFO | 🌐 Loading: http://uitestingplayground.com/progressbar
+2026-03-27 01:58:51 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-27 01:58:51 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 3 buttons, 7 links
+2026-03-27 01:59:04 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-27 01:59:04 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-27 01:59:04 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 3 buttons, 7 links
+2026-03-27 01:59:05 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-27 01:59:06 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-27 01:59:06 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 3 buttons, 7 links
+2026-03-27 01:59:06 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260327_015906_uitestingplayground.com_progressbar
+   ├─ Total clickables: 18
+   ├─ After filtering: 5 (72.22% reduction)
+   └─ Discovered: 2 URLs
+2026-03-27 01:59:06 | crawler.state_manager | INFO | ✅ New state: 33232ea1 | /progressbar | 0 inputs, 0 forms
+2026-03-27 01:59:06 | crawler.page_loader | INFO | 🌐 Loading: http://uitestingplayground.com/upload
+2026-03-27 01:59:19 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-27 01:59:19 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 1 buttons, 7 links
+2026-03-27 01:59:28 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260327_015928_uitestingplayground.com_upload
+   ├─ Total clickables: 14
+   ├─ After filtering: 3 (78.57% reduction)
+   └─ Discovered: 2 URLs
+2026-03-27 01:59:28 | crawler.state_manager | INFO | ✅ New state: 603bdf72 | /upload | 0 inputs, 0 forms
+2026-03-27 01:59:28 | crawler.page_loader | INFO | 🌐 Loading: http://uitestingplayground.com/loaddelay
+2026-03-27 01:59:46 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-27 01:59:46 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 2 buttons, 7 links
+2026-03-27 02:00:08 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260327_020008_uitestingplayground.com_loaddelay
+   ├─ Total clickables: 16
+   ├─ After filtering: 4 (75.0% reduction)
+   └─ Discovered: 1 URLs
+2026-03-27 02:00:08 | crawler.state_manager | INFO | ✅ New state: fb680aca | /loaddelay | 0 inputs, 0 forms
+2026-03-27 02:00:08 | crawler.page_loader | INFO | 🌐 Loading: http://uitestingplayground.com/hiddenlayers
+2026-03-27 02:00:21 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-27 02:00:21 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 2 buttons, 7 links
+2026-03-27 02:00:33 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-27 02:00:34 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-27 02:00:34 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 3 buttons, 7 links
+2026-03-27 02:00:34 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260327_020034_uitestingplayground.com_hiddenlayers
+   ├─ Total clickables: 16
+   ├─ After filtering: 4 (75.0% reduction)
+   └─ Discovered: 2 URLs
+2026-03-27 02:00:34 | crawler.state_manager | INFO | ✅ New state: eee5d27e | /hiddenlayers | 0 inputs, 0 forms
+2026-03-27 02:00:34 | crawler.state_manager | INFO | ✅ New state: 2a1ba661 | /hiddenlayers | 0 inputs, 0 forms
+2026-03-27 02:00:34 | crawler.page_loader | INFO | 🌐 Loading: http://uitestingplayground.com/disabledinput
+2026-03-27 02:00:46 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-27 02:00:46 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 1 inputs, 0 forms, 2 buttons, 7 links
+2026-03-27 02:00:59 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-27 02:01:00 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-27 02:01:00 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 1 inputs, 0 forms, 2 buttons, 7 links
+2026-03-27 02:01:00 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260327_020100_uitestingplayground.com_disabledinput
+   ├─ Total clickables: 17
+   ├─ After filtering: 5 (70.59% reduction)
+   └─ Discovered: 2 URLs
+2026-03-27 02:01:00 | crawler.state_manager | INFO | ✅ New state: 78dbbfea | /disabledinput | 1 inputs, 0 forms
+2026-03-27 02:01:00 | crawler.page_loader | INFO | 🌐 Loading: http://uitestingplayground.com/clientdelay
+2026-03-27 02:01:12 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-27 02:01:12 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 2 buttons, 7 links
+2026-03-27 02:01:24 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260327_020124_uitestingplayground.com_clientdelay
+   ├─ Total clickables: 16
+   ├─ After filtering: 4 (75.0% reduction)
+   └─ Discovered: 2 URLs
+2026-03-27 02:01:24 | crawler.state_manager | INFO | ✅ New state: 1f860cb5 | /clientdelay | 0 inputs, 0 forms
+2026-03-27 02:01:24 | crawler.page_loader | INFO | 🌐 Loading: http://uitestingplayground.com/ajax
+2026-03-27 02:01:37 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-27 02:01:37 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 2 buttons, 7 links
+2026-03-27 02:01:49 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260327_020149_uitestingplayground.com_ajax
+   ├─ Total clickables: 16
+   ├─ After filtering: 4 (75.0% reduction)
+   └─ Discovered: 2 URLs
+2026-03-27 02:01:49 | crawler.state_manager | INFO | ✅ New state: 7cd19030 | /ajax | 0 inputs, 0 forms
+2026-03-27 02:01:53 | crawler.state_manager | INFO | 💾 Checkpoint saved: data\checkpoints\checkpoint_20.json
+2026-03-27 02:01:53 | crawler.page_loader | INFO | 🌐 Loading: http://uitestingplayground.com/resources
+2026-03-27 02:02:05 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-03-27 02:02:05 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 1 buttons, 19 links
+2026-03-27 02:02:14 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260327_020214_uitestingplayground.com_resources
+   ├─ Total clickables: 38
+   ├─ After filtering: 2 (94.74% reduction)
+   └─ Discovered: 2 URLs
+2026-03-27 02:02:14 | crawler.state_manager | INFO | ✅ New state: 5a4fef5e | /resources | 0 inputs, 0 forms
+2026-03-27 02:02:14 | crawler.page_snapshot | INFO | 📋 Snapshot summary saved: data\snapshots\snapshots_summary.json
+2026-03-27 02:02:14 | crawler.page_loader | INFO | 🛑 Browser closed
