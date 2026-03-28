@@ -1,7 +1,0 @@
-url,normalized_url,title,input_count,form_count,link_count
-https://the-qa-testers-gauntlet.vercel.app/,/,QA Tester's Gauntlet Web App,0,0,4
-https://the-qa-testers-gauntlet.vercel.app/interactive.html,/interactive.html,The QA Tester's Gauntlet - Dynamic Events,0,0,4
-https://the-qa-testers-gauntlet.vercel.app/interactive.html#component-add-element,/interactive.html,The QA Tester's Gauntlet - Dynamic Events - Add Element,0,0,0
-https://the-qa-testers-gauntlet.vercel.app/data-vault.html#wizard-step-1,https://the-qa-testers-gauntlet.vercel.app/data-vault.html,The QA Tester's Gauntlet - The Data Vault - Step 1 (Step 1),0,0,0
-https://the-qa-testers-gauntlet.vercel.app/index.html,/index.html,QA Tester's Gauntlet Web App,0,0,4
-https://the-qa-testers-gauntlet.vercel.app/forms.html,/forms.html,The QA Tester's Gauntlet - The Form Factory,23,1,4
