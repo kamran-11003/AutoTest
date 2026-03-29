@@ -1,7 +1,0 @@
-2026-03-07 19:59:05 | crawler.redis_cache | INFO | ℹ️  Redis not available (using in-memory cache): Error 10061 connecting to 127.0.0.1:6379. No connection could be made because the target machine actively refused it.
-2026-03-07 19:59:05 | crawler.ai_detector | INFO | 🤖 Gemini element detector initialized (model: gemini-2.0-flash)
-2026-03-07 19:59:05 | crawler.ai_detector | INFO | 🤖 Gemini element detector initialized (model: gemini-2.0-flash)
-2026-03-07 19:59:05 | crawler.link_extractor | INFO | 🤖 Gemini AI detector enabled with 11 API keys
-2026-03-07 19:59:05 | crawler.link_extractor | INFO | LinkExtractor initialized (same_origin=True, AVB=ON, intelligent_filter=ON, snapshots=ON)
-2026-03-07 19:59:05 | crawler.ai_enricher | INFO | ✅ Gemini AI enrichment enabled with 11 API keys (gemini-2.0-flash)
-2026-03-07 19:59:05 | crawler.interaction_sim | INFO | InteractionSimulator initialized (submit_forms=False, expand=True)

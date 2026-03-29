@@ -78,6 +78,7 @@ class ExecutionReport:
     heuristic_decisions: int = 0
     llm_decisions:       int = 0
     stop_decisions:      int = 0
+    pattern_overrides:   int = 0   # times pattern learning overrode DQN action
 
     @property
     def pass_rate(self) -> float:

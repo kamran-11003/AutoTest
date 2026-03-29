@@ -1,8 +1,0 @@
-2026-03-07 20:01:23 | crawler.page_loader | INFO | PageLoader initialized: chromium, headless=False
-2026-03-07 20:01:26 | crawler.page_loader | INFO | 📂 Loaded session from: auth_session.json
-2026-03-07 20:01:26 | crawler.page_loader | INFO | ✅ Font bypass and animation disable injected
-2026-03-07 20:01:26 | crawler.page_loader | INFO | ✅ Browser started successfully
-2026-03-07 20:01:26 | crawler.page_loader | INFO | 🌐 Loading: http://127.0.0.1:5001
-2026-03-07 20:01:40 | crawler.page_loader | INFO | 🌐 Loading: http://127.0.0.1:5001
-2026-03-07 20:02:00 | crawler.page_loader | INFO | 🌐 Loading: http://127.0.0.1:5001/login
-2026-03-07 20:02:57 | crawler.page_loader | INFO | 🛑 Browser closed

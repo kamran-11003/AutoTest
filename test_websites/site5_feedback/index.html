@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Survey — Site 5</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Share Your Feedback</h1>
+        <p>We value your opinion. All fields marked * are required.</p>
+
+        <form id="feedbackForm" novalidate>
+            <div class="form-group">
+                <label for="name">Full Name *</label>
+                <input type="text" id="name" name="name" placeholder="Your name">
+                <div class="error-msg" id="nameError"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address <span class="optional">(optional)</span></label>
+                <input type="text" id="email" name="email" placeholder="you@example.com">
+                <div class="error-msg" id="emailError"></div>
+            </div>
+
+            <div class="form-group">
+                <label>Overall Rating *</label>
+                <div class="radio-group">
+                    <label class="radio-label"><input type="radio" name="rating" value="1"> 1 — Poor</label>
+                    <label class="radio-label"><input type="radio" name="rating" value="2"> 2 — Fair</label>
+                    <label class="radio-label"><input type="radio" name="rating" value="3"> 3 — Good</label>
+                    <label class="radio-label"><input type="radio" name="rating" value="4"> 4 — Very Good</label>
+                    <label class="radio-label"><input type="radio" name="rating" value="5"> 5 — Excellent</label>
+                </div>
+                <div class="error-msg" id="ratingError"></div>
+            </div>
+
+            <div class="form-group">
+                <label>Categories of Feedback * <span class="hint">(select at least one)</span></label>
+                <div class="checkbox-group">
+                    <label class="check-label"><input type="checkbox" name="categories" value="product"> Product Quality</label>
+                    <label class="check-label"><input type="checkbox" name="categories" value="service"> Customer Service</label>
+                    <label class="check-label"><input type="checkbox" name="categories" value="delivery"> Delivery Speed</label>
+                    <label class="check-label"><input type="checkbox" name="categories" value="pricing"> Pricing</label>
+                    <label class="check-label"><input type="checkbox" name="categories" value="website"> Website Experience</label>
+                </div>
+                <div class="error-msg" id="categoriesError"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="comment">Comment <span class="optional">(max 300 characters)</span></label>
+                <textarea id="comment" name="comment" rows="4" maxlength="300" placeholder="Tell us more..."></textarea>
+                <div class="char-counter"><span id="charCount">0</span>/300</div>
+                <div class="error-msg" id="commentError"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number <span class="optional">(optional, 7–15 digits)</span></label>
+                <input type="text" id="phone" name="phone" placeholder="e.g. 01234567890">
+                <div class="error-msg" id="phoneError"></div>
+            </div>
+
+            <button type="submit">Submit Feedback</button>
+        </form>
+    </div>
+
+    <script src="js/validate.js"></script>
+</body>
+</html>

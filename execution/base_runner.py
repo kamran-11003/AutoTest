@@ -66,6 +66,25 @@ class BaseRunner:
         start_ms     = time.perf_counter() * 1000
 
         try:
+            # ── Register dialog listener ─────────────────────────────────
+            # Capture alert()/confirm()/prompt() messages before Playwright
+            # auto-dismisses them.  Stored on the page object so the oracle
+            # can read them via page._autotestai_dialog_messages.
+            if not hasattr(page, '_autotestai_dialog_messages'):
+                page._autotestai_dialog_messages = []
+
+                async def _handle_dialog(dialog):
+                    page._autotestai_dialog_messages.append(dialog.message)
+                    try:
+                        await dialog.dismiss()
+                    except Exception:
+                        pass
+
+                page.on("dialog", _handle_dialog)
+
+            # Clear previous messages for this test run
+            page._autotestai_dialog_messages.clear()
+
             # ── Navigate ─────────────────────────────────────────────────
             if form_url:
                 await page.goto(form_url, timeout=NAV_TIMEOUT, wait_until="domcontentloaded")
@@ -78,9 +97,39 @@ class BaseRunner:
                 await self._fill_fields(page, test_data)
 
             # ── Submit ───────────────────────────────────────────────────
-            submitted = await self._click_submit(page)
-            if not submitted:
-                logger.debug(f"[{test_id}] No submit button found — treating as navigation test")
+            submit_result = await self._click_submit(page)
+
+            if submit_result == "disabled":
+                duration_ms = time.perf_counter() * 1000 - start_ms
+                logger.info(f"[{test_id}] Submit button disabled — skipping")
+                result = TestResult(
+                    test_id=test_id,
+                    status=TestStatus.SKIPPED,
+                    duration_ms=duration_ms,
+                    evidence="Submit button was disabled — test unexecutable as loaded",
+                    test_type=test_type,
+                    form_url=form_url,
+                    test_value=test_value,
+                    expected_result=expected,
+                )
+                return result, {"outcome": "unclear", "confidence": 0, "evidence": "disabled submit button"}
+
+            if submit_result == "not_found":
+                duration_ms = time.perf_counter() * 1000 - start_ms
+                logger.info(f"[{test_id}] No submit button found — skipping")
+                result = TestResult(
+                    test_id=test_id,
+                    status=TestStatus.SKIPPED,
+                    duration_ms=duration_ms,
+                    evidence="No submit button found on page — decorative form or missing submission target",
+                    test_type=test_type,
+                    form_url=form_url,
+                    test_value=test_value,
+                    expected_result=expected,
+                )
+                return result, {"outcome": "unclear", "confidence": 0, "evidence": "no submit button"}
+
+            # submit_result == "clicked"
 
             await asyncio.sleep(1.0)   # wait for page reaction
 
@@ -386,10 +435,14 @@ class BaseRunner:
 
     # ── Submit ─────────────────────────────────────────────────────────────
 
-    async def _click_submit(self, page) -> bool:
+    async def _click_submit(self, page) -> str:
         """
         Find and click the FINAL submit button.
-        Returns True if a button was clicked.
+
+        Returns:
+            ``"clicked"``    – a button was found and successfully clicked
+            ``"disabled"``   – a button was found but is disabled (form prevents submit)
+            ``"not_found"``  – no submit button exists on the page
 
         'Next' and 'Continue' are intentionally absent — those are wizard
         navigation buttons handled by ``_advance_wizard_to_field``.
@@ -411,13 +464,20 @@ class BaseRunner:
             "button:has-text('Done')",
             "[data-testid*='submit']",
         ]
+        found_disabled = False
         for selector in submit_selectors:
             try:
                 el = await page.query_selector(selector)
-                if el and await el.is_visible():
-                    await el.click(timeout=ACTION_TIMEOUT)
-                    return True
+                if not el or not await el.is_visible():
+                    continue
+                # Check enabled state before attempting click
+                if not await el.is_enabled():
+                    found_disabled = True
+                    logger.debug(f"Submit button found but disabled: {selector}")
+                    continue
+                await el.click(timeout=ACTION_TIMEOUT)
+                return "clicked"
             except Exception:
                 continue
-        return False
+        return "disabled" if found_disabled else "not_found"
 

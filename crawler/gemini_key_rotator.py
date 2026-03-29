@@ -150,6 +150,10 @@ class GeminiKeyRotator:
             key_preview = key[-8:] if len(key) > 8 else '***'
             logger.warning(f"🚫 Marked key as SUSPENDED: ...{key_preview}")
             logger.warning(f"   Remaining active keys: {len(self.api_keys) - len(self.suspended_keys)}/{len(self.api_keys)}")
+
+    def mark_success(self):
+        """No-op hook for successful API calls (kept for interface compatibility)."""
+        pass
     
     def get_stats(self) -> dict:
         """Get rotation statistics"""

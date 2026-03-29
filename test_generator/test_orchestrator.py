@@ -91,14 +91,22 @@ class TestOrchestrator:
         
         # Extract all forms from all nodes
         all_forms = []
+        skipped_no_submit = 0
         for node in crawl_data.get('nodes', []):
             node_forms = node.get('forms', [])
             for form in node_forms:
+                # Skip decorative forms with no submit button
+                if not self._form_has_submit(form):
+                    skipped_no_submit += 1
+                    continue
                 # Add URL context to form
                 form['url'] = node.get('url', 'unknown')
                 form['page_title'] = node.get('title', 'unknown')
                 form['form_action'] = form.get('action', 'unknown')
                 all_forms.append(form)
+
+        if skipped_no_submit:
+            logger.info(f"Skipped {skipped_no_submit} form(s) with no submit button (decorative)")
         
         form_data = {
             'forms': all_forms,
@@ -209,13 +217,20 @@ class TestOrchestrator:
         
         # Extract all forms from all nodes
         all_forms = []
+        skipped_no_submit = 0
         for node in crawl_data.get('nodes', []):
             node_forms = node.get('forms', [])
             for form in node_forms:
+                if not self._form_has_submit(form):
+                    skipped_no_submit += 1
+                    continue
                 form['url'] = node.get('url', 'unknown')
                 form['page_title'] = node.get('title', 'unknown')
                 form['form_action'] = form.get('action', 'unknown')
                 all_forms.append(form)
+
+        if skipped_no_submit:
+            logger.info(f"Skipped {skipped_no_submit} form(s) with no submit button (decorative)")
         
         form_data = {
             'forms': all_forms,
@@ -352,6 +367,31 @@ class TestOrchestrator:
             'state_transition_count': 0,
             'use_case_count': 0
         }
+
+    # ── Submit-button detection ────────────────────────────────────────────
+
+    @staticmethod
+    def _form_has_submit(form: Dict) -> bool:
+        """Return True when *form* contains a usable submission mechanism.
+
+        A form is considered decorative (no submit) when:
+        - No ``submit_button`` key, AND
+        - No ``action`` attribute pointing to an endpoint, AND
+        - No input of type submit/button inside the form
+        """
+        # Explicit submit_button recorded by the crawler
+        if form.get('submit_button'):
+            return True
+        # Form has an action attribute (even "#" counts as a handler target)
+        action = form.get('action', '')
+        if action and action not in ('', 'unknown', None):
+            return True
+        # Any input of type submit inside the form
+        for inp in form.get('inputs', []):
+            itype = (inp.get('type') or '').lower()
+            if itype in ('submit', 'button'):
+                return True
+        return False
 
     # ── Companion field enrichment ─────────────────────────────────────────
 

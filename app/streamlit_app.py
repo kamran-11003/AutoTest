@@ -1753,6 +1753,16 @@ def display_execute_tests(results: dict):
     """Execute Tests tab — runs generated test cases against the live application."""
     st.markdown("### 🚀 Execute Tests")
 
+    # ── Show linked crawl context ──────────────────────────────────────────
+    crawl_id = st.session_state.get("selected_crawl", "")
+    crawl_stats = results.get("crawl_stats", {})
+    start_url = crawl_stats.get("start_url", "")
+    if start_url:
+        st.info(f"🌐 **Crawled site:** {start_url}  |  "
+                f"Pages: {crawl_stats.get('pages_crawled', '?')}  |  "
+                f"Forms: {crawl_stats.get('total_forms', '?')}  |  "
+                f"Inputs: {crawl_stats.get('total_inputs', '?')}")
+
     # Check that test cases are loaded
     generated_tests = st.session_state.get("generated_tests")
     if not generated_tests:
@@ -1954,20 +1964,34 @@ def display_execute_tests(results: dict):
     if "exec_report" in st.session_state and not run_clicked:
         st.markdown("#### 📋 Previous Run Results")
 
-    # ── Load & display latest HTML report ─────────────────────────────────
+    # ── Load & display execution reports for this crawl ─────────────────
     results_dir = Path("data/test_results")
     html_reports = sorted(results_dir.glob("report_*.html"), reverse=True) if results_dir.exists() else []
 
+    # If a crawl is selected, prefer reports matching that crawl_id
+    if crawl_id and html_reports:
+        matching = [r for r in html_reports if crawl_id in r.stem]
+        if matching:
+            html_reports = matching
+            st.caption(f"📂 Showing {len(matching)} report(s) linked to crawl **{crawl_id}**")
+
     if html_reports:
-        latest_report = html_reports[0]
-        st.markdown(f"**Latest report:** `{latest_report.name}`")
-        with open(latest_report, "r", encoding="utf-8") as f:
+        # Let user pick which report to view when multiple exist
+        if len(html_reports) > 1:
+            report_names = [r.name for r in html_reports]
+            chosen_name = st.selectbox("Select execution report:", report_names, key="exec_report_selector")
+            chosen_report = results_dir / chosen_name
+        else:
+            chosen_report = html_reports[0]
+
+        st.markdown(f"**Report:** `{chosen_report.name}`")
+        with open(chosen_report, "r", encoding="utf-8") as f:
             html_content = f.read()
         st.components.v1.html(html_content, height=900, scrolling=True)
         st.download_button(
             label="⬇️ Download HTML Report",
             data=html_content,
-            file_name=latest_report.name,
+            file_name=chosen_report.name,
             mime="text/html",
         )
     elif "exec_report" not in st.session_state:

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Room Booking - AutoTestAI</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Book a Room</h1>
+        <p>Reserve your hotel room by filling in the details below.</p>
+
+        <form id="bookingForm" novalidate>
+            <div class="form-group">
+                <label for="checkin">Check-in Date</label>
+                <input type="date" id="checkin" name="checkin" required>
+                <div class="error-msg" id="checkin-error"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="checkout">Check-out Date</label>
+                <input type="date" id="checkout" name="checkout" required>
+                <div class="error-msg" id="checkout-error"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="guests">Number of Guests</label>
+                <input type="number" id="guests" name="guests" min="1" max="10"
+                       placeholder="1-10" required>
+                <div class="error-msg" id="guests-error"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="room">Room Type</label>
+                <select id="room" name="room" required>
+                    <option value="">-- Select room type --</option>
+                    <option value="standard">Standard</option>
+                    <option value="deluxe">Deluxe</option>
+                    <option value="suite">Suite</option>
+                    <option value="penthouse">Penthouse</option>
+                </select>
+                <div class="error-msg" id="room-error"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Guest Email</label>
+                <input type="email" id="email" name="email" placeholder="you@example.com"
+                       required>
+                <div class="error-msg" id="email-error"></div>
+            </div>
+
+            <button type="submit" id="submitBtn">Book Now</button>
+        </form>
+    </div>
+
+    <script src="js/validate.js"></script>
+</body>
+</html>

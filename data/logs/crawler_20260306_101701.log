@@ -1,9 +1,0 @@
-2026-03-06 10:17:56 | crawler.gemini_key_rotator | INFO | 🔑 Loaded 11 Gemini API keys for rotation
-2026-03-06 10:18:48 | crawler.gemini_key_rotator | INFO | 🔄 Rotated API key: ...vvdOTYio → ...7HOuUVAQ (reason: rate_limit)
-2026-03-06 10:19:17 | crawler.gemini_key_rotator | INFO | 🔄 Rotated API key: ...7HOuUVAQ → ...2mnOgfck (reason: rate_limit)
-2026-03-06 10:19:40 | crawler.gemini_key_rotator | INFO | 🔄 Rotated API key: ...2mnOgfck → ...zHeHct_A (reason: rate_limit)
-2026-03-07 19:45:00 | crawler.gemini_key_rotator | INFO | 🔑 Loaded 11 Gemini API keys for rotation
-2026-03-07 19:47:26 | crawler.gemini_key_rotator | INFO | 🔄 Rotated API key: ...vvdOTYio → ...7HOuUVAQ (reason: rate_limit)
-2026-03-07 19:59:03 | crawler.gemini_key_rotator | INFO | 🔑 Loaded 11 Gemini API keys for rotation
-2026-03-07 19:59:05 | crawler.gemini_key_rotator | INFO | 🔑 Loaded 11 Gemini API keys for rotation
-2026-03-07 19:59:05 | crawler.gemini_key_rotator | INFO | 🔑 Loaded 11 Gemini API keys for rotation

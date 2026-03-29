@@ -134,7 +134,31 @@ class HeuristicOracle:
                 score_positive += 10
         except Exception:
             pass
+        # ── 6. HTML5 CONSTRAINT VALIDATION STATE (:invalid CSS) ───────
+        try:
+            invalid_fields = await page.evaluate("""
+                () => Array.from(document.querySelectorAll('input,select,textarea'))
+                      .filter(el => !el.validity.valid && el.getBoundingClientRect().width > 0)
+                      .length
+            """)
+            if invalid_fields > 0:
+                signals.append(f"{invalid_fields} field(s) in :invalid CSS state (browser validation blocked)")
+                score_negative += 25
+        except Exception:
+            pass
 
+        # ── 7. DIALOG / ALERT MESSAGES ────────────────────────────────
+        # Check if dialog messages were captured by the runner's listener
+        dialog_messages = getattr(page, '_autotestai_dialog_messages', [])
+        if dialog_messages:
+            combined = ' '.join(dialog_messages).lower()
+            signals.append(f"Browser dialog captured: '{combined[:120]}'")
+            if any(k in combined for k in ERROR_KEYWORDS):
+                score_negative += 30
+            elif any(k in combined for k in SUCCESS_KEYWORDS):
+                score_positive += 30
+            else:
+                score_negative += 15  # any dialog after submit is likely validation
         # ── 6. MAP AGAINST EXPECTED RESULT ────────────────────────────────
         expected_lower = expected_result.lower()
         if "valid" in expected_lower and "invalid" not in expected_lower:

@@ -1,9 +1,0 @@
-2026-03-25 18:02:02 | app.components.graph_viz | INFO | GraphVisualizer initialized
-2026-03-25 18:02:02 | app.components.graph_viz | INFO | ✅ Added 9 nodes
-2026-03-25 18:02:02 | app.components.graph_viz | INFO | ✅ Graph: 9 nodes, 8 edges
-2026-03-25 18:02:02 | app.components.graph_viz | INFO | 📊 Saved: data\temp_graph.html
-2026-03-25 18:02:05 | app.utils.exporter | INFO | Exporter initialized: data/crawled_graphs
-2026-03-25 18:02:35 | app.components.graph_viz | INFO | GraphVisualizer initialized
-2026-03-25 18:02:35 | app.components.graph_viz | INFO | ✅ Added 9 nodes
-2026-03-25 18:02:35 | app.components.graph_viz | INFO | ✅ Graph: 9 nodes, 8 edges
-2026-03-25 18:02:35 | app.components.graph_viz | INFO | 📊 Saved: data\temp_graph.html

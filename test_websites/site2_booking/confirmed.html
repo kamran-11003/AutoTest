@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Confirmed - AutoTestAI</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="success-message">
+            <h1>✅ Booking Confirmed!</h1>
+            <p>Your reservation has been confirmed.</p>
+            <p id="refCode"></p>
+            <a href="index.html" class="back-link">← Book another room</a>
+        </div>
+    </div>
+    <script>
+        var params = new URLSearchParams(window.location.search);
+        var ref = params.get('ref') || 'N/A';
+        document.getElementById('refCode').textContent = 'Reference: ' + ref;
+    </script>
+</body>
+</html>

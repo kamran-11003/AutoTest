@@ -1,1 +1,0 @@
-2026-03-19 21:21:03 | execution.cache_manager | WARNING | Redis cache unavailable: Error 10061 connecting to 127.0.0.1:6379. No connection could be made because the target machine actively refused it.. Running without cache.

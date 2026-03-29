@@ -28,6 +28,8 @@ from execution.test_subtype_classifier import TestSubtypeClassifier
 from execution.rl_performance_tracker import RLPerformanceTracker
 from execution.heuristics_logger import HeuristicsLogger
 from execution.rl_heuristics_optimizer import RLHeuristicsOptimizer
+
+_RL_OPT_SCORES_FILE = Path("data/rl_optimizations/score_updates.jsonl")
 from app.utils.logger_config import setup_logger
 
 logger = setup_logger(__name__)
@@ -85,6 +87,9 @@ class AdaptiveRunner:
         
         # Initialize RL heuristics optimizer for score updates
         self.heuristics_optimizer = RLHeuristicsOptimizer()
+
+        # [RL Goal 2] Load persisted risk-score updates from previous runs
+        self._load_persisted_risk_scores()
 
     # ── Public entry point ─────────────────────────────────────────────────
 
@@ -154,17 +159,23 @@ class AdaptiveRunner:
                     logger.info("API budget exhausted — stopping")
                     break
 
-                # ── Hard stop: oracle consistently unreliable ──────────
-                # If the last 5 oracle calls were all "unclear" the app gives
-                # no readable feedback — further tests are meaningless.
-                if uncertain_count >= 5 and idx >= 10:
-                    recent_results = [r for r in report.results[-5:]
+                # ── [RL Goal 1] Adaptive early stop ──────────────────────
+                # Threshold adapts from historical pass-rate trends stored by
+                # RLPerformanceTracker: easy sites → stop sooner; hard sites
+                # → wait longer before giving up.
+                _stop_threshold = self._compute_early_stop_threshold()
+                if uncertain_count >= _stop_threshold and idx >= max(10, total // 10):
+                    recent_results = [r for r in report.results[-_stop_threshold:]
                                       if r.status == TestStatus.ERROR]
-                    if len(recent_results) >= 5:
+                    if len(recent_results) >= _stop_threshold:
                         report.stop_decisions += 1
                         report.stop_reason = "rl_stop"
-                        logger.info(f"Hard stop at test {idx+1}/{total}: "
-                                    f"oracle unclear for last 5 tests")
+                        logger.info(
+                            f"[RL Goal 1] Adaptive early stop at test {idx+1}/{total}: "
+                            f"oracle unclear for last {_stop_threshold} tests "
+                            f"(threshold={_stop_threshold}, "
+                            f"hist_runs={len(self.perf_tracker.snapshots)})"
+                        )
                         break
 
                 # ── RL: choose oracle (heuristic=0 or LLM=1) ──────────
@@ -188,7 +199,41 @@ class AdaptiveRunner:
                     state  = None
                     action = 0
 
-                # ── Check cache before executing ────────────────────────
+                # ── [RL Goal 3] Pattern-learning oracle override ───────
+                # If accumulated subtype history shows heuristic is reliable
+                # for this test class, skip LLM even when DQN says action=1.
+                # Conversely, force LLM when heuristic historically fails.
+                if self.rl_mode and not _llm_all_exhausted:
+                    _tc_subtype = (
+                        self.scorer.subtype_classifier.classify(test_case).subtype
+                        if self.scorer and self.scorer.subtype_classifier
+                        else "unknown"
+                    )
+                    _st = self.heuristics_logger.subtype_stats.get(_tc_subtype, {})
+                    _h_uses   = _st.get("heuristic_uses", 0)
+                    _l_uses   = _st.get("llm_uses", 0)
+                    _h_passed = _st.get("heuristic_passed", 0)
+                    _l_passed = _st.get("llm_passed", 0)
+                    if _h_uses >= 5:
+                        _h_rate = _h_passed / _h_uses
+                        if _h_rate >= 0.85 and action == 1:
+                            # Heuristic proven sufficient → save API call
+                            action = 0
+                            report.pattern_overrides += 1
+                            logger.debug(
+                                f"[RL Goal 3] Pattern override LLM→Heuristic "
+                                f"for {_tc_subtype} (heur={_h_rate:.0%})"
+                            )
+                        elif _h_rate < 0.45 and _l_uses >= 5:
+                            _l_rate = _l_passed / _l_uses
+                            if _l_rate >= 0.75 and action == 0:
+                                # Heuristic proven poor, LLM proven better → use LLM
+                                action = 1
+                                report.pattern_overrides += 1
+                                logger.debug(
+                                    f"[RL Goal 3] Pattern override Heuristic→LLM "
+                                    f"for {_tc_subtype} (heur={_h_rate:.0%}, llm={_l_rate:.0%})"
+                                )
                 test_id = test_case.get("id", "unknown")
                 form_url = test_case.get("form_url", "")
                 cached_result = None
@@ -586,3 +631,64 @@ class AdaptiveRunner:
             reward -= 50.0
 
         return reward
+
+    # ── [RL Goal 1] Adaptive early-stop threshold ─────────────────────────
+
+    def _compute_early_stop_threshold(self) -> int:
+        """
+        Return the uncertain-count threshold for early stopping.
+
+        Uses the last 3 runs stored by RLPerformanceTracker:
+        - Historically easy sites (avg pass ≥ 80 %) → threshold = 3 (stop sooner)
+        - Historically hard sites (avg pass ≤ 40 %) → threshold = 8 (be more patient)
+        - Unknown / mixed                           → threshold = 5 (default)
+        """
+        snapshots = self.perf_tracker.snapshots
+        if len(snapshots) >= 3:
+            avg_pass = sum(s.pass_rate for s in snapshots[-3:]) / 3
+            if avg_pass >= 0.80:
+                return 3
+            elif avg_pass <= 0.40:
+                return 8
+        return 5
+
+    # ── [RL Goal 2] Load persisted risk scores ────────────────────────────
+
+    def _load_persisted_risk_scores(self) -> None:
+        """
+        Read the most-recent risk-score update per subtype from
+        data/rl_optimizations/score_updates.jsonl and inject them into
+        TestSubtypeClassifier.SUBTYPE_RISK so this run uses learned scores.
+
+        Each line is a SubtypeScoreUpdate JSON record.  We keep the last
+        value written per subtype (latest run wins).
+        """
+        if not _RL_OPT_SCORES_FILE.exists():
+            return
+        latest: Dict[str, float] = {}
+        try:
+            with open(_RL_OPT_SCORES_FILE, "r", encoding="utf-8") as fh:
+                for line in fh:
+                    line = line.strip()
+                    if not line:
+                        continue
+                    rec = json.loads(line)
+                    subtype      = rec.get("subtype")
+                    updated_risk = rec.get("updated_risk")
+                    if subtype and updated_risk is not None:
+                        latest[subtype] = float(updated_risk)
+        except Exception as exc:
+            logger.warning(f"[RL Goal 2] Could not load persisted risk scores: {exc}")
+            return
+
+        applied = 0
+        for subtype, risk in latest.items():
+            if subtype in TestSubtypeClassifier.SUBTYPE_RISK:
+                TestSubtypeClassifier.SUBTYPE_RISK[subtype] = risk
+                applied += 1
+
+        if applied:
+            logger.info(
+                f"[RL Goal 2] Applied {applied} persisted risk-score updates "
+                f"from {_RL_OPT_SCORES_FILE}"
+            )

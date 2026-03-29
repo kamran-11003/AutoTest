@@ -84,9 +84,11 @@ class DQNAgent:
         memory_size:  int   = 2000,
     ):
         self.gamma         = gamma
+        self.discount_factor = gamma   # alias used by performance tracker
         self.epsilon       = epsilon
         self.epsilon_min   = epsilon_min
         self.epsilon_decay = epsilon_decay
+        self.learning_rate = lr        # alias used by performance tracker
         self.batch_size    = batch_size
 
         self.device = torch.device("cpu")   # keep lightweight for FYP

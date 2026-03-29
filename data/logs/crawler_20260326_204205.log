@@ -1,2 +1,0 @@
-2026-03-26 20:42:10 | execution.rl_agent.dqn_agent | INFO | RL model loaded (ε=0.063)
-2026-03-26 20:42:12 | execution.cache_manager | WARNING | Redis cache unavailable: Error 10061 connecting to 127.0.0.1:6379. No connection could be made because the target machine actively refused it.. Running without cache.
