@@ -32,6 +32,7 @@ class InputElement:
     parent_form: Optional[str] = None
     selector: str = ''
     disabled: bool = False  # Track disabled state
+    options: Optional[list] = None  # For select elements: [{value, text}, ...]
     
     def to_dict(self) -> Dict:
         """Convert to dictionary"""
@@ -51,7 +52,8 @@ class InputElement:
             'visible': self.visible,
             'parent_form': self.parent_form,
             'selector': self.selector,
-            'disabled': self.disabled
+            'disabled': self.disabled,
+            'options': self.options,
         }
 
 
@@ -212,7 +214,10 @@ class DOMAnalyzer:
                     visible: isVisible,
                     parentForm: parentForm,
                     selector: `${el.tagName.toLowerCase()}[name="${el.name}"]` || `#${el.id}` || `${el.tagName.toLowerCase()}:nth-of-type(${idx+1})`,
-                    disabled: el.disabled || el.readOnly || false
+                    disabled: el.disabled || el.readOnly || false,
+                    options: el.tagName.toLowerCase() === 'select'
+                        ? Array.from(el.options).filter(o => o.value).map(o => ({value: o.value, text: o.text.trim()}))
+                        : null
                 });
             });
             
@@ -332,7 +337,8 @@ class DOMAnalyzer:
                     visible=inp['visible'],
                     parent_form=inp['parentForm'],
                     selector=inp['selector'],
-                    disabled=inp.get('disabled', False)
+                    disabled=inp.get('disabled', False),
+                    options=inp.get('options') or None,
                 ))
             
             return inputs
@@ -456,7 +462,10 @@ class DOMAnalyzer:
                         max: inp.max || null,
                         step: inp.step || null,
                         disabled: inp.disabled || false,
-                        selector: inp.id ? `#${inp.id}` : `${inp.tagName.toLowerCase()}[name="${inp.name}"]`
+                        selector: inp.id ? `#${inp.id}` : `${inp.tagName.toLowerCase()}[name="${inp.name}"]`,
+                        options: inp.tagName.toLowerCase() === 'select'
+                            ? Array.from(inp.options).filter(o => o.value).map(o => ({value: o.value, text: o.text.trim()}))
+                            : null
                     });
                 });
                 
@@ -497,7 +506,8 @@ class DOMAnalyzer:
                             visible=True,
                             disabled=inp.get('disabled', False),
                             parent_form=rf['selector'],
-                            selector=inp['selector']
+                            selector=inp['selector'],
+                            options=inp.get('options') or None,
                         )
                         for inp in rf['inputs']
                     ]

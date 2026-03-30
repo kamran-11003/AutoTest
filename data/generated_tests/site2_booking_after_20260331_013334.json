@@ -1,0 +1,1276 @@
+{
+  "stage": "after_refinement",
+  "generated_at": "2026-03-31T01:34:35.827555",
+  "crawl_url": "http://localhost:5500/test_websites/site2_booking/index.html",
+  "site_id": "site2_booking",
+  "refinement_status": "refined",
+  "test_results": {
+    "metadata": {
+      "source_file": "C:\\Users\\Kamra\\Desktop\\fyp crawler (5)\\fyp crawler\\data\\crawled_graphs\\site2_booking_20260331_013334.json",
+      "total_nodes": 1,
+      "total_edges": 0,
+      "total_forms": 1
+    },
+    "test_cases": {
+      "bva": [
+        {
+          "id": "bva_numeric_0ea4da2b_guests_0",
+          "type": "BVA",
+          "subtype": "numeric",
+          "form_url": "http://localhost:5500/test_websites/site2_booking/index.html",
+          "form_id": "0ea4da2b",
+          "form_action": "http://localhost:5500/test_websites/site2_booking/index.html",
+          "page_title": "Hotel Room Booking - AutoTestAI",
+          "field_name": "guests",
+          "field_label": "Number of Guests",
+          "field_type": "number",
+          "test_value": 0.0,
+          "expected_result": "error",
+          "description": "Number of Guests: Below minimum boundary (0.0) on Hotel Room Booking - AutoTestAI",
+          "test_data": {
+            "checkin": "2026-04-01",
+            "checkout": "2026-04-02",
+            "room": "standard",
+            "email": "tester@example.com",
+            "guests": 0.0
+          },
+          "constraints": {
+            "min": 1.0,
+            "max": 10.0,
+            "step": 1
+          },
+          "action": "kept",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:33:50.907581",
+          "ai_notes": "Kept original due to incomplete refinement"
+        },
+        {
+          "id": "bva_numeric_0ea4da2b_guests_1",
+          "type": "BVA",
+          "subtype": "numeric",
+          "form_url": "http://localhost:5500/test_websites/site2_booking/index.html",
+          "form_id": "0ea4da2b",
+          "form_action": "http://localhost:5500/test_websites/site2_booking/index.html",
+          "page_title": "Hotel Room Booking - AutoTestAI",
+          "field_name": "guests",
+          "field_label": "Number of Guests",
+          "field_type": "number",
+          "test_value": 1.0,
+          "expected_result": "success",
+          "description": "Number of Guests: At minimum boundary (1.0) on Hotel Room Booking - AutoTestAI",
+          "test_data": {
+            "checkin": "2026-04-01",
+            "checkout": "2026-04-02",
+            "room": "standard",
+            "email": "tester@example.com",
+            "guests": 1.0
+          },
+          "constraints": {
+            "min": 1.0,
+            "max": 10.0,
+            "step": 1
+          },
+          "action": "kept",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:33:50.907581"
+        },
+        {
+          "id": "bva_numeric_0ea4da2b_guests_2",
+          "type": "BVA",
+          "subtype": "numeric",
+          "form_url": "http://localhost:5500/test_websites/site2_booking/index.html",
+          "form_id": "0ea4da2b",
+          "form_action": "http://localhost:5500/test_websites/site2_booking/index.html",
+          "page_title": "Hotel Room Booking - AutoTestAI",
+          "field_name": "guests",
+          "field_label": "Number of Guests",
+          "field_type": "number",
+          "test_value": 2.0,
+          "expected_result": "success",
+          "description": "Number of Guests: Just above minimum (2.0) on Hotel Room Booking - AutoTestAI",
+          "test_data": {
+            "checkin": "2026-04-01",
+            "checkout": "2026-04-02",
+            "room": "standard",
+            "email": "tester@example.com",
+            "guests": 2.0
+          },
+          "constraints": {
+            "min": 1.0,
+            "max": 10.0,
+            "step": 1
+          },
+          "action": "kept",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:33:50.907581"
+        },
+        {
+          "id": "bva_numeric_0ea4da2b_guests_3",
+          "type": "BVA",
+          "subtype": "numeric",
+          "form_url": "http://localhost:5500/test_websites/site2_booking/index.html",
+          "form_id": "0ea4da2b",
+          "form_action": "http://localhost:5500/test_websites/site2_booking/index.html",
+          "page_title": "Hotel Room Booking - AutoTestAI",
+          "field_name": "guests",
+          "field_label": "Number of Guests",
+          "field_type": "number",
+          "test_value": 9.0,
+          "expected_result": "success",
+          "description": "Number of Guests: Just below maximum (9.0) on Hotel Room Booking - AutoTestAI",
+          "test_data": {
+            "checkin": "2026-04-01",
+            "checkout": "2026-04-02",
+            "room": "standard",
+            "email": "tester@example.com",
+            "guests": 9.0
+          },
+          "constraints": {
+            "min": 1.0,
+            "max": 10.0,
+            "step": 1
+          },
+          "action": "kept",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:33:50.907581"
+        },
+        {
+          "id": "bva_numeric_0ea4da2b_guests_4",
+          "type": "BVA",
+          "subtype": "numeric",
+          "form_url": "http://localhost:5500/test_websites/site2_booking/index.html",
+          "form_id": "0ea4da2b",
+          "form_action": "http://localhost:5500/test_websites/site2_booking/index.html",
+          "page_title": "Hotel Room Booking - AutoTestAI",
+          "field_name": "guests",
+          "field_label": "Number of Guests",
+          "field_type": "number",
+          "test_value": 10.0,
+          "expected_result": "success",
+          "description": "Number of Guests: At maximum boundary (10.0) on Hotel Room Booking - AutoTestAI",
+          "test_data": {
+            "checkin": "2026-04-01",
+            "checkout": "2026-04-02",
+            "room": "standard",
+            "email": "tester@example.com",
+            "guests": 10.0
+          },
+          "constraints": {
+            "min": 1.0,
+            "max": 10.0,
+            "step": 1
+          },
+          "action": "kept",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:33:50.907581"
+        },
+        {
+          "id": "bva_numeric_0ea4da2b_guests_5",
+          "type": "BVA",
+          "subtype": "numeric",
+          "form_url": "http://localhost:5500/test_websites/site2_booking/index.html",
+          "form_id": "0ea4da2b",
+          "form_action": "http://localhost:5500/test_websites/site2_booking/index.html",
+          "page_title": "Hotel Room Booking - AutoTestAI",
+          "field_name": "guests",
+          "field_label": "Number of Guests",
+          "field_type": "number",
+          "test_value": 11.0,
+          "expected_result": "error",
+          "description": "Number of Guests: Above maximum boundary (11.0) on Hotel Room Booking - AutoTestAI",
+          "test_data": {
+            "checkin": "2026-04-01",
+            "checkout": "2026-04-02",
+            "room": "standard",
+            "email": "tester@example.com",
+            "guests": 11.0
+          },
+          "constraints": {
+            "min": 1.0,
+            "max": 10.0,
+            "step": 1
+          },
+          "action": "kept",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:33:50.907581"
+        },
+        {
+          "id": "bva_length_0ea4da2b_email_0",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:5500/test_websites/site2_booking/index.html",
+          "form_id": "0ea4da2b",
+          "form_action": "http://localhost:5500/test_websites/site2_booking/index.html",
+          "page_title": "Hotel Room Booking - AutoTestAI",
+          "field_name": "email",
+          "field_label": "Guest Email",
+          "field_type": "email",
+          "test_value": "aaaa",
+          "expected_result": "error",
+          "description": "Guest Email: Below minimum length (4 chars) on Hotel Room Booking - AutoTestAI",
+          "test_data": {
+            "checkin": "2026-04-01",
+            "checkout": "2026-04-02",
+            "guests": 5,
+            "room": "standard",
+            "email": "aaaa"
+          },
+          "constraints": {
+            "minlength": 5,
+            "maxlength": 254
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:33:50.907581"
+        },
+        {
+          "id": "bva_length_0ea4da2b_email_1",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:5500/test_websites/site2_booking/index.html",
+          "form_id": "0ea4da2b",
+          "form_action": "http://localhost:5500/test_websites/site2_booking/index.html",
+          "page_title": "Hotel Room Booking - AutoTestAI",
+          "field_name": "email",
+          "field_label": "Guest Email",
+          "field_type": "email",
+          "test_value": "a@b.c",
+          "expected_result": "success",
+          "description": "Guest Email: At minimum length (5 chars) on Hotel Room Booking - AutoTestAI",
+          "test_data": {
+            "checkin": "2026-04-01",
+            "checkout": "2026-04-02",
+            "guests": 5,
+            "room": "standard",
+            "email": "a@b.c"
+          },
+          "constraints": {
+            "minlength": 5,
+            "maxlength": 254
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:33:50.907581"
+        },
+        {
+          "id": "bva_length_0ea4da2b_email_2",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:5500/test_websites/site2_booking/index.html",
+          "form_id": "0ea4da2b",
+          "form_action": "http://localhost:5500/test_websites/site2_booking/index.html",
+          "page_title": "Hotel Room Booking - AutoTestAI",
+          "field_name": "email",
+          "field_label": "Guest Email",
+          "field_type": "email",
+          "test_value": "aa@b.c",
+          "expected_result": "success",
+          "description": "Guest Email: Just above minimum (6 chars) on Hotel Room Booking - AutoTestAI",
+          "test_data": {
+            "checkin": "2026-04-01",
+            "checkout": "2026-04-02",
+            "guests": 5,
+            "room": "standard",
+            "email": "aa@b.c"
+          },
+          "constraints": {
+            "minlength": 5,
+            "maxlength": 254
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:33:50.908590"
+        },
+        {
+          "id": "bva_length_0ea4da2b_email_3",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:5500/test_websites/site2_booking/index.html",
+          "form_id": "0ea4da2b",
+          "form_action": "http://localhost:5500/test_websites/site2_booking/index.html",
+          "page_title": "Hotel Room Booking - AutoTestAI",
+          "field_name": "email",
+          "field_label": "Guest Email",
+          "field_type": "email",
+          "test_value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.c",
+          "expected_result": "success",
+          "description": "Guest Email: Just below maximum (253 chars) on Hotel Room Booking - AutoTestAI",
+          "test_data": {
+            "checkin": "2026-04-01",
+            "checkout": "2026-04-02",
+            "guests": 5,
+            "room": "standard",
+            "email": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.c"
+          },
+          "constraints": {
+            "minlength": 5,
+            "maxlength": 254
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:33:50.908590"
+        },
+        {
+          "id": "bva_length_0ea4da2b_email_4",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:5500/test_websites/site2_booking/index.html",
+          "form_id": "0ea4da2b",
+          "form_action": "http://localhost:5500/test_websites/site2_booking/index.html",
+          "page_title": "Hotel Room Booking - AutoTestAI",
+          "field_name": "email",
+          "field_label": "Guest Email",
+          "field_type": "email",
+          "test_value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.co",
+          "expected_result": "error",
+          "description": "Guest Email: Above maximum length (255 chars) on Hotel Room Booking - AutoTestAI",
+          "test_data": {
+            "checkin": "2026-04-01",
+            "checkout": "2026-04-02",
+            "guests": 5,
+            "room": "standard",
+            "email": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.co"
+          },
+          "constraints": {
+            "minlength": 5,
+            "maxlength": 254
+          },
+          "action": "added",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:33:50.908590"
+        },
+        {
+          "id": "bva_length_0ea4da2b_email_4",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:5500/test_websites/site2_booking/index.html",
+          "form_id": "0ea4da2b",
+          "field_name": "email",
+          "field_label": "Guest Email",
+          "field_type": "email",
+          "test_value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.c",
+          "expected_result": "success",
+          "description": "Verify Guest Email field accepts the maximum allowed length of 254 characters.",
+          "test_data": {
+            "checkin": "2026-04-01",
+            "checkout": "2026-04-02",
+            "guests": 5,
+            "room": "standard",
+            "email": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.c"
+          },
+          "constraints": {
+            "minlength": 5,
+            "maxlength": 254
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:33:56.084955"
+        },
+        {
+          "id": "bva_length_0ea4da2b_email_5",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:5500/test_websites/site2_booking/index.html",
+          "form_id": "0ea4da2b",
+          "field_name": "email",
+          "field_label": "Guest Email",
+          "field_type": "email",
+          "test_value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.c",
+          "expected_result": "error",
+          "description": "Verify Guest Email field rejects input exceeding the maximum length of 254 characters (255 chars).",
+          "test_data": {
+            "checkin": "2026-04-01",
+            "checkout": "2026-04-02",
+            "guests": 5,
+            "room": "standard",
+            "email": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.c"
+          },
+          "constraints": {
+            "minlength": 5,
+            "maxlength": 254
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:33:56.086953"
+        },
+        {
+          "id": "bva_length_0ea4da2b_email_6",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:5500/test_websites/site2_booking/index.html",
+          "form_id": "0ea4da2b",
+          "field_name": "email",
+          "field_label": "Guest Email",
+          "field_type": "email",
+          "test_value": "a@b.c",
+          "expected_result": "success",
+          "description": "Verify Guest Email field accepts the minimum allowed length of 5 characters.",
+          "test_data": {
+            "checkin": "2026-04-01",
+            "checkout": "2026-04-02",
+            "guests": 5,
+            "room": "standard",
+            "email": "a@b.c"
+          },
+          "constraints": {
+            "minlength": 5,
+            "maxlength": 254
+          },
+          "action": "added",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:33:56.086953"
+        }
+      ],
+      "ecp": [
+        {
+          "id": "ecp_date_0ea4da2b_checkin_valid",
+          "type": "ECP",
+          "subtype": "date",
+          "form_url": "http://localhost:5500/test_websites/site2_booking/index.html",
+          "form_id": "0ea4da2b",
+          "field_label": "Check-in Date",
+          "field_name": "checkin",
+          "field_type": "date",
+          "equivalence_class": "valid",
+          "test_value": "2024-01-15",
+          "expected_result": "success",
+          "description": "Verify that a valid date format is accepted for the Check-in Date field.",
+          "test_data": {
+            "checkout": "2026-04-02",
+            "guests": 5,
+            "room": "standard",
+            "email": "tester@example.com",
+            "checkin": "2024-01-15"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:34:06.181363"
+        },
+        {
+          "id": "ecp_date_0ea4da2b_checkin_invalid",
+          "type": "ECP",
+          "subtype": "date",
+          "form_url": "http://localhost:5500/test_websites/site2_booking/index.html",
+          "form_id": "0ea4da2b",
+          "field_label": "Check-in Date",
+          "field_name": "checkin",
+          "field_type": "date",
+          "equivalence_class": "invalid_format",
+          "test_value": "invalid-date",
+          "expected_result": "error",
+          "description": "Verify that an invalid date string triggers an error for the Check-in Date field.",
+          "test_data": {
+            "checkout": "2026-04-02",
+            "guests": 5,
+            "room": "standard",
+            "email": "tester@example.com",
+            "checkin": "invalid-date"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:34:06.182381"
+        },
+        {
+          "id": "ecp_date_0ea4da2b_checkout_valid",
+          "type": "ECP",
+          "subtype": "date",
+          "form_url": "http://localhost:5500/test_websites/site2_booking/index.html",
+          "form_id": "0ea4da2b",
+          "field_label": "Check-out Date",
+          "field_name": "checkout",
+          "field_type": "date",
+          "equivalence_class": "valid",
+          "test_value": "2024-01-15",
+          "expected_result": "success",
+          "description": "Verify that a valid date format is accepted for the Check-out Date field.",
+          "test_data": {
+            "checkin": "2026-04-01",
+            "guests": 5,
+            "room": "standard",
+            "email": "tester@example.com",
+            "checkout": "2024-01-15"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:34:06.182381"
+        },
+        {
+          "id": "ecp_date_0ea4da2b_checkout_invalid",
+          "type": "ECP",
+          "subtype": "date",
+          "form_url": "http://localhost:5500/test_websites/site2_booking/index.html",
+          "form_id": "0ea4da2b",
+          "field_label": "Check-out Date",
+          "field_name": "checkout",
+          "field_type": "date",
+          "equivalence_class": "invalid_format",
+          "test_value": "invalid-date",
+          "expected_result": "error",
+          "description": "Verify that an invalid date string triggers an error for the Check-out Date field.",
+          "test_data": {
+            "checkin": "2026-04-01",
+            "guests": 5,
+            "room": "standard",
+            "email": "tester@example.com",
+            "checkout": "invalid-date"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:34:06.183373"
+        },
+        {
+          "id": "ecp_number_0ea4da2b_guests_valid",
+          "type": "ECP",
+          "subtype": "number",
+          "form_url": "http://localhost:5500/test_websites/site2_booking/index.html",
+          "form_id": "0ea4da2b",
+          "field_label": "Number of Guests",
+          "field_name": "guests",
+          "field_type": "number",
+          "equivalence_class": "valid_range",
+          "test_value": 5,
+          "expected_result": "success",
+          "description": "Verify that a valid integer within the allowed range is accepted for Number of Guests.",
+          "test_data": {
+            "checkin": "2026-04-01",
+            "checkout": "2026-04-02",
+            "room": "standard",
+            "email": "tester@example.com",
+            "guests": 5
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:34:06.183373"
+        },
+        {
+          "id": "ecp_number_0ea4da2b_guests_invalid",
+          "type": "ECP",
+          "subtype": "number",
+          "form_url": "http://localhost:5500/test_websites/site2_booking/index.html",
+          "form_id": "0ea4da2b",
+          "field_label": "Number of Guests",
+          "field_name": "guests",
+          "field_type": "number",
+          "equivalence_class": "non_numeric",
+          "test_value": "abc",
+          "expected_result": "error",
+          "description": "Verify that non-numeric input triggers an error for the Number of Guests field.",
+          "test_data": {
+            "checkin": "2026-04-01",
+            "checkout": "2026-04-02",
+            "room": "standard",
+            "email": "tester@example.com",
+            "guests": "abc"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:34:06.184365"
+        },
+        {
+          "id": "ecp_select_0ea4da2b_room_first",
+          "type": "ECP",
+          "subtype": "select",
+          "form_url": "http://localhost:5500/test_websites/site2_booking/index.html",
+          "form_id": "0ea4da2b",
+          "field_label": "Room Type",
+          "field_name": "room",
+          "field_type": "select",
+          "equivalence_class": "valid_first_option",
+          "test_value": "standard",
+          "expected_result": "success",
+          "description": "Verify selection of the first available option (standard) for Room Type.",
+          "test_data": {
+            "checkin": "2026-04-01",
+            "checkout": "2026-04-02",
+            "guests": 5,
+            "email": "tester@example.com",
+            "room": "standard"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:34:06.184365"
+        },
+        {
+          "id": "ecp_select_0ea4da2b_room_middle",
+          "type": "ECP",
+          "subtype": "select",
+          "form_url": "http://localhost:5500/test_websites/site2_booking/index.html",
+          "form_id": "0ea4da2b",
+          "field_label": "Room Type",
+          "field_name": "room",
+          "field_type": "select",
+          "equivalence_class": "valid_middle_option",
+          "test_value": "suite",
+          "expected_result": "success",
+          "description": "Verify selection of the middle option (suite) for Room Type.",
+          "test_data": {
+            "checkin": "2026-04-01",
+            "checkout": "2026-04-02",
+            "guests": 5,
+            "email": "tester@example.com",
+            "room": "suite"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:34:06.184365"
+        },
+        {
+          "id": "ecp_select_0ea4da2b_room_last",
+          "type": "ECP",
+          "subtype": "select",
+          "form_url": "http://localhost:5500/test_websites/site2_booking/index.html",
+          "form_id": "0ea4da2b",
+          "field_label": "Room Type",
+          "field_name": "room",
+          "field_type": "select",
+          "equivalence_class": "valid_last_option",
+          "test_value": "penthouse",
+          "expected_result": "success",
+          "description": "Verify selection of the last available option (penthouse) for Room Type.",
+          "test_data": {
+            "checkin": "2026-04-01",
+            "checkout": "2026-04-02",
+            "guests": 5,
+            "email": "tester@example.com",
+            "room": "penthouse"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:34:06.185362"
+        },
+        {
+          "id": "ecp_email_0ea4da2b_email_valid_standard_0",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:5500/test_websites/site2_booking/index.html",
+          "form_id": "0ea4da2b",
+          "field_label": "Guest Email",
+          "field_name": "email",
+          "field_type": "email",
+          "equivalence_class": "valid_standard",
+          "test_value": "user@example.com",
+          "expected_result": "success",
+          "description": "Verify that a standard email format is accepted for the Guest Email field.",
+          "test_data": {
+            "checkin": "2026-04-01",
+            "checkout": "2026-04-02",
+            "guests": 5,
+            "room": "standard",
+            "email": "user@example.com"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:34:06.185362"
+        },
+        {
+          "id": "ecp_email_0ea4da2b_email_invalid",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:5500/test_websites/site2_booking/index.html",
+          "form_id": "0ea4da2b",
+          "field_label": "Guest Email",
+          "field_name": "email",
+          "field_type": "email",
+          "equivalence_class": "invalid_format",
+          "test_value": "invalid-email",
+          "expected_result": "error",
+          "description": "Verify that an invalid email format triggers an error for the Guest Email field.",
+          "test_data": {
+            "checkin": "2026-04-01",
+            "checkout": "2026-04-02",
+            "guests": 5,
+            "room": "standard",
+            "email": "invalid-email"
+          },
+          "action": "added",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:34:06.186366"
+        },
+        {
+          "id": "ecp_email_0ea4da2b_email_valid_standard_1",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:5500/test_websites/site2_booking/index.html",
+          "form_id": "0ea4da2b",
+          "field_name": "email",
+          "field_type": "email",
+          "field_label": "Guest Email",
+          "equivalence_class": "valid_standard",
+          "test_value": "test@domain.co.uk",
+          "expected_result": "success",
+          "description": "Verify that a standard email format is accepted in the Guest Email field",
+          "test_data": {
+            "checkin": "2026-04-01",
+            "checkout": "2026-04-02",
+            "guests": 5,
+            "room": "standard",
+            "email": "test@domain.co.uk"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:34:18.106428"
+        },
+        {
+          "id": "ecp_email_0ea4da2b_email_valid_with_plus_0",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:5500/test_websites/site2_booking/index.html",
+          "form_id": "0ea4da2b",
+          "field_name": "email",
+          "field_type": "email",
+          "field_label": "Guest Email",
+          "equivalence_class": "valid_with_plus",
+          "test_value": "user+tag@example.com",
+          "expected_result": "success",
+          "description": "Verify that an email with plus addressing is accepted in the Guest Email field",
+          "test_data": {
+            "checkin": "2026-04-01",
+            "checkout": "2026-04-02",
+            "guests": 5,
+            "room": "standard",
+            "email": "user+tag@example.com"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:34:18.108457"
+        },
+        {
+          "id": "ecp_email_0ea4da2b_email_valid_with_plus_1",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:5500/test_websites/site2_booking/index.html",
+          "form_id": "0ea4da2b",
+          "field_name": "email",
+          "field_type": "email",
+          "field_label": "Guest Email",
+          "equivalence_class": "valid_with_plus",
+          "test_value": "test+filter@domain.com",
+          "expected_result": "success",
+          "description": "Verify that an email with plus addressing is accepted in the Guest Email field",
+          "test_data": {
+            "checkin": "2026-04-01",
+            "checkout": "2026-04-02",
+            "guests": 5,
+            "room": "standard",
+            "email": "test+filter@domain.com"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:34:18.109456"
+        },
+        {
+          "id": "ecp_email_0ea4da2b_email_valid_with_dots_0",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:5500/test_websites/site2_booking/index.html",
+          "form_id": "0ea4da2b",
+          "field_name": "email",
+          "field_type": "email",
+          "field_label": "Guest Email",
+          "equivalence_class": "valid_with_dots",
+          "test_value": "first.last@example.com",
+          "expected_result": "success",
+          "description": "Verify that an email with dots in the local part is accepted in the Guest Email field",
+          "test_data": {
+            "checkin": "2026-04-01",
+            "checkout": "2026-04-02",
+            "guests": 5,
+            "room": "standard",
+            "email": "first.last@example.com"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:34:18.110428"
+        },
+        {
+          "id": "ecp_email_0ea4da2b_email_valid_with_dots_1",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:5500/test_websites/site2_booking/index.html",
+          "form_id": "0ea4da2b",
+          "field_name": "email",
+          "field_type": "email",
+          "field_label": "Guest Email",
+          "equivalence_class": "valid_with_dots",
+          "test_value": "user.name@domain.org",
+          "expected_result": "success",
+          "description": "Verify that an email with dots in the local part is accepted in the Guest Email field",
+          "test_data": {
+            "checkin": "2026-04-01",
+            "checkout": "2026-04-02",
+            "guests": 5,
+            "room": "standard",
+            "email": "user.name@domain.org"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:34:18.111449"
+        },
+        {
+          "id": "ecp_email_0ea4da2b_email_valid_subdomain_0",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:5500/test_websites/site2_booking/index.html",
+          "form_id": "0ea4da2b",
+          "field_name": "email",
+          "field_type": "email",
+          "field_label": "Guest Email",
+          "equivalence_class": "valid_subdomain",
+          "test_value": "user@mail.example.com",
+          "expected_result": "success",
+          "description": "Verify that an email with a subdomain is accepted in the Guest Email field",
+          "test_data": {
+            "checkin": "2026-04-01",
+            "checkout": "2026-04-02",
+            "guests": 5,
+            "room": "standard",
+            "email": "user@mail.example.com"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:34:18.111449"
+        },
+        {
+          "id": "ecp_email_0ea4da2b_email_valid_subdomain_1",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:5500/test_websites/site2_booking/index.html",
+          "form_id": "0ea4da2b",
+          "field_name": "email",
+          "field_type": "email",
+          "field_label": "Guest Email",
+          "equivalence_class": "valid_subdomain",
+          "test_value": "test@subdomain.domain.com",
+          "expected_result": "success",
+          "description": "Verify that an email with a subdomain is accepted in the Guest Email field",
+          "test_data": {
+            "checkin": "2026-04-01",
+            "checkout": "2026-04-02",
+            "guests": 5,
+            "room": "standard",
+            "email": "test@subdomain.domain.com"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:34:18.112456"
+        },
+        {
+          "id": "ecp_email_0ea4da2b_email_invalid_missing_at_0",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:5500/test_websites/site2_booking/index.html",
+          "form_id": "0ea4da2b",
+          "field_name": "email",
+          "field_type": "email",
+          "field_label": "Guest Email",
+          "equivalence_class": "invalid_missing_at",
+          "test_value": "userexample.com",
+          "expected_result": "error",
+          "description": "Verify that an email missing the @ symbol is rejected in the Guest Email field",
+          "test_data": {
+            "checkin": "2026-04-01",
+            "checkout": "2026-04-02",
+            "guests": 5,
+            "room": "standard",
+            "email": "userexample.com"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:34:18.112456"
+        },
+        {
+          "id": "ecp_email_0ea4da2b_email_invalid_missing_at_1",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:5500/test_websites/site2_booking/index.html",
+          "form_id": "0ea4da2b",
+          "field_name": "email",
+          "field_type": "email",
+          "field_label": "Guest Email",
+          "equivalence_class": "invalid_missing_at",
+          "test_value": "test.domain.com",
+          "expected_result": "error",
+          "description": "Verify that an email missing the @ symbol is rejected in the Guest Email field",
+          "test_data": {
+            "checkin": "2026-04-01",
+            "checkout": "2026-04-02",
+            "guests": 5,
+            "room": "standard",
+            "email": "test.domain.com"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:34:18.112456"
+        },
+        {
+          "id": "ecp_email_0ea4da2b_email_invalid_missing_domain_0",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:5500/test_websites/site2_booking/index.html",
+          "form_id": "0ea4da2b",
+          "field_name": "email",
+          "field_type": "email",
+          "field_label": "Guest Email",
+          "equivalence_class": "invalid_missing_domain",
+          "test_value": "user@",
+          "expected_result": "error",
+          "description": "Verify that an email missing the domain part is rejected in the Guest Email field",
+          "test_data": {
+            "checkin": "2026-04-01",
+            "checkout": "2026-04-02",
+            "guests": 5,
+            "room": "standard",
+            "email": "user@"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:34:18.113452"
+        },
+        {
+          "id": "ecp_email_0ea4da2b_email_invalid_empty_0",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:5500/test_websites/site2_booking/index.html",
+          "form_id": "0ea4da2b",
+          "field_name": "email",
+          "field_type": "email",
+          "field_label": "Guest Email",
+          "equivalence_class": "invalid_empty",
+          "test_value": "",
+          "expected_result": "error",
+          "description": "Verify that an empty Guest Email field is rejected",
+          "test_data": {
+            "checkin": "2026-04-01",
+            "checkout": "2026-04-02",
+            "guests": 5,
+            "room": "standard",
+            "email": ""
+          },
+          "action": "added",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:34:18.113452"
+        },
+        {
+          "id": "ecp_email_0ea4da2b_email_invalid_missing_domain_1",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:5500/test_websites/site2_booking/index.html",
+          "form_id": "0ea4da2b",
+          "field_name": "email",
+          "field_type": "email",
+          "field_label": "Guest Email",
+          "equivalence_class": "invalid_missing_domain",
+          "test_value": "test@.com",
+          "expected_result": "error",
+          "description": "Email address contains an invalid domain format (missing domain name after @)",
+          "test_data": {
+            "checkin": "2026-04-01",
+            "checkout": "2026-04-02",
+            "guests": 5,
+            "room": "standard",
+            "email": "test@.com"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:34:29.667367"
+        },
+        {
+          "id": "ecp_email_0ea4da2b_email_invalid_special_chars_0",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:5500/test_websites/site2_booking/index.html",
+          "form_id": "0ea4da2b",
+          "field_name": "email",
+          "field_type": "email",
+          "field_label": "Guest Email",
+          "equivalence_class": "invalid_special_chars",
+          "test_value": "user..name@example.com",
+          "expected_result": "error",
+          "description": "Email address contains consecutive dots in the local part, which is invalid",
+          "test_data": {
+            "checkin": "2026-04-01",
+            "checkout": "2026-04-02",
+            "guests": 5,
+            "room": "standard",
+            "email": "user..name@example.com"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:34:29.668398"
+        },
+        {
+          "id": "ecp_email_0ea4da2b_email_invalid_special_chars_1",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:5500/test_websites/site2_booking/index.html",
+          "form_id": "0ea4da2b",
+          "field_name": "email",
+          "field_type": "email",
+          "field_label": "Guest Email",
+          "equivalence_class": "invalid_special_chars",
+          "test_value": ".user@example.com",
+          "expected_result": "error",
+          "description": "Email address contains a leading dot in the local part, which is invalid",
+          "test_data": {
+            "checkin": "2026-04-01",
+            "checkout": "2026-04-02",
+            "guests": 5,
+            "room": "standard",
+            "email": ".user@example.com"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:34:29.668398"
+        },
+        {
+          "id": "ecp_email_0ea4da2b_email_invalid_empty_0",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:5500/test_websites/site2_booking/index.html",
+          "form_id": "0ea4da2b",
+          "field_name": "email",
+          "field_type": "email",
+          "equivalence_class": "invalid_empty",
+          "test_value": "",
+          "expected_result": "error",
+          "description": "Empty or whitespace only",
+          "test_data": {
+            "checkin": "2026-04-01",
+            "checkout": "2026-04-02",
+            "guests": 5,
+            "room": "standard",
+            "email": ""
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:34:29.670380",
+          "ai_notes": "Kept original due to incomplete refinement"
+        },
+        {
+          "id": "ecp_email_0ea4da2b_email_invalid_empty_1",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:5500/test_websites/site2_booking/index.html",
+          "form_id": "0ea4da2b",
+          "field_name": "email",
+          "field_type": "email",
+          "field_label": "Guest Email",
+          "equivalence_class": "invalid_empty",
+          "test_value": "   ",
+          "expected_result": "error",
+          "description": "Email field contains only whitespace characters",
+          "test_data": {
+            "checkin": "2026-04-01",
+            "checkout": "2026-04-02",
+            "guests": 5,
+            "room": "standard",
+            "email": "   "
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:34:29.670380"
+        },
+        {
+          "id": "ecp_email_0ea4da2b_email_invalid_spaces_0",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:5500/test_websites/site2_booking/index.html",
+          "form_id": "0ea4da2b",
+          "field_name": "email",
+          "field_type": "email",
+          "field_label": "Guest Email",
+          "equivalence_class": "invalid_spaces",
+          "test_value": "user name@example.com",
+          "expected_result": "error",
+          "description": "Email address contains an illegal space character in the local part",
+          "test_data": {
+            "checkin": "2026-04-01",
+            "checkout": "2026-04-02",
+            "guests": 5,
+            "room": "standard",
+            "email": "user name@example.com"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:34:29.670380"
+        },
+        {
+          "id": "ecp_email_0ea4da2b_email_invalid_spaces_1",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:5500/test_websites/site2_booking/index.html",
+          "form_id": "0ea4da2b",
+          "field_name": "email",
+          "field_type": "email",
+          "field_label": "Guest Email",
+          "equivalence_class": "invalid_spaces",
+          "test_value": "test @domain.com",
+          "expected_result": "error",
+          "description": "Email address contains an illegal space character before the @ symbol",
+          "test_data": {
+            "checkin": "2026-04-01",
+            "checkout": "2026-04-02",
+            "guests": 5,
+            "room": "standard",
+            "email": "test @domain.com"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:34:29.670380"
+        },
+        {
+          "id": "ecp_email_0ea4da2b_email_invalid_missing_at_0",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:5500/test_websites/site2_booking/index.html",
+          "form_id": "0ea4da2b",
+          "field_name": "email",
+          "field_type": "email",
+          "field_label": "Guest Email",
+          "equivalence_class": "invalid_missing_at",
+          "test_value": "testexample.com",
+          "expected_result": "error",
+          "description": "Email address is missing the mandatory @ symbol",
+          "test_data": {
+            "checkin": "2026-04-01",
+            "checkout": "2026-04-02",
+            "guests": 5,
+            "room": "standard",
+            "email": "testexample.com"
+          },
+          "action": "added",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:34:29.671485"
+        }
+      ],
+      "decision_table": [],
+      "state_transition": [],
+      "use_case": [
+        {
+          "id": "usecase_auth_login",
+          "type": "Use Case",
+          "subtype": "authentication",
+          "scenario_name": "User Login Flow",
+          "form_url": "http://localhost:5500/test_websites/site2_booking/index.html",
+          "test_data": {
+            "checkin": "TestValue",
+            "checkout": "TestValue",
+            "guests": 5,
+            "room": "TestValue",
+            "email": "test@example.com"
+          },
+          "steps": [
+            {
+              "step": 1,
+              "action": "navigate",
+              "target": null,
+              "description": "Navigate to login page",
+              "verification": "Login form displayed"
+            },
+            {
+              "step": 2,
+              "action": "fill",
+              "target": "email",
+              "value": "test@example.com",
+              "description": "Enter email address",
+              "verification": "Email field populated"
+            },
+            {
+              "step": 3,
+              "action": "fill",
+              "target": "password",
+              "value": "Test123!@#",
+              "description": "Enter password",
+              "verification": "Password field populated"
+            },
+            {
+              "step": 4,
+              "action": "submit",
+              "target": "login_form",
+              "description": "Submit login form",
+              "verification": "Successfully logged in, redirected to dashboard/profile"
+            }
+          ],
+          "expected_result": "success",
+          "description": "User login: Navigate to login → Enter credentials → Submit → Verify logged in",
+          "preconditions": [
+            "User not logged in",
+            "Valid credentials exist"
+          ],
+          "postconditions": [
+            "User logged in",
+            "Session created"
+          ],
+          "action": "updated",
+          "ai_enhanced": true
+        },
+        {
+          "id": "usecase_auth_register",
+          "type": "Use Case",
+          "subtype": "authentication",
+          "scenario_name": "New User Registration",
+          "form_url": "http://localhost:5500/test_websites/site2_booking/index.html",
+          "test_data": {
+            "checkin": "TestValue",
+            "checkout": "TestValue",
+            "guests": 5,
+            "room": "TestValue",
+            "email": "test@example.com"
+          },
+          "steps": [
+            {
+              "step": 1,
+              "action": "navigate",
+              "target": null,
+              "description": "Navigate to registration page",
+              "verification": "Registration form displayed"
+            },
+            {
+              "step": 2,
+              "action": "fill_form",
+              "target": "registration_form",
+              "description": "Fill registration form",
+              "verification": "All fields populated"
+            },
+            {
+              "step": 3,
+              "action": "submit",
+              "target": "registration_form",
+              "description": "Submit registration",
+              "verification": "Account created, confirmation message shown"
+            }
+          ],
+          "expected_result": "success",
+          "description": "User registration: Navigate → Fill form → Submit → Verify account created",
+          "preconditions": [
+            "User not registered"
+          ],
+          "postconditions": [
+            "New account created",
+            "User logged in or verification email sent"
+          ],
+          "action": "updated",
+          "ai_enhanced": true
+        }
+      ]
+    },
+    "summary": {
+      "total_test_cases": 46,
+      "bva_count": 14,
+      "ecp_count": 30,
+      "decision_table_count": 0,
+      "state_transition_count": 0,
+      "use_case_count": 2
+    }
+  },
+  "counts": {
+    "bva": 14,
+    "ecp": 30,
+    "decision_table": 0,
+    "state_transition": 0,
+    "use_case": 2
+  },
+  "total": 46,
+  "ai_enhanced_count": 46,
+  "before_file": "site2_booking_before_20260331_013334.json"
+}

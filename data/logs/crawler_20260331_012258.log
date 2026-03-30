@@ -1,0 +1,25 @@
+2026-03-31 01:23:12 | crawler.gemini_key_rotator | INFO | 🔑 Loaded 12 Gemini API keys for rotation
+2026-03-31 01:23:27 | crawler.redis_cache | INFO | ℹ️  Redis not available (using in-memory cache): Error 10061 connecting to 127.0.0.1:6379. No connection could be made because the target machine actively refused it.
+2026-03-31 01:23:27 | crawler.ai_detector | INFO | 🤖 Gemini element detector initialized (model: gemini-3.1-flash-lite-preview)
+2026-03-31 01:23:27 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 6 detection strategies
+2026-03-31 01:23:27 | crawler.state_manager | INFO | StateManager initialized (normalization=ON)
+2026-03-31 01:23:27 | crawler.intelligent_link_filter | INFO | IntelligentLinkFilter initialized
+2026-03-31 01:23:27 | crawler.page_snapshot | INFO | PageSnapshot initialized (output: data/snapshots)
+2026-03-31 01:23:27 | crawler.gemini_key_rotator | INFO | 🔑 Loaded 12 Gemini API keys for rotation
+2026-03-31 01:23:27 | crawler.ai_detector | INFO | 🤖 Gemini element detector initialized (model: gemini-3.1-flash-lite-preview)
+2026-03-31 01:23:27 | crawler.link_extractor | INFO | 🤖 Gemini AI detector enabled with 12 API keys
+2026-03-31 01:23:27 | crawler.link_extractor | INFO | LinkExtractor initialized (same_origin=True, AVB=ON, intelligent_filter=ON, snapshots=ON)
+2026-03-31 01:23:27 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-31 01:23:27 | crawler.gemini_key_rotator | INFO | 🔑 Loaded 12 Gemini API keys for rotation
+2026-03-31 01:23:27 | crawler.ai_enricher | INFO | ✅ Gemini AI enrichment enabled with 12 API keys (gemini-3.1-flash-lite-preview)
+2026-03-31 01:23:27 | crawler.interaction_sim | INFO | InteractionSimulator initialized (submit_forms=False, expand=True)
+2026-03-31 01:23:27 | crawler.page_loader | INFO | PageLoader initialized: chromium, headless=False
+2026-03-31 01:23:49 | crawler.page_loader | INFO | 📂 Loaded session from: auth_session.json
+2026-03-31 01:23:50 | crawler.page_loader | INFO | ✅ Font bypass and animation disable injected
+2026-03-31 01:23:50 | crawler.page_loader | INFO | ✅ Browser started successfully
+2026-03-31 01:23:50 | crawler.page_loader | INFO | 🌐 Loading: http://localhost:5500/test_websites/site1_contact/index.html
+2026-03-31 01:23:53 | crawler.page_loader | ERROR | ❌ Error loading http://localhost:5500/test_websites/site1_contact/index.html: Page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:5500/test_websites/site1_contact/index.html
+Call log:
+  - navigating to "http://localhost:5500/test_websites/site1_contact/index.html", waiting until "domcontentloaded"
+
+2026-03-31 01:23:54 | crawler.page_loader | INFO | 🛑 Browser closed

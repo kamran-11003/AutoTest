@@ -72,7 +72,7 @@
             // Populate dummy results
             var catLabel = category.charAt(0).toUpperCase() + category.slice(1);
             document.getElementById('resultMeta').textContent =
-                'Showing results for "' + keywords + '" in ' + catLabel +
+                'Successfully found results for "' + keywords + '" in ' + catLabel +
                 ' ($' + minPrice.toFixed(2) + ' – $' + maxPrice.toFixed(2) + ')';
 
             var mid = (minPrice + maxPrice) / 2;

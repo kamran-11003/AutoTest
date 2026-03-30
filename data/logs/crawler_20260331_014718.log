@@ -1,0 +1,86 @@
+2026-03-31 01:47:30 | crawler.ai_site_analyzer | INFO | 🧠 AI Site Analyzer initialized (pattern detection + URL normalization)
+2026-03-31 01:47:54 | crawler.ai_site_analyzer | INFO | 🔍 Analyzing site structure for localhost:5500 (ONE-TIME analysis)
+2026-03-31 01:47:56 | crawler.ai_site_analyzer | INFO | ✅ Site analysis complete for localhost:5500
+2026-03-31 01:47:56 | crawler.ai_site_analyzer | INFO |    Navigation style: minimal
+2026-03-31 01:47:56 | crawler.ai_site_analyzer | INFO |    URL patterns detected: 0
+2026-03-31 01:47:56 | crawler.ai_site_analyzer | INFO |    Component types: ['has_product_cards', 'has_user_cards', 'has_category_cards', 'has_accordions', 'card_selector']
+2026-03-31 01:47:56 | crawler.ai_site_analyzer | INFO |    📦 Cached in Redis (accessible across all crawler instances)
+2026-03-31 01:49:07 | execution.rl_agent.dqn_agent | INFO | RL model loaded (ε=0.153)
+2026-03-31 01:49:27 | execution.cache_manager | WARNING | Redis cache unavailable: Error 10061 connecting to 127.0.0.1:6379. No connection could be made because the target machine actively refused it.. Running without cache.
+2026-03-31 01:49:28 | execution.adaptive_runner | INFO | 
+=== Test Failure Probability Report (Top 10) ===
+Priority   Test ID              Type            Risk     Risk Factors                                                
+------------------------------------------------------------------------------------------------------------------------
+35         ecp_text_30ae9208_k  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_number_30ae9208  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_number_30ae9208  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_number_30ae9208  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_number_30ae9208  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_number_30ae9208  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+50         usecase_auth_login   Use Case        50.00%   Subtype: Use Case/unknown (base risk: 0.50, confidence: 50%); Unknown test type
+50         usecase_auth_regist  Use Case        50.00%   Subtype: Use Case/unknown (base risk: 0.50, confidence: 50%); Unknown test type
+50         usecase_search_basi  Use Case        50.00%   Subtype: Use Case/unknown (base risk: 0.50, confidence: 50%); Unknown test type
+55         bva_length_30ae9208  BVA             45.00%   Subtype: BVA/numeric_boundaries (base risk: 0.70, confidence: 50%); Generic BVA test
+------------------------------------------------------------------------------------------------------------------------
+Average failure probability: 45.24%
+
+2026-03-31 01:49:28 | execution.adaptive_runner | INFO | 
+================================================================================
+TEST CLASSIFICATION REPORT
+================================================================================
+
+Classification | Count | Risk
+--------------------------------------------------
+BVA/numeric_boundaries         |    19 |      70%
+ECP/invalid_partition          |     7 |      65%
+BVA/string_boundaries          |     2 |      60%
+USE CASE/unknown               |     3 |      50%
+ECP/valid_partition            |     7 |      30%
+
+================================================================================
+
+2026-03-31 01:49:35 | execution.adaptive_runner | INFO | [1/38] ecp_text_30ae9208_keywords_long → failed (conf=80%, oracle=heuristic)
+2026-03-31 01:49:38 | execution.adaptive_runner | INFO | [2/38] ecp_number_30ae9208_minPrice_invalid → passed (conf=90%, oracle=heuristic)
+2026-03-31 01:49:42 | execution.adaptive_runner | INFO | [3/38] ecp_number_30ae9208_maxPrice_negative → passed (conf=75%, oracle=heuristic)
+2026-03-31 01:49:45 | execution.adaptive_runner | INFO | [4/38] ecp_number_30ae9208_maxPrice_invalid → passed (conf=75%, oracle=heuristic)
+2026-03-31 01:49:48 | execution.adaptive_runner | INFO | [5/38] ecp_number_30ae9208_minPrice_invalid → passed (conf=90%, oracle=heuristic)
+2026-03-31 01:49:52 | execution.adaptive_runner | INFO | [6/38] ecp_number_30ae9208_maxPrice_negative → passed (conf=75%, oracle=heuristic)
+2026-03-31 01:49:56 | execution.adaptive_runner | INFO | [7/38] usecase_auth_login → failed (conf=65%, oracle=heuristic)
+2026-03-31 01:49:59 | execution.adaptive_runner | INFO | [8/38] usecase_auth_register → failed (conf=65%, oracle=heuristic)
+2026-03-31 01:50:01 | execution.adaptive_runner | INFO | [9/38] usecase_search_basic → failed (conf=65%, oracle=heuristic)
+2026-03-31 01:50:05 | execution.adaptive_runner | INFO | [10/38] bva_length_30ae9208_keywords_2 → passed (conf=65%, oracle=heuristic)
+2026-03-31 01:50:08 | execution.adaptive_runner | INFO | [11/38] bva_length_30ae9208_keywords_3 → passed (conf=65%, oracle=heuristic)
+2026-03-31 01:50:12 | execution.adaptive_runner | INFO | [12/38] bva_length_30ae9208_keywords_4 → passed (conf=65%, oracle=heuristic)
+2026-03-31 01:50:15 | execution.adaptive_runner | INFO | [13/38] bva_length_30ae9208_keywords_5 → failed (conf=80%, oracle=heuristic)
+2026-03-31 01:50:19 | execution.adaptive_runner | INFO | [14/38] bva_numeric_30ae9208_minPrice_0 → passed (conf=90%, oracle=heuristic)
+2026-03-31 01:50:23 | execution.adaptive_runner | INFO | [15/38] bva_numeric_30ae9208_minPrice_1 → passed (conf=65%, oracle=heuristic)
+2026-03-31 01:50:26 | execution.adaptive_runner | INFO | [16/38] bva_numeric_30ae9208_minPrice_2 → passed (conf=65%, oracle=heuristic)
+2026-03-31 01:50:30 | execution.adaptive_runner | INFO | [17/38] bva_numeric_30ae9208_minPrice_3 → failed (conf=75%, oracle=heuristic)
+2026-03-31 01:50:33 | execution.adaptive_runner | INFO | [18/38] bva_numeric_30ae9208_minPrice_4 → failed (conf=75%, oracle=heuristic)
+2026-03-31 01:50:37 | execution.adaptive_runner | INFO | [19/38] bva_numeric_30ae9208_minPrice_5 → passed (conf=75%, oracle=heuristic)
+2026-03-31 01:50:40 | execution.adaptive_runner | INFO | [20/38] bva_numeric_30ae9208_minPrice_4 → failed (conf=75%, oracle=heuristic)
+2026-03-31 01:50:44 | execution.adaptive_runner | INFO | [21/38] bva_numeric_30ae9208_minPrice_5 → passed (conf=75%, oracle=heuristic)
+2026-03-31 01:50:47 | execution.adaptive_runner | INFO | [22/38] bva_numeric_30ae_minPrice_below_min → passed (conf=90%, oracle=heuristic)
+2026-03-31 01:50:51 | execution.adaptive_runner | INFO | [23/38] bva_numeric_30ae9208_maxPrice_0 → passed (conf=75%, oracle=heuristic)
+2026-03-31 01:50:54 | execution.adaptive_runner | INFO | [24/38] bva_numeric_30ae9208_maxPrice_1 → failed (conf=75%, oracle=heuristic)
+2026-03-31 01:50:58 | execution.adaptive_runner | INFO | [25/38] bva_numeric_30ae9208_maxPrice_2 → failed (conf=75%, oracle=heuristic)
+2026-03-31 01:51:01 | execution.adaptive_runner | INFO | [26/38] bva_numeric_30ae9208_maxPrice_3 → passed (conf=65%, oracle=heuristic)
+2026-03-31 01:51:05 | execution.adaptive_runner | INFO | [27/38] bva_numeric_30ae9208_maxPrice_4 → passed (conf=65%, oracle=heuristic)
+2026-03-31 01:51:08 | execution.adaptive_runner | INFO | [28/38] bva_numeric_30ae9208_maxPrice_5 → failed (conf=80%, oracle=heuristic)
+2026-03-31 01:51:12 | execution.adaptive_runner | INFO | [29/38] bva_length_30ae9208_keywords_1 → failed (conf=85%, oracle=heuristic)
+2026-03-31 01:51:16 | execution.adaptive_runner | INFO | [30/38] ecp_text_30ae9208_keywords_special → failed (conf=80%, oracle=heuristic)
+2026-03-31 01:51:19 | execution.adaptive_runner | INFO | [31/38] bva_length_30ae9208_keywords_0 → passed (conf=90%, oracle=heuristic)
+2026-03-31 01:51:23 | execution.adaptive_runner | INFO | [32/38] ecp_text_30ae9208_keywords_valid → passed (conf=65%, oracle=heuristic)
+2026-03-31 01:51:27 | execution.adaptive_runner | INFO | [33/38] ecp_text_30ae9208_keywords_unicode → passed (conf=65%, oracle=heuristic)
+2026-03-31 01:51:30 | execution.adaptive_runner | INFO | [34/38] ecp_select_30ae9208_category_first → passed (conf=65%, oracle=heuristic)
+2026-03-31 01:51:34 | execution.adaptive_runner | INFO | [35/38] ecp_select_30ae9208_category_middle → passed (conf=65%, oracle=heuristic)
+2026-03-31 01:51:38 | execution.adaptive_runner | INFO | [36/38] ecp_select_30ae9208_category_last → passed (conf=65%, oracle=heuristic)
+2026-03-31 01:51:41 | execution.adaptive_runner | INFO | [37/38] ecp_number_30ae9208_minPrice_valid → passed (conf=65%, oracle=heuristic)
+2026-03-31 01:51:45 | execution.adaptive_runner | INFO | [38/38] ecp_number_30ae9208_maxPrice_valid → passed (conf=65%, oracle=heuristic)
+2026-03-31 01:51:47 | execution.rl_agent.dqn_agent | INFO | RL model saved → data\rl_model\dqn_checkpoint.pth
+2026-03-31 01:51:47 | execution.adaptive_runner | INFO | Performance metrics saved to data\rl_performance
+2026-03-31 01:51:47 | execution.heuristics_logger | INFO | Heuristics analysis saved to data\heuristics_logs\heuristics_analysis.txt
+2026-03-31 01:51:47 | execution.adaptive_runner | INFO | Heuristics analysis: 198 tests, 91.4% heuristic, 8.6% LLM, avg reward: +1.23
+2026-03-31 01:51:47 | execution.rl_heuristics_optimizer | INFO | Optimization report: data\rl_optimizations\optimization_report.txt
+2026-03-31 01:51:47 | execution.adaptive_runner | INFO | Heuristics optimization: 5 subtypes updated | Risk increases: 0 | Risk decreases: 0 | Avg change: +0.0000
+2026-03-31 01:51:48 | execution.adaptive_runner | INFO | Execution complete: 25/38 passed | 1 LLM calls ($0.002) | stop_reason=completed

@@ -1,0 +1,242 @@
+C:\Users\Kamra\Desktop\fyp crawler (5)\fyp crawler\test_generator\ai_refiner.py:16: FutureWarning: 
+
+All support for the `google.generativeai` package has ended. It will no longer be receiving 
+updates or bug fixes. Please switch to the `google.genai` package as soon as possible.
+See README for more details:
+
+https://github.com/google-gemini/deprecated-generative-ai-python/blob/main/README.md
+
+  import google.generativeai as genai
+2026-03-30 02:16:04 | crawler.gemini_key_rotator | INFO | 🔑 Loaded 12 Gemini API keys for rotation
+2026-03-30 02:16:18 | crawler.redis_cache | INFO | ℹ️  Redis not available (using in-memory cache): Error 10061 connecting to 127.0.0.1:6379. No connection could be made because the target machine actively refused it.
+2026-03-30 02:16:18 | crawler.ai_site_analyzer | INFO | 🧠 AI Site Analyzer initialized (pattern detection + URL normalization)
+2026-03-30 02:16:18 | crawler.ai_detector | INFO | 🤖 Gemini element detector initialized (model: gemini-3.1-flash-lite-preview)
+2026-03-30 02:16:18 | crawler.orchestrator | INFO | 🧠 AI Site Analyzer enabled (smart URL normalization)
+2026-03-30 02:16:18 | crawler.orchestrator | INFO | 🤖 Gemini detector initialized for form/navigation detection
+2026-03-30 02:16:18 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 6 detection strategies
+2026-03-30 02:16:18 | crawler.state_manager | INFO | StateManager initialized (normalization=ON)
+2026-03-30 02:16:18 | crawler.intelligent_link_filter | INFO | IntelligentLinkFilter initialized
+2026-03-30 02:16:18 | crawler.page_snapshot | INFO | PageSnapshot initialized (output: data/snapshots)
+2026-03-30 02:16:18 | crawler.gemini_key_rotator | INFO | 🔑 Loaded 12 Gemini API keys for rotation
+2026-03-30 02:16:18 | crawler.ai_detector | INFO | 🤖 Gemini element detector initialized (model: gemini-3.1-flash-lite-preview)
+2026-03-30 02:16:18 | crawler.link_extractor | INFO | 🤖 Gemini AI detector enabled with 12 API keys
+2026-03-30 02:16:18 | crawler.link_extractor | INFO | LinkExtractor initialized (same_origin=True, AVB=ON, intelligent_filter=ON, snapshots=ON)
+2026-03-30 02:16:18 | crawler.orchestrator | INFO | 🤖 AI-enhanced form detection enabled in DOMAnalyzer
+2026-03-30 02:16:18 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-30 02:16:18 | crawler.gemini_key_rotator | INFO | 🔑 Loaded 12 Gemini API keys for rotation
+2026-03-30 02:16:18 | crawler.ai_enricher | INFO | ✅ Gemini AI enrichment enabled with 12 API keys (gemini-3.1-flash-lite-preview)
+2026-03-30 02:16:18 | crawler.interaction_sim | INFO | InteractionSimulator initialized (submit_forms=False, expand=True)
+2026-03-30 02:16:18 | crawler.graph_builder | INFO | GraphBuilder initialized
+2026-03-30 02:16:18 | crawler.orchestrator | INFO | 🧙 Form wizard detector initialized
+2026-03-30 02:16:18 | crawler.orchestrator | INFO | 🚫 Modal handler initialized
+2026-03-30 02:16:18 | crawler.orchestrator | INFO | 📎 File upload detector initialized
+2026-03-30 02:16:18 | crawler.orchestrator | INFO | 🌑 Shadow DOM detector initialized
+2026-03-30 02:16:18 | crawler.orchestrator | INFO | ⏱️  Rate limiter initialized
+2026-03-30 02:16:18 | crawler.orchestrator | INFO | 🚀 CrawlerOrchestrator initialized
+2026-03-30 02:16:18 | crawler.orchestrator | INFO | 🎯 Starting crawl: http://localhost:5500/test_websites/site1_contact/index.html
+2026-03-30 02:16:18 | crawler.orchestrator | INFO | 📊 Config: max_depth=3, max_pages=5
+2026-03-30 02:16:18 | crawler.page_loader | INFO | PageLoader initialized: chromium, headless=False
+2026-03-30 02:16:21 | crawler.page_loader | INFO | 📂 Loaded session from: auth_session.json
+2026-03-30 02:16:22 | crawler.page_loader | INFO | ✅ Font bypass and animation disable injected
+2026-03-30 02:16:22 | crawler.page_loader | INFO | ✅ Browser started successfully
+2026-03-30 02:16:22 | crawler.page_loader | INFO | 🌐 Loading: http://localhost:5500/test_websites/site1_contact/index.html
+2026-03-30 02:16:29 | crawler.orchestrator | INFO | 🚫 Checking for initial popups/modals...
+2026-03-30 02:16:32 | crawler.orchestrator | INFO | 🧠 Performing ONE-TIME site structure analysis...
+2026-03-30 02:16:32 | crawler.orchestrator | INFO | 📡 Collecting sample URLs for pattern detection...
+2026-03-30 02:16:32 | crawler.link_extractor | INFO | 🎯 Found 1 clickable elements (traditional detection)
+2026-03-30 02:16:32 | crawler.link_extractor | INFO | 🌓 Added 3 shadow DOM elements
+2026-03-30 02:16:32 | crawler.link_extractor | INFO | 🔄 Deduplication: 4 → 2 elements (removed 2 duplicates)
+2026-03-30 02:16:32 | crawler.link_extractor | INFO | 🧠 After intelligent filtering: 2 unique components
+2026-03-30 02:16:40 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-30 02:16:41 | crawler.ai_detector | INFO | 🤖 Form detection: Analyzing screenshot with Gemini (API call #1)
+2026-03-30 02:16:42 | crawler.ai_detector | WARNING | ⚠️  API key quota exceeded (attempt 1/12)
+2026-03-30 02:16:42 | crawler.gemini_key_rotator | INFO | 🔄 Rotated API key: ...iXtO13KI → ...vvdOTYio (reason: rate_limit)
+2026-03-30 02:16:42 | crawler.ai_detector | INFO | 🔄 Switching to next API key...
+2026-03-30 02:16:46 | crawler.ai_detector | INFO | ✅ AI Vision: Detected 1 forms
+2026-03-30 02:16:46 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 1 forms from screenshot analysis
+2026-03-30 02:16:46 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 4 inputs, 1 forms, 1 buttons, 0 links
+2026-03-30 02:16:46 | crawler.link_extractor | INFO | 📦 Stored component state: http://localhost:5500/test_websites/site1_contact/index.html#component-send-message
+2026-03-30 02:16:48 | crawler.link_extractor | INFO | 🔍 Action-Verify-Back: 0/2 clicks discovered URLs (0 unique)
+2026-03-30 02:16:48 | crawler.link_extractor | WARNING | ⚠️  NO URLs discovered from 2 clickable elements! Check selectors.
+2026-03-30 02:16:48 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260330_021648_localhost:5500_test_websites_site1_contact_index.h
+   ├─ Total clickables: 4
+   ├─ After filtering: 2 (50.0% reduction)
+   └─ Discovered: 0 URLs
+2026-03-30 02:16:48 | crawler.link_extractor | INFO | 🔗 Extracted 0 unique links
+2026-03-30 02:16:48 | crawler.ai_site_analyzer | INFO | 🔍 Analyzing site structure for localhost:5500 (ONE-TIME analysis)
+2026-03-30 02:16:51 | crawler.ai_site_analyzer | INFO | ✅ Site analysis complete for localhost:5500
+2026-03-30 02:16:51 | crawler.ai_site_analyzer | INFO |    Navigation style: minimal
+2026-03-30 02:16:51 | crawler.ai_site_analyzer | INFO |    URL patterns detected: 0
+2026-03-30 02:16:51 | crawler.ai_site_analyzer | INFO |    Component types: ['has_product_cards', 'has_user_cards', 'has_category_cards', 'has_accordions', 'card_selector']
+2026-03-30 02:16:51 | crawler.ai_site_analyzer | INFO |    📦 Cached in Redis (accessible across all crawler instances)
+2026-03-30 02:16:51 | crawler.orchestrator | INFO | ✅ Site analysis complete - patterns cached for all pages
+2026-03-30 02:16:51 | crawler.orchestrator | INFO | 🔄 Starting BFS crawl...
+2026-03-30 02:16:51 | crawler.orchestrator | INFO | 🌐 Crawling [0]: http://localhost:5500/test_websites/site1_contact/index.html
+2026-03-30 02:16:54 | crawler.interaction_sim | INFO | 🔍 Hidden elements discovered: 0 accordions, 0 menus
+2026-03-30 02:16:57 | crawler.ai_detector | INFO | 🤖 Form detection: Analyzing screenshot with Gemini (API call #2)
+2026-03-30 02:16:59 | crawler.ai_detector | INFO | ✅ AI Vision: Detected 1 forms
+2026-03-30 02:16:59 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 1 forms from screenshot analysis
+2026-03-30 02:16:59 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 4 inputs, 1 forms, 1 buttons, 0 links
+2026-03-30 02:17:00 | crawler.ai_enricher | INFO | 🤖 AI enrichment: Found 1 forms, 1 buttons, 1 interactive elements
+2026-03-30 02:17:00 | crawler.link_extractor | INFO | 🤖 Using GEMINI AI to detect navigation elements on homepage
+2026-03-30 02:17:01 | crawler.ai_detector | INFO | 🤖 Sending screenshot to Gemini: snapshots/ai_analysis_3805.png (API call #3)
+2026-03-30 02:17:01 | crawler.ai_detector | INFO | 📋 Generic parser found 2 potential navigation elements
+2026-03-30 02:17:01 | crawler.ai_detector | INFO | 📤 Requesting Gemini analysis...
+2026-03-30 02:17:03 | crawler.ai_detector | INFO | 🤖 Gemini detected 0 navigation elements (confidence >= 70%)
+2026-03-30 02:17:03 | crawler.ai_detector | INFO | ✅ 0 high-confidence elements validated
+2026-03-30 02:17:03 | crawler.ai_detector | INFO | 📦 Detected layout signature (caching disabled): accordions:0
+2026-03-30 02:17:03 | crawler.link_extractor | WARNING | ⚠️  AI detected no navigation elements, falling back to traditional detection
+2026-03-30 02:17:03 | crawler.link_extractor | INFO | 🎯 Found 1 clickable elements (traditional detection)
+2026-03-30 02:17:03 | crawler.link_extractor | INFO | 🌓 Added 3 shadow DOM elements
+2026-03-30 02:17:03 | crawler.link_extractor | INFO | 🔄 Deduplication: 4 → 2 elements (removed 2 duplicates)
+2026-03-30 02:17:03 | crawler.link_extractor | INFO | 🧠 After intelligent filtering: 2 unique components
+2026-03-30 02:17:15 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-30 02:17:15 | crawler.ai_detector | INFO | 🤖 Form detection: Analyzing screenshot with Gemini (API call #4)
+2026-03-30 02:17:18 | crawler.ai_detector | INFO | ✅ AI Vision: Detected 1 forms
+2026-03-30 02:17:18 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 1 forms from screenshot analysis
+2026-03-30 02:17:18 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 4 inputs, 1 forms, 1 buttons, 0 links
+2026-03-30 02:17:18 | crawler.link_extractor | INFO | 📦 Stored component state: http://localhost:5500/test_websites/site1_contact/index.html#component-send-message
+2026-03-30 02:17:18 | crawler.link_extractor | INFO | 🔍 Action-Verify-Back: 0/2 clicks discovered URLs (0 unique)
+2026-03-30 02:17:18 | crawler.link_extractor | WARNING | ⚠️  NO URLs discovered from 2 clickable elements! Check selectors.
+2026-03-30 02:17:19 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260330_021718_localhost:5500_test_websites_site1_contact_index.h
+   ├─ Total clickables: 4
+   ├─ After filtering: 2 (50.0% reduction)
+   └─ Discovered: 0 URLs
+2026-03-30 02:17:19 | crawler.link_extractor | INFO | 🔗 Extracted 0 unique links
+2026-03-30 02:17:19 | crawler.state_manager | INFO | ✅ New state: 68dc047c | /test_websites/site1_contact/index.html | 4 inputs, 1 forms
+2026-03-30 02:17:19 | crawler.orchestrator | INFO | ✅ New state: 68dc047c | /test_websites/site1_contact/index.html | 4 inputs, 1 forms
+2026-03-30 02:17:19 | crawler.orchestrator | INFO | 📦 Processing 2 component states
+2026-03-30 02:17:19 | crawler.orchestrator | INFO | 📊 Progress: 1/5 pages | Queue: 0 | Depth: 0
+2026-03-30 02:17:19 | crawler.orchestrator | INFO | 🏁 Crawl finished: 1 pages crawled
+2026-03-30 02:17:19 | crawler.orchestrator | INFO | ✅ Fixed 0 graph edges, removed 0 orphans
+2026-03-30 02:17:19 | crawler.orchestrator | INFO | 📊 Final graph: 1 nodes, 0 edges
+2026-03-30 02:17:19 | crawler.page_snapshot | INFO | 📋 Snapshot summary saved: data\snapshots\snapshots_summary.json
+2026-03-30 02:17:19 | crawler.orchestrator | INFO | ✅ Crawl completed successfully
+2026-03-30 02:17:20 | crawler.page_loader | INFO | 🛑 Browser closed
+No default constraints found for field: subject
+Graph has no nodes or edges
+Error refining batch: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+2026-03-30 02:18:42 | crawler.gemini_key_rotator | INFO | 🔑 Loaded 12 Gemini API keys for rotation
+2026-03-30 02:18:52 | execution.rl_agent.dqn_agent | INFO | Generating 500 synthetic RL training experiences …
+2026-03-30 02:18:52 | execution.rl_agent.dqn_agent | INFO | RL model saved → data\rl_model\dqn_checkpoint.pth
+2026-03-30 02:18:52 | execution.rl_agent.dqn_agent | INFO | Synthetic pre-training complete, model saved.
+2026-03-30 02:19:12 | execution.cache_manager | WARNING | Redis cache unavailable: Error 10061 connecting to 127.0.0.1:6379. No connection could be made because the target machine actively refused it.. Running without cache.
+2026-03-30 02:19:12 | execution.adaptive_runner | INFO | 
+=== Test Failure Probability Report (Top 10) ===
+Priority   Test ID              Type            Risk     Risk Factors                                                
+------------------------------------------------------------------------------------------------------------------------
+35         ecp_text_af6075c3_n  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_email_af6075c3_  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_email_af6075c3_  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_email_af6075c3_  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_email_af6075c3_  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_email_af6075c3_  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_email_af6075c3_  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_email_af6075c3_  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_email_af6075c3_  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_email_af6075c3_  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+------------------------------------------------------------------------------------------------------------------------
+Average failure probability: 44.29%
+
+2026-03-30 02:19:12 | execution.adaptive_runner | INFO | 
+================================================================================
+TEST CLASSIFICATION REPORT
+================================================================================
+
+Classification | Count | Risk
+--------------------------------------------------
+BVA/numeric_boundaries         |    18 |      70%
+ECP/invalid_partition          |    21 |      65%
+BVA/string_boundaries          |     1 |      60%
+USE CASE/unknown               |     3 |      50%
+ECP/valid_partition            |    15 |      30%
+
+================================================================================
+
+2026-03-30 02:19:20 | execution.llm_oracle | ERROR | LLM oracle error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+2026-03-30 02:19:20 | crawler.gemini_key_rotator | INFO | 🔄 Rotated API key: ...iXtO13KI → ...vvdOTYio (reason: rate_limit)
+2026-03-30 02:19:20 | execution.adaptive_runner | INFO | [1/58] ecp_text_af6075c3_name_long → passed (conf=90%, oracle=heuristic)
+2026-03-30 02:19:28 | execution.adaptive_runner | INFO | [2/58] ecp_email_af6075c3_email_invalid_missing_at_0 → passed (conf=100%, oracle=llm)
+2026-03-30 02:19:34 | execution.adaptive_runner | INFO | [3/58] ecp_email_af6075c3_email_invalid_missing_at_1 → passed (conf=100%, oracle=llm)
+2026-03-30 02:19:37 | execution.adaptive_runner | INFO | [4/58] ecp_email_af6075c3_email_invalid_missing_domain_0 → passed (conf=65%, oracle=heuristic)
+2026-03-30 02:19:42 | execution.adaptive_runner | INFO | [5/58] ecp_email_af6075c3_email_invalid_missing_domain_1 → passed (conf=100%, oracle=llm)
+2026-03-30 02:19:47 | execution.adaptive_runner | INFO | [6/58] ecp_email_af6075c3_email_invalid_special_chars_0 → passed (conf=100%, oracle=llm)
+2026-03-30 02:19:53 | execution.adaptive_runner | INFO | [7/58] ecp_email_af6075c3_email_invalid_special_chars_1 → passed (conf=100%, oracle=llm)
+2026-03-30 02:20:01 | execution.adaptive_runner | INFO | [8/58] ecp_email_af6075c3_email_invalid_whitespace_0 → passed (conf=100%, oracle=llm)
+2026-03-30 02:20:10 | execution.adaptive_runner | INFO | [9/58] ecp_email_af6075c3_email_invalid_empty_1 → passed (conf=100%, oracle=llm)
+2026-03-30 02:20:18 | execution.adaptive_runner | INFO | [10/58] ecp_email_af6075c3_email_invalid_spaces_0 → passed (conf=100%, oracle=llm)
+2026-03-30 02:20:23 | execution.adaptive_runner | INFO | [11/58] ecp_email_af6075c3_email_invalid_spaces_1 → passed (conf=65%, oracle=heuristic)
+2026-03-30 02:20:31 | execution.adaptive_runner | INFO | [12/58] ecp_text_af6075c3_message_long → passed (conf=100%, oracle=llm)
+2026-03-30 02:20:36 | execution.adaptive_runner | INFO | [13/58] ecp_text_af6075c3_email_invalid → passed (conf=100%, oracle=llm)
+2026-03-30 02:20:40 | execution.adaptive_runner | INFO | [14/58] usecase_contact_unknown → failed (conf=85%, oracle=heuristic)
+2026-03-30 02:20:47 | execution.adaptive_runner | INFO | [15/58] usecase_auth_login → failed (conf=75%, oracle=heuristic)
+2026-03-30 02:20:51 | execution.adaptive_runner | INFO | [16/58] usecase_auth_register → failed (conf=75%, oracle=heuristic)
+2026-03-30 02:20:57 | execution.adaptive_runner | INFO | [17/58] bva_length_af6075c3_name_1 → passed (conf=100%, oracle=llm)
+2026-03-30 02:21:05 | execution.adaptive_runner | INFO | [18/58] bva_length_af6075c3_name_2 → passed (conf=100%, oracle=llm)
+2026-03-30 02:21:15 | execution.adaptive_runner | INFO | [19/58] bva_length_af6075c3_name_3 → passed (conf=100%, oracle=llm)
+2026-03-30 02:21:20 | execution.adaptive_runner | INFO | [20/58] bva_length_af6075c3_name_4 → passed (conf=100%, oracle=llm)
+2026-03-30 02:21:27 | execution.adaptive_runner | INFO | [21/58] bva_length_af6075c3_name_5 → passed (conf=100%, oracle=llm)
+2026-03-30 02:21:34 | execution.adaptive_runner | INFO | [22/58] bva_length_af6075c3_email_0 → passed (conf=100%, oracle=llm)
+2026-03-30 02:21:40 | execution.adaptive_runner | INFO | [23/58] bva_length_af6075c3_email_1 → passed (conf=100%, oracle=llm)
+2026-03-30 02:21:45 | execution.adaptive_runner | INFO | [24/58] bva_length_af6075c3_email_2 → passed (conf=100%, oracle=llm)
+2026-03-30 02:21:55 | execution.adaptive_runner | INFO | [25/58] bva_length_af6075c3_email_3 → passed (conf=100%, oracle=llm)
+2026-03-30 02:21:58 | execution.adaptive_runner | INFO | [26/58] bva_length_af6075c3_email_4 → passed (conf=85%, oracle=heuristic)
+2026-03-30 02:22:05 | execution.adaptive_runner | INFO | [27/58] bva_length_af6075c3_email_4 → passed (conf=100%, oracle=llm)
+2026-03-30 02:22:16 | execution.adaptive_runner | INFO | [28/58] bva_length_af6075c3_email_5 → failed (conf=100%, oracle=llm)
+2026-03-30 02:22:16 | execution.base_runner | ERROR | [bva_length_af6075c3_message_0] Execution error: Page.goto: Page crashed
+Call log:
+  - navigating to "http://localhost:5500/test_websites/site1_contact/index.html", waiting until "domcontentloaded"
+
+2026-03-30 02:22:16 | execution.llm_oracle | WARNING | Screenshot failed: Page.screenshot: Target crashed 
+Call log:
+  - taking page screenshot
+  - waiting for fonts to load...
+  - fonts loaded
+
+2026-03-30 02:22:16 | execution.adaptive_runner | INFO | [29/58] bva_length_af6075c3_message_0 → error (conf=0%, oracle=heuristic)
+2026-03-30 02:22:16 | execution.base_runner | ERROR | [bva_length_af6075c3_message_1] Execution error: Page.goto: Page crashed
+Call log:
+  - navigating to "http://localhost:5500/test_websites/site1_contact/index.html", waiting until "domcontentloaded"
+
+2026-03-30 02:22:16 | execution.llm_oracle | WARNING | Screenshot failed: Page.screenshot: Target crashed 
+Call log:
+  - taking page screenshot
+  - waiting for fonts to load...
+  - fonts loaded
+
+2026-03-30 02:22:16 | execution.adaptive_runner | INFO | [30/58] bva_length_af6075c3_message_1 → error (conf=0%, oracle=heuristic)
+2026-03-30 02:22:16 | execution.base_runner | ERROR | [bva_length_af6075c3_message_2] Execution error: Page.goto: Page crashed
+Call log:
+  - navigating to "http://localhost:5500/test_websites/site1_contact/index.html", waiting until "domcontentloaded"
+
+2026-03-30 02:22:16 | execution.adaptive_runner | INFO | [31/58] bva_length_af6075c3_message_2 → error (conf=0%, oracle=heuristic)
+2026-03-30 02:22:16 | execution.base_runner | ERROR | [bva_length_af6075c3_message_3] Execution error: Page.goto: Page crashed
+Call log:
+  - navigating to "http://localhost:5500/test_websites/site1_contact/index.html", waiting until "domcontentloaded"
+
+2026-03-30 02:22:16 | execution.llm_oracle | WARNING | Screenshot failed: Page.screenshot: Target crashed 
+Call log:
+  - taking page screenshot
+  - waiting for fonts to load...
+  - fonts loaded
+
+2026-03-30 02:22:16 | execution.adaptive_runner | WARNING | LLM disabled for session after 3 consecutive failures (all keys quota-exhausted). Heuristic-only for remaining tests.
+2026-03-30 02:22:16 | execution.adaptive_runner | INFO | [32/58] bva_length_af6075c3_message_3 → error (conf=0%, oracle=heuristic)
+2026-03-30 02:22:16 | execution.base_runner | ERROR | [bva_length_af6075c3_message_4] Execution error: Page.goto: Page crashed
+Call log:
+  - navigating to "http://localhost:5500/test_websites/site1_contact/index.html", waiting until "domcontentloaded"
+
+2026-03-30 02:22:16 | execution.adaptive_runner | INFO | [33/58] bva_length_af6075c3_message_4 → error (conf=0%, oracle=heuristic)
+2026-03-30 02:22:16 | execution.adaptive_runner | INFO | [RL Goal 1] Adaptive early stop at test 34/58: oracle unclear for last 5 tests (threshold=5, hist_runs=0)
+2026-03-30 02:22:17 | execution.rl_agent.dqn_agent | INFO | RL model saved → data\rl_model\dqn_checkpoint.pth
+2026-03-30 02:22:17 | execution.adaptive_runner | INFO | Performance metrics saved to data\rl_performance
+2026-03-30 02:22:17 | execution.heuristics_logger | INFO | Heuristics analysis saved to data\heuristics_logs\heuristics_analysis.txt
+2026-03-30 02:22:17 | execution.adaptive_runner | INFO | Heuristics analysis: 34 tests, 23.5% heuristic, 76.5% LLM, avg reward: -0.47
+2026-03-30 02:22:18 | execution.rl_heuristics_optimizer | INFO | Optimization report: data\rl_optimizations\optimization_report.txt
+2026-03-30 02:22:18 | execution.adaptive_runner | INFO | Heuristics optimization: 3 subtypes updated | Risk increases: 0 | Risk decreases: 1 | Avg change: -0.0100
+2026-03-30 02:22:18 | execution.adaptive_runner | INFO | Execution complete: 24/58 passed | 25 LLM calls ($0.050) | stop_reason=rl_stop
+forrtl: error (200): program aborting due to window-CLOSE event
+Image              PC                Routine            Line        Source             
+KERNELBASE.dll     00007FF86E6E9DED  Unknown               Unknown  Unknown
+KERNEL32.DLL       00007FF870D8E8D7  Unknown               Unknown  Unknown
+ntdll.dll          00007FF87182C48C  Unknown               Unknown  Unknown

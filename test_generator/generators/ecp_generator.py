@@ -430,6 +430,16 @@ class ECPGenerator:
         
         return test_cases
     
+    @staticmethod
+    def _opt_value(opt) -> str:
+        """Extract the string value from an option entry.
+        The crawler stores options as {value, text} dicts; handle both that
+        format and plain strings so tests always get a real option value.
+        """
+        if isinstance(opt, dict):
+            return opt.get('value') or opt.get('text', '') or ''
+        return str(opt)
+
     def _generate_select_ecp(self, input_field: Dict, form_context: Dict) -> List[Dict]:
         """Generate ECP test cases for select/dropdown inputs"""
         field_name = input_field.get('name', 'unknown')
@@ -441,8 +451,9 @@ class ECPGenerator:
         if not options:
             return test_cases
         
-        # Test first, middle, and last options
+        # Test first, middle, and last options — always store plain string values
         if len(options) > 0:
+            val = self._opt_value(options[0])
             test_cases.append({
                 'id': f"ecp_select_{form_context['id']}_{field_unique_id}_first",
                 'type': 'ECP',
@@ -452,16 +463,17 @@ class ECPGenerator:
                 'field_name': field_name,
                 'field_type': 'select',
                 'equivalence_class': 'valid_first_option',
-                'test_value': options[0],
+                'test_value': val,
                 'expected_result': 'success',
-                'description': 'Select first option',
+                'description': f'Select first option ({val})',
                 'test_data': {
-                    field_name: options[0]
+                    field_name: val
                 }
             })
         
         if len(options) > 2:
             mid_idx = len(options) // 2
+            val = self._opt_value(options[mid_idx])
             test_cases.append({
                 'id': f"ecp_select_{form_context['id']}_{field_unique_id}_middle",
                 'type': 'ECP',
@@ -471,15 +483,16 @@ class ECPGenerator:
                 'field_name': field_name,
                 'field_type': 'select',
                 'equivalence_class': 'valid_middle_option',
-                'test_value': options[mid_idx],
+                'test_value': val,
                 'expected_result': 'success',
-                'description': 'Select middle option',
+                'description': f'Select middle option ({val})',
                 'test_data': {
-                    field_name: options[mid_idx]
+                    field_name: val
                 }
             })
         
         if len(options) > 1:
+            val = self._opt_value(options[-1])
             test_cases.append({
                 'id': f"ecp_select_{form_context['id']}_{field_unique_id}_last",
                 'type': 'ECP',
@@ -489,11 +502,11 @@ class ECPGenerator:
                 'field_name': field_name,
                 'field_type': 'select',
                 'equivalence_class': 'valid_last_option',
-                'test_value': options[-1],
+                'test_value': val,
                 'expected_result': 'success',
-                'description': 'Select last option',
+                'description': f'Select last option ({val})',
                 'test_data': {
-                    field_name: options[-1]
+                    field_name: val
                 }
             })
         

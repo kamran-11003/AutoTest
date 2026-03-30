@@ -1,0 +1,108 @@
+2026-03-31 01:25:09 | crawler.ai_site_analyzer | INFO | 🧠 AI Site Analyzer initialized (pattern detection + URL normalization)
+2026-03-31 01:25:27 | crawler.ai_site_analyzer | INFO | 🔍 Analyzing site structure for localhost:5500 (ONE-TIME analysis)
+2026-03-31 01:25:29 | crawler.ai_site_analyzer | INFO | ✅ Site analysis complete for localhost:5500
+2026-03-31 01:25:29 | crawler.ai_site_analyzer | INFO |    Navigation style: minimal
+2026-03-31 01:25:29 | crawler.ai_site_analyzer | INFO |    URL patterns detected: 0
+2026-03-31 01:25:29 | crawler.ai_site_analyzer | INFO |    Component types: ['has_product_cards', 'has_user_cards', 'has_category_cards', 'has_accordions', 'card_selector']
+2026-03-31 01:25:29 | crawler.ai_site_analyzer | INFO |    📦 Cached in Redis (accessible across all crawler instances)
+2026-03-31 01:27:02 | execution.rl_agent.dqn_agent | INFO | Generating 500 synthetic RL training experiences …
+2026-03-31 01:27:03 | execution.rl_agent.dqn_agent | INFO | RL model saved → data\rl_model\dqn_checkpoint.pth
+2026-03-31 01:27:03 | execution.rl_agent.dqn_agent | INFO | Synthetic pre-training complete, model saved.
+2026-03-31 01:27:15 | execution.cache_manager | WARNING | Redis cache unavailable: Error 10061 connecting to 127.0.0.1:6379. No connection could be made because the target machine actively refused it.. Running without cache.
+2026-03-31 01:27:15 | execution.adaptive_runner | INFO | 
+=== Test Failure Probability Report (Top 10) ===
+Priority   Test ID              Type            Risk     Risk Factors                                                
+------------------------------------------------------------------------------------------------------------------------
+35         ecp_text_af6075c3_n  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_email_af6075c3_  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_email_af6075c3_  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_email_af6075c3_  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_email_af6075c3_  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_email_af6075c3_  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_email_af6075c3_  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_email_af6075c3_  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_email_af6075c3_  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_email_af6075c3_  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+------------------------------------------------------------------------------------------------------------------------
+Average failure probability: 44.83%
+
+2026-03-31 01:27:15 | execution.adaptive_runner | INFO | 
+================================================================================
+TEST CLASSIFICATION REPORT
+================================================================================
+
+Classification | Count | Risk
+--------------------------------------------------
+BVA/numeric_boundaries         |    18 |      70%
+ECP/invalid_partition          |    21 |      65%
+BVA/string_boundaries          |     1 |      60%
+USE CASE/unknown               |     3 |      50%
+ECP/valid_partition            |    15 |      30%
+
+================================================================================
+
+2026-03-31 01:27:24 | execution.adaptive_runner | INFO | [1/58] ecp_text_af6075c3_name_long → passed (conf=90%, oracle=heuristic)
+2026-03-31 01:27:27 | execution.adaptive_runner | INFO | [2/58] ecp_email_af6075c3_email_invalid_format → passed (conf=65%, oracle=heuristic)
+2026-03-31 01:27:30 | execution.adaptive_runner | INFO | [3/58] ecp_email_af6075c3_email_invalid_missing_at_0 → passed (conf=65%, oracle=heuristic)
+2026-03-31 01:27:33 | execution.adaptive_runner | INFO | [4/58] ecp_email_af6075c3_email_invalid_missing_at_1 → passed (conf=65%, oracle=heuristic)
+2026-03-31 01:27:36 | execution.adaptive_runner | INFO | [5/58] ecp_email_af6075c3_email_invalid_missing_domain_0 → passed (conf=65%, oracle=heuristic)
+2026-03-31 01:27:39 | execution.adaptive_runner | INFO | [6/58] ecp_email_af6075c3_email_invalid_missing_domain_1 → passed (conf=65%, oracle=heuristic)
+2026-03-31 01:27:42 | execution.adaptive_runner | INFO | [7/58] ecp_email_af6075c3_email_invalid_special_chars_0 → failed (conf=85%, oracle=heuristic)
+2026-03-31 01:27:46 | execution.adaptive_runner | INFO | [8/58] ecp_email_af6075c3_email_invalid_special_chars_1 → failed (conf=85%, oracle=heuristic)
+2026-03-31 01:27:51 | execution.adaptive_runner | INFO | [9/58] ecp_email_af6075c3_email_invalid_whitespace_0 → passed (conf=100%, oracle=llm)
+2026-03-31 01:27:54 | execution.adaptive_runner | INFO | [10/58] ecp_email_af6075c3_email_invalid_empty_1 → passed (conf=65%, oracle=heuristic)
+2026-03-31 01:27:57 | execution.adaptive_runner | INFO | [11/58] ecp_email_af6075c3_email_invalid_spaces_0 → passed (conf=65%, oracle=heuristic)
+2026-03-31 01:28:00 | execution.adaptive_runner | INFO | [12/58] ecp_email_af6075c3_email_invalid_spaces_1 → passed (conf=65%, oracle=heuristic)
+2026-03-31 01:28:03 | execution.adaptive_runner | INFO | [13/58] ecp_text_af6075c3_message_long → failed (conf=85%, oracle=heuristic)
+2026-03-31 01:28:06 | execution.adaptive_runner | INFO | [14/58] ecp_text_af6075c3_email_invalid → failed (conf=65%, oracle=heuristic)
+2026-03-31 01:28:08 | execution.adaptive_runner | INFO | [15/58] usecase_contact_unknown → failed (conf=85%, oracle=heuristic)
+2026-03-31 01:28:11 | execution.adaptive_runner | INFO | [16/58] usecase_auth_login → failed (conf=75%, oracle=heuristic)
+2026-03-31 01:28:13 | execution.adaptive_runner | INFO | [17/58] usecase_auth_register → failed (conf=75%, oracle=heuristic)
+2026-03-31 01:28:16 | execution.adaptive_runner | INFO | [18/58] bva_length_af6075c3_name_1 → passed (conf=85%, oracle=heuristic)
+2026-03-31 01:28:19 | execution.adaptive_runner | INFO | [19/58] bva_length_af6075c3_name_2 → passed (conf=85%, oracle=heuristic)
+2026-03-31 01:28:22 | execution.adaptive_runner | INFO | [20/58] bva_length_af6075c3_name_3 → passed (conf=85%, oracle=heuristic)
+2026-03-31 01:28:25 | execution.adaptive_runner | INFO | [21/58] bva_length_af6075c3_name_4 → passed (conf=85%, oracle=heuristic)
+2026-03-31 01:28:27 | execution.adaptive_runner | INFO | [22/58] bva_length_af6075c3_name_5 → passed (conf=90%, oracle=heuristic)
+2026-03-31 01:28:30 | execution.adaptive_runner | INFO | [23/58] bva_length_af6075c3_email_0 → passed (conf=65%, oracle=heuristic)
+2026-03-31 01:28:33 | execution.adaptive_runner | INFO | [24/58] bva_length_af6075c3_email_1 → passed (conf=85%, oracle=heuristic)
+2026-03-31 01:28:36 | execution.adaptive_runner | INFO | [25/58] bva_length_af6075c3_email_2 → passed (conf=85%, oracle=heuristic)
+2026-03-31 01:28:39 | execution.adaptive_runner | INFO | [26/58] bva_length_af6075c3_email_3 → passed (conf=85%, oracle=heuristic)
+2026-03-31 01:28:42 | execution.adaptive_runner | INFO | [27/58] bva_length_af6075c3_email_4 → failed (conf=85%, oracle=heuristic)
+2026-03-31 01:28:45 | execution.adaptive_runner | INFO | [28/58] bva_length_af6075c3_email_4 → passed (conf=85%, oracle=heuristic)
+2026-03-31 01:28:49 | execution.adaptive_runner | INFO | [29/58] bva_length_af6075c3_email_5 → failed (conf=85%, oracle=heuristic)
+2026-03-31 01:28:51 | execution.adaptive_runner | INFO | [30/58] bva_length_af6075c3_message_0 → passed (conf=75%, oracle=heuristic)
+2026-03-31 01:28:56 | execution.adaptive_runner | INFO | [31/58] bva_length_af6075c3_message_1 → passed (conf=85%, oracle=heuristic)
+2026-03-31 01:29:01 | execution.adaptive_runner | INFO | [32/58] bva_length_af6075c3_message_2 → passed (conf=85%, oracle=heuristic)
+2026-03-31 01:29:06 | execution.adaptive_runner | INFO | [33/58] bva_length_af6075c3_message_3 → passed (conf=85%, oracle=heuristic)
+2026-03-31 01:29:09 | execution.adaptive_runner | INFO | [34/58] bva_length_af6075c3_message_4 → passed (conf=85%, oracle=heuristic)
+2026-03-31 01:29:13 | execution.adaptive_runner | INFO | [35/58] bva_length_af6075c3_message_5 → passed (conf=75%, oracle=heuristic)
+2026-03-31 01:29:16 | execution.adaptive_runner | INFO | [36/58] bva_length_af6075c3_name_0 → passed (conf=90%, oracle=heuristic)
+2026-03-31 01:29:20 | execution.adaptive_runner | INFO | [37/58] ecp_text_af6075c3_name_special → failed (conf=85%, oracle=heuristic)
+2026-03-31 01:29:23 | execution.adaptive_runner | INFO | [38/58] ecp_text_af6075c3_message_special → failed (conf=85%, oracle=heuristic)
+2026-03-31 01:29:26 | execution.adaptive_runner | INFO | [39/58] ecp_text_af6075c3_name_empty → passed (conf=90%, oracle=heuristic)
+2026-03-31 01:29:30 | execution.adaptive_runner | INFO | [40/58] ecp_email_af6075c3_email_invalid_empty_0 → passed (conf=65%, oracle=heuristic)
+2026-03-31 01:29:34 | execution.adaptive_runner | INFO | [41/58] ecp_text_af6075c3_message_empty → passed (conf=75%, oracle=heuristic)
+2026-03-31 01:29:38 | execution.adaptive_runner | INFO | [42/58] ecp_text_af6075c3_name_empty → passed (conf=90%, oracle=heuristic)
+2026-03-31 01:29:42 | execution.adaptive_runner | INFO | [43/58] ecp_text_af6075c3_name_empty → failed (conf=85%, oracle=heuristic)
+2026-03-31 01:29:46 | execution.adaptive_runner | INFO | [44/58] ecp_text_af6075c3_name_valid → passed (conf=85%, oracle=heuristic)
+2026-03-31 01:29:50 | execution.adaptive_runner | INFO | [45/58] ecp_text_af6075c3_name_unicode → passed (conf=85%, oracle=heuristic)
+2026-03-31 01:29:54 | execution.adaptive_runner | INFO | [46/58] ecp_email_af6075c3_email_valid_standard_0 → passed (conf=85%, oracle=heuristic)
+2026-03-31 01:29:58 | execution.adaptive_runner | INFO | [47/58] ecp_email_af6075c3_email_valid_standard_1 → passed (conf=85%, oracle=heuristic)
+2026-03-31 01:30:02 | execution.adaptive_runner | INFO | [48/58] ecp_email_af6075c3_email_valid_with_plus_0 → passed (conf=85%, oracle=heuristic)
+2026-03-31 01:30:06 | execution.adaptive_runner | INFO | [49/58] ecp_email_af6075c3_email_valid_with_plus_1 → passed (conf=85%, oracle=heuristic)
+2026-03-31 01:30:10 | execution.adaptive_runner | INFO | [50/58] ecp_email_af6075c3_email_valid_with_dots_0 → passed (conf=85%, oracle=heuristic)
+2026-03-31 01:30:14 | execution.adaptive_runner | INFO | [51/58] ecp_email_af6075c3_email_valid_with_dots_1 → passed (conf=85%, oracle=heuristic)
+2026-03-31 01:30:17 | execution.adaptive_runner | INFO | [52/58] ecp_email_af6075c3_email_valid_subdomain_0 → passed (conf=85%, oracle=heuristic)
+2026-03-31 01:30:24 | execution.adaptive_runner | INFO | [53/58] ecp_email_af6075c3_email_valid_subdomain_1 → passed (conf=100%, oracle=llm)
+2026-03-31 01:30:28 | execution.adaptive_runner | INFO | [54/58] ecp_select_af6075c3_subject_first → passed (conf=85%, oracle=heuristic)
+2026-03-31 01:30:32 | execution.adaptive_runner | INFO | [55/58] ecp_select_af6075c3_subject_middle → passed (conf=85%, oracle=heuristic)
+2026-03-31 01:30:36 | execution.adaptive_runner | INFO | [56/58] ecp_select_af6075c3_subject_last → passed (conf=85%, oracle=heuristic)
+2026-03-31 01:30:42 | execution.adaptive_runner | INFO | [57/58] ecp_text_af6075c3_message_valid → passed (conf=100%, oracle=llm)
+2026-03-31 01:30:46 | execution.adaptive_runner | INFO | [58/58] ecp_text_af6075c3_message_unicode → passed (conf=85%, oracle=heuristic)
+2026-03-31 01:30:51 | execution.rl_agent.dqn_agent | INFO | RL model saved → data\rl_model\dqn_checkpoint.pth
+2026-03-31 01:30:52 | execution.adaptive_runner | INFO | Performance metrics saved to data\rl_performance
+2026-03-31 01:30:52 | execution.heuristics_logger | INFO | Heuristics analysis saved to data\heuristics_logs\heuristics_analysis.txt
+2026-03-31 01:30:52 | execution.adaptive_runner | INFO | Heuristics analysis: 58 tests, 93.1% heuristic, 6.9% LLM, avg reward: +1.21
+2026-03-31 01:30:52 | execution.rl_heuristics_optimizer | INFO | Optimization report: data\rl_optimizations\optimization_report.txt
+2026-03-31 01:30:52 | execution.adaptive_runner | INFO | Heuristics optimization: 5 subtypes updated | Risk increases: 0 | Risk decreases: 0 | Avg change: +0.0000
+2026-03-31 01:30:54 | execution.adaptive_runner | INFO | Execution complete: 46/58 passed | 4 LLM calls ($0.008) | stop_reason=completed

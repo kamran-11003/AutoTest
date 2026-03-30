@@ -1,0 +1,464 @@
+{
+  "crawl_stats": {
+    "pages_crawled": 1,
+    "start_url": "http://localhost:5500/test_websites/site1_contact/index.html",
+    "max_depth_reached": 0,
+    "total_states": 1,
+    "unique_urls": 1,
+    "total_inputs": 4,
+    "total_forms": 1,
+    "total_links": 0,
+    "avg_inputs_per_page": 4.0,
+    "avg_forms_per_page": 1.0
+  },
+  "graph_stats": {
+    "node_count": 1,
+    "edge_count": 0,
+    "isolated_nodes": 1,
+    "is_connected": true,
+    "max_depth": 0,
+    "avg_depth": 0.0
+  },
+  "ai_stats": {
+    "enabled": true,
+    "total_calls": 1,
+    "sdk_available": true
+  },
+  "states": [
+    {
+      "hash": "68dc047c",
+      "url": "http://localhost:5500/test_websites/site1_contact/index.html",
+      "normalized_url": "/test_websites/site1_contact/index.html",
+      "title": "Contact Us - AutoTestAI",
+      "timestamp": "2026-03-31T01:25:44.467358",
+      "input_count": 4,
+      "button_count": 1,
+      "link_count": 0,
+      "form_count": 1,
+      "inputs": [
+        {
+          "type": "text",
+          "name": "name",
+          "id": "name",
+          "label": "Full Name",
+          "placeholder": "Enter your full name",
+          "required": true,
+          "pattern": null,
+          "minLength": 2,
+          "maxLength": 50,
+          "min": null,
+          "max": null,
+          "step": null,
+          "visible": true,
+          "parent_form": "contactForm",
+          "selector": "input[name=\"name\"]",
+          "disabled": false,
+          "options": null
+        },
+        {
+          "type": "email",
+          "name": "email",
+          "id": "email",
+          "label": "Email Address",
+          "placeholder": "you@example.com",
+          "required": true,
+          "pattern": null,
+          "minLength": null,
+          "maxLength": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "visible": true,
+          "parent_form": "contactForm",
+          "selector": "input[name=\"email\"]",
+          "disabled": false,
+          "options": null
+        },
+        {
+          "type": "select-one",
+          "name": "subject",
+          "id": "subject",
+          "label": "Subject",
+          "placeholder": "",
+          "required": true,
+          "pattern": null,
+          "minLength": null,
+          "maxLength": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "visible": true,
+          "parent_form": "contactForm",
+          "selector": "select[name=\"subject\"]",
+          "disabled": false,
+          "options": [
+            {
+              "value": "general",
+              "text": "General Inquiry"
+            },
+            {
+              "value": "support",
+              "text": "Technical Support"
+            },
+            {
+              "value": "billing",
+              "text": "Billing Question"
+            },
+            {
+              "value": "feedback",
+              "text": "Feedback"
+            }
+          ]
+        },
+        {
+          "type": "textarea",
+          "name": "message",
+          "id": "message",
+          "label": "Message",
+          "placeholder": "Type your message here (10-500 characters)",
+          "required": true,
+          "pattern": null,
+          "minLength": 10,
+          "maxLength": 500,
+          "min": null,
+          "max": null,
+          "step": null,
+          "visible": true,
+          "parent_form": "contactForm",
+          "selector": "textarea[name=\"message\"]",
+          "disabled": false,
+          "options": null
+        }
+      ],
+      "buttons": [
+        "Send Message"
+      ],
+      "links": [],
+      "forms": [
+        {
+          "signature": "af6075c3",
+          "inputs": [
+            {
+              "type": "text",
+              "name": "name",
+              "id": "name",
+              "label": "Full Name",
+              "placeholder": "Enter your full name",
+              "required": true,
+              "pattern": null,
+              "minLength": 2,
+              "maxLength": 50,
+              "min": null,
+              "max": null,
+              "step": null,
+              "visible": true,
+              "parent_form": "#contactForm",
+              "selector": "#name",
+              "disabled": false,
+              "options": null
+            },
+            {
+              "type": "email",
+              "name": "email",
+              "id": "email",
+              "label": "Email Address",
+              "placeholder": "you@example.com",
+              "required": true,
+              "pattern": null,
+              "minLength": null,
+              "maxLength": null,
+              "min": null,
+              "max": null,
+              "step": null,
+              "visible": true,
+              "parent_form": "#contactForm",
+              "selector": "#email",
+              "disabled": false,
+              "options": null
+            },
+            {
+              "type": "select-one",
+              "name": "subject",
+              "id": "subject",
+              "label": "Subject",
+              "placeholder": "",
+              "required": true,
+              "pattern": null,
+              "minLength": null,
+              "maxLength": null,
+              "min": null,
+              "max": null,
+              "step": null,
+              "visible": true,
+              "parent_form": "#contactForm",
+              "selector": "#subject",
+              "disabled": false,
+              "options": [
+                {
+                  "value": "general",
+                  "text": "General Inquiry"
+                },
+                {
+                  "value": "support",
+                  "text": "Technical Support"
+                },
+                {
+                  "value": "billing",
+                  "text": "Billing Question"
+                },
+                {
+                  "value": "feedback",
+                  "text": "Feedback"
+                }
+              ]
+            },
+            {
+              "type": "textarea",
+              "name": "message",
+              "id": "message",
+              "label": "Message",
+              "placeholder": "Type your message here (10-500 characters)",
+              "required": true,
+              "pattern": null,
+              "minLength": 10,
+              "maxLength": 500,
+              "min": null,
+              "max": null,
+              "step": null,
+              "visible": true,
+              "parent_form": "#contactForm",
+              "selector": "#message",
+              "disabled": false,
+              "options": null
+            }
+          ],
+          "submit_button": "Send Message",
+          "action": "http://localhost:5500/test_websites/site1_contact/index.html",
+          "method": "get",
+          "selector": "#contactForm",
+          "detection_method": "semantic"
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "id": "68dc047c",
+      "hash": "68dc047c",
+      "url": "http://localhost:5500/test_websites/site1_contact/index.html",
+      "normalized_url": "/test_websites/site1_contact/index.html",
+      "title": "Contact Us - AutoTestAI",
+      "input_count": 4,
+      "button_count": 1,
+      "link_count": 0,
+      "form_count": 1,
+      "inputs": [
+        {
+          "type": "text",
+          "name": "name",
+          "id": "name",
+          "label": "Full Name",
+          "placeholder": "Enter your full name",
+          "required": true,
+          "pattern": null,
+          "minLength": 2,
+          "maxLength": 50,
+          "min": null,
+          "max": null,
+          "step": null,
+          "visible": true,
+          "parent_form": "contactForm",
+          "selector": "input[name=\"name\"]",
+          "disabled": false,
+          "options": null
+        },
+        {
+          "type": "email",
+          "name": "email",
+          "id": "email",
+          "label": "Email Address",
+          "placeholder": "you@example.com",
+          "required": true,
+          "pattern": null,
+          "minLength": null,
+          "maxLength": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "visible": true,
+          "parent_form": "contactForm",
+          "selector": "input[name=\"email\"]",
+          "disabled": false,
+          "options": null
+        },
+        {
+          "type": "select-one",
+          "name": "subject",
+          "id": "subject",
+          "label": "Subject",
+          "placeholder": "",
+          "required": true,
+          "pattern": null,
+          "minLength": null,
+          "maxLength": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "visible": true,
+          "parent_form": "contactForm",
+          "selector": "select[name=\"subject\"]",
+          "disabled": false,
+          "options": [
+            {
+              "value": "general",
+              "text": "General Inquiry"
+            },
+            {
+              "value": "support",
+              "text": "Technical Support"
+            },
+            {
+              "value": "billing",
+              "text": "Billing Question"
+            },
+            {
+              "value": "feedback",
+              "text": "Feedback"
+            }
+          ]
+        },
+        {
+          "type": "textarea",
+          "name": "message",
+          "id": "message",
+          "label": "Message",
+          "placeholder": "Type your message here (10-500 characters)",
+          "required": true,
+          "pattern": null,
+          "minLength": 10,
+          "maxLength": 500,
+          "min": null,
+          "max": null,
+          "step": null,
+          "visible": true,
+          "parent_form": "contactForm",
+          "selector": "textarea[name=\"message\"]",
+          "disabled": false,
+          "options": null
+        }
+      ],
+      "buttons": [
+        "Send Message"
+      ],
+      "links": [],
+      "forms": [
+        {
+          "signature": "af6075c3",
+          "inputs": [
+            {
+              "type": "text",
+              "name": "name",
+              "id": "name",
+              "label": "Full Name",
+              "placeholder": "Enter your full name",
+              "required": true,
+              "pattern": null,
+              "minLength": 2,
+              "maxLength": 50,
+              "min": null,
+              "max": null,
+              "step": null,
+              "visible": true,
+              "parent_form": "#contactForm",
+              "selector": "#name",
+              "disabled": false,
+              "options": null
+            },
+            {
+              "type": "email",
+              "name": "email",
+              "id": "email",
+              "label": "Email Address",
+              "placeholder": "you@example.com",
+              "required": true,
+              "pattern": null,
+              "minLength": null,
+              "maxLength": null,
+              "min": null,
+              "max": null,
+              "step": null,
+              "visible": true,
+              "parent_form": "#contactForm",
+              "selector": "#email",
+              "disabled": false,
+              "options": null
+            },
+            {
+              "type": "select-one",
+              "name": "subject",
+              "id": "subject",
+              "label": "Subject",
+              "placeholder": "",
+              "required": true,
+              "pattern": null,
+              "minLength": null,
+              "maxLength": null,
+              "min": null,
+              "max": null,
+              "step": null,
+              "visible": true,
+              "parent_form": "#contactForm",
+              "selector": "#subject",
+              "disabled": false,
+              "options": [
+                {
+                  "value": "general",
+                  "text": "General Inquiry"
+                },
+                {
+                  "value": "support",
+                  "text": "Technical Support"
+                },
+                {
+                  "value": "billing",
+                  "text": "Billing Question"
+                },
+                {
+                  "value": "feedback",
+                  "text": "Feedback"
+                }
+              ]
+            },
+            {
+              "type": "textarea",
+              "name": "message",
+              "id": "message",
+              "label": "Message",
+              "placeholder": "Type your message here (10-500 characters)",
+              "required": true,
+              "pattern": null,
+              "minLength": 10,
+              "maxLength": 500,
+              "min": null,
+              "max": null,
+              "step": null,
+              "visible": true,
+              "parent_form": "#contactForm",
+              "selector": "#message",
+              "disabled": false,
+              "options": null
+            }
+          ],
+          "submit_button": "Send Message",
+          "action": "http://localhost:5500/test_websites/site1_contact/index.html",
+          "method": "get",
+          "selector": "#contactForm",
+          "detection_method": "semantic"
+        }
+      ],
+      "timestamp": "2026-03-31T01:25:44.468360",
+      "metadata": {}
+    }
+  ],
+  "edges": []
+}

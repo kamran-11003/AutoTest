@@ -1,0 +1,1128 @@
+{
+  "stage": "after_refinement",
+  "generated_at": "2026-03-31T01:48:57.407107",
+  "crawl_url": "http://localhost:5500/test_websites/site4_search/index.html",
+  "site_id": "site4_search",
+  "refinement_status": "refined",
+  "test_results": {
+    "metadata": {
+      "source_file": "C:\\Users\\Kamra\\Desktop\\fyp crawler (5)\\fyp crawler\\data\\crawled_graphs\\site4_search_20260331_014814.json",
+      "total_nodes": 1,
+      "total_edges": 0,
+      "total_forms": 1
+    },
+    "test_cases": {
+      "bva": [
+        {
+          "id": "bva_length_30ae9208_keywords_0",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:5500/test_websites/site4_search/index.html",
+          "form_id": "30ae9208",
+          "field_name": "keywords",
+          "field_type": "text",
+          "test_value": "",
+          "expected_result": "error",
+          "description": "Below minimum length (0 chars)",
+          "test_data": {
+            "category": "electronics",
+            "minPrice": 50,
+            "maxPrice": 50,
+            "keywords": ""
+          },
+          "constraints": {
+            "minlength": 1,
+            "maxlength": 255
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:48:26.251284",
+          "ai_notes": "Kept original due to incomplete refinement"
+        },
+        {
+          "id": "bva_length_30ae9208_keywords_1",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:5500/test_websites/site4_search/index.html",
+          "form_id": "30ae9208",
+          "field_name": "keywords",
+          "field_label": "Keywords",
+          "field_type": "text",
+          "test_value": "a",
+          "expected_result": "success",
+          "description": "Keywords: At minimum length (1 char)",
+          "test_data": {
+            "category": "electronics",
+            "minPrice": 50,
+            "maxPrice": 50,
+            "keywords": "a"
+          },
+          "constraints": {
+            "minlength": 1,
+            "maxlength": 255
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:48:26.251284"
+        },
+        {
+          "id": "bva_length_30ae9208_keywords_2",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:5500/test_websites/site4_search/index.html",
+          "form_id": "30ae9208",
+          "field_name": "keywords",
+          "field_label": "Keywords",
+          "field_type": "text",
+          "test_value": "aa",
+          "expected_result": "success",
+          "description": "Keywords: Just above minimum (2 chars)",
+          "test_data": {
+            "category": "electronics",
+            "minPrice": 50,
+            "maxPrice": 50,
+            "keywords": "aa"
+          },
+          "constraints": {
+            "minlength": 1,
+            "maxlength": 255
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:48:26.252277"
+        },
+        {
+          "id": "bva_length_30ae9208_keywords_3",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:5500/test_websites/site4_search/index.html",
+          "form_id": "30ae9208",
+          "field_name": "keywords",
+          "field_label": "Keywords",
+          "field_type": "text",
+          "test_value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expected_result": "success",
+          "description": "Keywords: Just below maximum (254 chars)",
+          "test_data": {
+            "category": "electronics",
+            "minPrice": 50,
+            "maxPrice": 50,
+            "keywords": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "constraints": {
+            "minlength": 1,
+            "maxlength": 255
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:48:26.254275"
+        },
+        {
+          "id": "bva_length_30ae9208_keywords_4",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:5500/test_websites/site4_search/index.html",
+          "form_id": "30ae9208",
+          "field_name": "keywords",
+          "field_label": "Keywords",
+          "field_type": "text",
+          "test_value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expected_result": "success",
+          "description": "Keywords: At maximum length (255 chars)",
+          "test_data": {
+            "category": "electronics",
+            "minPrice": 50,
+            "maxPrice": 50,
+            "keywords": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "constraints": {
+            "minlength": 1,
+            "maxlength": 255
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:48:26.254275"
+        },
+        {
+          "id": "bva_length_30ae9208_keywords_5",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:5500/test_websites/site4_search/index.html",
+          "form_id": "30ae9208",
+          "field_name": "keywords",
+          "field_label": "Keywords",
+          "field_type": "text",
+          "test_value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expected_result": "error",
+          "description": "Keywords: Above maximum length (256 chars)",
+          "test_data": {
+            "category": "electronics",
+            "minPrice": 50,
+            "maxPrice": 50,
+            "keywords": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "constraints": {
+            "minlength": 1,
+            "maxlength": 255
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:48:26.255271"
+        },
+        {
+          "id": "bva_numeric_30ae9208_minPrice_0",
+          "type": "BVA",
+          "subtype": "numeric",
+          "form_url": "http://localhost:5500/test_websites/site4_search/index.html",
+          "form_id": "30ae9208",
+          "form_action": "http://localhost:5500/test_websites/site4_search/index.html",
+          "page_title": "Product Search — Site 4",
+          "field_name": "minPrice",
+          "field_label": "Min Price ($)",
+          "field_type": "number",
+          "test_value": -1.0,
+          "expected_result": "error",
+          "description": "Min Price ($): Below minimum boundary (-1.0)",
+          "test_data": {
+            "keywords": "test",
+            "category": "electronics",
+            "maxPrice": 50,
+            "minPrice": -1.0
+          },
+          "constraints": {
+            "min": 0.0,
+            "max": 100,
+            "step": 1
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:48:26.258274"
+        },
+        {
+          "id": "bva_numeric_30ae9208_minPrice_1",
+          "type": "BVA",
+          "subtype": "numeric",
+          "form_url": "http://localhost:5500/test_websites/site4_search/index.html",
+          "form_id": "30ae9208",
+          "form_action": "http://localhost:5500/test_websites/site4_search/index.html",
+          "page_title": "Product Search — Site 4",
+          "field_name": "minPrice",
+          "field_label": "Min Price ($)",
+          "field_type": "number",
+          "test_value": 0.0,
+          "expected_result": "success",
+          "description": "Min Price ($): At minimum boundary (0.0) on Product Search — Site 4",
+          "test_data": {
+            "keywords": "test",
+            "category": "electronics",
+            "maxPrice": 50,
+            "minPrice": 0.0
+          },
+          "constraints": {
+            "min": 0.0,
+            "max": 100,
+            "step": 1
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:48:26.274273",
+          "ai_notes": "Kept original due to incomplete refinement"
+        },
+        {
+          "id": "bva_numeric_30ae9208_minPrice_2",
+          "type": "BVA",
+          "subtype": "numeric",
+          "form_url": "http://localhost:5500/test_websites/site4_search/index.html",
+          "form_id": "30ae9208",
+          "form_action": "http://localhost:5500/test_websites/site4_search/index.html",
+          "page_title": "Product Search — Site 4",
+          "field_name": "minPrice",
+          "field_label": "Min Price ($)",
+          "field_type": "number",
+          "test_value": 1.0,
+          "expected_result": "success",
+          "description": "Min Price ($): Just above minimum (1.0)",
+          "test_data": {
+            "keywords": "test",
+            "category": "electronics",
+            "maxPrice": 50,
+            "minPrice": 1.0
+          },
+          "constraints": {
+            "min": 0.0,
+            "max": 100,
+            "step": 1
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:48:26.274273"
+        },
+        {
+          "id": "bva_numeric_30ae9208_minPrice_3",
+          "type": "BVA",
+          "subtype": "numeric",
+          "form_url": "http://localhost:5500/test_websites/site4_search/index.html",
+          "form_id": "30ae9208",
+          "form_action": "http://localhost:5500/test_websites/site4_search/index.html",
+          "page_title": "Product Search — Site 4",
+          "field_name": "minPrice",
+          "field_label": "Min Price ($)",
+          "field_type": "number",
+          "test_value": 99,
+          "expected_result": "success",
+          "description": "Min Price ($): Just below maximum (99)",
+          "test_data": {
+            "keywords": "test",
+            "category": "electronics",
+            "maxPrice": 50,
+            "minPrice": 99
+          },
+          "constraints": {
+            "min": 0.0,
+            "max": 100,
+            "step": 1
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:48:26.280284"
+        },
+        {
+          "id": "bva_numeric_30ae9208_minPrice_4",
+          "type": "BVA",
+          "subtype": "numeric",
+          "form_url": "http://localhost:5500/test_websites/site4_search/index.html",
+          "form_id": "30ae9208",
+          "form_action": "http://localhost:5500/test_websites/site4_search/index.html",
+          "page_title": "Product Search — Site 4",
+          "field_name": "minPrice",
+          "field_label": "Min Price ($)",
+          "field_type": "number",
+          "test_value": 100,
+          "expected_result": "success",
+          "description": "Min Price ($): At maximum boundary (100)",
+          "test_data": {
+            "keywords": "test",
+            "category": "electronics",
+            "maxPrice": 50,
+            "minPrice": 100
+          },
+          "constraints": {
+            "min": 0.0,
+            "max": 100,
+            "step": 1
+          },
+          "action": "added",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:48:26.281273"
+        },
+        {
+          "id": "bva_numeric_30ae9208_minPrice_5",
+          "type": "BVA",
+          "subtype": "numeric",
+          "form_url": "http://localhost:5500/test_websites/site4_search/index.html",
+          "form_id": "30ae9208",
+          "form_action": "http://localhost:5500/test_websites/site4_search/index.html",
+          "page_title": "Product Search — Site 4",
+          "field_name": "minPrice",
+          "field_label": "Min Price ($)",
+          "field_type": "number",
+          "test_value": 101,
+          "expected_result": "error",
+          "description": "Min Price ($): Above maximum boundary (101)",
+          "test_data": {
+            "keywords": "test",
+            "category": "electronics",
+            "maxPrice": 50,
+            "minPrice": 101
+          },
+          "constraints": {
+            "min": 0.0,
+            "max": 100,
+            "step": 1
+          },
+          "action": "added",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:48:26.285277"
+        },
+        {
+          "id": "bva_numeric_30ae9208_minPrice_4",
+          "type": "BVA",
+          "subtype": "numeric",
+          "form_url": "http://localhost:5500/test_websites/site4_search/index.html",
+          "form_id": "30ae9208",
+          "form_action": "http://localhost:5500/test_websites/site4_search/index.html",
+          "page_title": "Product Search — Site 4",
+          "field_name": "minPrice",
+          "field_label": "Min Price ($)",
+          "field_type": "number",
+          "test_value": 100,
+          "expected_result": "success",
+          "description": "Min Price ($): Validating upper boundary at 100",
+          "test_data": {
+            "keywords": "test",
+            "category": "electronics",
+            "maxPrice": 50,
+            "minPrice": 100
+          },
+          "constraints": {
+            "min": 0.0,
+            "max": 100,
+            "step": 1
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:48:37.197191"
+        },
+        {
+          "id": "bva_numeric_30ae9208_minPrice_5",
+          "type": "BVA",
+          "subtype": "numeric",
+          "form_url": "http://localhost:5500/test_websites/site4_search/index.html",
+          "form_id": "30ae9208",
+          "form_action": "http://localhost:5500/test_websites/site4_search/index.html",
+          "page_title": "Product Search — Site 4",
+          "field_name": "minPrice",
+          "field_label": "Min Price ($)",
+          "field_type": "number",
+          "test_value": 101,
+          "expected_result": "error",
+          "description": "Min Price ($): Invalidating value above upper boundary at 101",
+          "test_data": {
+            "keywords": "test",
+            "category": "electronics",
+            "maxPrice": 50,
+            "minPrice": 101
+          },
+          "constraints": {
+            "min": 0.0,
+            "max": 100,
+            "step": 1
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:48:37.197836"
+        },
+        {
+          "id": "bva_numeric_30ae_minPrice_below_min",
+          "type": "BVA",
+          "subtype": "numeric",
+          "form_url": "http://localhost:5500/test_websites/site4_search/index.html",
+          "form_id": "30ae9208",
+          "form_action": "http://localhost:5500/test_websites/site4_search/index.html",
+          "page_title": "Product Search — Site 4",
+          "field_name": "minPrice",
+          "field_label": "Min Price ($)",
+          "field_type": "number",
+          "test_value": -0.1,
+          "expected_result": "error",
+          "description": "Min Price ($): Invalidating value below lower boundary at -0.1",
+          "test_data": {
+            "keywords": "test",
+            "category": "electronics",
+            "maxPrice": 50,
+            "minPrice": -0.1
+          },
+          "constraints": {
+            "min": 0.0,
+            "max": 100,
+            "step": 1
+          },
+          "action": "added",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:48:37.197836"
+        },
+        {
+          "id": "bva_numeric_30ae9208_maxPrice_0",
+          "type": "BVA",
+          "subtype": "numeric",
+          "form_url": "http://localhost:5500/test_websites/site4_search/index.html",
+          "form_id": "30ae9208",
+          "form_action": "http://localhost:5500/test_websites/site4_search/index.html",
+          "page_title": "Product Search — Site 4",
+          "field_name": "maxPrice",
+          "field_label": "Max Price ($)",
+          "field_type": "number",
+          "test_value": -1.0,
+          "expected_result": "error",
+          "description": "Max Price ($): Invalidating value below lower boundary at -1.0",
+          "test_data": {
+            "keywords": "test",
+            "category": "electronics",
+            "minPrice": 50,
+            "maxPrice": -1.0
+          },
+          "constraints": {
+            "min": 0.0,
+            "max": 100,
+            "step": 1
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:48:37.197836"
+        },
+        {
+          "id": "bva_numeric_30ae9208_maxPrice_1",
+          "type": "BVA",
+          "subtype": "numeric",
+          "form_url": "http://localhost:5500/test_websites/site4_search/index.html",
+          "form_id": "30ae9208",
+          "form_action": "http://localhost:5500/test_websites/site4_search/index.html",
+          "page_title": "Product Search — Site 4",
+          "field_name": "maxPrice",
+          "field_label": "Max Price ($)",
+          "field_type": "number",
+          "test_value": 0.0,
+          "expected_result": "success",
+          "description": "Max Price ($): At minimum boundary (0.0) on Product Search — Site 4",
+          "test_data": {
+            "keywords": "test",
+            "category": "electronics",
+            "minPrice": 50,
+            "maxPrice": 0.0
+          },
+          "constraints": {
+            "min": 0.0,
+            "max": 100,
+            "step": 1
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:48:37.198546",
+          "ai_notes": "Kept original due to incomplete refinement"
+        },
+        {
+          "id": "bva_numeric_30ae9208_maxPrice_2",
+          "type": "BVA",
+          "subtype": "numeric",
+          "form_url": "http://localhost:5500/test_websites/site4_search/index.html",
+          "form_id": "30ae9208",
+          "form_action": "http://localhost:5500/test_websites/site4_search/index.html",
+          "page_title": "Product Search — Site 4",
+          "field_name": "maxPrice",
+          "field_label": "Max Price ($)",
+          "field_type": "number",
+          "test_value": 1.0,
+          "expected_result": "success",
+          "description": "Max Price ($): Validating value just above lower boundary at 1.0",
+          "test_data": {
+            "keywords": "test",
+            "category": "electronics",
+            "minPrice": 50,
+            "maxPrice": 1.0
+          },
+          "constraints": {
+            "min": 0.0,
+            "max": 100,
+            "step": 1
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:48:37.198546"
+        },
+        {
+          "id": "bva_numeric_30ae9208_maxPrice_3",
+          "type": "BVA",
+          "subtype": "numeric",
+          "form_url": "http://localhost:5500/test_websites/site4_search/index.html",
+          "form_id": "30ae9208",
+          "form_action": "http://localhost:5500/test_websites/site4_search/index.html",
+          "page_title": "Product Search — Site 4",
+          "field_name": "maxPrice",
+          "field_label": "Max Price ($)",
+          "field_type": "number",
+          "test_value": 99,
+          "expected_result": "success",
+          "description": "Max Price ($): Validating value just below upper boundary at 99",
+          "test_data": {
+            "keywords": "test",
+            "category": "electronics",
+            "minPrice": 50,
+            "maxPrice": 99
+          },
+          "constraints": {
+            "min": 0.0,
+            "max": 100,
+            "step": 1
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:48:37.199255"
+        },
+        {
+          "id": "bva_numeric_30ae9208_maxPrice_4",
+          "type": "BVA",
+          "subtype": "numeric",
+          "form_url": "http://localhost:5500/test_websites/site4_search/index.html",
+          "form_id": "30ae9208",
+          "form_action": "http://localhost:5500/test_websites/site4_search/index.html",
+          "page_title": "Product Search — Site 4",
+          "field_name": "maxPrice",
+          "field_label": "Max Price ($)",
+          "field_type": "number",
+          "test_value": 100,
+          "expected_result": "success",
+          "description": "Max Price ($): Validating upper boundary at 100",
+          "test_data": {
+            "keywords": "test",
+            "category": "electronics",
+            "minPrice": 50,
+            "maxPrice": 100
+          },
+          "constraints": {
+            "min": 0.0,
+            "max": 100,
+            "step": 1
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:48:37.199569"
+        },
+        {
+          "id": "bva_numeric_30ae9208_maxPrice_5",
+          "type": "BVA",
+          "subtype": "numeric",
+          "form_url": "http://localhost:5500/test_websites/site4_search/index.html",
+          "form_id": "30ae9208",
+          "form_action": "http://localhost:5500/test_websites/site4_search/index.html",
+          "page_title": "Product Search — Site 4",
+          "field_name": "maxPrice",
+          "field_label": "Max Price ($)",
+          "field_type": "number",
+          "test_value": 101,
+          "expected_result": "error",
+          "description": "Max Price ($): Invalidating value above upper boundary at 101",
+          "test_data": {
+            "keywords": "test",
+            "category": "electronics",
+            "minPrice": 50,
+            "maxPrice": 101
+          },
+          "constraints": {
+            "min": 0.0,
+            "max": 100,
+            "step": 1
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:48:37.200155"
+        }
+      ],
+      "ecp": [
+        {
+          "id": "ecp_text_30ae9208_keywords_valid",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:5500/test_websites/site4_search/index.html",
+          "form_id": "30ae9208",
+          "form_action": "http://localhost:5500/test_websites/site4_search/index.html",
+          "page_title": "Product Search — Site 4",
+          "field_label": "Keywords",
+          "field_name": "keywords",
+          "field_type": "text",
+          "equivalence_class": "valid_text",
+          "test_value": "ValidInput123",
+          "expected_result": "success",
+          "description": "Verify that alphanumeric input is accepted in the Keywords field",
+          "test_data": {
+            "category": "electronics",
+            "minPrice": 50,
+            "maxPrice": 50,
+            "keywords": "ValidInput123"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:48:48.860358"
+        },
+        {
+          "id": "ecp_text_30ae9208_keywords_special",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:5500/test_websites/site4_search/index.html",
+          "form_id": "30ae9208",
+          "form_action": "http://localhost:5500/test_websites/site4_search/index.html",
+          "page_title": "Product Search — Site 4",
+          "field_label": "Keywords",
+          "field_name": "keywords",
+          "field_type": "text",
+          "equivalence_class": "special_characters",
+          "test_value": "<script>alert(\"XSS\")</script>",
+          "expected_result": "error",
+          "description": "Verify that XSS injection attempts are blocked or sanitized in the Keywords field",
+          "test_data": {
+            "category": "electronics",
+            "minPrice": 50,
+            "maxPrice": 50,
+            "keywords": "<script>alert(\"XSS\")</script>"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:48:48.862061"
+        },
+        {
+          "id": "ecp_text_30ae9208_keywords_long",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:5500/test_websites/site4_search/index.html",
+          "form_id": "30ae9208",
+          "form_action": "http://localhost:5500/test_websites/site4_search/index.html",
+          "page_title": "Product Search — Site 4",
+          "field_label": "Keywords",
+          "field_name": "keywords",
+          "field_type": "text",
+          "equivalence_class": "long_text",
+          "test_value": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+          "expected_result": "error",
+          "description": "Verify that input exceeding maximum character length is rejected in the Keywords field",
+          "test_data": {
+            "category": "electronics",
+            "minPrice": 50,
+            "maxPrice": 50,
+            "keywords": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:48:48.862061"
+        },
+        {
+          "id": "ecp_text_30ae9208_keywords_unicode",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:5500/test_websites/site4_search/index.html",
+          "form_id": "30ae9208",
+          "form_action": "http://localhost:5500/test_websites/site4_search/index.html",
+          "page_title": "Product Search — Site 4",
+          "field_label": "Keywords",
+          "field_name": "keywords",
+          "field_type": "text",
+          "equivalence_class": "unicode",
+          "test_value": "测试数据🎉!测试数据",
+          "expected_result": "success",
+          "description": "Verify that multi-byte Unicode characters are correctly processed in the Keywords field",
+          "test_data": {
+            "category": "electronics",
+            "minPrice": 50,
+            "maxPrice": 50,
+            "keywords": "测试数据🎉!测试数据"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:48:48.862061"
+        },
+        {
+          "id": "ecp_select_30ae9208_category_first",
+          "type": "ECP",
+          "subtype": "select",
+          "form_url": "http://localhost:5500/test_websites/site4_search/index.html",
+          "form_id": "30ae9208",
+          "form_action": "http://localhost:5500/test_websites/site4_search/index.html",
+          "page_title": "Product Search — Site 4",
+          "field_label": "Category",
+          "field_name": "category",
+          "field_type": "select",
+          "equivalence_class": "valid_first_option",
+          "test_value": "electronics",
+          "expected_result": "success",
+          "description": "Verify selection of the first option in the Category dropdown",
+          "test_data": {
+            "keywords": "test",
+            "minPrice": 50,
+            "maxPrice": 50,
+            "category": "electronics"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:48:48.862061"
+        },
+        {
+          "id": "ecp_select_30ae9208_category_middle",
+          "type": "ECP",
+          "subtype": "select",
+          "form_url": "http://localhost:5500/test_websites/site4_search/index.html",
+          "form_id": "30ae9208",
+          "form_action": "http://localhost:5500/test_websites/site4_search/index.html",
+          "page_title": "Product Search — Site 4",
+          "field_label": "Category",
+          "field_name": "category",
+          "field_type": "select",
+          "equivalence_class": "valid_middle_option",
+          "test_value": "books",
+          "expected_result": "success",
+          "description": "Verify selection of a middle option in the Category dropdown",
+          "test_data": {
+            "keywords": "test",
+            "minPrice": 50,
+            "maxPrice": 50,
+            "category": "books"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:48:48.863086"
+        },
+        {
+          "id": "ecp_select_30ae9208_category_last",
+          "type": "ECP",
+          "subtype": "select",
+          "form_url": "http://localhost:5500/test_websites/site4_search/index.html",
+          "form_id": "30ae9208",
+          "form_action": "http://localhost:5500/test_websites/site4_search/index.html",
+          "page_title": "Product Search — Site 4",
+          "field_label": "Category",
+          "field_name": "category",
+          "field_type": "select",
+          "equivalence_class": "valid_last_option",
+          "test_value": "sports",
+          "expected_result": "success",
+          "description": "Verify selection of the last option in the Category dropdown",
+          "test_data": {
+            "keywords": "test",
+            "minPrice": 50,
+            "maxPrice": 50,
+            "category": "sports"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:48:48.863086"
+        },
+        {
+          "id": "ecp_number_30ae9208_minPrice_valid",
+          "type": "ECP",
+          "subtype": "number",
+          "form_url": "http://localhost:5500/test_websites/site4_search/index.html",
+          "form_id": "30ae9208",
+          "form_action": "http://localhost:5500/test_websites/site4_search/index.html",
+          "page_title": "Product Search — Site 4",
+          "field_label": "Min Price ($)",
+          "field_name": "minPrice",
+          "field_type": "number",
+          "equivalence_class": "valid_range",
+          "test_value": 50,
+          "expected_result": "success",
+          "description": "Verify that a valid numeric value is accepted in the Min Price ($) field",
+          "test_data": {
+            "keywords": "test",
+            "category": "electronics",
+            "maxPrice": 50,
+            "minPrice": 50
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:48:48.863086"
+        },
+        {
+          "id": "ecp_number_30ae9208_minPrice_invalid",
+          "type": "ECP",
+          "subtype": "number",
+          "form_url": "http://localhost:5500/test_websites/site4_search/index.html",
+          "form_id": "30ae9208",
+          "form_action": "http://localhost:5500/test_websites/site4_search/index.html",
+          "page_title": "Product Search — Site 4",
+          "field_label": "Min Price ($)",
+          "field_name": "minPrice",
+          "field_type": "number",
+          "equivalence_class": "non_numeric",
+          "test_value": "abc",
+          "expected_result": "error",
+          "description": "Verify that non-numeric input is rejected in the Min Price ($) field",
+          "test_data": {
+            "keywords": "test",
+            "category": "electronics",
+            "maxPrice": 50,
+            "minPrice": "abc"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:48:48.864088"
+        },
+        {
+          "id": "ecp_number_30ae9208_maxPrice_valid",
+          "type": "ECP",
+          "subtype": "number",
+          "form_url": "http://localhost:5500/test_websites/site4_search/index.html",
+          "form_id": "30ae9208",
+          "form_action": "http://localhost:5500/test_websites/site4_search/index.html",
+          "page_title": "Product Search — Site 4",
+          "field_label": "Max Price ($)",
+          "field_name": "maxPrice",
+          "field_type": "number",
+          "equivalence_class": "valid_range",
+          "test_value": 50,
+          "expected_result": "success",
+          "description": "Verify that a valid numeric value is accepted in the Max Price ($) field",
+          "test_data": {
+            "keywords": "test",
+            "category": "electronics",
+            "minPrice": 50,
+            "maxPrice": 50
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:48:48.864088"
+        },
+        {
+          "id": "ecp_number_30ae9208_maxPrice_negative",
+          "type": "ECP",
+          "subtype": "number",
+          "form_url": "http://localhost:5500/test_websites/site4_search/index.html",
+          "form_id": "30ae9208",
+          "form_action": "http://localhost:5500/test_websites/site4_search/index.html",
+          "page_title": "Product Search — Site 4",
+          "field_label": "Max Price ($)",
+          "field_name": "maxPrice",
+          "field_type": "number",
+          "equivalence_class": "negative_number",
+          "test_value": -10,
+          "expected_result": "error",
+          "description": "Verify that negative numbers are rejected in the Max Price ($) field",
+          "test_data": {
+            "keywords": "test",
+            "category": "electronics",
+            "minPrice": 50,
+            "maxPrice": -10
+          },
+          "action": "added",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:48:48.865088"
+        },
+        {
+          "id": "ecp_number_30ae9208_maxPrice_invalid",
+          "type": "ECP",
+          "subtype": "number",
+          "form_url": "http://localhost:5500/test_websites/site4_search/index.html",
+          "form_id": "30ae9208",
+          "field_label": "Max Price ($)",
+          "field_name": "maxPrice",
+          "field_type": "number",
+          "equivalence_class": "non_numeric",
+          "test_value": "abc",
+          "expected_result": "error",
+          "description": "Verify that entering non-numeric characters 'abc' into the Max Price ($) field triggers a validation error.",
+          "test_data": {
+            "keywords": "test",
+            "category": "electronics",
+            "minPrice": 50,
+            "maxPrice": "abc"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:48:51.760512"
+        },
+        {
+          "id": "ecp_number_30ae9208_minPrice_invalid",
+          "type": "ECP",
+          "subtype": "number",
+          "form_url": "http://localhost:5500/test_websites/site4_search/index.html",
+          "form_id": "30ae9208",
+          "field_label": "Min Price ($)",
+          "field_name": "minPrice",
+          "field_type": "number",
+          "equivalence_class": "non_numeric",
+          "test_value": "xyz",
+          "expected_result": "error",
+          "description": "Verify that entering non-numeric characters 'xyz' into the Min Price ($) field triggers a validation error.",
+          "test_data": {
+            "keywords": "test",
+            "category": "electronics",
+            "minPrice": "xyz",
+            "maxPrice": 100
+          },
+          "action": "added",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:48:51.760512"
+        },
+        {
+          "id": "ecp_number_30ae9208_maxPrice_negative",
+          "type": "ECP",
+          "subtype": "number",
+          "form_url": "http://localhost:5500/test_websites/site4_search/index.html",
+          "form_id": "30ae9208",
+          "field_label": "Max Price ($)",
+          "field_name": "maxPrice",
+          "field_type": "number",
+          "equivalence_class": "negative_value",
+          "test_value": -10,
+          "expected_result": "error",
+          "description": "Verify that entering a negative value '-10' into the Max Price ($) field triggers a validation error.",
+          "test_data": {
+            "keywords": "test",
+            "category": "electronics",
+            "minPrice": 50,
+            "maxPrice": -10
+          },
+          "action": "added",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:48:51.760512"
+        }
+      ],
+      "decision_table": [],
+      "state_transition": [],
+      "use_case": [
+        {
+          "id": "usecase_auth_login",
+          "type": "Use Case",
+          "subtype": "authentication",
+          "scenario_name": "User Login Flow",
+          "form_url": "http://localhost:5500/test_websites/site4_search/index.html",
+          "test_data": {
+            "keywords": "TestValue",
+            "category": "TestValue",
+            "minPrice": 50,
+            "maxPrice": 50
+          },
+          "steps": [
+            {
+              "step": 1,
+              "action": "navigate",
+              "target": null,
+              "description": "Navigate to login page",
+              "verification": "Login form displayed"
+            },
+            {
+              "step": 2,
+              "action": "fill",
+              "target": "email",
+              "value": "test@example.com",
+              "description": "Enter email address",
+              "verification": "Email field populated"
+            },
+            {
+              "step": 3,
+              "action": "fill",
+              "target": "password",
+              "value": "Test123!@#",
+              "description": "Enter password",
+              "verification": "Password field populated"
+            },
+            {
+              "step": 4,
+              "action": "submit",
+              "target": "login_form",
+              "description": "Submit login form",
+              "verification": "Successfully logged in, redirected to dashboard/profile"
+            }
+          ],
+          "expected_result": "success",
+          "description": "User login: Navigate to login → Enter credentials → Submit → Verify logged in",
+          "preconditions": [
+            "User not logged in",
+            "Valid credentials exist"
+          ],
+          "postconditions": [
+            "User logged in",
+            "Session created"
+          ],
+          "action": "kept",
+          "ai_enhanced": true
+        },
+        {
+          "id": "usecase_auth_register",
+          "type": "Use Case",
+          "subtype": "authentication",
+          "scenario_name": "New User Registration",
+          "form_url": "http://localhost:5500/test_websites/site4_search/index.html",
+          "test_data": {
+            "keywords": "TestValue",
+            "category": "TestValue",
+            "minPrice": 50,
+            "maxPrice": 50
+          },
+          "steps": [
+            {
+              "step": 1,
+              "action": "navigate",
+              "target": null,
+              "description": "Navigate to registration page",
+              "verification": "Registration form displayed"
+            },
+            {
+              "step": 2,
+              "action": "fill_form",
+              "target": "registration_form",
+              "description": "Fill registration form",
+              "verification": "All fields populated"
+            },
+            {
+              "step": 3,
+              "action": "submit",
+              "target": "registration_form",
+              "description": "Submit registration",
+              "verification": "Account created, confirmation message shown"
+            }
+          ],
+          "expected_result": "success",
+          "description": "User registration: Navigate → Fill form → Submit → Verify account created",
+          "preconditions": [
+            "User not registered"
+          ],
+          "postconditions": [
+            "New account created",
+            "User logged in or verification email sent"
+          ],
+          "action": "updated",
+          "ai_enhanced": true
+        },
+        {
+          "id": "usecase_search_basic",
+          "type": "Use Case",
+          "subtype": "search",
+          "scenario_name": "Basic Search Flow",
+          "steps": [
+            {
+              "step": 1,
+              "action": "locate",
+              "target": ".search-input, [type=\"search\"], [name=\"search\"], [name=\"q\"]",
+              "description": "Locate search input",
+              "verification": "Search input visible"
+            },
+            {
+              "step": 2,
+              "action": "fill",
+              "target": "search",
+              "value": "test query",
+              "description": "Enter search query",
+              "verification": "Query entered"
+            },
+            {
+              "step": 3,
+              "action": "submit",
+              "target": "search_form",
+              "description": "Submit search",
+              "verification": "Search results page loaded"
+            },
+            {
+              "step": 4,
+              "action": "verify",
+              "description": "Verify search results",
+              "verification": "Results displayed matching query"
+            }
+          ],
+          "expected_result": "success",
+          "description": "Search flow: Enter query → Submit → View results",
+          "preconditions": [],
+          "postconditions": [
+            "Search results displayed"
+          ],
+          "action": "updated",
+          "ai_enhanced": true
+        }
+      ]
+    },
+    "summary": {
+      "total_test_cases": 38,
+      "bva_count": 21,
+      "ecp_count": 14,
+      "decision_table_count": 0,
+      "state_transition_count": 0,
+      "use_case_count": 3
+    }
+  },
+  "counts": {
+    "bva": 21,
+    "ecp": 14,
+    "decision_table": 0,
+    "state_transition": 0,
+    "use_case": 3
+  },
+  "total": 38,
+  "ai_enhanced_count": 38,
+  "before_file": "site4_search_before_20260331_014814.json"
+}

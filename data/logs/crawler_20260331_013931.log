@@ -1,0 +1,104 @@
+2026-03-31 01:39:42 | crawler.ai_site_analyzer | INFO | 🧠 AI Site Analyzer initialized (pattern detection + URL normalization)
+2026-03-31 01:40:04 | crawler.ai_site_analyzer | INFO | 🔍 Analyzing site structure for localhost:5500 (ONE-TIME analysis)
+2026-03-31 01:40:07 | crawler.ai_site_analyzer | INFO | ✅ Site analysis complete for localhost:5500
+2026-03-31 01:40:07 | crawler.ai_site_analyzer | INFO |    Navigation style: minimal
+2026-03-31 01:40:07 | crawler.ai_site_analyzer | INFO |    URL patterns detected: 0
+2026-03-31 01:40:07 | crawler.ai_site_analyzer | INFO |    Component types: ['has_product_cards', 'has_user_cards', 'has_category_cards', 'has_accordions', 'card_selector']
+2026-03-31 01:40:07 | crawler.ai_site_analyzer | INFO |    📦 Cached in Redis (accessible across all crawler instances)
+2026-03-31 01:41:41 | execution.rl_agent.dqn_agent | INFO | RL model loaded (ε=0.173)
+2026-03-31 01:41:59 | execution.cache_manager | WARNING | Redis cache unavailable: Error 10061 connecting to 127.0.0.1:6379. No connection could be made because the target machine actively refused it.. Running without cache.
+2026-03-31 01:41:59 | execution.adaptive_runner | INFO | 
+=== Test Failure Probability Report (Top 10) ===
+Priority   Test ID              Type            Risk     Risk Factors                                                
+------------------------------------------------------------------------------------------------------------------------
+35         ecp_text_50a34f2b_u  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_text_50a34f2b_e  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_text_50a34f2b_a  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_text_50a34f2b_p  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_text_50a34f2b_c  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_text_50a34f2b_c  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_number_50a34f2b  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_text_50a34f2b_p  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+50         usecase_registratio  Use Case        50.00%   Subtype: Use Case/unknown (base risk: 0.50, confidence: 50%); Unknown test type
+50         usecase_auth_login   Use Case        50.00%   Subtype: Use Case/unknown (base risk: 0.50, confidence: 50%); Unknown test type
+------------------------------------------------------------------------------------------------------------------------
+Average failure probability: 44.70%
+
+2026-03-31 01:41:59 | execution.adaptive_runner | INFO | 
+================================================================================
+TEST CLASSIFICATION REPORT
+================================================================================
+
+Classification | Count | Risk
+--------------------------------------------------
+BVA/numeric_boundaries         |    29 |      70%
+ECP/invalid_partition          |    11 |      65%
+BVA/string_boundaries          |     4 |      60%
+USE CASE/unknown               |     3 |      50%
+ECP/valid_partition            |     9 |      30%
+
+================================================================================
+
+2026-03-31 01:42:05 | execution.adaptive_runner | INFO | [1/56] ecp_text_50a34f2b_username_long → passed (conf=90%, oracle=heuristic)
+2026-03-31 01:42:09 | execution.adaptive_runner | INFO | [2/56] ecp_text_50a34f2b_email_long → passed (conf=90%, oracle=heuristic)
+2026-03-31 01:42:12 | execution.adaptive_runner | INFO | [3/56] ecp_text_50a34f2b_age_invalid → passed (conf=90%, oracle=heuristic)
+2026-03-31 01:42:15 | execution.adaptive_runner | INFO | [4/56] ecp_text_50a34f2b_password_long → passed (conf=90%, oracle=heuristic)
+2026-03-31 01:42:19 | execution.adaptive_runner | INFO | [5/56] ecp_text_50a34f2b_confirmPassword_special → passed (conf=90%, oracle=heuristic)
+2026-03-31 01:42:22 | execution.adaptive_runner | INFO | [6/56] ecp_text_50a34f2b_confirmPassword_long → passed (conf=90%, oracle=heuristic)
+2026-03-31 01:42:26 | execution.adaptive_runner | INFO | [7/56] ecp_number_50a34f2b_age_invalid → passed (conf=90%, oracle=heuristic)
+2026-03-31 01:42:30 | execution.adaptive_runner | INFO | [8/56] ecp_text_50a34f2b_password_mismatch → passed (conf=90%, oracle=heuristic)
+2026-03-31 01:42:33 | execution.adaptive_runner | INFO | [9/56] usecase_registration_unknown → passed (conf=85%, oracle=heuristic)
+2026-03-31 01:42:37 | execution.adaptive_runner | INFO | [10/56] usecase_auth_login → passed (conf=85%, oracle=heuristic)
+2026-03-31 01:42:40 | execution.adaptive_runner | INFO | [11/56] usecase_auth_register → passed (conf=85%, oracle=heuristic)
+2026-03-31 01:42:44 | execution.adaptive_runner | INFO | [12/56] bva_length_50a34f2b_username_2 → failed (conf=85%, oracle=heuristic)
+2026-03-31 01:42:47 | execution.adaptive_runner | INFO | [13/56] bva_length_50a34f2b_username_3 → failed (conf=85%, oracle=heuristic)
+2026-03-31 01:42:51 | execution.adaptive_runner | INFO | [14/56] bva_length_50a34f2b_username_4 → failed (conf=85%, oracle=heuristic)
+2026-03-31 01:42:54 | execution.adaptive_runner | INFO | [15/56] bva_length_50a34f2b_username_5 → passed (conf=90%, oracle=heuristic)
+2026-03-31 01:42:57 | execution.adaptive_runner | INFO | [16/56] bva_length_50a34f2b_email_2 → failed (conf=85%, oracle=heuristic)
+2026-03-31 01:43:01 | execution.adaptive_runner | INFO | [17/56] bva_length_50a34f2b_email_3 → failed (conf=85%, oracle=heuristic)
+2026-03-31 01:43:07 | execution.adaptive_runner | INFO | [18/56] bva_length_50a34f2b_email_4 → failed (conf=100%, oracle=llm)
+2026-03-31 01:43:11 | execution.adaptive_runner | INFO | [19/56] bva_length_50a34f2b_email_5 → passed (conf=90%, oracle=heuristic)
+2026-03-31 01:43:14 | execution.adaptive_runner | INFO | [20/56] bva_length_50a34f2b_email_4 → failed (conf=85%, oracle=heuristic)
+2026-03-31 01:43:18 | execution.adaptive_runner | INFO | [21/56] bva_length_50a34f2b_email_5 → passed (conf=90%, oracle=heuristic)
+2026-03-31 01:43:24 | execution.adaptive_runner | INFO | [22/56] bva_length_50a34f2b_password_0 → passed (conf=100%, oracle=llm)
+2026-03-31 01:43:29 | execution.adaptive_runner | INFO | [23/56] bva_length_50a34f2b_password_1 → failed (conf=100%, oracle=llm)
+2026-03-31 01:43:32 | execution.adaptive_runner | INFO | [24/56] bva_length_50a34f2b_password_2 → failed (conf=85%, oracle=heuristic)
+2026-03-31 01:43:36 | execution.adaptive_runner | INFO | [25/56] bva_length_50a34f2b_password_3 → failed (conf=85%, oracle=heuristic)
+2026-03-31 01:43:39 | execution.adaptive_runner | INFO | [26/56] bva_length_50a34f2b_password_4 → failed (conf=85%, oracle=heuristic)
+2026-03-31 01:43:42 | execution.adaptive_runner | INFO | [27/56] bva_length_50a34f2b_password_5 → passed (conf=90%, oracle=heuristic)
+2026-03-31 01:43:46 | execution.adaptive_runner | INFO | [28/56] bva_length_50a34f2b_confirmPassword_0 → passed (conf=90%, oracle=heuristic)
+2026-03-31 01:43:49 | execution.adaptive_runner | INFO | [29/56] bva_length_50a34f2b_confirmPassword_1 → failed (conf=85%, oracle=heuristic)
+2026-03-31 01:43:52 | execution.adaptive_runner | INFO | [30/56] bva_length_50a34f2b_confirmPassword_1 → passed (conf=90%, oracle=heuristic)
+2026-03-31 01:43:56 | execution.adaptive_runner | INFO | [31/56] bva_length_50a34f2b_confirmPassword_2 → failed (conf=85%, oracle=heuristic)
+2026-03-31 01:44:00 | execution.adaptive_runner | INFO | [32/56] bva_length_50a34f2b_confirmPassword_3 → failed (conf=85%, oracle=heuristic)
+2026-03-31 01:44:03 | execution.adaptive_runner | INFO | [33/56] bva_length_50a34f2b_confirmPassword_4 → failed (conf=85%, oracle=heuristic)
+2026-03-31 01:44:07 | execution.adaptive_runner | INFO | [34/56] bva_length_50a34f2b_confirmPassword_5 → passed (conf=90%, oracle=heuristic)
+2026-03-31 01:44:11 | execution.adaptive_runner | INFO | [35/56] bva_numeric_50a34f2b_age_0 → passed (conf=90%, oracle=heuristic)
+2026-03-31 01:44:14 | execution.adaptive_runner | INFO | [36/56] bva_numeric_50a34f2b_age_1 → failed (conf=85%, oracle=heuristic)
+2026-03-31 01:44:18 | execution.adaptive_runner | INFO | [37/56] bva_numeric_50a34f2b_age_2 → failed (conf=85%, oracle=heuristic)
+2026-03-31 01:44:21 | execution.adaptive_runner | INFO | [38/56] bva_numeric_50a34f2b_age_3 → failed (conf=85%, oracle=heuristic)
+2026-03-31 01:44:26 | execution.adaptive_runner | INFO | [39/56] bva_numeric_50a34f2b_age_4 → failed (conf=85%, oracle=heuristic)
+2026-03-31 01:44:33 | execution.adaptive_runner | INFO | [40/56] bva_numeric_50a34f2b_age_5 → passed (conf=100%, oracle=llm)
+2026-03-31 01:44:37 | execution.adaptive_runner | INFO | [41/56] bva_length_50a34f2b_username_1 → failed (conf=85%, oracle=heuristic)
+2026-03-31 01:44:40 | execution.adaptive_runner | INFO | [42/56] bva_length_50a34f2b_email_1 → failed (conf=85%, oracle=heuristic)
+2026-03-31 01:44:44 | execution.adaptive_runner | INFO | [43/56] ecp_text_50a34f2b_password_special → passed (conf=90%, oracle=heuristic)
+2026-03-31 01:44:48 | execution.adaptive_runner | INFO | [44/56] ecp_text_50a34f2b_username_special → passed (conf=90%, oracle=heuristic)
+2026-03-31 01:44:52 | execution.adaptive_runner | INFO | [45/56] ecp_text_50a34f2b_email_special → passed (conf=90%, oracle=heuristic)
+2026-03-31 01:44:58 | execution.adaptive_runner | INFO | [46/56] bva_length_50a34f2b_username_0 → passed (conf=100%, oracle=llm)
+2026-03-31 01:45:02 | execution.adaptive_runner | INFO | [47/56] bva_length_50a34f2b_email_0 → passed (conf=90%, oracle=heuristic)
+2026-03-31 01:45:05 | execution.adaptive_runner | INFO | [48/56] ecp_text_50a34f2b_username_valid → passed (conf=85%, oracle=heuristic)
+2026-03-31 01:45:10 | execution.adaptive_runner | INFO | [49/56] ecp_text_50a34f2b_username_unicode → failed (conf=85%, oracle=heuristic)
+2026-03-31 01:45:16 | execution.adaptive_runner | INFO | [50/56] ecp_text_50a34f2b_email_valid → failed (conf=100%, oracle=llm)
+2026-03-31 01:45:20 | execution.adaptive_runner | INFO | [51/56] ecp_text_50a34f2b_email_unicode → failed (conf=85%, oracle=heuristic)
+2026-03-31 01:45:24 | execution.adaptive_runner | INFO | [52/56] ecp_text_50a34f2b_password_valid → failed (conf=85%, oracle=heuristic)
+2026-03-31 01:45:29 | execution.adaptive_runner | INFO | [53/56] ecp_text_50a34f2b_password_unicode → failed (conf=85%, oracle=heuristic)
+2026-03-31 01:45:35 | execution.adaptive_runner | INFO | [54/56] ecp_text_50a34f2b_confirmPassword_valid → failed (conf=85%, oracle=heuristic)
+2026-03-31 01:45:40 | execution.adaptive_runner | INFO | [55/56] ecp_text_50a34f2b_confirmPassword_unicode → failed (conf=85%, oracle=heuristic)
+2026-03-31 01:45:45 | execution.adaptive_runner | INFO | [56/56] ecp_number_50a34f2b_age_valid → failed (conf=85%, oracle=heuristic)
+2026-03-31 01:45:48 | execution.rl_agent.dqn_agent | INFO | RL model saved → data\rl_model\dqn_checkpoint.pth
+2026-03-31 01:45:48 | execution.adaptive_runner | INFO | Performance metrics saved to data\rl_performance
+2026-03-31 01:45:48 | execution.heuristics_logger | INFO | Heuristics analysis saved to data\heuristics_logs\heuristics_analysis.txt
+2026-03-31 01:45:48 | execution.adaptive_runner | INFO | Heuristics analysis: 160 tests, 90.0% heuristic, 10.0% LLM, avg reward: +1.39
+2026-03-31 01:45:48 | execution.rl_heuristics_optimizer | INFO | Optimization report: data\rl_optimizations\optimization_report.txt
+2026-03-31 01:45:48 | execution.adaptive_runner | INFO | Heuristics optimization: 5 subtypes updated | Risk increases: 0 | Risk decreases: 0 | Avg change: +0.0000
+2026-03-31 01:45:50 | execution.adaptive_runner | INFO | Execution complete: 27/56 passed | 7 LLM calls ($0.014) | stop_reason=completed

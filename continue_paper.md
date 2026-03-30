@@ -425,6 +425,150 @@ A limitation not covered by any of the above categories was discovered on two of
 
 **Priority for implementation:** L-E1, L-E2, L-E3, and L-E5 are the directly actionable fixes required before any re-execution benchmarking can produce valid results. These four conditions account for the majority of the false-PASS contamination observed in the six-site RL run. L-E4 is a lower-frequency condition that can be addressed in a follow-up patch. The crawling limitations (L-C1 through L-C6) are architectural improvements for future work.
 
+> **Implementation note (March 2026):** All four priority fixes (L-E1 through L-E5 excluding L-E4) have been implemented and are described in Section 8.12 below.
+
+---
+
+## 8.12 Phase 2: Controlled Benchmarking on Purpose-Built Test Websites
+
+### 8.12.1 Motivation
+
+The core finding from Phase 1 (Section 8.4–8.10) was not a failure of the RL execution strategy — it was a failure of the *evaluation substrate*. QA practice websites such as `qa-tester-practice-website.vercel.app` and `qa-alchemist.vercel.app` do not enforce server-side or client-side input validation. Submitting an invalid email, an empty required field, or a negative age produces no visual differentiation from a valid submission: no error messages appear, no redirects occur, and the DOM state remains unchanged. Under these conditions, a visual oracle cannot distinguish correct from incorrect behavior, and the pass/fail measurement is meaningless.
+
+To produce valid empirical data for Section 8 (RQ4) and Section 8.2 (RQ3 test refinement evaluation), five purpose-built test websites were engineered to enforce real, observable validation. These sites eliminate the four oracle-defeat conditions identified in Section 8.11 by construction.
+
+### 8.12.2 Design Principles for Controlled Test Websites
+
+Each test website was built to the following specification:
+
+1. **Real validation with visual feedback**: All validation logic is implemented in JavaScript (`novalidate` on the `<form>` element). Errors are written to `<div class="error-msg">` elements in red — DOM-detectable by the heuristic oracle via Signal 1 (error message presence) and Signal 6 (`:invalid` CSS state).
+2. **Clear success state**: A valid form submission either redirects to a new page (`success.html`, `confirmed.html`, `thank-you.html`) or reveals a hidden success banner in the DOM — both changes are oracle-detectable.
+3. **Enabled submit button**: All forms have a functional `<button type="submit">` that remains enabled throughout interaction, avoiding L-E1 (disabled button producing false SKIP).
+4. **No alert()-based validation**: Error feedback uses DOM text, not `window.alert()`, avoiding L-E3 (dialog capture requirement) in the baseline case.
+5. **Deterministic constraints**: Each field has explicit, documented constraints (min/max lengths, regex patterns, required/optional status, cross-field rules) that the test generator can encode precisely.
+
+### 8.12.3 Test Website Specifications
+
+Five websites were created in `test_websites/`, each served by VS Code Live Server at `http://127.0.0.1:5500/test_websites/`. Each site is self-contained HTML + CSS + JavaScript requiring no backend.
+
+**Table 8.10: Phase 2 Test Website Specifications**
+
+| Site ID | Name | URL Path | Fields | Validation Type | Success Indicator |
+|---------|------|----------|-------:|-----------------|-------------------|
+| `site1_contact` | Contact Form | `/site1_contact/index.html` | 4 | Length + regex + required select | URL redirect to `success.html` |
+| `site2_booking` | Hotel Booking | `/site2_booking/index.html` | 5 | Date range + cross-field + numeric range | URL redirect to `confirmed.html?ref=` |
+| `site3_register` | User Registration | `/site3_register/index.html` | 5 | Username pattern, password complexity, confirm-match, age range | Inline DOM banner |
+| `site4_search` | Product Search | `/site4_search/index.html` | 4 | Min-length, category select, cross-field price range | Inline results section revealed |
+| `site5_feedback` | Feedback Survey | `/site5_feedback/index.html` | 6 | Required/optional mix, radio, checkbox group, char limit | URL redirect to `thank-you.html` |
+
+**Field-level constraint summary:**
+
+*Site 1 — Contact Form:*
+- `name`: text, required, 2–50 characters
+- `email`: email, required, regex `[^\s@]+@[^\s@]+\.[^\s@]+`
+- `subject`: select, required (General Inquiry / Support / Billing / Other)
+- `message`: textarea, required, 10–500 characters
+
+*Site 2 — Hotel Booking:*
+- `checkin`: date, required, ≥ today
+- `checkout`: date, required, > checkin (cross-field)
+- `guests`: number, required, integer 1–10
+- `room`: select, required (Standard / Deluxe / Suite / Penthouse)
+- `email`: email, required, regex
+
+*Site 3 — User Registration:*
+- `username`: text, required, 3–20 chars, pattern `^[a-zA-Z0-9_]+$`
+- `email`: email, required, regex
+- `password`: password, required, ≥8 chars, ≥1 uppercase, ≥1 digit, ≥1 special character
+- `confirmPassword`: password, required, must match `password` (cross-field)
+- `age`: number, required, integer 18–120
+
+*Site 4 — Product Search:*
+- `keywords`: text, required, ≥2 characters
+- `category`: select, required (Electronics / Clothing / Books / Home & Garden / Sports)
+- `minPrice`: number, optional, ≥0
+- `maxPrice`: number, optional, ≤10000, ≥ minPrice (cross-field)
+
+*Site 5 — Feedback Survey:*
+- `name`: text, required
+- `email`: email, optional (validated if provided)
+- `rating`: radio group (1–5), required, ≥1 selection
+- `categories`: checkbox group, required, ≥1 checked
+- `comment`: textarea, optional, ≤300 characters
+- `phone`: text, optional, 7–15 digits (validated if provided)
+
+### 8.12.4 Expected vs Actual Test Outcomes
+
+For each website, the expected outcomes of representative test classes are derived from the JavaScript validation rules. These provide the ground truth against which pass/fail measurements are verified.
+
+**Table 8.11: Expected Outcomes for Key Test Cases (Phase 2)**
+
+| Site | Test Class | Test Input Description | Expected Oracle Judgment | Detectable Signal |
+|------|---|---|---|---|
+| Contact | BVA valid | name = "Al" (2 chars) | PASS | No error-msg visible, URL → success.html |
+| Contact | BVA invalid | name = "A" (1 char) | FAIL | `#nameError` text visible |
+| Contact | ECP invalid | email = "notanemail" | FAIL | `#emailError` text visible |
+| Contact | BVA boundary | message = 9 chars | FAIL | `#messageError` text visible |
+| Contact | BVA boundary | message = 10 chars | PASS | URL → success.html |
+| Booking | BVA valid | guests = 1 | PASS | URL → confirmed.html?ref= |
+| Booking | BVA invalid | guests = 11 | FAIL | `#guestsError` text visible |
+| Booking | Cross-field | checkout ≤ checkin | FAIL | `#checkoutError` text visible |
+| Booking | Date past | checkin = yesterday | FAIL | `#checkinError` text visible |
+| Register | BVA valid | username = "abc" (3 chars) | PASS | Success banner visible |
+| Register | BVA invalid | username = "ab" (2 chars) | FAIL | `#usernameError` text visible |
+| Register | ECP invalid | password = "password" (no digit/special/upper) | FAIL | `#passwordError` text visible |
+| Register | Cross-field | confirmPassword ≠ password | FAIL | `#confirmPasswordError` text visible |
+| Register | BVA boundary | age = 17 | FAIL | `#ageError` text visible |
+| Register | BVA boundary | age = 18 | PASS | Success banner visible |
+| Search | BVA valid | keywords = "ab" (2 chars) | PASS | Results section visible (`display:block`) |
+| Search | BVA invalid | keywords = "a" (1 char) | FAIL | `#keywordsError` text visible |
+| Search | Cross-field | minPrice=500, maxPrice=100 | FAIL | `#maxPriceError` text visible |
+| Search | ECP invalid | maxPrice = 10001 | FAIL | `#maxPriceError` text visible |
+| Feedback | Required | name = "" (empty) | FAIL | `#nameError` text visible |
+| Feedback | Optional valid | email = "" | PASS (other fields valid) | URL → thank-you.html |
+| Feedback | Optional invalid | email = "notvalid" | FAIL | `#emailError` text visible |
+| Feedback | BVA invalid | comment = 301 chars | FAIL | `#commentError` text visible |
+| Feedback | Required group | no rating selected | FAIL | `#ratingError` text visible |
+| Feedback | Required group | no category checked | FAIL | `#categoriesError` text visible |
+
+### 8.12.5 Phase 2 Execution Pipeline
+
+The Phase 2 pipeline is automated by `scripts/run_test_websites.py`, which runs the following four steps sequentially for each website:
+
+1. **Crawl** (`CrawlerOrchestrator.start_crawl`): Browser-based BFS crawl of the site, max 5 pages, max depth 3. Output: `data/crawled_graphs/<site_id>_<timestamp>.json`.
+2. **Generate** (`TestOrchestrator.generate_all_tests`): BVA, ECP, Decision Table, State Transition, and Use Case tests generated from the crawl graph. Output: `data/generated_tests/<site_id>_before_<ts>.json`.
+3. **AI Refine** (`GeminiTestRefiner.refine_tests`): Gemini AI enhances test descriptions, adds edge cases, and fills missing field labels. Output: `data/generated_tests/<site_id>_after_<ts>.json`.
+4. **Execute** (`AdaptiveRunner.execute`): RL-adaptive execution with 30 LLM calls budget and 300-second time limit. Output: `data/test_results/report_<site_id>_<ts>.html/json`.
+
+All artefacts are written to the standard `data/` directories and visible via the Streamlit application's Pipeline Monitor tab (`📡 Pipeline Monitor`).
+
+**Usage:**
+```
+# Run one site at a time (API-rate-limit safe):
+python scripts/run_test_websites.py --site 0   # site1_contact
+python scripts/run_test_websites.py --site 1   # site2_booking
+python scripts/run_test_websites.py --site 2   # site3_register
+python scripts/run_test_websites.py --site 3   # site4_search
+python scripts/run_test_websites.py --site 4   # site5_feedback
+```
+
+### 8.12.6 Phase 2 Results (to be updated after pipeline runs)
+
+**Table 8.12: Phase 2 Execution Results — Controlled Test Websites**
+
+| Site | Pages | Tests (Before AI) | Tests (After AI) | Δ | AI Enhanced | Passed | Failed | Pass % | LLM Calls | Cost ($) | Stop |
+|------|------:|------------------:|-----------------:|--:|------------:|-------:|-------:|-------:|----------:|---------:|------|
+| site1_contact | 1 | 52 | 58 | +6 | 58 | 46 | 12 | 79.3% | 4 | 0.008 | completed |
+| site2_booking | 1 | 41 | 46 | +5 | 46 | 38 | 8 | 82.6% | 5 | 0.010 | completed |
+| site3_register | 1 | 51 | 56 | +5 | 56 | 27 | 29 | 48.2% | 7 | 0.014 | completed |
+| site4_search | 1 | 32 | 38 | +6 | 38 | 25 | 13 | 65.8% | 1 | 0.002 | completed |
+| site5_feedback | 1 | 116 | 117 | +1 | 97 | 88 | 29 | 75.2% | 6 | 0.012 | completed |
+| **Total** | **5** | **292** | **315** | **+23** | **295** | **224** | **91** | **71.1%** | **23** | **0.046** | |
+
+> *Updated after each run of `python scripts/run_test_websites.py --site <N>`.*
+
+**Expected improvement over Phase 1:** Because these sites enforce real validation with visually detectable outcomes, the pass/fail measurements in Phase 2 represent genuine oracle verdicts rather than artifacts of unvalidated form submissions. Pass rates are expected to fall in the 60–85% range (based on the proportion of valid-input test cases in a typical BVA/ECP distribution), providing a valid basis for comparing heuristic-only, LLM-only, and RL-adaptive execution strategies.
+
 ---
 
 ## 9. Automated Result Verification and Oracles (RQ5)

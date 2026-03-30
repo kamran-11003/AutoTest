@@ -1,0 +1,6 @@
+run_number,timestamp,pass_rate,heuristic_decisions,llm_decisions,llm_percentage,api_calls_used,api_cost,execution_time_seconds,epsilon,q_learning_rate,discount_factor,notes
+1,2026-03-31T01:30:51.987498,79.31%,54,4,6.9%,4,$0.0080,215.88,0.186930,0.001000,0.9500,Stop reason: completed | 46/58 passed
+2,2026-03-31T01:38:16.643369,82.61%,41,5,10.9%,5,$0.0100,189.17,0.173390,0.001000,0.9500,Stop reason: completed | 38/46 passed
+3,2026-03-31T01:45:48.415144,48.21%,49,7,12.5%,7,$0.0140,228.79,0.152968,0.001000,0.9500,Stop reason: completed | 27/56 passed
+4,2026-03-31T01:51:47.632885,65.79%,37,1,2.6%,1,$0.0020,139.46,0.147694,0.001000,0.9500,Stop reason: completed | 25/38 passed
+5,2026-03-31T02:08:50.392363,75.21%,111,6,5.1%,6,$0.0120,520.77,0.095973,0.001000,0.9500,Stop reason: completed | 88/117 passed

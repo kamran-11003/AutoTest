@@ -1,0 +1,56 @@
+C:\Users\Kamra\Desktop\fyp crawler (5)\fyp crawler\test_generator\ai_refiner.py:16: FutureWarning: 
+
+All support for the `google.generativeai` package has ended. It will no longer be receiving 
+updates or bug fixes. Please switch to the `google.genai` package as soon as possible.
+See README for more details:
+
+https://github.com/google-gemini/deprecated-generative-ai-python/blob/main/README.md
+
+  import google.generativeai as genai
+2026-03-30 02:16:03 | crawler.gemini_key_rotator | INFO | 🔑 Loaded 12 Gemini API keys for rotation
+2026-03-30 02:16:19 | crawler.redis_cache | INFO | ℹ️  Redis not available (using in-memory cache): Error 10061 connecting to 127.0.0.1:6379. No connection could be made because the target machine actively refused it.
+2026-03-30 02:16:19 | crawler.ai_site_analyzer | INFO | 🧠 AI Site Analyzer initialized (pattern detection + URL normalization)
+2026-03-30 02:16:19 | crawler.ai_detector | INFO | 🤖 Gemini element detector initialized (model: gemini-3.1-flash-lite-preview)
+2026-03-30 02:16:19 | crawler.orchestrator | INFO | 🧠 AI Site Analyzer enabled (smart URL normalization)
+2026-03-30 02:16:19 | crawler.orchestrator | INFO | 🤖 Gemini detector initialized for form/navigation detection
+2026-03-30 02:16:19 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 6 detection strategies
+2026-03-30 02:16:19 | crawler.state_manager | INFO | StateManager initialized (normalization=ON)
+2026-03-30 02:16:19 | crawler.intelligent_link_filter | INFO | IntelligentLinkFilter initialized
+2026-03-30 02:16:19 | crawler.page_snapshot | INFO | PageSnapshot initialized (output: data/snapshots)
+2026-03-30 02:16:19 | crawler.gemini_key_rotator | INFO | 🔑 Loaded 12 Gemini API keys for rotation
+2026-03-30 02:16:19 | crawler.ai_detector | INFO | 🤖 Gemini element detector initialized (model: gemini-3.1-flash-lite-preview)
+2026-03-30 02:16:19 | crawler.link_extractor | INFO | 🤖 Gemini AI detector enabled with 12 API keys
+2026-03-30 02:16:19 | crawler.link_extractor | INFO | LinkExtractor initialized (same_origin=True, AVB=ON, intelligent_filter=ON, snapshots=ON)
+2026-03-30 02:16:19 | crawler.orchestrator | INFO | 🤖 AI-enhanced form detection enabled in DOMAnalyzer
+2026-03-30 02:16:19 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-03-30 02:16:19 | crawler.gemini_key_rotator | INFO | 🔑 Loaded 12 Gemini API keys for rotation
+2026-03-30 02:16:19 | crawler.ai_enricher | INFO | ✅ Gemini AI enrichment enabled with 12 API keys (gemini-3.1-flash-lite-preview)
+2026-03-30 02:16:19 | crawler.interaction_sim | INFO | InteractionSimulator initialized (submit_forms=False, expand=True)
+2026-03-30 02:16:19 | crawler.graph_builder | INFO | GraphBuilder initialized
+2026-03-30 02:16:19 | crawler.orchestrator | INFO | 🧙 Form wizard detector initialized
+2026-03-30 02:16:19 | crawler.orchestrator | INFO | 🚫 Modal handler initialized
+2026-03-30 02:16:19 | crawler.orchestrator | INFO | 📎 File upload detector initialized
+2026-03-30 02:16:19 | crawler.orchestrator | INFO | 🌑 Shadow DOM detector initialized
+2026-03-30 02:16:19 | crawler.orchestrator | INFO | ⏱️  Rate limiter initialized
+2026-03-30 02:16:19 | crawler.orchestrator | INFO | 🚀 CrawlerOrchestrator initialized
+2026-03-30 02:16:19 | crawler.orchestrator | INFO | 🎯 Starting crawl: http://localhost:5500/test_websites/site4_search/index.html
+2026-03-30 02:16:19 | crawler.orchestrator | INFO | 📊 Config: max_depth=3, max_pages=5
+2026-03-30 02:16:19 | crawler.page_loader | INFO | PageLoader initialized: chromium, headless=False
+2026-03-30 02:16:21 | crawler.page_loader | INFO | 📂 Loaded session from: auth_session.json
+2026-03-30 02:16:25 | crawler.page_loader | INFO | ✅ Font bypass and animation disable injected
+2026-03-30 02:16:25 | crawler.page_loader | INFO | ✅ Browser started successfully
+2026-03-30 02:16:25 | crawler.page_loader | INFO | 🌐 Loading: http://localhost:5500/test_websites/site4_search/index.html
+2026-03-30 02:16:27 | crawler.page_loader | ERROR | ❌ Error loading http://localhost:5500/test_websites/site4_search/index.html: Page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:5500/test_websites/site4_search/index.html
+Call log:
+  - navigating to "http://localhost:5500/test_websites/site4_search/index.html", waiting until "domcontentloaded"
+
+2026-03-30 02:16:27 | crawler.orchestrator | ERROR | ❌ Crawl failed: Page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:5500/test_websites/site4_search/index.html
+Call log:
+  - navigating to "http://localhost:5500/test_websites/site4_search/index.html", waiting until "domcontentloaded"
+
+2026-03-30 02:17:02 | crawler.page_loader | INFO | 🛑 Browser closed
+2026-03-30 02:17:02 | __main__ | ERROR | Crawl failed for site4_search: Page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:5500/test_websites/site4_search/index.html
+Call log:
+  - navigating to "http://localhost:5500/test_websites/site4_search/index.html", waiting until "domcontentloaded"
+
+2026-03-30 02:17:02 | __main__ | ERROR | Crawl failed — aborting pipeline for this site

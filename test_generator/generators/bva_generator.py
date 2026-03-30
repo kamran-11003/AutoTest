@@ -102,7 +102,10 @@ class BVAGenerator:
         elif field_type in ['date', 'datetime-local', 'month', 'week', 'time']:
             test_cases = self._generate_date_bva(input_field, form_context)
         # Default: treat unknown types as text with default length boundaries
-        elif field_type not in ['checkbox', 'radio', 'submit', 'button', 'hidden', 'file', 'reset', 'image']:
+        # NOTE: select/select-one/select-multiple use discrete option choices — BVA length
+        # tests don't apply (there is no "too short" or "too long" option value).
+        elif field_type not in ['checkbox', 'radio', 'select', 'select-one', 'select-multiple',
+                                 'submit', 'button', 'hidden', 'file', 'reset', 'image']:
             # Smart defaults already applied above
             test_cases = self._generate_length_bva(input_field, form_context)
         
@@ -314,6 +317,18 @@ class BVAGenerator:
             return 'a' * local_len + '@b.c'
         return 'a' * local_len + '@' + 'b' * middle_len + '.c'
 
+    def _password_of_length(self, n: int) -> str:
+        """
+        Build a password of exactly n characters that meets common complexity
+        requirements (uppercase, lowercase, digit, special character).
+        For n < 4 returns 'a'*n — intentionally fails complexity (error cases).
+        """
+        if n < 4:
+            return 'a' * n  # too short to embed all required char classes
+        # Core: A(upper) + a(lower) + 1(digit) + !(special) = 4 chars
+        # Pad with lowercase 'a' to reach length n
+        return 'Aa1!' + 'a' * (n - 4)
+
     def _generate_length_bva(self, input_field: Dict, form_context: Dict) -> List[Dict]:
         """Generate BVA test cases for text inputs with length constraints"""
         field_name = input_field.get('name', 'unknown')
@@ -332,11 +347,15 @@ class BVAGenerator:
         # Choose value builder based on field type.
         # Email fields need a valid format (user@domain) so the browser's HTML5
         # validator doesn't block submission before length is even checked.
+        # Password fields need complexity (uppercase+digit+special) so that JS
+        # complexity rules don't interfere with length boundary testing.
         # For 'error' boundary cases (below min / above max) we still use plain
-        # 'a'*N — the browser will reject regardless of format.
+        # 'a'*N or simple chars — the form will reject regardless of format.
         def make_value(n: int) -> str:
             if field_type == 'email':
                 return self._email_of_length(n)
+            if field_type == 'password':
+                return self._password_of_length(n)
             return 'a' * n if n >= 0 else ''
 
         test_cases = []

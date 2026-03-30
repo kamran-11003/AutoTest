@@ -1,0 +1,254 @@
+﻿python.exe : C:\Users\Kamra\Desktop\fyp crawler (5)\fyp 
+crawler\test_generator\ai_refiner.py:16: FutureWarning: 
+At line:4 char:16
++ ...      $out = & $python "scripts\run_test_websites.py" "--site" "$idx"  ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (C:\Users\Kamra\...FutureWarning:  
+   :String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+All support for the `google.generativeai` package has ended. It will no longer 
+be receiving 
+updates or bug fixes. Please switch to the `google.genai` package as soon as 
+possible.
+See README for more details:
+
+https://github.com/google-gemini/deprecated-generative-ai-python/blob/main/READ
+ME.md
+
+  import google.generativeai as genai
+2026-03-30 02:06:03 | crawler.gemini_key_rotator | INFO | \U0001f511 Loaded 12 
+Gemini API keys for rotation
+2026-03-30 02:06:15 | crawler.redis_cache | INFO | \u2139\ufe0f  Redis not 
+available (using in-memory cache): Error 10061 connecting to 127.0.0.1:6379. 
+No connection could be made because the target machine actively refused it.
+2026-03-30 02:06:15 | crawler.ai_site_analyzer | INFO | \U0001f9e0 AI Site 
+Analyzer initialized (pattern detection + URL normalization)
+2026-03-30 02:06:15 | crawler.ai_detector | INFO | \U0001f916 Gemini element 
+detector initialized (model: gemini-3.1-flash-lite-preview)
+2026-03-30 02:06:15 | crawler.orchestrator | INFO | \U0001f9e0 AI Site 
+Analyzer enabled (smart URL normalization)
+2026-03-30 02:06:15 | crawler.orchestrator | INFO | \U0001f916 Gemini detector 
+initialized for form/navigation detection
+2026-03-30 02:06:15 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized 
+with 6 detection strategies
+2026-03-30 02:06:15 | crawler.state_manager | INFO | StateManager initialized 
+(normalization=ON)
+2026-03-30 02:06:15 | crawler.intelligent_link_filter | INFO | 
+IntelligentLinkFilter initialized
+2026-03-30 02:06:15 | crawler.page_snapshot | INFO | PageSnapshot initialized 
+(output: data/snapshots)
+2026-03-30 02:06:15 | crawler.gemini_key_rotator | INFO | \U0001f511 Loaded 12 
+Gemini API keys for rotation
+2026-03-30 02:06:15 | crawler.ai_detector | INFO | \U0001f916 Gemini element 
+detector initialized (model: gemini-3.1-flash-lite-preview)
+2026-03-30 02:06:15 | crawler.link_extractor | INFO | \U0001f916 Gemini AI 
+detector enabled with 12 API keys
+2026-03-30 02:06:15 | crawler.link_extractor | INFO | LinkExtractor 
+initialized (same_origin=True, AVB=ON, intelligent_filter=ON, snapshots=ON)
+2026-03-30 02:06:15 | crawler.orchestrator | INFO | \U0001f916 AI-enhanced 
+form detection enabled in DOMAnalyzer
+2026-03-30 02:06:15 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized 
+with 7 detection strategies (AI vision enabled)
+2026-03-30 02:06:15 | crawler.gemini_key_rotator | INFO | \U0001f511 Loaded 12 
+Gemini API keys for rotation
+2026-03-30 02:06:15 | crawler.ai_enricher | INFO | \u2705 Gemini AI enrichment 
+enabled with 12 API keys (gemini-3.1-flash-lite-preview)
+2026-03-30 02:06:15 | crawler.interaction_sim | INFO | InteractionSimulator 
+initialized (submit_forms=False, expand=True)
+2026-03-30 02:06:15 | crawler.graph_builder | INFO | GraphBuilder initialized
+2026-03-30 02:06:15 | crawler.orchestrator | INFO | \U0001f9d9 Form wizard 
+detector initialized
+2026-03-30 02:06:15 | crawler.orchestrator | INFO | \U0001f6ab Modal handler 
+initialized
+2026-03-30 02:06:15 | crawler.orchestrator | INFO | \U0001f4ce File upload 
+detector initialized
+2026-03-30 02:06:15 | crawler.orchestrator | INFO | \U0001f311 Shadow DOM 
+detector initialized
+2026-03-30 02:06:15 | crawler.orchestrator | INFO | \u23f1\ufe0f  Rate limiter 
+initialized
+2026-03-30 02:06:15 | crawler.orchestrator | INFO | \U0001f680 
+CrawlerOrchestrator initialized
+2026-03-30 02:06:15 | crawler.orchestrator | INFO | \U0001f3af Starting crawl: 
+http://localhost:5500/test_websites/site4_search/index.html
+2026-03-30 02:06:15 | crawler.orchestrator | INFO | \U0001f4ca Config: 
+max_depth=3, max_pages=5
+2026-03-30 02:06:15 | crawler.page_loader | INFO | PageLoader initialized: 
+chromium, headless=False
+2026-03-30 02:06:17 | crawler.page_loader | INFO | \U0001f4c2 Loaded session 
+from: auth_session.json
+2026-03-30 02:06:18 | crawler.page_loader | INFO | \u2705 Font bypass and 
+animation disable injected
+2026-03-30 02:06:18 | crawler.page_loader | INFO | \u2705 Browser started 
+successfully
+2026-03-30 02:06:18 | crawler.page_loader | INFO | \U0001f310 Loading: 
+http://localhost:5500/test_websites/site4_search/index.html
+2026-03-30 02:06:26 | crawler.orchestrator | INFO | \U0001f6ab Checking for 
+initial popups/modals...
+2026-03-30 02:06:30 | crawler.orchestrator | INFO | \U0001f9e0 Performing 
+ONE-TIME site structure analysis...
+2026-03-30 02:06:30 | crawler.orchestrator | INFO | \U0001f4e1 Collecting 
+sample URLs for pattern detection...
+2026-03-30 02:06:30 | crawler.link_extractor | INFO | \U0001f3af Found 1 
+clickable elements (traditional detection)
+2026-03-30 02:06:30 | crawler.link_extractor | INFO | \U0001f313 Added 4 
+shadow DOM elements
+2026-03-30 02:06:30 | crawler.link_extractor | INFO | \U0001f504 
+Deduplication: 5 \u2192 2 elements (removed 3 duplicates)
+2026-03-30 02:06:30 | crawler.link_extractor | INFO | \U0001f9e0 After 
+intelligent filtering: 2 unique components
+2026-03-30 02:06:44 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized 
+with 7 detection strategies (AI vision enabled)
+2026-03-30 02:06:44 | crawler.ai_detector | INFO | \U0001f916 Form detection: 
+Analyzing screenshot with Gemini (API call #1)
+2026-03-30 02:06:46 | crawler.ai_detector | WARNING | \u26a0\ufe0f  API key 
+quota exceeded (attempt 1/12)
+2026-03-30 02:06:46 | crawler.gemini_key_rotator | INFO | \U0001f504 Rotated 
+API key: ...iXtO13KI \u2192 ...vvdOTYio (reason: rate_limit)
+2026-03-30 02:06:46 | crawler.ai_detector | INFO | \U0001f504 Switching to 
+next API key...
+2026-03-30 02:06:49 | crawler.ai_detector | INFO | \u2705 AI Vision: Detected 
+1 forms
+2026-03-30 02:06:49 | crawler.dom_analyzer | INFO | \U0001f916 AI Vision: 
+Detected 1 forms from screenshot analysis
+2026-03-30 02:06:49 | crawler.dom_analyzer | INFO | \U0001f4ca Analysis 
+complete: 4 inputs, 1 forms, 1 buttons, 0 links
+2026-03-30 02:06:49 | crawler.link_extractor | INFO | \U0001f4e6 Stored 
+component state: http://localhost:5500/test_websites/site4_search/index.html#co
+mponent-search-products
+2026-03-30 02:06:49 | crawler.link_extractor | INFO | \U0001f50d 
+Action-Verify-Back: 0/2 clicks discovered URLs (0 unique)
+2026-03-30 02:06:49 | crawler.link_extractor | WARNING | \u26a0\ufe0f  NO URLs 
+discovered from 2 clickable elements! Check selectors.
+2026-03-30 02:06:49 | crawler.page_snapshot | INFO | \U0001f4f8 Snapshot 
+saved: 20260330_020649_localhost:5500_test_websites_site4_search_index.ht
+   \u251c\u2500 Total clickables: 5
+   \u251c\u2500 After filtering: 2 (60.0% reduction)
+   \u2514\u2500 Discovered: 0 URLs
+2026-03-30 02:06:49 | crawler.link_extractor | INFO | \U0001f517 Extracted 0 
+unique links
+2026-03-30 02:06:49 | crawler.ai_site_analyzer | INFO | \U0001f50d Analyzing 
+site structure for localhost:5500 (ONE-TIME analysis)
+2026-03-30 02:06:51 | crawler.ai_site_analyzer | INFO | \u2705 Site analysis 
+complete for localhost:5500
+2026-03-30 02:06:51 | crawler.ai_site_analyzer | INFO |    Navigation style: 
+minimal
+2026-03-30 02:06:51 | crawler.ai_site_analyzer | INFO |    URL patterns 
+detected: 0
+2026-03-30 02:06:51 | crawler.ai_site_analyzer | INFO |    Component types: 
+['has_product_cards', 'has_user_cards', 'has_category_cards', 
+'has_accordions', 'card_selector']
+2026-03-30 02:06:51 | crawler.ai_site_analyzer | INFO |    \U0001f4e6 Cached 
+in Redis (accessible across all crawler instances)
+2026-03-30 02:06:51 | crawler.orchestrator | INFO | \u2705 Site analysis 
+complete - patterns cached for all pages
+2026-03-30 02:06:51 | crawler.orchestrator | INFO | \U0001f504 Starting BFS 
+crawl...
+2026-03-30 02:06:51 | crawler.orchestrator | INFO | \U0001f310 Crawling [0]: 
+http://localhost:5500/test_websites/site4_search/index.html
+2026-03-30 02:06:52 | crawler.interaction_sim | INFO | \U0001f50d Hidden 
+elements discovered: 0 accordions, 0 menus
+2026-03-30 02:06:53 | crawler.ai_detector | INFO | \U0001f916 Form detection: 
+Analyzing screenshot with Gemini (API call #2)
+2026-03-30 02:06:55 | crawler.ai_detector | INFO | \u2705 AI Vision: Detected 
+1 forms
+2026-03-30 02:06:55 | crawler.dom_analyzer | INFO | \U0001f916 AI Vision: 
+Detected 1 forms from screenshot analysis
+2026-03-30 02:06:55 | crawler.dom_analyzer | INFO | \U0001f4ca Analysis 
+complete: 4 inputs, 1 forms, 1 buttons, 0 links
+2026-03-30 02:06:57 | crawler.ai_enricher | INFO | \U0001f916 AI enrichment: 
+Found 1 forms, 1 buttons, 1 interactive elements
+2026-03-30 02:06:57 | crawler.link_extractor | INFO | \U0001f916 Using GEMINI 
+AI to detect navigation elements on homepage
+2026-03-30 02:06:57 | crawler.ai_detector | INFO | \U0001f916 Sending 
+screenshot to Gemini: snapshots/ai_analysis_3400.png (API call #3)
+2026-03-30 02:06:57 | crawler.ai_detector | INFO | \U0001f4cb Generic parser 
+found 6 potential navigation elements
+2026-03-30 02:06:57 | crawler.ai_detector | INFO | \U0001f4e4 Requesting 
+Gemini analysis...
+2026-03-30 02:07:00 | crawler.ai_detector | INFO | \U0001f916 Gemini detected 
+4 navigation elements (confidence >= 70%)
+2026-03-30 02:07:00 | crawler.ai_detector | INFO | \u2705 4 high-confidence 
+elements validated
+2026-03-30 02:07:00 | crawler.ai_detector | INFO | \U0001f4e6 Detected layout 
+signature (caching disabled): accordions:0
+2026-03-30 02:07:00 | crawler.link_extractor | INFO | \U0001f916 AI found 4 
+navigation elements: ['Search Products', 'Demo Product A', 'Demo Product B', 
+'Demo Product C']
+2026-03-30 02:07:00 | crawler.link_extractor | INFO | \U0001f916 Using 4 
+AI-detected navigation elements
+2026-03-30 02:07:00 | crawler.link_extractor | INFO | \U0001f313 Added 4 
+shadow DOM elements
+2026-03-30 02:07:00 | crawler.link_extractor | INFO | \U0001f504 
+Deduplication: 8 \u2192 5 elements (removed 3 duplicates)
+2026-03-30 02:07:00 | crawler.link_extractor | INFO | \U0001f9e0 After 
+intelligent filtering: 5 unique components
+2026-03-30 02:07:08 | crawler.link_extractor | INFO | \U0001f50d 
+Action-Verify-Back: 0/5 clicks discovered URLs (0 unique)
+2026-03-30 02:07:08 | crawler.link_extractor | WARNING | \u26a0\ufe0f  NO URLs 
+discovered from 5 clickable elements! Check selectors.
+2026-03-30 02:07:08 | crawler.page_snapshot | INFO | \U0001f4f8 Snapshot 
+saved: 20260330_020708_localhost:5500_test_websites_site4_search_index.ht
+   \u251c\u2500 Total clickables: 8
+   \u251c\u2500 After filtering: 5 (37.5% reduction)
+   \u2514\u2500 Discovered: 0 URLs
+2026-03-30 02:07:08 | crawler.link_extractor | INFO | \U0001f517 Extracted 0 
+unique links
+2026-03-30 02:07:08 | crawler.state_manager | INFO | \u2705 New state: 
+a82e667e | /test_websites/site4_search/index.html | 4 inputs, 1 forms
+2026-03-30 02:07:08 | crawler.orchestrator | INFO | \u2705 New state: a82e667e 
+| /test_websites/site4_search/index.html | 4 inputs, 1 forms
+2026-03-30 02:07:08 | crawler.orchestrator | INFO | \U0001f4e6 Processing 1 
+component states
+2026-03-30 02:07:08 | crawler.orchestrator | INFO | \U0001f4ca Progress: 1/5 
+pages | Queue: 0 | Depth: 0
+2026-03-30 02:07:08 | crawler.orchestrator | INFO | \U0001f3c1 Crawl finished: 
+1 pages crawled
+2026-03-30 02:07:08 | crawler.orchestrator | INFO | \u2705 Fixed 0 graph 
+edges, removed 0 orphans
+2026-03-30 02:07:08 | crawler.orchestrator | INFO | \U0001f4ca Final graph: 1 
+nodes, 0 edges
+2026-03-30 02:07:08 | crawler.orchestrator | ERROR | \u274c Crawl failed: 
+'charmap' codec can't encode character '\U0001f4f8' in position 0: character 
+maps to <undefined>
+2026-03-30 02:07:09 | crawler.page_loader | INFO | \U0001f6d1 Browser closed
+2026-03-30 02:07:09 | __main__ | ERROR | Crawl failed for site4_search: 
+'charmap' codec can't encode character '\U0001f4f8' in position 0: character 
+maps to <undefined>
+2026-03-30 02:07:09 | __main__ | ERROR | Crawl failed ù aborting pipeline for 
+this site
+Traceback (most recent call last):
+
+======================================================================
+  PIPELINE: Product Search  (site4_search)
+  URL     : http://localhost:5500/test_websites/site4_search/index.html
+======================================================================
+  [site4_search] crawling: Crawling http://localhost:5500/test_websites/site4_search/index.html
+
+================================================================================
+  [site4_search] crawl_failed: 'charmap' codec can't encode character '\U0001f4f8' in position 0: character maps to <undefined>
+  File "C:\Users\Kamra\Desktop\fyp crawler (5)\fyp 
+crawler\scripts\run_test_websites.py", line 594, in <module>
+    asyncio.run(main())
+  File "C:\Program Files\Python312\Lib\asyncio\runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\asyncio\base_events.py", line 687, in 
+run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\Kamra\Desktop\fyp crawler (5)\fyp 
+crawler\scripts\run_test_websites.py", line 549, in main
+    _print_summary(summary)
+  File "C:\Users\Kamra\Desktop\fyp crawler (5)\fyp 
+crawler\scripts\run_test_websites.py", line 585, in _print_summary
+    print(f"\n  {'\u2500'*60}")
+  File "C:\Program Files\Python312\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode characters in position 4-63: 
+character maps to <undefined>

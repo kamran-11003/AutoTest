@@ -40,7 +40,7 @@ class ConstraintManager:
         # Numeric fields
         'number': {'min': 0, 'max': 999999, 'step': 1},
         'range': {'min': 0, 'max': 100, 'step': 1},
-        'age': {'min': 1, 'max': 120, 'step': 1},
+        'age': {'min': 18, 'max': 120, 'step': 1},
         'quantity': {'min': 1, 'max': 999, 'step': 1},
         'price': {'min': 0.01, 'max': 999999.99, 'step': 0.01},
         'amount': {'min': 0, 'max': 999999.99, 'step': 0.01},

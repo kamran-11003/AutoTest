@@ -1,0 +1,57 @@
+2026-03-31 01:53:12 | crawler.gemini_key_rotator | INFO | 🔑 Loaded 12 Gemini API keys for rotation
+2026-03-31 01:53:27 | crawler.redis_cache | INFO | ℹ️  Redis not available (using in-memory cache): Error 10061 connecting to 127.0.0.1:6379. No connection could be made because the target machine actively refused it.
+2026-03-31 01:53:27 | crawler.ai_detector | INFO | 🤖 Gemini element detector initialized (model: gemini-3.1-flash-lite-preview)
+2026-03-31 01:53:27 | crawler.intelligent_link_filter | INFO | IntelligentLinkFilter initialized
+2026-03-31 01:53:27 | crawler.page_snapshot | INFO | PageSnapshot initialized (output: data/snapshots)
+2026-03-31 01:53:27 | crawler.gemini_key_rotator | INFO | 🔑 Loaded 12 Gemini API keys for rotation
+2026-03-31 01:53:27 | crawler.ai_detector | INFO | 🤖 Gemini element detector initialized (model: gemini-3.1-flash-lite-preview)
+2026-03-31 01:53:27 | crawler.link_extractor | INFO | 🤖 Gemini AI detector enabled with 12 API keys
+2026-03-31 01:53:27 | crawler.link_extractor | INFO | LinkExtractor initialized (same_origin=True, AVB=ON, intelligent_filter=ON, snapshots=ON)
+2026-03-31 01:53:27 | crawler.gemini_key_rotator | INFO | 🔑 Loaded 12 Gemini API keys for rotation
+2026-03-31 01:53:27 | crawler.ai_enricher | INFO | ✅ Gemini AI enrichment enabled with 12 API keys (gemini-3.1-flash-lite-preview)
+2026-03-31 01:53:27 | crawler.interaction_sim | INFO | InteractionSimulator initialized (submit_forms=False, expand=True)
+2026-03-31 01:53:38 | crawler.link_extractor | INFO | 🎯 Found 1 clickable elements (traditional detection)
+2026-03-31 01:53:38 | crawler.link_extractor | INFO | 🌓 Added 24 shadow DOM elements
+2026-03-31 01:53:38 | crawler.link_extractor | INFO | 🔄 Deduplication: 25 → 22 elements (removed 3 duplicates)
+2026-03-31 01:53:39 | crawler.link_extractor | INFO | 🧠 After intelligent filtering: 22 unique components
+2026-03-31 01:53:45 | crawler.ai_detector | INFO | 🤖 Form detection: Analyzing screenshot with Gemini (API call #1)
+2026-03-31 01:53:47 | crawler.ai_detector | WARNING | ⚠️  API key quota exceeded (attempt 1/12)
+2026-03-31 01:53:47 | crawler.gemini_key_rotator | INFO | 🔄 Rotated API key: ...iXtO13KI → ...vvdOTYio (reason: rate_limit)
+2026-03-31 01:53:47 | crawler.ai_detector | INFO | 🔄 Switching to next API key...
+2026-03-31 01:53:50 | crawler.ai_detector | INFO | ✅ AI Vision: Detected 1 forms
+2026-03-31 01:53:50 | crawler.link_extractor | INFO | 📦 Stored component state: http://localhost:5500/test_websites/site5_feedback/index.html#component-submit-feedback
+2026-03-31 01:54:37 | crawler.link_extractor | INFO | 🔍 Action-Verify-Back: 0/22 clicks discovered URLs (0 unique)
+2026-03-31 01:54:37 | crawler.link_extractor | WARNING | ⚠️  NO URLs discovered from 22 clickable elements! Check selectors.
+2026-03-31 01:54:38 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260331_015437_localhost:5500_test_websites_site5_feedback_index.
+   ├─ Total clickables: 25
+   ├─ After filtering: 22 (12.0% reduction)
+   └─ Discovered: 0 URLs
+2026-03-31 01:54:38 | crawler.link_extractor | INFO | 🔗 Extracted 0 unique links
+2026-03-31 01:54:41 | crawler.interaction_sim | INFO | 🔍 Hidden elements discovered: 0 accordions, 0 menus
+2026-03-31 01:54:42 | crawler.ai_detector | INFO | 🤖 Form detection: Analyzing screenshot with Gemini (API call #2)
+2026-03-31 01:54:45 | crawler.ai_detector | INFO | ✅ AI Vision: Detected 1 forms
+2026-03-31 01:54:45 | crawler.link_extractor | INFO | 🤖 Using GEMINI AI to detect navigation elements on homepage
+2026-03-31 01:54:45 | crawler.ai_detector | INFO | 🤖 Sending screenshot to Gemini: snapshots/ai_analysis_7828.png (API call #3)
+2026-03-31 01:54:45 | crawler.ai_detector | INFO | 📋 Generic parser found 2 potential navigation elements
+2026-03-31 01:54:45 | crawler.ai_detector | INFO | 📤 Requesting Gemini analysis...
+2026-03-31 01:54:47 | crawler.ai_detector | INFO | 🤖 Gemini detected 0 navigation elements (confidence >= 70%)
+2026-03-31 01:54:47 | crawler.ai_detector | INFO | ✅ 0 high-confidence elements validated
+2026-03-31 01:54:47 | crawler.ai_detector | INFO | 📦 Detected layout signature (caching disabled): accordions:0
+2026-03-31 01:54:47 | crawler.link_extractor | WARNING | ⚠️  AI detected no navigation elements, falling back to traditional detection
+2026-03-31 01:54:47 | crawler.link_extractor | INFO | 🎯 Found 1 clickable elements (traditional detection)
+2026-03-31 01:54:47 | crawler.link_extractor | INFO | 🌓 Added 24 shadow DOM elements
+2026-03-31 01:54:47 | crawler.link_extractor | INFO | 🔄 Deduplication: 25 → 22 elements (removed 3 duplicates)
+2026-03-31 01:54:47 | crawler.link_extractor | INFO | 🧠 After intelligent filtering: 22 unique components
+2026-03-31 01:54:57 | crawler.ai_detector | INFO | 🤖 Form detection: Analyzing screenshot with Gemini (API call #4)
+2026-03-31 01:55:00 | crawler.ai_detector | INFO | ✅ AI Vision: Detected 1 forms
+2026-03-31 01:55:00 | crawler.link_extractor | INFO | 📦 Stored component state: http://localhost:5500/test_websites/site5_feedback/index.html#component-submit-feedback
+2026-03-31 01:56:45 | crawler.link_extractor | INFO | 🔍 Action-Verify-Back: 0/22 clicks discovered URLs (0 unique)
+2026-03-31 01:56:45 | crawler.link_extractor | WARNING | ⚠️  NO URLs discovered from 22 clickable elements! Check selectors.
+2026-03-31 01:56:46 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260331_015645_localhost:5500_test_websites_site5_feedback_index.
+   ├─ Total clickables: 25
+   ├─ After filtering: 22 (12.0% reduction)
+   └─ Discovered: 0 URLs
+2026-03-31 01:56:46 | crawler.link_extractor | INFO | 🔗 Extracted 0 unique links
+2026-03-31 01:56:46 | crawler.page_snapshot | INFO | 📋 Snapshot summary saved: data\snapshots\snapshots_summary.json
+2026-03-31 01:59:29 | crawler.gemini_key_rotator | INFO | 🔑 Loaded 12 Gemini API keys for rotation
+2026-03-31 02:01:28 | crawler.gemini_key_rotator | INFO | 🔄 Rotated API key: ...iXtO13KI → ...vvdOTYio (reason: rate_limit)

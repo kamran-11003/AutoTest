@@ -1,0 +1,16 @@
+2026-03-31 01:23:27 | crawler.orchestrator | INFO | 🧠 AI Site Analyzer enabled (smart URL normalization)
+2026-03-31 01:23:27 | crawler.orchestrator | INFO | 🤖 Gemini detector initialized for form/navigation detection
+2026-03-31 01:23:27 | crawler.orchestrator | INFO | 🤖 AI-enhanced form detection enabled in DOMAnalyzer
+2026-03-31 01:23:27 | crawler.graph_builder | INFO | GraphBuilder initialized
+2026-03-31 01:23:27 | crawler.orchestrator | INFO | 🧙 Form wizard detector initialized
+2026-03-31 01:23:27 | crawler.orchestrator | INFO | 🚫 Modal handler initialized
+2026-03-31 01:23:27 | crawler.orchestrator | INFO | 📎 File upload detector initialized
+2026-03-31 01:23:27 | crawler.orchestrator | INFO | 🌑 Shadow DOM detector initialized
+2026-03-31 01:23:27 | crawler.orchestrator | INFO | ⏱️  Rate limiter initialized
+2026-03-31 01:23:27 | crawler.orchestrator | INFO | 🚀 CrawlerOrchestrator initialized
+2026-03-31 01:23:27 | crawler.orchestrator | INFO | 🎯 Starting crawl: http://localhost:5500/test_websites/site1_contact/index.html
+2026-03-31 01:23:27 | crawler.orchestrator | INFO | 📊 Config: max_depth=3, max_pages=5
+2026-03-31 01:23:53 | crawler.orchestrator | ERROR | ❌ Crawl failed: Page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:5500/test_websites/site1_contact/index.html
+Call log:
+  - navigating to "http://localhost:5500/test_websites/site1_contact/index.html", waiting until "domcontentloaded"
+

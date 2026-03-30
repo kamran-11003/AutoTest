@@ -1,0 +1,7 @@
+2026-03-30 02:16:18 | crawler.ai_site_analyzer | INFO | 🧠 AI Site Analyzer initialized (pattern detection + URL normalization)
+2026-03-30 02:16:48 | crawler.ai_site_analyzer | INFO | 🔍 Analyzing site structure for localhost:5500 (ONE-TIME analysis)
+2026-03-30 02:16:51 | crawler.ai_site_analyzer | INFO | ✅ Site analysis complete for localhost:5500
+2026-03-30 02:16:51 | crawler.ai_site_analyzer | INFO |    Navigation style: minimal
+2026-03-30 02:16:51 | crawler.ai_site_analyzer | INFO |    URL patterns detected: 0
+2026-03-30 02:16:51 | crawler.ai_site_analyzer | INFO |    Component types: ['has_product_cards', 'has_user_cards', 'has_category_cards', 'has_accordions', 'card_selector']
+2026-03-30 02:16:51 | crawler.ai_site_analyzer | INFO |    📦 Cached in Redis (accessible across all crawler instances)

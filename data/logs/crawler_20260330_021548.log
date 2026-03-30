@@ -1,0 +1,36 @@
+2026-03-30 02:22:20 | execution.base_runner | ERROR | [ecp_text_383551c9_email_long] Execution error: Page.goto: Page crashed
+Call log:
+  - navigating to "http://localhost:5500/test_websites/site5_feedback/index.html", waiting until "domcontentloaded"
+
+2026-03-30 02:22:20 | execution.base_runner | ERROR | [ecp_text_383551c9_phone_invalid] Execution error: Page.goto: Page crashed
+Call log:
+  - navigating to "http://localhost:5500/test_websites/site5_feedback/index.html", waiting until "domcontentloaded"
+
+2026-03-30 02:22:20 | execution.base_runner | ERROR | [ecp_text_383551c9_comment_long] Execution error: Page.goto: Page crashed
+Call log:
+  - navigating to "http://localhost:5500/test_websites/site5_feedback/index.html", waiting until "domcontentloaded"
+
+2026-03-30 02:22:20 | execution.base_runner | ERROR | [ecp_text_383551c9_phone_long] Execution error: Page.goto: Page crashed
+Call log:
+  - navigating to "http://localhost:5500/test_websites/site5_feedback/index.html", waiting until "domcontentloaded"
+
+2026-03-30 02:22:20 | execution.base_runner | ERROR | [ecp_text_383551c9_phone_unicode] Execution error: Page.goto: Page crashed
+Call log:
+  - navigating to "http://localhost:5500/test_websites/site5_feedback/index.html", waiting until "domcontentloaded"
+
+2026-03-30 02:22:20 | execution.base_runner | ERROR | [ecp_text_df9fa74d_name_long] Execution error: Page.goto: Page crashed
+Call log:
+  - navigating to "http://localhost:5500/test_websites/site5_feedback/index.html", waiting until "domcontentloaded"
+
+2026-03-30 02:22:20 | execution.base_runner | ERROR | [ecp_text_df9fa74d_email_long] Execution error: Page.goto: Page crashed
+Call log:
+  - navigating to "http://localhost:5500/test_websites/site5_feedback/index.html", waiting until "domcontentloaded"
+
+2026-03-30 02:22:20 | execution.base_runner | ERROR | [ecp_text_df9fa74d_phone_invalid] Execution error: Page.goto: Page crashed
+Call log:
+  - navigating to "http://localhost:5500/test_websites/site5_feedback/index.html", waiting until "domcontentloaded"
+
+2026-03-30 02:22:20 | execution.base_runner | ERROR | [ecp_text_df9fa74d_comment_long] Execution error: Page.goto: Page crashed
+Call log:
+  - navigating to "http://localhost:5500/test_websites/site5_feedback/index.html", waiting until "domcontentloaded"
+

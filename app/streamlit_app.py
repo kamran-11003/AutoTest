@@ -413,7 +413,30 @@ def display_welcome():
     ### 📖 Documentation
     See `ENHANCED_PRD_v2.md` for full documentation.
     """)
-    
+
+    # Pipeline status on welcome screen
+    pipeline_status_file = Path("data/pipeline_status.json")
+    agg_file = Path("data/rl_run_results/test_websites_stats.json")
+    if pipeline_status_file.exists() or agg_file.exists():
+        st.markdown("---")
+        st.markdown("### 📡 Test-Website Pipeline Status")
+        if agg_file.exists():
+            try:
+                agg = json.loads(agg_file.read_text(encoding="utf-8"))
+                sites_done = agg.get("sites", {})
+                total_tests  = sum(r.get("total", 0)  for r in sites_done.values())
+                total_passed = sum(r.get("passed", 0) for r in sites_done.values())
+                overall_pct  = total_passed / total_tests * 100 if total_tests else 0
+                st.success(
+                    f"Sites completed: **{len(sites_done)}/5**  |  "
+                    f"Overall pass rate: **{overall_pct:.1f}%**  ({total_passed}/{total_tests})  |  "
+                    f"Load a crawl in the sidebar, then switch to the **📡 Pipeline Monitor** tab."
+                )
+            except Exception:
+                st.info("Pipeline data found — load a crawl to see the Pipeline Monitor tab.")
+        else:
+            st.info("Pipeline in progress — load a crawl to see the Pipeline Monitor tab.")
+
     # Example sites
     st.markdown("### 🧪 Try These Demo Sites")
     col1, col2, col3 = st.columns(3)
@@ -541,7 +564,7 @@ def display_results(results: dict):
     st.markdown("---")
     
     # Tabs for different views
-    tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(["📈 Graph", "📋 Pages", "🔍 Elements", "🧪 Test Cases", "💾 Export", "🚀 Execute Tests"])
+    tab1, tab2, tab3, tab4, tab5, tab6, tab7 = st.tabs(["📈 Graph", "📋 Pages", "🔍 Elements", "🧪 Test Cases", "💾 Export", "🚀 Execute Tests", "📡 Pipeline Monitor"])
     
     with tab1:
         display_graph(results)
@@ -560,6 +583,9 @@ def display_results(results: dict):
     
     with tab6:
         display_execute_tests(results)
+
+    with tab7:
+        display_pipeline_monitor()
 
 
 def display_graph(results: dict):
@@ -1996,6 +2022,154 @@ def display_execute_tests(results: dict):
         )
     elif "exec_report" not in st.session_state:
         st.info("No reports yet — run tests above to generate one.")
+
+
+# ── PIPELINE MONITOR ──────────────────────────────────────────────────────────
+
+def display_pipeline_monitor():
+    """Show live progress of run_test_websites.py pipeline + aggregate stats."""
+    import time
+    st.markdown("### 📡 Pipeline Monitor")
+    st.caption(
+        "Reflects the current state of `scripts/run_test_websites.py`. "
+        "Re-run the page or click Refresh to update."
+    )
+
+    col_btn, _ = st.columns([1, 5])
+    with col_btn:
+        if st.button("🔄 Refresh", key="pipeline_refresh"):
+            st.rerun()
+
+    # ── Live status ────────────────────────────────────────────────────────
+    status_file = Path("data/pipeline_status.json")
+    if status_file.exists():
+        try:
+            status = json.loads(status_file.read_text(encoding="utf-8"))
+            step = status.get("step", "")
+            site_id = status.get("site_id", "")
+            detail = status.get("detail", "")
+            updated_at = status.get("updated_at", "")
+
+            STEP_ICONS = {
+                "crawling": "🕸️", "crawled": "✅",
+                "generating": "⚙️", "generated": "✅",
+                "refining": "🤖", "refined": "✅",
+                "executing": "▶️", "done": "🏁",
+                "crawl_failed": "❌", "generate_failed": "❌",
+                "execute_failed": "❌",
+            }
+            icon = STEP_ICONS.get(step, "ℹ️")
+
+            st.markdown(f"#### {icon} Current step: `{step}` — `{site_id}`")
+            st.info(detail)
+            st.caption(f"Updated: {updated_at}")
+        except Exception:
+            st.warning("Could not parse pipeline_status.json")
+    else:
+        st.info(
+            "No pipeline running yet.  "
+            "Start a run with:\n```\npython scripts/run_test_websites.py --site 0\n```"
+        )
+
+    st.markdown("---")
+
+    # ── Per-site progress steps ────────────────────────────────────────────
+    agg_file = Path("data/rl_run_results/test_websites_stats.json")
+    if agg_file.exists():
+        try:
+            agg = json.loads(agg_file.read_text(encoding="utf-8"))
+            sites_done = agg.get("sites", {})
+        except Exception:
+            sites_done = {}
+    else:
+        sites_done = {}
+
+    SITE_NAMES = {
+        "site1_contact":  "Contact Form",
+        "site2_booking":  "Hotel Booking",
+        "site3_register": "User Registration",
+        "site4_search":   "Product Search",
+        "site5_feedback": "Feedback Survey",
+    }
+    ALL_SITES = list(SITE_NAMES.keys())
+
+    st.markdown("#### 🗂️ Site Progress")
+    for sid in ALL_SITES:
+        sname = SITE_NAMES[sid]
+        if sid in sites_done:
+            r = sites_done[sid]
+            pr = r.get("pass_rate", 0)
+            total = r.get("total", 0)
+            passed = r.get("passed", 0)
+            status_icon = "✅" if pr >= 50 else "⚠️"
+            st.markdown(
+                f"{status_icon} **{sname}** (`{sid}`) — "
+                f"{passed}/{total} passed ({pr:.1f}%)  "
+                f"LLM calls: {r.get('api_calls', 0)}  "
+                f"Cost: ${r.get('api_cost', 0):.3f}  "
+                f"Stop: `{r.get('stop_reason', '?')}`"
+            )
+        else:
+            st.markdown(f"⬜ **{sname}** (`{sid}`) — not yet run")
+
+    st.markdown("---")
+
+    # ── Aggregate table ────────────────────────────────────────────────────
+    if sites_done:
+        st.markdown("#### 📊 Aggregate Results")
+        rows = []
+        for sid, r in sites_done.items():
+            rows.append({
+                "Site": SITE_NAMES.get(sid, sid),
+                "Tests": r.get("total", 0),
+                "Passed": r.get("passed", 0),
+                "Failed": r.get("failed", 0),
+                "Pass %": f"{r.get('pass_rate', 0):.1f}%",
+                "LLM Calls": r.get("api_calls", 0),
+                "Cost ($)": f"{r.get('api_cost', 0):.3f}",
+                "Duration (s)": f"{r.get('duration_s', 0):.1f}",
+                "Stop": r.get("stop_reason", "?"),
+            })
+        import pandas as pd
+        df = pd.DataFrame(rows)
+        st.dataframe(df, use_container_width=True)
+
+        # Totals
+        total_tests  = sum(r.get("total", 0)  for r in sites_done.values())
+        total_passed = sum(r.get("passed", 0) for r in sites_done.values())
+        total_cost   = sum(r.get("api_cost", 0) for r in sites_done.values())
+        overall_pct  = total_passed / total_tests * 100 if total_tests else 0
+        st.markdown(
+            f"**Overall: {total_passed}/{total_tests} passed ({overall_pct:.1f}%)  "
+            f"| Total cost: ${total_cost:.3f}**"
+        )
+
+    # ── Generated tests index ──────────────────────────────────────────────
+    st.markdown("---")
+    st.markdown("#### 🧪 Generated Test Index")
+    idx_file = Path("data/generated_tests/test_index.json")
+    if idx_file.exists():
+        try:
+            idx = json.loads(idx_file.read_text(encoding="utf-8"))
+            if idx:
+                rows2 = []
+                for h, info in idx.items():
+                    rows2.append({
+                        "Site ID":      info.get("site_id", h[:8]),
+                        "File":         info.get("filename", ""),
+                        "Tests":        info.get("total_tests", 0),
+                        "AI Refined":   "✅" if info.get("ai_refined") else "❌",
+                        "Version":      info.get("version", 1),
+                        "Last Updated": info.get("last_updated", "")[:19],
+                    })
+                import pandas as pd
+                st.dataframe(pd.DataFrame(rows2), use_container_width=True)
+            else:
+                st.info("test_index.json is empty — run the pipeline first")
+        except Exception as e:
+            st.warning(f"Could not load test index: {e}")
+    else:
+        st.info("test_index.json not found")
 
 
 if __name__ == "__main__":

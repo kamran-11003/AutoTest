@@ -1,0 +1,54 @@
+2026-03-30 02:21:49 | execution.rl_agent.dqn_agent | INFO | RL model loaded (ε=0.905)
+2026-03-30 02:22:03 | execution.cache_manager | WARNING | Redis cache unavailable: Error 10061 connecting to 127.0.0.1:6379. No connection could be made because the target machine actively refused it.. Running without cache.
+2026-03-30 02:22:03 | execution.adaptive_runner | INFO | 
+=== Test Failure Probability Report (Top 10) ===
+Priority   Test ID              Type            Risk     Risk Factors                                                
+------------------------------------------------------------------------------------------------------------------------
+35         ecp_text_383551c9_n  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_text_383551c9_e  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_text_383551c9_p  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_text_383551c9_c  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_text_383551c9_p  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_text_383551c9_p  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_text_df9fa74d_n  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_text_df9fa74d_e  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_text_df9fa74d_p  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_text_df9fa74d_c  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+------------------------------------------------------------------------------------------------------------------------
+Average failure probability: 49.15%
+
+2026-03-30 02:22:03 | execution.adaptive_runner | INFO | 
+================================================================================
+TEST CLASSIFICATION REPORT
+================================================================================
+
+Classification | Count | Risk
+--------------------------------------------------
+BVA/numeric_boundaries         |    39 |      70%
+ECP/invalid_partition          |    20 |      65%
+ECP/boundary_partition         |    20 |      60%
+BVA/string_boundaries          |    12 |      60%
+DECISION TABLE/unknown         |    14 |      50%
+USE CASE/unknown               |     2 |      50%
+
+================================================================================
+
+2026-03-30 02:22:18 | execution.adaptive_runner | INFO | [1/107] ecp_text_383551c9_name_long → failed (conf=85%, oracle=heuristic)
+2026-03-30 02:22:20 | execution.adaptive_runner | INFO | [2/107] ecp_text_383551c9_email_long → error (conf=0%, oracle=heuristic)
+2026-03-30 02:22:20 | execution.adaptive_runner | INFO | [3/107] ecp_text_383551c9_phone_invalid → error (conf=0%, oracle=heuristic)
+2026-03-30 02:22:20 | execution.adaptive_runner | INFO | [4/107] ecp_text_383551c9_comment_long → error (conf=0%, oracle=heuristic)
+2026-03-30 02:22:20 | execution.adaptive_runner | WARNING | LLM disabled for session after 3 consecutive failures (all keys quota-exhausted). Heuristic-only for remaining tests.
+2026-03-30 02:22:20 | execution.adaptive_runner | INFO | [5/107] ecp_text_383551c9_phone_long → error (conf=0%, oracle=heuristic)
+2026-03-30 02:22:20 | execution.adaptive_runner | INFO | [6/107] ecp_text_383551c9_phone_unicode → error (conf=0%, oracle=heuristic)
+2026-03-30 02:22:20 | execution.adaptive_runner | INFO | [7/107] ecp_text_df9fa74d_name_long → error (conf=0%, oracle=heuristic)
+2026-03-30 02:22:20 | execution.adaptive_runner | INFO | [8/107] ecp_text_df9fa74d_email_long → error (conf=0%, oracle=heuristic)
+2026-03-30 02:22:20 | execution.adaptive_runner | INFO | [9/107] ecp_text_df9fa74d_phone_invalid → error (conf=0%, oracle=heuristic)
+2026-03-30 02:22:20 | execution.adaptive_runner | INFO | [10/107] ecp_text_df9fa74d_comment_long → error (conf=0%, oracle=heuristic)
+2026-03-30 02:22:20 | execution.adaptive_runner | INFO | [RL Goal 1] Adaptive early stop at test 11/107: oracle unclear for last 5 tests (threshold=5, hist_runs=0)
+2026-03-30 02:22:22 | execution.rl_agent.dqn_agent | INFO | RL model saved → data\rl_model\dqn_checkpoint.pth
+2026-03-30 02:22:22 | execution.adaptive_runner | INFO | Performance metrics saved to data\rl_performance
+2026-03-30 02:22:22 | execution.heuristics_logger | INFO | Heuristics analysis saved to data\heuristics_logs\heuristics_analysis.txt
+2026-03-30 02:22:22 | execution.adaptive_runner | INFO | Heuristics analysis: 64 tests, 54.7% heuristic, 45.3% LLM, avg reward: +0.39
+2026-03-30 02:22:22 | execution.rl_heuristics_optimizer | INFO | Optimization report: data\rl_optimizations\optimization_report.txt
+2026-03-30 02:22:22 | execution.adaptive_runner | INFO | Heuristics optimization: 3 subtypes updated | Risk increases: 0 | Risk decreases: 1 | Avg change: -0.0100
+2026-03-30 02:22:22 | execution.adaptive_runner | INFO | Execution complete: 0/107 passed | 3 LLM calls ($0.006) | stop_reason=rl_stop

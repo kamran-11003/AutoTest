@@ -1,0 +1,24 @@
+[
+  {
+    "site_id": "site3_register",
+    "site_name": "User Registration",
+    "url": "http://localhost:5500/test_websites/site3_register/index.html",
+    "crawl_id": "site3_register",
+    "status": "ok",
+    "total": 56,
+    "passed": 27,
+    "failed": 29,
+    "errors": 0,
+    "skipped": 0,
+    "pass_rate": 48.2,
+    "api_calls": 7,
+    "api_cost": 0.014,
+    "duration_s": 228.79,
+    "stop_reason": "completed",
+    "heur_decisions": 49,
+    "llm_decisions": 7,
+    "pattern_overrides": 0,
+    "after_file": "site3_register_after_20260331_014026.json",
+    "executed_at": "2026-03-31T01:45:50.964462"
+  }
+]

@@ -1,0 +1,166 @@
+2026-03-31 01:53:27 | crawler.ai_site_analyzer | INFO | 🧠 AI Site Analyzer initialized (pattern detection + URL normalization)
+2026-03-31 01:54:38 | crawler.ai_site_analyzer | INFO | 🔍 Analyzing site structure for localhost:5500 (ONE-TIME analysis)
+2026-03-31 01:54:39 | crawler.ai_site_analyzer | INFO | ✅ Site analysis complete for localhost:5500
+2026-03-31 01:54:39 | crawler.ai_site_analyzer | INFO |    Navigation style: minimal
+2026-03-31 01:54:39 | crawler.ai_site_analyzer | INFO |    URL patterns detected: 0
+2026-03-31 01:54:39 | crawler.ai_site_analyzer | INFO |    Component types: ['has_product_cards', 'has_user_cards', 'has_category_cards', 'has_accordions', 'card_selector']
+2026-03-31 01:54:39 | crawler.ai_site_analyzer | INFO |    📦 Cached in Redis (accessible across all crawler instances)
+2026-03-31 01:59:51 | execution.rl_agent.dqn_agent | INFO | RL model loaded (ε=0.148)
+2026-03-31 02:00:08 | execution.cache_manager | WARNING | Redis cache unavailable: Error 10061 connecting to 127.0.0.1:6379. No connection could be made because the target machine actively refused it.. Running without cache.
+2026-03-31 02:00:09 | execution.adaptive_runner | INFO | 
+=== Test Failure Probability Report (Top 10) ===
+Priority   Test ID              Type            Risk     Risk Factors                                                
+------------------------------------------------------------------------------------------------------------------------
+35         ecp_text_383551c9_n  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_text_383551c9_e  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_text_383551c9_c  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_text_383551c9_p  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_text_383551c9_p  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_text_df9fa74d_n  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_text_df9fa74d_e  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_text_df9fa74d_c  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_text_df9fa74d_p  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_text_df9fa74d_p  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+------------------------------------------------------------------------------------------------------------------------
+Average failure probability: 48.55%
+
+2026-03-31 02:00:09 | execution.adaptive_runner | INFO | 
+================================================================================
+TEST CLASSIFICATION REPORT
+================================================================================
+
+Classification | Count | Risk
+--------------------------------------------------
+BVA/numeric_boundaries         |    40 |      70%
+ECP/invalid_partition          |    19 |      65%
+ECP/boundary_partition         |    21 |      60%
+BVA/string_boundaries          |    17 |      60%
+DECISION TABLE/unknown         |    18 |      50%
+USE CASE/unknown               |     2 |      50%
+
+================================================================================
+
+2026-03-31 02:00:22 | execution.adaptive_runner | INFO | [1/117] ecp_text_383551c9_name_long → failed (conf=85%, oracle=heuristic)
+2026-03-31 02:00:26 | execution.adaptive_runner | INFO | [2/117] ecp_text_383551c9_email_long → passed (conf=90%, oracle=heuristic)
+2026-03-31 02:00:31 | execution.adaptive_runner | INFO | [3/117] ecp_text_383551c9_comment_long → passed (conf=75%, oracle=heuristic)
+2026-03-31 02:00:36 | execution.adaptive_runner | INFO | [4/117] ecp_text_383551c9_phone_long → passed (conf=85%, oracle=heuristic)
+2026-03-31 02:00:40 | execution.adaptive_runner | INFO | [5/117] ecp_text_383551c9_phone_unicode → passed (conf=85%, oracle=heuristic)
+2026-03-31 02:00:45 | execution.adaptive_runner | INFO | [6/117] ecp_text_df9fa74d_name_long → failed (conf=85%, oracle=heuristic)
+2026-03-31 02:00:49 | execution.adaptive_runner | INFO | [7/117] ecp_text_df9fa74d_email_long → passed (conf=90%, oracle=heuristic)
+2026-03-31 02:00:53 | execution.adaptive_runner | INFO | [8/117] ecp_text_df9fa74d_comment_long → passed (conf=75%, oracle=heuristic)
+2026-03-31 02:00:57 | execution.adaptive_runner | INFO | [9/117] ecp_text_df9fa74d_phone_special → passed (conf=85%, oracle=heuristic)
+2026-03-31 02:01:01 | execution.adaptive_runner | INFO | [10/117] ecp_text_df9fa74d_phone_long → passed (conf=85%, oracle=heuristic)
+2026-03-31 02:01:05 | execution.adaptive_runner | INFO | [11/117] ecp_text_df9fa74d_phone_unicode → passed (conf=85%, oracle=heuristic)
+2026-03-31 02:01:09 | execution.adaptive_runner | INFO | [12/117] ecp_text_383551c9_name_valid → passed (conf=85%, oracle=heuristic)
+2026-03-31 02:01:14 | execution.adaptive_runner | INFO | [13/117] ecp_text_383551c9_name_unicode → passed (conf=85%, oracle=heuristic)
+2026-03-31 02:01:18 | execution.adaptive_runner | INFO | [14/117] ecp_text_383551c9_email_valid → passed (conf=85%, oracle=heuristic)
+2026-03-31 02:01:23 | execution.adaptive_runner | INFO | [15/117] ecp_text_383551c9_email_unicode → failed (conf=85%, oracle=heuristic)
+2026-03-31 02:01:28 | execution.adaptive_runner | INFO | [16/117] ecp_boolean_383551c9_rating_ → passed (conf=85%, oracle=heuristic)
+2026-03-31 02:01:32 | execution.adaptive_runner | INFO | [17/117] ecp_boolean_383551c9_categories_ → passed (conf=85%, oracle=heuristic)
+2026-03-31 02:01:36 | execution.adaptive_runner | INFO | [18/117] ecp_text_383551c9_phone_valid → passed (conf=85%, oracle=heuristic)
+2026-03-31 02:01:40 | execution.adaptive_runner | INFO | [19/117] ecp_boolean_383551c9_categories__unchecked → passed (conf=85%, oracle=heuristic)
+2026-03-31 02:01:45 | execution.adaptive_runner | INFO | [20/117] ecp_text_383551c9_comment_valid → passed (conf=85%, oracle=heuristic)
+2026-03-31 02:01:49 | execution.adaptive_runner | INFO | [21/117] ecp_text_383551c9_comment_unicode → passed (conf=85%, oracle=heuristic)
+2026-03-31 02:01:53 | execution.adaptive_runner | INFO | [22/117] ecp_text_383551c9_phone_valid → passed (conf=85%, oracle=heuristic)
+2026-03-31 02:01:57 | execution.adaptive_runner | INFO | [23/117] ecp_text_df9fa74d_name_valid → passed (conf=85%, oracle=heuristic)
+2026-03-31 02:02:01 | execution.adaptive_runner | INFO | [24/117] ecp_text_df9fa74d_name_unicode → passed (conf=85%, oracle=heuristic)
+2026-03-31 02:02:05 | execution.adaptive_runner | INFO | [25/117] ecp_text_df9fa74d_email_valid → failed (conf=85%, oracle=heuristic)
+2026-03-31 02:02:09 | execution.adaptive_runner | INFO | [26/117] ecp_text_df9fa74d_email_unicode → failed (conf=85%, oracle=heuristic)
+2026-03-31 02:02:15 | execution.adaptive_runner | INFO | [27/117] ecp_boolean_df9fa74d_rating_ → passed (conf=100%, oracle=llm)
+2026-03-31 02:02:19 | execution.adaptive_runner | INFO | [28/117] ecp_boolean_df9fa74d_categories_ → passed (conf=85%, oracle=heuristic)
+2026-03-31 02:02:23 | execution.adaptive_runner | INFO | [29/117] ecp_boolean_df9fa74d_categories__unchecked → passed (conf=85%, oracle=heuristic)
+2026-03-31 02:02:27 | execution.adaptive_runner | INFO | [30/117] ecp_text_df9fa74d_comment_valid → passed (conf=85%, oracle=heuristic)
+2026-03-31 02:02:31 | execution.adaptive_runner | INFO | [31/117] ecp_text_df9fa74d_comment_unicode → passed (conf=85%, oracle=heuristic)
+2026-03-31 02:02:35 | execution.adaptive_runner | INFO | [32/117] ecp_text_df9fa74d_phone_valid → passed (conf=85%, oracle=heuristic)
+2026-03-31 02:02:40 | execution.adaptive_runner | INFO | [33/117] decision_table_383551c9_0 → passed (conf=85%, oracle=heuristic)
+2026-03-31 02:02:44 | execution.adaptive_runner | INFO | [34/117] decision_table_383551c9_1 → passed (conf=85%, oracle=heuristic)
+2026-03-31 02:02:50 | execution.adaptive_runner | INFO | [35/117] decision_table_383551c9_2 → passed (conf=100%, oracle=llm)
+2026-03-31 02:02:55 | execution.adaptive_runner | INFO | [36/117] decision_table_383551c9_3 → passed (conf=85%, oracle=heuristic)
+2026-03-31 02:02:59 | execution.adaptive_runner | INFO | [37/117] decision_table_383551c9_4 → passed (conf=85%, oracle=heuristic)
+2026-03-31 02:03:03 | execution.adaptive_runner | INFO | [38/117] decision_table_383551c9_5 → passed (conf=85%, oracle=heuristic)
+2026-03-31 02:03:07 | execution.adaptive_runner | INFO | [39/117] decision_table_383551c9_10 → passed (conf=85%, oracle=heuristic)
+2026-03-31 02:03:14 | execution.adaptive_runner | INFO | [40/117] decision_table_383551c9_11 → passed (conf=100%, oracle=llm)
+2026-03-31 02:03:18 | execution.adaptive_runner | INFO | [41/117] decision_table_383551c9_12 → passed (conf=85%, oracle=heuristic)
+2026-03-31 02:03:22 | execution.adaptive_runner | INFO | [42/117] decision_table_383551c9_13 → passed (conf=85%, oracle=heuristic)
+2026-03-31 02:03:26 | execution.adaptive_runner | INFO | [43/117] decision_table_383551c9_14 → passed (conf=85%, oracle=heuristic)
+2026-03-31 02:03:31 | execution.adaptive_runner | INFO | [44/117] decision_table_383551c9_15 → passed (conf=85%, oracle=heuristic)
+2026-03-31 02:03:36 | execution.adaptive_runner | INFO | [45/117] decision_table_383551c9_16 → passed (conf=85%, oracle=heuristic)
+2026-03-31 02:03:40 | execution.adaptive_runner | INFO | [46/117] decision_table_383551c9_17 → passed (conf=85%, oracle=heuristic)
+2026-03-31 02:03:43 | execution.adaptive_runner | INFO | [47/117] decision_table_383551c9_18 → passed (conf=85%, oracle=heuristic)
+2026-03-31 02:03:46 | execution.adaptive_runner | INFO | [48/117] decision_table_383551c9_19 → passed (conf=85%, oracle=heuristic)
+2026-03-31 02:03:50 | execution.adaptive_runner | INFO | [49/117] decision_table_df9fa74d_0 → passed (conf=85%, oracle=heuristic)
+2026-03-31 02:03:57 | execution.adaptive_runner | INFO | [50/117] decision_table_df9fa74d_1 → passed (conf=100%, oracle=llm)
+2026-03-31 02:04:01 | execution.adaptive_runner | INFO | [51/117] usecase_auth_login → failed (conf=85%, oracle=heuristic)
+2026-03-31 02:04:05 | execution.adaptive_runner | INFO | [52/117] usecase_auth_register → failed (conf=85%, oracle=heuristic)
+2026-03-31 02:04:09 | execution.adaptive_runner | INFO | [53/117] bva_length_383551c9_name_2 → passed (conf=85%, oracle=heuristic)
+2026-03-31 02:04:13 | execution.adaptive_runner | INFO | [54/117] bva_length_383551c9_name_3 → passed (conf=85%, oracle=heuristic)
+2026-03-31 02:04:17 | execution.adaptive_runner | INFO | [55/117] bva_length_383551c9_name_4 → passed (conf=85%, oracle=heuristic)
+2026-03-31 02:04:22 | execution.adaptive_runner | INFO | [56/117] bva_length_383551c9_name_5 → failed (conf=85%, oracle=heuristic)
+2026-03-31 02:04:27 | execution.adaptive_runner | INFO | [57/117] bva_length_383551c9_email_2 → failed (conf=85%, oracle=heuristic)
+2026-03-31 02:04:32 | execution.adaptive_runner | INFO | [58/117] bva_length_383551c9_email_3 → failed (conf=85%, oracle=heuristic)
+2026-03-31 02:04:36 | execution.adaptive_runner | INFO | [59/117] bva_length_383551c9_email_4 → failed (conf=85%, oracle=heuristic)
+2026-03-31 02:04:41 | execution.adaptive_runner | INFO | [60/117] bva_length_383551c9_email_4 → failed (conf=85%, oracle=heuristic)
+2026-03-31 02:04:46 | execution.adaptive_runner | INFO | [61/117] bva_length_383551c9_email_5 → passed (conf=90%, oracle=heuristic)
+2026-03-31 02:04:50 | execution.adaptive_runner | INFO | [62/117] bva_length_383551c9_rating_0 → failed (conf=85%, oracle=heuristic)
+2026-03-31 02:04:54 | execution.adaptive_runner | INFO | [63/117] bva_length_383551c9_rating_1 → passed (conf=85%, oracle=heuristic)
+2026-03-31 02:04:59 | execution.adaptive_runner | INFO | [64/117] bva_length_383551c9_rating_2 → passed (conf=85%, oracle=heuristic)
+2026-03-31 02:05:03 | execution.adaptive_runner | INFO | [65/117] bva_length_383551c9_rating_3 → passed (conf=85%, oracle=heuristic)
+2026-03-31 02:05:07 | execution.adaptive_runner | INFO | [66/117] bva_length_383551c9_rating_4 → passed (conf=85%, oracle=heuristic)
+2026-03-31 02:05:12 | execution.adaptive_runner | INFO | [67/117] bva_length_383551c9_rating_5 → failed (conf=85%, oracle=heuristic)
+2026-03-31 02:05:18 | execution.adaptive_runner | INFO | [68/117] bva_length_383551c9_comment_3 → passed (conf=100%, oracle=llm)
+2026-03-31 02:05:22 | execution.adaptive_runner | INFO | [69/117] bva_length_383551c9_comment_4 → passed (conf=85%, oracle=heuristic)
+2026-03-31 02:05:27 | execution.adaptive_runner | INFO | [70/117] bva_length_383551c9_comment_5 → passed (conf=75%, oracle=heuristic)
+2026-03-31 02:05:31 | execution.adaptive_runner | INFO | [71/117] bva_length_383551c9_phone_1 → passed (conf=85%, oracle=heuristic)
+2026-03-31 02:05:35 | execution.adaptive_runner | INFO | [72/117] bva_length_383551c9_phone_2 → passed (conf=85%, oracle=heuristic)
+2026-03-31 02:05:40 | execution.adaptive_runner | INFO | [73/117] bva_length_383551c9_phone_3 → passed (conf=85%, oracle=heuristic)
+2026-03-31 02:05:44 | execution.adaptive_runner | INFO | [74/117] bva_length_383551c9_phone_4 → passed (conf=85%, oracle=heuristic)
+2026-03-31 02:05:48 | execution.adaptive_runner | INFO | [75/117] bva_length_383551c9_phone_5 → passed (conf=85%, oracle=heuristic)
+2026-03-31 02:05:53 | execution.adaptive_runner | INFO | [76/117] bva_length_df9fa74d_name_2 → passed (conf=85%, oracle=heuristic)
+2026-03-31 02:05:57 | execution.adaptive_runner | INFO | [77/117] bva_length_df9fa74d_name_3 → passed (conf=85%, oracle=heuristic)
+2026-03-31 02:06:01 | execution.adaptive_runner | INFO | [78/117] bva_length_df9fa74d_name_4 → passed (conf=85%, oracle=heuristic)
+2026-03-31 02:06:06 | execution.adaptive_runner | INFO | [79/117] bva_length_df9fa74d_name_5 → failed (conf=85%, oracle=heuristic)
+2026-03-31 02:06:11 | execution.adaptive_runner | INFO | [80/117] bva_length_df9fa74d_email_2 → failed (conf=85%, oracle=heuristic)
+2026-03-31 02:06:15 | execution.adaptive_runner | INFO | [81/117] bva_length_df9fa74d_email_3 → failed (conf=85%, oracle=heuristic)
+2026-03-31 02:06:19 | execution.adaptive_runner | INFO | [82/117] bva_length_df9fa74d_email_4 → failed (conf=85%, oracle=heuristic)
+2026-03-31 02:06:24 | execution.adaptive_runner | INFO | [83/117] bva_length_df9fa74d_email_5 → passed (conf=90%, oracle=heuristic)
+2026-03-31 02:06:29 | execution.adaptive_runner | INFO | [84/117] bva_length_df9fa74d_comment_3 → passed (conf=85%, oracle=heuristic)
+2026-03-31 02:06:33 | execution.adaptive_runner | INFO | [85/117] bva_length_df9fa74d_comment_4 → passed (conf=85%, oracle=heuristic)
+2026-03-31 02:06:37 | execution.adaptive_runner | INFO | [86/117] bva_length_df9fa74d_comment_5 → passed (conf=75%, oracle=heuristic)
+2026-03-31 02:06:41 | execution.adaptive_runner | INFO | [87/117] bva_length_df9fa74d_phone_2 → passed (conf=85%, oracle=heuristic)
+2026-03-31 02:06:45 | execution.adaptive_runner | INFO | [88/117] bva_length_df9fa74d_phone_3 → passed (conf=85%, oracle=heuristic)
+2026-03-31 02:06:50 | execution.adaptive_runner | INFO | [89/117] bva_length_df9fa74d_phone_4 → passed (conf=85%, oracle=heuristic)
+2026-03-31 02:06:54 | execution.adaptive_runner | INFO | [90/117] bva_length_df9fa74d_phone_5 → passed (conf=85%, oracle=heuristic)
+2026-03-31 02:06:58 | execution.adaptive_runner | INFO | [91/117] bva_length_383551c9_name_1 → passed (conf=85%, oracle=heuristic)
+2026-03-31 02:07:02 | execution.adaptive_runner | INFO | [92/117] bva_length_383551c9_email_1 → failed (conf=85%, oracle=heuristic)
+2026-03-31 02:07:06 | execution.adaptive_runner | INFO | [93/117] bva_length_383551c9_comment_1 → passed (conf=85%, oracle=heuristic)
+2026-03-31 02:07:11 | execution.adaptive_runner | INFO | [94/117] bva_length_383551c9_comment_2 → passed (conf=85%, oracle=heuristic)
+2026-03-31 02:07:15 | execution.adaptive_runner | INFO | [95/117] bva_length_df9fa74d_name_1 → passed (conf=85%, oracle=heuristic)
+2026-03-31 02:07:20 | execution.adaptive_runner | INFO | [96/117] bva_length_df9fa74d_email_1 → failed (conf=85%, oracle=heuristic)
+2026-03-31 02:07:24 | execution.adaptive_runner | INFO | [97/117] bva_length_df9fa74d_comment_2 → passed (conf=85%, oracle=heuristic)
+2026-03-31 02:07:28 | execution.adaptive_runner | INFO | [98/117] bva_length_df9fa74d_phone_1 → failed (conf=85%, oracle=heuristic)
+2026-03-31 02:07:32 | execution.adaptive_runner | INFO | [99/117] bva_length_df9fa74d_phone_1 → passed (conf=85%, oracle=heuristic)
+2026-03-31 02:07:37 | execution.adaptive_runner | INFO | [100/117] bva_length_383551c9_name_0 → passed (conf=90%, oracle=heuristic)
+2026-03-31 02:07:41 | execution.adaptive_runner | INFO | [101/117] bva_length_383551c9_email_0 → failed (conf=85%, oracle=heuristic)
+2026-03-31 02:07:45 | execution.adaptive_runner | INFO | [102/117] bva_length_383551c9_comment_0 → passed (conf=85%, oracle=heuristic)
+2026-03-31 02:07:49 | execution.adaptive_runner | INFO | [103/117] bva_length_383551c9_phone_0 → passed (conf=85%, oracle=heuristic)
+2026-03-31 02:07:54 | execution.adaptive_runner | INFO | [104/117] bva_length_383551c9_phone_0 → failed (conf=85%, oracle=heuristic)
+2026-03-31 02:07:58 | execution.adaptive_runner | INFO | [105/117] bva_length_df9fa74d_name_0 → passed (conf=90%, oracle=heuristic)
+2026-03-31 02:08:03 | execution.adaptive_runner | INFO | [106/117] bva_length_df9fa74d_email_0 → failed (conf=85%, oracle=heuristic)
+2026-03-31 02:08:07 | execution.adaptive_runner | INFO | [107/117] bva_length_df9fa74d_comment_0 → passed (conf=85%, oracle=heuristic)
+2026-03-31 02:08:12 | execution.adaptive_runner | INFO | [108/117] bva_length_df9fa74d_comment_1 → passed (conf=85%, oracle=heuristic)
+2026-03-31 02:08:16 | execution.adaptive_runner | INFO | [109/117] bva_length_df9fa74d_phone_0 → failed (conf=85%, oracle=heuristic)
+2026-03-31 02:08:20 | execution.adaptive_runner | INFO | [110/117] ecp_text_383551c9_name_special → failed (conf=85%, oracle=heuristic)
+2026-03-31 02:08:24 | execution.adaptive_runner | INFO | [111/117] ecp_text_383551c9_email_special → passed (conf=90%, oracle=heuristic)
+2026-03-31 02:08:27 | execution.adaptive_runner | INFO | [112/117] ecp_text_383551c9_comment_special → failed (conf=85%, oracle=heuristic)
+2026-03-31 02:08:31 | execution.adaptive_runner | INFO | [113/117] ecp_text_383551c9_phone_special → passed (conf=85%, oracle=heuristic)
+2026-03-31 02:08:35 | execution.adaptive_runner | INFO | [114/117] ecp_text_df9fa74d_name_empty → passed (conf=90%, oracle=heuristic)
+2026-03-31 02:08:39 | execution.adaptive_runner | INFO | [115/117] ecp_text_df9fa74d_name_special → failed (conf=85%, oracle=heuristic)
+2026-03-31 02:08:42 | execution.adaptive_runner | INFO | [116/117] ecp_text_df9fa74d_email_special → passed (conf=90%, oracle=heuristic)
+2026-03-31 02:08:46 | execution.adaptive_runner | INFO | [117/117] ecp_text_df9fa74d_comment_special → failed (conf=85%, oracle=heuristic)
+2026-03-31 02:08:50 | execution.rl_agent.dqn_agent | INFO | RL model saved → data\rl_model\dqn_checkpoint.pth
+2026-03-31 02:08:50 | execution.adaptive_runner | INFO | Performance metrics saved to data\rl_performance
+2026-03-31 02:08:50 | execution.heuristics_logger | INFO | Heuristics analysis saved to data\heuristics_logs\heuristics_analysis.txt
+2026-03-31 02:08:50 | execution.adaptive_runner | INFO | Heuristics analysis: 315 tests, 92.7% heuristic, 7.3% LLM, avg reward: +1.44
+2026-03-31 02:08:50 | execution.rl_heuristics_optimizer | INFO | Optimization report: data\rl_optimizations\optimization_report.txt
+2026-03-31 02:08:50 | execution.adaptive_runner | INFO | Heuristics optimization: 5 subtypes updated | Risk increases: 0 | Risk decreases: 0 | Avg change: +0.0000
+2026-03-31 02:08:55 | execution.adaptive_runner | INFO | Execution complete: 88/117 passed | 6 LLM calls ($0.012) | stop_reason=completed

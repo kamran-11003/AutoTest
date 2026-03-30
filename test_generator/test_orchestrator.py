@@ -396,9 +396,10 @@ class TestOrchestrator:
     # ── Companion field enrichment ─────────────────────────────────────────
 
     # Field types that cannot / should not be filled
+    # NOTE: checkbox and radio are NOT skipped — Strategy 0a/0b in base_runner
+    # handle them correctly when their name is present in test_data.
     _SKIP_TYPES = {
         'submit', 'button', 'hidden', 'reset', 'image', 'file',
-        'checkbox', 'radio',
     }
 
     def _enrich_companion_data(
@@ -447,6 +448,13 @@ class TestOrchestrator:
                 # Companion data provides the baseline; the field under test
                 # keeps its boundary/partition value (overrides companion).
                 tc['test_data'] = {**companion, **tc.get('test_data', {})}
+
+                # Cross-field fix: confirmPassword must always equal the
+                # password value in test_data (handles forms with confirm fields).
+                pwd = tc['test_data'].get('password')
+                if pwd is not None and 'confirmPassword' in tc['test_data']:
+                    tc['test_data']['confirmPassword'] = pwd
+
                 enriched_count += 1
 
         logger.info(f"Enriched {enriched_count} test cases with companion field data")
@@ -485,6 +493,35 @@ class TestOrchestrator:
         form validation so it does not interfere with our boundary test.
         """
         ftype = (field.get('type') or 'text').lower()
+
+        # Radio button: use its own value attribute so the right button gets checked
+        if ftype == 'radio':
+            return field.get('value') or 'on'
+
+        # Checkbox: any truthy value causes Strategy 0b to check it
+        if ftype == 'checkbox':
+            return True
+
+        # For select fields, use the first real option value if available
+        if ftype in ('select', 'select-one', 'select-multiple'):
+            options = field.get('options') or []
+            if options:
+                # options can be list of str or list of {value, text} dicts
+                first = options[0]
+                return first.get('value', first) if isinstance(first, dict) else first
+            return 'general'  # safe fallback that works for most dropdowns
+
+        # For date fields, return a valid ISO future date
+        if ftype in ('date', 'datetime', 'datetime-local'):
+            from datetime import date, timedelta
+            # Combine identifiers for checkout/end-date detection
+            fname_check = ' '.join(filter(None, [
+                field.get('name', ''), field.get('id', ''), field.get('label', ''),
+            ])).lower()
+            if re.search(r'check.?out|end.?date|departure|return|check_out', fname_check):
+                return (date.today() + timedelta(days=2)).strftime('%Y-%m-%d')
+            return (date.today() + timedelta(days=1)).strftime('%Y-%m-%d')
+
         # Combine all text identifiers for keyword matching
         fname = ' '.join(filter(None, [
             field.get('name', ''),

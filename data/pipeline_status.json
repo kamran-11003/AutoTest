@@ -1,0 +1,28 @@
+{
+  "site_id": "site5_feedback",
+  "step": "done",
+  "detail": "Pass: 88/117 (75.2%)  LLM: 6  Cost: $0.012",
+  "updated_at": "2026-03-31T02:08:55.458843",
+  "data": {
+    "site_id": "site5_feedback",
+    "site_name": "Feedback Survey",
+    "url": "http://localhost:5500/test_websites/site5_feedback/index.html",
+    "crawl_id": "site5_feedback",
+    "status": "ok",
+    "total": 117,
+    "passed": 88,
+    "failed": 29,
+    "errors": 0,
+    "skipped": 0,
+    "pass_rate": 75.2,
+    "api_calls": 6,
+    "api_cost": 0.012,
+    "duration_s": 520.77,
+    "stop_reason": "completed",
+    "heur_decisions": 111,
+    "llm_decisions": 6,
+    "pattern_overrides": 0,
+    "after_file": "site5_feedback_after_20260331_015707.json",
+    "executed_at": "2026-03-31T02:08:55.456872"
+  }
+}

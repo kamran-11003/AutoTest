@@ -1,0 +1,241 @@
+
+======================================================================
+  PIPELINE: Feedback Survey  (site5_feedback)
+  URL     : http://localhost:5500/test_websites/site5_feedback/index.html
+======================================================================
+  [site5_feedback] crawling: Crawling http://localhost:5500/test_websites/site5_feedback/index.html
+
+================================================================================
+📸 PAGE SNAPSHOTS REPORT
+================================================================================
+
+1. http://localhost:5500/test_websites/site5_feedback/index.html
+   JSON: data\snapshots\20260330_021749_localhost:5500_test_websites_site5_feedback_index..json
+   HTML: data\snapshots\20260330_021749_localhost:5500_test_websites_site5_feedback_index..html
+
+2. http://localhost:5500/test_websites/site5_feedback/index.html
+   JSON: data\snapshots\20260330_021842_localhost:5500_test_websites_site5_feedback_index..json
+   HTML: data\snapshots\20260330_021842_localhost:5500_test_websites_site5_feedback_index..html
+
+📁 Total snapshots: 2
+📂 Location: data\snapshots
+================================================================================
+
+  [site5_feedback] crawled: Pages: 1, Forms: 2
+  [site5_feedback] generating: Running TestOrchestrator …
+  [site5_feedback] generated: Total tests: 116  (BVA=54 ECP=38 DT=22 ST=0 UC=2)
+  [site5_feedback] refining: Calling Gemini for AI refinement …
+
+============================================================
+AI STARTING AI TEST REFINEMENT WITH GEMINI
+============================================================
+>> Crawl Context: 1 pages, 0 transitions
+
+-> Refining 54 bva tests...
+  BATCH Processing batch 1/6 (10 tests)... FAIL Error: 429 You exceeded your current quota, please check ...
+  -> Rotating to next API key...     ✏️ Updated: bva_length_383551c9_name_0
+    ✏️ Updated: bva_length_383551c9_name_1
+    ✏️ Updated: bva_length_383551c9_name_2
+    ✏️ Updated: bva_length_383551c9_name_3
+    ✏️ Updated: bva_length_383551c9_name_4
+    ✏️ Updated: bva_length_383551c9_name_5
+    ✏️ Updated: bva_length_383551c9_email_0
+    ✏️ Updated: bva_length_383551c9_email_1
+    ✏️ Updated: bva_length_383551c9_email_2
+    ✏️ Updated: bva_length_383551c9_email_3
+
+    >> Refinement Stats: 0 kept, 10 updated, 0 added, 0 deleted
+    >> Total: 10 → 10 (+0)
+OK Retry successful
+  BATCH Processing batch 2/6 (10 tests)...     ✏️ Updated: bva_length_383551c9_email_4
+    ✏️ Updated: bva_length_383551c9_email_5
+    ✏️ Updated: bva_length_383551c9_rating_0
+    ✏️ Updated: bva_length_383551c9_rating_1
+    ✏️ Updated: bva_length_383551c9_rating_2
+    ✏️ Updated: bva_length_383551c9_rating_3
+    ✏️ Updated: bva_length_383551c9_rating_4
+    ✏️ Updated: bva_length_383551c9_rating_5
+    ✏️ Updated: bva_length_383551c9_comment_0
+    ✏️ Updated: bva_length_383551c9_comment_1
+
+    >> Refinement Stats: 0 kept, 10 updated, 0 added, 0 deleted
+    >> Total: 10 → 10 (+0)
+OK
+  BATCH Processing batch 3/6 (10 tests)...     ✏️ Updated: bva_length_383551c9_comment_2
+    ✏️ Updated: bva_length_383551c9_comment_3
+    ✏️ Updated: bva_length_383551c9_comment_4
+    ✏️ Updated: bva_length_383551c9_comment_5
+    ✏️ Updated: bva_length_383551c9_phone_0
+    ✏️ Updated: bva_length_383551c9_phone_1
+    ✏️ Updated: bva_length_383551c9_phone_4
+    ✏️ Updated: bva_length_383551c9_phone_5
+
+    >> Refinement Stats: 0 kept, 8 updated, 0 added, 0 deleted
+    >> Total: 10 → 8 (-2)
+OK
+  BATCH Processing batch 4/6 (10 tests)...     ✏️ Updated: bva_length_df9fa74d_name_0
+    ✏️ Updated: bva_length_df9fa74d_name_1
+    ✏️ Updated: bva_length_df9fa74d_name_2
+    ✏️ Updated: bva_length_df9fa74d_name_3
+    ✏️ Updated: bva_length_df9fa74d_name_4
+    ✏️ Updated: bva_length_df9fa74d_name_5
+    ✏️ Updated: bva_length_df9fa74d_email_0
+    ✏️ Updated: bva_length_df9fa74d_email_1
+    ✏️ Updated: bva_length_df9fa74d_email_2
+    ✏️ Updated: bva_length_df9fa74d_email_3
+
+    >> Refinement Stats: 0 kept, 10 updated, 0 added, 0 deleted
+    >> Total: 10 → 10 (+0)
+OK
+  BATCH Processing batch 5/6 (10 tests)...     ✏️ Updated: bva_length_df9fa74d_email_4
+    ✏️ Updated: bva_length_df9fa74d_email_5
+    ✏️ Updated: bva_length_df9fa74d_comment_0
+    ✏️ Updated: bva_length_df9fa74d_comment_3
+    ✏️ Updated: bva_length_df9fa74d_comment_4
+    ✏️ Updated: bva_length_df9fa74d_comment_5
+    ✏️ Updated: bva_length_df9fa74d_phone_0
+    ✏️ Updated: bva_length_df9fa74d_phone_1
+
+    >> Refinement Stats: 0 kept, 8 updated, 0 added, 0 deleted
+    >> Total: 10 → 8 (-2)
+OK
+  BATCH Processing batch 6/6 (4 tests)...     ➕ Added: bva_length_df9fa74d_phone_1
+    ✏️ Updated: bva_length_df9fa74d_phone_2
+    ✏️ Updated: bva_length_df9fa74d_phone_3
+    ✏️ Updated: bva_length_df9fa74d_phone_4
+    ✏️ Updated: bva_length_df9fa74d_phone_5
+
+    >> Refinement Stats: 0 kept, 4 updated, 1 added, 0 deleted
+    >> Total: 4 → 5 (+1)
+OK
+OK Completed bva refinement
+
+-> Refining 38 ecp tests...
+  BATCH Processing batch 1/4 (10 tests)...     ✏️ Updated: ecp_text_383551c9_name_valid
+    ✏️ Updated: ecp_text_383551c9_name_special
+    ✏️ Updated: ecp_text_383551c9_name_long
+    ✏️ Updated: ecp_text_383551c9_name_unicode
+    ✏️ Updated: ecp_text_383551c9_email_valid
+    ✏️ Updated: ecp_text_383551c9_email_special
+    ✏️ Updated: ecp_text_383551c9_email_long
+    ✏️ Updated: ecp_text_383551c9_email_unicode
+    ✏️ Updated: ecp_boolean_383551c9_rating_
+    ✏️ Updated: ecp_boolean_383551c9_categories_
+    ➕ Added: ecp_text_383551c9_phone_invalid
+
+    >> Refinement Stats: 0 kept, 10 updated, 1 added, 0 deleted
+    >> Total: 10 → 11 (+1)
+OK
+  BATCH Processing batch 2/4 (10 tests)...     ✏️ Updated: ecp_boolean_383551c9_categories__unchecked
+    ✏️ Updated: ecp_text_383551c9_comment_valid
+    ✏️ Updated: ecp_text_383551c9_comment_special
+    ✏️ Updated: ecp_text_383551c9_comment_long
+    ✏️ Updated: ecp_text_383551c9_comment_unicode
+    ✏️ Updated: ecp_text_383551c9_phone_valid
+    ✏️ Updated: ecp_text_383551c9_phone_special
+    ✏️ Updated: ecp_text_383551c9_phone_long
+    ✏️ Updated: ecp_text_383551c9_phone_unicode
+    ✏️ Updated: ecp_text_df9fa74d_name_valid
+
+    >> Refinement Stats: 0 kept, 10 updated, 0 added, 0 deleted
+    >> Total: 10 → 10 (+0)
+OK
+  BATCH Processing batch 3/4 (10 tests)...     ✏️ Updated: ecp_text_df9fa74d_name_special
+    ✏️ Updated: ecp_text_df9fa74d_name_long
+    ✏️ Updated: ecp_text_df9fa74d_name_unicode
+    ✏️ Updated: ecp_text_df9fa74d_email_valid
+    ✏️ Updated: ecp_text_df9fa74d_email_special
+    ✏️ Updated: ecp_text_df9fa74d_email_long
+    ✏️ Updated: ecp_text_df9fa74d_email_unicode
+    ✏️ Updated: ecp_boolean_df9fa74d_rating_
+    ✏️ Updated: ecp_boolean_df9fa74d_categories_
+    ✏️ Updated: ecp_boolean_df9fa74d_categories__unchecked
+    ➕ Added: ecp_text_df9fa74d_phone_invalid
+
+    >> Refinement Stats: 0 kept, 10 updated, 1 added, 0 deleted
+    >> Total: 10 → 11 (+1)
+OK
+  BATCH Processing batch 4/4 (8 tests)...     ✏️ Updated: ecp_text_df9fa74d_comment_valid
+    ✏️ Updated: ecp_text_df9fa74d_comment_special
+    ✏️ Updated: ecp_text_df9fa74d_comment_long
+    ✏️ Updated: ecp_text_df9fa74d_comment_unicode
+    ✏️ Updated: ecp_text_df9fa74d_phone_valid
+    ✏️ Updated: ecp_text_df9fa74d_phone_special
+    ✏️ Updated: ecp_text_df9fa74d_phone_long
+    ✏️ Updated: ecp_text_df9fa74d_phone_unicode
+
+    >> Refinement Stats: 0 kept, 8 updated, 0 added, 0 deleted
+    >> Total: 8 → 8 (+0)
+OK
+OK Completed ecp refinement
+
+-> Refining 22 decision_table tests...
+  BATCH Processing batch 1/3 (10 tests)...     ✏️ Updated: decision_table_383551c9_0
+    ✏️ Updated: decision_table_383551c9_1
+    ✏️ Updated: decision_table_383551c9_2
+    ✏️ Updated: decision_table_383551c9_3
+    ➕ Added: decision_table_383551c9_4
+    ➕ Added: decision_table_383551c9_5
+
+    >> Refinement Stats: 0 kept, 4 updated, 2 added, 0 deleted
+    >> Total: 10 → 6 (-4)
+OK
+  BATCH Processing batch 2/3 (10 tests)...     ✏️ Updated: decision_table_383551c9_10
+    ✏️ Updated: decision_table_383551c9_11
+    ✏️ Updated: decision_table_383551c9_12
+    ✏️ Updated: decision_table_383551c9_13
+    ✏️ Updated: decision_table_383551c9_16
+    ✏️ Updated: decision_table_383551c9_17
+
+    >> Refinement Stats: 0 kept, 6 updated, 0 added, 0 deleted
+    >> Total: 10 → 6 (-4)
+OK
+  BATCH Processing batch 3/3 (2 tests)...     ✏️ Updated: decision_table_df9fa74d_0
+    ✏️ Updated: decision_table_df9fa74d_1
+    ➕ Added: decision_table_df9fa74d_2
+
+    >> Refinement Stats: 0 kept, 2 updated, 1 added, 0 deleted
+    >> Total: 2 → 2 (+0)
+OK
+OK Completed decision_table refinement
+
+-> Refining 0 state_transition tests...
+OK Completed state_transition refinement
+
+-> Refining 2 use_case tests...
+  BATCH Processing batch 1/1 (2 tests)...     ✏️ Updated: usecase_auth_register
+    ➕ Added: usecase_submit_feedback
+
+    >> Refinement Stats: 1 kept, 1 updated, 1 added, 0 deleted
+    >> Total: 2 → 2 (+0)
+OK
+OK Completed use_case refinement
+
+============================================================
+✨ AI REFINEMENT COMPLETE!
+============================================================
+
+  [site5_feedback] refined: Status: refined  AI-enhanced: 107/107
+  [site5_feedback] executing: Running 107 tests …
+  [site5_feedback] done: Pass: 0/107 (0.0%)  LLM: 3  Cost: $0.006
+
+  ────────────────────────────────────────────────────────────
+  DONE  : site5_feedback  (Feedback Survey)
+  Tests : 0/107 passed  (0.0%)
+  Oracle: heur=7 llm=3 overrides=0
+  Cost  : 3 calls  $0.006  19.0s
+  Stop  : rl_stop
+
+======================================================================
+  FINAL RESULTS — TEST WEBSITES
+======================================================================
+Site                    Tests  Passed  Pass%   LLM     Cost             Stop
+----------------------------------------------------------------------
+site5_feedback            107       0   0.0%     3 $  0.006          rl_stop
+======================================================================
+
+  Stats written to data/rl_run_results/run_20260330_022222.json
+  Live status    at data/pipeline_status.json
+  Crawls         at data/crawled_graphs/
+  Tests          at data/generated_tests/
+  Reports        at data/test_results/

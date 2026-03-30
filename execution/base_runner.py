@@ -259,6 +259,36 @@ class BaseRunner:
             except Exception:
                 pass
 
+        # Strategy 0a: radio button group — prefer matching value, else first in group
+        try:
+            radio = await page.query_selector(
+                f"input[type='radio'][name='{field_name}'][value='{str_value}']"
+            )
+            if not radio:
+                radio = await page.query_selector(f"input[type='radio'][name='{field_name}']")
+            if radio and await radio.is_visible():
+                await radio.evaluate(
+                    "function(el){el.checked=true;el.dispatchEvent(new Event('change',{bubbles:true}));}"
+                )
+                return True
+        except Exception:
+            pass
+
+        # Strategy 0b: checkbox — prefer matching value, else first in group
+        try:
+            cb = await page.query_selector(
+                f"input[type='checkbox'][name='{field_name}'][value='{str_value}']"
+            )
+            if not cb:
+                cb = await page.query_selector(f"input[type='checkbox'][name='{field_name}']")
+            if cb and await cb.is_visible():
+                await cb.evaluate(
+                    "function(el){el.checked=true;el.dispatchEvent(new Event('change',{bubbles:true}));}"
+                )
+                return True
+        except Exception:
+            pass
+
         # Strategy 1: name attribute (input / textarea / select)
         for selector in [
             f"input[name='{field_name}']",
@@ -313,10 +343,33 @@ class BaseRunner:
         try:
             tag = (await el.get_attribute("tagName") or "input").lower()
             if tag == "select":
-                await el.select_option(str_value)
+                # Try exact value match first, then label match, then first non-empty option
+                try:
+                    await el.select_option(str_value)
+                except Exception:
+                    try:
+                        await el.select_option(label=str_value)
+                    except Exception:
+                        # Fall back to first non-empty option so the required field is populated
+                        options = await el.evaluate(
+                            "el => Array.from(el.options).filter(o => o.value).map(o => o.value)"
+                        )
+                        if options:
+                            await el.select_option(options[0])
             else:
                 await el.evaluate(
                     """(node, val) => {
+                        // Radio / checkbox: just toggle checked state
+                        if (node.type === 'radio') {
+                            node.checked = true;
+                            node.dispatchEvent(new Event('change', {bubbles: true}));
+                            return;
+                        }
+                        if (node.type === 'checkbox') {
+                            node.checked = (val !== '' && val !== 'false' && val !== '0');
+                            node.dispatchEvent(new Event('change', {bubbles: true}));
+                            return;
+                        }
                         // Set maxlength to a huge value instead of removing it.
                         // Removing sets maxLength=-1 but some Playwright internals
                         // still truncate; a large explicit value is reliable.

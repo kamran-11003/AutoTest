@@ -1,0 +1,1529 @@
+{
+  "stage": "after_refinement",
+  "generated_at": "2026-03-31T01:26:56.911513",
+  "crawl_url": "http://localhost:5500/test_websites/site1_contact/index.html",
+  "site_id": "site1_contact",
+  "refinement_status": "refined",
+  "test_results": {
+    "metadata": {
+      "source_file": "C:\\Users\\Kamra\\Desktop\\fyp crawler (5)\\fyp crawler\\data\\crawled_graphs\\site1_contact_20260331_012545.json",
+      "total_nodes": 1,
+      "total_edges": 0,
+      "total_forms": 1
+    },
+    "test_cases": {
+      "bva": [
+        {
+          "id": "bva_length_af6075c3_name_0",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:5500/test_websites/site1_contact/index.html",
+          "form_id": "af6075c3",
+          "field_name": "name",
+          "field_label": "Full Name",
+          "field_type": "text",
+          "test_value": "a",
+          "expected_result": "error",
+          "description": "Verify error when Full Name is below minimum length (1 character)",
+          "test_data": {
+            "email": "tester@example.com",
+            "subject": "general",
+            "message": "This is a test submission.",
+            "name": "a"
+          },
+          "constraints": {
+            "minlength": 2,
+            "maxlength": 50
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:26:06.678300"
+        },
+        {
+          "id": "bva_length_af6075c3_name_1",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:5500/test_websites/site1_contact/index.html",
+          "form_id": "af6075c3",
+          "field_name": "name",
+          "field_label": "Full Name",
+          "field_type": "text",
+          "test_value": "aa",
+          "expected_result": "success",
+          "description": "Verify success when Full Name is at minimum length (2 characters)",
+          "test_data": {
+            "email": "tester@example.com",
+            "subject": "general",
+            "message": "This is a test submission.",
+            "name": "aa"
+          },
+          "constraints": {
+            "minlength": 2,
+            "maxlength": 50
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:26:06.679321"
+        },
+        {
+          "id": "bva_length_af6075c3_name_2",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:5500/test_websites/site1_contact/index.html",
+          "form_id": "af6075c3",
+          "field_name": "name",
+          "field_label": "Full Name",
+          "field_type": "text",
+          "test_value": "aaa",
+          "expected_result": "success",
+          "description": "Verify success when Full Name is just above minimum length (3 characters)",
+          "test_data": {
+            "email": "tester@example.com",
+            "subject": "general",
+            "message": "This is a test submission.",
+            "name": "aaa"
+          },
+          "constraints": {
+            "minlength": 2,
+            "maxlength": 50
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:26:06.679321"
+        },
+        {
+          "id": "bva_length_af6075c3_name_3",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:5500/test_websites/site1_contact/index.html",
+          "form_id": "af6075c3",
+          "field_name": "name",
+          "field_label": "Full Name",
+          "field_type": "text",
+          "test_value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expected_result": "success",
+          "description": "Verify success when Full Name is just below maximum length (49 characters)",
+          "test_data": {
+            "email": "tester@example.com",
+            "subject": "general",
+            "message": "This is a test submission.",
+            "name": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "constraints": {
+            "minlength": 2,
+            "maxlength": 50
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:26:06.679321"
+        },
+        {
+          "id": "bva_length_af6075c3_name_4",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:5500/test_websites/site1_contact/index.html",
+          "form_id": "af6075c3",
+          "field_name": "name",
+          "field_label": "Full Name",
+          "field_type": "text",
+          "test_value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expected_result": "success",
+          "description": "Verify success when Full Name is at maximum length (50 characters)",
+          "test_data": {
+            "email": "tester@example.com",
+            "subject": "general",
+            "message": "This is a test submission.",
+            "name": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "constraints": {
+            "minlength": 2,
+            "maxlength": 50
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:26:06.679321"
+        },
+        {
+          "id": "bva_length_af6075c3_name_5",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:5500/test_websites/site1_contact/index.html",
+          "form_id": "af6075c3",
+          "field_name": "name",
+          "field_label": "Full Name",
+          "field_type": "text",
+          "test_value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expected_result": "error",
+          "description": "Verify error when Full Name is above maximum length (51 characters)",
+          "test_data": {
+            "email": "tester@example.com",
+            "subject": "general",
+            "message": "This is a test submission.",
+            "name": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "constraints": {
+            "minlength": 2,
+            "maxlength": 50
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:26:06.679321"
+        },
+        {
+          "id": "bva_length_af6075c3_email_0",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:5500/test_websites/site1_contact/index.html",
+          "form_id": "af6075c3",
+          "field_name": "email",
+          "field_label": "Email Address",
+          "field_type": "email",
+          "test_value": "aaaa",
+          "expected_result": "error",
+          "description": "Verify error when Email Address is below minimum length (4 characters)",
+          "test_data": {
+            "name": "John Doe",
+            "subject": "general",
+            "message": "This is a test submission.",
+            "email": "aaaa"
+          },
+          "constraints": {
+            "minlength": 5,
+            "maxlength": 254
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:26:06.679321"
+        },
+        {
+          "id": "bva_length_af6075c3_email_1",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:5500/test_websites/site1_contact/index.html",
+          "form_id": "af6075c3",
+          "field_name": "email",
+          "field_label": "Email Address",
+          "field_type": "email",
+          "test_value": "a@b.c",
+          "expected_result": "success",
+          "description": "Verify success when Email Address is at minimum length (5 characters)",
+          "test_data": {
+            "name": "John Doe",
+            "subject": "general",
+            "message": "This is a test submission.",
+            "email": "a@b.c"
+          },
+          "constraints": {
+            "minlength": 5,
+            "maxlength": 254
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:26:06.680307"
+        },
+        {
+          "id": "bva_length_af6075c3_email_2",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:5500/test_websites/site1_contact/index.html",
+          "form_id": "af6075c3",
+          "field_name": "email",
+          "field_label": "Email Address",
+          "field_type": "email",
+          "test_value": "aa@b.c",
+          "expected_result": "success",
+          "description": "Verify success when Email Address is just above minimum length (6 characters)",
+          "test_data": {
+            "name": "John Doe",
+            "subject": "general",
+            "message": "This is a test submission.",
+            "email": "aa@b.c"
+          },
+          "constraints": {
+            "minlength": 5,
+            "maxlength": 254
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:26:06.680307"
+        },
+        {
+          "id": "bva_length_af6075c3_email_3",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:5500/test_websites/site1_contact/index.html",
+          "form_id": "af6075c3",
+          "field_name": "email",
+          "field_label": "Email Address",
+          "field_type": "email",
+          "test_value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.c",
+          "expected_result": "success",
+          "description": "Verify success when Email Address is just below maximum length (253 characters)",
+          "test_data": {
+            "name": "John Doe",
+            "subject": "general",
+            "message": "This is a test submission.",
+            "email": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.c"
+          },
+          "constraints": {
+            "minlength": 5,
+            "maxlength": 254
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:26:06.680307"
+        },
+        {
+          "id": "bva_length_af6075c3_email_4",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:5500/test_websites/site1_contact/index.html",
+          "form_id": "af6075c3",
+          "field_name": "email",
+          "field_label": "Email Address",
+          "field_type": "email",
+          "test_value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.c",
+          "expected_result": "error",
+          "description": "Verify error when Email Address is above maximum length (255 characters)",
+          "test_data": {
+            "name": "John Doe",
+            "subject": "general",
+            "message": "This is a test submission.",
+            "email": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.c"
+          },
+          "constraints": {
+            "minlength": 5,
+            "maxlength": 254
+          },
+          "action": "added",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:26:06.680307"
+        },
+        {
+          "id": "bva_length_af6075c3_email_4",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:5500/test_websites/site1_contact/index.html",
+          "form_id": "af6075c3",
+          "field_name": "email",
+          "field_type": "email",
+          "test_value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.c",
+          "expected_result": "success",
+          "description": "Verify email field accepts valid input at the maximum boundary of 254 characters",
+          "test_data": {
+            "name": "John Doe",
+            "subject": "general",
+            "message": "This is a test submission.",
+            "email": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.c"
+          },
+          "constraints": {
+            "minlength": 5,
+            "maxlength": 254
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:26:17.247981"
+        },
+        {
+          "id": "bva_length_af6075c3_email_5",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:5500/test_websites/site1_contact/index.html",
+          "form_id": "af6075c3",
+          "field_name": "email",
+          "field_type": "email",
+          "test_value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.c",
+          "expected_result": "error",
+          "description": "Verify email field rejects input exceeding the maximum boundary of 254 characters (255 chars)",
+          "test_data": {
+            "name": "John Doe",
+            "subject": "general",
+            "message": "This is a test submission.",
+            "email": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.c"
+          },
+          "constraints": {
+            "minlength": 5,
+            "maxlength": 254
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:26:17.248982"
+        },
+        {
+          "id": "bva_length_af6075c3_message_0",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:5500/test_websites/site1_contact/index.html",
+          "form_id": "af6075c3",
+          "field_name": "message",
+          "field_type": "textarea",
+          "test_value": "aaaaaaaaa",
+          "expected_result": "error",
+          "description": "Verify message field rejects input below the minimum boundary of 10 characters (9 chars)",
+          "test_data": {
+            "name": "John Doe",
+            "email": "tester@example.com",
+            "subject": "general",
+            "message": "aaaaaaaaa"
+          },
+          "constraints": {
+            "minlength": 10,
+            "maxlength": 500
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:26:17.249988"
+        },
+        {
+          "id": "bva_length_af6075c3_message_1",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:5500/test_websites/site1_contact/index.html",
+          "form_id": "af6075c3",
+          "field_name": "message",
+          "field_type": "textarea",
+          "test_value": "aaaaaaaaaa",
+          "expected_result": "success",
+          "description": "Verify message field accepts input at the minimum boundary of 10 characters",
+          "test_data": {
+            "name": "John Doe",
+            "email": "tester@example.com",
+            "subject": "general",
+            "message": "aaaaaaaaaa"
+          },
+          "constraints": {
+            "minlength": 10,
+            "maxlength": 500
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:26:17.249988"
+        },
+        {
+          "id": "bva_length_af6075c3_message_2",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:5500/test_websites/site1_contact/index.html",
+          "form_id": "af6075c3",
+          "field_name": "message",
+          "field_type": "textarea",
+          "test_value": "aaaaaaaaaaa",
+          "expected_result": "success",
+          "description": "Verify message field accepts input just above the minimum boundary (11 characters)",
+          "test_data": {
+            "name": "John Doe",
+            "email": "tester@example.com",
+            "subject": "general",
+            "message": "aaaaaaaaaaa"
+          },
+          "constraints": {
+            "minlength": 10,
+            "maxlength": 500
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:26:17.249988"
+        },
+        {
+          "id": "bva_length_af6075c3_message_3",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:5500/test_websites/site1_contact/index.html",
+          "form_id": "af6075c3",
+          "field_name": "message",
+          "field_type": "textarea",
+          "test_value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expected_result": "success",
+          "description": "Verify message field accepts input just below the maximum boundary (499 characters)",
+          "test_data": {
+            "name": "John Doe",
+            "email": "tester@example.com",
+            "subject": "general",
+            "message": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "constraints": {
+            "minlength": 10,
+            "maxlength": 500
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:26:17.250982"
+        },
+        {
+          "id": "bva_length_af6075c3_message_4",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:5500/test_websites/site1_contact/index.html",
+          "form_id": "af6075c3",
+          "field_name": "message",
+          "field_type": "textarea",
+          "test_value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expected_result": "success",
+          "description": "Verify message field accepts input at the maximum boundary of 500 characters",
+          "test_data": {
+            "name": "John Doe",
+            "email": "tester@example.com",
+            "subject": "general",
+            "message": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "constraints": {
+            "minlength": 10,
+            "maxlength": 500
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:26:17.250982"
+        },
+        {
+          "id": "bva_length_af6075c3_message_5",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:5500/test_websites/site1_contact/index.html",
+          "form_id": "af6075c3",
+          "field_name": "message",
+          "field_type": "textarea",
+          "test_value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expected_result": "error",
+          "description": "Verify message field rejects input exceeding the maximum boundary of 500 characters (501 chars)",
+          "test_data": {
+            "name": "John Doe",
+            "email": "tester@example.com",
+            "subject": "general",
+            "message": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "constraints": {
+            "minlength": 10,
+            "maxlength": 500
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:26:17.250982"
+        }
+      ],
+      "ecp": [
+        {
+          "id": "ecp_text_af6075c3_name_valid",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:5500/test_websites/site1_contact/index.html",
+          "form_id": "af6075c3",
+          "form_action": "http://localhost:5500/test_websites/site1_contact/index.html",
+          "page_title": "Contact Us - AutoTestAI",
+          "field_label": "Full Name",
+          "field_name": "name",
+          "field_type": "text",
+          "equivalence_class": "valid_text",
+          "test_value": "ValidInput123",
+          "expected_result": "success",
+          "description": "Verify that a valid alphanumeric string is accepted in the Full Name field.",
+          "test_data": {
+            "email": "tester@example.com",
+            "subject": "general",
+            "message": "This is a test submission.",
+            "name": "ValidInput123"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:26:28.584070"
+        },
+        {
+          "id": "ecp_text_af6075c3_name_empty",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:5500/test_websites/site1_contact/index.html",
+          "form_id": "af6075c3",
+          "form_action": "http://localhost:5500/test_websites/site1_contact/index.html",
+          "page_title": "Contact Us - AutoTestAI",
+          "field_label": "Full Name",
+          "field_name": "name",
+          "field_type": "text",
+          "equivalence_class": "empty_required",
+          "test_value": "",
+          "expected_result": "error",
+          "description": "Empty value for required field Full Name",
+          "test_data": {
+            "email": "tester@example.com",
+            "subject": "general",
+            "message": "This is a test submission.",
+            "name": ""
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:26:28.585070",
+          "ai_notes": "Kept original due to incomplete refinement"
+        },
+        {
+          "id": "ecp_text_af6075c3_name_special",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:5500/test_websites/site1_contact/index.html",
+          "form_id": "af6075c3",
+          "form_action": "http://localhost:5500/test_websites/site1_contact/index.html",
+          "page_title": "Contact Us - AutoTestAI",
+          "field_label": "Full Name",
+          "field_name": "name",
+          "field_type": "text",
+          "equivalence_class": "special_characters",
+          "test_value": "<script>alert(\"XSS\")</script>",
+          "expected_result": "error",
+          "description": "Verify that XSS injection attempts in the Full Name field are sanitized or rejected.",
+          "test_data": {
+            "email": "tester@example.com",
+            "subject": "general",
+            "message": "This is a test submission.",
+            "name": "<script>alert(\"XSS\")</script>"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:26:28.585070"
+        },
+        {
+          "id": "ecp_text_af6075c3_name_long",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:5500/test_websites/site1_contact/index.html",
+          "form_id": "af6075c3",
+          "form_action": "http://localhost:5500/test_websites/site1_contact/index.html",
+          "page_title": "Contact Us - AutoTestAI",
+          "field_label": "Full Name",
+          "field_name": "name",
+          "field_type": "text",
+          "equivalence_class": "long_text",
+          "test_value": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+          "expected_result": "error",
+          "description": "Verify that input exceeding the maximum character limit for the Full Name field is rejected.",
+          "test_data": {
+            "email": "tester@example.com",
+            "subject": "general",
+            "message": "This is a test submission.",
+            "name": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:26:28.585070"
+        },
+        {
+          "id": "ecp_text_af6075c3_name_unicode",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:5500/test_websites/site1_contact/index.html",
+          "form_id": "af6075c3",
+          "form_action": "http://localhost:5500/test_websites/site1_contact/index.html",
+          "page_title": "Contact Us - AutoTestAI",
+          "field_label": "Full Name",
+          "field_name": "name",
+          "field_type": "text",
+          "equivalence_class": "unicode",
+          "test_value": "测试数据🎉!测试数据",
+          "expected_result": "success",
+          "description": "Verify that Unicode characters are correctly processed in the Full Name field.",
+          "test_data": {
+            "email": "tester@example.com",
+            "subject": "general",
+            "message": "This is a test submission.",
+            "name": "测试数据🎉!测试数据"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:26:28.585070"
+        },
+        {
+          "id": "ecp_email_af6075c3_email_valid_standard_0",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:5500/test_websites/site1_contact/index.html",
+          "form_id": "af6075c3",
+          "form_action": "http://localhost:5500/test_websites/site1_contact/index.html",
+          "page_title": "Contact Us - AutoTestAI",
+          "field_label": "Email Address",
+          "field_name": "email",
+          "field_type": "email",
+          "equivalence_class": "valid_standard",
+          "test_value": "user@example.com",
+          "expected_result": "success",
+          "description": "Verify that a standard email format is accepted in the Email Address field.",
+          "test_data": {
+            "name": "John Doe",
+            "subject": "general",
+            "message": "This is a test submission.",
+            "email": "user@example.com"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:26:28.588177"
+        },
+        {
+          "id": "ecp_email_af6075c3_email_valid_standard_1",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:5500/test_websites/site1_contact/index.html",
+          "form_id": "af6075c3",
+          "form_action": "http://localhost:5500/test_websites/site1_contact/index.html",
+          "page_title": "Contact Us - AutoTestAI",
+          "field_label": "Email Address",
+          "field_name": "email",
+          "field_type": "email",
+          "equivalence_class": "valid_standard",
+          "test_value": "test@domain.co.uk",
+          "expected_result": "success",
+          "description": "Verify that an email with a multi-part TLD is accepted in the Email Address field.",
+          "test_data": {
+            "name": "John Doe",
+            "subject": "general",
+            "message": "This is a test submission.",
+            "email": "test@domain.co.uk"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:26:28.588177"
+        },
+        {
+          "id": "ecp_email_af6075c3_email_valid_with_plus_0",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:5500/test_websites/site1_contact/index.html",
+          "form_id": "af6075c3",
+          "form_action": "http://localhost:5500/test_websites/site1_contact/index.html",
+          "page_title": "Contact Us - AutoTestAI",
+          "field_label": "Email Address",
+          "field_name": "email",
+          "field_type": "email",
+          "equivalence_class": "valid_with_plus",
+          "test_value": "user+tag@example.com",
+          "expected_result": "success",
+          "description": "Verify that an email with plus addressing is accepted in the Email Address field.",
+          "test_data": {
+            "name": "John Doe",
+            "subject": "general",
+            "message": "This is a test submission.",
+            "email": "user+tag@example.com"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:26:28.589175"
+        },
+        {
+          "id": "ecp_email_af6075c3_email_valid_with_plus_1",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:5500/test_websites/site1_contact/index.html",
+          "form_id": "af6075c3",
+          "form_action": "http://localhost:5500/test_websites/site1_contact/index.html",
+          "page_title": "Contact Us - AutoTestAI",
+          "field_label": "Email Address",
+          "field_name": "email",
+          "field_type": "email",
+          "equivalence_class": "valid_with_plus",
+          "test_value": "test+filter@domain.com",
+          "expected_result": "success",
+          "description": "Verify that an email with plus addressing is accepted in the Email Address field.",
+          "test_data": {
+            "name": "John Doe",
+            "subject": "general",
+            "message": "This is a test submission.",
+            "email": "test+filter@domain.com"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:26:28.589175"
+        },
+        {
+          "id": "ecp_email_af6075c3_email_valid_with_dots_0",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:5500/test_websites/site1_contact/index.html",
+          "form_id": "af6075c3",
+          "form_action": "http://localhost:5500/test_websites/site1_contact/index.html",
+          "page_title": "Contact Us - AutoTestAI",
+          "field_label": "Email Address",
+          "field_name": "email",
+          "field_type": "email",
+          "equivalence_class": "valid_with_dots",
+          "test_value": "first.last@example.com",
+          "expected_result": "success",
+          "description": "Verify that an email with dots in the local part is accepted in the Email Address field.",
+          "test_data": {
+            "name": "John Doe",
+            "subject": "general",
+            "message": "This is a test submission.",
+            "email": "first.last@example.com"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:26:28.589175"
+        },
+        {
+          "id": "ecp_email_af6075c3_email_invalid_format",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:5500/test_websites/site1_contact/index.html",
+          "form_id": "af6075c3",
+          "form_action": "http://localhost:5500/test_websites/site1_contact/index.html",
+          "page_title": "Contact Us - AutoTestAI",
+          "field_label": "Email Address",
+          "field_name": "email",
+          "field_type": "email",
+          "equivalence_class": "invalid_format",
+          "test_value": "invalid-email",
+          "expected_result": "error",
+          "description": "Verify that an email missing the @ symbol and domain is rejected in the Email Address field.",
+          "test_data": {
+            "name": "John Doe",
+            "subject": "general",
+            "message": "This is a test submission.",
+            "email": "invalid-email"
+          },
+          "action": "added",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:26:28.589175"
+        },
+        {
+          "id": "ecp_email_af6075c3_email_valid_with_dots_1",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:5500/test_websites/site1_contact/index.html",
+          "form_id": "af6075c3",
+          "field_name": "email",
+          "field_type": "email",
+          "equivalence_class": "valid_with_dots",
+          "test_value": "user.name@domain.org",
+          "expected_result": "success",
+          "description": "Verify that an email address containing dots in the local part is accepted as valid.",
+          "test_data": {
+            "name": "John Doe",
+            "subject": "general",
+            "message": "This is a test submission.",
+            "email": "user.name@domain.org"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:26:36.610937"
+        },
+        {
+          "id": "ecp_email_af6075c3_email_valid_subdomain_0",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:5500/test_websites/site1_contact/index.html",
+          "form_id": "af6075c3",
+          "field_name": "email",
+          "field_type": "email",
+          "equivalence_class": "valid_subdomain",
+          "test_value": "user@mail.example.com",
+          "expected_result": "success",
+          "description": "Verify that an email address with a single-level subdomain is accepted as valid.",
+          "test_data": {
+            "name": "John Doe",
+            "subject": "general",
+            "message": "This is a test submission.",
+            "email": "user@mail.example.com"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:26:36.611959"
+        },
+        {
+          "id": "ecp_email_af6075c3_email_valid_subdomain_1",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:5500/test_websites/site1_contact/index.html",
+          "form_id": "af6075c3",
+          "field_name": "email",
+          "field_type": "email",
+          "equivalence_class": "valid_subdomain",
+          "test_value": "test@subdomain.domain.com",
+          "expected_result": "success",
+          "description": "Verify that an email address with a multi-level subdomain is accepted as valid.",
+          "test_data": {
+            "name": "John Doe",
+            "subject": "general",
+            "message": "This is a test submission.",
+            "email": "test@subdomain.domain.com"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:26:36.619028"
+        },
+        {
+          "id": "ecp_email_af6075c3_email_invalid_missing_at_0",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:5500/test_websites/site1_contact/index.html",
+          "form_id": "af6075c3",
+          "field_name": "email",
+          "field_type": "email",
+          "equivalence_class": "invalid_missing_at",
+          "test_value": "userexample.com",
+          "expected_result": "error",
+          "description": "Verify that an email address missing the '@' symbol is rejected.",
+          "test_data": {
+            "name": "John Doe",
+            "subject": "general",
+            "message": "This is a test submission.",
+            "email": "userexample.com"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:26:36.621416"
+        },
+        {
+          "id": "ecp_email_af6075c3_email_invalid_missing_at_1",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:5500/test_websites/site1_contact/index.html",
+          "form_id": "af6075c3",
+          "field_name": "email",
+          "field_type": "email",
+          "equivalence_class": "invalid_missing_at",
+          "test_value": "test.domain.com",
+          "expected_result": "error",
+          "description": "Verify that a domain string without an '@' symbol is rejected.",
+          "test_data": {
+            "name": "John Doe",
+            "subject": "general",
+            "message": "This is a test submission.",
+            "email": "test.domain.com"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:26:36.623436"
+        },
+        {
+          "id": "ecp_email_af6075c3_email_invalid_missing_domain_0",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:5500/test_websites/site1_contact/index.html",
+          "form_id": "af6075c3",
+          "field_name": "email",
+          "field_type": "email",
+          "equivalence_class": "invalid_missing_domain",
+          "test_value": "user@",
+          "expected_result": "error",
+          "description": "Verify that an email address missing the domain portion after the '@' is rejected.",
+          "test_data": {
+            "name": "John Doe",
+            "subject": "general",
+            "message": "This is a test submission.",
+            "email": "user@"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:26:36.624436"
+        },
+        {
+          "id": "ecp_email_af6075c3_email_invalid_missing_domain_1",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:5500/test_websites/site1_contact/index.html",
+          "form_id": "af6075c3",
+          "field_name": "email",
+          "field_type": "email",
+          "equivalence_class": "invalid_missing_domain",
+          "test_value": "test@.com",
+          "expected_result": "error",
+          "description": "Verify that an email address with an empty domain name is rejected.",
+          "test_data": {
+            "name": "John Doe",
+            "subject": "general",
+            "message": "This is a test submission.",
+            "email": "test@.com"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:26:36.624436"
+        },
+        {
+          "id": "ecp_email_af6075c3_email_invalid_special_chars_0",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:5500/test_websites/site1_contact/index.html",
+          "form_id": "af6075c3",
+          "field_name": "email",
+          "field_type": "email",
+          "equivalence_class": "invalid_special_chars",
+          "test_value": "user..name@example.com",
+          "expected_result": "error",
+          "description": "Verify that an email address with consecutive dots in the local part is rejected.",
+          "test_data": {
+            "name": "John Doe",
+            "subject": "general",
+            "message": "This is a test submission.",
+            "email": "user..name@example.com"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:26:36.631492"
+        },
+        {
+          "id": "ecp_email_af6075c3_email_invalid_special_chars_1",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:5500/test_websites/site1_contact/index.html",
+          "form_id": "af6075c3",
+          "field_name": "email",
+          "field_type": "email",
+          "equivalence_class": "invalid_special_chars",
+          "test_value": ".user@example.com",
+          "expected_result": "error",
+          "description": "Verify that an email address with a leading dot in the local part is rejected.",
+          "test_data": {
+            "name": "John Doe",
+            "subject": "general",
+            "message": "This is a test submission.",
+            "email": ".user@example.com"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:26:36.635845"
+        },
+        {
+          "id": "ecp_email_af6075c3_email_invalid_empty_0",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:5500/test_websites/site1_contact/index.html",
+          "form_id": "af6075c3",
+          "field_name": "email",
+          "field_type": "email",
+          "equivalence_class": "invalid_empty",
+          "test_value": "",
+          "expected_result": "error",
+          "description": "Empty or whitespace only",
+          "test_data": {
+            "name": "John Doe",
+            "subject": "general",
+            "message": "This is a test submission.",
+            "email": ""
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:26:36.642126",
+          "ai_notes": "Kept original due to incomplete refinement"
+        },
+        {
+          "id": "ecp_email_af6075c3_email_invalid_whitespace_0",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:5500/test_websites/site1_contact/index.html",
+          "form_id": "af6075c3",
+          "field_name": "email",
+          "field_type": "email",
+          "equivalence_class": "invalid_whitespace",
+          "test_value": "user name@example.com",
+          "expected_result": "error",
+          "description": "Verify that an email address containing spaces is rejected.",
+          "test_data": {
+            "name": "John Doe",
+            "subject": "general",
+            "message": "This is a test submission.",
+            "email": "user name@example.com"
+          },
+          "action": "added",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:26:36.642126"
+        },
+        {
+          "id": "ecp_email_af6075c3_email_invalid_empty_1",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:5500/test_websites/site1_contact/index.html",
+          "form_id": "af6075c3",
+          "field_name": "email",
+          "field_label": "Email Address",
+          "field_type": "email",
+          "equivalence_class": "invalid_empty",
+          "test_value": "   ",
+          "expected_result": "error",
+          "description": "Verify that an empty or whitespace-only Email Address triggers a validation error",
+          "test_data": {
+            "name": "John Doe",
+            "subject": "general",
+            "message": "This is a test submission.",
+            "email": "   "
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:26:46.897286"
+        },
+        {
+          "id": "ecp_email_af6075c3_email_invalid_spaces_0",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:5500/test_websites/site1_contact/index.html",
+          "form_id": "af6075c3",
+          "field_name": "email",
+          "field_label": "Email Address",
+          "field_type": "email",
+          "equivalence_class": "invalid_spaces",
+          "test_value": "user name@example.com",
+          "expected_result": "error",
+          "description": "Verify that an Email Address containing a space in the local part triggers a validation error",
+          "test_data": {
+            "name": "John Doe",
+            "subject": "general",
+            "message": "This is a test submission.",
+            "email": "user name@example.com"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:26:46.897286"
+        },
+        {
+          "id": "ecp_email_af6075c3_email_invalid_spaces_1",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:5500/test_websites/site1_contact/index.html",
+          "form_id": "af6075c3",
+          "field_name": "email",
+          "field_label": "Email Address",
+          "field_type": "email",
+          "equivalence_class": "invalid_spaces",
+          "test_value": "test @domain.com",
+          "expected_result": "error",
+          "description": "Verify that an Email Address containing a space before the @ symbol triggers a validation error",
+          "test_data": {
+            "name": "John Doe",
+            "subject": "general",
+            "message": "This is a test submission.",
+            "email": "test @domain.com"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:26:46.897286"
+        },
+        {
+          "id": "ecp_select_af6075c3_subject_first",
+          "type": "ECP",
+          "subtype": "select",
+          "form_url": "http://localhost:5500/test_websites/site1_contact/index.html",
+          "form_id": "af6075c3",
+          "field_name": "subject",
+          "field_label": "Subject",
+          "field_type": "select",
+          "equivalence_class": "valid_first_option",
+          "test_value": "general",
+          "expected_result": "success",
+          "description": "Verify successful submission when selecting the first Subject option (general)",
+          "test_data": {
+            "name": "John Doe",
+            "email": "tester@example.com",
+            "message": "This is a test submission.",
+            "subject": "general"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:26:46.898275"
+        },
+        {
+          "id": "ecp_select_af6075c3_subject_middle",
+          "type": "ECP",
+          "subtype": "select",
+          "form_url": "http://localhost:5500/test_websites/site1_contact/index.html",
+          "form_id": "af6075c3",
+          "field_name": "subject",
+          "field_label": "Subject",
+          "field_type": "select",
+          "equivalence_class": "valid_middle_option",
+          "test_value": "billing",
+          "expected_result": "success",
+          "description": "Verify successful submission when selecting the middle Subject option (billing)",
+          "test_data": {
+            "name": "John Doe",
+            "email": "tester@example.com",
+            "message": "This is a test submission.",
+            "subject": "billing"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:26:46.898275"
+        },
+        {
+          "id": "ecp_select_af6075c3_subject_last",
+          "type": "ECP",
+          "subtype": "select",
+          "form_url": "http://localhost:5500/test_websites/site1_contact/index.html",
+          "form_id": "af6075c3",
+          "field_name": "subject",
+          "field_label": "Subject",
+          "field_type": "select",
+          "equivalence_class": "valid_last_option",
+          "test_value": "feedback",
+          "expected_result": "success",
+          "description": "Verify successful submission when selecting the last Subject option (feedback)",
+          "test_data": {
+            "name": "John Doe",
+            "email": "tester@example.com",
+            "message": "This is a test submission.",
+            "subject": "feedback"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:26:46.898275"
+        },
+        {
+          "id": "ecp_text_af6075c3_message_valid",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:5500/test_websites/site1_contact/index.html",
+          "form_id": "af6075c3",
+          "form_action": "http://localhost:5500/test_websites/site1_contact/index.html",
+          "page_title": "Contact Us - AutoTestAI",
+          "field_label": "Message",
+          "field_name": "message",
+          "field_type": "textarea",
+          "equivalence_class": "valid_text",
+          "test_value": "ValidInput123",
+          "expected_result": "success",
+          "description": "Verify successful submission with valid alphanumeric text in the Message field",
+          "test_data": {
+            "name": "John Doe",
+            "email": "tester@example.com",
+            "subject": "general",
+            "message": "ValidInput123"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:26:46.898275"
+        },
+        {
+          "id": "ecp_text_af6075c3_message_empty",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:5500/test_websites/site1_contact/index.html",
+          "form_id": "af6075c3",
+          "form_action": "http://localhost:5500/test_websites/site1_contact/index.html",
+          "page_title": "Contact Us - AutoTestAI",
+          "field_label": "Message",
+          "field_name": "message",
+          "field_type": "textarea",
+          "equivalence_class": "empty_required",
+          "test_value": "",
+          "expected_result": "error",
+          "description": "Empty value for required field Message",
+          "test_data": {
+            "name": "John Doe",
+            "email": "tester@example.com",
+            "subject": "general",
+            "message": ""
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:26:46.898275",
+          "ai_notes": "Kept original due to incomplete refinement"
+        },
+        {
+          "id": "ecp_text_af6075c3_message_special",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:5500/test_websites/site1_contact/index.html",
+          "form_id": "af6075c3",
+          "form_action": "http://localhost:5500/test_websites/site1_contact/index.html",
+          "page_title": "Contact Us - AutoTestAI",
+          "field_label": "Message",
+          "field_name": "message",
+          "field_type": "textarea",
+          "equivalence_class": "special_characters",
+          "test_value": "<script>alert(\"XSS\")</script>",
+          "expected_result": "error",
+          "description": "Verify that XSS injection attempts in the Message field are blocked or sanitized",
+          "test_data": {
+            "name": "John Doe",
+            "email": "tester@example.com",
+            "subject": "general",
+            "message": "<script>alert(\"XSS\")</script>"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:26:46.898275"
+        },
+        {
+          "id": "ecp_text_af6075c3_message_long",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:5500/test_websites/site1_contact/index.html",
+          "form_id": "af6075c3",
+          "form_action": "http://localhost:5500/test_websites/site1_contact/index.html",
+          "page_title": "Contact Us - AutoTestAI",
+          "field_label": "Message",
+          "field_name": "message",
+          "field_type": "textarea",
+          "equivalence_class": "long_text",
+          "test_value": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+          "expected_result": "error",
+          "description": "Verify that input exceeding the maximum character limit for the Message field triggers a validation error",
+          "test_data": {
+            "name": "John Doe",
+            "email": "tester@example.com",
+            "subject": "general",
+            "message": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:26:46.898275"
+        },
+        {
+          "id": "ecp_text_af6075c3_name_empty",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:5500/test_websites/site1_contact/index.html",
+          "form_id": "af6075c3",
+          "field_name": "name",
+          "field_label": "Full Name",
+          "field_type": "text",
+          "equivalence_class": "empty_required",
+          "test_value": "",
+          "expected_result": "error",
+          "description": "Verify that an empty Full Name field triggers a required field validation error",
+          "test_data": {
+            "name": "",
+            "email": "tester@example.com",
+            "subject": "general",
+            "message": "Valid message content"
+          },
+          "action": "added",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:26:46.898275"
+        },
+        {
+          "id": "ecp_text_af6075c3_message_unicode",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:5500/test_websites/site1_contact/index.html",
+          "form_id": "af6075c3",
+          "form_action": "http://localhost:5500/test_websites/site1_contact/index.html",
+          "page_title": "Contact Us - AutoTestAI",
+          "field_label": "Message",
+          "field_name": "message",
+          "field_type": "textarea",
+          "equivalence_class": "unicode",
+          "test_value": "测试数据🎉!测试数据",
+          "expected_result": "success",
+          "description": "Verify that the Message field correctly accepts and processes Unicode characters including emojis.",
+          "test_data": {
+            "name": "John Doe",
+            "email": "tester@example.com",
+            "subject": "general",
+            "message": "测试数据🎉!测试数据"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:26:51.217440"
+        },
+        {
+          "id": "ecp_text_af6075c3_email_invalid",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:5500/test_websites/site1_contact/index.html",
+          "form_id": "af6075c3",
+          "form_action": "http://localhost:5500/test_websites/site1_contact/index.html",
+          "page_title": "Contact Us - AutoTestAI",
+          "field_label": "Email Address",
+          "field_name": "email",
+          "field_type": "email",
+          "equivalence_class": "invalid_format",
+          "test_value": "invalid-email-format",
+          "expected_result": "failure",
+          "description": "Verify that the Email Address field rejects malformed email strings.",
+          "test_data": {
+            "name": "John Doe",
+            "email": "invalid-email-format",
+            "subject": "general",
+            "message": "Hello world"
+          },
+          "action": "added",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:26:51.218960"
+        },
+        {
+          "id": "ecp_text_af6075c3_name_empty",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:5500/test_websites/site1_contact/index.html",
+          "form_id": "af6075c3",
+          "form_action": "http://localhost:5500/test_websites/site1_contact/index.html",
+          "page_title": "Contact Us - AutoTestAI",
+          "field_label": "Full Name",
+          "field_name": "name",
+          "field_type": "text",
+          "equivalence_class": "empty",
+          "test_value": "",
+          "expected_result": "failure",
+          "description": "Verify that the Full Name field requires input and fails when empty.",
+          "test_data": {
+            "name": "",
+            "email": "tester@example.com",
+            "subject": "general",
+            "message": "Hello world"
+          },
+          "action": "added",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-03-31T01:26:51.219974"
+        }
+      ],
+      "decision_table": [],
+      "state_transition": [],
+      "use_case": [
+        {
+          "id": "usecase_contact_unknown",
+          "type": "Use Case",
+          "subtype": "form_submission",
+          "scenario_name": "Submit Contact Form",
+          "steps": [
+            {
+              "step": 1,
+              "action": "navigate",
+              "target": "http://localhost:5500/test_websites/site1_contact/index.html",
+              "description": "Navigate to contact page",
+              "verification": "Contact form displayed"
+            },
+            {
+              "step": 2,
+              "action": "fill_form",
+              "target": "unknown",
+              "description": "Fill contact form fields",
+              "verification": "All required fields populated"
+            },
+            {
+              "step": 3,
+              "action": "submit",
+              "target": "unknown",
+              "description": "Submit contact form",
+              "verification": "Success message displayed"
+            }
+          ],
+          "expected_result": "success",
+          "description": "Contact form submission: Navigate → Fill form → Submit → Verify confirmation",
+          "form_url": "http://localhost:5500/test_websites/site1_contact/index.html",
+          "form_id": "unknown",
+          "preconditions": [],
+          "postconditions": [
+            "Form submitted",
+            "Confirmation message shown"
+          ],
+          "action": "updated",
+          "ai_enhanced": true
+        },
+        {
+          "id": "usecase_auth_login",
+          "type": "Use Case",
+          "subtype": "authentication",
+          "scenario_name": "User Login Flow",
+          "form_url": "http://localhost:5500/test_websites/site1_contact/index.html",
+          "test_data": {
+            "name": "TestUser1",
+            "email": "test@example.com",
+            "subject": "TestValue",
+            "message": 30
+          },
+          "steps": [
+            {
+              "step": 1,
+              "action": "navigate",
+              "target": null,
+              "description": "Navigate to login page",
+              "verification": "Login form displayed"
+            },
+            {
+              "step": 2,
+              "action": "fill",
+              "target": "email",
+              "value": "test@example.com",
+              "description": "Enter email address",
+              "verification": "Email field populated"
+            },
+            {
+              "step": 3,
+              "action": "fill",
+              "target": "password",
+              "value": "Test123!@#",
+              "description": "Enter password",
+              "verification": "Password field populated"
+            },
+            {
+              "step": 4,
+              "action": "submit",
+              "target": "login_form",
+              "description": "Submit login form",
+              "verification": "Successfully logged in, redirected to dashboard/profile"
+            }
+          ],
+          "expected_result": "success",
+          "description": "User login: Navigate to login → Enter credentials → Submit → Verify logged in",
+          "preconditions": [
+            "User not logged in",
+            "Valid credentials exist"
+          ],
+          "postconditions": [
+            "User logged in",
+            "Session created"
+          ],
+          "action": "updated",
+          "ai_enhanced": true
+        },
+        {
+          "id": "usecase_auth_register",
+          "type": "Use Case",
+          "subtype": "authentication",
+          "scenario_name": "New User Registration",
+          "form_url": "http://localhost:5500/test_websites/site1_contact/index.html",
+          "test_data": {
+            "name": "TestUser1",
+            "email": "test@example.com",
+            "subject": "TestValue",
+            "message": 30
+          },
+          "steps": [
+            {
+              "step": 1,
+              "action": "navigate",
+              "target": null,
+              "description": "Navigate to registration page",
+              "verification": "Registration form displayed"
+            },
+            {
+              "step": 2,
+              "action": "fill_form",
+              "target": "registration_form",
+              "description": "Fill registration form",
+              "verification": "All fields populated"
+            },
+            {
+              "step": 3,
+              "action": "submit",
+              "target": "registration_form",
+              "description": "Submit registration",
+              "verification": "Account created, confirmation message shown"
+            }
+          ],
+          "expected_result": "success",
+          "description": "User registration: Navigate → Fill form → Submit → Verify account created",
+          "preconditions": [
+            "User not registered"
+          ],
+          "postconditions": [
+            "New account created",
+            "User logged in or verification email sent"
+          ],
+          "action": "updated",
+          "ai_enhanced": true
+        }
+      ]
+    },
+    "summary": {
+      "total_test_cases": 58,
+      "bva_count": 19,
+      "ecp_count": 36,
+      "decision_table_count": 0,
+      "state_transition_count": 0,
+      "use_case_count": 3
+    }
+  },
+  "counts": {
+    "bva": 19,
+    "ecp": 36,
+    "decision_table": 0,
+    "state_transition": 0,
+    "use_case": 3
+  },
+  "total": 58,
+  "ai_enhanced_count": 58,
+  "before_file": "site1_contact_before_20260331_012545.json"
+}

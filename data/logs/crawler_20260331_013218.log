@@ -1,0 +1,26 @@
+2026-03-31 01:32:46 | crawler.orchestrator | INFO | 🧠 AI Site Analyzer enabled (smart URL normalization)
+2026-03-31 01:32:46 | crawler.orchestrator | INFO | 🤖 Gemini detector initialized for form/navigation detection
+2026-03-31 01:32:46 | crawler.orchestrator | INFO | 🤖 AI-enhanced form detection enabled in DOMAnalyzer
+2026-03-31 01:32:46 | crawler.graph_builder | INFO | GraphBuilder initialized
+2026-03-31 01:32:46 | crawler.orchestrator | INFO | 🧙 Form wizard detector initialized
+2026-03-31 01:32:46 | crawler.orchestrator | INFO | 🚫 Modal handler initialized
+2026-03-31 01:32:46 | crawler.orchestrator | INFO | 📎 File upload detector initialized
+2026-03-31 01:32:46 | crawler.orchestrator | INFO | 🌑 Shadow DOM detector initialized
+2026-03-31 01:32:46 | crawler.orchestrator | INFO | ⏱️  Rate limiter initialized
+2026-03-31 01:32:46 | crawler.orchestrator | INFO | 🚀 CrawlerOrchestrator initialized
+2026-03-31 01:32:46 | crawler.orchestrator | INFO | 🎯 Starting crawl: http://localhost:5500/test_websites/site2_booking/index.html
+2026-03-31 01:32:46 | crawler.orchestrator | INFO | 📊 Config: max_depth=3, max_pages=5
+2026-03-31 01:32:57 | crawler.orchestrator | INFO | 🚫 Checking for initial popups/modals...
+2026-03-31 01:32:58 | crawler.orchestrator | INFO | 🧠 Performing ONE-TIME site structure analysis...
+2026-03-31 01:32:58 | crawler.orchestrator | INFO | 📡 Collecting sample URLs for pattern detection...
+2026-03-31 01:33:11 | crawler.orchestrator | INFO | ✅ Site analysis complete - patterns cached for all pages
+2026-03-31 01:33:11 | crawler.orchestrator | INFO | 🔄 Starting BFS crawl...
+2026-03-31 01:33:11 | crawler.orchestrator | INFO | 🌐 Crawling [0]: http://localhost:5500/test_websites/site2_booking/index.html
+2026-03-31 01:33:29 | crawler.orchestrator | INFO | ✅ New state: 18a3eb32 | /test_websites/site2_booking/index.html | 5 inputs, 1 forms
+2026-03-31 01:33:29 | crawler.orchestrator | INFO | 📦 Processing 2 component states
+2026-03-31 01:33:29 | crawler.orchestrator | INFO | 📊 Progress: 1/5 pages | Queue: 0 | Depth: 0
+2026-03-31 01:33:29 | crawler.orchestrator | INFO | 🏁 Crawl finished: 1 pages crawled
+2026-03-31 01:33:29 | crawler.orchestrator | INFO | ✅ Fixed 0 graph edges, removed 0 orphans
+2026-03-31 01:33:29 | crawler.orchestrator | INFO | 📊 Final graph: 1 nodes, 0 edges
+2026-03-31 01:33:29 | crawler.orchestrator | INFO | ✅ Crawl completed successfully
+2026-03-31 01:36:12 | execution.llm_oracle | ERROR | LLM oracle error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 

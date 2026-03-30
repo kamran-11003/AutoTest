@@ -1,0 +1,24 @@
+[
+  {
+    "site_id": "site1_contact",
+    "site_name": "Contact Form",
+    "url": "http://localhost:5500/test_websites/site1_contact/index.html",
+    "crawl_id": "site1_contact",
+    "status": "ok",
+    "total": 58,
+    "passed": 46,
+    "failed": 12,
+    "errors": 0,
+    "skipped": 0,
+    "pass_rate": 79.3,
+    "api_calls": 4,
+    "api_cost": 0.008,
+    "duration_s": 215.88,
+    "stop_reason": "completed",
+    "heur_decisions": 54,
+    "llm_decisions": 4,
+    "pattern_overrides": 0,
+    "after_file": "site1_contact_after_20260331_012545.json",
+    "executed_at": "2026-03-31T01:30:54.459161"
+  }
+]

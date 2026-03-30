@@ -329,9 +329,26 @@ class AdaptiveRunner:
                         result.oracle_method = OracleMethod.LLM
                         result.confidence    = llm_result["confidence"]
                         result.evidence      = llm_result["evidence"]
-                        result.status = (TestStatus.PASSED
-                                         if llm_outcome == "success"
-                                         else TestStatus.FAILED)
+                        # Compare observed outcome against expected result.
+                        # LLM outcome = what HAPPENED (success/error on page).
+                        # A test PASSES when outcome matches expectation:
+                        #   expected "error"   + observed "error"   → PASS
+                        #   expected "success" + observed "success" → PASS
+                        #   expected "error"   + observed "success" → FAIL (validation didn't fire)
+                        #   expected "success" + observed "error"   → FAIL (form didn't submit)
+                        _expected_result = test_case.get("expected_result", "")
+                        _expect_error = (
+                            "invalid" in _expected_result.lower() or
+                            "error"   in _expected_result.lower()
+                        )
+                        if _expect_error:
+                            result.status = (TestStatus.PASSED
+                                             if llm_outcome == "error"
+                                             else TestStatus.FAILED)
+                        else:
+                            result.status = (TestStatus.PASSED
+                                             if llm_outcome == "success"
+                                             else TestStatus.FAILED)
                         _llm_consec_fails = 0   # successful call — reset
                     else:
                         # LLM unclear / failed — keep heuristic's verdict.
