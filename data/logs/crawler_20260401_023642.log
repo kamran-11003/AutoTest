@@ -1,0 +1,119 @@
+2026-04-01 02:36:44 | crawler.ai_site_analyzer | INFO | 🧠 AI Site Analyzer initialized (pattern detection + URL normalization)
+2026-04-01 02:37:02 | crawler.ai_site_analyzer | INFO | 🔍 Analyzing site structure for localhost:5500 (ONE-TIME analysis)
+2026-04-01 02:37:06 | crawler.ai_site_analyzer | INFO | ✅ Site analysis complete for localhost:5500
+2026-04-01 02:37:06 | crawler.ai_site_analyzer | INFO |    Navigation style: minimal
+2026-04-01 02:37:06 | crawler.ai_site_analyzer | INFO |    URL patterns detected: 0
+2026-04-01 02:37:06 | crawler.ai_site_analyzer | INFO |    Component types: ['has_product_cards', 'has_user_cards', 'has_category_cards', 'has_accordions', 'card_selector']
+2026-04-01 02:37:06 | crawler.ai_site_analyzer | INFO |    📦 Cached in Redis (accessible across all crawler instances)
+2026-04-01 02:38:49 | execution.rl_agent.dqn_agent | INFO | RL model loaded (ε=0.070)
+2026-04-01 02:38:51 | execution.cache_manager | WARNING | Redis cache unavailable: Error 10061 connecting to 127.0.0.1:6379. No connection could be made because the target machine actively refused it.. Running without cache.
+2026-04-01 02:38:51 | execution.adaptive_runner | INFO | 
+=== Test Failure Probability Report (Top 10) ===
+Priority   Test ID              Type            Risk     Risk Factors                                                
+------------------------------------------------------------------------------------------------------------------------
+35         ecp_pattern_e5e6557  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_email_e5e65574_  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_email_e5e65574_  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_email_e5e65574_  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_email_e5e65574_  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_email_e5e65574_  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_email_e5e65574_  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_email_e5e65574_  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_email_e5e65574_  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_email_e5e65574_  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+------------------------------------------------------------------------------------------------------------------------
+Average failure probability: 46.64%
+
+2026-04-01 02:38:51 | execution.adaptive_runner | INFO | 
+================================================================================
+TEST CLASSIFICATION REPORT
+================================================================================
+
+Classification | Count | Risk
+--------------------------------------------------
+BVA/numeric_boundaries         |    32 |      70%
+ECP/invalid_partition          |    23 |      65%
+USE CASE/unknown               |     3 |      50%
+ECP/valid_partition            |    14 |      30%
+
+================================================================================
+
+2026-04-01 02:39:00 | execution.adaptive_runner | INFO | [1/72] ecp_pattern_e5e65574_username_invalid_pattern_1 → passed (conf=90%, oracle=heuristic)
+2026-04-01 02:39:03 | execution.adaptive_runner | INFO | [2/72] ecp_email_e5e65574_email_invalid_missing_at_0 → passed (conf=90%, oracle=heuristic)
+2026-04-01 02:39:06 | execution.adaptive_runner | INFO | [3/72] ecp_email_e5e65574_email_invalid_missing_at_0 → passed (conf=90%, oracle=heuristic)
+2026-04-01 02:39:08 | execution.adaptive_runner | INFO | [4/72] ecp_email_e5e65574_email_invalid_missing_at_1 → passed (conf=90%, oracle=heuristic)
+2026-04-01 02:39:11 | execution.adaptive_runner | INFO | [5/72] ecp_email_e5e65574_email_invalid_missing_domain_0 → passed (conf=90%, oracle=heuristic)
+2026-04-01 02:39:14 | execution.adaptive_runner | INFO | [6/72] ecp_email_e5e65574_email_invalid_missing_domain_1 → passed (conf=90%, oracle=heuristic)
+2026-04-01 02:39:17 | execution.adaptive_runner | INFO | [7/72] ecp_email_e5e65574_email_invalid_special_chars_0 → failed (conf=85%, oracle=heuristic)
+2026-04-01 02:39:20 | execution.adaptive_runner | INFO | [8/72] ecp_email_e5e65574_email_invalid_special_chars_1 → failed (conf=85%, oracle=heuristic)
+2026-04-01 02:39:23 | execution.adaptive_runner | INFO | [9/72] ecp_email_e5e65574_email_invalid_empty_1 → passed (conf=90%, oracle=heuristic)
+2026-04-01 02:39:26 | execution.adaptive_runner | INFO | [10/72] ecp_email_e5e65574_email_invalid_spaces_0 → passed (conf=90%, oracle=heuristic)
+2026-04-01 02:39:28 | execution.adaptive_runner | INFO | [11/72] ecp_email_e5e65574_email_invalid_missing_tld → passed (conf=90%, oracle=heuristic)
+2026-04-01 02:39:31 | execution.adaptive_runner | INFO | [12/72] ecp_email_e5e65574_email_invalid_spaces_1 → passed (conf=90%, oracle=heuristic)
+2026-04-01 02:39:34 | execution.adaptive_runner | INFO | [13/72] ecp_text_e5e65574_password_long → passed (conf=65%, oracle=heuristic)
+2026-04-01 02:39:37 | execution.adaptive_runner | INFO | [14/72] ecp_text_e5e65574_confirmPassword_empty → failed (conf=85%, oracle=heuristic)
+2026-04-01 02:39:40 | execution.adaptive_runner | INFO | [15/72] ecp_text_e5e65574_confirmPassword_long → passed (conf=65%, oracle=heuristic)
+2026-04-01 02:39:43 | execution.adaptive_runner | INFO | [16/72] ecp_text_e5e65574_confirmPassword_mismatch → passed (conf=65%, oracle=heuristic)
+2026-04-01 02:39:46 | execution.adaptive_runner | INFO | [17/72] ecp_number_e5e65574_age_invalid → passed (conf=75%, oracle=heuristic)
+2026-04-01 02:39:48 | execution.adaptive_runner | INFO | [18/72] ecp_text_e5e65574_email_invalid → passed (conf=90%, oracle=heuristic)
+2026-04-01 02:39:51 | execution.adaptive_runner | INFO | [19/72] usecase_registration_unknown → passed (conf=85%, oracle=heuristic)
+2026-04-01 02:39:54 | execution.adaptive_runner | INFO | [20/72] usecase_auth_login → passed (conf=85%, oracle=heuristic)
+2026-04-01 02:39:57 | execution.adaptive_runner | INFO | [21/72] usecase_auth_register → passed (conf=85%, oracle=heuristic)
+2026-04-01 02:40:00 | execution.adaptive_runner | INFO | [22/72] bva_length_e5e65574_username_0 → passed (conf=90%, oracle=heuristic)
+2026-04-01 02:40:03 | execution.adaptive_runner | INFO | [23/72] bva_length_e5e65574_username_1 → passed (conf=85%, oracle=heuristic)
+2026-04-01 02:40:06 | execution.adaptive_runner | INFO | [24/72] bva_length_e5e65574_username_2 → passed (conf=85%, oracle=heuristic)
+2026-04-01 02:40:09 | execution.adaptive_runner | INFO | [25/72] bva_length_e5e65574_username_3 → passed (conf=85%, oracle=heuristic)
+2026-04-01 02:40:11 | execution.adaptive_runner | INFO | [26/72] bva_length_e5e65574_username_4 → passed (conf=85%, oracle=heuristic)
+2026-04-01 02:40:14 | execution.adaptive_runner | INFO | [27/72] bva_length_e5e65574_username_5 → passed (conf=90%, oracle=heuristic)
+2026-04-01 02:40:17 | execution.adaptive_runner | INFO | [28/72] bva_length_e5e65574_email_0 → passed (conf=90%, oracle=heuristic)
+2026-04-01 02:40:20 | execution.adaptive_runner | INFO | [29/72] bva_length_e5e65574_email_1 → passed (conf=85%, oracle=heuristic)
+2026-04-01 02:40:23 | execution.adaptive_runner | INFO | [30/72] bva_length_e5e65574_email_2 → passed (conf=85%, oracle=heuristic)
+2026-04-01 02:40:25 | execution.adaptive_runner | INFO | [31/72] bva_length_e5e65574_email_3 → passed (conf=85%, oracle=heuristic)
+2026-04-01 02:40:28 | execution.adaptive_runner | INFO | [32/72] bva_length_e5e65574_email_4 → failed (conf=85%, oracle=heuristic)
+2026-04-01 02:40:32 | execution.adaptive_runner | INFO | [33/72] bva_length_e5e65574_email_4 → passed (conf=85%, oracle=heuristic)
+2026-04-01 02:40:35 | execution.adaptive_runner | INFO | [34/72] bva_length_e5e65574_email_5 → failed (conf=85%, oracle=heuristic)
+2026-04-01 02:40:38 | execution.adaptive_runner | INFO | [35/72] bva_length_e5e65574_password_0 → passed (conf=90%, oracle=heuristic)
+2026-04-01 02:40:40 | execution.adaptive_runner | INFO | [36/72] bva_length_e5e65574_password_1 → passed (conf=85%, oracle=heuristic)
+2026-04-01 02:40:43 | execution.adaptive_runner | INFO | [37/72] bva_length_e5e65574_password_2 → passed (conf=85%, oracle=heuristic)
+2026-04-01 02:40:46 | execution.adaptive_runner | INFO | [38/72] bva_length_e5e65574_password_3 → passed (conf=85%, oracle=heuristic)
+2026-04-01 02:40:49 | execution.adaptive_runner | INFO | [39/72] bva_length_e5e65574_password_4 → passed (conf=85%, oracle=heuristic)
+2026-04-01 02:40:52 | execution.adaptive_runner | INFO | [40/72] bva_length_e5e65574_password_5 → failed (conf=85%, oracle=heuristic)
+2026-04-01 02:40:55 | execution.adaptive_runner | INFO | [41/72] bva_length_e5e65574_confirmPassword_0 → failed (conf=85%, oracle=heuristic)
+2026-04-01 02:40:57 | execution.adaptive_runner | INFO | [42/72] bva_length_e5e65574_confirmPassword_1 → passed (conf=85%, oracle=heuristic)
+2026-04-01 02:41:00 | execution.adaptive_runner | INFO | [43/72] bva_length_e5e65574_confirmPassword_1 → passed (conf=85%, oracle=heuristic)
+2026-04-01 02:41:03 | execution.adaptive_runner | INFO | [44/72] bva_length_e5e65574_confirmPassword_2 → passed (conf=85%, oracle=heuristic)
+2026-04-01 02:41:06 | execution.adaptive_runner | INFO | [45/72] bva_length_e5e65574_confirmPassword_3 → passed (conf=85%, oracle=heuristic)
+2026-04-01 02:41:09 | execution.adaptive_runner | INFO | [46/72] bva_length_e5e65574_confirmPassword_4 → passed (conf=85%, oracle=heuristic)
+2026-04-01 02:41:12 | execution.adaptive_runner | INFO | [47/72] bva_length_e5e65574_confirmPassword_5 → failed (conf=85%, oracle=heuristic)
+2026-04-01 02:41:15 | execution.adaptive_runner | INFO | [48/72] bva_numeric_e5e65574_age_0 → passed (conf=75%, oracle=heuristic)
+2026-04-01 02:41:17 | execution.adaptive_runner | INFO | [49/72] bva_numeric_e5e65574_age_1 → passed (conf=85%, oracle=heuristic)
+2026-04-01 02:41:20 | execution.adaptive_runner | INFO | [50/72] bva_numeric_e5e65574_age_2 → passed (conf=85%, oracle=heuristic)
+2026-04-01 02:41:23 | execution.adaptive_runner | INFO | [51/72] bva_numeric_e5e65574_age_3 → passed (conf=85%, oracle=heuristic)
+2026-04-01 02:41:26 | execution.adaptive_runner | INFO | [52/72] bva_numeric_e5e65574_age_4 → passed (conf=85%, oracle=heuristic)
+2026-04-01 02:41:29 | execution.adaptive_runner | INFO | [53/72] bva_numeric_e5e65574_age_5 → passed (conf=75%, oracle=heuristic)
+2026-04-01 02:41:33 | execution.adaptive_runner | INFO | [54/72] ecp_text_e5e65574_password_special → passed (conf=100%, oracle=llm)
+2026-04-01 02:41:36 | execution.adaptive_runner | INFO | [55/72] ecp_text_e5e65574_password_empty → passed (conf=90%, oracle=heuristic)
+2026-04-01 02:41:39 | execution.adaptive_runner | INFO | [56/72] ecp_pattern_e5e65574_username_invalid_pattern_0 → passed (conf=90%, oracle=heuristic)
+2026-04-01 02:41:42 | execution.adaptive_runner | INFO | [57/72] ecp_text_e5e65574_confirmPassword_special → passed (conf=65%, oracle=heuristic)
+2026-04-01 02:41:45 | execution.adaptive_runner | INFO | [58/72] ecp_email_e5e65574_email_invalid_empty_0 → passed (conf=90%, oracle=heuristic)
+2026-04-01 02:41:48 | execution.adaptive_runner | INFO | [59/72] ecp_pattern_e5e65574_username_valid_pattern_0 → passed (conf=85%, oracle=heuristic)
+2026-04-01 02:41:50 | execution.adaptive_runner | INFO | [60/72] ecp_email_e5e65574_email_valid_standard_0 → passed (conf=85%, oracle=heuristic)
+2026-04-01 02:41:53 | execution.adaptive_runner | INFO | [61/72] ecp_email_e5e65574_email_valid_standard_1 → passed (conf=85%, oracle=heuristic)
+2026-04-01 02:41:56 | execution.adaptive_runner | INFO | [62/72] ecp_email_e5e65574_email_valid_with_plus_0 → passed (conf=85%, oracle=heuristic)
+2026-04-01 02:41:59 | execution.adaptive_runner | INFO | [63/72] ecp_email_e5e65574_email_valid_with_plus_1 → passed (conf=85%, oracle=heuristic)
+2026-04-01 02:42:02 | execution.adaptive_runner | INFO | [64/72] ecp_email_e5e65574_email_valid_with_dots_0 → passed (conf=85%, oracle=heuristic)
+2026-04-01 02:42:05 | execution.adaptive_runner | INFO | [65/72] ecp_email_e5e65574_email_valid_with_dots_1 → passed (conf=85%, oracle=heuristic)
+2026-04-01 02:42:07 | execution.adaptive_runner | INFO | [66/72] ecp_email_e5e65574_email_valid_subdomain_0 → passed (conf=85%, oracle=heuristic)
+2026-04-01 02:42:10 | execution.adaptive_runner | INFO | [67/72] ecp_email_e5e65574_email_valid_subdomain_1 → passed (conf=85%, oracle=heuristic)
+2026-04-01 02:42:13 | execution.adaptive_runner | INFO | [68/72] ecp_text_e5e65574_password_valid → failed (conf=65%, oracle=heuristic)
+2026-04-01 02:42:16 | execution.adaptive_runner | INFO | [69/72] ecp_text_e5e65574_password_unicode → failed (conf=65%, oracle=heuristic)
+2026-04-01 02:42:19 | execution.adaptive_runner | INFO | [70/72] ecp_text_e5e65574_confirmPassword_valid → failed (conf=65%, oracle=heuristic)
+2026-04-01 02:42:22 | execution.adaptive_runner | INFO | [71/72] ecp_text_e5e65574_confirmPassword_unicode → passed (conf=85%, oracle=heuristic)
+2026-04-01 02:42:25 | execution.adaptive_runner | INFO | [72/72] ecp_number_e5e65574_age_valid → passed (conf=85%, oracle=heuristic)
+2026-04-01 02:42:27 | execution.rl_agent.dqn_agent | INFO | RL model saved → data\rl_model\dqn_checkpoint.pth
+2026-04-01 02:42:27 | execution.adaptive_runner | INFO | Performance metrics saved to data\rl_performance
+2026-04-01 02:42:27 | execution.heuristics_logger | INFO | Heuristics analysis saved to data\heuristics_logs\heuristics_analysis.txt
+2026-04-01 02:42:27 | execution.adaptive_runner | INFO | Heuristics analysis: 515 tests, 94.8% heuristic, 5.2% LLM, avg reward: +1.58
+2026-04-01 02:42:27 | execution.rl_heuristics_optimizer | INFO | Optimization report: data\rl_optimizations\optimization_report.txt
+2026-04-01 02:42:27 | execution.adaptive_runner | INFO | Heuristics optimization: 4 subtypes updated | Risk increases: 0 | Risk decreases: 0 | Avg change: +0.0000
+2026-04-01 02:42:29 | execution.adaptive_runner | INFO | Execution complete: 61/72 passed | 2 LLM calls ($0.004) | stop_reason=completed

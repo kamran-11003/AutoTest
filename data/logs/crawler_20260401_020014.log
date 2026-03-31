@@ -1,0 +1,39 @@
+2026-04-01 02:00:23 | execution.adaptive_runner | INFO | 
+=== Test Failure Probability Report (Top 10) ===
+Priority   Test ID              Type            Risk     Risk Factors                                                
+------------------------------------------------------------------------------------------------------------------------
+35         ecp_text_50a34f2b_u  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_text_50a34f2b_e  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_text_50a34f2b_e  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_text_50a34f2b_a  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_text_50a34f2b_p  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_text_50a34f2b_c  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_text_50a34f2b_c  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_number_50a34f2b  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_text_50a34f2b_p  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+50         usecase_registratio  Use Case        50.00%   Subtype: Use Case/unknown (base risk: 0.50, confidence: 50%); Unknown test type
+------------------------------------------------------------------------------------------------------------------------
+Average failure probability: 45.60%
+
+2026-04-01 02:00:23 | execution.adaptive_runner | INFO | 
+================================================================================
+TEST CLASSIFICATION REPORT
+================================================================================
+
+Classification | Count | Risk
+--------------------------------------------------
+BVA/numeric_boundaries         |    30 |      70%
+ECP/invalid_partition          |    12 |      65%
+BVA/string_boundaries          |     2 |      60%
+USE CASE/unknown               |     3 |      50%
+ECP/valid_partition            |     8 |      30%
+
+================================================================================
+
+2026-04-01 02:00:51 | execution.adaptive_runner | INFO | [1/55] ecp_text_50a34f2b_username_long → error (conf=0%, oracle=heuristic)
+2026-04-01 02:00:52 | execution.adaptive_runner | INFO | [2/55] ecp_text_50a34f2b_email_long → error (conf=0%, oracle=heuristic)
+2026-04-01 02:00:54 | execution.adaptive_runner | ERROR | Server unreachable after 3 consecutive network errors — aborting run. Please start the test server and try again.
+2026-04-01 02:00:55 | execution.adaptive_runner | INFO | Performance metrics saved to data\rl_performance
+2026-04-01 02:00:55 | execution.adaptive_runner | INFO | Heuristics analysis: 317 tests, 92.7% heuristic, 7.3% LLM, avg reward: +1.43
+2026-04-01 02:00:55 | execution.adaptive_runner | INFO | Heuristics optimization: 5 subtypes updated | Risk increases: 0 | Risk decreases: 0 | Avg change: +0.0000
+2026-04-01 02:00:55 | execution.adaptive_runner | INFO | Execution complete: 0/55 passed | 0 LLM calls ($0.000) | stop_reason=server_unreachable

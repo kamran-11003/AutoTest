@@ -142,7 +142,7 @@ This section addresses RQ2, which investigates whether complete test coverage an
 Website Target	Application Complexity	Initial Test Cases (Without Refinement)	Additional Test Cases (AI Refinement)	Total Test Cases	Improvement (%)
 site1_contact (Contact Form)	1 Page, 4 Inputs, 1 Form	52	+6	58	~11.5%
 site2_booking (Hotel Booking)	1 Page, 5 Inputs, 1 Form	41	+5	46	~12.2%
-site3_register (User Registration)	1 Page, 5 Inputs, 1 Form	51	+5	56	~9.8%
+site3_register (User Registration)	1 Page, 5 Inputs, 1 Form	66	+6	72	~9.1%
 site4_search (Product Search)	1 Page, 4 Inputs, 1 Form	32	+6	38	~18.8%
 site5_feedback (Feedback Survey)	1 Page, 6 Inputs, 1 Form	116	+1	117	~0.9%
 
@@ -165,7 +165,7 @@ The experimental results clearly demonstrate these limitations. Across the five 
 
 ●	site1_contact increased from 52 to 58 test cases (11.5% improvement), with AI refinement adding edge cases for subject dropdown combinations and message length boundaries.
 
-●	site3_register increased from 51 to 56 test cases (9.8% improvement), with AI-generated tests targeting password complexity combined with cross-field confirmPassword mismatches.
+●	site3_register increased from 66 to 72 test cases (9.1% improvement), with AI-generated tests targeting email format validation, password complexity combined with cross-field confirmPassword mismatches, and username pattern boundaries.
 
 ●	site5_feedback showed only a 0.9% improvement (116 to 117 test cases), suggesting that the rule-based generator already captured most meaningful scenarios for this form's mix of required and optional fields.
 
@@ -222,7 +222,7 @@ The effectiveness of LLM-assisted refinement is clearly reflected in the experim
 
 ●	In site2_booking (Hotel Booking), 5 additional test cases were generated (12.2% improvement), primarily targeting date ordering violations and combined cross-field error scenarios involving temporal constraints.
 
-●	site1_contact (Contact Form) and site3_register (User Registration) benefited from 6 and 5 AI-generated tests respectively, adding edge cases for dropdown-field combinations and password complexity combined with cross-field confirmPassword mismatches.
+●	site1_contact (Contact Form) and site3_register (User Registration) benefited from 6 AI-generated tests each, adding edge cases for dropdown-field combinations and password complexity combined with cross-field confirmPassword mismatches.
 
 ●	site5_feedback (Feedback Survey) showed minimal AI improvement (+1 test case, 0.9%), indicating that the rule-based generator already captured the primary test scenarios for forms with a mix of required and optional fields.
 
@@ -756,18 +756,20 @@ The Phase 2 pipeline is automated by `scripts/run_test_websites.py`, which runs 
 |------|------:|------------------:|-----------------:|--:|------------:|-------:|-------:|-------:|----------:|---------:|------|
 | site1_contact | 1 | 52 | 58 | +6 | 58 | 46 | 12 | 79.3% | 4 | 0.008 | completed |
 | site2_booking | 1 | 41 | 46 | +5 | 46 | 38 | 8 | 82.6% | 5 | 0.010 | completed |
-| site3_register | 1 | 51 | 56 | +5 | 56 | 27 | 29 | 48.2% | 7 | 0.014 | completed |
+| site3_register | 1 | 66 | 72 | +6 | 72 | 61 | 11 | 84.7% | 2 | 0.004 | completed |
 | site4_search | 1 | 32 | 38 | +6 | 38 | 25 | 13 | 65.8% | 1 | 0.002 | completed |
 | site5_feedback | 1 | 116 | 117 | +1 | 97 | 88 | 29 | 75.2% | 6 | 0.012 | completed |
-| **Total** | **5** | **292** | **315** | **+23** | **295** | **224** | **91** | **71.1%** | **23** | **0.046** | |
+| **Total** | **5** | **307** | **331** | **+24** | **311** | **258** | **73** | **77.9%** | **18** | **0.036** | |
 
 ### 8.12.6 Analysis of Phase 2 Results
 
-The controlled test websites produced a dramatically different outcome from Phase 1. The aggregate pass rate of **71.1%** (224/315 tests) stands in stark contrast to the Phase 1 aggregate of 6.1% — confirming that Phase 1's low pass rates were artifacts of oracle-defeat conditions rather than framework deficiencies.
+The controlled test websites produced a dramatically different outcome from Phase 1. The aggregate pass rate of **77.9%** (258/331 tests) stands in stark contrast to the Phase 1 aggregate of 6.1% — confirming that Phase 1's low pass rates were artifacts of oracle-defeat conditions rather than framework deficiencies.
 
 **Per-site analysis:**
 
-- **site2_booking (82.6%)** achieved the highest pass rate. The hotel booking form's date-based validation produces clear, deterministic error messages that both the heuristic and LLM oracles can reliably detect. The 8 failures are primarily cross-field edge cases where checkout equals checkin (an ambiguous boundary).
+- **site3_register (84.7%)** achieved the highest pass rate after proper HTML constraint annotation (adding `required`, `minlength`, `maxlength`, `pattern`, and `type="email"` attributes). The 11 failures concentrate on password complexity boundary cases where valid-length passwords fail the uppercase+digit+special character requirements, and email length boundaries at the 254-character maximum.
+
+- **site2_booking (82.6%)** achieved the second-highest pass rate. The hotel booking form's date-based validation produces clear, deterministic error messages that both the heuristic and LLM oracles can reliably detect. The 8 failures are primarily cross-field edge cases where checkout equals checkin (an ambiguous boundary).
 
 - **site1_contact (79.3%)** demonstrated strong performance on a straightforward form. The 12 failures include boundary cases at exact character limits where the heuristic oracle's confidence fell below the threshold.
 
@@ -775,9 +777,7 @@ The controlled test websites produced a dramatically different outcome from Phas
 
 - **site4_search (65.8%)** showed moderate performance. The 13 failures concentrate on cross-field price range validation (minPrice > maxPrice) where the error message appears on the maxPrice field but the oracle evaluates the overall page state.
 
-- **site3_register (48.2%)** produced the lowest pass rate, as expected given the complexity of its validation rules. Password complexity requirements (uppercase + digit + special character), cross-field confirmPassword matching, and username regex patterns create a challenging test surface. The 29 failures include password boundary tests where valid-length passwords fail complexity, and username tests with special characters that violate the `^[a-zA-Z0-9_]+$` pattern.
-
-**Cost efficiency:** The total cost of $0.046 for 315 tests (23 LLM calls) demonstrates that the RL oracle routing is highly efficient in Phase 2. The heuristic oracle handled the majority of tests autonomously, with LLM escalation reserved for genuinely ambiguous boundary cases. This represents a cost of approximately **$0.000146 per test** — over 13× cheaper than LLM-only execution at $0.002/call.
+**Cost efficiency:** The total cost of $0.036 for 331 tests (18 LLM calls) demonstrates that the RL oracle routing is highly efficient in Phase 2. The heuristic oracle handled the majority of tests autonomously, with LLM escalation reserved for genuinely ambiguous boundary cases. This represents a cost of approximately **$0.000109 per test** — over 18× cheaper than LLM-only execution at $0.002/call.
 
 **Comparison with Phase 1:** The Phase 2 results validate the central claim of Section 8.11: the low pass rates in Phase 1 were caused by oracle-defeat conditions in the evaluation substrate, not by deficiencies in the test generation or execution framework. When these conditions are eliminated by construction, the framework achieves meaningful pass rates that allow genuine evaluation of RL-adaptive execution strategies.
 
@@ -787,7 +787,7 @@ The controlled test websites produced a dramatically different outcome from Phas
 
 > **RQ5 (original):** Can an automated black-box testing system provide not only defect detection but also meaningful explanations and fix suggestions for identified failures?
 
-The evidence base for RQ5 is the failure data collected during both Phase 1 and Phase 2 execution. Of the 91 test failures recorded across 5 controlled websites in Phase 2, the oracle captured structured failure evidence for each test: the test subtype, expected behavior, observed behavior (screenshot), oracle confidence score, and the specific validation error message (when detected by the heuristic oracle's DOM probe).
+The evidence base for RQ5 is the failure data collected during both Phase 1 and Phase 2 execution. Of the 73 test failures recorded across 5 controlled websites in Phase 2, the oracle captured structured failure evidence for each test: the test subtype, expected behavior, observed behavior (screenshot), oracle confidence score, and the specific validation error message (when detected by the heuristic oracle's DOM probe).
 
 ### 9.1 Failure Classification and Pattern Detection
 
@@ -826,9 +826,9 @@ This research investigated the fundamental question of why fully automated black
 
 **RQ2 (Can 100% test coverage be achieved?):** Section 6 showed that even when all input fields are successfully identified, structural coverage does not imply behavioral coverage. Across the five controlled test websites, AI refinement added between 0.9% and 18.8% additional test cases that rule-based generation missed, demonstrating that semantic reasoning is essential for generating cross-field, boundary, and interaction-dependent test scenarios.
 
-**RQ3 (Can LLMs enhance test generation?):** Section 7 confirmed that LLM-assisted refinement fills specific gaps left by rule-based generators. The AI generated 23 additional test cases across 292 initial tests (7.9% improvement), with the largest gains on sites with cross-field validation logic (site4_search: +18.8%, site2_booking: +12.2%). The LLM acts as a semantic augmentation layer, not a replacement for traditional techniques.
+**RQ3 (Can LLMs enhance test generation?):** Section 7 confirmed that LLM-assisted refinement fills specific gaps left by rule-based generators. The AI generated 24 additional test cases across 307 initial tests (7.8% improvement), with the largest gains on sites with cross-field validation logic (site4_search: +18.8%, site2_booking: +12.2%). The LLM acts as a semantic augmentation layer, not a replacement for traditional techniques.
 
-**RQ4 (Scalable execution strategies?):** Section 8 demonstrated that RL-based oracle selection achieves 83.6% cost reduction compared to LLM-only execution. The Phase 2 controlled evaluation achieved a 71.1% aggregate pass rate (224/315 tests) at a cost of $0.046 total (23 LLM calls), validating that the framework produces meaningful test verdicts when the evaluation substrate enforces real validation. Risk-based test prioritization achieved early fault discovery in the first 20% of the test queue.
+**RQ4 (Scalable execution strategies?):** Section 8 demonstrated that RL-based oracle selection achieves 83.6% cost reduction compared to LLM-only execution. The Phase 2 controlled evaluation achieved a 77.9% aggregate pass rate (258/331 tests) at a cost of $0.036 total (18 LLM calls), validating that the framework produces meaningful test verdicts when the evaluation substrate enforces real validation. Risk-based test prioritization achieved early fault discovery in the first 20% of the test queue.
 
 **RQ5 (Automated failure explanation?):** Section 9 showed that structured failure reports with oracle evidence provide sufficient context for developer triage, but fully automated fix suggestions remain constrained by the black-box boundary.
 
@@ -836,7 +836,7 @@ This research investigated the fundamental question of why fully automated black
 
 **Internal validity.** The five controlled test websites were purpose-built to enforce deterministic validation with visible feedback. This design eliminates the oracle-defeat conditions identified in Phase 1 but may overestimate framework effectiveness compared to real-world applications with more complex validation patterns (AJAX, server-side, CAPTCHA).
 
-**External validity.** The controlled test websites represent single-page forms with 4–6 fields each. Real-world web applications involve multi-page workflows, authentication gates, dynamic content loading, and backend state dependencies. The generalizability of the 71.1% pass rate to production applications requires further investigation.
+**External validity.** The controlled test websites represent single-page forms with 4–6 fields each. Real-world web applications involve multi-page workflows, authentication gates, dynamic content loading, and backend state dependencies. The generalizability of the 77.9% pass rate to production applications requires further investigation.
 
 **Construct validity.** The pass rate metric conflates two distinct properties: (a) the test generator's ability to produce valid test data, and (b) the oracle's ability to correctly judge the application's response. Separating these factors would require access to application source code, which contradicts the black-box constraint.
 
@@ -858,13 +858,13 @@ Through the design and implementation of AutoTestAI — a modular framework that
 
 3. **Demonstration that LLMs function as effective semantic augmentation layers** (Section 7) for test case generation, filling gaps in cross-field validation, boundary interaction, and constraint-dependent scenarios that syntax-driven generators systematically miss.
 
-4. **A reinforcement learning–based oracle selection framework** (Section 8) that achieves 83.6% cost reduction compared to LLM-only execution while maintaining validation quality. The Phase 2 controlled evaluation achieved a 71.1% aggregate pass rate across 315 AI-refined test cases at a total cost of $0.046, validating that the hybrid heuristic-LLM oracle architecture produces meaningful test verdicts.
+4. **A reinforcement learning–based oracle selection framework** (Section 8) that achieves 83.6% cost reduction compared to LLM-only execution while maintaining validation quality. The Phase 2 controlled evaluation achieved a 77.9% aggregate pass rate across 331 AI-refined test cases at a total cost of $0.036, validating that the hybrid heuristic-LLM oracle architecture produces meaningful test verdicts.
 
 5. **Identification of five oracle-defeat conditions** (Section 8.11) that systematically produce false results in automated test execution — disabled submit buttons, browser-native CSS validation without DOM text, dismissed alert dialogs, JavaScript re-validation blocking, and decorative forms without submission targets. These conditions explain why previous evaluations on QA practice websites produced near-zero pass rates and provide a concrete checklist for future automated testing tool developers.
 
 6. **Structured failure evidence** (Section 9) demonstrating that automated black-box systems can provide meaningful diagnostic context beyond binary pass/fail, though fully automated fix suggestions remain constrained by the black-box boundary.
 
-The overarching conclusion is that fully automated black-box testing of arbitrary web applications is not achievable with current technology — and likely not achievable in the general case due to undecidability constraints. However, *intelligent testing assistants* that combine rule-based rigor with AI-powered semantic reasoning and adaptive execution strategies can dramatically reduce manual testing effort while providing actionable, evidence-based quality assessments. AutoTestAI demonstrates that this hybrid approach is both technically feasible and economically viable, with per-test costs below $0.00015 in the controlled evaluation.
+The overarching conclusion is that fully automated black-box testing of arbitrary web applications is not achievable with current technology — and likely not achievable in the general case due to undecidability constraints. However, *intelligent testing assistants* that combine rule-based rigor with AI-powered semantic reasoning and adaptive execution strategies can dramatically reduce manual testing effort while providing actionable, evidence-based quality assessments. AutoTestAI demonstrates that this hybrid approach is both technically feasible and economically viable, with per-test costs below $0.00011 in the controlled evaluation.
 
 ### 11.2 Future Work
 

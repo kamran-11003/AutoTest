@@ -569,6 +569,8 @@ class TestOrchestrator:
             return 'This is a test submission.'
 
         # ── Name family ───────────────────────────────────────────────────
+        if re.search(r'user.?name|login', fname):
+            return 'testuser'
         if re.search(r'first.?name', fname):
             return 'John'
         if re.search(r'last.?name|surname', fname):
@@ -589,8 +591,6 @@ class TestOrchestrator:
             return 'US'
 
         # ── Account fields ────────────────────────────────────────────────
-        if re.search(r'user.?name|login', fname):
-            return 'testuser'
         if 'age' in fname:
             return 25
         if re.search(r'subject|title', fname):

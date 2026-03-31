@@ -1,6 +1,6 @@
 # RL HEURISTICS OPTIMIZATION REPORT
 
-Generated: 2026-03-31T02:08:50.493387
+Generated: 2026-04-01T02:42:27.730397
 
 ## Risk Score Changes: Before vs After RL Learning
 
@@ -10,8 +10,7 @@ Generated: 2026-03-31T02:08:50.493387
 | invalid_partition              | 0.650 | 0.650 | → +0.0000 | Balanced execution |
 | unknown                        | 0.500 | 0.500 | → +0.0000 | Balanced execution |
 | numeric_boundaries             | 0.700 | 0.700 | → +0.0000 | Balanced execution |
-| string_boundaries              | 0.600 | 0.600 | → +0.0000 | Balanced execution |
-| boundary_partition             | 0.600 | 0.600 | → +0.0000 | Balanced execution |
+| valid_partition                | 0.300 | 0.300 | → +0.0000 | Balanced execution |
 
 ## Detailed Analysis Per Subtype
 
@@ -23,10 +22,10 @@ Generated: 2026-03-31T02:08:50.493387
 **Change:** +0.0000
 
 **What Happened During Execution:**
-- Total tests: 74
-- Heuristic: 70 uses → 0% success
-- LLM: 4 uses → 0% success
-- RL learning signal: +1.42
+- Total tests: 133
+- Heuristic: 128 uses → 0% success
+- LLM: 5 uses → 0% success
+- RL learning signal: +1.53
 
 **Why Risk Changed:**
 - Balanced execution
@@ -39,10 +38,10 @@ Generated: 2026-03-31T02:08:50.493387
 **Change:** +0.0000
 
 **What Happened During Execution:**
-- Total tests: 31
-- Heuristic: 28 uses → 0% success
+- Total tests: 40
+- Heuristic: 37 uses → 0% success
 - LLM: 3 uses → 0% success
-- RL learning signal: +1.32
+- RL learning signal: +1.48
 
 **Why Risk Changed:**
 - Balanced execution
@@ -55,42 +54,26 @@ Generated: 2026-03-31T02:08:50.493387
 **Change:** +0.0000
 
 **What Happened During Execution:**
-- Total tests: 106
-- Heuristic: 101 uses → 0% success
-- LLM: 5 uses → 0% success
-- RL learning signal: +1.58
+- Total tests: 199
+- Heuristic: 191 uses → 0% success
+- LLM: 8 uses → 0% success
+- RL learning signal: +1.72
 
 **Why Risk Changed:**
 - Balanced execution
 
 
-### string_boundaries
+### valid_partition
 
-**Before:** Risk = 0.600
-**After:** Risk = 0.600
+**Before:** Risk = 0.300
+**After:** Risk = 0.300
 **Change:** +0.0000
 
 **What Happened During Execution:**
-- Total tests: 24
-- Heuristic: 23 uses → 0% success
-- LLM: 1 uses → 0% success
-- RL learning signal: +1.83
-
-**Why Risk Changed:**
-- Balanced execution
-
-
-### boundary_partition
-
-**Before:** Risk = 0.600
-**After:** Risk = 0.600
-**Change:** +0.0000
-
-**What Happened During Execution:**
-- Total tests: 21
-- Heuristic: 19 uses → 0% success
-- LLM: 2 uses → 0% success
-- RL learning signal: +1.62
+- Total tests: 82
+- Heuristic: 76 uses → 0% success
+- LLM: 6 uses → 0% success
+- RL learning signal: +1.30
 
 **Why Risk Changed:**
 - Balanced execution

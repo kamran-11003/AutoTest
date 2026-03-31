@@ -2,14 +2,14 @@
   "total_snapshots": 2,
   "snapshots": [
     {
-      "url": "http://localhost:5500/test_websites/site5_feedback/index.html",
-      "json": "data\\snapshots\\20260331_015437_localhost:5500_test_websites_site5_feedback_index..json",
-      "html": "data\\snapshots\\20260331_015437_localhost:5500_test_websites_site5_feedback_index..html"
+      "url": "http://localhost:5500/test_websites/site3_register/index.html",
+      "json": "data\\snapshots\\20260401_023702_localhost:5500_test_websites_site3_register_index..json",
+      "html": "data\\snapshots\\20260401_023702_localhost:5500_test_websites_site3_register_index..html"
     },
     {
-      "url": "http://localhost:5500/test_websites/site5_feedback/index.html",
-      "json": "data\\snapshots\\20260331_015645_localhost:5500_test_websites_site5_feedback_index..json",
-      "html": "data\\snapshots\\20260331_015645_localhost:5500_test_websites_site5_feedback_index..html"
+      "url": "http://localhost:5500/test_websites/site3_register/index.html",
+      "json": "data\\snapshots\\20260401_023725_localhost:5500_test_websites_site3_register_index..json",
+      "html": "data\\snapshots\\20260401_023725_localhost:5500_test_websites_site3_register_index..html"
     }
   ]
 }

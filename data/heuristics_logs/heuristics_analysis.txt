@@ -1,6 +1,6 @@
 # HEURISTICS & RL LEARNING ANALYSIS
 
-Generated: 2026-03-31T02:08:50.450393
+Generated: 2026-04-01T02:42:27.716269
 
 Total subtypes analyzed: 7
 
@@ -33,35 +33,35 @@ What did the agent LEARN about each test subtype?
 
 ### INVALID_PARTITION
 
-**Execution Count:** 74 tests
-- Heuristic: 70 uses (95%)
-- LLM: 4 uses (5%)
+**Execution Count:** 133 tests
+- Heuristic: 128 uses (96%)
+- LLM: 5 uses (4%)
 
 **Success Rates:**
-- Heuristic: 0/70 passed (0.0%)
-- LLM: 0/4 passed (0.0%)
+- Heuristic: 0/128 passed (0.0%)
+- LLM: 0/5 passed (0.0%)
 
 **Learning Signal (Rewards):**
-- Heuristic avg: +1.57
-- LLM avg: -1.25
-- Overall: +1.42
+- Heuristic avg: +1.62
+- LLM avg: -0.80
+- Overall: +1.53
 
 🔄 **LEARNING:** Still optimizing oracle selection
 
 ### NUMERIC_BOUNDARIES
 
-**Execution Count:** 106 tests
-- Heuristic: 101 uses (95%)
-- LLM: 5 uses (5%)
+**Execution Count:** 199 tests
+- Heuristic: 191 uses (96%)
+- LLM: 8 uses (4%)
 
 **Success Rates:**
-- Heuristic: 0/101 passed (0.0%)
-- LLM: 0/5 passed (0.0%)
+- Heuristic: 0/191 passed (0.0%)
+- LLM: 0/8 passed (0.0%)
 
 **Learning Signal (Rewards):**
-- Heuristic avg: +1.76
+- Heuristic avg: +1.87
 - LLM avg: -2.00
-- Overall: +1.58
+- Overall: +1.72
 
 🔄 **LEARNING:** Still optimizing oracle selection
 
@@ -84,52 +84,52 @@ What did the agent LEARN about each test subtype?
 
 ### STRING_BOUNDARIES
 
-**Execution Count:** 24 tests
-- Heuristic: 23 uses (96%)
+**Execution Count:** 26 tests
+- Heuristic: 25 uses (96%)
 - LLM: 1 uses (4%)
 
 **Success Rates:**
-- Heuristic: 0/23 passed (0.0%)
+- Heuristic: 0/25 passed (0.0%)
 - LLM: 0/1 passed (0.0%)
 
 **Learning Signal (Rewards):**
 - Heuristic avg: +2.00
 - LLM avg: -2.00
-- Overall: +1.83
+- Overall: +1.85
 
 🔄 **LEARNING:** Still optimizing oracle selection
 
 ### UNKNOWN
 
-**Execution Count:** 31 tests
-- Heuristic: 28 uses (90%)
-- LLM: 3 uses (10%)
+**Execution Count:** 40 tests
+- Heuristic: 37 uses (92%)
+- LLM: 3 uses (8%)
 
 **Success Rates:**
-- Heuristic: 0/28 passed (0.0%)
+- Heuristic: 0/37 passed (0.0%)
 - LLM: 0/3 passed (0.0%)
 
 **Learning Signal (Rewards):**
-- Heuristic avg: +1.68
+- Heuristic avg: +1.76
 - LLM avg: -2.00
-- Overall: +1.32
+- Overall: +1.48
 
 🔄 **LEARNING:** Still optimizing oracle selection
 
 ### VALID_PARTITION
 
-**Execution Count:** 45 tests
-- Heuristic: 39 uses (87%)
-- LLM: 6 uses (13%)
+**Execution Count:** 82 tests
+- Heuristic: 76 uses (93%)
+- LLM: 6 uses (7%)
 
 **Success Rates:**
-- Heuristic: 0/39 passed (0.0%)
+- Heuristic: 0/76 passed (0.0%)
 - LLM: 0/6 passed (0.0%)
 
 **Learning Signal (Rewards):**
-- Heuristic avg: +1.38
+- Heuristic avg: +1.57
 - LLM avg: -2.00
-- Overall: +0.93
+- Overall: +1.30
 
 🔄 **LEARNING:** Still optimizing oracle selection
 
@@ -140,9 +140,9 @@ Which heuristic factors are most important?
 
 | Factor | Used In | Frequency |
 |--------|---------|-----------|
-| Subtype | 290 | 100% |
-| Boundary Values | 134 | 46% |
-| Input Complexity | 29 | 10% |
+| Subtype | 356 | 100% |
+| Boundary Values | 164 | 46% |
+| Input Complexity | 33 | 9% |
 | Field Type | 0 | 0% |
 | Form Complexity | 0 | 0% |
 | Validation Rules | 0 | 0% |

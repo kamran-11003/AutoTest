@@ -1,0 +1,1957 @@
+{
+  "stage": "after_refinement",
+  "generated_at": "2026-04-01T02:38:45.422468",
+  "crawl_url": "http://localhost:5500/test_websites/site3_register/index.html",
+  "site_id": "site3_register",
+  "refinement_status": "refined",
+  "test_results": {
+    "metadata": {
+      "source_file": "C:\\Users\\Kamra\\Desktop\\fyp crawler (5)\\fyp crawler\\data\\crawled_graphs\\site3_register_20260401_023726.json",
+      "total_nodes": 1,
+      "total_edges": 0,
+      "total_forms": 1
+    },
+    "test_cases": {
+      "bva": [
+        {
+          "id": "bva_length_e5e65574_username_0",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:5500/test_websites/site3_register/index.html",
+          "form_id": "e5e65574",
+          "field_name": "username",
+          "field_type": "text",
+          "test_value": "aa",
+          "expected_result": "error",
+          "description": "Verify username validation fails when length is 2 (below minimum of 3)",
+          "test_data": {
+            "email": "tester@example.com",
+            "password": "Test@12345",
+            "confirmPassword": "Test@12345",
+            "age": 69,
+            "username": "aa"
+          },
+          "constraints": {
+            "minlength": 3,
+            "maxlength": 20
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T02:37:39.397880"
+        },
+        {
+          "id": "bva_length_e5e65574_username_1",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:5500/test_websites/site3_register/index.html",
+          "form_id": "e5e65574",
+          "field_name": "username",
+          "field_type": "text",
+          "test_value": "aaa",
+          "expected_result": "success",
+          "description": "Verify username validation passes when length is exactly 3 (minimum boundary)",
+          "test_data": {
+            "email": "tester@example.com",
+            "password": "Test@12345",
+            "confirmPassword": "Test@12345",
+            "age": 69,
+            "username": "aaa"
+          },
+          "constraints": {
+            "minlength": 3,
+            "maxlength": 20
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T02:37:39.397880"
+        },
+        {
+          "id": "bva_length_e5e65574_username_2",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:5500/test_websites/site3_register/index.html",
+          "form_id": "e5e65574",
+          "field_name": "username",
+          "field_type": "text",
+          "test_value": "aaaa",
+          "expected_result": "success",
+          "description": "Verify username validation passes when length is 4 (above minimum boundary)",
+          "test_data": {
+            "email": "tester@example.com",
+            "password": "Test@12345",
+            "confirmPassword": "Test@12345",
+            "age": 69,
+            "username": "aaaa"
+          },
+          "constraints": {
+            "minlength": 3,
+            "maxlength": 20
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T02:37:39.397880"
+        },
+        {
+          "id": "bva_length_e5e65574_username_3",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:5500/test_websites/site3_register/index.html",
+          "form_id": "e5e65574",
+          "field_name": "username",
+          "field_type": "text",
+          "test_value": "aaaaaaaaaaaaaaaaaaa",
+          "expected_result": "success",
+          "description": "Verify username validation passes when length is 19 (below maximum boundary)",
+          "test_data": {
+            "email": "tester@example.com",
+            "password": "Test@12345",
+            "confirmPassword": "Test@12345",
+            "age": 69,
+            "username": "aaaaaaaaaaaaaaaaaaa"
+          },
+          "constraints": {
+            "minlength": 3,
+            "maxlength": 20
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T02:37:39.397880"
+        },
+        {
+          "id": "bva_length_e5e65574_username_4",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:5500/test_websites/site3_register/index.html",
+          "form_id": "e5e65574",
+          "field_name": "username",
+          "field_type": "text",
+          "test_value": "aaaaaaaaaaaaaaaaaaaa",
+          "expected_result": "success",
+          "description": "Verify username validation passes when length is exactly 20 (maximum boundary)",
+          "test_data": {
+            "email": "tester@example.com",
+            "password": "Test@12345",
+            "confirmPassword": "Test@12345",
+            "age": 69,
+            "username": "aaaaaaaaaaaaaaaaaaaa"
+          },
+          "constraints": {
+            "minlength": 3,
+            "maxlength": 20
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T02:37:39.397880"
+        },
+        {
+          "id": "bva_length_e5e65574_username_5",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:5500/test_websites/site3_register/index.html",
+          "form_id": "e5e65574",
+          "field_name": "username",
+          "field_type": "text",
+          "test_value": "aaaaaaaaaaaaaaaaaaaaa",
+          "expected_result": "error",
+          "description": "Verify username validation fails when length is 21 (above maximum of 20)",
+          "test_data": {
+            "email": "tester@example.com",
+            "password": "Test@12345",
+            "confirmPassword": "Test@12345",
+            "age": 69,
+            "username": "aaaaaaaaaaaaaaaaaaaaa"
+          },
+          "constraints": {
+            "minlength": 3,
+            "maxlength": 20
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T02:37:39.398882"
+        },
+        {
+          "id": "bva_length_e5e65574_email_0",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:5500/test_websites/site3_register/index.html",
+          "form_id": "e5e65574",
+          "field_name": "email",
+          "field_type": "email",
+          "test_value": "aaaa",
+          "expected_result": "error",
+          "description": "Verify email validation fails when length is 4 (below minimum of 5)",
+          "test_data": {
+            "username": "testuser",
+            "password": "Test@12345",
+            "confirmPassword": "Test@12345",
+            "age": 69,
+            "email": "aaaa"
+          },
+          "constraints": {
+            "minlength": 5,
+            "maxlength": 254
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T02:37:39.398882"
+        },
+        {
+          "id": "bva_length_e5e65574_email_1",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:5500/test_websites/site3_register/index.html",
+          "form_id": "e5e65574",
+          "field_name": "email",
+          "field_type": "email",
+          "test_value": "a@b.c",
+          "expected_result": "success",
+          "description": "Verify email validation passes when length is exactly 5 (minimum boundary)",
+          "test_data": {
+            "username": "testuser",
+            "password": "Test@12345",
+            "confirmPassword": "Test@12345",
+            "age": 69,
+            "email": "a@b.c"
+          },
+          "constraints": {
+            "minlength": 5,
+            "maxlength": 254
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T02:37:39.399882"
+        },
+        {
+          "id": "bva_length_e5e65574_email_2",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:5500/test_websites/site3_register/index.html",
+          "form_id": "e5e65574",
+          "field_name": "email",
+          "field_type": "email",
+          "test_value": "aa@b.c",
+          "expected_result": "success",
+          "description": "Verify email validation passes when length is 6 (above minimum boundary)",
+          "test_data": {
+            "username": "testuser",
+            "password": "Test@12345",
+            "confirmPassword": "Test@12345",
+            "age": 69,
+            "email": "aa@b.c"
+          },
+          "constraints": {
+            "minlength": 5,
+            "maxlength": 254
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T02:37:39.399882"
+        },
+        {
+          "id": "bva_length_e5e65574_email_3",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:5500/test_websites/site3_register/index.html",
+          "form_id": "e5e65574",
+          "field_name": "email",
+          "field_type": "email",
+          "test_value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.c",
+          "expected_result": "success",
+          "description": "Verify email validation passes when length is 253 (below maximum boundary)",
+          "test_data": {
+            "username": "testuser",
+            "password": "Test@12345",
+            "confirmPassword": "Test@12345",
+            "age": 69,
+            "email": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.c"
+          },
+          "constraints": {
+            "minlength": 5,
+            "maxlength": 254
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T02:37:39.399882"
+        },
+        {
+          "id": "bva_length_e5e65574_email_4",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:5500/test_websites/site3_register/index.html",
+          "form_id": "e5e65574",
+          "field_name": "email",
+          "field_type": "email",
+          "test_value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.com",
+          "expected_result": "error",
+          "description": "Verify email validation fails when length is 255 (above maximum of 254)",
+          "test_data": {
+            "username": "testuser",
+            "password": "Test@12345",
+            "confirmPassword": "Test@12345",
+            "age": 69,
+            "email": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.com"
+          },
+          "constraints": {
+            "minlength": 5,
+            "maxlength": 254
+          },
+          "action": "added",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T02:37:39.399882"
+        },
+        {
+          "id": "bva_length_e5e65574_email_4",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:5500/test_websites/site3_register/index.html",
+          "form_id": "e5e65574",
+          "field_name": "email",
+          "field_type": "email",
+          "test_value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.c",
+          "expected_result": "success",
+          "description": "Email Address field at maximum length boundary (254 characters)",
+          "test_data": {
+            "username": "testuser",
+            "password": "Test@12345",
+            "confirmPassword": "Test@12345",
+            "age": 69,
+            "email": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.c"
+          },
+          "constraints": {
+            "minlength": 5,
+            "maxlength": 254
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T02:37:50.814880"
+        },
+        {
+          "id": "bva_length_e5e65574_email_5",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:5500/test_websites/site3_register/index.html",
+          "form_id": "e5e65574",
+          "field_name": "email",
+          "field_type": "email",
+          "test_value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.c",
+          "expected_result": "error",
+          "description": "Email Address field exceeding maximum length boundary (255 characters)",
+          "test_data": {
+            "username": "testuser",
+            "password": "Test@12345",
+            "confirmPassword": "Test@12345",
+            "age": 69,
+            "email": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.c"
+          },
+          "constraints": {
+            "minlength": 5,
+            "maxlength": 254
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T02:37:50.816922"
+        },
+        {
+          "id": "bva_length_e5e65574_password_0",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:5500/test_websites/site3_register/index.html",
+          "form_id": "e5e65574",
+          "field_name": "password",
+          "field_type": "password",
+          "test_value": "Aa1!aaa",
+          "expected_result": "error",
+          "description": "Password field below minimum length boundary (7 characters)",
+          "test_data": {
+            "username": "testuser",
+            "email": "tester@example.com",
+            "confirmPassword": "Aa1!aaa",
+            "age": 69,
+            "password": "Aa1!aaa"
+          },
+          "constraints": {
+            "minlength": 8,
+            "maxlength": 255
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T02:37:50.818449"
+        },
+        {
+          "id": "bva_length_e5e65574_password_1",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:5500/test_websites/site3_register/index.html",
+          "form_id": "e5e65574",
+          "field_name": "password",
+          "field_type": "password",
+          "test_value": "Aa1!aaaa",
+          "expected_result": "success",
+          "description": "Password field at minimum length boundary (8 characters)",
+          "test_data": {
+            "username": "testuser",
+            "email": "tester@example.com",
+            "confirmPassword": "Aa1!aaaa",
+            "age": 69,
+            "password": "Aa1!aaaa"
+          },
+          "constraints": {
+            "minlength": 8,
+            "maxlength": 255
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T02:37:50.819974"
+        },
+        {
+          "id": "bva_length_e5e65574_password_2",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:5500/test_websites/site3_register/index.html",
+          "form_id": "e5e65574",
+          "field_name": "password",
+          "field_type": "password",
+          "test_value": "Aa1!aaaaa",
+          "expected_result": "success",
+          "description": "Password field just above minimum length boundary (9 characters)",
+          "test_data": {
+            "username": "testuser",
+            "email": "tester@example.com",
+            "confirmPassword": "Aa1!aaaaa",
+            "age": 69,
+            "password": "Aa1!aaaaa"
+          },
+          "constraints": {
+            "minlength": 8,
+            "maxlength": 255
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T02:37:50.819974"
+        },
+        {
+          "id": "bva_length_e5e65574_password_3",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:5500/test_websites/site3_register/index.html",
+          "form_id": "e5e65574",
+          "field_name": "password",
+          "field_type": "password",
+          "test_value": "Aa1!aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expected_result": "success",
+          "description": "Password field just below maximum length boundary (254 characters)",
+          "test_data": {
+            "username": "testuser",
+            "email": "tester@example.com",
+            "confirmPassword": "Aa1!aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "age": 69,
+            "password": "Aa1!aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "constraints": {
+            "minlength": 8,
+            "maxlength": 255
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T02:37:50.819974"
+        },
+        {
+          "id": "bva_length_e5e65574_password_4",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:5500/test_websites/site3_register/index.html",
+          "form_id": "e5e65574",
+          "field_name": "password",
+          "field_type": "password",
+          "test_value": "Aa1!aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expected_result": "success",
+          "description": "Password field at maximum length boundary (255 characters)",
+          "test_data": {
+            "username": "testuser",
+            "email": "tester@example.com",
+            "confirmPassword": "Aa1!aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "age": 69,
+            "password": "Aa1!aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "constraints": {
+            "minlength": 8,
+            "maxlength": 255
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T02:37:50.823241"
+        },
+        {
+          "id": "bva_length_e5e65574_password_5",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:5500/test_websites/site3_register/index.html",
+          "form_id": "e5e65574",
+          "field_name": "password",
+          "field_type": "password",
+          "test_value": "Aa1!aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expected_result": "error",
+          "description": "Password field exceeding maximum length boundary (256 characters)",
+          "test_data": {
+            "username": "testuser",
+            "email": "tester@example.com",
+            "confirmPassword": "Aa1!aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "age": 69,
+            "password": "Aa1!aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "constraints": {
+            "minlength": 8,
+            "maxlength": 255
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T02:37:50.824463"
+        },
+        {
+          "id": "bva_length_e5e65574_confirmPassword_0",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:5500/test_websites/site3_register/index.html",
+          "form_id": "e5e65574",
+          "field_name": "confirmPassword",
+          "field_type": "password",
+          "test_value": "Aa1!aaa",
+          "expected_result": "error",
+          "description": "Confirm Password field below minimum length boundary (7 characters)",
+          "test_data": {
+            "username": "testuser",
+            "email": "tester@example.com",
+            "password": "Test@12345",
+            "age": 69,
+            "confirmPassword": "Test@12345"
+          },
+          "constraints": {
+            "minlength": 8,
+            "maxlength": 255
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T02:37:50.827481"
+        },
+        {
+          "id": "bva_length_e5e65574_confirmPassword_1",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:5500/test_websites/site3_register/index.html",
+          "form_id": "e5e65574",
+          "field_name": "confirmPassword",
+          "field_type": "password",
+          "test_value": "Aa1!aaaa",
+          "expected_result": "success",
+          "description": "Confirm Password field at minimum length boundary (8 characters)",
+          "test_data": {
+            "username": "testuser",
+            "email": "tester@example.com",
+            "password": "Test@12345",
+            "age": 69,
+            "confirmPassword": "Test@12345"
+          },
+          "constraints": {
+            "minlength": 8,
+            "maxlength": 255
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T02:37:50.828481"
+        },
+        {
+          "id": "bva_length_e5e65574_confirmPassword_1",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:5500/test_websites/site3_register/index.html",
+          "form_id": "e5e65574",
+          "field_name": "confirmPassword",
+          "field_label": "Confirm Password",
+          "field_type": "password",
+          "test_value": "Aa1!aaaa",
+          "expected_result": "success",
+          "description": "Confirm Password: At minimum boundary (8 chars)",
+          "test_data": {
+            "username": "testuser",
+            "email": "tester@example.com",
+            "password": "Test@12345",
+            "age": 69,
+            "confirmPassword": "Test@12345"
+          },
+          "constraints": {
+            "minlength": 8,
+            "maxlength": 255
+          },
+          "action": "added",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T02:38:02.674490"
+        },
+        {
+          "id": "bva_length_e5e65574_confirmPassword_2",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:5500/test_websites/site3_register/index.html",
+          "form_id": "e5e65574",
+          "field_name": "confirmPassword",
+          "field_label": "Confirm Password",
+          "field_type": "password",
+          "test_value": "Aa1!aaaaa",
+          "expected_result": "success",
+          "description": "Confirm Password: Just above minimum (9 chars)",
+          "test_data": {
+            "username": "testuser",
+            "email": "tester@example.com",
+            "password": "Test@12345",
+            "age": 69,
+            "confirmPassword": "Test@12345"
+          },
+          "constraints": {
+            "minlength": 8,
+            "maxlength": 255
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T02:38:02.675489"
+        },
+        {
+          "id": "bva_length_e5e65574_confirmPassword_3",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:5500/test_websites/site3_register/index.html",
+          "form_id": "e5e65574",
+          "field_name": "confirmPassword",
+          "field_label": "Confirm Password",
+          "field_type": "password",
+          "test_value": "Aa1!aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expected_result": "success",
+          "description": "Confirm Password: Just below maximum (254 chars)",
+          "test_data": {
+            "username": "testuser",
+            "email": "tester@example.com",
+            "password": "Test@12345",
+            "age": 69,
+            "confirmPassword": "Test@12345"
+          },
+          "constraints": {
+            "minlength": 8,
+            "maxlength": 255
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T02:38:02.675489"
+        },
+        {
+          "id": "bva_length_e5e65574_confirmPassword_4",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:5500/test_websites/site3_register/index.html",
+          "form_id": "e5e65574",
+          "field_name": "confirmPassword",
+          "field_label": "Confirm Password",
+          "field_type": "password",
+          "test_value": "Aa1!aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expected_result": "success",
+          "description": "Confirm Password: At maximum length (255 chars)",
+          "test_data": {
+            "username": "testuser",
+            "email": "tester@example.com",
+            "password": "Test@12345",
+            "age": 69,
+            "confirmPassword": "Test@12345"
+          },
+          "constraints": {
+            "minlength": 8,
+            "maxlength": 255
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T02:38:02.675489"
+        },
+        {
+          "id": "bva_length_e5e65574_confirmPassword_5",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:5500/test_websites/site3_register/index.html",
+          "form_id": "e5e65574",
+          "field_name": "confirmPassword",
+          "field_label": "Confirm Password",
+          "field_type": "password",
+          "test_value": "Aa1!aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expected_result": "error",
+          "description": "Confirm Password: Above maximum length (256 chars)",
+          "test_data": {
+            "username": "testuser",
+            "email": "tester@example.com",
+            "password": "Test@12345",
+            "age": 69,
+            "confirmPassword": "Test@12345"
+          },
+          "constraints": {
+            "minlength": 8,
+            "maxlength": 255
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T02:38:02.675489"
+        },
+        {
+          "id": "bva_numeric_e5e65574_age_0",
+          "type": "BVA",
+          "subtype": "numeric",
+          "form_url": "http://localhost:5500/test_websites/site3_register/index.html",
+          "form_id": "e5e65574",
+          "form_action": "http://localhost:5500/test_websites/site3_register/index.html",
+          "page_title": "Create Account — Site 3",
+          "field_name": "age",
+          "field_label": "Age",
+          "field_type": "number",
+          "test_value": 17.0,
+          "expected_result": "error",
+          "description": "Age: Below minimum boundary (17.0)",
+          "test_data": {
+            "username": "testuser",
+            "email": "tester@example.com",
+            "password": "Test@12345",
+            "confirmPassword": "Test@12345",
+            "age": 17.0
+          },
+          "constraints": {
+            "min": 18.0,
+            "max": 120.0,
+            "step": 1
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T02:38:02.676491"
+        },
+        {
+          "id": "bva_numeric_e5e65574_age_1",
+          "type": "BVA",
+          "subtype": "numeric",
+          "form_url": "http://localhost:5500/test_websites/site3_register/index.html",
+          "form_id": "e5e65574",
+          "form_action": "http://localhost:5500/test_websites/site3_register/index.html",
+          "page_title": "Create Account — Site 3",
+          "field_name": "age",
+          "field_label": "Age",
+          "field_type": "number",
+          "test_value": 18.0,
+          "expected_result": "success",
+          "description": "Age: At minimum boundary (18.0)",
+          "test_data": {
+            "username": "testuser",
+            "email": "tester@example.com",
+            "password": "Test@12345",
+            "confirmPassword": "Test@12345",
+            "age": 18.0
+          },
+          "constraints": {
+            "min": 18.0,
+            "max": 120.0,
+            "step": 1
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T02:38:02.676491"
+        },
+        {
+          "id": "bva_numeric_e5e65574_age_2",
+          "type": "BVA",
+          "subtype": "numeric",
+          "form_url": "http://localhost:5500/test_websites/site3_register/index.html",
+          "form_id": "e5e65574",
+          "form_action": "http://localhost:5500/test_websites/site3_register/index.html",
+          "page_title": "Create Account — Site 3",
+          "field_name": "age",
+          "field_label": "Age",
+          "field_type": "number",
+          "test_value": 19.0,
+          "expected_result": "success",
+          "description": "Age: Just above minimum (19.0)",
+          "test_data": {
+            "username": "testuser",
+            "email": "tester@example.com",
+            "password": "Test@12345",
+            "confirmPassword": "Test@12345",
+            "age": 19.0
+          },
+          "constraints": {
+            "min": 18.0,
+            "max": 120.0,
+            "step": 1
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T02:38:02.676491"
+        },
+        {
+          "id": "bva_numeric_e5e65574_age_3",
+          "type": "BVA",
+          "subtype": "numeric",
+          "form_url": "http://localhost:5500/test_websites/site3_register/index.html",
+          "form_id": "e5e65574",
+          "form_action": "http://localhost:5500/test_websites/site3_register/index.html",
+          "page_title": "Create Account — Site 3",
+          "field_name": "age",
+          "field_label": "Age",
+          "field_type": "number",
+          "test_value": 119.0,
+          "expected_result": "success",
+          "description": "Age: Just below maximum (119.0)",
+          "test_data": {
+            "username": "testuser",
+            "email": "tester@example.com",
+            "password": "Test@12345",
+            "confirmPassword": "Test@12345",
+            "age": 119.0
+          },
+          "constraints": {
+            "min": 18.0,
+            "max": 120.0,
+            "step": 1
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T02:38:02.676491"
+        },
+        {
+          "id": "bva_numeric_e5e65574_age_4",
+          "type": "BVA",
+          "subtype": "numeric",
+          "form_url": "http://localhost:5500/test_websites/site3_register/index.html",
+          "form_id": "e5e65574",
+          "form_action": "http://localhost:5500/test_websites/site3_register/index.html",
+          "page_title": "Create Account — Site 3",
+          "field_name": "age",
+          "field_label": "Age",
+          "field_type": "number",
+          "test_value": 120.0,
+          "expected_result": "success",
+          "description": "Age: At maximum boundary (120.0)",
+          "test_data": {
+            "username": "testuser",
+            "email": "tester@example.com",
+            "password": "Test@12345",
+            "confirmPassword": "Test@12345",
+            "age": 120.0
+          },
+          "constraints": {
+            "min": 18.0,
+            "max": 120.0,
+            "step": 1
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T02:38:02.677491"
+        },
+        {
+          "id": "bva_numeric_e5e65574_age_5",
+          "type": "BVA",
+          "subtype": "numeric",
+          "form_url": "http://localhost:5500/test_websites/site3_register/index.html",
+          "form_id": "e5e65574",
+          "form_action": "http://localhost:5500/test_websites/site3_register/index.html",
+          "page_title": "Create Account — Site 3",
+          "field_name": "age",
+          "field_label": "Age",
+          "field_type": "number",
+          "test_value": 121.0,
+          "expected_result": "error",
+          "description": "Age: Above maximum boundary (121.0)",
+          "test_data": {
+            "username": "testuser",
+            "email": "tester@example.com",
+            "password": "Test@12345",
+            "confirmPassword": "Test@12345",
+            "age": 121.0
+          },
+          "constraints": {
+            "min": 18.0,
+            "max": 120.0,
+            "step": 1
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T02:38:02.677491"
+        }
+      ],
+      "ecp": [
+        {
+          "id": "ecp_pattern_e5e65574_username_valid_pattern_0",
+          "type": "ECP",
+          "subtype": "pattern",
+          "form_url": "http://localhost:5500/test_websites/site3_register/index.html",
+          "form_id": "e5e65574",
+          "field_name": "username",
+          "field_type": "text",
+          "equivalence_class": "valid_pattern",
+          "test_value": "validInput123",
+          "expected_result": "success",
+          "description": "Username accepts alphanumeric characters and underscores",
+          "test_data": {
+            "email": "tester@example.com",
+            "password": "Test@12345",
+            "confirmPassword": "Test@12345",
+            "age": 69,
+            "username": "validInput123"
+          },
+          "pattern": "[a-zA-Z0-9_]+",
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T02:38:13.179673"
+        },
+        {
+          "id": "ecp_pattern_e5e65574_username_invalid_pattern_0",
+          "type": "ECP",
+          "subtype": "pattern",
+          "form_url": "http://localhost:5500/test_websites/site3_register/index.html",
+          "form_id": "e5e65574",
+          "field_name": "username",
+          "field_type": "text",
+          "equivalence_class": "invalid_pattern",
+          "test_value": "<invalid>",
+          "expected_result": "error",
+          "description": "Username rejects special characters like angle brackets",
+          "test_data": {
+            "email": "tester@example.com",
+            "password": "Test@12345",
+            "confirmPassword": "Test@12345",
+            "age": 69,
+            "username": "<invalid>"
+          },
+          "pattern": "[a-zA-Z0-9_]+",
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T02:38:13.181673"
+        },
+        {
+          "id": "ecp_pattern_e5e65574_username_invalid_pattern_1",
+          "type": "ECP",
+          "subtype": "pattern",
+          "form_url": "http://localhost:5500/test_websites/site3_register/index.html",
+          "form_id": "e5e65574",
+          "field_name": "username",
+          "field_type": "text",
+          "equivalence_class": "invalid_pattern",
+          "test_value": "!@#$%",
+          "expected_result": "error",
+          "description": "Username rejects special symbols not allowed by pattern",
+          "test_data": {
+            "email": "tester@example.com",
+            "password": "Test@12345",
+            "confirmPassword": "Test@12345",
+            "age": 69,
+            "username": "!@#$%"
+          },
+          "pattern": "[a-zA-Z0-9_]+",
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T02:38:13.181673"
+        },
+        {
+          "id": "ecp_email_e5e65574_email_valid_standard_0",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:5500/test_websites/site3_register/index.html",
+          "form_id": "e5e65574",
+          "field_name": "email",
+          "field_type": "email",
+          "equivalence_class": "valid_standard",
+          "test_value": "user@example.com",
+          "expected_result": "success",
+          "description": "Email Address accepts standard format",
+          "test_data": {
+            "username": "testuser",
+            "password": "Test@12345",
+            "confirmPassword": "Test@12345",
+            "age": 69,
+            "email": "user@example.com"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T02:38:13.182673"
+        },
+        {
+          "id": "ecp_email_e5e65574_email_valid_standard_1",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:5500/test_websites/site3_register/index.html",
+          "form_id": "e5e65574",
+          "field_name": "email",
+          "field_type": "email",
+          "equivalence_class": "valid_standard",
+          "test_value": "test@domain.co.uk",
+          "expected_result": "success",
+          "description": "Email Address accepts multi-part TLDs",
+          "test_data": {
+            "username": "testuser",
+            "password": "Test@12345",
+            "confirmPassword": "Test@12345",
+            "age": 69,
+            "email": "test@domain.co.uk"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T02:38:13.182673"
+        },
+        {
+          "id": "ecp_email_e5e65574_email_valid_with_plus_0",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:5500/test_websites/site3_register/index.html",
+          "form_id": "e5e65574",
+          "field_name": "email",
+          "field_type": "email",
+          "equivalence_class": "valid_with_plus",
+          "test_value": "user+tag@example.com",
+          "expected_result": "success",
+          "description": "Email Address accepts plus addressing for filtering",
+          "test_data": {
+            "username": "testuser",
+            "password": "Test@12345",
+            "confirmPassword": "Test@12345",
+            "age": 69,
+            "email": "user+tag@example.com"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T02:38:13.182673"
+        },
+        {
+          "id": "ecp_email_e5e65574_email_valid_with_plus_1",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:5500/test_websites/site3_register/index.html",
+          "form_id": "e5e65574",
+          "field_name": "email",
+          "field_type": "email",
+          "equivalence_class": "valid_with_plus",
+          "test_value": "test+filter@domain.com",
+          "expected_result": "success",
+          "description": "Email Address accepts plus addressing with custom domain",
+          "test_data": {
+            "username": "testuser",
+            "password": "Test@12345",
+            "confirmPassword": "Test@12345",
+            "age": 69,
+            "email": "test+filter@domain.com"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T02:38:13.182673"
+        },
+        {
+          "id": "ecp_email_e5e65574_email_valid_with_dots_0",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:5500/test_websites/site3_register/index.html",
+          "form_id": "e5e65574",
+          "field_name": "email",
+          "field_type": "email",
+          "equivalence_class": "valid_with_dots",
+          "test_value": "first.last@example.com",
+          "expected_result": "success",
+          "description": "Email Address accepts dots in the local part",
+          "test_data": {
+            "username": "testuser",
+            "password": "Test@12345",
+            "confirmPassword": "Test@12345",
+            "age": 69,
+            "email": "first.last@example.com"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T02:38:13.183673"
+        },
+        {
+          "id": "ecp_email_e5e65574_email_valid_with_dots_1",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:5500/test_websites/site3_register/index.html",
+          "form_id": "e5e65574",
+          "field_name": "email",
+          "field_type": "email",
+          "equivalence_class": "valid_with_dots",
+          "test_value": "user.name@domain.org",
+          "expected_result": "success",
+          "description": "Email Address accepts dots with non-com TLD",
+          "test_data": {
+            "username": "testuser",
+            "password": "Test@12345",
+            "confirmPassword": "Test@12345",
+            "age": 69,
+            "email": "user.name@domain.org"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T02:38:13.183673"
+        },
+        {
+          "id": "ecp_email_e5e65574_email_valid_subdomain_0",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:5500/test_websites/site3_register/index.html",
+          "form_id": "e5e65574",
+          "field_name": "email",
+          "field_type": "email",
+          "equivalence_class": "valid_subdomain",
+          "test_value": "user@mail.example.com",
+          "expected_result": "success",
+          "description": "Email Address accepts subdomains in the host part",
+          "test_data": {
+            "username": "testuser",
+            "password": "Test@12345",
+            "confirmPassword": "Test@12345",
+            "age": 69,
+            "email": "user@mail.example.com"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T02:38:13.183673"
+        },
+        {
+          "id": "ecp_email_e5e65574_email_invalid_missing_at_0",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:5500/test_websites/site3_register/index.html",
+          "form_id": "e5e65574",
+          "field_name": "email",
+          "field_type": "email",
+          "equivalence_class": "invalid_format",
+          "test_value": "userexample.com",
+          "expected_result": "error",
+          "description": "Email Address rejects format missing @ symbol",
+          "test_data": {
+            "username": "testuser",
+            "password": "Test@12345",
+            "confirmPassword": "Test@12345",
+            "age": 69,
+            "email": "userexample.com"
+          },
+          "action": "added",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T02:38:13.183673"
+        },
+        {
+          "id": "ecp_email_e5e65574_email_valid_subdomain_1",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:5500/test_websites/site3_register/index.html",
+          "form_id": "e5e65574",
+          "field_name": "email",
+          "field_type": "email",
+          "equivalence_class": "valid_subdomain",
+          "test_value": "test@subdomain.domain.com",
+          "expected_result": "success",
+          "description": "Verify that an email address containing a valid subdomain is accepted.",
+          "test_data": {
+            "username": "testuser",
+            "password": "Test@12345",
+            "confirmPassword": "Test@12345",
+            "age": 69,
+            "email": "test@subdomain.domain.com"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T02:38:22.906673"
+        },
+        {
+          "id": "ecp_email_e5e65574_email_invalid_missing_at_0",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:5500/test_websites/site3_register/index.html",
+          "form_id": "e5e65574",
+          "field_name": "email",
+          "field_type": "email",
+          "equivalence_class": "invalid_missing_at",
+          "test_value": "userexample.com",
+          "expected_result": "error",
+          "description": "Verify that an email address missing the '@' symbol is rejected.",
+          "test_data": {
+            "username": "testuser",
+            "password": "Test@12345",
+            "confirmPassword": "Test@12345",
+            "age": 69,
+            "email": "userexample.com"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T02:38:22.909667"
+        },
+        {
+          "id": "ecp_email_e5e65574_email_invalid_missing_at_1",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:5500/test_websites/site3_register/index.html",
+          "form_id": "e5e65574",
+          "field_name": "email",
+          "field_type": "email",
+          "equivalence_class": "invalid_missing_at",
+          "test_value": "test.domain.com",
+          "expected_result": "error",
+          "description": "Verify that a domain string without an '@' symbol is rejected.",
+          "test_data": {
+            "username": "testuser",
+            "password": "Test@12345",
+            "confirmPassword": "Test@12345",
+            "age": 69,
+            "email": "test.domain.com"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T02:38:22.910668"
+        },
+        {
+          "id": "ecp_email_e5e65574_email_invalid_missing_domain_0",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:5500/test_websites/site3_register/index.html",
+          "form_id": "e5e65574",
+          "field_name": "email",
+          "field_type": "email",
+          "equivalence_class": "invalid_missing_domain",
+          "test_value": "user@",
+          "expected_result": "error",
+          "description": "Verify that an email address missing the domain part after the '@' is rejected.",
+          "test_data": {
+            "username": "testuser",
+            "password": "Test@12345",
+            "confirmPassword": "Test@12345",
+            "age": 69,
+            "email": "user@"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T02:38:22.911671"
+        },
+        {
+          "id": "ecp_email_e5e65574_email_invalid_missing_domain_1",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:5500/test_websites/site3_register/index.html",
+          "form_id": "e5e65574",
+          "field_name": "email",
+          "field_type": "email",
+          "equivalence_class": "invalid_missing_domain",
+          "test_value": "test@.com",
+          "expected_result": "error",
+          "description": "Verify that an email address with an empty domain label is rejected.",
+          "test_data": {
+            "username": "testuser",
+            "password": "Test@12345",
+            "confirmPassword": "Test@12345",
+            "age": 69,
+            "email": "test@.com"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T02:38:22.912557"
+        },
+        {
+          "id": "ecp_email_e5e65574_email_invalid_special_chars_0",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:5500/test_websites/site3_register/index.html",
+          "form_id": "e5e65574",
+          "field_name": "email",
+          "field_type": "email",
+          "equivalence_class": "invalid_special_chars",
+          "test_value": "user..name@example.com",
+          "expected_result": "error",
+          "description": "Verify that an email address with consecutive dots in the local part is rejected.",
+          "test_data": {
+            "username": "testuser",
+            "password": "Test@12345",
+            "confirmPassword": "Test@12345",
+            "age": 69,
+            "email": "user..name@example.com"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T02:38:22.912557"
+        },
+        {
+          "id": "ecp_email_e5e65574_email_invalid_special_chars_1",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:5500/test_websites/site3_register/index.html",
+          "form_id": "e5e65574",
+          "field_name": "email",
+          "field_type": "email",
+          "equivalence_class": "invalid_special_chars",
+          "test_value": ".user@example.com",
+          "expected_result": "error",
+          "description": "Verify that an email address starting with a dot in the local part is rejected.",
+          "test_data": {
+            "username": "testuser",
+            "password": "Test@12345",
+            "confirmPassword": "Test@12345",
+            "age": 69,
+            "email": ".user@example.com"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T02:38:22.912557"
+        },
+        {
+          "id": "ecp_email_e5e65574_email_invalid_empty_0",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:5500/test_websites/site3_register/index.html",
+          "form_id": "e5e65574",
+          "field_name": "email",
+          "field_type": "email",
+          "equivalence_class": "invalid_empty",
+          "test_value": "",
+          "expected_result": "error",
+          "description": "Empty or whitespace only",
+          "test_data": {
+            "username": "testuser",
+            "password": "Test@12345",
+            "confirmPassword": "Test@12345",
+            "age": 69,
+            "email": ""
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T02:38:22.913554",
+          "ai_notes": "Kept original due to incomplete refinement"
+        },
+        {
+          "id": "ecp_email_e5e65574_email_invalid_empty_1",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:5500/test_websites/site3_register/index.html",
+          "form_id": "e5e65574",
+          "field_name": "email",
+          "field_type": "email",
+          "equivalence_class": "invalid_empty",
+          "test_value": "   ",
+          "expected_result": "error",
+          "description": "Verify that an email field containing only whitespace triggers a validation error.",
+          "test_data": {
+            "username": "testuser",
+            "password": "Test@12345",
+            "confirmPassword": "Test@12345",
+            "age": 69,
+            "email": "   "
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T02:38:22.913554"
+        },
+        {
+          "id": "ecp_email_e5e65574_email_invalid_spaces_0",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:5500/test_websites/site3_register/index.html",
+          "form_id": "e5e65574",
+          "field_name": "email",
+          "field_type": "email",
+          "equivalence_class": "invalid_spaces",
+          "test_value": "user name@example.com",
+          "expected_result": "error",
+          "description": "Verify that an email address containing spaces in the local part is rejected.",
+          "test_data": {
+            "username": "testuser",
+            "password": "Test@12345",
+            "confirmPassword": "Test@12345",
+            "age": 69,
+            "email": "user name@example.com"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T02:38:22.913554"
+        },
+        {
+          "id": "ecp_email_e5e65574_email_invalid_missing_tld",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:5500/test_websites/site3_register/index.html",
+          "form_id": "e5e65574",
+          "field_name": "email",
+          "field_type": "email",
+          "equivalence_class": "invalid_missing_tld",
+          "test_value": "test@domain",
+          "expected_result": "error",
+          "description": "Verify that an email address missing a top-level domain (TLD) is rejected.",
+          "test_data": {
+            "username": "testuser",
+            "password": "Test@12345",
+            "confirmPassword": "Test@12345",
+            "age": 69,
+            "email": "test@domain"
+          },
+          "action": "added",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T02:38:22.913554"
+        },
+        {
+          "id": "ecp_email_e5e65574_email_invalid_spaces_1",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:5500/test_websites/site3_register/index.html",
+          "form_id": "e5e65574",
+          "field_name": "email",
+          "field_type": "email",
+          "equivalence_class": "invalid_spaces",
+          "test_value": "test @domain.com",
+          "expected_result": "error",
+          "field_label": "Email Address",
+          "description": "Email address contains an invalid space character",
+          "test_data": {
+            "username": "testuser",
+            "password": "Test@12345",
+            "confirmPassword": "Test@12345",
+            "age": 69,
+            "email": "test @domain.com"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T02:38:35.202622"
+        },
+        {
+          "id": "ecp_text_e5e65574_password_valid",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:5500/test_websites/site3_register/index.html",
+          "form_id": "e5e65574",
+          "form_action": "http://localhost:5500/test_websites/site3_register/index.html",
+          "page_title": "Create Account — Site 3",
+          "field_label": "Password",
+          "field_name": "password",
+          "field_type": "password",
+          "equivalence_class": "valid_text",
+          "test_value": "ValidInput123",
+          "expected_result": "success",
+          "description": "Valid alphanumeric input for Password field",
+          "test_data": {
+            "username": "testuser",
+            "email": "tester@example.com",
+            "confirmPassword": "ValidInput123",
+            "age": 69,
+            "password": "ValidInput123"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T02:38:35.203621"
+        },
+        {
+          "id": "ecp_text_e5e65574_password_empty",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:5500/test_websites/site3_register/index.html",
+          "form_id": "e5e65574",
+          "form_action": "http://localhost:5500/test_websites/site3_register/index.html",
+          "page_title": "Create Account — Site 3",
+          "field_label": "Password",
+          "field_name": "password",
+          "field_type": "password",
+          "equivalence_class": "empty_required",
+          "test_value": "",
+          "expected_result": "error",
+          "description": "Empty value for required field Password",
+          "test_data": {
+            "username": "testuser",
+            "email": "tester@example.com",
+            "confirmPassword": "",
+            "age": 69,
+            "password": ""
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T02:38:35.204623",
+          "ai_notes": "Kept original due to incomplete refinement"
+        },
+        {
+          "id": "ecp_text_e5e65574_password_special",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:5500/test_websites/site3_register/index.html",
+          "form_id": "e5e65574",
+          "form_action": "http://localhost:5500/test_websites/site3_register/index.html",
+          "page_title": "Create Account — Site 3",
+          "field_label": "Password",
+          "field_name": "password",
+          "field_type": "password",
+          "equivalence_class": "special_characters",
+          "test_value": "<script>alert(\"XSS\")</script>",
+          "expected_result": "error",
+          "description": "Injection of XSS script tags into Password field",
+          "test_data": {
+            "username": "testuser",
+            "email": "tester@example.com",
+            "confirmPassword": "<script>alert(\"XSS\")</script>",
+            "age": 69,
+            "password": "<script>alert(\"XSS\")</script>"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T02:38:35.204623"
+        },
+        {
+          "id": "ecp_text_e5e65574_password_long",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:5500/test_websites/site3_register/index.html",
+          "form_id": "e5e65574",
+          "form_action": "http://localhost:5500/test_websites/site3_register/index.html",
+          "page_title": "Create Account — Site 3",
+          "field_label": "Password",
+          "field_name": "password",
+          "field_type": "password",
+          "equivalence_class": "long_text",
+          "test_value": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+          "expected_result": "error",
+          "description": "Password input exceeding maximum character length limit",
+          "test_data": {
+            "username": "testuser",
+            "email": "tester@example.com",
+            "confirmPassword": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+            "age": 69,
+            "password": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T02:38:35.204623"
+        },
+        {
+          "id": "ecp_text_e5e65574_password_unicode",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:5500/test_websites/site3_register/index.html",
+          "form_id": "e5e65574",
+          "form_action": "http://localhost:5500/test_websites/site3_register/index.html",
+          "page_title": "Create Account — Site 3",
+          "field_label": "Password",
+          "field_name": "password",
+          "field_type": "password",
+          "equivalence_class": "unicode",
+          "test_value": "测试数据🎉!测试数据",
+          "expected_result": "success",
+          "description": "Password field accepting valid Unicode and emoji characters",
+          "test_data": {
+            "username": "testuser",
+            "email": "tester@example.com",
+            "confirmPassword": "测试数据🎉!测试数据",
+            "age": 69,
+            "password": "测试数据🎉!测试数据"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T02:38:35.204623"
+        },
+        {
+          "id": "ecp_text_e5e65574_confirmPassword_valid",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:5500/test_websites/site3_register/index.html",
+          "form_id": "e5e65574",
+          "form_action": "http://localhost:5500/test_websites/site3_register/index.html",
+          "page_title": "Create Account — Site 3",
+          "field_label": "Confirm Password",
+          "field_name": "confirmPassword",
+          "field_type": "password",
+          "equivalence_class": "valid_text",
+          "test_value": "ValidInput123",
+          "expected_result": "success",
+          "description": "Valid matching input for Confirm Password field",
+          "test_data": {
+            "username": "testuser",
+            "email": "tester@example.com",
+            "password": "ValidInput123",
+            "age": 69,
+            "confirmPassword": "ValidInput123"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T02:38:35.204623"
+        },
+        {
+          "id": "ecp_text_e5e65574_confirmPassword_empty",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:5500/test_websites/site3_register/index.html",
+          "form_id": "e5e65574",
+          "form_action": "http://localhost:5500/test_websites/site3_register/index.html",
+          "page_title": "Create Account — Site 3",
+          "field_label": "Confirm Password",
+          "field_name": "confirmPassword",
+          "field_type": "password",
+          "equivalence_class": "empty_required",
+          "test_value": "",
+          "expected_result": "error",
+          "description": "Empty value for required field Confirm Password",
+          "test_data": {
+            "username": "testuser",
+            "email": "tester@example.com",
+            "password": "Test@12345",
+            "age": 69,
+            "confirmPassword": "Test@12345"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T02:38:35.206108",
+          "ai_notes": "Kept original due to incomplete refinement"
+        },
+        {
+          "id": "ecp_text_e5e65574_confirmPassword_special",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:5500/test_websites/site3_register/index.html",
+          "form_id": "e5e65574",
+          "form_action": "http://localhost:5500/test_websites/site3_register/index.html",
+          "page_title": "Create Account — Site 3",
+          "field_label": "Confirm Password",
+          "field_name": "confirmPassword",
+          "field_type": "password",
+          "equivalence_class": "special_characters",
+          "test_value": "<script>alert(\"XSS\")</script>",
+          "expected_result": "error",
+          "description": "Injection of XSS script tags into Confirm Password field",
+          "test_data": {
+            "username": "testuser",
+            "email": "tester@example.com",
+            "password": "Test@12345",
+            "age": 69,
+            "confirmPassword": "<script>alert(\"XSS\")</script>"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T02:38:35.206108"
+        },
+        {
+          "id": "ecp_text_e5e65574_confirmPassword_long",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:5500/test_websites/site3_register/index.html",
+          "form_id": "e5e65574",
+          "form_action": "http://localhost:5500/test_websites/site3_register/index.html",
+          "page_title": "Create Account — Site 3",
+          "field_label": "Confirm Password",
+          "field_name": "confirmPassword",
+          "field_type": "password",
+          "equivalence_class": "long_text",
+          "test_value": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+          "expected_result": "error",
+          "description": "Confirm Password input exceeding maximum character length limit",
+          "test_data": {
+            "username": "testuser",
+            "email": "tester@example.com",
+            "password": "Test@12345",
+            "age": 69,
+            "confirmPassword": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T02:38:35.206619"
+        },
+        {
+          "id": "ecp_text_e5e65574_confirmPassword_mismatch",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:5500/test_websites/site3_register/index.html",
+          "form_id": "e5e65574",
+          "field_name": "confirmPassword",
+          "field_type": "password",
+          "equivalence_class": "mismatch",
+          "test_value": "DifferentPassword123",
+          "expected_result": "error",
+          "field_label": "Confirm Password",
+          "description": "Confirm Password does not match the Password field",
+          "test_data": {
+            "username": "testuser",
+            "password": "Test@12345",
+            "confirmPassword": "DifferentPassword123",
+            "age": 69,
+            "email": "tester@example.com"
+          },
+          "action": "added",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T02:38:35.206619"
+        },
+        {
+          "id": "ecp_text_e5e65574_confirmPassword_unicode",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:5500/test_websites/site3_register/index.html",
+          "form_id": "e5e65574",
+          "form_action": "http://localhost:5500/test_websites/site3_register/index.html",
+          "page_title": "Create Account — Site 3",
+          "field_label": "Confirm Password",
+          "field_name": "confirmPassword",
+          "field_type": "password",
+          "equivalence_class": "unicode",
+          "test_value": "测试数据🎉!测试数据",
+          "expected_result": "success",
+          "description": "Verify that Confirm Password field accepts Unicode characters",
+          "test_data": {
+            "username": "testuser",
+            "email": "tester@example.com",
+            "password": "Test@12345",
+            "age": 69,
+            "confirmPassword": "Test@12345"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T02:38:40.075308"
+        },
+        {
+          "id": "ecp_number_e5e65574_age_valid",
+          "type": "ECP",
+          "subtype": "number",
+          "form_url": "http://localhost:5500/test_websites/site3_register/index.html",
+          "form_id": "e5e65574",
+          "form_action": "http://localhost:5500/test_websites/site3_register/index.html",
+          "page_title": "Create Account — Site 3",
+          "field_label": "Age",
+          "field_name": "age",
+          "field_type": "number",
+          "equivalence_class": "valid_range",
+          "test_value": 69,
+          "expected_result": "success",
+          "description": "Verify that Age field accepts a valid numeric value within range",
+          "test_data": {
+            "username": "testuser",
+            "email": "tester@example.com",
+            "password": "Test@12345",
+            "confirmPassword": "Test@12345",
+            "age": 69
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T02:38:40.076326"
+        },
+        {
+          "id": "ecp_number_e5e65574_age_invalid",
+          "type": "ECP",
+          "subtype": "number",
+          "form_url": "http://localhost:5500/test_websites/site3_register/index.html",
+          "form_id": "e5e65574",
+          "form_action": "http://localhost:5500/test_websites/site3_register/index.html",
+          "page_title": "Create Account — Site 3",
+          "field_label": "Age",
+          "field_name": "age",
+          "field_type": "number",
+          "equivalence_class": "non_numeric",
+          "test_value": "abc",
+          "expected_result": "error",
+          "description": "Verify that Age field rejects non-numeric input",
+          "test_data": {
+            "username": "testuser",
+            "email": "tester@example.com",
+            "password": "Test@12345",
+            "confirmPassword": "Test@12345",
+            "age": "abc"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T02:38:40.079327"
+        },
+        {
+          "id": "ecp_text_e5e65574_email_invalid",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:5500/test_websites/site3_register/index.html",
+          "form_id": "e5e65574",
+          "form_action": "http://localhost:5500/test_websites/site3_register/index.html",
+          "page_title": "Create Account — Site 3",
+          "field_label": "Email Address",
+          "field_name": "email",
+          "field_type": "email",
+          "equivalence_class": "invalid_format",
+          "test_value": "invalid-email",
+          "expected_result": "error",
+          "description": "Verify that Email Address field rejects malformed email strings",
+          "test_data": {
+            "username": "testuser",
+            "email": "invalid-email",
+            "password": "Test@12345",
+            "confirmPassword": "Test@12345",
+            "age": 69
+          },
+          "action": "added",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T02:38:40.079327"
+        }
+      ],
+      "decision_table": [],
+      "state_transition": [],
+      "use_case": [
+        {
+          "id": "usecase_registration_unknown",
+          "type": "Use Case",
+          "subtype": "form_submission",
+          "scenario_name": "User Registration",
+          "form_url": "http://localhost:5500/test_websites/site3_register/index.html",
+          "form_id": "unknown",
+          "test_data": {
+            "username": "TestUser1",
+            "email": "test@example.com",
+            "password": "TestPass1!",
+            "confirmPassword": "TestPass1!",
+            "age": 30
+          },
+          "steps": [
+            {
+              "step": 1,
+              "action": "navigate",
+              "target": "http://localhost:5500/test_websites/site3_register/index.html",
+              "description": "Navigate to registration page",
+              "verification": "Registration form displayed"
+            },
+            {
+              "step": 2,
+              "action": "fill_form",
+              "target": "unknown",
+              "description": "Fill registration details",
+              "verification": "All fields populated with valid data"
+            },
+            {
+              "step": 3,
+              "action": "submit",
+              "target": "unknown",
+              "description": "Submit registration",
+              "verification": "Account created successfully"
+            }
+          ],
+          "expected_result": "success",
+          "description": "Registration: Navigate → Fill form → Submit → Verify account created",
+          "preconditions": [
+            "User not registered"
+          ],
+          "postconditions": [
+            "Account created",
+            "User can log in"
+          ],
+          "action": "updated",
+          "ai_enhanced": true
+        },
+        {
+          "id": "usecase_auth_login",
+          "type": "Use Case",
+          "subtype": "authentication",
+          "scenario_name": "User Login Flow",
+          "form_url": "http://localhost:5500/test_websites/site3_register/index.html",
+          "test_data": {
+            "username": "TestUser1",
+            "email": "test@example.com",
+            "password": "TestPass1!",
+            "confirmPassword": "TestPass1!",
+            "age": 30
+          },
+          "steps": [
+            {
+              "step": 1,
+              "action": "navigate",
+              "target": null,
+              "description": "Navigate to login page",
+              "verification": "Login form displayed"
+            },
+            {
+              "step": 2,
+              "action": "fill",
+              "target": "email",
+              "value": "test@example.com",
+              "description": "Enter email address",
+              "verification": "Email field populated"
+            },
+            {
+              "step": 3,
+              "action": "fill",
+              "target": "password",
+              "value": "Test123!@#",
+              "description": "Enter password",
+              "verification": "Password field populated"
+            },
+            {
+              "step": 4,
+              "action": "submit",
+              "target": "login_form",
+              "description": "Submit login form",
+              "verification": "Successfully logged in, redirected to dashboard/profile"
+            }
+          ],
+          "expected_result": "success",
+          "description": "User login: Navigate to login → Enter credentials → Submit → Verify logged in",
+          "preconditions": [
+            "User not logged in",
+            "Valid credentials exist"
+          ],
+          "postconditions": [
+            "User logged in",
+            "Session created"
+          ],
+          "action": "updated",
+          "ai_enhanced": true
+        },
+        {
+          "id": "usecase_auth_register",
+          "type": "Use Case",
+          "subtype": "authentication",
+          "scenario_name": "New User Registration",
+          "form_url": "http://localhost:5500/test_websites/site3_register/index.html",
+          "test_data": {
+            "username": "TestUser1",
+            "email": "test@example.com",
+            "password": "TestPass1!",
+            "confirmPassword": "TestPass1!",
+            "age": 30
+          },
+          "steps": [
+            {
+              "step": 1,
+              "action": "navigate",
+              "target": "http://localhost:5500/test_websites/site3_register/index.html",
+              "description": "Navigate to registration page",
+              "verification": "Registration form displayed"
+            },
+            {
+              "step": 2,
+              "action": "fill_form",
+              "target": "registration_form",
+              "description": "Fill registration form",
+              "verification": "All fields populated"
+            },
+            {
+              "step": 3,
+              "action": "submit",
+              "target": "registration_form",
+              "description": "Submit registration",
+              "verification": "Account created, confirmation message shown"
+            }
+          ],
+          "expected_result": "success",
+          "description": "User registration: Navigate → Fill form → Submit → Verify account created",
+          "preconditions": [
+            "User not registered"
+          ],
+          "postconditions": [
+            "New account created",
+            "User logged in or verification email sent"
+          ],
+          "action": "updated",
+          "ai_enhanced": true
+        }
+      ]
+    },
+    "summary": {
+      "total_test_cases": 72,
+      "bva_count": 32,
+      "ecp_count": 37,
+      "decision_table_count": 0,
+      "state_transition_count": 0,
+      "use_case_count": 3
+    }
+  },
+  "counts": {
+    "bva": 32,
+    "ecp": 37,
+    "decision_table": 0,
+    "state_transition": 0,
+    "use_case": 3
+  },
+  "total": 72,
+  "ai_enhanced_count": 72,
+  "before_file": "site3_register_before_20260401_023726.json"
+}

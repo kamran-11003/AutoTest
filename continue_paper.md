@@ -6,7 +6,7 @@
 
 > **RQ4 (original):** Given a large number of automatically generated test cases, what strategies can be employed to efficiently execute, prioritize, and maintain tests, particularly in regression testing scenarios?
 
-This section addresses the scalable execution strand of the research question through a concrete empirical study of a reinforcement learning–based test execution framework, AutoTestAI-RL. The study was conducted in two phases. **Phase 1** deployed the framework against 1,187 AI-refined test cases spanning six publicly accessible QA practice websites (qa-alchemist.vercel.app, qa-tester-practice-website.vercel.app, qa-testing-hu.vercel.app, the-qa-testers-gauntlet.vercel.app, uitestingplayground.com, and httpbin.org/forms/post). This preliminary evaluation revealed critical oracle-defeat conditions (Section 8.11) — most notably that these websites do not enforce real input validation, producing systematically misleading pass/fail measurements. **Phase 2** addressed these limitations by engineering five purpose-built test websites with enforced validation logic and observable success/failure states, generating 315 test cases. The Phase 2 controlled evaluation (Section 8.12) constitutes the primary empirical contribution of this section. Rather than executing tests statically, the system dynamically decides—per test case—whether a fast local heuristic oracle or an expensive LLM-based visual oracle should be invoked. This section evaluates five distinct sub-dimensions of that decision problem, each corresponding to a targeted research sub-question.
+This section addresses the scalable execution strand of the research question through a concrete empirical study of a reinforcement learning–based test execution framework, AutoTestAI-RL. The study was conducted in two phases. **Phase 1** deployed the framework against 1,187 AI-refined test cases spanning six publicly accessible QA practice websites (qa-alchemist.vercel.app, qa-tester-practice-website.vercel.app, qa-testing-hu.vercel.app, the-qa-testers-gauntlet.vercel.app, uitestingplayground.com, and httpbin.org/forms/post). This preliminary evaluation revealed critical oracle-defeat conditions (Section 8.11) — most notably that these websites do not enforce real input validation, producing systematically misleading pass/fail measurements. **Phase 2** addressed these limitations by engineering five purpose-built test websites with enforced validation logic and observable success/failure states, generating 331 test cases. The Phase 2 controlled evaluation (Section 8.12) constitutes the primary empirical contribution of this section. Rather than executing tests statically, the system dynamically decides—per test case—whether a fast local heuristic oracle or an expensive LLM-based visual oracle should be invoked. This section evaluates five distinct sub-dimensions of that decision problem, each corresponding to a targeted research sub-question.
 
 ### 8.1 Problem Decomposition
 
@@ -75,7 +75,7 @@ Three RL goals augment the base DQN:
 | httpbin.org/forms/post | 2 | 81 | 82 | 82 | +1 |
 | **Total** | **48** | **1,152** | **1,187** | **1,167** | **+35** |
 
-**Phase 2 test suite:** 315 AI-refined test cases generated across five purpose-built controlled test websites with enforced JavaScript validation, visible error/success indicators, and deterministic constraints (see Section 8.12 for full specifications and results). Phase 2 constitutes the primary empirical evaluation.
+**Phase 2 test suite:** 331 AI-refined test cases generated across five purpose-built controlled test websites with enforced JavaScript validation, visible error/success indicators, and deterministic constraints (see Section 8.12 for full specifications and results). Phase 2 constitutes the primary empirical evaluation.
 
 **Table 8.1b: Phase 2 — Test Suite Composition (Purpose-Built Controlled Websites)**
 
@@ -83,10 +83,10 @@ Three RL goals augment the base DQN:
 |---------|------:|-----------:|----------:|----------:|------:|
 | site1_contact (Contact Form) | 1 | 52 | 58 | 58 | +6 |
 | site2_booking (Hotel Booking) | 1 | 41 | 46 | 46 | +5 |
-| site3_register (User Registration) | 1 | 51 | 56 | 56 | +5 |
+| site3_register (User Registration) | 1 | 66 | 72 | 72 | +6 |
 | site4_search (Product Search) | 1 | 32 | 38 | 38 | +6 |
 | site5_feedback (Feedback Survey) | 1 | 116 | 117 | 97 | +1 |
-| **Total** | **5** | **292** | **315** | **295** | **+23** |
+| **Total** | **5** | **307** | **331** | **311** | **+24** |
 
 **Test type distribution:** BVA/numeric_boundaries (25.8%), ECP/invalid_partition (18.7%), BVA/string_boundaries (9.4%), ECP/boundary_partition (7.8%), Decision Table (9.3%), State Transition (1.5%), Use Case (1.0%), ECP/valid_partition (26.5%)
 
@@ -573,10 +573,10 @@ python scripts/run_test_websites.py --site 4   # site5_feedback
 |------|------:|------------------:|-----------------:|--:|------------:|-------:|-------:|-------:|----------:|---------:|------|
 | site1_contact | 1 | 52 | 58 | +6 | 58 | 46 | 12 | 79.3% | 4 | 0.008 | completed |
 | site2_booking | 1 | 41 | 46 | +5 | 46 | 38 | 8 | 82.6% | 5 | 0.010 | completed |
-| site3_register | 1 | 51 | 56 | +5 | 56 | 27 | 29 | 48.2% | 7 | 0.014 | completed |
+| site3_register | 1 | 66 | 72 | +6 | 72 | 61 | 11 | 84.7% | 2 | 0.004 | completed |
 | site4_search | 1 | 32 | 38 | +6 | 38 | 25 | 13 | 65.8% | 1 | 0.002 | completed |
 | site5_feedback | 1 | 116 | 117 | +1 | 97 | 88 | 29 | 75.2% | 6 | 0.012 | completed |
-| **Total** | **5** | **292** | **315** | **+23** | **295** | **224** | **91** | **71.1%** | **23** | **0.046** | |
+| **Total** | **5** | **307** | **331** | **+24** | **311** | **258** | **73** | **77.9%** | **18** | **0.036** | |
 
 > *Updated after each run of `python scripts/run_test_websites.py --site <N>`.*
 
