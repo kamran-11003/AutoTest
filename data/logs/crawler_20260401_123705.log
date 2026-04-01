@@ -1,0 +1,78 @@
+2026-04-01 12:37:49 | app.components.graph_viz | INFO | GraphVisualizer initialized
+2026-04-01 12:37:49 | app.components.graph_viz | INFO | ✅ Added 1 nodes
+2026-04-01 12:37:49 | app.components.graph_viz | INFO | ✅ Graph: 1 nodes, 0 edges
+2026-04-01 12:37:49 | app.components.graph_viz | INFO | 📊 Saved: data\temp_graph.html
+2026-04-01 12:37:51 | app.utils.exporter | INFO | Exporter initialized: data/crawled_graphs
+2026-04-01 12:37:57 | app.components.graph_viz | INFO | GraphVisualizer initialized
+2026-04-01 12:37:57 | app.components.graph_viz | INFO | ✅ Added 1 nodes
+2026-04-01 12:37:57 | app.components.graph_viz | INFO | ✅ Graph: 1 nodes, 0 edges
+2026-04-01 12:37:58 | app.components.graph_viz | INFO | 📊 Saved: data\temp_graph.html
+2026-04-01 12:37:59 | app.utils.exporter | INFO | Exporter initialized: data/crawled_graphs
+2026-04-01 12:38:12 | app.components.graph_viz | INFO | GraphVisualizer initialized
+2026-04-01 12:38:12 | app.components.graph_viz | INFO | ✅ Added 1 nodes
+2026-04-01 12:38:12 | app.components.graph_viz | INFO | ✅ Graph: 1 nodes, 0 edges
+2026-04-01 12:38:12 | app.components.graph_viz | INFO | 📊 Saved: data\temp_graph.html
+2026-04-01 12:38:14 | app.components.graph_viz | INFO | GraphVisualizer initialized
+2026-04-01 12:38:14 | app.components.graph_viz | INFO | ✅ Added 4 nodes
+2026-04-01 12:38:14 | app.components.graph_viz | INFO | ✅ Graph: 4 nodes, 3 edges
+2026-04-01 12:38:14 | app.components.graph_viz | INFO | 📊 Saved: data\temp_graph.html
+2026-04-01 12:38:15 | app.utils.exporter | INFO | Exporter initialized: data/crawled_graphs
+2026-04-01 12:38:26 | app.components.graph_viz | INFO | GraphVisualizer initialized
+2026-04-01 12:38:26 | app.components.graph_viz | INFO | ✅ Added 4 nodes
+2026-04-01 12:38:26 | app.components.graph_viz | INFO | ✅ Graph: 4 nodes, 3 edges
+2026-04-01 12:38:26 | app.components.graph_viz | INFO | 📊 Saved: data\temp_graph.html
+2026-04-01 12:38:28 | app.components.graph_viz | INFO | GraphVisualizer initialized
+2026-04-01 12:38:28 | app.components.graph_viz | INFO | ✅ Added 4 nodes
+2026-04-01 12:38:28 | app.components.graph_viz | INFO | ✅ Graph: 4 nodes, 3 edges
+2026-04-01 12:38:28 | app.components.graph_viz | INFO | 📊 Saved: data\temp_graph.html
+2026-04-01 12:38:30 | app.utils.exporter | INFO | Exporter initialized: data/crawled_graphs
+2026-04-01 12:39:36 | app.components.graph_viz | INFO | GraphVisualizer initialized
+2026-04-01 12:39:36 | app.components.graph_viz | INFO | ✅ Added 4 nodes
+2026-04-01 12:39:36 | app.components.graph_viz | INFO | ✅ Graph: 4 nodes, 3 edges
+2026-04-01 12:39:37 | app.components.graph_viz | INFO | 📊 Saved: data\temp_graph.html
+2026-04-01 12:39:38 | app.utils.exporter | INFO | Exporter initialized: data/crawled_graphs
+2026-04-01 12:59:52 | app.components.graph_viz | INFO | GraphVisualizer initialized
+2026-04-01 12:59:53 | app.components.graph_viz | INFO | ✅ Added 4 nodes
+2026-04-01 12:59:53 | app.components.graph_viz | INFO | ✅ Graph: 4 nodes, 3 edges
+2026-04-01 12:59:53 | app.components.graph_viz | INFO | 📊 Saved: data\temp_graph.html
+2026-04-01 12:59:55 | app.utils.exporter | INFO | Exporter initialized: data/crawled_graphs
+2026-04-01 13:01:07 | app.components.graph_viz | INFO | GraphVisualizer initialized
+2026-04-01 13:01:07 | app.components.graph_viz | INFO | ✅ Added 4 nodes
+2026-04-01 13:01:07 | app.components.graph_viz | INFO | ✅ Graph: 4 nodes, 3 edges
+2026-04-01 13:01:07 | app.components.graph_viz | INFO | 📊 Saved: data\temp_graph.html
+2026-04-01 13:01:09 | app.utils.exporter | INFO | Exporter initialized: data/crawled_graphs
+2026-04-01 13:01:17 | app.components.graph_viz | INFO | GraphVisualizer initialized
+2026-04-01 13:01:17 | app.components.graph_viz | INFO | ✅ Added 1 nodes
+2026-04-01 13:01:17 | app.components.graph_viz | INFO | ✅ Graph: 1 nodes, 0 edges
+2026-04-01 13:01:17 | app.components.graph_viz | INFO | 📊 Saved: data\temp_graph.html
+2026-04-01 13:01:18 | app.utils.exporter | INFO | Exporter initialized: data/crawled_graphs
+2026-04-01 13:01:26 | app.components.graph_viz | INFO | GraphVisualizer initialized
+2026-04-01 13:01:26 | app.components.graph_viz | INFO | ✅ Added 1 nodes
+2026-04-01 13:01:26 | app.components.graph_viz | INFO | ✅ Graph: 1 nodes, 0 edges
+2026-04-01 13:01:26 | app.components.graph_viz | INFO | 📊 Saved: data\temp_graph.html
+2026-04-01 13:01:27 | app.utils.exporter | INFO | Exporter initialized: data/crawled_graphs
+2026-04-01 13:01:28 | app.components.graph_viz | INFO | GraphVisualizer initialized
+2026-04-01 13:01:28 | app.components.graph_viz | INFO | ✅ Added 4 nodes
+2026-04-01 13:01:28 | app.components.graph_viz | INFO | ✅ Graph: 4 nodes, 3 edges
+2026-04-01 13:01:29 | app.components.graph_viz | INFO | 📊 Saved: data\temp_graph.html
+2026-04-01 13:01:30 | app.utils.exporter | INFO | Exporter initialized: data/crawled_graphs
+2026-04-01 13:26:41 | app.components.graph_viz | INFO | GraphVisualizer initialized
+2026-04-01 13:26:41 | app.components.graph_viz | INFO | ✅ Added 4 nodes
+2026-04-01 13:26:41 | app.components.graph_viz | INFO | ✅ Graph: 4 nodes, 3 edges
+2026-04-01 13:26:42 | app.components.graph_viz | INFO | 📊 Saved: data\temp_graph.html
+2026-04-01 13:26:43 | app.utils.exporter | INFO | Exporter initialized: data/crawled_graphs
+2026-04-01 13:26:55 | app.components.graph_viz | INFO | GraphVisualizer initialized
+2026-04-01 13:26:55 | app.components.graph_viz | INFO | ✅ Added 4 nodes
+2026-04-01 13:26:55 | app.components.graph_viz | INFO | ✅ Graph: 4 nodes, 3 edges
+2026-04-01 13:26:55 | app.components.graph_viz | INFO | 📊 Saved: data\temp_graph.html
+2026-04-01 13:26:56 | app.utils.exporter | INFO | Exporter initialized: data/crawled_graphs
+2026-04-01 13:27:00 | app.components.graph_viz | INFO | GraphVisualizer initialized
+2026-04-01 13:27:00 | app.components.graph_viz | INFO | ✅ Added 4 nodes
+2026-04-01 13:27:00 | app.components.graph_viz | INFO | ✅ Graph: 4 nodes, 3 edges
+2026-04-01 13:27:00 | app.components.graph_viz | INFO | 📊 Saved: data\temp_graph.html
+2026-04-01 13:27:01 | app.utils.exporter | INFO | Exporter initialized: data/crawled_graphs
+2026-04-01 13:27:06 | app.components.graph_viz | INFO | GraphVisualizer initialized
+2026-04-01 13:27:06 | app.components.graph_viz | INFO | ✅ Added 4 nodes
+2026-04-01 13:27:06 | app.components.graph_viz | INFO | ✅ Graph: 4 nodes, 3 edges
+2026-04-01 13:27:06 | app.components.graph_viz | INFO | 📊 Saved: data\temp_graph.html
+2026-04-01 13:27:07 | app.utils.exporter | INFO | Exporter initialized: data/crawled_graphs

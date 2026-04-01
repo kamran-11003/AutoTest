@@ -1,6 +1,6 @@
 # RL HEURISTICS OPTIMIZATION REPORT
 
-Generated: 2026-04-01T02:42:27.730397
+Generated: 2026-04-01T23:26:46.377675
 
 ## Risk Score Changes: Before vs After RL Learning
 
@@ -10,6 +10,7 @@ Generated: 2026-04-01T02:42:27.730397
 | invalid_partition              | 0.650 | 0.650 | → +0.0000 | Balanced execution |
 | unknown                        | 0.500 | 0.500 | → +0.0000 | Balanced execution |
 | numeric_boundaries             | 0.700 | 0.700 | → +0.0000 | Balanced execution |
+| string_boundaries              | 0.600 | 0.600 | → +0.0000 | Balanced execution |
 | valid_partition                | 0.300 | 0.300 | → +0.0000 | Balanced execution |
 
 ## Detailed Analysis Per Subtype
@@ -22,10 +23,10 @@ Generated: 2026-04-01T02:42:27.730397
 **Change:** +0.0000
 
 **What Happened During Execution:**
-- Total tests: 133
-- Heuristic: 128 uses → 0% success
-- LLM: 5 uses → 0% success
-- RL learning signal: +1.53
+- Total tests: 466
+- Heuristic: 457 uses → 0% success
+- LLM: 9 uses → 0% success
+- RL learning signal: +1.24
 
 **Why Risk Changed:**
 - Balanced execution
@@ -38,10 +39,10 @@ Generated: 2026-04-01T02:42:27.730397
 **Change:** +0.0000
 
 **What Happened During Execution:**
-- Total tests: 40
-- Heuristic: 37 uses → 0% success
+- Total tests: 96
+- Heuristic: 93 uses → 0% success
 - LLM: 3 uses → 0% success
-- RL learning signal: +1.48
+- RL learning signal: +1.38
 
 **Why Risk Changed:**
 - Balanced execution
@@ -54,10 +55,26 @@ Generated: 2026-04-01T02:42:27.730397
 **Change:** +0.0000
 
 **What Happened During Execution:**
-- Total tests: 199
-- Heuristic: 191 uses → 0% success
-- LLM: 8 uses → 0% success
-- RL learning signal: +1.72
+- Total tests: 450
+- Heuristic: 440 uses → 0% success
+- LLM: 10 uses → 0% success
+- RL learning signal: +1.66
+
+**Why Risk Changed:**
+- Balanced execution
+
+
+### string_boundaries
+
+**Before:** Risk = 0.600
+**After:** Risk = 0.600
+**Change:** +0.0000
+
+**What Happened During Execution:**
+- Total tests: 58
+- Heuristic: 57 uses → 0% success
+- LLM: 1 uses → 0% success
+- RL learning signal: +1.83
 
 **Why Risk Changed:**
 - Balanced execution
@@ -70,10 +87,10 @@ Generated: 2026-04-01T02:42:27.730397
 **Change:** +0.0000
 
 **What Happened During Execution:**
-- Total tests: 82
-- Heuristic: 76 uses → 0% success
-- LLM: 6 uses → 0% success
-- RL learning signal: +1.30
+- Total tests: 329
+- Heuristic: 320 uses → 0% success
+- LLM: 9 uses → 0% success
+- RL learning signal: +1.48
 
 **Why Risk Changed:**
 - Balanced execution

@@ -585,6 +585,12 @@ class ECPGenerator:
         field_label = extract_field_label(input_field, form_context)
         
         test_cases = []
+
+        # Phone/tel fields need digit-only values for valid test cases
+        name_lower = (field_name or '').lower()
+        is_phone = any(kw in name_lower for kw in ('phone', 'tel', 'mobile', 'fax', 'cell'))
+        valid_value = '5551234567' if is_phone else 'ValidInput123'
+        unicode_valid = '1234567890123' if is_phone else None  # will be set below
         
         # Valid: Normal text input
         test_cases.append({
@@ -599,11 +605,11 @@ class ECPGenerator:
             'field_name': field_name,
             'field_type': field_type,
             'equivalence_class': 'valid_text',
-            'test_value': 'ValidInput123',
+            'test_value': valid_value,
             'expected_result': 'success',
             'description': f'Valid text input for {field_label}',
             'test_data': {
-                field_name: 'ValidInput123'
+                field_name: valid_value
             }
         })
         
@@ -680,7 +686,11 @@ class ECPGenerator:
         _unicode_base = '测试数据🎉!'   # 6 distinct unicode/emoji chars
         _minlength = int(input_field.get('minlength') or 0)
         _needed = max(_minlength + 4, 10)
-        unicode_val = (_unicode_base * ((_needed // len(_unicode_base)) + 1))[:_needed]
+        if is_phone:
+            # Phone fields need digits — unicode chars would fail format validation
+            unicode_val = unicode_valid
+        else:
+            unicode_val = (_unicode_base * ((_needed // len(_unicode_base)) + 1))[:_needed]
         test_cases.append({
             'id': f"ecp_text_{form_context['id']}_{field_unique_id}_unicode",
             'type': 'ECP',

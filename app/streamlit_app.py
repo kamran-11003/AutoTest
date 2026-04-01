@@ -1995,8 +1995,14 @@ def display_execute_tests(results: dict):
     html_reports = sorted(results_dir.glob("report_*.html"), reverse=True) if results_dir.exists() else []
 
     # If a crawl is selected, prefer reports matching that crawl_id
+    # Extract the site_id prefix from the crawl file stem, handling both formats:
+    #   Old: "site1_contact_20260331_012545"  → site_id = "site1_contact"
+    #   New: "site6_ecommerce_verify_20260401_105848" → site_id = "site6_ecommerce"
     if crawl_id and html_reports:
-        matching = [r for r in html_reports if crawl_id in r.stem]
+        import re as _re
+        _m = _re.match(r'^(.+?)(?:_verify)?_\d{8}_\d{6}$', crawl_id)
+        site_prefix = _m.group(1) if _m else crawl_id
+        matching = [r for r in html_reports if site_prefix in r.stem]
         if matching:
             html_reports = matching
             st.caption(f"📂 Showing {len(matching)} report(s) linked to crawl **{crawl_id}**")
@@ -2085,11 +2091,14 @@ def display_pipeline_monitor():
         sites_done = {}
 
     SITE_NAMES = {
-        "site1_contact":  "Contact Form",
-        "site2_booking":  "Hotel Booking",
-        "site3_register": "User Registration",
-        "site4_search":   "Product Search",
-        "site5_feedback": "Feedback Survey",
+        "site1_contact":        "Contact Form",
+        "site2_booking":        "Hotel Booking",
+        "site3_register":       "User Registration",
+        "site4_search":         "Product Search",
+        "site5_feedback":       "Feedback Survey",
+        "site6_ecommerce":      "E-Commerce (Next.js SSR)",
+        "site7_spa_taskboard":  "Task Board (React SPA)",
+        "site8_medical":        "Medical Clinic (Express+EJS)",
     }
     ALL_SITES = list(SITE_NAMES.keys())
 

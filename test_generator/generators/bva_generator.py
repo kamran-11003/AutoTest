@@ -356,6 +356,10 @@ class BVAGenerator:
                 return self._email_of_length(n)
             if field_type == 'password':
                 return self._password_of_length(n)
+            # Phone/tel fields require digits, not alphabetic chars
+            name_lower = field_name.lower()
+            if any(kw in name_lower for kw in ('phone', 'tel', 'mobile', 'fax', 'cell')):
+                return '1' * n if n >= 0 else ''
             return 'a' * n if n >= 0 else ''
 
         test_cases = []

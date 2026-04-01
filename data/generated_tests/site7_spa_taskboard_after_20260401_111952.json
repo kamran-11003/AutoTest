@@ -1,0 +1,3350 @@
+{
+  "stage": "after_refinement",
+  "generated_at": "2026-04-01T11:22:18.065462",
+  "crawl_url": "http://localhost:3007",
+  "site_id": "site7_spa_taskboard",
+  "refinement_status": "refined",
+  "test_results": {
+    "metadata": {
+      "source_file": "C:\\Users\\Kamra\\Desktop\\fyp crawler (5)\\fyp crawler\\data\\crawled_graphs\\site7_spa_taskboard_verify_20260401_110251.json",
+      "total_nodes": 3,
+      "total_edges": 2,
+      "total_forms": 3
+    },
+    "test_cases": {
+      "bva": [
+        {
+          "id": "bva_length_55bcc9ee_username_0",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3007",
+          "form_id": "55bcc9ee",
+          "field_name": "username",
+          "field_type": "text",
+          "test_value": "aa",
+          "expected_result": "error",
+          "description": "Verify username validation fails when length is 2 (below minimum of 3)",
+          "test_data": {
+            "signupEmail": "tester@example.com",
+            "signupPassword": "Test@12345",
+            "role": "developer",
+            "username": "aa"
+          },
+          "constraints": {
+            "minlength": 3,
+            "maxlength": 20
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:20:03.471137"
+        },
+        {
+          "id": "bva_length_55bcc9ee_username_1",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3007",
+          "form_id": "55bcc9ee",
+          "field_name": "username",
+          "field_type": "text",
+          "test_value": "aaa",
+          "expected_result": "success",
+          "description": "Verify username validation passes when length is 3 (at minimum boundary)",
+          "test_data": {
+            "signupEmail": "tester@example.com",
+            "signupPassword": "Test@12345",
+            "role": "developer",
+            "username": "aaa"
+          },
+          "constraints": {
+            "minlength": 3,
+            "maxlength": 20
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:20:03.472129"
+        },
+        {
+          "id": "bva_length_55bcc9ee_username_2",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3007",
+          "form_id": "55bcc9ee",
+          "field_name": "username",
+          "field_type": "text",
+          "test_value": "aaaa",
+          "expected_result": "success",
+          "description": "Verify username validation passes when length is 4 (above minimum boundary)",
+          "test_data": {
+            "signupEmail": "tester@example.com",
+            "signupPassword": "Test@12345",
+            "role": "developer",
+            "username": "aaaa"
+          },
+          "constraints": {
+            "minlength": 3,
+            "maxlength": 20
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:20:03.472129"
+        },
+        {
+          "id": "bva_length_55bcc9ee_username_3",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3007",
+          "form_id": "55bcc9ee",
+          "field_name": "username",
+          "field_type": "text",
+          "test_value": "aaaaaaaaaaaaaaaaaaa",
+          "expected_result": "success",
+          "description": "Verify username validation passes when length is 19 (below maximum boundary)",
+          "test_data": {
+            "signupEmail": "tester@example.com",
+            "signupPassword": "Test@12345",
+            "role": "developer",
+            "username": "aaaaaaaaaaaaaaaaaaa"
+          },
+          "constraints": {
+            "minlength": 3,
+            "maxlength": 20
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:20:03.472129"
+        },
+        {
+          "id": "bva_length_55bcc9ee_username_4",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3007",
+          "form_id": "55bcc9ee",
+          "field_name": "username",
+          "field_type": "text",
+          "test_value": "aaaaaaaaaaaaaaaaaaaa",
+          "expected_result": "success",
+          "description": "Verify username validation passes when length is 20 (at maximum boundary)",
+          "test_data": {
+            "signupEmail": "tester@example.com",
+            "signupPassword": "Test@12345",
+            "role": "developer",
+            "username": "aaaaaaaaaaaaaaaaaaaa"
+          },
+          "constraints": {
+            "minlength": 3,
+            "maxlength": 20
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:20:03.473128"
+        },
+        {
+          "id": "bva_length_55bcc9ee_username_5",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3007",
+          "form_id": "55bcc9ee",
+          "field_name": "username",
+          "field_type": "text",
+          "test_value": "aaaaaaaaaaaaaaaaaaaaa",
+          "expected_result": "error",
+          "description": "Verify username validation fails when length is 21 (above maximum boundary)",
+          "test_data": {
+            "signupEmail": "tester@example.com",
+            "signupPassword": "Test@12345",
+            "role": "developer",
+            "username": "aaaaaaaaaaaaaaaaaaaaa"
+          },
+          "constraints": {
+            "minlength": 3,
+            "maxlength": 20
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:20:03.473128"
+        },
+        {
+          "id": "bva_length_55bcc9ee_signupEmail_0",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3007",
+          "form_id": "55bcc9ee",
+          "field_name": "signupEmail",
+          "field_type": "email",
+          "test_value": "aaaa",
+          "expected_result": "error",
+          "description": "Verify email validation fails when length is 4 (below minimum of 5)",
+          "test_data": {
+            "username": "testuser",
+            "signupPassword": "Test@12345",
+            "role": "developer",
+            "signupEmail": "aaaa"
+          },
+          "constraints": {
+            "minlength": 5,
+            "maxlength": 254
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:20:03.473128"
+        },
+        {
+          "id": "bva_length_55bcc9ee_signupEmail_1",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3007",
+          "form_id": "55bcc9ee",
+          "field_name": "signupEmail",
+          "field_type": "email",
+          "test_value": "a@b.c",
+          "expected_result": "success",
+          "description": "Verify email validation passes when length is 5 (at minimum boundary)",
+          "test_data": {
+            "username": "testuser",
+            "signupPassword": "Test@12345",
+            "role": "developer",
+            "signupEmail": "a@b.c"
+          },
+          "constraints": {
+            "minlength": 5,
+            "maxlength": 254
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:20:03.473128"
+        },
+        {
+          "id": "bva_length_55bcc9ee_signupEmail_2",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3007",
+          "form_id": "55bcc9ee",
+          "field_name": "signupEmail",
+          "field_type": "email",
+          "test_value": "aa@b.c",
+          "expected_result": "success",
+          "description": "Verify email validation passes when length is 6 (above minimum boundary)",
+          "test_data": {
+            "username": "testuser",
+            "signupPassword": "Test@12345",
+            "role": "developer",
+            "signupEmail": "aa@b.c"
+          },
+          "constraints": {
+            "minlength": 5,
+            "maxlength": 254
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:20:03.473128"
+        },
+        {
+          "id": "bva_length_55bcc9ee_signupEmail_3",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3007",
+          "form_id": "55bcc9ee",
+          "field_name": "signupEmail",
+          "field_type": "email",
+          "test_value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.c",
+          "expected_result": "success",
+          "description": "Verify email validation passes when length is 253 (below maximum boundary)",
+          "test_data": {
+            "username": "testuser",
+            "signupPassword": "Test@12345",
+            "role": "developer",
+            "signupEmail": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.c"
+          },
+          "constraints": {
+            "minlength": 5,
+            "maxlength": 254
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:20:03.474127"
+        },
+        {
+          "id": "bva_length_55bcc9ee_signupEmail_4",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3007",
+          "form_id": "55bcc9ee",
+          "field_name": "signupEmail",
+          "field_type": "email",
+          "test_value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.com",
+          "expected_result": "error",
+          "description": "Verify email validation fails when length is 255 (above maximum boundary)",
+          "test_data": {
+            "username": "testuser",
+            "signupPassword": "Test@12345",
+            "role": "developer",
+            "signupEmail": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.com"
+          },
+          "constraints": {
+            "minlength": 5,
+            "maxlength": 254
+          },
+          "action": "added",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:20:03.474127"
+        },
+        {
+          "id": "bva_length_55bcc9ee_signupEmail_4",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3007",
+          "form_id": "55bcc9ee",
+          "field_name": "signupEmail",
+          "field_type": "email",
+          "test_value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.c",
+          "expected_result": "success",
+          "description": "Verify Email field accepts valid input at maximum boundary of 254 characters",
+          "test_data": {
+            "username": "testuser",
+            "signupPassword": "Test@12345",
+            "role": "developer",
+            "signupEmail": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.c"
+          },
+          "constraints": {
+            "minlength": 5,
+            "maxlength": 254
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:20:15.329653"
+        },
+        {
+          "id": "bva_length_55bcc9ee_signupEmail_5",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3007",
+          "form_id": "55bcc9ee",
+          "field_name": "signupEmail",
+          "field_type": "email",
+          "test_value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.c",
+          "expected_result": "error",
+          "description": "Verify Email field rejects input exceeding maximum boundary of 254 characters (255 chars)",
+          "test_data": {
+            "username": "testuser",
+            "signupPassword": "Test@12345",
+            "role": "developer",
+            "signupEmail": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.c"
+          },
+          "constraints": {
+            "minlength": 5,
+            "maxlength": 254
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:20:15.330593"
+        },
+        {
+          "id": "bva_length_55bcc9ee_signupPassword_0",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3007",
+          "form_id": "55bcc9ee",
+          "field_name": "signupPassword",
+          "field_type": "password",
+          "test_value": "Aa1!aaa",
+          "expected_result": "error",
+          "description": "Verify Password field rejects input below minimum boundary of 8 characters (7 chars)",
+          "test_data": {
+            "username": "testuser",
+            "signupEmail": "tester@example.com",
+            "role": "developer",
+            "signupPassword": "Aa1!aaa"
+          },
+          "constraints": {
+            "minlength": 8,
+            "maxlength": 255
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:20:15.330593"
+        },
+        {
+          "id": "bva_length_55bcc9ee_signupPassword_1",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3007",
+          "form_id": "55bcc9ee",
+          "field_name": "signupPassword",
+          "field_type": "password",
+          "test_value": "Aa1!aaaa",
+          "expected_result": "success",
+          "description": "Verify Password field accepts input at minimum boundary of 8 characters",
+          "test_data": {
+            "username": "testuser",
+            "signupEmail": "tester@example.com",
+            "role": "developer",
+            "signupPassword": "Aa1!aaaa"
+          },
+          "constraints": {
+            "minlength": 8,
+            "maxlength": 255
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:20:15.331592"
+        },
+        {
+          "id": "bva_length_55bcc9ee_signupPassword_2",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3007",
+          "form_id": "55bcc9ee",
+          "field_name": "signupPassword",
+          "field_type": "password",
+          "test_value": "Aa1!aaaaa",
+          "expected_result": "success",
+          "description": "Verify Password field accepts input just above minimum boundary (9 characters)",
+          "test_data": {
+            "username": "testuser",
+            "signupEmail": "tester@example.com",
+            "role": "developer",
+            "signupPassword": "Aa1!aaaaa"
+          },
+          "constraints": {
+            "minlength": 8,
+            "maxlength": 255
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:20:15.331592"
+        },
+        {
+          "id": "bva_length_55bcc9ee_signupPassword_3",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3007",
+          "form_id": "55bcc9ee",
+          "field_name": "signupPassword",
+          "field_type": "password",
+          "test_value": "Aa1!aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expected_result": "success",
+          "description": "Verify Password field accepts input just below maximum boundary (254 characters)",
+          "test_data": {
+            "username": "testuser",
+            "signupEmail": "tester@example.com",
+            "role": "developer",
+            "signupPassword": "Aa1!aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "constraints": {
+            "minlength": 8,
+            "maxlength": 255
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:20:15.331592"
+        },
+        {
+          "id": "bva_length_55bcc9ee_signupPassword_4",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3007",
+          "form_id": "55bcc9ee",
+          "field_name": "signupPassword",
+          "field_type": "password",
+          "test_value": "Aa1!aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expected_result": "success",
+          "description": "Verify Password field accepts input at maximum boundary of 255 characters",
+          "test_data": {
+            "username": "testuser",
+            "signupEmail": "tester@example.com",
+            "role": "developer",
+            "signupPassword": "Aa1!aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "constraints": {
+            "minlength": 8,
+            "maxlength": 255
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:20:15.331592"
+        },
+        {
+          "id": "bva_length_55bcc9ee_signupPassword_5",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3007",
+          "form_id": "55bcc9ee",
+          "field_name": "signupPassword",
+          "field_type": "password",
+          "test_value": "Aa1!aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expected_result": "error",
+          "description": "Verify Password field rejects input exceeding maximum boundary of 255 characters (256 chars)",
+          "test_data": {
+            "username": "testuser",
+            "signupEmail": "tester@example.com",
+            "role": "developer",
+            "signupPassword": "Aa1!aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "constraints": {
+            "minlength": 8,
+            "maxlength": 255
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:20:15.332591"
+        },
+        {
+          "id": "bva_length_c918c1a1_displayName_0",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3007/settings",
+          "form_id": "c918c1a1",
+          "field_name": "displayName",
+          "field_type": "text",
+          "test_value": "a",
+          "expected_result": "error",
+          "description": "Verify Display Name field rejects input below minimum boundary of 2 characters (1 char)",
+          "test_data": {
+            "bio": "This is a test submission.",
+            "timezone": "UTC-8",
+            "emailNotify": true,
+            "displayName": "a"
+          },
+          "constraints": {
+            "minlength": 2,
+            "maxlength": 50
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:20:15.332591"
+        },
+        {
+          "id": "bva_length_c918c1a1_displayName_1",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3007/settings",
+          "form_id": "c918c1a1",
+          "field_name": "displayName",
+          "field_type": "text",
+          "test_value": "aa",
+          "expected_result": "success",
+          "description": "Verify Display Name field accepts input at minimum boundary of 2 characters",
+          "test_data": {
+            "bio": "This is a test submission.",
+            "timezone": "UTC-8",
+            "emailNotify": true,
+            "displayName": "aa"
+          },
+          "constraints": {
+            "minlength": 2,
+            "maxlength": 50
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:20:15.332591"
+        },
+        {
+          "id": "bva_length_c918c1a1_displayName_1",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3007/settings",
+          "form_id": "c918c1a1",
+          "field_name": "displayName",
+          "field_type": "text",
+          "test_value": "aa",
+          "expected_result": "success",
+          "description": "At minimum length (2 chars)",
+          "test_data": {
+            "bio": "This is a test submission.",
+            "timezone": "UTC-8",
+            "emailNotify": true,
+            "displayName": "aa"
+          },
+          "constraints": {
+            "minlength": 2,
+            "maxlength": 50
+          },
+          "action": "added",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:20:26.567155"
+        },
+        {
+          "id": "bva_length_c918c1a1_displayName_2",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3007/settings",
+          "form_id": "c918c1a1",
+          "field_name": "displayName",
+          "field_type": "text",
+          "test_value": "aaa",
+          "expected_result": "success",
+          "description": "Just above minimum length (3 chars)",
+          "test_data": {
+            "bio": "This is a test submission.",
+            "timezone": "UTC-8",
+            "emailNotify": true,
+            "displayName": "aaa"
+          },
+          "constraints": {
+            "minlength": 2,
+            "maxlength": 50
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:20:26.568160"
+        },
+        {
+          "id": "bva_length_c918c1a1_displayName_3",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3007/settings",
+          "form_id": "c918c1a1",
+          "field_name": "displayName",
+          "field_type": "text",
+          "test_value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expected_result": "success",
+          "description": "Just below maximum length (49 chars)",
+          "test_data": {
+            "bio": "This is a test submission.",
+            "timezone": "UTC-8",
+            "emailNotify": true,
+            "displayName": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "constraints": {
+            "minlength": 2,
+            "maxlength": 50
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:20:26.568160"
+        },
+        {
+          "id": "bva_length_c918c1a1_displayName_4",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3007/settings",
+          "form_id": "c918c1a1",
+          "field_name": "displayName",
+          "field_type": "text",
+          "test_value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expected_result": "success",
+          "description": "At maximum length (50 chars)",
+          "test_data": {
+            "bio": "This is a test submission.",
+            "timezone": "UTC-8",
+            "emailNotify": true,
+            "displayName": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "constraints": {
+            "minlength": 2,
+            "maxlength": 50
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:20:26.568160"
+        },
+        {
+          "id": "bva_length_c918c1a1_displayName_5",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3007/settings",
+          "form_id": "c918c1a1",
+          "field_name": "displayName",
+          "field_type": "text",
+          "test_value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expected_result": "error",
+          "description": "Above maximum length (51 chars)",
+          "test_data": {
+            "bio": "This is a test submission.",
+            "timezone": "UTC-8",
+            "emailNotify": true,
+            "displayName": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "constraints": {
+            "minlength": 2,
+            "maxlength": 50
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:20:26.569139"
+        },
+        {
+          "id": "bva_length_c918c1a1_bio_0",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3007/settings",
+          "form_id": "c918c1a1",
+          "field_name": "bio",
+          "field_type": "textarea",
+          "test_value": "a",
+          "expected_result": "success",
+          "description": "Just above minimum length (1 char)",
+          "test_data": {
+            "displayName": "John Doe",
+            "timezone": "UTC-8",
+            "emailNotify": true,
+            "bio": "a"
+          },
+          "constraints": {
+            "minlength": 0,
+            "maxlength": 200
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:20:26.569139"
+        },
+        {
+          "id": "bva_length_c918c1a1_bio_1",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3007/settings",
+          "form_id": "c918c1a1",
+          "field_name": "bio",
+          "field_type": "textarea",
+          "test_value": "",
+          "expected_result": "success",
+          "description": "At minimum length (0 chars)",
+          "test_data": {
+            "displayName": "John Doe",
+            "timezone": "UTC-8",
+            "emailNotify": true,
+            "bio": ""
+          },
+          "constraints": {
+            "minlength": 0,
+            "maxlength": 200
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:20:26.570136",
+          "ai_notes": "Kept original due to incomplete refinement"
+        },
+        {
+          "id": "bva_length_c918c1a1_bio_3",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3007/settings",
+          "form_id": "c918c1a1",
+          "field_name": "bio",
+          "field_type": "textarea",
+          "test_value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expected_result": "success",
+          "description": "Just below maximum length (199 chars)",
+          "test_data": {
+            "displayName": "John Doe",
+            "timezone": "UTC-8",
+            "emailNotify": true,
+            "bio": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "constraints": {
+            "minlength": 0,
+            "maxlength": 200
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:20:26.570136"
+        },
+        {
+          "id": "bva_length_c918c1a1_bio_4",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3007/settings",
+          "form_id": "c918c1a1",
+          "field_name": "bio",
+          "field_type": "textarea",
+          "test_value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expected_result": "success",
+          "description": "At maximum length (200 chars)",
+          "test_data": {
+            "displayName": "John Doe",
+            "timezone": "UTC-8",
+            "emailNotify": true,
+            "bio": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "constraints": {
+            "minlength": 0,
+            "maxlength": 200
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:20:26.570136"
+        },
+        {
+          "id": "bva_length_c918c1a1_bio_5",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3007/settings",
+          "form_id": "c918c1a1",
+          "field_name": "bio",
+          "field_type": "textarea",
+          "test_value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expected_result": "error",
+          "description": "Above maximum length (201 chars)",
+          "test_data": {
+            "displayName": "John Doe",
+            "timezone": "UTC-8",
+            "emailNotify": true,
+            "bio": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "constraints": {
+            "minlength": 0,
+            "maxlength": 200
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:20:26.570136"
+        },
+        {
+          "id": "bva_length_c918c1a1_emailNotify_0",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3007/settings",
+          "form_id": "c918c1a1",
+          "field_name": "emailNotify",
+          "field_type": "checkbox",
+          "field_label": "Receive email notifications for task updates",
+          "test_value": "aaaa",
+          "expected_result": "error",
+          "description": "Verify validation error when Receive email notifications for task updates length is 4 (below minimum of 5)",
+          "test_data": {
+            "displayName": "John Doe",
+            "bio": "This is a test submission.",
+            "timezone": "UTC-8",
+            "emailNotify": "aaaa"
+          },
+          "constraints": {
+            "minlength": 5,
+            "maxlength": 254
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:20:39.057703"
+        },
+        {
+          "id": "bva_length_c918c1a1_emailNotify_1",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3007/settings",
+          "form_id": "c918c1a1",
+          "field_name": "emailNotify",
+          "field_type": "checkbox",
+          "field_label": "Receive email notifications for task updates",
+          "test_value": "aaaaa",
+          "expected_result": "success",
+          "description": "Verify successful submission when Receive email notifications for task updates length is 5 (at minimum boundary)",
+          "test_data": {
+            "displayName": "John Doe",
+            "bio": "This is a test submission.",
+            "timezone": "UTC-8",
+            "emailNotify": "aaaaa"
+          },
+          "constraints": {
+            "minlength": 5,
+            "maxlength": 254
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:20:39.058702"
+        },
+        {
+          "id": "bva_length_c918c1a1_emailNotify_2",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3007/settings",
+          "form_id": "c918c1a1",
+          "field_name": "emailNotify",
+          "field_type": "checkbox",
+          "field_label": "Receive email notifications for task updates",
+          "test_value": "aaaaaa",
+          "expected_result": "success",
+          "description": "Verify successful submission when Receive email notifications for task updates length is 6 (above minimum boundary)",
+          "test_data": {
+            "displayName": "John Doe",
+            "bio": "This is a test submission.",
+            "timezone": "UTC-8",
+            "emailNotify": "aaaaaa"
+          },
+          "constraints": {
+            "minlength": 5,
+            "maxlength": 254
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:20:39.058702"
+        },
+        {
+          "id": "bva_length_c918c1a1_emailNotify_3",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3007/settings",
+          "form_id": "c918c1a1",
+          "field_name": "emailNotify",
+          "field_type": "checkbox",
+          "field_label": "Receive email notifications for task updates",
+          "test_value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expected_result": "success",
+          "description": "Verify successful submission when Receive email notifications for task updates length is 253 (below maximum boundary)",
+          "test_data": {
+            "displayName": "John Doe",
+            "bio": "This is a test submission.",
+            "timezone": "UTC-8",
+            "emailNotify": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "constraints": {
+            "minlength": 5,
+            "maxlength": 254
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:20:39.059702"
+        },
+        {
+          "id": "bva_length_c918c1a1_emailNotify_4",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3007/settings",
+          "form_id": "c918c1a1",
+          "field_name": "emailNotify",
+          "field_type": "checkbox",
+          "field_label": "Receive email notifications for task updates",
+          "test_value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expected_result": "success",
+          "description": "Verify successful submission when Receive email notifications for task updates length is 254 (at maximum boundary)",
+          "test_data": {
+            "displayName": "John Doe",
+            "bio": "This is a test submission.",
+            "timezone": "UTC-8",
+            "emailNotify": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "constraints": {
+            "minlength": 5,
+            "maxlength": 254
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:20:39.059702"
+        },
+        {
+          "id": "bva_length_c918c1a1_emailNotify_5",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3007/settings",
+          "form_id": "c918c1a1",
+          "field_name": "emailNotify",
+          "field_type": "checkbox",
+          "field_label": "Receive email notifications for task updates",
+          "test_value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expected_result": "error",
+          "description": "Verify validation error when Receive email notifications for task updates length is 255 (above maximum boundary)",
+          "test_data": {
+            "displayName": "John Doe",
+            "bio": "This is a test submission.",
+            "timezone": "UTC-8",
+            "emailNotify": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "constraints": {
+            "minlength": 5,
+            "maxlength": 254
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:20:39.059702"
+        },
+        {
+          "id": "bva_length_794e3b70_taskTitle_0",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3007/tasks",
+          "form_id": "794e3b70",
+          "field_name": "taskTitle",
+          "field_type": "text",
+          "field_label": "Task Title",
+          "test_value": "aa",
+          "expected_result": "error",
+          "description": "Verify validation error when Task Title length is 2 (below minimum of 3)",
+          "test_data": {
+            "taskDesc": "This is a test submission.",
+            "priority": "low",
+            "category": "frontend",
+            "dueDate": "2026-04-02",
+            "taskTitle": "aa"
+          },
+          "constraints": {
+            "minlength": 3,
+            "maxlength": 100
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:20:39.059702"
+        },
+        {
+          "id": "bva_length_794e3b70_taskTitle_1",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3007/tasks",
+          "form_id": "794e3b70",
+          "field_name": "taskTitle",
+          "field_type": "text",
+          "field_label": "Task Title",
+          "test_value": "aaa",
+          "expected_result": "success",
+          "description": "Verify successful submission when Task Title length is 3 (at minimum boundary)",
+          "test_data": {
+            "taskDesc": "This is a test submission.",
+            "priority": "low",
+            "category": "frontend",
+            "dueDate": "2026-04-02",
+            "taskTitle": "aaa"
+          },
+          "constraints": {
+            "minlength": 3,
+            "maxlength": 100
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:20:39.059702"
+        },
+        {
+          "id": "bva_length_794e3b70_taskTitle_2",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3007/tasks",
+          "form_id": "794e3b70",
+          "field_name": "taskTitle",
+          "field_type": "text",
+          "field_label": "Task Title",
+          "test_value": "aaaa",
+          "expected_result": "success",
+          "description": "Verify successful submission when Task Title length is 4 (above minimum boundary)",
+          "test_data": {
+            "taskDesc": "This is a test submission.",
+            "priority": "low",
+            "category": "frontend",
+            "dueDate": "2026-04-02",
+            "taskTitle": "aaaa"
+          },
+          "constraints": {
+            "minlength": 3,
+            "maxlength": 100
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:20:39.060702"
+        },
+        {
+          "id": "bva_length_794e3b70_taskTitle_3",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3007/tasks",
+          "form_id": "794e3b70",
+          "field_name": "taskTitle",
+          "field_type": "text",
+          "field_label": "Task Title",
+          "test_value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expected_result": "success",
+          "description": "Verify successful submission when Task Title length is 99 (below maximum boundary)",
+          "test_data": {
+            "taskDesc": "This is a test submission.",
+            "priority": "low",
+            "category": "frontend",
+            "dueDate": "2026-04-02",
+            "taskTitle": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "constraints": {
+            "minlength": 3,
+            "maxlength": 100
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:20:39.060702"
+        },
+        {
+          "id": "bva_length_794e3b70_taskTitle_4",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3007/tasks",
+          "form_id": "794e3b70",
+          "field_name": "taskTitle",
+          "field_type": "text",
+          "field_label": "Task Title",
+          "test_value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expected_result": "success",
+          "description": "Verify successful submission when Task Title length is 100 (at maximum boundary)",
+          "test_data": {
+            "taskDesc": "This is a test submission.",
+            "priority": "low",
+            "category": "frontend",
+            "dueDate": "2026-04-02",
+            "taskTitle": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "constraints": {
+            "minlength": 3,
+            "maxlength": 100
+          },
+          "action": "added",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:20:39.060702"
+        },
+        {
+          "id": "bva_length_794e3b70_taskTitle_5",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3007/tasks",
+          "form_id": "794e3b70",
+          "field_name": "taskTitle",
+          "field_type": "text",
+          "field_label": "Task Title",
+          "test_value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expected_result": "error",
+          "description": "Verify validation error when Task Title length is 101 (above maximum boundary)",
+          "test_data": {
+            "taskDesc": "This is a test submission.",
+            "priority": "low",
+            "category": "frontend",
+            "dueDate": "2026-04-02",
+            "taskTitle": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "constraints": {
+            "minlength": 3,
+            "maxlength": 100
+          },
+          "action": "added",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:20:39.061701"
+        },
+        {
+          "id": "bva_length_794e3b70_taskTitle_4",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3007/tasks",
+          "form_id": "794e3b70",
+          "field_name": "taskTitle",
+          "field_type": "text",
+          "test_value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expected_result": "success",
+          "description": "Task Title at maximum boundary (100 characters)",
+          "test_data": {
+            "taskDesc": "This is a test submission.",
+            "priority": "low",
+            "category": "frontend",
+            "dueDate": "2026-04-02",
+            "taskTitle": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "constraints": {
+            "minlength": 3,
+            "maxlength": 100
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:20:46.011727"
+        },
+        {
+          "id": "bva_length_794e3b70_taskTitle_5",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3007/tasks",
+          "form_id": "794e3b70",
+          "field_name": "taskTitle",
+          "field_type": "text",
+          "test_value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expected_result": "error",
+          "description": "Task Title above maximum boundary (101 characters)",
+          "test_data": {
+            "taskDesc": "This is a test submission.",
+            "priority": "low",
+            "category": "frontend",
+            "dueDate": "2026-04-02",
+            "taskTitle": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "constraints": {
+            "minlength": 3,
+            "maxlength": 100
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:20:46.012791"
+        },
+        {
+          "id": "bva_length_794e3b70_taskDesc_0",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3007/tasks",
+          "form_id": "794e3b70",
+          "field_name": "taskDesc",
+          "field_type": "textarea",
+          "test_value": "aaaaaaaaa",
+          "expected_result": "error",
+          "description": "Description below minimum boundary (9 characters)",
+          "test_data": {
+            "taskTitle": "Test Subject",
+            "priority": "low",
+            "category": "frontend",
+            "dueDate": "2026-04-02",
+            "taskDesc": "aaaaaaaaa"
+          },
+          "constraints": {
+            "minlength": 10,
+            "maxlength": 500
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:20:46.012791"
+        },
+        {
+          "id": "bva_length_794e3b70_taskDesc_1",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3007/tasks",
+          "form_id": "794e3b70",
+          "field_name": "taskDesc",
+          "field_type": "textarea",
+          "test_value": "aaaaaaaaaa",
+          "expected_result": "success",
+          "description": "Description at minimum boundary (10 characters)",
+          "test_data": {
+            "taskTitle": "Test Subject",
+            "priority": "low",
+            "category": "frontend",
+            "dueDate": "2026-04-02",
+            "taskDesc": "aaaaaaaaaa"
+          },
+          "constraints": {
+            "minlength": 10,
+            "maxlength": 500
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:20:46.012791"
+        },
+        {
+          "id": "bva_length_794e3b70_taskDesc_2",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3007/tasks",
+          "form_id": "794e3b70",
+          "field_name": "taskDesc",
+          "field_type": "textarea",
+          "test_value": "aaaaaaaaaaa",
+          "expected_result": "success",
+          "description": "Description just above minimum boundary (11 characters)",
+          "test_data": {
+            "taskTitle": "Test Subject",
+            "priority": "low",
+            "category": "frontend",
+            "dueDate": "2026-04-02",
+            "taskDesc": "aaaaaaaaaaa"
+          },
+          "constraints": {
+            "minlength": 10,
+            "maxlength": 500
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:20:46.013730"
+        },
+        {
+          "id": "bva_length_794e3b70_taskDesc_3",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3007/tasks",
+          "form_id": "794e3b70",
+          "field_name": "taskDesc",
+          "field_type": "textarea",
+          "test_value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expected_result": "success",
+          "description": "Description just below maximum boundary (499 characters)",
+          "test_data": {
+            "taskTitle": "Test Subject",
+            "priority": "low",
+            "category": "frontend",
+            "dueDate": "2026-04-02",
+            "taskDesc": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "constraints": {
+            "minlength": 10,
+            "maxlength": 500
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:20:46.013730"
+        },
+        {
+          "id": "bva_length_794e3b70_taskDesc_4",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3007/tasks",
+          "form_id": "794e3b70",
+          "field_name": "taskDesc",
+          "field_type": "textarea",
+          "test_value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expected_result": "success",
+          "description": "Description at maximum boundary (500 characters)",
+          "test_data": {
+            "taskTitle": "Test Subject",
+            "priority": "low",
+            "category": "frontend",
+            "dueDate": "2026-04-02",
+            "taskDesc": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "constraints": {
+            "minlength": 10,
+            "maxlength": 500
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:20:46.014731"
+        },
+        {
+          "id": "bva_length_794e3b70_taskDesc_5",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3007/tasks",
+          "form_id": "794e3b70",
+          "field_name": "taskDesc",
+          "field_type": "textarea",
+          "test_value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expected_result": "error",
+          "description": "Description above maximum boundary (501 characters)",
+          "test_data": {
+            "taskTitle": "Test Subject",
+            "priority": "low",
+            "category": "frontend",
+            "dueDate": "2026-04-02",
+            "taskDesc": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "constraints": {
+            "minlength": 10,
+            "maxlength": 500
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:20:46.014731"
+        },
+        {
+          "id": "bva_length_794e3b70_taskTitle_min",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3007/tasks",
+          "form_id": "794e3b70",
+          "field_name": "taskTitle",
+          "field_type": "text",
+          "test_value": "aaa",
+          "expected_result": "success",
+          "description": "Task Title at minimum boundary (3 characters)",
+          "test_data": {
+            "taskDesc": "This is a test submission.",
+            "priority": "low",
+            "category": "frontend",
+            "dueDate": "2026-04-02",
+            "taskTitle": "aaa"
+          },
+          "constraints": {
+            "minlength": 3,
+            "maxlength": 100
+          },
+          "action": "added",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:20:46.014731"
+        }
+      ],
+      "ecp": [
+        {
+          "id": "ecp_text_55bcc9ee_username_valid",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3007",
+          "form_id": "55bcc9ee",
+          "form_action": "http://localhost:3007/",
+          "page_title": "TaskBoard — SPA Task Manager",
+          "field_label": "Username",
+          "field_name": "username",
+          "field_type": "text",
+          "equivalence_class": "valid_text",
+          "test_value": "ValidInput123",
+          "expected_result": "success",
+          "description": "Verify that a standard alphanumeric username is accepted",
+          "test_data": {
+            "signupEmail": "tester@example.com",
+            "signupPassword": "Test@12345",
+            "role": "developer",
+            "username": "ValidInput123"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:20:55.889007"
+        },
+        {
+          "id": "ecp_text_55bcc9ee_username_empty",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3007",
+          "form_id": "55bcc9ee",
+          "form_action": "http://localhost:3007/",
+          "page_title": "TaskBoard — SPA Task Manager",
+          "field_label": "Username",
+          "field_name": "username",
+          "field_type": "text",
+          "equivalence_class": "empty_required",
+          "test_value": "",
+          "expected_result": "error",
+          "description": "Empty value for required field Username",
+          "test_data": {
+            "signupEmail": "tester@example.com",
+            "signupPassword": "Test@12345",
+            "role": "developer",
+            "username": ""
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:20:55.890008",
+          "ai_notes": "Kept original due to incomplete refinement"
+        },
+        {
+          "id": "ecp_text_55bcc9ee_username_special",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3007",
+          "form_id": "55bcc9ee",
+          "form_action": "http://localhost:3007/",
+          "page_title": "TaskBoard — SPA Task Manager",
+          "field_label": "Username",
+          "field_name": "username",
+          "field_type": "text",
+          "equivalence_class": "special_characters",
+          "test_value": "<script>alert(\"XSS\")</script>",
+          "expected_result": "error",
+          "description": "Verify that XSS injection attempts via script tags in the Username field are sanitized or rejected",
+          "test_data": {
+            "signupEmail": "tester@example.com",
+            "signupPassword": "Test@12345",
+            "role": "developer",
+            "username": "<script>alert(\"XSS\")</script>"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:20:55.890008"
+        },
+        {
+          "id": "ecp_text_55bcc9ee_username_long",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3007",
+          "form_id": "55bcc9ee",
+          "form_action": "http://localhost:3007/",
+          "page_title": "TaskBoard — SPA Task Manager",
+          "field_label": "Username",
+          "field_name": "username",
+          "field_type": "text",
+          "equivalence_class": "long_text",
+          "test_value": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+          "expected_result": "error",
+          "description": "Verify that a 500-character string exceeds the maximum allowed length for the Username field",
+          "test_data": {
+            "signupEmail": "tester@example.com",
+            "signupPassword": "Test@12345",
+            "role": "developer",
+            "username": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:20:55.891009"
+        },
+        {
+          "id": "ecp_text_55bcc9ee_username_unicode",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3007",
+          "form_id": "55bcc9ee",
+          "form_action": "http://localhost:3007/",
+          "page_title": "TaskBoard — SPA Task Manager",
+          "field_label": "Username",
+          "field_name": "username",
+          "field_type": "text",
+          "equivalence_class": "unicode",
+          "test_value": "测试数据🎉!测试数据",
+          "expected_result": "success",
+          "description": "Verify that multi-byte Unicode characters and emojis are correctly processed in the Username field",
+          "test_data": {
+            "signupEmail": "tester@example.com",
+            "signupPassword": "Test@12345",
+            "role": "developer",
+            "username": "测试数据🎉!测试数据"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:20:55.892008"
+        },
+        {
+          "id": "ecp_email_55bcc9ee_signupEmail_valid_standard_0",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3007",
+          "form_id": "55bcc9ee",
+          "form_action": "http://localhost:3007/",
+          "page_title": "TaskBoard — SPA Task Manager",
+          "field_label": "Email",
+          "field_name": "signupEmail",
+          "field_type": "email",
+          "equivalence_class": "valid_standard",
+          "test_value": "user@example.com",
+          "expected_result": "success",
+          "description": "Verify that a standard email format is accepted in the Email field",
+          "test_data": {
+            "username": "testuser",
+            "signupPassword": "Test@12345",
+            "role": "developer",
+            "signupEmail": "user@example.com"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:20:55.892008"
+        },
+        {
+          "id": "ecp_email_55bcc9ee_signupEmail_valid_standard_1",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3007",
+          "form_id": "55bcc9ee",
+          "form_action": "http://localhost:3007/",
+          "page_title": "TaskBoard — SPA Task Manager",
+          "field_label": "Email",
+          "field_name": "signupEmail",
+          "field_type": "email",
+          "equivalence_class": "valid_standard",
+          "test_value": "test@domain.co.uk",
+          "expected_result": "success",
+          "description": "Verify that an email with a multi-part TLD is accepted in the Email field",
+          "test_data": {
+            "username": "testuser",
+            "signupPassword": "Test@12345",
+            "role": "developer",
+            "signupEmail": "test@domain.co.uk"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:20:55.893006"
+        },
+        {
+          "id": "ecp_email_55bcc9ee_signupEmail_valid_with_plus_0",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3007",
+          "form_id": "55bcc9ee",
+          "form_action": "http://localhost:3007/",
+          "page_title": "TaskBoard — SPA Task Manager",
+          "field_label": "Email",
+          "field_name": "signupEmail",
+          "field_type": "email",
+          "equivalence_class": "valid_with_plus",
+          "test_value": "user+tag@example.com",
+          "expected_result": "success",
+          "description": "Verify that email addresses using plus-addressing are accepted in the Email field",
+          "test_data": {
+            "username": "testuser",
+            "signupPassword": "Test@12345",
+            "role": "developer",
+            "signupEmail": "user+tag@example.com"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:20:55.894005"
+        },
+        {
+          "id": "ecp_email_55bcc9ee_signupEmail_valid_with_plus_1",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3007",
+          "form_id": "55bcc9ee",
+          "form_action": "http://localhost:3007/",
+          "page_title": "TaskBoard — SPA Task Manager",
+          "field_label": "Email",
+          "field_name": "signupEmail",
+          "field_type": "email",
+          "equivalence_class": "valid_with_plus",
+          "test_value": "test+filter@domain.com",
+          "expected_result": "success",
+          "description": "Verify that email addresses with plus-addressing and custom domains are accepted in the Email field",
+          "test_data": {
+            "username": "testuser",
+            "signupPassword": "Test@12345",
+            "role": "developer",
+            "signupEmail": "test+filter@domain.com"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:20:55.896007"
+        },
+        {
+          "id": "ecp_email_55bcc9ee_signupEmail_valid_with_dots_0",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3007",
+          "form_id": "55bcc9ee",
+          "form_action": "http://localhost:3007/",
+          "page_title": "TaskBoard — SPA Task Manager",
+          "field_label": "Email",
+          "field_name": "signupEmail",
+          "field_type": "email",
+          "equivalence_class": "valid_with_dots",
+          "test_value": "first.last@example.com",
+          "expected_result": "success",
+          "description": "Verify that email addresses with dots in the local part are accepted in the Email field",
+          "test_data": {
+            "username": "testuser",
+            "signupPassword": "Test@12345",
+            "role": "developer",
+            "signupEmail": "first.last@example.com"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:20:55.903005"
+        },
+        {
+          "id": "ecp_email_55bcc9ee_signupEmail_valid_with_dots_1",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3007",
+          "form_id": "55bcc9ee",
+          "field_name": "signupEmail",
+          "field_type": "email",
+          "equivalence_class": "valid_with_dots",
+          "test_value": "user.name@domain.org",
+          "expected_result": "success",
+          "description": "Valid email address containing a dot in the local part before the @ symbol",
+          "test_data": {
+            "username": "testuser",
+            "signupPassword": "Test@12345",
+            "role": "developer",
+            "signupEmail": "user.name@domain.org"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:21:13.177908"
+        },
+        {
+          "id": "ecp_email_55bcc9ee_signupEmail_valid_subdomain_0",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3007",
+          "form_id": "55bcc9ee",
+          "field_name": "signupEmail",
+          "field_type": "email",
+          "equivalence_class": "valid_subdomain",
+          "test_value": "user@mail.example.com",
+          "expected_result": "success",
+          "description": "Valid email address using a standard subdomain structure",
+          "test_data": {
+            "username": "testuser",
+            "signupPassword": "Test@12345",
+            "role": "developer",
+            "signupEmail": "user@mail.example.com"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:21:13.177908"
+        },
+        {
+          "id": "ecp_email_55bcc9ee_signupEmail_valid_subdomain_1",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3007",
+          "form_id": "55bcc9ee",
+          "field_name": "signupEmail",
+          "field_type": "email",
+          "equivalence_class": "valid_subdomain",
+          "test_value": "test@subdomain.domain.com",
+          "expected_result": "success",
+          "description": "Valid email address using a multi-level subdomain structure",
+          "test_data": {
+            "username": "testuser",
+            "signupPassword": "Test@12345",
+            "role": "developer",
+            "signupEmail": "test@subdomain.domain.com"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:21:13.178915"
+        },
+        {
+          "id": "ecp_email_55bcc9ee_signupEmail_invalid_missing_at_0",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3007",
+          "form_id": "55bcc9ee",
+          "field_name": "signupEmail",
+          "field_type": "email",
+          "equivalence_class": "invalid_missing_at",
+          "test_value": "userexample.com",
+          "expected_result": "error",
+          "description": "Invalid email format due to missing @ symbol",
+          "test_data": {
+            "username": "testuser",
+            "signupPassword": "Test@12345",
+            "role": "developer",
+            "signupEmail": "userexample.com"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:21:13.178915"
+        },
+        {
+          "id": "ecp_email_55bcc9ee_signupEmail_invalid_missing_at_1",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3007",
+          "form_id": "55bcc9ee",
+          "field_name": "signupEmail",
+          "field_type": "email",
+          "equivalence_class": "invalid_missing_at",
+          "test_value": "test.domain.com",
+          "expected_result": "error",
+          "description": "Invalid email format due to missing @ symbol in a domain-like string",
+          "test_data": {
+            "username": "testuser",
+            "signupPassword": "Test@12345",
+            "role": "developer",
+            "signupEmail": "test.domain.com"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:21:13.179914"
+        },
+        {
+          "id": "ecp_email_55bcc9ee_signupEmail_invalid_missing_domain_0",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3007",
+          "form_id": "55bcc9ee",
+          "field_name": "signupEmail",
+          "field_type": "email",
+          "equivalence_class": "invalid_missing_domain",
+          "test_value": "user@",
+          "expected_result": "error",
+          "description": "Invalid email format due to missing domain part after @",
+          "test_data": {
+            "username": "testuser",
+            "signupPassword": "Test@12345",
+            "role": "developer",
+            "signupEmail": "user@"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:21:13.179914"
+        },
+        {
+          "id": "ecp_email_55bcc9ee_signupEmail_invalid_missing_domain_1",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3007",
+          "form_id": "55bcc9ee",
+          "field_name": "signupEmail",
+          "field_type": "email",
+          "equivalence_class": "invalid_missing_domain",
+          "test_value": "test@.com",
+          "expected_result": "error",
+          "description": "Invalid email format due to missing domain name before TLD",
+          "test_data": {
+            "username": "testuser",
+            "signupPassword": "Test@12345",
+            "role": "developer",
+            "signupEmail": "test@.com"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:21:13.180912"
+        },
+        {
+          "id": "ecp_email_55bcc9ee_signupEmail_invalid_special_chars_0",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3007",
+          "form_id": "55bcc9ee",
+          "field_name": "signupEmail",
+          "field_type": "email",
+          "equivalence_class": "invalid_special_chars",
+          "test_value": "user..name@example.com",
+          "expected_result": "error",
+          "description": "Invalid email format due to consecutive dots in the local part",
+          "test_data": {
+            "username": "testuser",
+            "signupPassword": "Test@12345",
+            "role": "developer",
+            "signupEmail": "user..name@example.com"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:21:13.180912"
+        },
+        {
+          "id": "ecp_email_55bcc9ee_signupEmail_invalid_special_chars_1",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3007",
+          "form_id": "55bcc9ee",
+          "field_name": "signupEmail",
+          "field_type": "email",
+          "equivalence_class": "invalid_special_chars",
+          "test_value": ".user@example.com",
+          "expected_result": "error",
+          "description": "Invalid email format due to leading dot in the local part",
+          "test_data": {
+            "username": "testuser",
+            "signupPassword": "Test@12345",
+            "role": "developer",
+            "signupEmail": ".user@example.com"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:21:13.180912"
+        },
+        {
+          "id": "ecp_email_55bcc9ee_signupEmail_invalid_empty_0",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3007",
+          "form_id": "55bcc9ee",
+          "field_name": "signupEmail",
+          "field_type": "email",
+          "equivalence_class": "invalid_empty",
+          "test_value": "",
+          "expected_result": "error",
+          "description": "Empty or whitespace only",
+          "test_data": {
+            "username": "testuser",
+            "signupPassword": "Test@12345",
+            "role": "developer",
+            "signupEmail": ""
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:21:13.181906",
+          "ai_notes": "Kept original due to incomplete refinement"
+        },
+        {
+          "id": "ecp_email_55bcc9ee_signupEmail_invalid_whitespace_0",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3007",
+          "form_id": "55bcc9ee",
+          "field_name": "signupEmail",
+          "field_type": "email",
+          "equivalence_class": "invalid_whitespace",
+          "test_value": "user name@example.com",
+          "expected_result": "error",
+          "description": "Invalid email format due to whitespace character in the local part",
+          "test_data": {
+            "username": "testuser",
+            "signupPassword": "Test@12345",
+            "role": "developer",
+            "signupEmail": "user name@example.com"
+          },
+          "action": "added",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:21:13.181906"
+        },
+        {
+          "id": "ecp_email_55bcc9ee_signupEmail_invalid_empty_1",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3007",
+          "form_id": "55bcc9ee",
+          "field_name": "signupEmail",
+          "field_type": "email",
+          "field_label": "Email",
+          "equivalence_class": "invalid_empty",
+          "test_value": "   ",
+          "expected_result": "error",
+          "description": "Verify that an empty or whitespace-only Email field triggers a validation error.",
+          "test_data": {
+            "username": "testuser",
+            "signupPassword": "Test@12345",
+            "role": "developer",
+            "signupEmail": "   "
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:21:22.732478"
+        },
+        {
+          "id": "ecp_email_55bcc9ee_signupEmail_invalid_spaces_0",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3007",
+          "form_id": "55bcc9ee",
+          "field_name": "signupEmail",
+          "field_type": "email",
+          "field_label": "Email",
+          "equivalence_class": "invalid_spaces",
+          "test_value": "user name@example.com",
+          "expected_result": "error",
+          "description": "Verify that an Email address containing spaces in the local part triggers a validation error.",
+          "test_data": {
+            "username": "testuser",
+            "signupPassword": "Test@12345",
+            "role": "developer",
+            "signupEmail": "user name@example.com"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:21:22.732478"
+        },
+        {
+          "id": "ecp_email_55bcc9ee_signupEmail_invalid_spaces_1",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3007",
+          "form_id": "55bcc9ee",
+          "field_name": "signupEmail",
+          "field_type": "email",
+          "field_label": "Email",
+          "equivalence_class": "invalid_spaces",
+          "test_value": "test @domain.com",
+          "expected_result": "error",
+          "description": "Verify that an Email address containing spaces around the @ symbol triggers a validation error.",
+          "test_data": {
+            "username": "testuser",
+            "signupPassword": "Test@12345",
+            "role": "developer",
+            "signupEmail": "test @domain.com"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:21:22.733511"
+        },
+        {
+          "id": "ecp_text_55bcc9ee_signupPassword_valid",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3007",
+          "form_id": "55bcc9ee",
+          "form_action": "http://localhost:3007/",
+          "page_title": "TaskBoard — SPA Task Manager",
+          "field_label": "Password",
+          "field_name": "signupPassword",
+          "field_type": "password",
+          "equivalence_class": "valid_text",
+          "test_value": "ValidInput123",
+          "expected_result": "success",
+          "description": "Verify that a standard alphanumeric Password is accepted.",
+          "test_data": {
+            "username": "testuser",
+            "signupEmail": "tester@example.com",
+            "role": "developer",
+            "signupPassword": "ValidInput123"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:21:22.733511"
+        },
+        {
+          "id": "ecp_text_55bcc9ee_signupPassword_empty",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3007",
+          "form_id": "55bcc9ee",
+          "form_action": "http://localhost:3007/",
+          "page_title": "TaskBoard — SPA Task Manager",
+          "field_label": "Password",
+          "field_name": "signupPassword",
+          "field_type": "password",
+          "equivalence_class": "empty_required",
+          "test_value": "",
+          "expected_result": "error",
+          "description": "Empty value for required field Password",
+          "test_data": {
+            "username": "testuser",
+            "signupEmail": "tester@example.com",
+            "role": "developer",
+            "signupPassword": ""
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:21:22.733511",
+          "ai_notes": "Kept original due to incomplete refinement"
+        },
+        {
+          "id": "ecp_text_55bcc9ee_signupPassword_special",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3007",
+          "form_id": "55bcc9ee",
+          "form_action": "http://localhost:3007/",
+          "page_title": "TaskBoard — SPA Task Manager",
+          "field_label": "Password",
+          "field_name": "signupPassword",
+          "field_type": "password",
+          "equivalence_class": "special_characters",
+          "test_value": "<script>alert(\"XSS\")</script>",
+          "expected_result": "error",
+          "description": "Verify that script injection attempts in the Password field are sanitized or rejected.",
+          "test_data": {
+            "username": "testuser",
+            "signupEmail": "tester@example.com",
+            "role": "developer",
+            "signupPassword": "<script>alert(\"XSS\")</script>"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:21:22.734511"
+        },
+        {
+          "id": "ecp_text_55bcc9ee_signupPassword_long",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3007",
+          "form_id": "55bcc9ee",
+          "form_action": "http://localhost:3007/",
+          "page_title": "TaskBoard — SPA Task Manager",
+          "field_label": "Password",
+          "field_name": "signupPassword",
+          "field_type": "password",
+          "equivalence_class": "long_text",
+          "test_value": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+          "expected_result": "error",
+          "description": "Verify that a Password exceeding the maximum character limit triggers a validation error.",
+          "test_data": {
+            "username": "testuser",
+            "signupEmail": "tester@example.com",
+            "role": "developer",
+            "signupPassword": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:21:22.734511"
+        },
+        {
+          "id": "ecp_text_55bcc9ee_signupPassword_unicode",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3007",
+          "form_id": "55bcc9ee",
+          "form_action": "http://localhost:3007/",
+          "page_title": "TaskBoard — SPA Task Manager",
+          "field_label": "Password",
+          "field_name": "signupPassword",
+          "field_type": "password",
+          "equivalence_class": "unicode",
+          "test_value": "测试数据🎉!测试数据",
+          "expected_result": "success",
+          "description": "Verify that Unicode characters are correctly handled in the Password field.",
+          "test_data": {
+            "username": "testuser",
+            "signupEmail": "tester@example.com",
+            "role": "developer",
+            "signupPassword": "测试数据🎉!测试数据"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:21:22.734511"
+        },
+        {
+          "id": "ecp_select_55bcc9ee_role_first",
+          "type": "ECP",
+          "subtype": "select",
+          "form_url": "http://localhost:3007",
+          "form_id": "55bcc9ee",
+          "field_name": "role",
+          "field_type": "select",
+          "field_label": "Role",
+          "equivalence_class": "valid_first_option",
+          "test_value": "developer",
+          "expected_result": "success",
+          "description": "Verify that the first option (developer) can be successfully selected for the Role field.",
+          "test_data": {
+            "username": "testuser",
+            "signupEmail": "tester@example.com",
+            "signupPassword": "Test@12345",
+            "role": "developer"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:21:22.734511"
+        },
+        {
+          "id": "ecp_select_55bcc9ee_role_middle",
+          "type": "ECP",
+          "subtype": "select",
+          "form_url": "http://localhost:3007",
+          "form_id": "55bcc9ee",
+          "field_name": "role",
+          "field_type": "select",
+          "field_label": "Role",
+          "equivalence_class": "valid_middle_option",
+          "test_value": "manager",
+          "expected_result": "success",
+          "description": "Verify that the middle option (manager) can be successfully selected for the Role field.",
+          "test_data": {
+            "username": "testuser",
+            "signupEmail": "tester@example.com",
+            "signupPassword": "Test@12345",
+            "role": "manager"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:21:22.735527"
+        },
+        {
+          "id": "ecp_text_55bcc9ee_username_empty",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3007",
+          "form_id": "55bcc9ee",
+          "field_name": "username",
+          "field_type": "text",
+          "field_label": "Username",
+          "equivalence_class": "invalid_empty",
+          "test_value": "",
+          "expected_result": "error",
+          "description": "Verify that an empty Username field triggers a validation error.",
+          "test_data": {
+            "username": "",
+            "signupEmail": "tester@example.com",
+            "signupPassword": "Test@12345",
+            "role": "developer"
+          },
+          "action": "added",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:21:22.735527"
+        },
+        {
+          "id": "ecp_select_55bcc9ee_role_last",
+          "type": "ECP",
+          "subtype": "select",
+          "form_url": "http://localhost:3007",
+          "form_id": "55bcc9ee",
+          "field_name": "role",
+          "field_type": "select",
+          "equivalence_class": "valid_last_option",
+          "test_value": "qa",
+          "expected_result": "success",
+          "field_label": "Role",
+          "description": "Verify that selecting the last option 'qa' in the Role dropdown results in a successful update.",
+          "test_data": {
+            "username": "testuser",
+            "signupEmail": "tester@example.com",
+            "signupPassword": "Test@12345",
+            "role": "qa"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:21:34.275811"
+        },
+        {
+          "id": "ecp_text_c918c1a1_displayName_valid",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3007/settings",
+          "form_id": "c918c1a1",
+          "form_action": "http://localhost:3007/settings",
+          "page_title": "TaskBoard — SPA Task Manager",
+          "field_label": "Display Name",
+          "field_name": "displayName",
+          "field_type": "text",
+          "equivalence_class": "valid_text",
+          "test_value": "ValidInput123",
+          "expected_result": "success",
+          "description": "Verify that a standard alphanumeric string is accepted in the Display Name field.",
+          "test_data": {
+            "bio": "This is a test submission.",
+            "timezone": "UTC-8",
+            "emailNotify": true,
+            "displayName": "ValidInput123"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:21:34.276806"
+        },
+        {
+          "id": "ecp_text_c918c1a1_displayName_empty",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3007/settings",
+          "form_id": "c918c1a1",
+          "form_action": "http://localhost:3007/settings",
+          "page_title": "TaskBoard — SPA Task Manager",
+          "field_label": "Display Name",
+          "field_name": "displayName",
+          "field_type": "text",
+          "equivalence_class": "empty_required",
+          "test_value": "",
+          "expected_result": "error",
+          "description": "Empty value for required field Display Name",
+          "test_data": {
+            "bio": "This is a test submission.",
+            "timezone": "UTC-8",
+            "emailNotify": true,
+            "displayName": ""
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:21:34.277803",
+          "ai_notes": "Kept original due to incomplete refinement"
+        },
+        {
+          "id": "ecp_text_c918c1a1_displayName_special",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3007/settings",
+          "form_id": "c918c1a1",
+          "form_action": "http://localhost:3007/settings",
+          "page_title": "TaskBoard — SPA Task Manager",
+          "field_label": "Display Name",
+          "field_name": "displayName",
+          "field_type": "text",
+          "equivalence_class": "special_characters",
+          "test_value": "<script>alert(\"XSS\")</script>",
+          "expected_result": "error",
+          "description": "Verify that XSS injection attempts in the Display Name field are sanitized or rejected.",
+          "test_data": {
+            "bio": "This is a test submission.",
+            "timezone": "UTC-8",
+            "emailNotify": true,
+            "displayName": "<script>alert(\"XSS\")</script>"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:21:34.277803"
+        },
+        {
+          "id": "ecp_text_c918c1a1_displayName_long",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3007/settings",
+          "form_id": "c918c1a1",
+          "form_action": "http://localhost:3007/settings",
+          "page_title": "TaskBoard — SPA Task Manager",
+          "field_label": "Display Name",
+          "field_name": "displayName",
+          "field_type": "text",
+          "equivalence_class": "long_text",
+          "test_value": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+          "expected_result": "error",
+          "description": "Verify that input exceeding the maximum character limit for Display Name is rejected by the server.",
+          "test_data": {
+            "bio": "This is a test submission.",
+            "timezone": "UTC-8",
+            "emailNotify": true,
+            "displayName": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:21:34.277803"
+        },
+        {
+          "id": "ecp_text_c918c1a1_displayName_unicode",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3007/settings",
+          "form_id": "c918c1a1",
+          "form_action": "http://localhost:3007/settings",
+          "page_title": "TaskBoard — SPA Task Manager",
+          "field_label": "Display Name",
+          "field_name": "displayName",
+          "field_type": "text",
+          "equivalence_class": "unicode",
+          "test_value": "测试数据🎉!测试数据",
+          "expected_result": "success",
+          "description": "Verify that Unicode characters and emojis are correctly processed in the Display Name field.",
+          "test_data": {
+            "bio": "This is a test submission.",
+            "timezone": "UTC-8",
+            "emailNotify": true,
+            "displayName": "测试数据🎉!测试数据"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:21:34.277803"
+        },
+        {
+          "id": "ecp_text_c918c1a1_bio_valid",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3007/settings",
+          "form_id": "c918c1a1",
+          "form_action": "http://localhost:3007/settings",
+          "page_title": "TaskBoard — SPA Task Manager",
+          "field_label": "Bio",
+          "field_name": "bio",
+          "field_type": "textarea",
+          "equivalence_class": "valid_text",
+          "test_value": "ValidInput123",
+          "expected_result": "success",
+          "description": "Verify that a standard alphanumeric string is accepted in the Bio textarea.",
+          "test_data": {
+            "displayName": "John Doe",
+            "timezone": "UTC-8",
+            "emailNotify": true,
+            "bio": "ValidInput123"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:21:34.277803"
+        },
+        {
+          "id": "ecp_text_c918c1a1_bio_special",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3007/settings",
+          "form_id": "c918c1a1",
+          "form_action": "http://localhost:3007/settings",
+          "page_title": "TaskBoard — SPA Task Manager",
+          "field_label": "Bio",
+          "field_name": "bio",
+          "field_type": "textarea",
+          "equivalence_class": "special_characters",
+          "test_value": "<script>alert(\"XSS\")</script>",
+          "expected_result": "error",
+          "description": "Verify that XSS injection attempts in the Bio field are sanitized or rejected.",
+          "test_data": {
+            "displayName": "John Doe",
+            "timezone": "UTC-8",
+            "emailNotify": true,
+            "bio": "<script>alert(\"XSS\")</script>"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:21:34.277803"
+        },
+        {
+          "id": "ecp_text_c918c1a1_bio_long",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3007/settings",
+          "form_id": "c918c1a1",
+          "form_action": "http://localhost:3007/settings",
+          "page_title": "TaskBoard — SPA Task Manager",
+          "field_label": "Bio",
+          "field_name": "bio",
+          "field_type": "textarea",
+          "equivalence_class": "long_text",
+          "test_value": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+          "expected_result": "error",
+          "description": "Verify that input exceeding the maximum character limit for Bio is rejected by the server.",
+          "test_data": {
+            "displayName": "John Doe",
+            "timezone": "UTC-8",
+            "emailNotify": true,
+            "bio": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:21:34.278810"
+        },
+        {
+          "id": "ecp_text_c918c1a1_bio_unicode",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3007/settings",
+          "form_id": "c918c1a1",
+          "form_action": "http://localhost:3007/settings",
+          "page_title": "TaskBoard — SPA Task Manager",
+          "field_label": "Bio",
+          "field_name": "bio",
+          "field_type": "textarea",
+          "equivalence_class": "unicode",
+          "test_value": "测试数据🎉!测试数据",
+          "expected_result": "success",
+          "description": "Verify that Unicode characters and emojis are correctly processed in the Bio field.",
+          "test_data": {
+            "displayName": "John Doe",
+            "timezone": "UTC-8",
+            "emailNotify": true,
+            "bio": "测试数据🎉!测试数据"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:21:34.278810"
+        },
+        {
+          "id": "ecp_select_c918c1a1_timezone_first",
+          "type": "ECP",
+          "subtype": "select",
+          "form_url": "http://localhost:3007/settings",
+          "form_id": "c918c1a1",
+          "field_name": "timezone",
+          "field_label": "Timezone",
+          "field_type": "select",
+          "equivalence_class": "valid_first_option",
+          "test_value": "UTC-8",
+          "expected_result": "success",
+          "description": "Verify selection of the first available option (UTC-8) in the Timezone dropdown",
+          "test_data": {
+            "displayName": "John Doe",
+            "bio": "This is a test submission.",
+            "emailNotify": true,
+            "timezone": "UTC-8"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:21:45.031491"
+        },
+        {
+          "id": "ecp_select_c918c1a1_timezone_middle",
+          "type": "ECP",
+          "subtype": "select",
+          "form_url": "http://localhost:3007/settings",
+          "form_id": "c918c1a1",
+          "field_name": "timezone",
+          "field_label": "Timezone",
+          "field_type": "select",
+          "equivalence_class": "valid_middle_option",
+          "test_value": "UTC+1",
+          "expected_result": "success",
+          "description": "Verify selection of a middle option (UTC+1) in the Timezone dropdown",
+          "test_data": {
+            "displayName": "John Doe",
+            "bio": "This is a test submission.",
+            "emailNotify": true,
+            "timezone": "UTC+1"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:21:45.031491"
+        },
+        {
+          "id": "ecp_select_c918c1a1_timezone_last",
+          "type": "ECP",
+          "subtype": "select",
+          "form_url": "http://localhost:3007/settings",
+          "form_id": "c918c1a1",
+          "field_name": "timezone",
+          "field_label": "Timezone",
+          "field_type": "select",
+          "equivalence_class": "valid_last_option",
+          "test_value": "UTC+8",
+          "expected_result": "success",
+          "description": "Verify selection of the last available option (UTC+8) in the Timezone dropdown",
+          "test_data": {
+            "displayName": "John Doe",
+            "bio": "This is a test submission.",
+            "emailNotify": true,
+            "timezone": "UTC+8"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:21:45.031491"
+        },
+        {
+          "id": "ecp_boolean_c918c1a1_emailNotify_emailNotify",
+          "type": "ECP",
+          "subtype": "boolean",
+          "form_url": "http://localhost:3007/settings",
+          "form_id": "c918c1a1",
+          "form_action": "http://localhost:3007/settings",
+          "page_title": "TaskBoard — SPA Task Manager",
+          "field_name": "emailNotify",
+          "field_label": "Receive email notifications for task updates",
+          "field_type": "checkbox",
+          "equivalence_class": "checked",
+          "test_value": true,
+          "expected_result": "success",
+          "description": "Verify that the 'Receive email notifications for task updates' checkbox can be successfully checked",
+          "test_data": {
+            "displayName": "John Doe",
+            "bio": "This is a test submission.",
+            "timezone": "UTC-8",
+            "emailNotify": true
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:21:45.032494"
+        },
+        {
+          "id": "ecp_boolean_c918c1a1_emailNotify_emailNotify_unchecked",
+          "type": "ECP",
+          "subtype": "boolean",
+          "form_url": "http://localhost:3007/settings",
+          "form_id": "c918c1a1",
+          "form_action": "http://localhost:3007/settings",
+          "page_title": "TaskBoard — SPA Task Manager",
+          "field_name": "emailNotify",
+          "field_label": "Receive email notifications for task updates",
+          "field_type": "checkbox",
+          "equivalence_class": "unchecked",
+          "test_value": false,
+          "expected_result": "success",
+          "description": "Checkbox not checked",
+          "test_data": {
+            "displayName": "John Doe",
+            "bio": "This is a test submission.",
+            "timezone": "UTC-8",
+            "emailNotify": false
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:21:45.033626",
+          "ai_notes": "Kept original due to incomplete refinement"
+        },
+        {
+          "id": "ecp_text_794e3b70_taskTitle_valid",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3007/tasks",
+          "form_id": "794e3b70",
+          "form_action": "http://localhost:3007/tasks",
+          "page_title": "TaskBoard — SPA Task Manager",
+          "field_label": "Task Title",
+          "field_name": "taskTitle",
+          "field_type": "text",
+          "equivalence_class": "valid_text",
+          "test_value": "ValidInput123",
+          "expected_result": "success",
+          "description": "Verify that a standard alphanumeric string is accepted in the Task Title field",
+          "test_data": {
+            "taskDesc": "This is a test submission.",
+            "priority": "low",
+            "category": "frontend",
+            "dueDate": "2026-04-02",
+            "taskTitle": "ValidInput123"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:21:45.033626"
+        },
+        {
+          "id": "ecp_text_794e3b70_taskTitle_empty",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3007/tasks",
+          "form_id": "794e3b70",
+          "form_action": "http://localhost:3007/tasks",
+          "page_title": "TaskBoard — SPA Task Manager",
+          "field_label": "Task Title",
+          "field_name": "taskTitle",
+          "field_type": "text",
+          "equivalence_class": "empty_required",
+          "test_value": "",
+          "expected_result": "error",
+          "description": "Empty value for required field Task Title",
+          "test_data": {
+            "taskDesc": "This is a test submission.",
+            "priority": "low",
+            "category": "frontend",
+            "dueDate": "2026-04-02",
+            "taskTitle": ""
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:21:45.033626",
+          "ai_notes": "Kept original due to incomplete refinement"
+        },
+        {
+          "id": "ecp_text_794e3b70_taskTitle_special",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3007/tasks",
+          "form_id": "794e3b70",
+          "form_action": "http://localhost:3007/tasks",
+          "page_title": "TaskBoard — SPA Task Manager",
+          "field_label": "Task Title",
+          "field_name": "taskTitle",
+          "field_type": "text",
+          "equivalence_class": "special_characters",
+          "test_value": "<script>alert(\"XSS\")</script>",
+          "expected_result": "error",
+          "description": "Verify that XSS-prone special characters in the Task Title field are rejected or sanitized",
+          "test_data": {
+            "taskDesc": "This is a test submission.",
+            "priority": "low",
+            "category": "frontend",
+            "dueDate": "2026-04-02",
+            "taskTitle": "<script>alert(\"XSS\")</script>"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:21:45.034494"
+        },
+        {
+          "id": "ecp_text_794e3b70_taskTitle_long",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3007/tasks",
+          "form_id": "794e3b70",
+          "form_action": "http://localhost:3007/tasks",
+          "page_title": "TaskBoard — SPA Task Manager",
+          "field_label": "Task Title",
+          "field_name": "taskTitle",
+          "field_type": "text",
+          "equivalence_class": "long_text",
+          "test_value": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+          "expected_result": "error",
+          "description": "Verify that input exceeding the maximum character limit for Task Title triggers a validation error",
+          "test_data": {
+            "taskDesc": "This is a test submission.",
+            "priority": "low",
+            "category": "frontend",
+            "dueDate": "2026-04-02",
+            "taskTitle": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:21:45.034494"
+        },
+        {
+          "id": "ecp_text_794e3b70_taskTitle_unicode",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3007/tasks",
+          "form_id": "794e3b70",
+          "form_action": "http://localhost:3007/tasks",
+          "page_title": "TaskBoard — SPA Task Manager",
+          "field_label": "Task Title",
+          "field_name": "taskTitle",
+          "field_type": "text",
+          "equivalence_class": "unicode",
+          "test_value": "测试数据🎉!测试数据",
+          "expected_result": "success",
+          "description": "Verify that Unicode characters and emojis are correctly accepted in the Task Title field",
+          "test_data": {
+            "taskDesc": "This is a test submission.",
+            "priority": "low",
+            "category": "frontend",
+            "dueDate": "2026-04-02",
+            "taskTitle": "测试数据🎉!测试数据"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:21:45.034494"
+        },
+        {
+          "id": "ecp_text_794e3b70_taskDesc_valid",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3007/tasks",
+          "form_id": "794e3b70",
+          "form_action": "http://localhost:3007/tasks",
+          "page_title": "TaskBoard — SPA Task Manager",
+          "field_label": "Description",
+          "field_name": "taskDesc",
+          "field_type": "textarea",
+          "equivalence_class": "valid_text",
+          "test_value": "ValidInput123",
+          "expected_result": "success",
+          "description": "Verify that a standard alphanumeric string is accepted in the Description field.",
+          "test_data": {
+            "taskTitle": "Test Subject",
+            "priority": "low",
+            "category": "frontend",
+            "dueDate": "2026-04-02",
+            "taskDesc": "ValidInput123"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:21:56.764492"
+        },
+        {
+          "id": "ecp_text_794e3b70_taskDesc_empty",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3007/tasks",
+          "form_id": "794e3b70",
+          "form_action": "http://localhost:3007/tasks",
+          "page_title": "TaskBoard — SPA Task Manager",
+          "field_label": "Description",
+          "field_name": "taskDesc",
+          "field_type": "textarea",
+          "equivalence_class": "empty_required",
+          "test_value": "",
+          "expected_result": "error",
+          "description": "Empty value for required field Description",
+          "test_data": {
+            "taskTitle": "Test Subject",
+            "priority": "low",
+            "category": "frontend",
+            "dueDate": "2026-04-02",
+            "taskDesc": ""
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:21:56.765492",
+          "ai_notes": "Kept original due to incomplete refinement"
+        },
+        {
+          "id": "ecp_text_794e3b70_taskDesc_special",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3007/tasks",
+          "form_id": "794e3b70",
+          "form_action": "http://localhost:3007/tasks",
+          "page_title": "TaskBoard — SPA Task Manager",
+          "field_label": "Description",
+          "field_name": "taskDesc",
+          "field_type": "textarea",
+          "equivalence_class": "special_characters",
+          "test_value": "<script>alert(\"XSS\")</script>",
+          "expected_result": "error",
+          "description": "Verify that HTML/Script injection attempts in the Description field are sanitized or rejected.",
+          "test_data": {
+            "taskTitle": "Test Subject",
+            "priority": "low",
+            "category": "frontend",
+            "dueDate": "2026-04-02",
+            "taskDesc": "<script>alert(\"XSS\")</script>"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:21:56.765492"
+        },
+        {
+          "id": "ecp_text_794e3b70_taskDesc_long",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3007/tasks",
+          "form_id": "794e3b70",
+          "form_action": "http://localhost:3007/tasks",
+          "page_title": "TaskBoard — SPA Task Manager",
+          "field_label": "Description",
+          "field_name": "taskDesc",
+          "field_type": "textarea",
+          "equivalence_class": "long_text",
+          "test_value": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+          "expected_result": "error",
+          "description": "Verify that input exceeding the maximum character limit for the Description field is rejected.",
+          "test_data": {
+            "taskTitle": "Test Subject",
+            "priority": "low",
+            "category": "frontend",
+            "dueDate": "2026-04-02",
+            "taskDesc": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:21:56.765492"
+        },
+        {
+          "id": "ecp_text_794e3b70_taskDesc_unicode",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3007/tasks",
+          "form_id": "794e3b70",
+          "form_action": "http://localhost:3007/tasks",
+          "page_title": "TaskBoard — SPA Task Manager",
+          "field_label": "Description",
+          "field_name": "taskDesc",
+          "field_type": "textarea",
+          "equivalence_class": "unicode",
+          "test_value": "测试数据🎉!测试数据",
+          "expected_result": "success",
+          "description": "Verify that multi-byte Unicode characters and emojis are correctly processed in the Description field.",
+          "test_data": {
+            "taskTitle": "Test Subject",
+            "priority": "low",
+            "category": "frontend",
+            "dueDate": "2026-04-02",
+            "taskDesc": "测试数据🎉!测试数据"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:21:56.765492"
+        },
+        {
+          "id": "ecp_select_794e3b70_priority_first",
+          "type": "ECP",
+          "subtype": "select",
+          "form_url": "http://localhost:3007/tasks",
+          "form_id": "794e3b70",
+          "form_action": "http://localhost:3007/tasks",
+          "page_title": "TaskBoard — SPA Task Manager",
+          "field_label": "Priority",
+          "field_name": "priority",
+          "field_type": "select",
+          "equivalence_class": "valid_first_option",
+          "test_value": "low",
+          "expected_result": "success",
+          "description": "Verify that the first option 'low' can be successfully selected in the Priority dropdown.",
+          "test_data": {
+            "taskTitle": "Test Subject",
+            "taskDesc": "This is a test submission.",
+            "category": "frontend",
+            "dueDate": "2026-04-02",
+            "priority": "low"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:21:56.766490"
+        },
+        {
+          "id": "ecp_select_794e3b70_priority_middle",
+          "type": "ECP",
+          "subtype": "select",
+          "form_url": "http://localhost:3007/tasks",
+          "form_id": "794e3b70",
+          "form_action": "http://localhost:3007/tasks",
+          "page_title": "TaskBoard — SPA Task Manager",
+          "field_label": "Priority",
+          "field_name": "priority",
+          "field_type": "select",
+          "equivalence_class": "valid_middle_option",
+          "test_value": "high",
+          "expected_result": "success",
+          "description": "Verify that the middle option 'high' can be successfully selected in the Priority dropdown.",
+          "test_data": {
+            "taskTitle": "Test Subject",
+            "taskDesc": "This is a test submission.",
+            "category": "frontend",
+            "dueDate": "2026-04-02",
+            "priority": "high"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:21:56.766490"
+        },
+        {
+          "id": "ecp_select_794e3b70_priority_last",
+          "type": "ECP",
+          "subtype": "select",
+          "form_url": "http://localhost:3007/tasks",
+          "form_id": "794e3b70",
+          "form_action": "http://localhost:3007/tasks",
+          "page_title": "TaskBoard — SPA Task Manager",
+          "field_label": "Priority",
+          "field_name": "priority",
+          "field_type": "select",
+          "equivalence_class": "valid_last_option",
+          "test_value": "critical",
+          "expected_result": "success",
+          "description": "Verify that the last option 'critical' can be successfully selected in the Priority dropdown.",
+          "test_data": {
+            "taskTitle": "Test Subject",
+            "taskDesc": "This is a test submission.",
+            "category": "frontend",
+            "dueDate": "2026-04-02",
+            "priority": "critical"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:21:56.766490"
+        },
+        {
+          "id": "ecp_select_794e3b70_category_first",
+          "type": "ECP",
+          "subtype": "select",
+          "form_url": "http://localhost:3007/tasks",
+          "form_id": "794e3b70",
+          "form_action": "http://localhost:3007/tasks",
+          "page_title": "TaskBoard — SPA Task Manager",
+          "field_label": "Category",
+          "field_name": "category",
+          "field_type": "select",
+          "equivalence_class": "valid_first_option",
+          "test_value": "frontend",
+          "expected_result": "success",
+          "description": "Verify that the first option 'frontend' can be successfully selected in the Category dropdown.",
+          "test_data": {
+            "taskTitle": "Test Subject",
+            "taskDesc": "This is a test submission.",
+            "priority": "low",
+            "dueDate": "2026-04-02",
+            "category": "frontend"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:21:56.766490"
+        },
+        {
+          "id": "ecp_select_794e3b70_category_middle",
+          "type": "ECP",
+          "subtype": "select",
+          "form_url": "http://localhost:3007/tasks",
+          "form_id": "794e3b70",
+          "form_action": "http://localhost:3007/tasks",
+          "page_title": "TaskBoard — SPA Task Manager",
+          "field_label": "Category",
+          "field_name": "category",
+          "field_type": "select",
+          "equivalence_class": "valid_middle_option",
+          "test_value": "devops",
+          "expected_result": "success",
+          "description": "Verify that the middle option 'devops' can be successfully selected in the Category dropdown.",
+          "test_data": {
+            "taskTitle": "Test Subject",
+            "taskDesc": "This is a test submission.",
+            "priority": "low",
+            "dueDate": "2026-04-02",
+            "category": "devops"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:21:56.766490"
+        },
+        {
+          "id": "ecp_select_794e3b70_category_last",
+          "type": "ECP",
+          "subtype": "select",
+          "form_url": "http://localhost:3007/tasks",
+          "form_id": "794e3b70",
+          "field_name": "category",
+          "field_label": "Category",
+          "field_type": "select",
+          "equivalence_class": "valid_last_option",
+          "test_value": "design",
+          "expected_result": "success",
+          "description": "Verify that selecting the last option 'design' in the Category dropdown results in a successful submission.",
+          "test_data": {
+            "taskTitle": "Test Subject",
+            "taskDesc": "This is a test submission.",
+            "priority": "low",
+            "dueDate": "2026-04-02",
+            "category": "design"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:22:00.160915"
+        },
+        {
+          "id": "ecp_date_794e3b70_dueDate_valid",
+          "type": "ECP",
+          "subtype": "date",
+          "form_url": "http://localhost:3007/tasks",
+          "form_id": "794e3b70",
+          "field_label": "Due Date",
+          "field_name": "dueDate",
+          "field_type": "date",
+          "equivalence_class": "valid",
+          "test_value": "2024-01-15",
+          "expected_result": "success",
+          "description": "Verify that a valid YYYY-MM-DD date format in the Due Date field results in a successful submission.",
+          "test_data": {
+            "taskTitle": "Test Subject",
+            "taskDesc": "This is a test submission.",
+            "priority": "low",
+            "category": "frontend",
+            "dueDate": "2024-01-15"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:22:00.161919"
+        },
+        {
+          "id": "ecp_date_794e3b70_dueDate_invalid",
+          "type": "ECP",
+          "subtype": "date",
+          "form_url": "http://localhost:3007/tasks",
+          "form_id": "794e3b70",
+          "field_label": "Due Date",
+          "field_name": "dueDate",
+          "field_type": "date",
+          "equivalence_class": "invalid_format",
+          "test_value": "invalid-date",
+          "expected_result": "error",
+          "description": "Verify that an invalid date string in the Due Date field triggers a validation error.",
+          "test_data": {
+            "taskTitle": "Test Subject",
+            "taskDesc": "This is a test submission.",
+            "priority": "low",
+            "category": "frontend",
+            "dueDate": "invalid-date"
+          },
+          "action": "updated",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:22:00.161919"
+        },
+        {
+          "id": "ecp_text_794e3b70_taskTitle_empty",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3007/tasks",
+          "form_id": "794e3b70",
+          "field_name": "taskTitle",
+          "field_label": "Task Title",
+          "field_type": "text",
+          "equivalence_class": "invalid_empty",
+          "test_value": "",
+          "expected_result": "error",
+          "description": "Verify that submitting the form with an empty Task Title triggers a validation error.",
+          "test_data": {
+            "taskTitle": "",
+            "taskDesc": "This is a test submission.",
+            "priority": "low",
+            "dueDate": "2026-04-02",
+            "category": "design"
+          },
+          "action": "added",
+          "ai_enhanced": true,
+          "enhanced_at": "2026-04-01T11:22:00.161919"
+        }
+      ],
+      "decision_table": [],
+      "state_transition": [
+        {
+          "id": "state_branch_0_0",
+          "type": "State Transition",
+          "subtype": "branching_flow",
+          "decision_point": "097a3375",
+          "branch_taken": "ae4fa27d",
+          "total_branches": 2,
+          "steps": [
+            {
+              "step": 1,
+              "action": "navigate",
+              "from_url": "start",
+              "to_url": "097a3375",
+              "description": "Navigate to decision point: Localhost:3007 (TaskBoard — SPA Task Manager)"
+            },
+            {
+              "step": 2,
+              "action": "click",
+              "from_url": "097a3375",
+              "to_url": "ae4fa27d",
+              "description": "Take branch 1/2: Settings (TaskBoard — SPA Task Manager)"
+            }
+          ],
+          "expected_result": "success",
+          "description": "Branch 1 from Localhost:3007 (TaskBoard — SPA Task Manager): → Settings (TaskBoard — SPA Task Manager)",
+          "flow_description": "Localhost:3007 (TaskBoard — SPA Task Manager) → Settings (TaskBoard — SPA Task Manager) (Branch 1/2)",
+          "action": "updated",
+          "ai_enhanced": true
+        },
+        {
+          "id": "state_branch_0_1",
+          "type": "State Transition",
+          "subtype": "branching_flow",
+          "decision_point": "097a3375",
+          "branch_taken": "ff37852c",
+          "total_branches": 2,
+          "steps": [
+            {
+              "step": 1,
+              "action": "navigate",
+              "from_url": "start",
+              "to_url": "097a3375",
+              "description": "Navigate to decision point: Localhost:3007 (TaskBoard — SPA Task Manager)"
+            },
+            {
+              "step": 2,
+              "action": "click",
+              "from_url": "097a3375",
+              "to_url": "ff37852c",
+              "description": "Take branch 2/2: Tasks (TaskBoard — SPA Task Manager)"
+            }
+          ],
+          "expected_result": "success",
+          "description": "Branch 2 from Localhost:3007 (TaskBoard — SPA Task Manager): → Tasks (TaskBoard — SPA Task Manager)",
+          "flow_description": "Localhost:3007 (TaskBoard — SPA Task Manager) → Tasks (TaskBoard — SPA Task Manager) (Branch 2/2)",
+          "action": "updated",
+          "ai_enhanced": true
+        }
+      ],
+      "use_case": [
+        {
+          "id": "usecase_ecommerce_complete_purchase",
+          "type": "Use Case",
+          "subtype": "e-commerce",
+          "scenario_name": "Complete Purchase Flow",
+          "steps": [
+            {
+              "step": 1,
+              "action": "navigate",
+              "target": null,
+              "description": "Navigate to product page",
+              "verification": "Product page loaded successfully"
+            },
+            {
+              "step": 2,
+              "action": "click",
+              "target": ".add-to-cart, .add-to-bag, [data-action=\"add-to-cart\"]",
+              "description": "Click Add to Cart button",
+              "verification": "Product added to cart"
+            },
+            {
+              "step": 3,
+              "action": "navigate",
+              "target": null,
+              "description": "Navigate to cart page",
+              "verification": "Cart shows 1 item"
+            },
+            {
+              "step": 4,
+              "action": "click",
+              "target": ".checkout-button, .proceed-to-checkout, [data-action=\"checkout\"]",
+              "description": "Proceed to checkout",
+              "verification": "Checkout page loaded"
+            },
+            {
+              "step": 5,
+              "action": "fill_form",
+              "target": "checkout_form",
+              "description": "Fill checkout form with shipping details",
+              "verification": "Form validation passed"
+            },
+            {
+              "step": 6,
+              "action": "submit",
+              "target": "checkout_form",
+              "description": "Submit order",
+              "verification": "Order confirmation page displayed"
+            }
+          ],
+          "expected_result": "success",
+          "description": "End-to-end purchase: Browse product → Add to cart → Checkout → Complete order",
+          "preconditions": [
+            "User not logged in",
+            "Empty cart"
+          ],
+          "postconditions": [
+            "Order placed",
+            "Cart empty"
+          ],
+          "action": "kept",
+          "ai_enhanced": true
+        },
+        {
+          "id": "usecase_ecommerce_multiple_products",
+          "type": "Use Case",
+          "subtype": "e-commerce",
+          "scenario_name": "Add Multiple Products to Cart",
+          "steps": [
+            {
+              "step": 1,
+              "action": "navigate",
+              "target": null,
+              "description": "Navigate to first product",
+              "verification": "Product page loaded"
+            },
+            {
+              "step": 2,
+              "action": "click",
+              "target": ".add-to-cart",
+              "description": "Add first product to cart",
+              "verification": "Cart count = 1"
+            },
+            {
+              "step": 3,
+              "action": "navigate",
+              "target": null,
+              "description": "Navigate to second product",
+              "verification": "Different product page loaded"
+            },
+            {
+              "step": 4,
+              "action": "click",
+              "target": ".add-to-cart",
+              "description": "Add second product to cart",
+              "verification": "Cart count = 2"
+            },
+            {
+              "step": 5,
+              "action": "navigate",
+              "target": null,
+              "description": "View cart",
+              "verification": "Cart shows 2 items"
+            }
+          ],
+          "expected_result": "success",
+          "description": "Add multiple products: Add product 1 → Add product 2 → View cart",
+          "preconditions": [
+            "Empty cart"
+          ],
+          "postconditions": [
+            "Cart contains 2 items"
+          ],
+          "action": "updated",
+          "ai_enhanced": true
+        },
+        {
+          "id": "usecase_ecommerce_remove_from_cart",
+          "type": "Use Case",
+          "subtype": "e-commerce",
+          "scenario_name": "Remove Item from Cart",
+          "steps": [
+            {
+              "step": 1,
+              "action": "navigate",
+              "target": null,
+              "description": "Navigate to cart page",
+              "verification": "Cart page loaded with items"
+            },
+            {
+              "step": 2,
+              "action": "click",
+              "target": ".remove-item, .delete-item, [data-action=\"remove\"]",
+              "description": "Click remove item button",
+              "verification": "Item removed from cart"
+            },
+            {
+              "step": 3,
+              "action": "verify",
+              "description": "Verify cart updated",
+              "verification": "Cart count decreased by 1"
+            }
+          ],
+          "expected_result": "success",
+          "description": "Remove item from cart: View cart → Remove item → Verify removal",
+          "preconditions": [
+            "Cart has at least 1 item"
+          ],
+          "postconditions": [
+            "Item removed from cart"
+          ],
+          "action": "updated",
+          "ai_enhanced": true
+        },
+        {
+          "id": "usecase_registration_unknown",
+          "type": "Use Case",
+          "subtype": "form_submission",
+          "scenario_name": "User Registration",
+          "form_url": "http://localhost:3007",
+          "form_id": "unknown",
+          "test_data": {
+            "username": "TestUser1",
+            "signupEmail": "test@example.com",
+            "signupPassword": "TestPass1!",
+            "role": "TestValue"
+          },
+          "steps": [
+            {
+              "step": 1,
+              "action": "navigate",
+              "target": "http://localhost:3007",
+              "description": "Navigate to registration page",
+              "verification": "Registration form displayed"
+            },
+            {
+              "step": 2,
+              "action": "fill_form",
+              "target": "unknown",
+              "description": "Fill registration details",
+              "verification": "All fields populated with valid data"
+            },
+            {
+              "step": 3,
+              "action": "submit",
+              "target": "unknown",
+              "description": "Submit registration",
+              "verification": "Account created successfully"
+            }
+          ],
+          "expected_result": "success",
+          "description": "Registration: Navigate → Fill form → Submit → Verify account created",
+          "preconditions": [
+            "User not registered"
+          ],
+          "postconditions": [
+            "Account created",
+            "User can log in"
+          ],
+          "action": "updated",
+          "ai_enhanced": true
+        },
+        {
+          "id": "usecase_auth_login",
+          "type": "Use Case",
+          "subtype": "authentication",
+          "scenario_name": "User Login Flow",
+          "form_url": "http://localhost:3007",
+          "test_data": {
+            "username": "TestUser1",
+            "signupEmail": "test@example.com",
+            "signupPassword": "TestPass1!",
+            "role": "TestValue"
+          },
+          "steps": [
+            {
+              "step": 1,
+              "action": "navigate",
+              "target": null,
+              "description": "Navigate to login page",
+              "verification": "Login form displayed"
+            },
+            {
+              "step": 2,
+              "action": "fill",
+              "target": "email",
+              "value": "test@example.com",
+              "description": "Enter email address",
+              "verification": "Email field populated"
+            },
+            {
+              "step": 3,
+              "action": "fill",
+              "target": "password",
+              "value": "Test123!@#",
+              "description": "Enter password",
+              "verification": "Password field populated"
+            },
+            {
+              "step": 4,
+              "action": "submit",
+              "target": "login_form",
+              "description": "Submit login form",
+              "verification": "Successfully logged in, redirected to dashboard/profile"
+            }
+          ],
+          "expected_result": "success",
+          "description": "User login: Navigate to login → Enter credentials → Submit → Verify logged in",
+          "preconditions": [
+            "User not logged in",
+            "Valid credentials exist"
+          ],
+          "postconditions": [
+            "User logged in",
+            "Session created"
+          ],
+          "action": "updated",
+          "ai_enhanced": true
+        },
+        {
+          "id": "usecase_auth_register",
+          "type": "Use Case",
+          "subtype": "authentication",
+          "scenario_name": "New User Registration",
+          "form_url": "http://localhost:3007",
+          "test_data": {
+            "username": "TestUser1",
+            "signupEmail": "test@example.com",
+            "signupPassword": "TestPass1!",
+            "role": "TestValue"
+          },
+          "steps": [
+            {
+              "step": 1,
+              "action": "navigate",
+              "target": null,
+              "description": "Navigate to registration page",
+              "verification": "Registration form displayed"
+            },
+            {
+              "step": 2,
+              "action": "fill_form",
+              "target": "registration_form",
+              "description": "Fill registration form",
+              "verification": "All fields populated"
+            },
+            {
+              "step": 3,
+              "action": "submit",
+              "target": "registration_form",
+              "description": "Submit registration",
+              "verification": "Account created, confirmation message shown"
+            }
+          ],
+          "expected_result": "success",
+          "description": "User registration: Navigate → Fill form → Submit → Verify account created",
+          "preconditions": [
+            "User not registered"
+          ],
+          "postconditions": [
+            "New account created",
+            "User logged in or verification email sent"
+          ],
+          "action": "updated",
+          "ai_enhanced": true
+        }
+      ]
+    },
+    "summary": {
+      "total_test_cases": 126,
+      "bva_count": 52,
+      "ecp_count": 66,
+      "decision_table_count": 0,
+      "state_transition_count": 2,
+      "use_case_count": 6
+    }
+  },
+  "counts": {
+    "bva": 52,
+    "ecp": 66,
+    "decision_table": 0,
+    "state_transition": 2,
+    "use_case": 6
+  },
+  "total": 126,
+  "ai_enhanced_count": 126,
+  "before_file": "site7_spa_taskboard_before_20260401_111945.json"
+}

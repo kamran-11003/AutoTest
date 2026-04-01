@@ -1,0 +1,2111 @@
+{
+  "crawl_stats": {
+    "pages_crawled": 5,
+    "start_url": "http://localhost:3008",
+    "max_depth_reached": 1,
+    "total_states": 4,
+    "unique_urls": 4,
+    "total_inputs": 13,
+    "total_forms": 3,
+    "total_links": 16,
+    "avg_inputs_per_page": 3.25,
+    "avg_forms_per_page": 0.75
+  },
+  "graph_stats": {
+    "node_count": 8,
+    "edge_count": 4,
+    "isolated_nodes": 3,
+    "is_connected": false,
+    "max_depth": 1,
+    "avg_depth": 0.8
+  },
+  "ai_stats": {
+    "enabled": true,
+    "total_calls": 5,
+    "sdk_available": true
+  },
+  "states": [
+    {
+      "hash": "fb871217",
+      "url": "http://localhost:3008",
+      "normalized_url": "/",
+      "title": "CarePoint Clinic - Home",
+      "timestamp": "2026-04-01T11:06:12.925736",
+      "input_count": 0,
+      "button_count": 0,
+      "link_count": 4,
+      "form_count": 0,
+      "inputs": [],
+      "buttons": [],
+      "links": [
+        "http://localhost:3008/appointment",
+        "http://localhost:3008/",
+        "http://localhost:3008/patient-register",
+        "http://localhost:3008/doctors"
+      ],
+      "forms": []
+    },
+    {
+      "hash": "6c3cc6ef",
+      "url": "http://localhost:3008/appointment",
+      "normalized_url": "/appointment",
+      "title": "CarePoint - Book Appointment",
+      "timestamp": "2026-04-01T11:06:42.824157",
+      "input_count": 5,
+      "button_count": 1,
+      "link_count": 4,
+      "form_count": 1,
+      "inputs": [
+        {
+          "type": "select-one",
+          "name": "doctor",
+          "id": "doctor",
+          "label": "Doctor",
+          "placeholder": "",
+          "required": true,
+          "pattern": null,
+          "minLength": null,
+          "maxLength": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "visible": true,
+          "parent_form": "appointmentForm",
+          "selector": "select[name=\"doctor\"]",
+          "disabled": false,
+          "options": [
+            {
+              "value": "dr_johnson",
+              "text": "Dr. Sarah Johnson — General Medicine"
+            },
+            {
+              "value": "dr_chen",
+              "text": "Dr. Michael Chen — Cardiology"
+            },
+            {
+              "value": "dr_davis",
+              "text": "Dr. Emily Davis — Dermatology"
+            },
+            {
+              "value": "dr_patel",
+              "text": "Dr. Raj Patel — Orthopedics"
+            }
+          ]
+        },
+        {
+          "type": "date",
+          "name": "appDate",
+          "id": "appDate",
+          "label": "Appointment Date",
+          "placeholder": "",
+          "required": true,
+          "pattern": null,
+          "minLength": null,
+          "maxLength": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "visible": true,
+          "parent_form": "appointmentForm",
+          "selector": "input[name=\"appDate\"]",
+          "disabled": false,
+          "options": null
+        },
+        {
+          "type": "select-one",
+          "name": "appTime",
+          "id": "appTime",
+          "label": "Preferred Time",
+          "placeholder": "",
+          "required": true,
+          "pattern": null,
+          "minLength": null,
+          "maxLength": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "visible": true,
+          "parent_form": "appointmentForm",
+          "selector": "select[name=\"appTime\"]",
+          "disabled": false,
+          "options": [
+            {
+              "value": "09:00",
+              "text": "09:00 AM"
+            },
+            {
+              "value": "10:00",
+              "text": "10:00 AM"
+            },
+            {
+              "value": "11:00",
+              "text": "11:00 AM"
+            },
+            {
+              "value": "14:00",
+              "text": "02:00 PM"
+            },
+            {
+              "value": "15:00",
+              "text": "03:00 PM"
+            },
+            {
+              "value": "16:00",
+              "text": "04:00 PM"
+            }
+          ]
+        },
+        {
+          "type": "select-one",
+          "name": "visitType",
+          "id": "visitType",
+          "label": "Visit Type",
+          "placeholder": "",
+          "required": true,
+          "pattern": null,
+          "minLength": null,
+          "maxLength": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "visible": true,
+          "parent_form": "appointmentForm",
+          "selector": "select[name=\"visitType\"]",
+          "disabled": false,
+          "options": [
+            {
+              "value": "new",
+              "text": "New Patient Visit"
+            },
+            {
+              "value": "followup",
+              "text": "Follow-Up"
+            },
+            {
+              "value": "emergency",
+              "text": "Urgent Care"
+            },
+            {
+              "value": "checkup",
+              "text": "Annual Checkup"
+            }
+          ]
+        },
+        {
+          "type": "textarea",
+          "name": "reason",
+          "id": "reason",
+          "label": "Reason for Visit",
+          "placeholder": "Describe your symptoms or reason (10-300 chars)",
+          "required": true,
+          "pattern": null,
+          "minLength": 10,
+          "maxLength": 300,
+          "min": null,
+          "max": null,
+          "step": null,
+          "visible": true,
+          "parent_form": "appointmentForm",
+          "selector": "textarea[name=\"reason\"]",
+          "disabled": false,
+          "options": null
+        }
+      ],
+      "buttons": [
+        "Book Appointment"
+      ],
+      "links": [
+        "http://localhost:3008/appointment",
+        "http://localhost:3008/",
+        "http://localhost:3008/patient-register",
+        "http://localhost:3008/doctors"
+      ],
+      "forms": [
+        {
+          "signature": "60d3767f",
+          "inputs": [
+            {
+              "type": "select-one",
+              "name": "doctor",
+              "id": "doctor",
+              "label": "Doctor",
+              "placeholder": "",
+              "required": true,
+              "pattern": null,
+              "minLength": null,
+              "maxLength": null,
+              "min": null,
+              "max": null,
+              "step": null,
+              "visible": true,
+              "parent_form": "#appointmentForm",
+              "selector": "#doctor",
+              "disabled": false,
+              "options": [
+                {
+                  "value": "dr_johnson",
+                  "text": "Dr. Sarah Johnson — General Medicine"
+                },
+                {
+                  "value": "dr_chen",
+                  "text": "Dr. Michael Chen — Cardiology"
+                },
+                {
+                  "value": "dr_davis",
+                  "text": "Dr. Emily Davis — Dermatology"
+                },
+                {
+                  "value": "dr_patel",
+                  "text": "Dr. Raj Patel — Orthopedics"
+                }
+              ]
+            },
+            {
+              "type": "date",
+              "name": "appDate",
+              "id": "appDate",
+              "label": "Appointment Date",
+              "placeholder": "",
+              "required": true,
+              "pattern": null,
+              "minLength": null,
+              "maxLength": null,
+              "min": null,
+              "max": null,
+              "step": null,
+              "visible": true,
+              "parent_form": "#appointmentForm",
+              "selector": "#appDate",
+              "disabled": false,
+              "options": null
+            },
+            {
+              "type": "select-one",
+              "name": "appTime",
+              "id": "appTime",
+              "label": "Preferred Time",
+              "placeholder": "",
+              "required": true,
+              "pattern": null,
+              "minLength": null,
+              "maxLength": null,
+              "min": null,
+              "max": null,
+              "step": null,
+              "visible": true,
+              "parent_form": "#appointmentForm",
+              "selector": "#appTime",
+              "disabled": false,
+              "options": [
+                {
+                  "value": "09:00",
+                  "text": "09:00 AM"
+                },
+                {
+                  "value": "10:00",
+                  "text": "10:00 AM"
+                },
+                {
+                  "value": "11:00",
+                  "text": "11:00 AM"
+                },
+                {
+                  "value": "14:00",
+                  "text": "02:00 PM"
+                },
+                {
+                  "value": "15:00",
+                  "text": "03:00 PM"
+                },
+                {
+                  "value": "16:00",
+                  "text": "04:00 PM"
+                }
+              ]
+            },
+            {
+              "type": "select-one",
+              "name": "visitType",
+              "id": "visitType",
+              "label": "Visit Type",
+              "placeholder": "",
+              "required": true,
+              "pattern": null,
+              "minLength": null,
+              "maxLength": null,
+              "min": null,
+              "max": null,
+              "step": null,
+              "visible": true,
+              "parent_form": "#appointmentForm",
+              "selector": "#visitType",
+              "disabled": false,
+              "options": [
+                {
+                  "value": "new",
+                  "text": "New Patient Visit"
+                },
+                {
+                  "value": "followup",
+                  "text": "Follow-Up"
+                },
+                {
+                  "value": "emergency",
+                  "text": "Urgent Care"
+                },
+                {
+                  "value": "checkup",
+                  "text": "Annual Checkup"
+                }
+              ]
+            },
+            {
+              "type": "textarea",
+              "name": "reason",
+              "id": "reason",
+              "label": "Reason for Visit",
+              "placeholder": "Describe your symptoms or reason (10-300 chars)",
+              "required": true,
+              "pattern": null,
+              "minLength": 10,
+              "maxLength": 300,
+              "min": null,
+              "max": null,
+              "step": null,
+              "visible": true,
+              "parent_form": "#appointmentForm",
+              "selector": "#reason",
+              "disabled": false,
+              "options": null
+            }
+          ],
+          "submit_button": "Book Appointment",
+          "action": "http://localhost:3008/appointment",
+          "method": "get",
+          "selector": "#appointmentForm",
+          "detection_method": "semantic"
+        }
+      ]
+    },
+    {
+      "hash": "982962c0",
+      "url": "http://localhost:3008/patient-register",
+      "normalized_url": "/patient-register",
+      "title": "CarePoint - Patient Registration",
+      "timestamp": "2026-04-01T11:07:57.461249",
+      "input_count": 8,
+      "button_count": 1,
+      "link_count": 4,
+      "form_count": 2,
+      "inputs": [
+        {
+          "type": "text",
+          "name": "firstName",
+          "id": "firstName",
+          "label": "First Name",
+          "placeholder": "2-30 characters",
+          "required": true,
+          "pattern": null,
+          "minLength": 2,
+          "maxLength": 30,
+          "min": null,
+          "max": null,
+          "step": null,
+          "visible": true,
+          "parent_form": "patientForm",
+          "selector": "input[name=\"firstName\"]",
+          "disabled": false,
+          "options": null
+        },
+        {
+          "type": "text",
+          "name": "lastName",
+          "id": "lastName",
+          "label": "Last Name",
+          "placeholder": "2-30 characters",
+          "required": true,
+          "pattern": null,
+          "minLength": 2,
+          "maxLength": 30,
+          "min": null,
+          "max": null,
+          "step": null,
+          "visible": true,
+          "parent_form": "patientForm",
+          "selector": "input[name=\"lastName\"]",
+          "disabled": false,
+          "options": null
+        },
+        {
+          "type": "date",
+          "name": "dob",
+          "id": "dob",
+          "label": "Date of Birth",
+          "placeholder": "",
+          "required": true,
+          "pattern": null,
+          "minLength": null,
+          "maxLength": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "visible": true,
+          "parent_form": "patientForm",
+          "selector": "input[name=\"dob\"]",
+          "disabled": false,
+          "options": null
+        },
+        {
+          "type": "select-one",
+          "name": "gender",
+          "id": "gender",
+          "label": "Gender",
+          "placeholder": "",
+          "required": true,
+          "pattern": null,
+          "minLength": null,
+          "maxLength": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "visible": true,
+          "parent_form": "patientForm",
+          "selector": "select[name=\"gender\"]",
+          "disabled": false,
+          "options": [
+            {
+              "value": "male",
+              "text": "Male"
+            },
+            {
+              "value": "female",
+              "text": "Female"
+            },
+            {
+              "value": "other",
+              "text": "Other"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "name": "patientPhone",
+          "id": "patientPhone",
+          "label": "Phone Number",
+          "placeholder": "10-15 digits",
+          "required": true,
+          "pattern": null,
+          "minLength": null,
+          "maxLength": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "visible": true,
+          "parent_form": "patientForm",
+          "selector": "input[name=\"patientPhone\"]",
+          "disabled": false,
+          "options": null
+        },
+        {
+          "type": "email",
+          "name": "patientEmail",
+          "id": "patientEmail",
+          "label": "Email Address",
+          "placeholder": "you@example.com",
+          "required": true,
+          "pattern": null,
+          "minLength": null,
+          "maxLength": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "visible": true,
+          "parent_form": "patientForm",
+          "selector": "input[name=\"patientEmail\"]",
+          "disabled": false,
+          "options": null
+        },
+        {
+          "type": "text",
+          "name": "emergencyContact",
+          "id": "emergencyContact",
+          "label": "Emergency Contact Name",
+          "placeholder": "2-50 characters",
+          "required": true,
+          "pattern": null,
+          "minLength": 2,
+          "maxLength": 50,
+          "min": null,
+          "max": null,
+          "step": null,
+          "visible": true,
+          "parent_form": "patientForm",
+          "selector": "input[name=\"emergencyContact\"]",
+          "disabled": false,
+          "options": null
+        },
+        {
+          "type": "select-one",
+          "name": "bloodType",
+          "id": "bloodType",
+          "label": "Blood Type",
+          "placeholder": "",
+          "required": true,
+          "pattern": null,
+          "minLength": null,
+          "maxLength": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "visible": true,
+          "parent_form": "patientForm",
+          "selector": "select[name=\"bloodType\"]",
+          "disabled": false,
+          "options": [
+            {
+              "value": "A+",
+              "text": "A+"
+            },
+            {
+              "value": "A-",
+              "text": "A-"
+            },
+            {
+              "value": "B+",
+              "text": "B+"
+            },
+            {
+              "value": "B-",
+              "text": "B-"
+            },
+            {
+              "value": "AB+",
+              "text": "AB+"
+            },
+            {
+              "value": "AB-",
+              "text": "AB-"
+            },
+            {
+              "value": "O+",
+              "text": "O+"
+            },
+            {
+              "value": "O-",
+              "text": "O-"
+            }
+          ]
+        }
+      ],
+      "buttons": [
+        "Register Patient"
+      ],
+      "links": [
+        "http://localhost:3008/appointment",
+        "http://localhost:3008/",
+        "http://localhost:3008/patient-register",
+        "http://localhost:3008/doctors"
+      ],
+      "forms": [
+        {
+          "signature": "3778a249",
+          "inputs": [
+            {
+              "type": "text",
+              "name": "firstName",
+              "id": "firstName",
+              "label": "First Name",
+              "placeholder": "2-30 characters",
+              "required": true,
+              "pattern": null,
+              "minLength": 2,
+              "maxLength": 30,
+              "min": null,
+              "max": null,
+              "step": null,
+              "visible": true,
+              "parent_form": "#patientForm",
+              "selector": "#firstName",
+              "disabled": false,
+              "options": null
+            },
+            {
+              "type": "text",
+              "name": "lastName",
+              "id": "lastName",
+              "label": "Last Name",
+              "placeholder": "2-30 characters",
+              "required": true,
+              "pattern": null,
+              "minLength": 2,
+              "maxLength": 30,
+              "min": null,
+              "max": null,
+              "step": null,
+              "visible": true,
+              "parent_form": "#patientForm",
+              "selector": "#lastName",
+              "disabled": false,
+              "options": null
+            },
+            {
+              "type": "date",
+              "name": "dob",
+              "id": "dob",
+              "label": "Date of Birth",
+              "placeholder": "",
+              "required": true,
+              "pattern": null,
+              "minLength": null,
+              "maxLength": null,
+              "min": null,
+              "max": null,
+              "step": null,
+              "visible": true,
+              "parent_form": "#patientForm",
+              "selector": "#dob",
+              "disabled": false,
+              "options": null
+            },
+            {
+              "type": "select-one",
+              "name": "gender",
+              "id": "gender",
+              "label": "Gender",
+              "placeholder": "",
+              "required": true,
+              "pattern": null,
+              "minLength": null,
+              "maxLength": null,
+              "min": null,
+              "max": null,
+              "step": null,
+              "visible": true,
+              "parent_form": "#patientForm",
+              "selector": "#gender",
+              "disabled": false,
+              "options": [
+                {
+                  "value": "male",
+                  "text": "Male"
+                },
+                {
+                  "value": "female",
+                  "text": "Female"
+                },
+                {
+                  "value": "other",
+                  "text": "Other"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "name": "patientPhone",
+              "id": "patientPhone",
+              "label": "Phone Number",
+              "placeholder": "10-15 digits",
+              "required": true,
+              "pattern": null,
+              "minLength": null,
+              "maxLength": null,
+              "min": null,
+              "max": null,
+              "step": null,
+              "visible": true,
+              "parent_form": "#patientForm",
+              "selector": "#patientPhone",
+              "disabled": false,
+              "options": null
+            },
+            {
+              "type": "email",
+              "name": "patientEmail",
+              "id": "patientEmail",
+              "label": "Email Address",
+              "placeholder": "you@example.com",
+              "required": true,
+              "pattern": null,
+              "minLength": null,
+              "maxLength": null,
+              "min": null,
+              "max": null,
+              "step": null,
+              "visible": true,
+              "parent_form": "#patientForm",
+              "selector": "#patientEmail",
+              "disabled": false,
+              "options": null
+            },
+            {
+              "type": "text",
+              "name": "emergencyContact",
+              "id": "emergencyContact",
+              "label": "Emergency Contact Name",
+              "placeholder": "2-50 characters",
+              "required": true,
+              "pattern": null,
+              "minLength": 2,
+              "maxLength": 50,
+              "min": null,
+              "max": null,
+              "step": null,
+              "visible": true,
+              "parent_form": "#patientForm",
+              "selector": "#emergencyContact",
+              "disabled": false,
+              "options": null
+            },
+            {
+              "type": "select-one",
+              "name": "bloodType",
+              "id": "bloodType",
+              "label": "Blood Type",
+              "placeholder": "",
+              "required": true,
+              "pattern": null,
+              "minLength": null,
+              "maxLength": null,
+              "min": null,
+              "max": null,
+              "step": null,
+              "visible": true,
+              "parent_form": "#patientForm",
+              "selector": "#bloodType",
+              "disabled": false,
+              "options": [
+                {
+                  "value": "A+",
+                  "text": "A+"
+                },
+                {
+                  "value": "A-",
+                  "text": "A-"
+                },
+                {
+                  "value": "B+",
+                  "text": "B+"
+                },
+                {
+                  "value": "B-",
+                  "text": "B-"
+                },
+                {
+                  "value": "AB+",
+                  "text": "AB+"
+                },
+                {
+                  "value": "AB-",
+                  "text": "AB-"
+                },
+                {
+                  "value": "O+",
+                  "text": "O+"
+                },
+                {
+                  "value": "O-",
+                  "text": "O-"
+                }
+              ]
+            }
+          ],
+          "submit_button": "Register Patient",
+          "action": "http://localhost:3008/patient-register",
+          "method": "get",
+          "selector": "#patientForm",
+          "detection_method": "semantic"
+        },
+        {
+          "signature": "9a4dfdb5",
+          "inputs": [
+            {
+              "type": "text",
+              "name": "firstName",
+              "id": "firstName",
+              "label": "First Name",
+              "placeholder": "2-30 characters",
+              "required": true,
+              "pattern": null,
+              "minLength": 2,
+              "maxLength": 30,
+              "min": null,
+              "max": null,
+              "step": null,
+              "visible": true,
+              "parent_form": "patientForm",
+              "selector": "input[name=\"firstName\"]",
+              "disabled": false,
+              "options": null
+            },
+            {
+              "type": "text",
+              "name": "firstName",
+              "id": "firstName",
+              "label": "First Name",
+              "placeholder": "2-30 characters",
+              "required": true,
+              "pattern": null,
+              "minLength": 2,
+              "maxLength": 30,
+              "min": null,
+              "max": null,
+              "step": null,
+              "visible": true,
+              "parent_form": "patientForm",
+              "selector": "input[name=\"firstName\"]",
+              "disabled": false,
+              "options": null
+            },
+            {
+              "type": "date",
+              "name": "dob",
+              "id": "dob",
+              "label": "Date of Birth",
+              "placeholder": "",
+              "required": true,
+              "pattern": null,
+              "minLength": null,
+              "maxLength": null,
+              "min": null,
+              "max": null,
+              "step": null,
+              "visible": true,
+              "parent_form": "patientForm",
+              "selector": "input[name=\"dob\"]",
+              "disabled": false,
+              "options": null
+            },
+            {
+              "type": "select-one",
+              "name": "gender",
+              "id": "gender",
+              "label": "Gender",
+              "placeholder": "",
+              "required": true,
+              "pattern": null,
+              "minLength": null,
+              "maxLength": null,
+              "min": null,
+              "max": null,
+              "step": null,
+              "visible": true,
+              "parent_form": "patientForm",
+              "selector": "select[name=\"gender\"]",
+              "disabled": false,
+              "options": [
+                {
+                  "value": "male",
+                  "text": "Male"
+                },
+                {
+                  "value": "female",
+                  "text": "Female"
+                },
+                {
+                  "value": "other",
+                  "text": "Other"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "name": "patientPhone",
+              "id": "patientPhone",
+              "label": "Phone Number",
+              "placeholder": "10-15 digits",
+              "required": true,
+              "pattern": null,
+              "minLength": null,
+              "maxLength": null,
+              "min": null,
+              "max": null,
+              "step": null,
+              "visible": true,
+              "parent_form": "patientForm",
+              "selector": "input[name=\"patientPhone\"]",
+              "disabled": false,
+              "options": null
+            },
+            {
+              "type": "email",
+              "name": "patientEmail",
+              "id": "patientEmail",
+              "label": "Email Address",
+              "placeholder": "you@example.com",
+              "required": true,
+              "pattern": null,
+              "minLength": null,
+              "maxLength": null,
+              "min": null,
+              "max": null,
+              "step": null,
+              "visible": true,
+              "parent_form": "patientForm",
+              "selector": "input[name=\"patientEmail\"]",
+              "disabled": false,
+              "options": null
+            },
+            {
+              "type": "text",
+              "name": "emergencyContact",
+              "id": "emergencyContact",
+              "label": "Emergency Contact Name",
+              "placeholder": "2-50 characters",
+              "required": true,
+              "pattern": null,
+              "minLength": 2,
+              "maxLength": 50,
+              "min": null,
+              "max": null,
+              "step": null,
+              "visible": true,
+              "parent_form": "patientForm",
+              "selector": "input[name=\"emergencyContact\"]",
+              "disabled": false,
+              "options": null
+            },
+            {
+              "type": "select-one",
+              "name": "bloodType",
+              "id": "bloodType",
+              "label": "Blood Type",
+              "placeholder": "",
+              "required": true,
+              "pattern": null,
+              "minLength": null,
+              "maxLength": null,
+              "min": null,
+              "max": null,
+              "step": null,
+              "visible": true,
+              "parent_form": "patientForm",
+              "selector": "select[name=\"bloodType\"]",
+              "disabled": false,
+              "options": [
+                {
+                  "value": "A+",
+                  "text": "A+"
+                },
+                {
+                  "value": "A-",
+                  "text": "A-"
+                },
+                {
+                  "value": "B+",
+                  "text": "B+"
+                },
+                {
+                  "value": "B-",
+                  "text": "B-"
+                },
+                {
+                  "value": "AB+",
+                  "text": "AB+"
+                },
+                {
+                  "value": "AB-",
+                  "text": "AB-"
+                },
+                {
+                  "value": "O+",
+                  "text": "O+"
+                },
+                {
+                  "value": "O-",
+                  "text": "O-"
+                }
+              ]
+            }
+          ],
+          "submit_button": "Register Patient",
+          "action": null,
+          "method": null,
+          "selector": "#patientForm",
+          "detection_method": "ai_vision"
+        }
+      ]
+    },
+    {
+      "hash": "8066a9bd",
+      "url": "http://localhost:3008/doctors",
+      "normalized_url": "/doctors",
+      "title": "CarePoint - Our Doctors",
+      "timestamp": "2026-04-01T11:08:33.669220",
+      "input_count": 0,
+      "button_count": 0,
+      "link_count": 4,
+      "form_count": 0,
+      "inputs": [],
+      "buttons": [],
+      "links": [
+        "http://localhost:3008/appointment",
+        "http://localhost:3008/",
+        "http://localhost:3008/patient-register",
+        "http://localhost:3008/doctors"
+      ],
+      "forms": []
+    }
+  ],
+  "nodes": [
+    {
+      "id": "fb871217",
+      "hash": "fb871217",
+      "url": "http://localhost:3008",
+      "normalized_url": "/",
+      "title": "CarePoint Clinic - Home",
+      "input_count": 0,
+      "button_count": 0,
+      "link_count": 4,
+      "form_count": 0,
+      "inputs": [],
+      "buttons": [],
+      "links": [
+        "http://localhost:3008/appointment",
+        "http://localhost:3008/",
+        "http://localhost:3008/patient-register",
+        "http://localhost:3008/doctors"
+      ],
+      "forms": [],
+      "timestamp": "2026-04-01T11:06:12.927729",
+      "metadata": {}
+    },
+    {
+      "id": "6c3cc6ef",
+      "hash": "6c3cc6ef",
+      "url": "http://localhost:3008/appointment",
+      "normalized_url": "/appointment",
+      "title": "CarePoint - Book Appointment",
+      "input_count": 5,
+      "button_count": 1,
+      "link_count": 4,
+      "form_count": 1,
+      "inputs": [
+        {
+          "type": "select-one",
+          "name": "doctor",
+          "id": "doctor",
+          "label": "Doctor",
+          "placeholder": "",
+          "required": true,
+          "pattern": null,
+          "minLength": null,
+          "maxLength": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "visible": true,
+          "parent_form": "appointmentForm",
+          "selector": "select[name=\"doctor\"]",
+          "disabled": false,
+          "options": [
+            {
+              "value": "dr_johnson",
+              "text": "Dr. Sarah Johnson — General Medicine"
+            },
+            {
+              "value": "dr_chen",
+              "text": "Dr. Michael Chen — Cardiology"
+            },
+            {
+              "value": "dr_davis",
+              "text": "Dr. Emily Davis — Dermatology"
+            },
+            {
+              "value": "dr_patel",
+              "text": "Dr. Raj Patel — Orthopedics"
+            }
+          ]
+        },
+        {
+          "type": "date",
+          "name": "appDate",
+          "id": "appDate",
+          "label": "Appointment Date",
+          "placeholder": "",
+          "required": true,
+          "pattern": null,
+          "minLength": null,
+          "maxLength": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "visible": true,
+          "parent_form": "appointmentForm",
+          "selector": "input[name=\"appDate\"]",
+          "disabled": false,
+          "options": null
+        },
+        {
+          "type": "select-one",
+          "name": "appTime",
+          "id": "appTime",
+          "label": "Preferred Time",
+          "placeholder": "",
+          "required": true,
+          "pattern": null,
+          "minLength": null,
+          "maxLength": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "visible": true,
+          "parent_form": "appointmentForm",
+          "selector": "select[name=\"appTime\"]",
+          "disabled": false,
+          "options": [
+            {
+              "value": "09:00",
+              "text": "09:00 AM"
+            },
+            {
+              "value": "10:00",
+              "text": "10:00 AM"
+            },
+            {
+              "value": "11:00",
+              "text": "11:00 AM"
+            },
+            {
+              "value": "14:00",
+              "text": "02:00 PM"
+            },
+            {
+              "value": "15:00",
+              "text": "03:00 PM"
+            },
+            {
+              "value": "16:00",
+              "text": "04:00 PM"
+            }
+          ]
+        },
+        {
+          "type": "select-one",
+          "name": "visitType",
+          "id": "visitType",
+          "label": "Visit Type",
+          "placeholder": "",
+          "required": true,
+          "pattern": null,
+          "minLength": null,
+          "maxLength": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "visible": true,
+          "parent_form": "appointmentForm",
+          "selector": "select[name=\"visitType\"]",
+          "disabled": false,
+          "options": [
+            {
+              "value": "new",
+              "text": "New Patient Visit"
+            },
+            {
+              "value": "followup",
+              "text": "Follow-Up"
+            },
+            {
+              "value": "emergency",
+              "text": "Urgent Care"
+            },
+            {
+              "value": "checkup",
+              "text": "Annual Checkup"
+            }
+          ]
+        },
+        {
+          "type": "textarea",
+          "name": "reason",
+          "id": "reason",
+          "label": "Reason for Visit",
+          "placeholder": "Describe your symptoms or reason (10-300 chars)",
+          "required": true,
+          "pattern": null,
+          "minLength": 10,
+          "maxLength": 300,
+          "min": null,
+          "max": null,
+          "step": null,
+          "visible": true,
+          "parent_form": "appointmentForm",
+          "selector": "textarea[name=\"reason\"]",
+          "disabled": false,
+          "options": null
+        }
+      ],
+      "buttons": [
+        "Book Appointment"
+      ],
+      "links": [
+        "http://localhost:3008/appointment",
+        "http://localhost:3008/",
+        "http://localhost:3008/patient-register",
+        "http://localhost:3008/doctors"
+      ],
+      "forms": [
+        {
+          "signature": "60d3767f",
+          "inputs": [
+            {
+              "type": "select-one",
+              "name": "doctor",
+              "id": "doctor",
+              "label": "Doctor",
+              "placeholder": "",
+              "required": true,
+              "pattern": null,
+              "minLength": null,
+              "maxLength": null,
+              "min": null,
+              "max": null,
+              "step": null,
+              "visible": true,
+              "parent_form": "#appointmentForm",
+              "selector": "#doctor",
+              "disabled": false,
+              "options": [
+                {
+                  "value": "dr_johnson",
+                  "text": "Dr. Sarah Johnson — General Medicine"
+                },
+                {
+                  "value": "dr_chen",
+                  "text": "Dr. Michael Chen — Cardiology"
+                },
+                {
+                  "value": "dr_davis",
+                  "text": "Dr. Emily Davis — Dermatology"
+                },
+                {
+                  "value": "dr_patel",
+                  "text": "Dr. Raj Patel — Orthopedics"
+                }
+              ]
+            },
+            {
+              "type": "date",
+              "name": "appDate",
+              "id": "appDate",
+              "label": "Appointment Date",
+              "placeholder": "",
+              "required": true,
+              "pattern": null,
+              "minLength": null,
+              "maxLength": null,
+              "min": null,
+              "max": null,
+              "step": null,
+              "visible": true,
+              "parent_form": "#appointmentForm",
+              "selector": "#appDate",
+              "disabled": false,
+              "options": null
+            },
+            {
+              "type": "select-one",
+              "name": "appTime",
+              "id": "appTime",
+              "label": "Preferred Time",
+              "placeholder": "",
+              "required": true,
+              "pattern": null,
+              "minLength": null,
+              "maxLength": null,
+              "min": null,
+              "max": null,
+              "step": null,
+              "visible": true,
+              "parent_form": "#appointmentForm",
+              "selector": "#appTime",
+              "disabled": false,
+              "options": [
+                {
+                  "value": "09:00",
+                  "text": "09:00 AM"
+                },
+                {
+                  "value": "10:00",
+                  "text": "10:00 AM"
+                },
+                {
+                  "value": "11:00",
+                  "text": "11:00 AM"
+                },
+                {
+                  "value": "14:00",
+                  "text": "02:00 PM"
+                },
+                {
+                  "value": "15:00",
+                  "text": "03:00 PM"
+                },
+                {
+                  "value": "16:00",
+                  "text": "04:00 PM"
+                }
+              ]
+            },
+            {
+              "type": "select-one",
+              "name": "visitType",
+              "id": "visitType",
+              "label": "Visit Type",
+              "placeholder": "",
+              "required": true,
+              "pattern": null,
+              "minLength": null,
+              "maxLength": null,
+              "min": null,
+              "max": null,
+              "step": null,
+              "visible": true,
+              "parent_form": "#appointmentForm",
+              "selector": "#visitType",
+              "disabled": false,
+              "options": [
+                {
+                  "value": "new",
+                  "text": "New Patient Visit"
+                },
+                {
+                  "value": "followup",
+                  "text": "Follow-Up"
+                },
+                {
+                  "value": "emergency",
+                  "text": "Urgent Care"
+                },
+                {
+                  "value": "checkup",
+                  "text": "Annual Checkup"
+                }
+              ]
+            },
+            {
+              "type": "textarea",
+              "name": "reason",
+              "id": "reason",
+              "label": "Reason for Visit",
+              "placeholder": "Describe your symptoms or reason (10-300 chars)",
+              "required": true,
+              "pattern": null,
+              "minLength": 10,
+              "maxLength": 300,
+              "min": null,
+              "max": null,
+              "step": null,
+              "visible": true,
+              "parent_form": "#appointmentForm",
+              "selector": "#reason",
+              "disabled": false,
+              "options": null
+            }
+          ],
+          "submit_button": "Book Appointment",
+          "action": "http://localhost:3008/appointment",
+          "method": "get",
+          "selector": "#appointmentForm",
+          "detection_method": "semantic"
+        }
+      ],
+      "timestamp": "2026-04-01T11:06:42.825159",
+      "metadata": {}
+    },
+    {
+      "id": "982962c0",
+      "hash": "982962c0",
+      "url": "http://localhost:3008/patient-register",
+      "normalized_url": "/patient-register",
+      "title": "CarePoint - Patient Registration",
+      "input_count": 8,
+      "button_count": 1,
+      "link_count": 4,
+      "form_count": 2,
+      "inputs": [
+        {
+          "type": "text",
+          "name": "firstName",
+          "id": "firstName",
+          "label": "First Name",
+          "placeholder": "2-30 characters",
+          "required": true,
+          "pattern": null,
+          "minLength": 2,
+          "maxLength": 30,
+          "min": null,
+          "max": null,
+          "step": null,
+          "visible": true,
+          "parent_form": "patientForm",
+          "selector": "input[name=\"firstName\"]",
+          "disabled": false,
+          "options": null
+        },
+        {
+          "type": "text",
+          "name": "lastName",
+          "id": "lastName",
+          "label": "Last Name",
+          "placeholder": "2-30 characters",
+          "required": true,
+          "pattern": null,
+          "minLength": 2,
+          "maxLength": 30,
+          "min": null,
+          "max": null,
+          "step": null,
+          "visible": true,
+          "parent_form": "patientForm",
+          "selector": "input[name=\"lastName\"]",
+          "disabled": false,
+          "options": null
+        },
+        {
+          "type": "date",
+          "name": "dob",
+          "id": "dob",
+          "label": "Date of Birth",
+          "placeholder": "",
+          "required": true,
+          "pattern": null,
+          "minLength": null,
+          "maxLength": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "visible": true,
+          "parent_form": "patientForm",
+          "selector": "input[name=\"dob\"]",
+          "disabled": false,
+          "options": null
+        },
+        {
+          "type": "select-one",
+          "name": "gender",
+          "id": "gender",
+          "label": "Gender",
+          "placeholder": "",
+          "required": true,
+          "pattern": null,
+          "minLength": null,
+          "maxLength": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "visible": true,
+          "parent_form": "patientForm",
+          "selector": "select[name=\"gender\"]",
+          "disabled": false,
+          "options": [
+            {
+              "value": "male",
+              "text": "Male"
+            },
+            {
+              "value": "female",
+              "text": "Female"
+            },
+            {
+              "value": "other",
+              "text": "Other"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "name": "patientPhone",
+          "id": "patientPhone",
+          "label": "Phone Number",
+          "placeholder": "10-15 digits",
+          "required": true,
+          "pattern": null,
+          "minLength": null,
+          "maxLength": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "visible": true,
+          "parent_form": "patientForm",
+          "selector": "input[name=\"patientPhone\"]",
+          "disabled": false,
+          "options": null
+        },
+        {
+          "type": "email",
+          "name": "patientEmail",
+          "id": "patientEmail",
+          "label": "Email Address",
+          "placeholder": "you@example.com",
+          "required": true,
+          "pattern": null,
+          "minLength": null,
+          "maxLength": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "visible": true,
+          "parent_form": "patientForm",
+          "selector": "input[name=\"patientEmail\"]",
+          "disabled": false,
+          "options": null
+        },
+        {
+          "type": "text",
+          "name": "emergencyContact",
+          "id": "emergencyContact",
+          "label": "Emergency Contact Name",
+          "placeholder": "2-50 characters",
+          "required": true,
+          "pattern": null,
+          "minLength": 2,
+          "maxLength": 50,
+          "min": null,
+          "max": null,
+          "step": null,
+          "visible": true,
+          "parent_form": "patientForm",
+          "selector": "input[name=\"emergencyContact\"]",
+          "disabled": false,
+          "options": null
+        },
+        {
+          "type": "select-one",
+          "name": "bloodType",
+          "id": "bloodType",
+          "label": "Blood Type",
+          "placeholder": "",
+          "required": true,
+          "pattern": null,
+          "minLength": null,
+          "maxLength": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "visible": true,
+          "parent_form": "patientForm",
+          "selector": "select[name=\"bloodType\"]",
+          "disabled": false,
+          "options": [
+            {
+              "value": "A+",
+              "text": "A+"
+            },
+            {
+              "value": "A-",
+              "text": "A-"
+            },
+            {
+              "value": "B+",
+              "text": "B+"
+            },
+            {
+              "value": "B-",
+              "text": "B-"
+            },
+            {
+              "value": "AB+",
+              "text": "AB+"
+            },
+            {
+              "value": "AB-",
+              "text": "AB-"
+            },
+            {
+              "value": "O+",
+              "text": "O+"
+            },
+            {
+              "value": "O-",
+              "text": "O-"
+            }
+          ]
+        }
+      ],
+      "buttons": [
+        "Register Patient"
+      ],
+      "links": [
+        "http://localhost:3008/appointment",
+        "http://localhost:3008/",
+        "http://localhost:3008/patient-register",
+        "http://localhost:3008/doctors"
+      ],
+      "forms": [
+        {
+          "signature": "3778a249",
+          "inputs": [
+            {
+              "type": "text",
+              "name": "firstName",
+              "id": "firstName",
+              "label": "First Name",
+              "placeholder": "2-30 characters",
+              "required": true,
+              "pattern": null,
+              "minLength": 2,
+              "maxLength": 30,
+              "min": null,
+              "max": null,
+              "step": null,
+              "visible": true,
+              "parent_form": "#patientForm",
+              "selector": "#firstName",
+              "disabled": false,
+              "options": null
+            },
+            {
+              "type": "text",
+              "name": "lastName",
+              "id": "lastName",
+              "label": "Last Name",
+              "placeholder": "2-30 characters",
+              "required": true,
+              "pattern": null,
+              "minLength": 2,
+              "maxLength": 30,
+              "min": null,
+              "max": null,
+              "step": null,
+              "visible": true,
+              "parent_form": "#patientForm",
+              "selector": "#lastName",
+              "disabled": false,
+              "options": null
+            },
+            {
+              "type": "date",
+              "name": "dob",
+              "id": "dob",
+              "label": "Date of Birth",
+              "placeholder": "",
+              "required": true,
+              "pattern": null,
+              "minLength": null,
+              "maxLength": null,
+              "min": null,
+              "max": null,
+              "step": null,
+              "visible": true,
+              "parent_form": "#patientForm",
+              "selector": "#dob",
+              "disabled": false,
+              "options": null
+            },
+            {
+              "type": "select-one",
+              "name": "gender",
+              "id": "gender",
+              "label": "Gender",
+              "placeholder": "",
+              "required": true,
+              "pattern": null,
+              "minLength": null,
+              "maxLength": null,
+              "min": null,
+              "max": null,
+              "step": null,
+              "visible": true,
+              "parent_form": "#patientForm",
+              "selector": "#gender",
+              "disabled": false,
+              "options": [
+                {
+                  "value": "male",
+                  "text": "Male"
+                },
+                {
+                  "value": "female",
+                  "text": "Female"
+                },
+                {
+                  "value": "other",
+                  "text": "Other"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "name": "patientPhone",
+              "id": "patientPhone",
+              "label": "Phone Number",
+              "placeholder": "10-15 digits",
+              "required": true,
+              "pattern": null,
+              "minLength": null,
+              "maxLength": null,
+              "min": null,
+              "max": null,
+              "step": null,
+              "visible": true,
+              "parent_form": "#patientForm",
+              "selector": "#patientPhone",
+              "disabled": false,
+              "options": null
+            },
+            {
+              "type": "email",
+              "name": "patientEmail",
+              "id": "patientEmail",
+              "label": "Email Address",
+              "placeholder": "you@example.com",
+              "required": true,
+              "pattern": null,
+              "minLength": null,
+              "maxLength": null,
+              "min": null,
+              "max": null,
+              "step": null,
+              "visible": true,
+              "parent_form": "#patientForm",
+              "selector": "#patientEmail",
+              "disabled": false,
+              "options": null
+            },
+            {
+              "type": "text",
+              "name": "emergencyContact",
+              "id": "emergencyContact",
+              "label": "Emergency Contact Name",
+              "placeholder": "2-50 characters",
+              "required": true,
+              "pattern": null,
+              "minLength": 2,
+              "maxLength": 50,
+              "min": null,
+              "max": null,
+              "step": null,
+              "visible": true,
+              "parent_form": "#patientForm",
+              "selector": "#emergencyContact",
+              "disabled": false,
+              "options": null
+            },
+            {
+              "type": "select-one",
+              "name": "bloodType",
+              "id": "bloodType",
+              "label": "Blood Type",
+              "placeholder": "",
+              "required": true,
+              "pattern": null,
+              "minLength": null,
+              "maxLength": null,
+              "min": null,
+              "max": null,
+              "step": null,
+              "visible": true,
+              "parent_form": "#patientForm",
+              "selector": "#bloodType",
+              "disabled": false,
+              "options": [
+                {
+                  "value": "A+",
+                  "text": "A+"
+                },
+                {
+                  "value": "A-",
+                  "text": "A-"
+                },
+                {
+                  "value": "B+",
+                  "text": "B+"
+                },
+                {
+                  "value": "B-",
+                  "text": "B-"
+                },
+                {
+                  "value": "AB+",
+                  "text": "AB+"
+                },
+                {
+                  "value": "AB-",
+                  "text": "AB-"
+                },
+                {
+                  "value": "O+",
+                  "text": "O+"
+                },
+                {
+                  "value": "O-",
+                  "text": "O-"
+                }
+              ]
+            }
+          ],
+          "submit_button": "Register Patient",
+          "action": "http://localhost:3008/patient-register",
+          "method": "get",
+          "selector": "#patientForm",
+          "detection_method": "semantic"
+        },
+        {
+          "signature": "9a4dfdb5",
+          "inputs": [
+            {
+              "type": "text",
+              "name": "firstName",
+              "id": "firstName",
+              "label": "First Name",
+              "placeholder": "2-30 characters",
+              "required": true,
+              "pattern": null,
+              "minLength": 2,
+              "maxLength": 30,
+              "min": null,
+              "max": null,
+              "step": null,
+              "visible": true,
+              "parent_form": "patientForm",
+              "selector": "input[name=\"firstName\"]",
+              "disabled": false,
+              "options": null
+            },
+            {
+              "type": "text",
+              "name": "firstName",
+              "id": "firstName",
+              "label": "First Name",
+              "placeholder": "2-30 characters",
+              "required": true,
+              "pattern": null,
+              "minLength": 2,
+              "maxLength": 30,
+              "min": null,
+              "max": null,
+              "step": null,
+              "visible": true,
+              "parent_form": "patientForm",
+              "selector": "input[name=\"firstName\"]",
+              "disabled": false,
+              "options": null
+            },
+            {
+              "type": "date",
+              "name": "dob",
+              "id": "dob",
+              "label": "Date of Birth",
+              "placeholder": "",
+              "required": true,
+              "pattern": null,
+              "minLength": null,
+              "maxLength": null,
+              "min": null,
+              "max": null,
+              "step": null,
+              "visible": true,
+              "parent_form": "patientForm",
+              "selector": "input[name=\"dob\"]",
+              "disabled": false,
+              "options": null
+            },
+            {
+              "type": "select-one",
+              "name": "gender",
+              "id": "gender",
+              "label": "Gender",
+              "placeholder": "",
+              "required": true,
+              "pattern": null,
+              "minLength": null,
+              "maxLength": null,
+              "min": null,
+              "max": null,
+              "step": null,
+              "visible": true,
+              "parent_form": "patientForm",
+              "selector": "select[name=\"gender\"]",
+              "disabled": false,
+              "options": [
+                {
+                  "value": "male",
+                  "text": "Male"
+                },
+                {
+                  "value": "female",
+                  "text": "Female"
+                },
+                {
+                  "value": "other",
+                  "text": "Other"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "name": "patientPhone",
+              "id": "patientPhone",
+              "label": "Phone Number",
+              "placeholder": "10-15 digits",
+              "required": true,
+              "pattern": null,
+              "minLength": null,
+              "maxLength": null,
+              "min": null,
+              "max": null,
+              "step": null,
+              "visible": true,
+              "parent_form": "patientForm",
+              "selector": "input[name=\"patientPhone\"]",
+              "disabled": false,
+              "options": null
+            },
+            {
+              "type": "email",
+              "name": "patientEmail",
+              "id": "patientEmail",
+              "label": "Email Address",
+              "placeholder": "you@example.com",
+              "required": true,
+              "pattern": null,
+              "minLength": null,
+              "maxLength": null,
+              "min": null,
+              "max": null,
+              "step": null,
+              "visible": true,
+              "parent_form": "patientForm",
+              "selector": "input[name=\"patientEmail\"]",
+              "disabled": false,
+              "options": null
+            },
+            {
+              "type": "text",
+              "name": "emergencyContact",
+              "id": "emergencyContact",
+              "label": "Emergency Contact Name",
+              "placeholder": "2-50 characters",
+              "required": true,
+              "pattern": null,
+              "minLength": 2,
+              "maxLength": 50,
+              "min": null,
+              "max": null,
+              "step": null,
+              "visible": true,
+              "parent_form": "patientForm",
+              "selector": "input[name=\"emergencyContact\"]",
+              "disabled": false,
+              "options": null
+            },
+            {
+              "type": "select-one",
+              "name": "bloodType",
+              "id": "bloodType",
+              "label": "Blood Type",
+              "placeholder": "",
+              "required": true,
+              "pattern": null,
+              "minLength": null,
+              "maxLength": null,
+              "min": null,
+              "max": null,
+              "step": null,
+              "visible": true,
+              "parent_form": "patientForm",
+              "selector": "select[name=\"bloodType\"]",
+              "disabled": false,
+              "options": [
+                {
+                  "value": "A+",
+                  "text": "A+"
+                },
+                {
+                  "value": "A-",
+                  "text": "A-"
+                },
+                {
+                  "value": "B+",
+                  "text": "B+"
+                },
+                {
+                  "value": "B-",
+                  "text": "B-"
+                },
+                {
+                  "value": "AB+",
+                  "text": "AB+"
+                },
+                {
+                  "value": "AB-",
+                  "text": "AB-"
+                },
+                {
+                  "value": "O+",
+                  "text": "O+"
+                },
+                {
+                  "value": "O-",
+                  "text": "O-"
+                }
+              ]
+            }
+          ],
+          "submit_button": "Register Patient",
+          "action": null,
+          "method": null,
+          "selector": "#patientForm",
+          "detection_method": "ai_vision"
+        }
+      ],
+      "timestamp": "2026-04-01T11:07:57.462254",
+      "metadata": {}
+    },
+    {
+      "id": "8066a9bd",
+      "hash": "8066a9bd",
+      "url": "http://localhost:3008/doctors",
+      "normalized_url": "/doctors",
+      "title": "CarePoint - Our Doctors",
+      "input_count": 0,
+      "button_count": 0,
+      "link_count": 4,
+      "form_count": 0,
+      "inputs": [],
+      "buttons": [],
+      "links": [
+        "http://localhost:3008/appointment",
+        "http://localhost:3008/",
+        "http://localhost:3008/patient-register",
+        "http://localhost:3008/doctors"
+      ],
+      "forms": [],
+      "timestamp": "2026-04-01T11:08:33.670203",
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "from_hash": "fb871217",
+      "to_hash": "6c3cc6ef",
+      "source": "fb871217",
+      "target": "6c3cc6ef",
+      "action": "click",
+      "element": "a[href=\"http://localhost:3008/appointment\"]",
+      "label": "Link to http://localhost:3008/appointment",
+      "timestamp": "2026-04-01T11:06:12.927729"
+    },
+    {
+      "from_hash": "fb871217",
+      "to_hash": "982962c0",
+      "source": "fb871217",
+      "target": "982962c0",
+      "action": "click",
+      "element": "a[href=\"http://localhost:3008/patient-register\"]",
+      "label": "Link to http://localhost:3008/patient-register",
+      "timestamp": "2026-04-01T11:06:12.928737"
+    },
+    {
+      "from_hash": "fb871217",
+      "to_hash": "8066a9bd",
+      "source": "fb871217",
+      "target": "8066a9bd",
+      "action": "click",
+      "element": "a[href=\"http://localhost:3008/doctors\"]",
+      "label": "Link to http://localhost:3008/doctors",
+      "timestamp": "2026-04-01T11:06:12.928737"
+    }
+  ]
+}

@@ -1,0 +1,3060 @@
+==============================================================================
+  SITE: E-Commerce (Next.js 14 SSR)
+  ID  : site6_ecommerce
+  URL : http://localhost:3006
+  DATE: 2026-04-01 13:14
+==============================================================================
+
+==============================================================================
+  SECTION 1 — CRAWL DATA
+==============================================================================
+
+  Crawl file : site6_ecommerce_verify_20260401_105848.json
+  Pages: 6   Edges: 5   Forms: 2   Fields: 10
+
+  Page: http://localhost:3006  (forms=1 inputs=2)
+    Form #unknown  method=get
+      loginEmail                type=email           REQUIRED
+      loginPassword             type=password        REQUIRED
+
+  Page: http://localhost:3006/products  (forms=0 inputs=0)
+
+  Page: http://localhost:3006/checkout  (forms=1 inputs=8)
+    Form #unknown  method=get
+      fullName                  type=text            REQUIRED
+      shippingEmail             type=email           REQUIRED
+      address                   type=text            REQUIRED
+      city                      type=text            REQUIRED
+      zipCode                   type=text            REQUIRED
+      cardNumber                type=text            REQUIRED
+      expiry                    type=text            REQUIRED
+      cvv                       type=text            REQUIRED
+
+  Page: http://localhost:3006/cart  (forms=0 inputs=0)
+
+  Navigation Edges:
+    51236ca7  ->  3df7fc06
+    51236ca7  ->  3c2ddc26
+    51236ca7  ->  3fdaa8e9
+
+------------------------------------------------------------------------------
+
+==============================================================================
+  SECTION 2 — TEST CASES BEFORE AI REFINEMENT (144 tests)
+==============================================================================
+
+  File: site6_ecommerce_before_20260401_111359.json
+
+  Type                                      Count
+  ----------------------------------------------
+  BVA - Boundary Value Analysis                60
+  ECP - Equivalence Class Partitioning         76
+  DT  - Decision Table                          0
+  ST  - State Transition                        3
+  UC  - Use Case                                5
+  ----------------------------------------------
+  TOTAL                                       144
+
+  [ BVA - 60 tests ]
+  ----------------------------------------------------------------------
+  ID          : bva_length_65096150_loginEmail_0
+  Type        : BVA  subtype=length
+  Field       : loginEmail (email)
+  Form URL    : http://localhost:3006
+  Test Value  : aaaa
+  Expected    : error
+  Description : Below minimum length (4 chars)
+  AI-enhanced : False
+  Test Data   : loginPassword='Test@12345', loginEmail='aaaa'
+
+  ID          : bva_length_65096150_loginEmail_1
+  Type        : BVA  subtype=length
+  Field       : loginEmail (email)
+  Form URL    : http://localhost:3006
+  Test Value  : a@b.c
+  Expected    : success
+  Description : At minimum length (5 chars)
+  AI-enhanced : False
+  Test Data   : loginPassword='Test@12345', loginEmail='a@b.c'
+
+  ID          : bva_length_65096150_loginEmail_2
+  Type        : BVA  subtype=length
+  Field       : loginEmail (email)
+  Form URL    : http://localhost:3006
+  Test Value  : aa@b.c
+  Expected    : success
+  Description : Just above minimum (6 chars)
+  AI-enhanced : False
+  Test Data   : loginPassword='Test@12345', loginEmail='aa@b.c'
+
+  ID          : bva_length_65096150_loginEmail_3
+  Type        : BVA  subtype=length
+  Field       : loginEmail (email)
+  Form URL    : http://localhost:3006
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.c
+  Expected    : success
+  Description : Just below maximum (253 chars)
+  AI-enhanced : False
+  Test Data   : loginPassword='Test@12345', loginEmail='aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.c'
+
+  ID          : bva_length_65096150_loginEmail_4
+  Type        : BVA  subtype=length
+  Field       : loginEmail (email)
+  Form URL    : http://localhost:3006
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.c
+  Expected    : success
+  Description : At maximum length (254 chars)
+  AI-enhanced : False
+  Test Data   : loginPassword='Test@12345', loginEmail='aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.c'
+
+  ID          : bva_length_65096150_loginEmail_5
+  Type        : BVA  subtype=length
+  Field       : loginEmail (email)
+  Form URL    : http://localhost:3006
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.c
+  Expected    : error
+  Description : Above maximum length (255 chars)
+  AI-enhanced : False
+  Test Data   : loginPassword='Test@12345', loginEmail='aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.c'
+
+  ID          : bva_length_65096150_loginPassword_0
+  Type        : BVA  subtype=length
+  Field       : loginPassword (password)
+  Form URL    : http://localhost:3006
+  Test Value  : Aa1!a
+  Expected    : error
+  Description : Below minimum length (5 chars)
+  AI-enhanced : False
+  Test Data   : loginEmail='tester@example.com', loginPassword='Aa1!a'
+
+  ID          : bva_length_65096150_loginPassword_1
+  Type        : BVA  subtype=length
+  Field       : loginPassword (password)
+  Form URL    : http://localhost:3006
+  Test Value  : Aa1!aa
+  Expected    : success
+  Description : At minimum length (6 chars)
+  AI-enhanced : False
+  Test Data   : loginEmail='tester@example.com', loginPassword='Aa1!aa'
+
+  ID          : bva_length_65096150_loginPassword_2
+  Type        : BVA  subtype=length
+  Field       : loginPassword (password)
+  Form URL    : http://localhost:3006
+  Test Value  : Aa1!aaa
+  Expected    : success
+  Description : Just above minimum (7 chars)
+  AI-enhanced : False
+  Test Data   : loginEmail='tester@example.com', loginPassword='Aa1!aaa'
+
+  ID          : bva_length_65096150_loginPassword_3
+  Type        : BVA  subtype=length
+  Field       : loginPassword (password)
+  Form URL    : http://localhost:3006
+  Test Value  : Aa1!aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : success
+  Description : Just below maximum (254 chars)
+  AI-enhanced : False
+  Test Data   : loginEmail='tester@example.com', loginPassword='Aa1!aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
+
+  ID          : bva_length_65096150_loginPassword_4
+  Type        : BVA  subtype=length
+  Field       : loginPassword (password)
+  Form URL    : http://localhost:3006
+  Test Value  : Aa1!aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : success
+  Description : At maximum length (255 chars)
+  AI-enhanced : False
+  Test Data   : loginEmail='tester@example.com', loginPassword='Aa1!aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
+
+  ID          : bva_length_65096150_loginPassword_5
+  Type        : BVA  subtype=length
+  Field       : loginPassword (password)
+  Form URL    : http://localhost:3006
+  Test Value  : Aa1!aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : error
+  Description : Above maximum length (256 chars)
+  AI-enhanced : False
+  Test Data   : loginEmail='tester@example.com', loginPassword='Aa1!aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
+
+  ID          : bva_length_72f7c4c7_fullName_0
+  Type        : BVA  subtype=length
+  Field       : fullName (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : a
+  Expected    : error
+  Description : Below minimum length (1 chars)
+  AI-enhanced : False
+  Test Data   : shippingEmail='tester@example.com', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : bva_length_72f7c4c7_fullName_1
+  Type        : BVA  subtype=length
+  Field       : fullName (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : aa
+  Expected    : success
+  Description : At minimum length (2 chars)
+  AI-enhanced : False
+  Test Data   : shippingEmail='tester@example.com', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : bva_length_72f7c4c7_fullName_2
+  Type        : BVA  subtype=length
+  Field       : fullName (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : aaa
+  Expected    : success
+  Description : Just above minimum (3 chars)
+  AI-enhanced : False
+  Test Data   : shippingEmail='tester@example.com', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : bva_length_72f7c4c7_fullName_3
+  Type        : BVA  subtype=length
+  Field       : fullName (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : success
+  Description : Just below maximum (59 chars)
+  AI-enhanced : False
+  Test Data   : shippingEmail='tester@example.com', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : bva_length_72f7c4c7_fullName_4
+  Type        : BVA  subtype=length
+  Field       : fullName (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : success
+  Description : At maximum length (60 chars)
+  AI-enhanced : False
+  Test Data   : shippingEmail='tester@example.com', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : bva_length_72f7c4c7_fullName_5
+  Type        : BVA  subtype=length
+  Field       : fullName (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : error
+  Description : Above maximum length (61 chars)
+  AI-enhanced : False
+  Test Data   : shippingEmail='tester@example.com', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : bva_length_72f7c4c7_shippingEmail_0
+  Type        : BVA  subtype=length
+  Field       : shippingEmail (email)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : aaaa
+  Expected    : error
+  Description : Below minimum length (4 chars)
+  AI-enhanced : False
+  Test Data   : fullName='John Doe', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : bva_length_72f7c4c7_shippingEmail_1
+  Type        : BVA  subtype=length
+  Field       : shippingEmail (email)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : a@b.c
+  Expected    : success
+  Description : At minimum length (5 chars)
+  AI-enhanced : False
+  Test Data   : fullName='John Doe', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : bva_length_72f7c4c7_shippingEmail_2
+  Type        : BVA  subtype=length
+  Field       : shippingEmail (email)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : aa@b.c
+  Expected    : success
+  Description : Just above minimum (6 chars)
+  AI-enhanced : False
+  Test Data   : fullName='John Doe', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : bva_length_72f7c4c7_shippingEmail_3
+  Type        : BVA  subtype=length
+  Field       : shippingEmail (email)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.c
+  Expected    : success
+  Description : Just below maximum (253 chars)
+  AI-enhanced : False
+  Test Data   : fullName='John Doe', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : bva_length_72f7c4c7_shippingEmail_4
+  Type        : BVA  subtype=length
+  Field       : shippingEmail (email)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.c
+  Expected    : success
+  Description : At maximum length (254 chars)
+  AI-enhanced : False
+  Test Data   : fullName='John Doe', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : bva_length_72f7c4c7_shippingEmail_5
+  Type        : BVA  subtype=length
+  Field       : shippingEmail (email)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.c
+  Expected    : error
+  Description : Above maximum length (255 chars)
+  AI-enhanced : False
+  Test Data   : fullName='John Doe', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : bva_length_72f7c4c7_address_0
+  Type        : BVA  subtype=length
+  Field       : address (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : aaaa
+  Expected    : error
+  Description : Below minimum length (4 chars)
+  AI-enhanced : False
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : bva_length_72f7c4c7_address_1
+  Type        : BVA  subtype=length
+  Field       : address (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : aaaaa
+  Expected    : success
+  Description : At minimum length (5 chars)
+  AI-enhanced : False
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : bva_length_72f7c4c7_address_2
+  Type        : BVA  subtype=length
+  Field       : address (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : aaaaaa
+  Expected    : success
+  Description : Just above minimum (6 chars)
+  AI-enhanced : False
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : bva_length_72f7c4c7_address_3
+  Type        : BVA  subtype=length
+  Field       : address (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : success
+  Description : Just below maximum (119 chars)
+  AI-enhanced : False
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : bva_length_72f7c4c7_address_4
+  Type        : BVA  subtype=length
+  Field       : address (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : success
+  Description : At maximum length (120 chars)
+  AI-enhanced : False
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : bva_length_72f7c4c7_address_5
+  Type        : BVA  subtype=length
+  Field       : address (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : error
+  Description : Above maximum length (121 chars)
+  AI-enhanced : False
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : bva_length_72f7c4c7_city_0
+  Type        : BVA  subtype=length
+  Field       : city (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : a
+  Expected    : error
+  Description : Below minimum length (1 chars)
+  AI-enhanced : False
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : bva_length_72f7c4c7_city_1
+  Type        : BVA  subtype=length
+  Field       : city (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : aa
+  Expected    : success
+  Description : At minimum length (2 chars)
+  AI-enhanced : False
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : bva_length_72f7c4c7_city_2
+  Type        : BVA  subtype=length
+  Field       : city (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : aaa
+  Expected    : success
+  Description : Just above minimum (3 chars)
+  AI-enhanced : False
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : bva_length_72f7c4c7_city_3
+  Type        : BVA  subtype=length
+  Field       : city (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : success
+  Description : Just below maximum (49 chars)
+  AI-enhanced : False
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : bva_length_72f7c4c7_city_4
+  Type        : BVA  subtype=length
+  Field       : city (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : success
+  Description : At maximum length (50 chars)
+  AI-enhanced : False
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : bva_length_72f7c4c7_city_5
+  Type        : BVA  subtype=length
+  Field       : city (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : error
+  Description : Above maximum length (51 chars)
+  AI-enhanced : False
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : bva_length_72f7c4c7_zipCode_0
+  Type        : BVA  subtype=length
+  Field       : zipCode (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : 
+  Expected    : error
+  Description : Below minimum length (0 chars)
+  AI-enhanced : False
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', city='New York', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : bva_length_72f7c4c7_zipCode_1
+  Type        : BVA  subtype=length
+  Field       : zipCode (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : a
+  Expected    : success
+  Description : At minimum length (1 chars)
+  AI-enhanced : False
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', city='New York', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : bva_length_72f7c4c7_zipCode_2
+  Type        : BVA  subtype=length
+  Field       : zipCode (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : aa
+  Expected    : success
+  Description : Just above minimum (2 chars)
+  AI-enhanced : False
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', city='New York', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : bva_length_72f7c4c7_zipCode_3
+  Type        : BVA  subtype=length
+  Field       : zipCode (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : success
+  Description : Just below maximum (254 chars)
+  AI-enhanced : False
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', city='New York', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : bva_length_72f7c4c7_zipCode_4
+  Type        : BVA  subtype=length
+  Field       : zipCode (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : success
+  Description : At maximum length (255 chars)
+  AI-enhanced : False
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', city='New York', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : bva_length_72f7c4c7_zipCode_5
+  Type        : BVA  subtype=length
+  Field       : zipCode (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : error
+  Description : Above maximum length (256 chars)
+  AI-enhanced : False
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', city='New York', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : bva_length_72f7c4c7_cardNumber_0
+  Type        : BVA  subtype=length
+  Field       : cardNumber (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : aaaaaaaaaaaa
+  Expected    : error
+  Description : Below minimum length (12 chars)
+  AI-enhanced : False
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', city='New York', zipCode='10001', expiry='12/26'
+
+  ID          : bva_length_72f7c4c7_cardNumber_1
+  Type        : BVA  subtype=length
+  Field       : cardNumber (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : aaaaaaaaaaaaa
+  Expected    : error
+  Description : At minimum length (13 chars)
+  AI-enhanced : False
+  Fix Note    : Auto-fixed: cardNumber='aaaaaaaaaaaaa' cannot pass format validation
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', city='New York', zipCode='10001', expiry='12/26'
+
+  ID          : bva_length_72f7c4c7_cardNumber_2
+  Type        : BVA  subtype=length
+  Field       : cardNumber (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : aaaaaaaaaaaaaa
+  Expected    : error
+  Description : Just above minimum (14 chars)
+  AI-enhanced : False
+  Fix Note    : Auto-fixed: cardNumber='aaaaaaaaaaaaaa' cannot pass format validation
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', city='New York', zipCode='10001', expiry='12/26'
+
+  ID          : bva_length_72f7c4c7_cardNumber_3
+  Type        : BVA  subtype=length
+  Field       : cardNumber (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : aaaaaaaaaaaaaaaaaa
+  Expected    : error
+  Description : Just below maximum (18 chars)
+  AI-enhanced : False
+  Fix Note    : Auto-fixed: cardNumber='aaaaaaaaaaaaaaaaaa' cannot pass format validation
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', city='New York', zipCode='10001', expiry='12/26'
+
+  ID          : bva_length_72f7c4c7_cardNumber_4
+  Type        : BVA  subtype=length
+  Field       : cardNumber (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : aaaaaaaaaaaaaaaaaaa
+  Expected    : error
+  Description : At maximum length (19 chars)
+  AI-enhanced : False
+  Fix Note    : Auto-fixed: cardNumber='aaaaaaaaaaaaaaaaaaa' cannot pass format validation
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', city='New York', zipCode='10001', expiry='12/26'
+
+  ID          : bva_length_72f7c4c7_cardNumber_5
+  Type        : BVA  subtype=length
+  Field       : cardNumber (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : aaaaaaaaaaaaaaaaaaaa
+  Expected    : error
+  Description : Above maximum length (20 chars)
+  AI-enhanced : False
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', city='New York', zipCode='10001', expiry='12/26'
+
+  ID          : bva_length_72f7c4c7_expiry_0
+  Type        : BVA  subtype=length
+  Field       : expiry (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : 
+  Expected    : error
+  Description : Below minimum length (0 chars)
+  AI-enhanced : False
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111'
+
+  ID          : bva_length_72f7c4c7_expiry_1
+  Type        : BVA  subtype=length
+  Field       : expiry (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : a
+  Expected    : error
+  Description : At minimum length (1 chars)
+  AI-enhanced : False
+  Fix Note    : Auto-fixed: expiry='a' cannot pass format validation
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111'
+
+  ID          : bva_length_72f7c4c7_expiry_2
+  Type        : BVA  subtype=length
+  Field       : expiry (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : aa
+  Expected    : error
+  Description : Just above minimum (2 chars)
+  AI-enhanced : False
+  Fix Note    : Auto-fixed: expiry='aa' cannot pass format validation
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111'
+
+  ID          : bva_length_72f7c4c7_expiry_3
+  Type        : BVA  subtype=length
+  Field       : expiry (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : error
+  Description : Just below maximum (254 chars)
+  AI-enhanced : False
+  Fix Note    : Auto-fixed: expiry='aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa' cannot pass format validation
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111'
+
+  ID          : bva_length_72f7c4c7_expiry_4
+  Type        : BVA  subtype=length
+  Field       : expiry (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : error
+  Description : At maximum length (255 chars)
+  AI-enhanced : False
+  Fix Note    : Auto-fixed: expiry='aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa' cannot pass format validation
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111'
+
+  ID          : bva_length_72f7c4c7_expiry_5
+  Type        : BVA  subtype=length
+  Field       : expiry (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : error
+  Description : Above maximum length (256 chars)
+  AI-enhanced : False
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111'
+
+  ID          : bva_length_72f7c4c7_cvv_0
+  Type        : BVA  subtype=length
+  Field       : cvv (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : aa
+  Expected    : error
+  Description : Below minimum length (2 chars)
+  AI-enhanced : False
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111'
+
+  ID          : bva_length_72f7c4c7_cvv_1
+  Type        : BVA  subtype=length
+  Field       : cvv (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : aaa
+  Expected    : error
+  Description : At minimum length (3 chars)
+  AI-enhanced : False
+  Fix Note    : Auto-fixed: cvv='aaa' cannot pass format validation
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111'
+
+  ID          : bva_length_72f7c4c7_cvv_2
+  Type        : BVA  subtype=length
+  Field       : cvv (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : aaaa
+  Expected    : error
+  Description : Just above minimum (4 chars)
+  AI-enhanced : False
+  Fix Note    : Auto-fixed: cvv='aaaa' cannot pass format validation
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111'
+
+  ID          : bva_length_72f7c4c7_cvv_3
+  Type        : BVA  subtype=length
+  Field       : cvv (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : aaa
+  Expected    : error
+  Description : Just below maximum (3 chars)
+  AI-enhanced : False
+  Fix Note    : Auto-fixed: cvv='aaa' cannot pass format validation
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111'
+
+  ID          : bva_length_72f7c4c7_cvv_4
+  Type        : BVA  subtype=length
+  Field       : cvv (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : aaaa
+  Expected    : error
+  Description : At maximum length (4 chars)
+  AI-enhanced : False
+  Fix Note    : Auto-fixed: cvv='aaaa' cannot pass format validation
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111'
+
+  ID          : bva_length_72f7c4c7_cvv_5
+  Type        : BVA  subtype=length
+  Field       : cvv (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : aaaaa
+  Expected    : error
+  Description : Above maximum length (5 chars)
+  AI-enhanced : False
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111'
+
+  [ ECP - 76 tests ]
+  ----------------------------------------------------------------------
+  ID          : ecp_email_65096150_loginEmail_valid_standard_0
+  Type        : ECP  subtype=email
+  Field       : loginEmail (email)
+  Form URL    : http://localhost:3006
+  Test Value  : user@example.com
+  Expected    : success
+  Description : Valid standard email format
+  AI-enhanced : False
+  Test Data   : loginPassword='Test@12345', loginEmail='user@example.com'
+
+  ID          : ecp_email_65096150_loginEmail_valid_standard_1
+  Type        : ECP  subtype=email
+  Field       : loginEmail (email)
+  Form URL    : http://localhost:3006
+  Test Value  : test@domain.co.uk
+  Expected    : success
+  Description : Valid standard email format
+  AI-enhanced : False
+  Test Data   : loginPassword='Test@12345', loginEmail='test@domain.co.uk'
+
+  ID          : ecp_email_65096150_loginEmail_valid_with_plus_0
+  Type        : ECP  subtype=email
+  Field       : loginEmail (email)
+  Form URL    : http://localhost:3006
+  Test Value  : user+tag@example.com
+  Expected    : success
+  Description : Valid email with plus addressing
+  AI-enhanced : False
+  Test Data   : loginPassword='Test@12345', loginEmail='user+tag@example.com'
+
+  ID          : ecp_email_65096150_loginEmail_valid_with_plus_1
+  Type        : ECP  subtype=email
+  Field       : loginEmail (email)
+  Form URL    : http://localhost:3006
+  Test Value  : test+filter@domain.com
+  Expected    : success
+  Description : Valid email with plus addressing
+  AI-enhanced : False
+  Test Data   : loginPassword='Test@12345', loginEmail='test+filter@domain.com'
+
+  ID          : ecp_email_65096150_loginEmail_valid_with_dots_0
+  Type        : ECP  subtype=email
+  Field       : loginEmail (email)
+  Form URL    : http://localhost:3006
+  Test Value  : first.last@example.com
+  Expected    : success
+  Description : Valid email with dots in local part
+  AI-enhanced : False
+  Test Data   : loginPassword='Test@12345', loginEmail='first.last@example.com'
+
+  ID          : ecp_email_65096150_loginEmail_valid_with_dots_1
+  Type        : ECP  subtype=email
+  Field       : loginEmail (email)
+  Form URL    : http://localhost:3006
+  Test Value  : user.name@domain.org
+  Expected    : success
+  Description : Valid email with dots in local part
+  AI-enhanced : False
+  Test Data   : loginPassword='Test@12345', loginEmail='user.name@domain.org'
+
+  ID          : ecp_email_65096150_loginEmail_valid_subdomain_0
+  Type        : ECP  subtype=email
+  Field       : loginEmail (email)
+  Form URL    : http://localhost:3006
+  Test Value  : user@mail.example.com
+  Expected    : success
+  Description : Valid email with subdomain
+  AI-enhanced : False
+  Test Data   : loginPassword='Test@12345', loginEmail='user@mail.example.com'
+
+  ID          : ecp_email_65096150_loginEmail_valid_subdomain_1
+  Type        : ECP  subtype=email
+  Field       : loginEmail (email)
+  Form URL    : http://localhost:3006
+  Test Value  : test@subdomain.domain.com
+  Expected    : success
+  Description : Valid email with subdomain
+  AI-enhanced : False
+  Test Data   : loginPassword='Test@12345', loginEmail='test@subdomain.domain.com'
+
+  ID          : ecp_email_65096150_loginEmail_invalid_missing_at_0
+  Type        : ECP  subtype=email
+  Field       : loginEmail (email)
+  Form URL    : http://localhost:3006
+  Test Value  : userexample.com
+  Expected    : error
+  Description : Missing @ symbol
+  AI-enhanced : False
+  Test Data   : loginPassword='Test@12345', loginEmail='userexample.com'
+
+  ID          : ecp_email_65096150_loginEmail_invalid_missing_at_1
+  Type        : ECP  subtype=email
+  Field       : loginEmail (email)
+  Form URL    : http://localhost:3006
+  Test Value  : test.domain.com
+  Expected    : error
+  Description : Missing @ symbol
+  AI-enhanced : False
+  Test Data   : loginPassword='Test@12345', loginEmail='test.domain.com'
+
+  ID          : ecp_email_65096150_loginEmail_invalid_missing_domain_0
+  Type        : ECP  subtype=email
+  Field       : loginEmail (email)
+  Form URL    : http://localhost:3006
+  Test Value  : user@
+  Expected    : error
+  Description : Missing or invalid domain
+  AI-enhanced : False
+  Test Data   : loginPassword='Test@12345', loginEmail='user@'
+
+  ID          : ecp_email_65096150_loginEmail_invalid_missing_domain_1
+  Type        : ECP  subtype=email
+  Field       : loginEmail (email)
+  Form URL    : http://localhost:3006
+  Test Value  : test@.com
+  Expected    : error
+  Description : Missing or invalid domain
+  AI-enhanced : False
+  Test Data   : loginPassword='Test@12345', loginEmail='test@.com'
+
+  ID          : ecp_email_65096150_loginEmail_invalid_special_chars_0
+  Type        : ECP  subtype=email
+  Field       : loginEmail (email)
+  Form URL    : http://localhost:3006
+  Test Value  : user..name@example.com
+  Expected    : error
+  Description : Invalid format: consecutive dots / leading dot (rejected by HTML5)
+  AI-enhanced : False
+  Test Data   : loginPassword='Test@12345', loginEmail='user..name@example.com'
+
+  ID          : ecp_email_65096150_loginEmail_invalid_special_chars_1
+  Type        : ECP  subtype=email
+  Field       : loginEmail (email)
+  Form URL    : http://localhost:3006
+  Test Value  : .user@example.com
+  Expected    : error
+  Description : Invalid format: consecutive dots / leading dot (rejected by HTML5)
+  AI-enhanced : False
+  Test Data   : loginPassword='Test@12345', loginEmail='.user@example.com'
+
+  ID          : ecp_email_65096150_loginEmail_invalid_empty_0
+  Type        : ECP  subtype=email
+  Field       : loginEmail (email)
+  Form URL    : http://localhost:3006
+  Test Value  : 
+  Expected    : error
+  Description : Empty or whitespace only
+  AI-enhanced : False
+  Test Data   : loginPassword='Test@12345', loginEmail=''
+
+  ID          : ecp_email_65096150_loginEmail_invalid_empty_1
+  Type        : ECP  subtype=email
+  Field       : loginEmail (email)
+  Form URL    : http://localhost:3006
+  Test Value  :    
+  Expected    : error
+  Description : Empty or whitespace only
+  AI-enhanced : False
+  Test Data   : loginPassword='Test@12345', loginEmail='   '
+
+  ID          : ecp_email_65096150_loginEmail_invalid_spaces_0
+  Type        : ECP  subtype=email
+  Field       : loginEmail (email)
+  Form URL    : http://localhost:3006
+  Test Value  : user name@example.com
+  Expected    : error
+  Description : Contains spaces
+  AI-enhanced : False
+  Test Data   : loginPassword='Test@12345', loginEmail='user name@example.com'
+
+  ID          : ecp_email_65096150_loginEmail_invalid_spaces_1
+  Type        : ECP  subtype=email
+  Field       : loginEmail (email)
+  Form URL    : http://localhost:3006
+  Test Value  : test @domain.com
+  Expected    : error
+  Description : Contains spaces
+  AI-enhanced : False
+  Test Data   : loginPassword='Test@12345', loginEmail='test @domain.com'
+
+  ID          : ecp_text_65096150_loginPassword_valid
+  Type        : ECP  subtype=text
+  Field       : loginPassword (password)
+  Form URL    : http://localhost:3006
+  Test Value  : ValidInput123
+  Expected    : success
+  Description : Valid text input for Password
+  AI-enhanced : False
+  Test Data   : loginEmail='tester@example.com', loginPassword='ValidInput123'
+
+  ID          : ecp_text_65096150_loginPassword_empty
+  Type        : ECP  subtype=text
+  Field       : loginPassword (password)
+  Form URL    : http://localhost:3006
+  Test Value  : 
+  Expected    : error
+  Description : Empty value for required field Password
+  AI-enhanced : False
+  Test Data   : loginEmail='tester@example.com', loginPassword=''
+
+  ID          : ecp_text_65096150_loginPassword_special
+  Type        : ECP  subtype=text
+  Field       : loginPassword (password)
+  Form URL    : http://localhost:3006
+  Test Value  : <script>alert("XSS")</script>
+  Expected    : error
+  Description : Special characters/XSS attempt in Password
+  AI-enhanced : False
+  Test Data   : loginEmail='tester@example.com', loginPassword='<script>alert("XSS")</script>'
+
+  ID          : ecp_text_65096150_loginPassword_long
+  Type        : ECP  subtype=text
+  Field       : loginPassword (password)
+  Form URL    : http://localhost:3006
+  Test Value  : AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+  Expected    : error
+  Description : Very long text input (500 chars) for Password — should exceed server maxlength
+  AI-enhanced : False
+  Test Data   : loginEmail='tester@example.com', loginPassword='AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'
+
+  ID          : ecp_text_65096150_loginPassword_unicode
+  Type        : ECP  subtype=text
+  Field       : loginPassword (password)
+  Form URL    : http://localhost:3006
+  Test Value  : 测试数据🎉!测试数据
+  Expected    : success
+  Description : Unicode characters in Password
+  AI-enhanced : False
+  Test Data   : loginEmail='tester@example.com', loginPassword='测试数据🎉!测试数据'
+
+  ID          : ecp_text_72f7c4c7_fullName_valid
+  Type        : ECP  subtype=text
+  Field       : fullName (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : ValidInput123
+  Expected    : success
+  Description : Valid text input for Full Name
+  AI-enhanced : False
+  Test Data   : shippingEmail='tester@example.com', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : ecp_text_72f7c4c7_fullName_empty
+  Type        : ECP  subtype=text
+  Field       : fullName (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : 
+  Expected    : error
+  Description : Empty value for required field Full Name
+  AI-enhanced : False
+  Test Data   : shippingEmail='tester@example.com', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : ecp_text_72f7c4c7_fullName_special
+  Type        : ECP  subtype=text
+  Field       : fullName (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : <script>alert("XSS")</script>
+  Expected    : error
+  Description : Special characters/XSS attempt in Full Name
+  AI-enhanced : False
+  Test Data   : shippingEmail='tester@example.com', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : ecp_text_72f7c4c7_fullName_long
+  Type        : ECP  subtype=text
+  Field       : fullName (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+  Expected    : error
+  Description : Very long text input (500 chars) for Full Name — should exceed server maxlength
+  AI-enhanced : False
+  Test Data   : shippingEmail='tester@example.com', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : ecp_text_72f7c4c7_fullName_unicode
+  Type        : ECP  subtype=text
+  Field       : fullName (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : 测试数据🎉!测试数据
+  Expected    : success
+  Description : Unicode characters in Full Name
+  AI-enhanced : False
+  Test Data   : shippingEmail='tester@example.com', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : ecp_email_72f7c4c7_shippingEmail_valid_standard_0
+  Type        : ECP  subtype=email
+  Field       : shippingEmail (email)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : user@example.com
+  Expected    : success
+  Description : Valid standard email format
+  AI-enhanced : False
+  Test Data   : fullName='John Doe', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : ecp_email_72f7c4c7_shippingEmail_valid_standard_1
+  Type        : ECP  subtype=email
+  Field       : shippingEmail (email)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : test@domain.co.uk
+  Expected    : success
+  Description : Valid standard email format
+  AI-enhanced : False
+  Test Data   : fullName='John Doe', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : ecp_email_72f7c4c7_shippingEmail_valid_with_plus_0
+  Type        : ECP  subtype=email
+  Field       : shippingEmail (email)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : user+tag@example.com
+  Expected    : success
+  Description : Valid email with plus addressing
+  AI-enhanced : False
+  Test Data   : fullName='John Doe', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : ecp_email_72f7c4c7_shippingEmail_valid_with_plus_1
+  Type        : ECP  subtype=email
+  Field       : shippingEmail (email)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : test+filter@domain.com
+  Expected    : success
+  Description : Valid email with plus addressing
+  AI-enhanced : False
+  Test Data   : fullName='John Doe', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : ecp_email_72f7c4c7_shippingEmail_valid_with_dots_0
+  Type        : ECP  subtype=email
+  Field       : shippingEmail (email)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : first.last@example.com
+  Expected    : success
+  Description : Valid email with dots in local part
+  AI-enhanced : False
+  Test Data   : fullName='John Doe', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : ecp_email_72f7c4c7_shippingEmail_valid_with_dots_1
+  Type        : ECP  subtype=email
+  Field       : shippingEmail (email)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : user.name@domain.org
+  Expected    : success
+  Description : Valid email with dots in local part
+  AI-enhanced : False
+  Test Data   : fullName='John Doe', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : ecp_email_72f7c4c7_shippingEmail_valid_subdomain_0
+  Type        : ECP  subtype=email
+  Field       : shippingEmail (email)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : user@mail.example.com
+  Expected    : success
+  Description : Valid email with subdomain
+  AI-enhanced : False
+  Test Data   : fullName='John Doe', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : ecp_email_72f7c4c7_shippingEmail_valid_subdomain_1
+  Type        : ECP  subtype=email
+  Field       : shippingEmail (email)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : test@subdomain.domain.com
+  Expected    : success
+  Description : Valid email with subdomain
+  AI-enhanced : False
+  Test Data   : fullName='John Doe', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : ecp_email_72f7c4c7_shippingEmail_invalid_missing_at_0
+  Type        : ECP  subtype=email
+  Field       : shippingEmail (email)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : userexample.com
+  Expected    : error
+  Description : Missing @ symbol
+  AI-enhanced : False
+  Test Data   : fullName='John Doe', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : ecp_email_72f7c4c7_shippingEmail_invalid_missing_at_1
+  Type        : ECP  subtype=email
+  Field       : shippingEmail (email)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : test.domain.com
+  Expected    : error
+  Description : Missing @ symbol
+  AI-enhanced : False
+  Test Data   : fullName='John Doe', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : ecp_email_72f7c4c7_shippingEmail_invalid_missing_domain_0
+  Type        : ECP  subtype=email
+  Field       : shippingEmail (email)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : user@
+  Expected    : error
+  Description : Missing or invalid domain
+  AI-enhanced : False
+  Test Data   : fullName='John Doe', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : ecp_email_72f7c4c7_shippingEmail_invalid_missing_domain_1
+  Type        : ECP  subtype=email
+  Field       : shippingEmail (email)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : test@.com
+  Expected    : error
+  Description : Missing or invalid domain
+  AI-enhanced : False
+  Test Data   : fullName='John Doe', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : ecp_email_72f7c4c7_shippingEmail_invalid_special_chars_0
+  Type        : ECP  subtype=email
+  Field       : shippingEmail (email)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : user..name@example.com
+  Expected    : error
+  Description : Invalid format: consecutive dots / leading dot (rejected by HTML5)
+  AI-enhanced : False
+  Test Data   : fullName='John Doe', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : ecp_email_72f7c4c7_shippingEmail_invalid_special_chars_1
+  Type        : ECP  subtype=email
+  Field       : shippingEmail (email)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : .user@example.com
+  Expected    : error
+  Description : Invalid format: consecutive dots / leading dot (rejected by HTML5)
+  AI-enhanced : False
+  Test Data   : fullName='John Doe', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : ecp_email_72f7c4c7_shippingEmail_invalid_empty_0
+  Type        : ECP  subtype=email
+  Field       : shippingEmail (email)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : 
+  Expected    : error
+  Description : Empty or whitespace only
+  AI-enhanced : False
+  Test Data   : fullName='John Doe', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : ecp_email_72f7c4c7_shippingEmail_invalid_empty_1
+  Type        : ECP  subtype=email
+  Field       : shippingEmail (email)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  :    
+  Expected    : error
+  Description : Empty or whitespace only
+  AI-enhanced : False
+  Test Data   : fullName='John Doe', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : ecp_email_72f7c4c7_shippingEmail_invalid_spaces_0
+  Type        : ECP  subtype=email
+  Field       : shippingEmail (email)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : user name@example.com
+  Expected    : error
+  Description : Contains spaces
+  AI-enhanced : False
+  Test Data   : fullName='John Doe', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : ecp_email_72f7c4c7_shippingEmail_invalid_spaces_1
+  Type        : ECP  subtype=email
+  Field       : shippingEmail (email)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : test @domain.com
+  Expected    : error
+  Description : Contains spaces
+  AI-enhanced : False
+  Test Data   : fullName='John Doe', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : ecp_text_72f7c4c7_address_valid
+  Type        : ECP  subtype=text
+  Field       : address (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : ValidInput123
+  Expected    : success
+  Description : Valid text input for Street Address
+  AI-enhanced : False
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : ecp_text_72f7c4c7_address_empty
+  Type        : ECP  subtype=text
+  Field       : address (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : 
+  Expected    : error
+  Description : Empty value for required field Street Address
+  AI-enhanced : False
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : ecp_text_72f7c4c7_address_special
+  Type        : ECP  subtype=text
+  Field       : address (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : <script>alert("XSS")</script>
+  Expected    : error
+  Description : Special characters/XSS attempt in Street Address
+  AI-enhanced : False
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : ecp_text_72f7c4c7_address_long
+  Type        : ECP  subtype=text
+  Field       : address (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+  Expected    : error
+  Description : Very long text input (500 chars) for Street Address — should exceed server maxlength
+  AI-enhanced : False
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : ecp_text_72f7c4c7_address_unicode
+  Type        : ECP  subtype=text
+  Field       : address (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : 测试数据🎉!测试数据
+  Expected    : success
+  Description : Unicode characters in Street Address
+  AI-enhanced : False
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : ecp_text_72f7c4c7_city_valid
+  Type        : ECP  subtype=text
+  Field       : city (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : ValidInput123
+  Expected    : success
+  Description : Valid text input for City
+  AI-enhanced : False
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : ecp_text_72f7c4c7_city_empty
+  Type        : ECP  subtype=text
+  Field       : city (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : 
+  Expected    : error
+  Description : Empty value for required field City
+  AI-enhanced : False
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : ecp_text_72f7c4c7_city_special
+  Type        : ECP  subtype=text
+  Field       : city (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : <script>alert("XSS")</script>
+  Expected    : error
+  Description : Special characters/XSS attempt in City
+  AI-enhanced : False
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : ecp_text_72f7c4c7_city_long
+  Type        : ECP  subtype=text
+  Field       : city (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+  Expected    : error
+  Description : Very long text input (500 chars) for City — should exceed server maxlength
+  AI-enhanced : False
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : ecp_text_72f7c4c7_city_unicode
+  Type        : ECP  subtype=text
+  Field       : city (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : 测试数据🎉!测试数据
+  Expected    : success
+  Description : Unicode characters in City
+  AI-enhanced : False
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : ecp_text_72f7c4c7_zipCode_valid
+  Type        : ECP  subtype=text
+  Field       : zipCode (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : ValidInput123
+  Expected    : success
+  Description : Valid text input for ZIP Code
+  AI-enhanced : False
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', city='New York', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : ecp_text_72f7c4c7_zipCode_empty
+  Type        : ECP  subtype=text
+  Field       : zipCode (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : 
+  Expected    : error
+  Description : Empty value for required field ZIP Code
+  AI-enhanced : False
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', city='New York', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : ecp_text_72f7c4c7_zipCode_special
+  Type        : ECP  subtype=text
+  Field       : zipCode (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : <script>alert("XSS")</script>
+  Expected    : error
+  Description : Special characters/XSS attempt in ZIP Code
+  AI-enhanced : False
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', city='New York', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : ecp_text_72f7c4c7_zipCode_long
+  Type        : ECP  subtype=text
+  Field       : zipCode (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+  Expected    : error
+  Description : Very long text input (500 chars) for ZIP Code — should exceed server maxlength
+  AI-enhanced : False
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', city='New York', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : ecp_text_72f7c4c7_zipCode_unicode
+  Type        : ECP  subtype=text
+  Field       : zipCode (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : 测试数据🎉!测试数据
+  Expected    : success
+  Description : Unicode characters in ZIP Code
+  AI-enhanced : False
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', city='New York', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : ecp_text_72f7c4c7_cardNumber_valid
+  Type        : ECP  subtype=text
+  Field       : cardNumber (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : ValidInput123
+  Expected    : error
+  Description : Valid text input for Card Number
+  AI-enhanced : False
+  Fix Note    : Auto-fixed: cardNumber='ValidInput123' cannot pass format validation
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', city='New York', zipCode='10001', expiry='12/26'
+
+  ID          : ecp_text_72f7c4c7_cardNumber_empty
+  Type        : ECP  subtype=text
+  Field       : cardNumber (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : 
+  Expected    : error
+  Description : Empty value for required field Card Number
+  AI-enhanced : False
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', city='New York', zipCode='10001', expiry='12/26'
+
+  ID          : ecp_text_72f7c4c7_cardNumber_special
+  Type        : ECP  subtype=text
+  Field       : cardNumber (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : <script>alert("XSS")</script>
+  Expected    : error
+  Description : Special characters/XSS attempt in Card Number
+  AI-enhanced : False
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', city='New York', zipCode='10001', expiry='12/26'
+
+  ID          : ecp_text_72f7c4c7_cardNumber_long
+  Type        : ECP  subtype=text
+  Field       : cardNumber (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+  Expected    : error
+  Description : Very long text input (500 chars) for Card Number — should exceed server maxlength
+  AI-enhanced : False
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', city='New York', zipCode='10001', expiry='12/26'
+
+  ID          : ecp_text_72f7c4c7_cardNumber_unicode
+  Type        : ECP  subtype=text
+  Field       : cardNumber (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : 测试数据🎉!测试数据
+  Expected    : error
+  Description : Unicode characters in Card Number
+  AI-enhanced : False
+  Fix Note    : Auto-fixed: cardNumber='测试数据🎉!测试数据' cannot pass format validation
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', city='New York', zipCode='10001', expiry='12/26'
+
+  ID          : ecp_text_72f7c4c7_expiry_valid
+  Type        : ECP  subtype=text
+  Field       : expiry (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : ValidInput123
+  Expected    : error
+  Description : Valid text input for Expiry (MM/YY)
+  AI-enhanced : False
+  Fix Note    : Auto-fixed: expiry='ValidInput123' cannot pass format validation
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111'
+
+  ID          : ecp_text_72f7c4c7_expiry_empty
+  Type        : ECP  subtype=text
+  Field       : expiry (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : 
+  Expected    : error
+  Description : Empty value for required field Expiry (MM/YY)
+  AI-enhanced : False
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111'
+
+  ID          : ecp_text_72f7c4c7_expiry_special
+  Type        : ECP  subtype=text
+  Field       : expiry (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : <script>alert("XSS")</script>
+  Expected    : error
+  Description : Special characters/XSS attempt in Expiry (MM/YY)
+  AI-enhanced : False
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111'
+
+  ID          : ecp_text_72f7c4c7_expiry_long
+  Type        : ECP  subtype=text
+  Field       : expiry (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+  Expected    : error
+  Description : Very long text input (500 chars) for Expiry (MM/YY) — should exceed server maxlength
+  AI-enhanced : False
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111'
+
+  ID          : ecp_text_72f7c4c7_expiry_unicode
+  Type        : ECP  subtype=text
+  Field       : expiry (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : 测试数据🎉!测试数据
+  Expected    : error
+  Description : Unicode characters in Expiry (MM/YY)
+  AI-enhanced : False
+  Fix Note    : Auto-fixed: expiry='测试数据🎉!测试数据' cannot pass format validation
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111'
+
+  ID          : ecp_text_72f7c4c7_cvv_valid
+  Type        : ECP  subtype=text
+  Field       : cvv (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : ValidInput123
+  Expected    : error
+  Description : Valid text input for CVV
+  AI-enhanced : False
+  Fix Note    : Auto-fixed: cvv='ValidInput123' cannot pass format validation
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111'
+
+  ID          : ecp_text_72f7c4c7_cvv_empty
+  Type        : ECP  subtype=text
+  Field       : cvv (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : 
+  Expected    : error
+  Description : Empty value for required field CVV
+  AI-enhanced : False
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111'
+
+  ID          : ecp_text_72f7c4c7_cvv_special
+  Type        : ECP  subtype=text
+  Field       : cvv (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : <script>alert("XSS")</script>
+  Expected    : error
+  Description : Special characters/XSS attempt in CVV
+  AI-enhanced : False
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111'
+
+  ID          : ecp_text_72f7c4c7_cvv_long
+  Type        : ECP  subtype=text
+  Field       : cvv (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+  Expected    : error
+  Description : Very long text input (500 chars) for CVV — should exceed server maxlength
+  AI-enhanced : False
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111'
+
+  ID          : ecp_text_72f7c4c7_cvv_unicode
+  Type        : ECP  subtype=text
+  Field       : cvv (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : 测试数据🎉!测试数据
+  Expected    : error
+  Description : Unicode characters in CVV
+  AI-enhanced : False
+  Fix Note    : Auto-fixed: cvv='测试数据🎉!测试数据' cannot pass format validation
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111'
+
+  [ State Transition - 3 tests ]
+  ----------------------------------------------------------------------
+  ID          : state_branch_0_0
+  Type        : State Transition  subtype=branching_flow
+  Type        : State Transition
+  Form URL    : 
+  Test Value  : 
+  Expected    : success
+  Description : Branch 1 from Localhost:3006 (ShopEasy - Home): → Products (ShopEasy - Products)
+  AI-enhanced : False
+
+  ID          : state_branch_0_1
+  Type        : State Transition  subtype=branching_flow
+  Type        : State Transition
+  Form URL    : 
+  Test Value  : 
+  Expected    : success
+  Description : Branch 2 from Localhost:3006 (ShopEasy - Home): → Checkout (ShopEasy - Checkout)
+  AI-enhanced : False
+
+  ID          : state_branch_0_2
+  Type        : State Transition  subtype=branching_flow
+  Type        : State Transition
+  Form URL    : 
+  Test Value  : 
+  Expected    : success
+  Description : Branch 3 from Localhost:3006 (ShopEasy - Home): → Cart (ShopEasy - Cart)
+  AI-enhanced : False
+
+  [ Use Case - 5 tests ]
+  ----------------------------------------------------------------------
+  ID          : usecase_ecommerce_complete_purchase
+  Type        : Use Case  subtype=e-commerce
+  Type        : Use Case
+  Form URL    : 
+  Test Value  : 
+  Expected    : success
+  Description : End-to-end purchase: Browse product → Add to cart → Checkout → Complete order
+  AI-enhanced : False
+
+  ID          : usecase_ecommerce_multiple_products
+  Type        : Use Case  subtype=e-commerce
+  Type        : Use Case
+  Form URL    : 
+  Test Value  : 
+  Expected    : success
+  Description : Add multiple products: Add product 1 → Add product 2 → View cart
+  AI-enhanced : False
+
+  ID          : usecase_ecommerce_remove_from_cart
+  Type        : Use Case  subtype=e-commerce
+  Type        : Use Case
+  Form URL    : 
+  Test Value  : 
+  Expected    : success
+  Description : Remove item from cart: View cart → Remove item → Verify removal
+  AI-enhanced : False
+
+  ID          : usecase_auth_login
+  Type        : Use Case  subtype=authentication
+  Type        : Use Case
+  Form URL    : http://localhost:3006
+  Test Value  : 
+  Expected    : success
+  Description : User login: Navigate to login → Enter credentials → Submit → Verify logged in
+  AI-enhanced : False
+  Test Data   : loginEmail='test@example.com', loginPassword='TestPass1!'
+
+  ID          : usecase_auth_register
+  Type        : Use Case  subtype=authentication
+  Type        : Use Case
+  Form URL    : http://localhost:3006
+  Test Value  : 
+  Expected    : success
+  Description : User registration: Navigate → Fill form → Submit → Verify account created
+  AI-enhanced : False
+  Test Data   : loginEmail='test@example.com', loginPassword='TestPass1!'
+
+==============================================================================
+  SECTION 3 — TEST CASES AFTER AI REFINEMENT (FIXED) (151 tests)
+==============================================================================
+
+  File: site6_ecommerce_after_20260401_111403.json
+
+  Type                                      Count
+  ----------------------------------------------
+  BVA - Boundary Value Analysis                62
+  ECP - Equivalence Class Partitioning         81
+  DT  - Decision Table                          0
+  ST  - State Transition                        3
+  UC  - Use Case                                5
+  ----------------------------------------------
+  TOTAL                                       151
+
+  [ BVA - 62 tests ]
+  ----------------------------------------------------------------------
+  ID          : bva_length_65096150_loginEmail_0
+  Type        : BVA  subtype=length
+  Field       : loginEmail (email)
+  Form URL    : http://localhost:3006
+  Test Value  : aaaa
+  Expected    : error
+  Description : Email Address: Verify error when length is 4 (below minimum of 5)
+  AI-enhanced : True
+  Test Data   : loginPassword='Test@12345', loginEmail='aaaa'
+
+  ID          : bva_length_65096150_loginEmail_1
+  Type        : BVA  subtype=length
+  Field       : loginEmail (email)
+  Form URL    : http://localhost:3006
+  Test Value  : a@b.c
+  Expected    : success
+  Description : Email Address: Verify success when length is 5 (at minimum boundary)
+  AI-enhanced : True
+  Test Data   : loginPassword='Test@12345', loginEmail='a@b.c'
+
+  ID          : bva_length_65096150_loginEmail_2
+  Type        : BVA  subtype=length
+  Field       : loginEmail (email)
+  Form URL    : http://localhost:3006
+  Test Value  : aa@b.c
+  Expected    : success
+  Description : Email Address: Verify success when length is 6 (above minimum boundary)
+  AI-enhanced : True
+  Test Data   : loginPassword='Test@12345', loginEmail='aa@b.c'
+
+  ID          : bva_length_65096150_loginEmail_3
+  Type        : BVA  subtype=length
+  Field       : loginEmail (email)
+  Form URL    : http://localhost:3006
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.c
+  Expected    : success
+  Description : Email Address: Verify success when length is 253 (below maximum boundary)
+  AI-enhanced : True
+  Test Data   : loginPassword='Test@12345', loginEmail='aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.c'
+
+  ID          : bva_length_65096150_loginEmail_4
+  Type        : BVA  subtype=length
+  Field       : loginEmail (email)
+  Form URL    : http://localhost:3006
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.c
+  Expected    : success
+  Description : Email Address: Verify success when length is 254 (at maximum boundary)
+  AI-enhanced : True
+  Test Data   : loginPassword='Test@12345', loginEmail='aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.c'
+
+  ID          : bva_length_65096150_loginEmail_5
+  Type        : BVA  subtype=length
+  Field       : loginEmail (email)
+  Form URL    : http://localhost:3006
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.c
+  Expected    : error
+  Description : Email Address: Verify error when length is 255 (above maximum boundary)
+  AI-enhanced : True
+  Test Data   : loginPassword='Test@12345', loginEmail='aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.c'
+
+  ID          : bva_length_65096150_loginPassword_0
+  Type        : BVA  subtype=length
+  Field       : loginPassword (password)
+  Form URL    : http://localhost:3006
+  Test Value  : Aa1!a
+  Expected    : error
+  Description : Password: Verify error when length is 5 (below minimum of 6)
+  AI-enhanced : True
+  Test Data   : loginEmail='tester@example.com', loginPassword='Aa1!a'
+
+  ID          : bva_length_65096150_loginPassword_1
+  Type        : BVA  subtype=length
+  Field       : loginPassword (password)
+  Form URL    : http://localhost:3006
+  Test Value  : Aa1!aa
+  Expected    : success
+  Description : Password: Verify success when length is 6 (at minimum boundary)
+  AI-enhanced : True
+  Test Data   : loginEmail='tester@example.com', loginPassword='Aa1!aa'
+
+  ID          : bva_length_65096150_loginPassword_2
+  Type        : BVA  subtype=length
+  Field       : loginPassword (password)
+  Form URL    : http://localhost:3006
+  Test Value  : Aa1!aaa
+  Expected    : success
+  Description : Password: Verify success when length is 7 (above minimum boundary)
+  AI-enhanced : True
+  Test Data   : loginEmail='tester@example.com', loginPassword='Aa1!aaa'
+
+  ID          : bva_length_65096150_loginPassword_3
+  Type        : BVA  subtype=length
+  Field       : loginPassword (password)
+  Form URL    : http://localhost:3006
+  Test Value  : Aa1!aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : success
+  Description : Password: Verify success when length is 254 (below maximum boundary)
+  AI-enhanced : True
+  Test Data   : loginEmail='tester@example.com', loginPassword='Aa1!aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
+
+  ID          : bva_length_65096150_loginPassword_4
+  Type        : BVA  subtype=length
+  Field       : loginPassword (password)
+  Form URL    : http://localhost:3006
+  Test Value  : Aa1!aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : success
+  Description : Password: Verify success when length is 255 (at maximum boundary)
+  AI-enhanced : True
+  Test Data   : loginEmail='tester@example.com', loginPassword='Aa1!aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
+
+  ID          : bva_length_65096150_loginPassword_4
+  Type        : BVA  subtype=length
+  Field       : loginPassword (password)
+  Form URL    : http://localhost:3006
+  Test Value  : Aa1!aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : success
+  Description : Password at maximum length boundary (255 characters)
+  AI-enhanced : True
+  Test Data   : loginEmail='tester@example.com', loginPassword='Aa1!aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
+
+  ID          : bva_length_65096150_loginPassword_5
+  Type        : BVA  subtype=length
+  Field       : loginPassword (password)
+  Form URL    : http://localhost:3006
+  Test Value  : Aa1!aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : error
+  Description : Password above maximum length boundary (256 characters)
+  AI-enhanced : True
+  Test Data   : loginEmail='tester@example.com', loginPassword='Aa1!aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
+
+  ID          : bva_length_72f7c4c7_fullName_0
+  Type        : BVA  subtype=length
+  Field       : fullName (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : a
+  Expected    : error
+  Description : Full Name below minimum length boundary (1 character)
+  AI-enhanced : True
+  Test Data   : shippingEmail='tester@example.com', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : bva_length_72f7c4c7_fullName_1
+  Type        : BVA  subtype=length
+  Field       : fullName (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : aa
+  Expected    : success
+  Description : Full Name at minimum length boundary (2 characters)
+  AI-enhanced : True
+  Test Data   : shippingEmail='tester@example.com', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : bva_length_72f7c4c7_fullName_2
+  Type        : BVA  subtype=length
+  Field       : fullName (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : aaa
+  Expected    : success
+  Description : Full Name just above minimum length boundary (3 characters)
+  AI-enhanced : True
+  Test Data   : shippingEmail='tester@example.com', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : bva_length_72f7c4c7_fullName_3
+  Type        : BVA  subtype=length
+  Field       : fullName (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : success
+  Description : Full Name just below maximum length boundary (59 characters)
+  AI-enhanced : True
+  Test Data   : shippingEmail='tester@example.com', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : bva_length_72f7c4c7_fullName_4
+  Type        : BVA  subtype=length
+  Field       : fullName (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : success
+  Description : Full Name at maximum length boundary (60 characters)
+  AI-enhanced : True
+  Test Data   : shippingEmail='tester@example.com', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : bva_length_72f7c4c7_fullName_5
+  Type        : BVA  subtype=length
+  Field       : fullName (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : error
+  Description : Full Name above maximum length boundary (61 characters)
+  AI-enhanced : True
+  Test Data   : shippingEmail='tester@example.com', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : bva_length_72f7c4c7_shippingEmail_0
+  Type        : BVA  subtype=length
+  Field       : shippingEmail (email)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : aaaa
+  Expected    : error
+  Description : Email Address below minimum length boundary (4 characters)
+  AI-enhanced : True
+  Test Data   : fullName='John Doe', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : bva_length_72f7c4c7_shippingEmail_1
+  Type        : BVA  subtype=length
+  Field       : shippingEmail (email)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : a@b.c
+  Expected    : success
+  Description : Email Address at minimum length boundary (5 characters)
+  AI-enhanced : True
+  Test Data   : fullName='John Doe', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : bva_length_72f7c4c7_shippingEmail_2
+  Type        : BVA  subtype=length
+  Field       : shippingEmail (email)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : aa@b.c
+  Expected    : success
+  Description : Verify email length is valid at 6 characters (just above 5 char minimum)
+  AI-enhanced : True
+  Test Data   : fullName='John Doe', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : bva_length_72f7c4c7_shippingEmail_3
+  Type        : BVA  subtype=length
+  Field       : shippingEmail (email)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.c
+  Expected    : success
+  Description : Verify email length is valid at 253 characters (just below 254 char maximum)
+  AI-enhanced : True
+  Test Data   : fullName='John Doe', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : bva_length_72f7c4c7_shippingEmail_4
+  Type        : BVA  subtype=length
+  Field       : shippingEmail (email)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.c
+  Expected    : success
+  Description : Verify email length is valid at 254 characters (at maximum limit)
+  AI-enhanced : True
+  Test Data   : fullName='John Doe', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : bva_length_72f7c4c7_shippingEmail_5
+  Type        : BVA  subtype=length
+  Field       : shippingEmail (email)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.c
+  Expected    : error
+  Description : Verify email length is invalid at 255 characters (exceeds 254 char maximum)
+  AI-enhanced : True
+  Test Data   : fullName='John Doe', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : bva_length_72f7c4c7_address_0
+  Type        : BVA  subtype=length
+  Field       : address (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : aaaa
+  Expected    : error
+  Description : Verify address length is invalid at 4 characters (below 5 char minimum)
+  AI-enhanced : True
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : bva_length_72f7c4c7_address_1
+  Type        : BVA  subtype=length
+  Field       : address (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : aaaaa
+  Expected    : success
+  Description : Verify address length is valid at 5 characters (at minimum limit)
+  AI-enhanced : True
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : bva_length_72f7c4c7_address_2
+  Type        : BVA  subtype=length
+  Field       : address (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : aaaaaa
+  Expected    : success
+  Description : Verify address length is valid at 6 characters (just above 5 char minimum)
+  AI-enhanced : True
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : bva_length_72f7c4c7_address_3
+  Type        : BVA  subtype=length
+  Field       : address (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : success
+  Description : Verify address length is valid at 119 characters (just below 120 char maximum)
+  AI-enhanced : True
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : bva_length_72f7c4c7_address_4
+  Type        : BVA  subtype=length
+  Field       : address (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : success
+  Description : Verify address length is valid at 120 characters (at maximum limit)
+  AI-enhanced : True
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : bva_length_72f7c4c7_address_5
+  Type        : BVA  subtype=length
+  Field       : address (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : error
+  Description : Verify address length is invalid at 121 characters (exceeds 120 char maximum)
+  AI-enhanced : True
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : bva_length_72f7c4c7_shippingEmail_1
+  Type        : BVA  subtype=length
+  Field       : shippingEmail (email)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : a@b.c
+  Expected    : error
+  Description : Verify email length is invalid at 5 characters (at minimum limit, but email format invalid)
+  AI-enhanced : True
+  Test Data   : fullName='John Doe', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : bva_length_72f7c4c7_city_0
+  Type        : BVA  subtype=length
+  Field       : city (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : a
+  Expected    : error
+  Description : City field: Below minimum length (1 char) should trigger validation error
+  AI-enhanced : True
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : bva_length_72f7c4c7_city_1
+  Type        : BVA  subtype=length
+  Field       : city (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : aa
+  Expected    : success
+  Description : City field: At minimum length (2 chars) should be accepted
+  AI-enhanced : True
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : bva_length_72f7c4c7_city_2
+  Type        : BVA  subtype=length
+  Field       : city (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : aaa
+  Expected    : success
+  Description : City field: Just above minimum length (3 chars) should be accepted
+  AI-enhanced : True
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : bva_length_72f7c4c7_city_3
+  Type        : BVA  subtype=length
+  Field       : city (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : success
+  Description : City field: Just below maximum length (49 chars) should be accepted
+  AI-enhanced : True
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : bva_length_72f7c4c7_city_4
+  Type        : BVA  subtype=length
+  Field       : city (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : success
+  Description : City field: At maximum length (50 chars) should be accepted
+  AI-enhanced : True
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : bva_length_72f7c4c7_city_5
+  Type        : BVA  subtype=length
+  Field       : city (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : error
+  Description : City field: Above maximum length (51 chars) should trigger validation error
+  AI-enhanced : True
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : bva_length_72f7c4c7_zipCode_0
+  Type        : BVA  subtype=length
+  Field       : zipCode (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : 
+  Expected    : error
+  Description : Below minimum length (0 chars)
+  AI-enhanced : True
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', city='New York', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : bva_length_72f7c4c7_zipCode_1
+  Type        : BVA  subtype=length
+  Field       : zipCode (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : a
+  Expected    : success
+  Description : ZIP Code field: At minimum length (1 char) should be accepted
+  AI-enhanced : True
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', city='New York', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : bva_length_72f7c4c7_zipCode_2
+  Type        : BVA  subtype=length
+  Field       : zipCode (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : aa
+  Expected    : success
+  Description : ZIP Code field: Just above minimum length (2 chars) should be accepted
+  AI-enhanced : True
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', city='New York', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : bva_length_72f7c4c7_zipCode_3
+  Type        : BVA  subtype=length
+  Field       : zipCode (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : success
+  Description : ZIP Code field: Just below maximum length (254 chars) should be accepted
+  AI-enhanced : True
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', city='New York', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : bva_length_72f7c4c7_zipCode_4
+  Type        : BVA  subtype=length
+  Field       : zipCode (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : a
+  Expected    : success
+  Description : ZIP Code field: At maximum length (255 chars) should be accepted
+  AI-enhanced : True
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', city='New York', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : bva_length_72f7c4c7_zipCode_4
+  Type        : BVA  subtype=length
+  Field       : zipCode (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : success
+  Description : Verify ZIP Code accepts maximum boundary of 255 characters
+  AI-enhanced : True
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', city='New York', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : bva_length_72f7c4c7_zipCode_5
+  Type        : BVA  subtype=length
+  Field       : zipCode (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : error
+  Description : Verify ZIP Code rejects input exceeding maximum boundary of 256 characters
+  AI-enhanced : True
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', city='New York', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : bva_length_72f7c4c7_cardNumber_0
+  Type        : BVA  subtype=length
+  Field       : cardNumber (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : aaaaaaaaaaaa
+  Expected    : error
+  Description : Verify Card Number rejects input below minimum boundary of 12 characters
+  AI-enhanced : True
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', city='New York', zipCode='10001', expiry='12/26'
+
+  ID          : bva_length_72f7c4c7_cardNumber_1
+  Type        : BVA  subtype=length
+  Field       : cardNumber (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : aaaaaaaaaaaaa
+  Expected    : error
+  Description : Verify Card Number accepts minimum boundary of 13 characters
+  AI-enhanced : True
+  Fix Note    : Auto-fixed: cardNumber='aaaaaaaaaaaaa' cannot pass format validation
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', city='New York', zipCode='10001', expiry='12/26'
+
+  ID          : bva_length_72f7c4c7_cardNumber_2
+  Type        : BVA  subtype=length
+  Field       : cardNumber (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : aaaaaaaaaaaaaa
+  Expected    : error
+  Description : Verify Card Number accepts valid input just above minimum boundary (14 characters)
+  AI-enhanced : True
+  Fix Note    : Auto-fixed: cardNumber='aaaaaaaaaaaaaa' cannot pass format validation
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', city='New York', zipCode='10001', expiry='12/26'
+
+  ID          : bva_length_72f7c4c7_cardNumber_3
+  Type        : BVA  subtype=length
+  Field       : cardNumber (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : aaaaaaaaaaaaaaaaaa
+  Expected    : error
+  Description : Verify Card Number accepts valid input just below maximum boundary (18 characters)
+  AI-enhanced : True
+  Fix Note    : Auto-fixed: cardNumber='aaaaaaaaaaaaaaaaaa' cannot pass format validation
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', city='New York', zipCode='10001', expiry='12/26'
+
+  ID          : bva_length_72f7c4c7_cardNumber_4
+  Type        : BVA  subtype=length
+  Field       : cardNumber (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : aaaaaaaaaaaaaaaaaaa
+  Expected    : error
+  Description : Verify Card Number accepts maximum boundary of 19 characters
+  AI-enhanced : True
+  Fix Note    : Auto-fixed: cardNumber='aaaaaaaaaaaaaaaaaaa' cannot pass format validation
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', city='New York', zipCode='10001', expiry='12/26'
+
+  ID          : bva_length_72f7c4c7_cardNumber_5
+  Type        : BVA  subtype=length
+  Field       : cardNumber (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : aaaaaaaaaaaaaaaaaaaa
+  Expected    : error
+  Description : Verify Card Number rejects input exceeding maximum boundary of 20 characters
+  AI-enhanced : True
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', city='New York', zipCode='10001', expiry='12/26'
+
+  ID          : bva_length_72f7c4c7_expiry_0
+  Type        : BVA  subtype=length
+  Field       : expiry (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : 
+  Expected    : error
+  Description : Below minimum length (0 chars)
+  AI-enhanced : True
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111'
+
+  ID          : bva_length_72f7c4c7_expiry_1
+  Type        : BVA  subtype=length
+  Field       : expiry (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : a
+  Expected    : error
+  Description : Verify Expiry (MM/YY) accepts minimum boundary of 1 character
+  AI-enhanced : True
+  Fix Note    : Auto-fixed: expiry='a' cannot pass format validation
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111'
+
+  ID          : bva_length_72f7c4c7_expiry_2
+  Type        : BVA  subtype=length
+  Field       : expiry (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : aa
+  Expected    : error
+  Description : Expiry (MM/YY) at minimum length of 2 characters
+  AI-enhanced : True
+  Fix Note    : Auto-fixed: expiry='aa' cannot pass format validation
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111'
+
+  ID          : bva_length_72f7c4c7_expiry_3
+  Type        : BVA  subtype=length
+  Field       : expiry (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : error
+  Description : Expiry (MM/YY) at 254 characters (just below maximum)
+  AI-enhanced : True
+  Fix Note    : Auto-fixed: expiry='aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa' cannot pass format validation
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111'
+
+  ID          : bva_length_72f7c4c7_expiry_4
+  Type        : BVA  subtype=length
+  Field       : expiry (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : error
+  Description : Expiry (MM/YY) at 255 characters (maximum boundary)
+  AI-enhanced : True
+  Fix Note    : Auto-fixed: expiry='aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa' cannot pass format validation
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111'
+
+  ID          : bva_length_72f7c4c7_expiry_5
+  Type        : BVA  subtype=length
+  Field       : expiry (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : error
+  Description : Expiry (MM/YY) at 256 characters (above maximum boundary)
+  AI-enhanced : True
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111'
+
+  ID          : bva_length_72f7c4c7_cvv_0
+  Type        : BVA  subtype=length
+  Field       : cvv (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : aa
+  Expected    : error
+  Description : CVV at 2 characters (below minimum boundary)
+  AI-enhanced : True
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111'
+
+  ID          : bva_length_72f7c4c7_cvv_1
+  Type        : BVA  subtype=length
+  Field       : cvv (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : aaa
+  Expected    : error
+  Description : CVV at 3 characters (minimum boundary)
+  AI-enhanced : True
+  Fix Note    : Auto-fixed: cvv='aaa' cannot pass format validation
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111'
+
+  ID          : bva_length_72f7c4c7_cvv_2
+  Type        : BVA  subtype=length
+  Field       : cvv (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : aaaa
+  Expected    : error
+  Description : CVV at 4 characters (maximum boundary)
+  AI-enhanced : True
+  Fix Note    : Auto-fixed: cvv='aaaa' cannot pass format validation
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111'
+
+  ID          : bva_length_72f7c4c7_cvv_5
+  Type        : BVA  subtype=length
+  Field       : cvv (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : aaaaa
+  Expected    : error
+  Description : CVV at 5 characters (above maximum boundary)
+  AI-enhanced : True
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111'
+
+  ID          : bva_length_72f7c4c7_expiry_0
+  Type        : BVA  subtype=length
+  Field       : expiry (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : 
+  Expected    : error
+  Description : Expiry (MM/YY) at 0 characters (below minimum boundary)
+  AI-enhanced : True
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111'
+
+  [ ECP - 81 tests ]
+  ----------------------------------------------------------------------
+  ID          : ecp_email_65096150_loginEmail_valid_standard_0
+  Type        : ECP  subtype=email
+  Field       : loginEmail (email)
+  Form URL    : http://localhost:3006
+  Test Value  : user@example.com
+  Expected    : success
+  Description : Verify valid standard email format is accepted
+  AI-enhanced : True
+  Test Data   : loginPassword='Test@12345', loginEmail='user@example.com'
+
+  ID          : ecp_email_65096150_loginEmail_valid_standard_1
+  Type        : ECP  subtype=email
+  Field       : loginEmail (email)
+  Form URL    : http://localhost:3006
+  Test Value  : test@domain.co.uk
+  Expected    : success
+  Description : Verify valid email with country-code TLD is accepted
+  AI-enhanced : True
+  Test Data   : loginPassword='Test@12345', loginEmail='test@domain.co.uk'
+
+  ID          : ecp_email_65096150_loginEmail_valid_with_plus_0
+  Type        : ECP  subtype=email
+  Field       : loginEmail (email)
+  Form URL    : http://localhost:3006
+  Test Value  : user+tag@example.com
+  Expected    : success
+  Description : Verify valid email with plus addressing is accepted
+  AI-enhanced : True
+  Test Data   : loginPassword='Test@12345', loginEmail='user+tag@example.com'
+
+  ID          : ecp_email_65096150_loginEmail_valid_with_plus_1
+  Type        : ECP  subtype=email
+  Field       : loginEmail (email)
+  Form URL    : http://localhost:3006
+  Test Value  : test+filter@domain.com
+  Expected    : success
+  Description : Verify valid email with plus addressing is accepted
+  AI-enhanced : True
+  Test Data   : loginPassword='Test@12345', loginEmail='test+filter@domain.com'
+
+  ID          : ecp_email_65096150_loginEmail_valid_with_dots_0
+  Type        : ECP  subtype=email
+  Field       : loginEmail (email)
+  Form URL    : http://localhost:3006
+  Test Value  : first.last@example.com
+  Expected    : success
+  Description : Verify valid email with dots in local part is accepted
+  AI-enhanced : True
+  Test Data   : loginPassword='Test@12345', loginEmail='first.last@example.com'
+
+  ID          : ecp_email_65096150_loginEmail_valid_with_dots_1
+  Type        : ECP  subtype=email
+  Field       : loginEmail (email)
+  Form URL    : http://localhost:3006
+  Test Value  : user.name@domain.org
+  Expected    : success
+  Description : Verify valid email with dots in local part is accepted
+  AI-enhanced : True
+  Test Data   : loginPassword='Test@12345', loginEmail='user.name@domain.org'
+
+  ID          : ecp_email_65096150_loginEmail_valid_subdomain_0
+  Type        : ECP  subtype=email
+  Field       : loginEmail (email)
+  Form URL    : http://localhost:3006
+  Test Value  : user@mail.example.com
+  Expected    : success
+  Description : Verify valid email with subdomain is accepted
+  AI-enhanced : True
+  Test Data   : loginPassword='Test@12345', loginEmail='user@mail.example.com'
+
+  ID          : ecp_email_65096150_loginEmail_valid_subdomain_1
+  Type        : ECP  subtype=email
+  Field       : loginEmail (email)
+  Form URL    : http://localhost:3006
+  Test Value  : test@subdomain.domain.com
+  Expected    : success
+  Description : Verify valid email with subdomain is accepted
+  AI-enhanced : True
+  Test Data   : loginPassword='Test@12345', loginEmail='test@subdomain.domain.com'
+
+  ID          : ecp_email_65096150_loginEmail_invalid_missing_at_0
+  Type        : ECP  subtype=email
+  Field       : loginEmail (email)
+  Form URL    : http://localhost:3006
+  Test Value  : userexample.com
+  Expected    : error
+  Description : Verify email validation fails when @ symbol is missing
+  AI-enhanced : True
+  Test Data   : loginPassword='Test@12345', loginEmail='userexample.com'
+
+  ID          : ecp_email_65096150_loginEmail_invalid_missing_at_1
+  Type        : ECP  subtype=email
+  Field       : loginEmail (email)
+  Form URL    : http://localhost:3006
+  Test Value  : test.domain.com
+  Expected    : error
+  Description : Verify email validation fails when @ symbol is missing
+  AI-enhanced : True
+  Test Data   : loginPassword='Test@12345', loginEmail='test.domain.com'
+
+  ID          : ecp_email_65096150_loginEmail_invalid_empty_0
+  Type        : ECP  subtype=email
+  Field       : loginEmail (email)
+  Form URL    : http://localhost:3006
+  Test Value  : 
+  Expected    : error
+  Description : Verify email validation fails when field is empty
+  AI-enhanced : True
+  Test Data   : loginPassword='Test@12345', loginEmail=''
+
+  ID          : ecp_email_65096150_loginEmail_invalid_missing_domain_0
+  Type        : ECP  subtype=email
+  Field       : loginEmail (email)
+  Form URL    : http://localhost:3006
+  Test Value  : user@
+  Expected    : error
+  Description : Validation fails when the domain part is completely missing after the @ symbol
+  AI-enhanced : True
+  Test Data   : loginPassword='Test@12345', loginEmail='user@'
+
+  ID          : ecp_email_65096150_loginEmail_invalid_missing_domain_1
+  Type        : ECP  subtype=email
+  Field       : loginEmail (email)
+  Form URL    : http://localhost:3006
+  Test Value  : test@.com
+  Expected    : error
+  Description : Validation fails when the domain name is missing before the TLD
+  AI-enhanced : True
+  Test Data   : loginPassword='Test@12345', loginEmail='test@.com'
+
+  ID          : ecp_email_65096150_loginEmail_invalid_special_chars_0
+  Type        : ECP  subtype=email
+  Field       : loginEmail (email)
+  Form URL    : http://localhost:3006
+  Test Value  : user..name@example.com
+  Expected    : error
+  Description : Validation fails due to consecutive dots in the local part of the email
+  AI-enhanced : True
+  Test Data   : loginPassword='Test@12345', loginEmail='user..name@example.com'
+
+  ID          : ecp_email_65096150_loginEmail_invalid_special_chars_1
+  Type        : ECP  subtype=email
+  Field       : loginEmail (email)
+  Form URL    : http://localhost:3006
+  Test Value  : .user@example.com
+  Expected    : error
+  Description : Validation fails due to a leading dot in the local part of the email
+  AI-enhanced : True
+  Test Data   : loginPassword='Test@12345', loginEmail='.user@example.com'
+
+  ID          : ecp_email_65096150_loginEmail_invalid_empty_0
+  Type        : ECP  subtype=email
+  Field       : loginEmail (email)
+  Form URL    : http://localhost:3006
+  Test Value  : 
+  Expected    : error
+  Description : Empty or whitespace only
+  AI-enhanced : True
+  Test Data   : loginPassword='Test@12345', loginEmail=''
+
+  ID          : ecp_email_65096150_loginEmail_invalid_empty_1
+  Type        : ECP  subtype=email
+  Field       : loginEmail (email)
+  Form URL    : http://localhost:3006
+  Test Value  :    
+  Expected    : error
+  Description : Validation fails when the email field contains only whitespace characters
+  AI-enhanced : True
+  Test Data   : loginPassword='Test@12345', loginEmail='   '
+
+  ID          : ecp_email_65096150_loginEmail_invalid_spaces_0
+  Type        : ECP  subtype=email
+  Field       : loginEmail (email)
+  Form URL    : http://localhost:3006
+  Test Value  : user name@example.com
+  Expected    : error
+  Description : Validation fails because email addresses cannot contain spaces in the local part
+  AI-enhanced : True
+  Test Data   : loginPassword='Test@12345', loginEmail='user name@example.com'
+
+  ID          : ecp_email_65096150_loginEmail_invalid_spaces_1
+  Type        : ECP  subtype=email
+  Field       : loginEmail (email)
+  Form URL    : http://localhost:3006
+  Test Value  : test @domain.com
+  Expected    : error
+  Description : Validation fails because email addresses cannot contain spaces around the @ symbol
+  AI-enhanced : True
+  Test Data   : loginPassword='Test@12345', loginEmail='test @domain.com'
+
+  ID          : ecp_text_65096150_loginPassword_valid
+  Type        : ECP  subtype=text
+  Field       : loginPassword (password)
+  Form URL    : http://localhost:3006
+  Test Value  : ValidInput123
+  Expected    : success
+  Description : System accepts a valid alphanumeric password string
+  AI-enhanced : True
+  Test Data   : loginEmail='tester@example.com', loginPassword='ValidInput123'
+
+  ID          : ecp_text_65096150_loginPassword_empty
+  Type        : ECP  subtype=text
+  Field       : loginPassword (password)
+  Form URL    : http://localhost:3006
+  Test Value  : 
+  Expected    : error
+  Description : Empty value for required field Password
+  AI-enhanced : True
+  Test Data   : loginEmail='tester@example.com', loginPassword=''
+
+  ID          : ecp_text_65096150_loginPassword_special
+  Type        : ECP  subtype=text
+  Field       : loginPassword (password)
+  Form URL    : http://localhost:3006
+  Test Value  : <script>alert("XSS")</script>
+  Expected    : error
+  Description : Verify that XSS payload in Password field is rejected
+  AI-enhanced : True
+  Test Data   : loginEmail='tester@example.com', loginPassword='<script>alert("XSS")</script>'
+
+  ID          : ecp_text_65096150_loginPassword_long
+  Type        : ECP  subtype=text
+  Field       : loginPassword (password)
+  Form URL    : http://localhost:3006
+  Test Value  : AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+  Expected    : error
+  Description : Verify that 500-character string in Password field triggers validation error
+  AI-enhanced : True
+  Test Data   : loginEmail='tester@example.com', loginPassword='AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'
+
+  ID          : ecp_text_65096150_loginPassword_unicode
+  Type        : ECP  subtype=text
+  Field       : loginPassword (password)
+  Form URL    : http://localhost:3006
+  Test Value  : 测试数据🎉!测试数据
+  Expected    : success
+  Description : Verify that Unicode characters are accepted in Password field
+  AI-enhanced : True
+  Test Data   : loginEmail='tester@example.com', loginPassword='测试数据🎉!测试数据'
+
+  ID          : ecp_text_72f7c4c7_fullName_valid
+  Type        : ECP  subtype=text
+  Field       : fullName (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : ValidInput123
+  Expected    : success
+  Description : Verify valid alphanumeric input in Full Name field
+  AI-enhanced : True
+  Test Data   : shippingEmail='tester@example.com', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : ecp_text_72f7c4c7_fullName_empty
+  Type        : ECP  subtype=text
+  Field       : fullName (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : 
+  Expected    : error
+  Description : Empty value for required field Full Name
+  AI-enhanced : True
+  Test Data   : shippingEmail='tester@example.com', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : ecp_text_72f7c4c7_fullName_special
+  Type        : ECP  subtype=text
+  Field       : fullName (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : <script>alert("XSS")</script>
+  Expected    : error
+  Description : Verify that XSS payload in Full Name field is rejected
+  AI-enhanced : True
+  Test Data   : shippingEmail='tester@example.com', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : ecp_text_72f7c4c7_fullName_long
+  Type        : ECP  subtype=text
+  Field       : fullName (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+  Expected    : error
+  Description : Verify that 500-character string in Full Name field triggers validation error
+  AI-enhanced : True
+  Test Data   : shippingEmail='tester@example.com', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : ecp_text_72f7c4c7_fullName_unicode
+  Type        : ECP  subtype=text
+  Field       : fullName (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : 测试数据🎉!测试数据
+  Expected    : success
+  Description : Verify that Unicode characters are accepted in Full Name field
+  AI-enhanced : True
+  Test Data   : shippingEmail='tester@example.com', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : ecp_email_72f7c4c7_shippingEmail_valid_standard_0
+  Type        : ECP  subtype=email
+  Field       : shippingEmail (email)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : user@example.com
+  Expected    : success
+  Description : Verify standard email format is accepted in Email Address field
+  AI-enhanced : True
+  Test Data   : fullName='John Doe', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : ecp_email_72f7c4c7_shippingEmail_valid_standard_1
+  Type        : ECP  subtype=email
+  Field       : shippingEmail (email)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : test@domain.co.uk
+  Expected    : success
+  Description : Verify international domain email format is accepted in Email Address field
+  AI-enhanced : True
+  Test Data   : fullName='John Doe', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : ecp_text_72f7c4c7_cvv_invalid
+  Type        : ECP  subtype=text
+  Field       : cvv (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : ABC
+  Expected    : error
+  Description : Verify that non-numeric input in CVV field is rejected
+  AI-enhanced : True
+  Test Data   : fullName='John Doe', address='123 Main Street', city='New York', zipCode='10001', cardNumber='1234567812345678', expiry='12/25'
+
+  ID          : ecp_email_72f7c4c7_shippingEmail_valid_with_plus_0
+  Type        : ECP  subtype=email
+  Field       : shippingEmail (email)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : user+tag@example.com
+  Expected    : success
+  Description : Verify that an email address containing a plus sign (+) is accepted as valid.
+  AI-enhanced : True
+  Test Data   : fullName='John Doe', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : ecp_email_72f7c4c7_shippingEmail_valid_with_plus_1
+  Type        : ECP  subtype=email
+  Field       : shippingEmail (email)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : test+filter@domain.com
+  Expected    : success
+  Description : Verify that an email address with a plus sign and a filter tag is accepted as valid.
+  AI-enhanced : True
+  Test Data   : fullName='John Doe', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : ecp_email_72f7c4c7_shippingEmail_valid_with_dots_0
+  Type        : ECP  subtype=email
+  Field       : shippingEmail (email)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : first.last@example.com
+  Expected    : success
+  Description : Verify that an email address with a dot in the local part is accepted as valid.
+  AI-enhanced : True
+  Test Data   : fullName='John Doe', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : ecp_email_72f7c4c7_shippingEmail_valid_with_dots_1
+  Type        : ECP  subtype=email
+  Field       : shippingEmail (email)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : user.name@domain.org
+  Expected    : success
+  Description : Verify that an email address with a dot in the local part and a .org TLD is accepted as valid.
+  AI-enhanced : True
+  Test Data   : fullName='John Doe', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : ecp_email_72f7c4c7_shippingEmail_valid_subdomain_0
+  Type        : ECP  subtype=email
+  Field       : shippingEmail (email)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : user@mail.example.com
+  Expected    : success
+  Description : Verify that an email address with a subdomain in the domain part is accepted as valid.
+  AI-enhanced : True
+  Test Data   : fullName='John Doe', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : ecp_email_72f7c4c7_shippingEmail_valid_subdomain_1
+  Type        : ECP  subtype=email
+  Field       : shippingEmail (email)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : test@subdomain.domain.com
+  Expected    : success
+  Description : Verify that an email address with a multi-level subdomain is accepted as valid.
+  AI-enhanced : True
+  Test Data   : fullName='John Doe', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : ecp_email_72f7c4c7_shippingEmail_invalid_missing_at_0
+  Type        : ECP  subtype=email
+  Field       : shippingEmail (email)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : userexample.com
+  Expected    : error
+  Description : Verify that an email address missing the '@' symbol is rejected.
+  AI-enhanced : True
+  Test Data   : fullName='John Doe', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : ecp_email_72f7c4c7_shippingEmail_invalid_missing_at_1
+  Type        : ECP  subtype=email
+  Field       : shippingEmail (email)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : test.domain.com
+  Expected    : error
+  Description : Verify that a string formatted as a domain but missing the '@' symbol is rejected.
+  AI-enhanced : True
+  Test Data   : fullName='John Doe', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : ecp_email_72f7c4c7_shippingEmail_invalid_missing_domain_0
+  Type        : ECP  subtype=email
+  Field       : shippingEmail (email)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : user@
+  Expected    : error
+  Description : Verify that an email address missing the domain part after the '@' symbol is rejected.
+  AI-enhanced : True
+  Test Data   : fullName='John Doe', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : ecp_email_72f7c4c7_shippingEmail_invalid_missing_domain_1
+  Type        : ECP  subtype=email
+  Field       : shippingEmail (email)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : test@.com
+  Expected    : error
+  Description : Verify that an email address with an empty domain name (e.g., @.com) is rejected.
+  AI-enhanced : True
+  Test Data   : fullName='John Doe', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : ecp_email_72f7c4c7_shippingEmail_invalid_empty_0
+  Type        : ECP  subtype=email
+  Field       : shippingEmail (email)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : 
+  Expected    : error
+  Description : Verify that an empty email field is rejected.
+  AI-enhanced : True
+  Test Data   : fullName='John Doe', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : ecp_email_72f7c4c7_shippingEmail_invalid_special_chars_0
+  Type        : ECP  subtype=email
+  Field       : shippingEmail (email)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : user..name@example.com
+  Expected    : error
+  Description : Invalid email format: consecutive dots in local part are prohibited by RFC 5322
+  AI-enhanced : True
+  Test Data   : fullName='John Doe', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : ecp_email_72f7c4c7_shippingEmail_invalid_special_chars_1
+  Type        : ECP  subtype=email
+  Field       : shippingEmail (email)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : .user@example.com
+  Expected    : error
+  Description : Invalid email format: local part cannot start with a dot
+  AI-enhanced : True
+  Test Data   : fullName='John Doe', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : ecp_email_72f7c4c7_shippingEmail_invalid_empty_0
+  Type        : ECP  subtype=email
+  Field       : shippingEmail (email)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : 
+  Expected    : error
+  Description : Empty or whitespace only
+  AI-enhanced : True
+  Test Data   : fullName='John Doe', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : ecp_email_72f7c4c7_shippingEmail_invalid_empty_1
+  Type        : ECP  subtype=email
+  Field       : shippingEmail (email)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  :    
+  Expected    : error
+  Description : Validation error: Email Address field cannot consist only of whitespace
+  AI-enhanced : True
+  Test Data   : fullName='John Doe', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : ecp_email_72f7c4c7_shippingEmail_invalid_spaces_0
+  Type        : ECP  subtype=email
+  Field       : shippingEmail (email)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : user name@example.com
+  Expected    : error
+  Description : Invalid email format: spaces are not permitted in email addresses
+  AI-enhanced : True
+  Test Data   : fullName='John Doe', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : ecp_email_72f7c4c7_shippingEmail_invalid_spaces_1
+  Type        : ECP  subtype=email
+  Field       : shippingEmail (email)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : test @domain.com
+  Expected    : error
+  Description : Invalid email format: space before @ symbol is not permitted
+  AI-enhanced : True
+  Test Data   : fullName='John Doe', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : ecp_text_72f7c4c7_address_valid
+  Type        : ECP  subtype=text
+  Field       : address (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : ValidInput123
+  Expected    : success
+  Description : Valid alphanumeric input for Street Address
+  AI-enhanced : True
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : ecp_text_72f7c4c7_address_empty
+  Type        : ECP  subtype=text
+  Field       : address (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : 
+  Expected    : error
+  Description : Empty value for required field Street Address
+  AI-enhanced : True
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : ecp_text_72f7c4c7_address_special
+  Type        : ECP  subtype=text
+  Field       : address (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : <script>alert("XSS")</script>
+  Expected    : error
+  Description : Security validation: Rejecting potential XSS injection in Street Address
+  AI-enhanced : True
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : ecp_text_72f7c4c7_address_long
+  Type        : ECP  subtype=text
+  Field       : address (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+  Expected    : error
+  Description : Boundary test: Input length exceeds maximum allowed characters for Street Address
+  AI-enhanced : True
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : ecp_cvv_72f7c4c7_cvv_invalid_length
+  Type        : ECP  subtype=text
+  Field       : cvv (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : 12
+  Expected    : error
+  Description : Validation error: CVV must be exactly 3 or 4 digits
+  AI-enhanced : True
+  Test Data   : fullName='John Doe', address='123 Main Street', city='New York', zipCode='10001', cardNumber='1234567812345678', expiry='12/25'
+
+  ID          : ecp_text_72f7c4c7_address_unicode
+  Type        : ECP  subtype=text
+  Field       : address (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : 测试数据🎉!测试数据
+  Expected    : success
+  Description : Verify Street Address accepts multi-byte Unicode characters and emojis
+  AI-enhanced : True
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', city='New York', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : ecp_text_72f7c4c7_city_valid
+  Type        : ECP  subtype=text
+  Field       : city (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : ValidInput123
+  Expected    : success
+  Description : Verify City accepts alphanumeric valid text input
+  AI-enhanced : True
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : ecp_text_72f7c4c7_city_empty
+  Type        : ECP  subtype=text
+  Field       : city (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : 
+  Expected    : error
+  Description : Empty value for required field City
+  AI-enhanced : True
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : ecp_text_72f7c4c7_city_special
+  Type        : ECP  subtype=text
+  Field       : city (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : <script>alert("XSS")</script>
+  Expected    : error
+  Description : Verify City field sanitizes or rejects XSS injection attempts
+  AI-enhanced : True
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : ecp_text_72f7c4c7_city_long
+  Type        : ECP  subtype=text
+  Field       : city (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+  Expected    : error
+  Description : Verify City field rejects input exceeding maximum character length
+  AI-enhanced : True
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : ecp_text_72f7c4c7_city_unicode
+  Type        : ECP  subtype=text
+  Field       : city (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : 测试数据🎉!测试数据
+  Expected    : success
+  Description : Verify City field supports international Unicode characters
+  AI-enhanced : True
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', zipCode='10001', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : ecp_text_72f7c4c7_zipCode_valid
+  Type        : ECP  subtype=text
+  Field       : zipCode (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : 10001
+  Expected    : success
+  Description : Verify ZIP Code accepts standard numeric format
+  AI-enhanced : True
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', city='New York', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : ecp_text_72f7c4c7_zipCode_empty
+  Type        : ECP  subtype=text
+  Field       : zipCode (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : 
+  Expected    : error
+  Description : Empty value for required field ZIP Code
+  AI-enhanced : True
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', city='New York', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : ecp_text_72f7c4c7_zipCode_special
+  Type        : ECP  subtype=text
+  Field       : zipCode (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : !@#$%
+  Expected    : error
+  Description : Verify ZIP Code rejects non-numeric special characters
+  AI-enhanced : True
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', city='New York', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : ecp_text_72f7c4c7_zipCode_long
+  Type        : ECP  subtype=text
+  Field       : zipCode (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : 123456789012345
+  Expected    : error
+  Description : Verify ZIP Code rejects input exceeding standard length
+  AI-enhanced : True
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', city='New York', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : ecp_text_72f7c4c7_zipCode_unicode
+  Type        : ECP  subtype=text
+  Field       : zipCode (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : 测试数据🎉!测试数据
+  Expected    : success
+  Description : Verify ZIP Code field accepts Unicode characters without crashing
+  AI-enhanced : True
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', city='New York', cardNumber='4111111111111111', expiry='12/26'
+
+  ID          : ecp_text_72f7c4c7_cardNumber_valid
+  Type        : ECP  subtype=text
+  Field       : cardNumber (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : ValidInput123
+  Expected    : error
+  Description : Verify Card Number field accepts standard alphanumeric input
+  AI-enhanced : True
+  Fix Note    : Auto-fixed: cardNumber='ValidInput123' cannot pass format validation
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', city='New York', zipCode='10001', expiry='12/26'
+
+  ID          : ecp_text_72f7c4c7_cardNumber_empty
+  Type        : ECP  subtype=text
+  Field       : cardNumber (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : 
+  Expected    : error
+  Description : Empty value for required field Card Number
+  AI-enhanced : True
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', city='New York', zipCode='10001', expiry='12/26'
+
+  ID          : ecp_text_72f7c4c7_cardNumber_special
+  Type        : ECP  subtype=text
+  Field       : cardNumber (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : <script>alert("XSS")</script>
+  Expected    : error
+  Description : Verify Card Number field sanitizes or rejects XSS injection attempts
+  AI-enhanced : True
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', city='New York', zipCode='10001', expiry='12/26'
+
+  ID          : ecp_text_72f7c4c7_cardNumber_long
+  Type        : ECP  subtype=text
+  Field       : cardNumber (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+  Expected    : error
+  Description : Verify Card Number field rejects input exceeding maximum character length
+  AI-enhanced : True
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', city='New York', zipCode='10001', expiry='12/26'
+
+  ID          : ecp_text_72f7c4c7_cardNumber_unicode
+  Type        : ECP  subtype=text
+  Field       : cardNumber (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : 测试数据🎉!测试数据
+  Expected    : error
+  Description : Verify Card Number field handles Unicode characters correctly
+  AI-enhanced : True
+  Fix Note    : Auto-fixed: cardNumber='测试数据🎉!测试数据' cannot pass format validation
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', city='New York', zipCode='10001', expiry='12/26'
+
+  ID          : ecp_text_72f7c4c7_expiry_valid
+  Type        : ECP  subtype=text
+  Field       : expiry (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : ValidInput123
+  Expected    : error
+  Description : Verify Expiry (MM/YY) field accepts standard text input
+  AI-enhanced : True
+  Fix Note    : Auto-fixed: expiry='ValidInput123' cannot pass format validation
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111'
+
+  ID          : ecp_text_72f7c4c7_expiry_empty
+  Type        : ECP  subtype=text
+  Field       : expiry (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : 
+  Expected    : error
+  Description : Empty value for required field Expiry (MM/YY)
+  AI-enhanced : True
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111'
+
+  ID          : ecp_text_72f7c4c7_expiry_special
+  Type        : ECP  subtype=text
+  Field       : expiry (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : <script>alert("XSS")</script>
+  Expected    : error
+  Description : Verify Expiry (MM/YY) field prevents XSS injection
+  AI-enhanced : True
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111'
+
+  ID          : ecp_text_72f7c4c7_expiry_long
+  Type        : ECP  subtype=text
+  Field       : expiry (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+  Expected    : error
+  Description : Verify Expiry (MM/YY) field rejects excessively long input
+  AI-enhanced : True
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111'
+
+  ID          : ecp_text_72f7c4c7_cvv_empty
+  Type        : ECP  subtype=text
+  Field       : cvv (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : 
+  Expected    : error
+  Description : Verify CVV field triggers validation error when empty
+  AI-enhanced : True
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', city='New York', zipCode='10001', cardNumber='1234567890123456'
+
+  ID          : ecp_text_72f7c4c7_expiry_unicode
+  Type        : ECP  subtype=text
+  Field       : expiry (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : 测试数据🎉!测试数据
+  Expected    : error
+  Description : Verify handling of Unicode characters in the Expiry (MM/YY) field
+  AI-enhanced : True
+  Fix Note    : Auto-fixed: expiry='测试数据🎉!测试数据' cannot pass format validation
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111'
+
+  ID          : ecp_text_72f7c4c7_cvv_valid
+  Type        : ECP  subtype=text
+  Field       : cvv (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : ValidInput123
+  Expected    : error
+  Description : Verify acceptance of standard alphanumeric input in the CVV field
+  AI-enhanced : True
+  Fix Note    : Auto-fixed: cvv='ValidInput123' cannot pass format validation
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111'
+
+  ID          : ecp_text_72f7c4c7_cvv_empty
+  Type        : ECP  subtype=text
+  Field       : cvv (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : 
+  Expected    : error
+  Description : Empty value for required field CVV
+  AI-enhanced : True
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111'
+
+  ID          : ecp_text_72f7c4c7_cvv_special
+  Type        : ECP  subtype=text
+  Field       : cvv (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : <script>alert("XSS")</script>
+  Expected    : error
+  Description : Verify security validation against XSS injection attempts in the CVV field
+  AI-enhanced : True
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111'
+
+  ID          : ecp_text_72f7c4c7_cvv_long
+  Type        : ECP  subtype=text
+  Field       : cvv (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+  Expected    : error
+  Description : Verify boundary validation for excessive character length (500 chars) in the CVV field
+  AI-enhanced : True
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111'
+
+  ID          : ecp_text_72f7c4c7_cvv_unicode
+  Type        : ECP  subtype=text
+  Field       : cvv (text)
+  Form URL    : http://localhost:3006/checkout
+  Test Value  : 测试数据🎉!测试数据
+  Expected    : error
+  Description : Verify handling of Unicode characters in the CVV field
+  AI-enhanced : True
+  Fix Note    : Auto-fixed: cvv='测试数据🎉!测试数据' cannot pass format validation
+  Test Data   : fullName='John Doe', shippingEmail='tester@example.com', address='123 Main Street', city='New York', zipCode='10001', cardNumber='4111111111111111'
+
+  [ State Transition - 3 tests ]
+  ----------------------------------------------------------------------
+  ID          : state_branch_0_0
+  Type        : State Transition  subtype=branching_flow
+  Type        : State Transition
+  Form URL    : 
+  Test Value  : 
+  Expected    : success
+  Description : Branch 1 from Localhost:3006 (ShopEasy - Home): → Products (ShopEasy - Products)
+  AI-enhanced : True
+
+  ID          : state_branch_0_1
+  Type        : State Transition  subtype=branching_flow
+  Type        : State Transition
+  Form URL    : 
+  Test Value  : 
+  Expected    : success
+  Description : Branch 2 from Localhost:3006 (ShopEasy - Home): → Checkout (ShopEasy - Checkout)
+  AI-enhanced : True
+
+  ID          : state_branch_0_2
+  Type        : State Transition  subtype=branching_flow
+  Type        : State Transition
+  Form URL    : 
+  Test Value  : 
+  Expected    : success
+  Description : Branch 3 from Localhost:3006 (ShopEasy - Home): → Cart (ShopEasy - Cart)
+  AI-enhanced : True
+
+  [ Use Case - 5 tests ]
+  ----------------------------------------------------------------------
+  ID          : usecase_ecommerce_complete_purchase
+  Type        : Use Case  subtype=e-commerce
+  Type        : Use Case
+  Form URL    : 
+  Test Value  : 
+  Expected    : success
+  Description : End-to-end purchase: Browse product → Add to cart → Checkout → Complete order
+  AI-enhanced : True
+
+  ID          : usecase_ecommerce_multiple_products
+  Type        : Use Case  subtype=e-commerce
+  Type        : Use Case
+  Form URL    : 
+  Test Value  : 
+  Expected    : success
+  Description : Add multiple products: Add product 1 → Add product 2 → View cart
+  AI-enhanced : True
+
+  ID          : usecase_ecommerce_remove_from_cart
+  Type        : Use Case  subtype=e-commerce
+  Type        : Use Case
+  Form URL    : 
+  Test Value  : 
+  Expected    : success
+  Description : Remove item from cart: View cart → Remove item → Verify removal
+  AI-enhanced : True
+
+  ID          : usecase_auth_login
+  Type        : Use Case  subtype=authentication
+  Type        : Use Case
+  Form URL    : http://localhost:3006
+  Test Value  : 
+  Expected    : success
+  Description : User login: Navigate to login → Enter credentials → Submit → Verify logged in
+  AI-enhanced : True
+  Test Data   : loginEmail='test@example.com', loginPassword='TestPass1!'
+
+  ID          : usecase_auth_register
+  Type        : Use Case  subtype=authentication
+  Type        : Use Case
+  Form URL    : http://localhost:3006
+  Test Value  : 
+  Expected    : success
+  Description : User registration: Navigate → Fill form → Submit → Verify account created
+  AI-enhanced : True
+  Test Data   : loginEmail='test@example.com', loginPassword='TestPass1!'

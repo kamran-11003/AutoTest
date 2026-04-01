@@ -1,7 +1,11 @@
 {
   "crawl_to_tests": {
     "4e9d8e6f9e8da6b649e3159d53d4d980": "tests_20260331_021613.json",
-    "7d3613ebfcd3de7cf9da113c402267df": "tests_20260401_022738.json"
+    "7d3613ebfcd3de7cf9da113c402267df": "tests_20260401_022738.json",
+    "191b0be841efedc634ec58bb36c6de17": "site6_ecommerce_after_20260401_111403.json",
+    "656ff218c068e02f97df60121d801493": "tests_20260401_020414.json",
+    "d57f4e33b3fff5a6f66dc4d3af769ba7": "site7_spa_taskboard_after_20260401_111952.json",
+    "d79b0a9d695a7091a36e022af30fef58": "site8_medical_after_20260401_112247.json"
   },
   "crawl_to_constraints": {},
   "crawl_metadata": {
@@ -15,18 +19,42 @@
     },
     "656ff218c068e02f97df60121d801493": {
       "crawl_file": "site5_feedback_20260331_015707.json",
-      "registered_at": "2026-04-01T02:04:02.087544",
+      "registered_at": "2026-04-01T13:01:16.959195",
       "metadata": {
         "url": "http://localhost:5500/test_websites/site5_feedback/index.html",
-        "timestamp": "2026-04-01T02:04:02.087544"
+        "timestamp": "2026-04-01T13:01:16.958097"
       }
     },
     "7d3613ebfcd3de7cf9da113c402267df": {
       "crawl_file": "site3_register_20260401_023726.json",
-      "registered_at": "2026-04-01T02:44:32.410630",
+      "registered_at": "2026-04-01T20:48:01.645676",
       "metadata": {
         "url": "http://localhost:5500/test_websites/site3_register/index.html",
-        "timestamp": "2026-04-01T02:44:32.410630"
+        "timestamp": "2026-04-01T20:48:01.644679"
+      }
+    },
+    "191b0be841efedc634ec58bb36c6de17": {
+      "crawl_file": "site6_ecommerce_verify_20260401_105848.json",
+      "registered_at": "2026-04-01T13:33:54.825698",
+      "metadata": {
+        "url": "http://localhost:3006",
+        "timestamp": "2026-04-01T13:33:54.825698"
+      }
+    },
+    "d57f4e33b3fff5a6f66dc4d3af769ba7": {
+      "crawl_file": "site7_spa_taskboard_verify_20260401_110251.json",
+      "registered_at": "2026-04-01T14:15:36.794221",
+      "metadata": {
+        "url": "http://localhost:3007",
+        "timestamp": "2026-04-01T14:15:36.794221"
+      }
+    },
+    "d79b0a9d695a7091a36e022af30fef58": {
+      "crawl_file": "site8_medical_verify_20260401_110836.json",
+      "registered_at": "2026-04-01T22:53:07.290272",
+      "metadata": {
+        "url": "http://localhost:3008",
+        "timestamp": "2026-04-01T22:53:07.289275"
       }
     }
   },
@@ -43,6 +71,34 @@
         "test_file": "tests_20260401_022738.json",
         "version": 1,
         "timestamp": "2026-04-01T02:44:32.421229"
+      }
+    ],
+    "191b0be841efedc634ec58bb36c6de17": [
+      {
+        "test_file": "site6_ecommerce_after_20260401_111403.json",
+        "version": 2,
+        "timestamp": "2026-04-01T12:33:56.648783"
+      }
+    ],
+    "656ff218c068e02f97df60121d801493": [
+      {
+        "test_file": "tests_20260401_020414.json",
+        "version": 1,
+        "timestamp": "2026-04-01T12:37:49.284647"
+      }
+    ],
+    "d57f4e33b3fff5a6f66dc4d3af769ba7": [
+      {
+        "test_file": "site7_spa_taskboard_after_20260401_111952.json",
+        "version": 2,
+        "timestamp": "2026-04-01T13:32:58.613867"
+      }
+    ],
+    "d79b0a9d695a7091a36e022af30fef58": [
+      {
+        "test_file": "site8_medical_after_20260401_112247.json",
+        "version": 2,
+        "timestamp": "2026-04-01T13:41:50.621091"
       }
     ]
   }

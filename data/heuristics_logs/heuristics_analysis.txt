@@ -1,6 +1,6 @@
 # HEURISTICS & RL LEARNING ANALYSIS
 
-Generated: 2026-04-01T02:42:27.716269
+Generated: 2026-04-01T23:26:46.369678
 
 Total subtypes analyzed: 7
 
@@ -16,120 +16,120 @@ What did the agent LEARN about each test subtype?
 
 ### BOUNDARY_PARTITION
 
-**Execution Count:** 21 tests
-- Heuristic: 19 uses (90%)
-- LLM: 2 uses (10%)
+**Execution Count:** 30 tests
+- Heuristic: 28 uses (93%)
+- LLM: 2 uses (7%)
 
 **Success Rates:**
-- Heuristic: 0/19 passed (0.0%)
+- Heuristic: 0/28 passed (0.0%)
 - LLM: 0/2 passed (0.0%)
 
 **Learning Signal (Rewards):**
 - Heuristic avg: +2.00
 - LLM avg: -2.00
-- Overall: +1.62
+- Overall: +1.73
 
 🔄 **LEARNING:** Still optimizing oracle selection
 
 ### INVALID_PARTITION
 
-**Execution Count:** 133 tests
-- Heuristic: 128 uses (96%)
-- LLM: 5 uses (4%)
+**Execution Count:** 466 tests
+- Heuristic: 457 uses (98%)
+- LLM: 9 uses (2%)
 
 **Success Rates:**
-- Heuristic: 0/128 passed (0.0%)
-- LLM: 0/5 passed (0.0%)
+- Heuristic: 0/457 passed (0.0%)
+- LLM: 0/9 passed (0.0%)
 
 **Learning Signal (Rewards):**
-- Heuristic avg: +1.62
-- LLM avg: -0.80
-- Overall: +1.53
+- Heuristic avg: +1.28
+- LLM avg: -1.00
+- Overall: +1.24
 
 🔄 **LEARNING:** Still optimizing oracle selection
 
 ### NUMERIC_BOUNDARIES
 
-**Execution Count:** 199 tests
-- Heuristic: 191 uses (96%)
-- LLM: 8 uses (4%)
+**Execution Count:** 450 tests
+- Heuristic: 440 uses (98%)
+- LLM: 10 uses (2%)
 
 **Success Rates:**
-- Heuristic: 0/191 passed (0.0%)
-- LLM: 0/8 passed (0.0%)
+- Heuristic: 0/440 passed (0.0%)
+- LLM: 0/10 passed (0.0%)
 
 **Learning Signal (Rewards):**
-- Heuristic avg: +1.87
-- LLM avg: -2.00
-- Overall: +1.72
+- Heuristic avg: +1.73
+- LLM avg: -1.40
+- Overall: +1.66
 
 🔄 **LEARNING:** Still optimizing oracle selection
 
 ### PAYMENT_BOUNDARIES
 
-**Execution Count:** 14 tests
-- Heuristic: 12 uses (86%)
-- LLM: 2 uses (14%)
+**Execution Count:** 112 tests
+- Heuristic: 109 uses (97%)
+- LLM: 3 uses (3%)
 
 **Success Rates:**
-- Heuristic: 0/12 passed (0.0%)
-- LLM: 0/2 passed (0.0%)
+- Heuristic: 0/109 passed (0.0%)
+- LLM: 0/3 passed (0.0%)
 
 **Learning Signal (Rewards):**
-- Heuristic avg: +2.00
+- Heuristic avg: +1.78
 - LLM avg: -2.00
-- Overall: +1.43
+- Overall: +1.68
 
 🔄 **LEARNING:** Still optimizing oracle selection
 
 ### STRING_BOUNDARIES
 
-**Execution Count:** 26 tests
-- Heuristic: 25 uses (96%)
-- LLM: 1 uses (4%)
+**Execution Count:** 58 tests
+- Heuristic: 57 uses (98%)
+- LLM: 1 uses (2%)
 
 **Success Rates:**
-- Heuristic: 0/25 passed (0.0%)
+- Heuristic: 0/57 passed (0.0%)
 - LLM: 0/1 passed (0.0%)
 
 **Learning Signal (Rewards):**
-- Heuristic avg: +2.00
+- Heuristic avg: +1.89
 - LLM avg: -2.00
-- Overall: +1.85
+- Overall: +1.83
 
 🔄 **LEARNING:** Still optimizing oracle selection
 
 ### UNKNOWN
 
-**Execution Count:** 40 tests
-- Heuristic: 37 uses (92%)
-- LLM: 3 uses (8%)
+**Execution Count:** 96 tests
+- Heuristic: 93 uses (97%)
+- LLM: 3 uses (3%)
 
 **Success Rates:**
-- Heuristic: 0/37 passed (0.0%)
+- Heuristic: 0/93 passed (0.0%)
 - LLM: 0/3 passed (0.0%)
 
 **Learning Signal (Rewards):**
-- Heuristic avg: +1.76
+- Heuristic avg: +1.48
 - LLM avg: -2.00
-- Overall: +1.48
+- Overall: +1.38
 
 🔄 **LEARNING:** Still optimizing oracle selection
 
 ### VALID_PARTITION
 
-**Execution Count:** 82 tests
-- Heuristic: 76 uses (93%)
-- LLM: 6 uses (7%)
+**Execution Count:** 329 tests
+- Heuristic: 320 uses (97%)
+- LLM: 9 uses (3%)
 
 **Success Rates:**
-- Heuristic: 0/76 passed (0.0%)
-- LLM: 0/6 passed (0.0%)
+- Heuristic: 0/320 passed (0.0%)
+- LLM: 0/9 passed (0.0%)
 
 **Learning Signal (Rewards):**
-- Heuristic avg: +1.57
+- Heuristic avg: +1.58
 - LLM avg: -2.00
-- Overall: +1.30
+- Overall: +1.48
 
 🔄 **LEARNING:** Still optimizing oracle selection
 
@@ -140,9 +140,9 @@ Which heuristic factors are most important?
 
 | Factor | Used In | Frequency |
 |--------|---------|-----------|
-| Subtype | 356 | 100% |
-| Boundary Values | 164 | 46% |
-| Input Complexity | 33 | 9% |
+| Subtype | 779 | 100% |
+| Boundary Values | 330 | 42% |
+| Input Complexity | 86 | 11% |
 | Field Type | 0 | 0% |
 | Form Complexity | 0 | 0% |
 | Validation Rules | 0 | 0% |

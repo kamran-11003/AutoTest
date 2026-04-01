@@ -1,0 +1,3615 @@
+==============================================================================
+  SITE: Medical Clinic (Express+EJS)
+  ID  : site8_medical
+  URL : http://localhost:3008
+  DATE: 2026-04-01 20:17
+==============================================================================
+
+==============================================================================
+  SECTION 1 — CRAWL DATA
+==============================================================================
+
+  Crawl file : site8_medical_verify_20260401_110836.json
+  Pages: 5   Edges: 4   Forms: 3   Fields: 13
+
+  Page: http://localhost:3008  (forms=0 inputs=0)
+
+  Page: http://localhost:3008/appointment  (forms=1 inputs=5)
+    Form #unknown          method=get
+      doctor                    type=select-one      REQUIRED
+      appDate                   type=date            REQUIRED
+      appTime                   type=select-one      REQUIRED
+      visitType                 type=select-one      REQUIRED
+      reason                    type=textarea        REQUIRED
+
+  Page: http://localhost:3008/patient-register  (forms=2 inputs=8)
+    Form #unknown          method=get
+      firstName                 type=text            REQUIRED
+      lastName                  type=text            REQUIRED
+      dob                       type=date            REQUIRED
+      gender                    type=select-one      REQUIRED
+      patientPhone              type=text            REQUIRED
+      patientEmail              type=email           REQUIRED
+      emergencyContact          type=text            REQUIRED
+      bloodType                 type=select-one      REQUIRED
+    Form #unknown          method=None
+      firstName                 type=text            REQUIRED
+      firstName                 type=text            REQUIRED
+      dob                       type=date            REQUIRED
+      gender                    type=select-one      REQUIRED
+      patientPhone              type=text            REQUIRED
+      patientEmail              type=email           REQUIRED
+      emergencyContact          type=text            REQUIRED
+      bloodType                 type=select-one      REQUIRED
+
+  Page: http://localhost:3008/doctors  (forms=0 inputs=0)
+
+  Navigation Edges:
+    fb871217  ->  6c3cc6ef
+    fb871217  ->  982962c0
+    fb871217  ->  8066a9bd
+
+------------------------------------------------------------------------------
+
+==============================================================================
+  SECTION 2 — TEST CASES BEFORE AI REFINEMENT (171 tests)
+==============================================================================
+
+  File: site8_medical_before_20260401_174052.json
+
+  Type                                      Count
+  ----------------------------------------------
+  BVA - Boundary Value Analysis                60
+  ECP - Equivalence Class Partitioning        103
+  DT  - Decision Table                          0
+  ST  - State Transition                        3
+  UC  - Use Case                                5
+  ----------------------------------------------
+  TOTAL                                       171
+
+  [ BVA - 60 tests ]
+  ----------------------------------------------------------------------
+  ID          : bva_length_60d3767f_reason_0
+  Type        : BVA  subtype=length
+  Field       : reason (textarea)
+  Form URL    : http://localhost:3008/appointment
+  Test Value  : aaaaaaaaa
+  Expected    : error
+  Description : Below minimum length (9 chars)
+  AI-enhanced : False
+  Test Data   : doctor='dr_johnson', appDate='2026-04-02', appTime='09:00', visitType='new', reason='aaaaaaaaa'
+
+  ID          : bva_length_60d3767f_reason_1
+  Type        : BVA  subtype=length
+  Field       : reason (textarea)
+  Form URL    : http://localhost:3008/appointment
+  Test Value  : aaaaaaaaaa
+  Expected    : success
+  Description : At minimum length (10 chars)
+  AI-enhanced : False
+  Test Data   : doctor='dr_johnson', appDate='2026-04-02', appTime='09:00', visitType='new', reason='aaaaaaaaaa'
+
+  ID          : bva_length_60d3767f_reason_2
+  Type        : BVA  subtype=length
+  Field       : reason (textarea)
+  Form URL    : http://localhost:3008/appointment
+  Test Value  : aaaaaaaaaaa
+  Expected    : success
+  Description : Just above minimum (11 chars)
+  AI-enhanced : False
+  Test Data   : doctor='dr_johnson', appDate='2026-04-02', appTime='09:00', visitType='new', reason='aaaaaaaaaaa'
+
+  ID          : bva_length_60d3767f_reason_3
+  Type        : BVA  subtype=length
+  Field       : reason (textarea)
+  Form URL    : http://localhost:3008/appointment
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : success
+  Description : Just below maximum (299 chars)
+  AI-enhanced : False
+  Test Data   : doctor='dr_johnson', appDate='2026-04-02', appTime='09:00', visitType='new', reason='aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
+
+  ID          : bva_length_60d3767f_reason_4
+  Type        : BVA  subtype=length
+  Field       : reason (textarea)
+  Form URL    : http://localhost:3008/appointment
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : success
+  Description : At maximum length (300 chars)
+  AI-enhanced : False
+  Test Data   : doctor='dr_johnson', appDate='2026-04-02', appTime='09:00', visitType='new', reason='aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
+
+  ID          : bva_length_60d3767f_reason_5
+  Type        : BVA  subtype=length
+  Field       : reason (textarea)
+  Form URL    : http://localhost:3008/appointment
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : error
+  Description : Above maximum length (301 chars)
+  AI-enhanced : False
+  Test Data   : doctor='dr_johnson', appDate='2026-04-02', appTime='09:00', visitType='new', reason='aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
+
+  ID          : bva_length_3778a249_firstName_0
+  Type        : BVA  subtype=length
+  Field       : firstName (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : a
+  Expected    : error
+  Description : Below minimum length (1 chars)
+  AI-enhanced : False
+  Test Data   : lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567'
+
+  ID          : bva_length_3778a249_firstName_1
+  Type        : BVA  subtype=length
+  Field       : firstName (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : aa
+  Expected    : success
+  Description : At minimum length (2 chars)
+  AI-enhanced : False
+  Test Data   : lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567'
+
+  ID          : bva_length_3778a249_firstName_2
+  Type        : BVA  subtype=length
+  Field       : firstName (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : aaa
+  Expected    : success
+  Description : Just above minimum (3 chars)
+  AI-enhanced : False
+  Test Data   : lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567'
+
+  ID          : bva_length_3778a249_firstName_3
+  Type        : BVA  subtype=length
+  Field       : firstName (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : success
+  Description : Just below maximum (29 chars)
+  AI-enhanced : False
+  Test Data   : lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567'
+
+  ID          : bva_length_3778a249_firstName_4
+  Type        : BVA  subtype=length
+  Field       : firstName (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : success
+  Description : At maximum length (30 chars)
+  AI-enhanced : False
+  Test Data   : lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567'
+
+  ID          : bva_length_3778a249_firstName_5
+  Type        : BVA  subtype=length
+  Field       : firstName (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : error
+  Description : Above maximum length (31 chars)
+  AI-enhanced : False
+  Test Data   : lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567'
+
+  ID          : bva_length_3778a249_lastName_0
+  Type        : BVA  subtype=length
+  Field       : lastName (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : a
+  Expected    : error
+  Description : Below minimum length (1 chars)
+  AI-enhanced : False
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567'
+
+  ID          : bva_length_3778a249_lastName_1
+  Type        : BVA  subtype=length
+  Field       : lastName (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : aa
+  Expected    : success
+  Description : At minimum length (2 chars)
+  AI-enhanced : False
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567'
+
+  ID          : bva_length_3778a249_lastName_2
+  Type        : BVA  subtype=length
+  Field       : lastName (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : aaa
+  Expected    : success
+  Description : Just above minimum (3 chars)
+  AI-enhanced : False
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567'
+
+  ID          : bva_length_3778a249_lastName_3
+  Type        : BVA  subtype=length
+  Field       : lastName (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : success
+  Description : Just below maximum (29 chars)
+  AI-enhanced : False
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567'
+
+  ID          : bva_length_3778a249_lastName_4
+  Type        : BVA  subtype=length
+  Field       : lastName (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : success
+  Description : At maximum length (30 chars)
+  AI-enhanced : False
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567'
+
+  ID          : bva_length_3778a249_lastName_5
+  Type        : BVA  subtype=length
+  Field       : lastName (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : error
+  Description : Above maximum length (31 chars)
+  AI-enhanced : False
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567'
+
+  ID          : bva_length_3778a249_patientPhone_0
+  Type        : BVA  subtype=length
+  Field       : patientPhone (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : 
+  Expected    : error
+  Description : Below minimum length (0 chars)
+  AI-enhanced : False
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientEmail='tester@example.com', emergencyContact='5551234567'
+
+  ID          : bva_length_3778a249_patientPhone_1
+  Type        : BVA  subtype=length
+  Field       : patientPhone (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : a
+  Expected    : success
+  Description : At minimum length (1 chars)
+  AI-enhanced : False
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientEmail='tester@example.com', emergencyContact='5551234567'
+
+  ID          : bva_length_3778a249_patientPhone_2
+  Type        : BVA  subtype=length
+  Field       : patientPhone (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : aa
+  Expected    : success
+  Description : Just above minimum (2 chars)
+  AI-enhanced : False
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientEmail='tester@example.com', emergencyContact='5551234567'
+
+  ID          : bva_length_3778a249_patientPhone_3
+  Type        : BVA  subtype=length
+  Field       : patientPhone (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : success
+  Description : Just below maximum (254 chars)
+  AI-enhanced : False
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientEmail='tester@example.com', emergencyContact='5551234567'
+
+  ID          : bva_length_3778a249_patientPhone_4
+  Type        : BVA  subtype=length
+  Field       : patientPhone (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : success
+  Description : At maximum length (255 chars)
+  AI-enhanced : False
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientEmail='tester@example.com', emergencyContact='5551234567'
+
+  ID          : bva_length_3778a249_patientPhone_5
+  Type        : BVA  subtype=length
+  Field       : patientPhone (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : error
+  Description : Above maximum length (256 chars)
+  AI-enhanced : False
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientEmail='tester@example.com', emergencyContact='5551234567'
+
+  ID          : bva_length_3778a249_patientEmail_0
+  Type        : BVA  subtype=length
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : aaaa
+  Expected    : error
+  Description : Below minimum length (4 chars)
+  AI-enhanced : False
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567'
+
+  ID          : bva_length_3778a249_patientEmail_1
+  Type        : BVA  subtype=length
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : a@b.c
+  Expected    : success
+  Description : At minimum length (5 chars)
+  AI-enhanced : False
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567'
+
+  ID          : bva_length_3778a249_patientEmail_2
+  Type        : BVA  subtype=length
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : aa@b.c
+  Expected    : success
+  Description : Just above minimum (6 chars)
+  AI-enhanced : False
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567'
+
+  ID          : bva_length_3778a249_patientEmail_3
+  Type        : BVA  subtype=length
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.c
+  Expected    : success
+  Description : Just below maximum (253 chars)
+  AI-enhanced : False
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567'
+
+  ID          : bva_length_3778a249_patientEmail_4
+  Type        : BVA  subtype=length
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.c
+  Expected    : success
+  Description : At maximum length (254 chars)
+  AI-enhanced : False
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567'
+
+  ID          : bva_length_3778a249_patientEmail_5
+  Type        : BVA  subtype=length
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.c
+  Expected    : error
+  Description : Above maximum length (255 chars)
+  AI-enhanced : False
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567'
+
+  ID          : bva_length_3778a249_emergencyContact_0
+  Type        : BVA  subtype=length
+  Field       : emergencyContact (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : a
+  Expected    : error
+  Description : Below minimum length (1 chars)
+  AI-enhanced : False
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com'
+
+  ID          : bva_length_3778a249_emergencyContact_1
+  Type        : BVA  subtype=length
+  Field       : emergencyContact (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : aa
+  Expected    : success
+  Description : At minimum length (2 chars)
+  AI-enhanced : False
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com'
+
+  ID          : bva_length_3778a249_emergencyContact_2
+  Type        : BVA  subtype=length
+  Field       : emergencyContact (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : aaa
+  Expected    : success
+  Description : Just above minimum (3 chars)
+  AI-enhanced : False
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com'
+
+  ID          : bva_length_3778a249_emergencyContact_3
+  Type        : BVA  subtype=length
+  Field       : emergencyContact (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : success
+  Description : Just below maximum (49 chars)
+  AI-enhanced : False
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com'
+
+  ID          : bva_length_3778a249_emergencyContact_4
+  Type        : BVA  subtype=length
+  Field       : emergencyContact (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : success
+  Description : At maximum length (50 chars)
+  AI-enhanced : False
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com'
+
+  ID          : bva_length_3778a249_emergencyContact_5
+  Type        : BVA  subtype=length
+  Field       : emergencyContact (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : error
+  Description : Above maximum length (51 chars)
+  AI-enhanced : False
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com'
+
+  ID          : bva_length_9a4dfdb5_firstName_0
+  Type        : BVA  subtype=length
+  Field       : firstName (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : a
+  Expected    : error
+  Description : Below minimum length (1 chars)
+  AI-enhanced : False
+  Test Data   : dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : bva_length_9a4dfdb5_firstName_1
+  Type        : BVA  subtype=length
+  Field       : firstName (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : aa
+  Expected    : success
+  Description : At minimum length (2 chars)
+  AI-enhanced : False
+  Test Data   : dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : bva_length_9a4dfdb5_firstName_2
+  Type        : BVA  subtype=length
+  Field       : firstName (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : aaa
+  Expected    : success
+  Description : Just above minimum (3 chars)
+  AI-enhanced : False
+  Test Data   : dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : bva_length_9a4dfdb5_firstName_3
+  Type        : BVA  subtype=length
+  Field       : firstName (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : success
+  Description : Just below maximum (29 chars)
+  AI-enhanced : False
+  Test Data   : dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : bva_length_9a4dfdb5_firstName_4
+  Type        : BVA  subtype=length
+  Field       : firstName (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : success
+  Description : At maximum length (30 chars)
+  AI-enhanced : False
+  Test Data   : dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : bva_length_9a4dfdb5_firstName_5
+  Type        : BVA  subtype=length
+  Field       : firstName (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : error
+  Description : Above maximum length (31 chars)
+  AI-enhanced : False
+  Test Data   : dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : bva_length_9a4dfdb5_patientPhone_0
+  Type        : BVA  subtype=length
+  Field       : patientPhone (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : 
+  Expected    : error
+  Description : Below minimum length (0 chars)
+  AI-enhanced : False
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientEmail='tester@example.com', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : bva_length_9a4dfdb5_patientPhone_1
+  Type        : BVA  subtype=length
+  Field       : patientPhone (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : a
+  Expected    : success
+  Description : At minimum length (1 chars)
+  AI-enhanced : False
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientEmail='tester@example.com', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : bva_length_9a4dfdb5_patientPhone_2
+  Type        : BVA  subtype=length
+  Field       : patientPhone (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : aa
+  Expected    : success
+  Description : Just above minimum (2 chars)
+  AI-enhanced : False
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientEmail='tester@example.com', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : bva_length_9a4dfdb5_patientPhone_3
+  Type        : BVA  subtype=length
+  Field       : patientPhone (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : success
+  Description : Just below maximum (254 chars)
+  AI-enhanced : False
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientEmail='tester@example.com', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : bva_length_9a4dfdb5_patientPhone_4
+  Type        : BVA  subtype=length
+  Field       : patientPhone (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : success
+  Description : At maximum length (255 chars)
+  AI-enhanced : False
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientEmail='tester@example.com', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : bva_length_9a4dfdb5_patientPhone_5
+  Type        : BVA  subtype=length
+  Field       : patientPhone (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : error
+  Description : Above maximum length (256 chars)
+  AI-enhanced : False
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientEmail='tester@example.com', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : bva_length_9a4dfdb5_patientEmail_0
+  Type        : BVA  subtype=length
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : aaaa
+  Expected    : error
+  Description : Below minimum length (4 chars)
+  AI-enhanced : False
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : bva_length_9a4dfdb5_patientEmail_1
+  Type        : BVA  subtype=length
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : a@b.c
+  Expected    : success
+  Description : At minimum length (5 chars)
+  AI-enhanced : False
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : bva_length_9a4dfdb5_patientEmail_2
+  Type        : BVA  subtype=length
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : aa@b.c
+  Expected    : success
+  Description : Just above minimum (6 chars)
+  AI-enhanced : False
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : bva_length_9a4dfdb5_patientEmail_3
+  Type        : BVA  subtype=length
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.c
+  Expected    : success
+  Description : Just below maximum (253 chars)
+  AI-enhanced : False
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : bva_length_9a4dfdb5_patientEmail_4
+  Type        : BVA  subtype=length
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.c
+  Expected    : success
+  Description : At maximum length (254 chars)
+  AI-enhanced : False
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : bva_length_9a4dfdb5_patientEmail_5
+  Type        : BVA  subtype=length
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.c
+  Expected    : error
+  Description : Above maximum length (255 chars)
+  AI-enhanced : False
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : bva_length_9a4dfdb5_emergencyContact_0
+  Type        : BVA  subtype=length
+  Field       : emergencyContact (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : a
+  Expected    : error
+  Description : Below minimum length (1 chars)
+  AI-enhanced : False
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', bloodType='A+'
+
+  ID          : bva_length_9a4dfdb5_emergencyContact_1
+  Type        : BVA  subtype=length
+  Field       : emergencyContact (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : aa
+  Expected    : success
+  Description : At minimum length (2 chars)
+  AI-enhanced : False
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', bloodType='A+'
+
+  ID          : bva_length_9a4dfdb5_emergencyContact_2
+  Type        : BVA  subtype=length
+  Field       : emergencyContact (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : aaa
+  Expected    : success
+  Description : Just above minimum (3 chars)
+  AI-enhanced : False
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', bloodType='A+'
+
+  ID          : bva_length_9a4dfdb5_emergencyContact_3
+  Type        : BVA  subtype=length
+  Field       : emergencyContact (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : success
+  Description : Just below maximum (49 chars)
+  AI-enhanced : False
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', bloodType='A+'
+
+  ID          : bva_length_9a4dfdb5_emergencyContact_4
+  Type        : BVA  subtype=length
+  Field       : emergencyContact (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : success
+  Description : At maximum length (50 chars)
+  AI-enhanced : False
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', bloodType='A+'
+
+  ID          : bva_length_9a4dfdb5_emergencyContact_5
+  Type        : BVA  subtype=length
+  Field       : emergencyContact (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : error
+  Description : Above maximum length (51 chars)
+  AI-enhanced : False
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', bloodType='A+'
+
+  [ ECP - 103 tests ]
+  ----------------------------------------------------------------------
+  ID          : ecp_select_60d3767f_doctor_first
+  Type        : ECP  subtype=select
+  Field       : doctor (select)
+  Form URL    : http://localhost:3008/appointment
+  Test Value  : dr_johnson
+  Expected    : success
+  Description : Select first option (dr_johnson)
+  AI-enhanced : False
+  Test Data   : appDate='2026-04-02', appTime='09:00', visitType='new', reason='This is a test submission.', doctor='dr_johnson'
+
+  ID          : ecp_select_60d3767f_doctor_middle
+  Type        : ECP  subtype=select
+  Field       : doctor (select)
+  Form URL    : http://localhost:3008/appointment
+  Test Value  : dr_davis
+  Expected    : success
+  Description : Select middle option (dr_davis)
+  AI-enhanced : False
+  Test Data   : appDate='2026-04-02', appTime='09:00', visitType='new', reason='This is a test submission.', doctor='dr_davis'
+
+  ID          : ecp_select_60d3767f_doctor_last
+  Type        : ECP  subtype=select
+  Field       : doctor (select)
+  Form URL    : http://localhost:3008/appointment
+  Test Value  : dr_patel
+  Expected    : success
+  Description : Select last option (dr_patel)
+  AI-enhanced : False
+  Test Data   : appDate='2026-04-02', appTime='09:00', visitType='new', reason='This is a test submission.', doctor='dr_patel'
+
+  ID          : ecp_date_60d3767f_appDate_valid
+  Type        : ECP  subtype=date
+  Field       : appDate (date)
+  Form URL    : http://localhost:3008/appointment
+  Test Value  : 2024-01-15
+  Expected    : success
+  Description : Valid date format for Appointment Date
+  AI-enhanced : False
+  Test Data   : doctor='dr_johnson', appTime='09:00', visitType='new', reason='This is a test submission.', appDate='2024-01-15'
+
+  ID          : ecp_date_60d3767f_appDate_invalid
+  Type        : ECP  subtype=date
+  Field       : appDate (date)
+  Form URL    : http://localhost:3008/appointment
+  Test Value  : invalid-date
+  Expected    : error
+  Description : Invalid format for Appointment Date
+  AI-enhanced : False
+  Test Data   : doctor='dr_johnson', appTime='09:00', visitType='new', reason='This is a test submission.', appDate='invalid-date'
+
+  ID          : ecp_select_60d3767f_appTime_first
+  Type        : ECP  subtype=select
+  Field       : appTime (select)
+  Form URL    : http://localhost:3008/appointment
+  Test Value  : 09:00
+  Expected    : success
+  Description : Select first option (09:00)
+  AI-enhanced : False
+  Test Data   : doctor='dr_johnson', appDate='2026-04-02', visitType='new', reason='This is a test submission.', appTime='09:00'
+
+  ID          : ecp_select_60d3767f_appTime_middle
+  Type        : ECP  subtype=select
+  Field       : appTime (select)
+  Form URL    : http://localhost:3008/appointment
+  Test Value  : 14:00
+  Expected    : success
+  Description : Select middle option (14:00)
+  AI-enhanced : False
+  Test Data   : doctor='dr_johnson', appDate='2026-04-02', visitType='new', reason='This is a test submission.', appTime='14:00'
+
+  ID          : ecp_select_60d3767f_appTime_last
+  Type        : ECP  subtype=select
+  Field       : appTime (select)
+  Form URL    : http://localhost:3008/appointment
+  Test Value  : 16:00
+  Expected    : success
+  Description : Select last option (16:00)
+  AI-enhanced : False
+  Test Data   : doctor='dr_johnson', appDate='2026-04-02', visitType='new', reason='This is a test submission.', appTime='16:00'
+
+  ID          : ecp_select_60d3767f_visitType_first
+  Type        : ECP  subtype=select
+  Field       : visitType (select)
+  Form URL    : http://localhost:3008/appointment
+  Test Value  : new
+  Expected    : success
+  Description : Select first option (new)
+  AI-enhanced : False
+  Test Data   : doctor='dr_johnson', appDate='2026-04-02', appTime='09:00', reason='This is a test submission.', visitType='new'
+
+  ID          : ecp_select_60d3767f_visitType_middle
+  Type        : ECP  subtype=select
+  Field       : visitType (select)
+  Form URL    : http://localhost:3008/appointment
+  Test Value  : emergency
+  Expected    : success
+  Description : Select middle option (emergency)
+  AI-enhanced : False
+  Test Data   : doctor='dr_johnson', appDate='2026-04-02', appTime='09:00', reason='This is a test submission.', visitType='emergency'
+
+  ID          : ecp_select_60d3767f_visitType_last
+  Type        : ECP  subtype=select
+  Field       : visitType (select)
+  Form URL    : http://localhost:3008/appointment
+  Test Value  : checkup
+  Expected    : success
+  Description : Select last option (checkup)
+  AI-enhanced : False
+  Test Data   : doctor='dr_johnson', appDate='2026-04-02', appTime='09:00', reason='This is a test submission.', visitType='checkup'
+
+  ID          : ecp_text_60d3767f_reason_valid
+  Type        : ECP  subtype=text
+  Field       : reason (textarea)
+  Form URL    : http://localhost:3008/appointment
+  Test Value  : ValidInput123
+  Expected    : success
+  Description : Valid text input for Reason for Visit
+  AI-enhanced : False
+  Test Data   : doctor='dr_johnson', appDate='2026-04-02', appTime='09:00', visitType='new', reason='ValidInput123'
+
+  ID          : ecp_text_60d3767f_reason_empty
+  Type        : ECP  subtype=text
+  Field       : reason (textarea)
+  Form URL    : http://localhost:3008/appointment
+  Test Value  : 
+  Expected    : error
+  Description : Empty value for required field Reason for Visit
+  AI-enhanced : False
+  Test Data   : doctor='dr_johnson', appDate='2026-04-02', appTime='09:00', visitType='new', reason=''
+
+  ID          : ecp_text_60d3767f_reason_special
+  Type        : ECP  subtype=text
+  Field       : reason (textarea)
+  Form URL    : http://localhost:3008/appointment
+  Test Value  : <script>alert("XSS")</script>
+  Expected    : error
+  Description : Special characters/XSS attempt in Reason for Visit
+  AI-enhanced : False
+  Test Data   : doctor='dr_johnson', appDate='2026-04-02', appTime='09:00', visitType='new', reason='<script>alert("XSS")</script>'
+
+  ID          : ecp_text_60d3767f_reason_long
+  Type        : ECP  subtype=text
+  Field       : reason (textarea)
+  Form URL    : http://localhost:3008/appointment
+  Test Value  : AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+  Expected    : error
+  Description : Very long text input (500 chars) for Reason for Visit — should exceed server maxlength
+  AI-enhanced : False
+  Test Data   : doctor='dr_johnson', appDate='2026-04-02', appTime='09:00', visitType='new', reason='AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'
+
+  ID          : ecp_text_60d3767f_reason_unicode
+  Type        : ECP  subtype=text
+  Field       : reason (textarea)
+  Form URL    : http://localhost:3008/appointment
+  Test Value  : 测试数据🎉!测试数据
+  Expected    : success
+  Description : Unicode characters in Reason for Visit
+  AI-enhanced : False
+  Test Data   : doctor='dr_johnson', appDate='2026-04-02', appTime='09:00', visitType='new', reason='测试数据🎉!测试数据'
+
+  ID          : ecp_text_3778a249_firstName_valid
+  Type        : ECP  subtype=text
+  Field       : firstName (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : ValidInput123
+  Expected    : success
+  Description : Valid text input for First Name
+  AI-enhanced : False
+  Test Data   : lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567'
+
+  ID          : ecp_text_3778a249_firstName_empty
+  Type        : ECP  subtype=text
+  Field       : firstName (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : 
+  Expected    : error
+  Description : Empty value for required field First Name
+  AI-enhanced : False
+  Test Data   : lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567'
+
+  ID          : ecp_text_3778a249_firstName_special
+  Type        : ECP  subtype=text
+  Field       : firstName (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : <script>alert("XSS")</script>
+  Expected    : error
+  Description : Special characters/XSS attempt in First Name
+  AI-enhanced : False
+  Test Data   : lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567'
+
+  ID          : ecp_text_3778a249_firstName_long
+  Type        : ECP  subtype=text
+  Field       : firstName (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+  Expected    : error
+  Description : Very long text input (500 chars) for First Name — should exceed server maxlength
+  AI-enhanced : False
+  Test Data   : lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567'
+
+  ID          : ecp_text_3778a249_firstName_unicode
+  Type        : ECP  subtype=text
+  Field       : firstName (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : 测试数据🎉!测试数据
+  Expected    : success
+  Description : Unicode characters in First Name
+  AI-enhanced : False
+  Test Data   : lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567'
+
+  ID          : ecp_text_3778a249_lastName_valid
+  Type        : ECP  subtype=text
+  Field       : lastName (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : ValidInput123
+  Expected    : success
+  Description : Valid text input for Last Name
+  AI-enhanced : False
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567'
+
+  ID          : ecp_text_3778a249_lastName_empty
+  Type        : ECP  subtype=text
+  Field       : lastName (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : 
+  Expected    : error
+  Description : Empty value for required field Last Name
+  AI-enhanced : False
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567'
+
+  ID          : ecp_text_3778a249_lastName_special
+  Type        : ECP  subtype=text
+  Field       : lastName (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : <script>alert("XSS")</script>
+  Expected    : error
+  Description : Special characters/XSS attempt in Last Name
+  AI-enhanced : False
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567'
+
+  ID          : ecp_text_3778a249_lastName_long
+  Type        : ECP  subtype=text
+  Field       : lastName (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+  Expected    : error
+  Description : Very long text input (500 chars) for Last Name — should exceed server maxlength
+  AI-enhanced : False
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567'
+
+  ID          : ecp_text_3778a249_lastName_unicode
+  Type        : ECP  subtype=text
+  Field       : lastName (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : 测试数据🎉!测试数据
+  Expected    : success
+  Description : Unicode characters in Last Name
+  AI-enhanced : False
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567'
+
+  ID          : ecp_date_3778a249_dob_valid
+  Type        : ECP  subtype=date
+  Field       : dob (date)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : 2024-01-15
+  Expected    : success
+  Description : Valid date format for Date of Birth
+  AI-enhanced : False
+  Test Data   : firstName='John', lastName='Doe', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567'
+
+  ID          : ecp_date_3778a249_dob_invalid
+  Type        : ECP  subtype=date
+  Field       : dob (date)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : invalid-date
+  Expected    : error
+  Description : Invalid format for Date of Birth
+  AI-enhanced : False
+  Test Data   : firstName='John', lastName='Doe', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567'
+
+  ID          : ecp_select_3778a249_gender_first
+  Type        : ECP  subtype=select
+  Field       : gender (select)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : male
+  Expected    : success
+  Description : Select first option (male)
+  AI-enhanced : False
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567'
+
+  ID          : ecp_select_3778a249_gender_middle
+  Type        : ECP  subtype=select
+  Field       : gender (select)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : female
+  Expected    : success
+  Description : Select middle option (female)
+  AI-enhanced : False
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567'
+
+  ID          : ecp_select_3778a249_gender_last
+  Type        : ECP  subtype=select
+  Field       : gender (select)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : other
+  Expected    : success
+  Description : Select last option (other)
+  AI-enhanced : False
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567'
+
+  ID          : ecp_text_3778a249_patientPhone_valid
+  Type        : ECP  subtype=text
+  Field       : patientPhone (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : ValidInput123
+  Expected    : success
+  Description : Valid text input for Phone Number
+  AI-enhanced : False
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientEmail='tester@example.com', emergencyContact='5551234567'
+
+  ID          : ecp_text_3778a249_patientPhone_empty
+  Type        : ECP  subtype=text
+  Field       : patientPhone (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : 
+  Expected    : error
+  Description : Empty value for required field Phone Number
+  AI-enhanced : False
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientEmail='tester@example.com', emergencyContact='5551234567'
+
+  ID          : ecp_text_3778a249_patientPhone_special
+  Type        : ECP  subtype=text
+  Field       : patientPhone (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : <script>alert("XSS")</script>
+  Expected    : error
+  Description : Special characters/XSS attempt in Phone Number
+  AI-enhanced : False
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientEmail='tester@example.com', emergencyContact='5551234567'
+
+  ID          : ecp_text_3778a249_patientPhone_long
+  Type        : ECP  subtype=text
+  Field       : patientPhone (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+  Expected    : error
+  Description : Very long text input (500 chars) for Phone Number — should exceed server maxlength
+  AI-enhanced : False
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientEmail='tester@example.com', emergencyContact='5551234567'
+
+  ID          : ecp_text_3778a249_patientPhone_unicode
+  Type        : ECP  subtype=text
+  Field       : patientPhone (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : 测试数据🎉!测试数据
+  Expected    : success
+  Description : Unicode characters in Phone Number
+  AI-enhanced : False
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientEmail='tester@example.com', emergencyContact='5551234567'
+
+  ID          : ecp_email_3778a249_patientEmail_valid_standard_0
+  Type        : ECP  subtype=email
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : user@example.com
+  Expected    : success
+  Description : Valid standard email format
+  AI-enhanced : False
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567'
+
+  ID          : ecp_email_3778a249_patientEmail_valid_standard_1
+  Type        : ECP  subtype=email
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : test@domain.co.uk
+  Expected    : success
+  Description : Valid standard email format
+  AI-enhanced : False
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567'
+
+  ID          : ecp_email_3778a249_patientEmail_valid_with_plus_0
+  Type        : ECP  subtype=email
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : user+tag@example.com
+  Expected    : success
+  Description : Valid email with plus addressing
+  AI-enhanced : False
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567'
+
+  ID          : ecp_email_3778a249_patientEmail_valid_with_plus_1
+  Type        : ECP  subtype=email
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : test+filter@domain.com
+  Expected    : success
+  Description : Valid email with plus addressing
+  AI-enhanced : False
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567'
+
+  ID          : ecp_email_3778a249_patientEmail_valid_with_dots_0
+  Type        : ECP  subtype=email
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : first.last@example.com
+  Expected    : success
+  Description : Valid email with dots in local part
+  AI-enhanced : False
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567'
+
+  ID          : ecp_email_3778a249_patientEmail_valid_with_dots_1
+  Type        : ECP  subtype=email
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : user.name@domain.org
+  Expected    : success
+  Description : Valid email with dots in local part
+  AI-enhanced : False
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567'
+
+  ID          : ecp_email_3778a249_patientEmail_valid_subdomain_0
+  Type        : ECP  subtype=email
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : user@mail.example.com
+  Expected    : success
+  Description : Valid email with subdomain
+  AI-enhanced : False
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567'
+
+  ID          : ecp_email_3778a249_patientEmail_valid_subdomain_1
+  Type        : ECP  subtype=email
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : test@subdomain.domain.com
+  Expected    : success
+  Description : Valid email with subdomain
+  AI-enhanced : False
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567'
+
+  ID          : ecp_email_3778a249_patientEmail_invalid_missing_at_0
+  Type        : ECP  subtype=email
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : userexample.com
+  Expected    : error
+  Description : Missing @ symbol
+  AI-enhanced : False
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567'
+
+  ID          : ecp_email_3778a249_patientEmail_invalid_missing_at_1
+  Type        : ECP  subtype=email
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : test.domain.com
+  Expected    : error
+  Description : Missing @ symbol
+  AI-enhanced : False
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567'
+
+  ID          : ecp_email_3778a249_patientEmail_invalid_missing_domain_0
+  Type        : ECP  subtype=email
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : user@
+  Expected    : error
+  Description : Missing or invalid domain
+  AI-enhanced : False
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567'
+
+  ID          : ecp_email_3778a249_patientEmail_invalid_missing_domain_1
+  Type        : ECP  subtype=email
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : test@.com
+  Expected    : error
+  Description : Missing or invalid domain
+  AI-enhanced : False
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567'
+
+  ID          : ecp_email_3778a249_patientEmail_invalid_special_chars_0
+  Type        : ECP  subtype=email
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : user..name@example.com
+  Expected    : error
+  Description : Invalid format: consecutive dots / leading dot (rejected by HTML5)
+  AI-enhanced : False
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567'
+
+  ID          : ecp_email_3778a249_patientEmail_invalid_special_chars_1
+  Type        : ECP  subtype=email
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : .user@example.com
+  Expected    : error
+  Description : Invalid format: consecutive dots / leading dot (rejected by HTML5)
+  AI-enhanced : False
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567'
+
+  ID          : ecp_email_3778a249_patientEmail_invalid_empty_0
+  Type        : ECP  subtype=email
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : 
+  Expected    : error
+  Description : Empty or whitespace only
+  AI-enhanced : False
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567'
+
+  ID          : ecp_email_3778a249_patientEmail_invalid_empty_1
+  Type        : ECP  subtype=email
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  :    
+  Expected    : error
+  Description : Empty or whitespace only
+  AI-enhanced : False
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567'
+
+  ID          : ecp_email_3778a249_patientEmail_invalid_spaces_0
+  Type        : ECP  subtype=email
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : user name@example.com
+  Expected    : error
+  Description : Contains spaces
+  AI-enhanced : False
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567'
+
+  ID          : ecp_email_3778a249_patientEmail_invalid_spaces_1
+  Type        : ECP  subtype=email
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : test @domain.com
+  Expected    : error
+  Description : Contains spaces
+  AI-enhanced : False
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567'
+
+  ID          : ecp_text_3778a249_emergencyContact_valid
+  Type        : ECP  subtype=text
+  Field       : emergencyContact (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : ValidInput123
+  Expected    : success
+  Description : Valid text input for Emergency Contact Name
+  AI-enhanced : False
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com'
+
+  ID          : ecp_text_3778a249_emergencyContact_empty
+  Type        : ECP  subtype=text
+  Field       : emergencyContact (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : 
+  Expected    : error
+  Description : Empty value for required field Emergency Contact Name
+  AI-enhanced : False
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com'
+
+  ID          : ecp_text_3778a249_emergencyContact_special
+  Type        : ECP  subtype=text
+  Field       : emergencyContact (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : <script>alert("XSS")</script>
+  Expected    : error
+  Description : Special characters/XSS attempt in Emergency Contact Name
+  AI-enhanced : False
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com'
+
+  ID          : ecp_text_3778a249_emergencyContact_long
+  Type        : ECP  subtype=text
+  Field       : emergencyContact (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+  Expected    : error
+  Description : Very long text input (500 chars) for Emergency Contact Name — should exceed server maxlength
+  AI-enhanced : False
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com'
+
+  ID          : ecp_text_3778a249_emergencyContact_unicode
+  Type        : ECP  subtype=text
+  Field       : emergencyContact (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : 测试数据🎉!测试数据
+  Expected    : success
+  Description : Unicode characters in Emergency Contact Name
+  AI-enhanced : False
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com'
+
+  ID          : ecp_select_3778a249_bloodType_first
+  Type        : ECP  subtype=select
+  Field       : bloodType (select)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : A+
+  Expected    : success
+  Description : Select first option (A+)
+  AI-enhanced : False
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com'
+
+  ID          : ecp_select_3778a249_bloodType_middle
+  Type        : ECP  subtype=select
+  Field       : bloodType (select)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : AB+
+  Expected    : success
+  Description : Select middle option (AB+)
+  AI-enhanced : False
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com'
+
+  ID          : ecp_select_3778a249_bloodType_last
+  Type        : ECP  subtype=select
+  Field       : bloodType (select)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : O-
+  Expected    : success
+  Description : Select last option (O-)
+  AI-enhanced : False
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com'
+
+  ID          : ecp_text_9a4dfdb5_firstName_valid
+  Type        : ECP  subtype=text
+  Field       : firstName (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : ValidInput123
+  Expected    : success
+  Description : Valid text input for First Name
+  AI-enhanced : False
+  Test Data   : dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : ecp_text_9a4dfdb5_firstName_empty
+  Type        : ECP  subtype=text
+  Field       : firstName (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : 
+  Expected    : error
+  Description : Empty value for required field First Name
+  AI-enhanced : False
+  Test Data   : dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : ecp_text_9a4dfdb5_firstName_special
+  Type        : ECP  subtype=text
+  Field       : firstName (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : <script>alert("XSS")</script>
+  Expected    : error
+  Description : Special characters/XSS attempt in First Name
+  AI-enhanced : False
+  Test Data   : dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : ecp_text_9a4dfdb5_firstName_long
+  Type        : ECP  subtype=text
+  Field       : firstName (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+  Expected    : error
+  Description : Very long text input (500 chars) for First Name — should exceed server maxlength
+  AI-enhanced : False
+  Test Data   : dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : ecp_text_9a4dfdb5_firstName_unicode
+  Type        : ECP  subtype=text
+  Field       : firstName (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : 测试数据🎉!测试数据
+  Expected    : success
+  Description : Unicode characters in First Name
+  AI-enhanced : False
+  Test Data   : dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : ecp_date_9a4dfdb5_dob_valid
+  Type        : ECP  subtype=date
+  Field       : dob (date)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : 2024-01-15
+  Expected    : success
+  Description : Valid date format for Date of Birth
+  AI-enhanced : False
+  Test Data   : firstName='John', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : ecp_date_9a4dfdb5_dob_invalid
+  Type        : ECP  subtype=date
+  Field       : dob (date)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : invalid-date
+  Expected    : error
+  Description : Invalid format for Date of Birth
+  AI-enhanced : False
+  Test Data   : firstName='John', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : ecp_select_9a4dfdb5_gender_first
+  Type        : ECP  subtype=select
+  Field       : gender (select)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : male
+  Expected    : success
+  Description : Select first option (male)
+  AI-enhanced : False
+  Test Data   : firstName='John', dob='2001-04-07', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : ecp_select_9a4dfdb5_gender_middle
+  Type        : ECP  subtype=select
+  Field       : gender (select)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : female
+  Expected    : success
+  Description : Select middle option (female)
+  AI-enhanced : False
+  Test Data   : firstName='John', dob='2001-04-07', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : ecp_select_9a4dfdb5_gender_last
+  Type        : ECP  subtype=select
+  Field       : gender (select)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : other
+  Expected    : success
+  Description : Select last option (other)
+  AI-enhanced : False
+  Test Data   : firstName='John', dob='2001-04-07', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : ecp_text_9a4dfdb5_patientPhone_valid
+  Type        : ECP  subtype=text
+  Field       : patientPhone (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : ValidInput123
+  Expected    : success
+  Description : Valid text input for Phone Number
+  AI-enhanced : False
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientEmail='tester@example.com', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : ecp_text_9a4dfdb5_patientPhone_empty
+  Type        : ECP  subtype=text
+  Field       : patientPhone (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : 
+  Expected    : error
+  Description : Empty value for required field Phone Number
+  AI-enhanced : False
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientEmail='tester@example.com', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : ecp_text_9a4dfdb5_patientPhone_special
+  Type        : ECP  subtype=text
+  Field       : patientPhone (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : <script>alert("XSS")</script>
+  Expected    : error
+  Description : Special characters/XSS attempt in Phone Number
+  AI-enhanced : False
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientEmail='tester@example.com', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : ecp_text_9a4dfdb5_patientPhone_long
+  Type        : ECP  subtype=text
+  Field       : patientPhone (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+  Expected    : error
+  Description : Very long text input (500 chars) for Phone Number — should exceed server maxlength
+  AI-enhanced : False
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientEmail='tester@example.com', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : ecp_text_9a4dfdb5_patientPhone_unicode
+  Type        : ECP  subtype=text
+  Field       : patientPhone (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : 测试数据🎉!测试数据
+  Expected    : success
+  Description : Unicode characters in Phone Number
+  AI-enhanced : False
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientEmail='tester@example.com', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : ecp_email_9a4dfdb5_patientEmail_valid_standard_0
+  Type        : ECP  subtype=email
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : user@example.com
+  Expected    : success
+  Description : Valid standard email format
+  AI-enhanced : False
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : ecp_email_9a4dfdb5_patientEmail_valid_standard_1
+  Type        : ECP  subtype=email
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : test@domain.co.uk
+  Expected    : success
+  Description : Valid standard email format
+  AI-enhanced : False
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : ecp_email_9a4dfdb5_patientEmail_valid_with_plus_0
+  Type        : ECP  subtype=email
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : user+tag@example.com
+  Expected    : success
+  Description : Valid email with plus addressing
+  AI-enhanced : False
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : ecp_email_9a4dfdb5_patientEmail_valid_with_plus_1
+  Type        : ECP  subtype=email
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : test+filter@domain.com
+  Expected    : success
+  Description : Valid email with plus addressing
+  AI-enhanced : False
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : ecp_email_9a4dfdb5_patientEmail_valid_with_dots_0
+  Type        : ECP  subtype=email
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : first.last@example.com
+  Expected    : success
+  Description : Valid email with dots in local part
+  AI-enhanced : False
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : ecp_email_9a4dfdb5_patientEmail_valid_with_dots_1
+  Type        : ECP  subtype=email
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : user.name@domain.org
+  Expected    : success
+  Description : Valid email with dots in local part
+  AI-enhanced : False
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : ecp_email_9a4dfdb5_patientEmail_valid_subdomain_0
+  Type        : ECP  subtype=email
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : user@mail.example.com
+  Expected    : success
+  Description : Valid email with subdomain
+  AI-enhanced : False
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : ecp_email_9a4dfdb5_patientEmail_valid_subdomain_1
+  Type        : ECP  subtype=email
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : test@subdomain.domain.com
+  Expected    : success
+  Description : Valid email with subdomain
+  AI-enhanced : False
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : ecp_email_9a4dfdb5_patientEmail_invalid_missing_at_0
+  Type        : ECP  subtype=email
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : userexample.com
+  Expected    : error
+  Description : Missing @ symbol
+  AI-enhanced : False
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : ecp_email_9a4dfdb5_patientEmail_invalid_missing_at_1
+  Type        : ECP  subtype=email
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : test.domain.com
+  Expected    : error
+  Description : Missing @ symbol
+  AI-enhanced : False
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : ecp_email_9a4dfdb5_patientEmail_invalid_missing_domain_0
+  Type        : ECP  subtype=email
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : user@
+  Expected    : error
+  Description : Missing or invalid domain
+  AI-enhanced : False
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : ecp_email_9a4dfdb5_patientEmail_invalid_missing_domain_1
+  Type        : ECP  subtype=email
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : test@.com
+  Expected    : error
+  Description : Missing or invalid domain
+  AI-enhanced : False
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : ecp_email_9a4dfdb5_patientEmail_invalid_special_chars_0
+  Type        : ECP  subtype=email
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : user..name@example.com
+  Expected    : error
+  Description : Invalid format: consecutive dots / leading dot (rejected by HTML5)
+  AI-enhanced : False
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : ecp_email_9a4dfdb5_patientEmail_invalid_special_chars_1
+  Type        : ECP  subtype=email
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : .user@example.com
+  Expected    : error
+  Description : Invalid format: consecutive dots / leading dot (rejected by HTML5)
+  AI-enhanced : False
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : ecp_email_9a4dfdb5_patientEmail_invalid_empty_0
+  Type        : ECP  subtype=email
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : 
+  Expected    : error
+  Description : Empty or whitespace only
+  AI-enhanced : False
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : ecp_email_9a4dfdb5_patientEmail_invalid_empty_1
+  Type        : ECP  subtype=email
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  :    
+  Expected    : error
+  Description : Empty or whitespace only
+  AI-enhanced : False
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : ecp_email_9a4dfdb5_patientEmail_invalid_spaces_0
+  Type        : ECP  subtype=email
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : user name@example.com
+  Expected    : error
+  Description : Contains spaces
+  AI-enhanced : False
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : ecp_email_9a4dfdb5_patientEmail_invalid_spaces_1
+  Type        : ECP  subtype=email
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : test @domain.com
+  Expected    : error
+  Description : Contains spaces
+  AI-enhanced : False
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : ecp_text_9a4dfdb5_emergencyContact_valid
+  Type        : ECP  subtype=text
+  Field       : emergencyContact (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : ValidInput123
+  Expected    : success
+  Description : Valid text input for Emergency Contact Name
+  AI-enhanced : False
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', bloodType='A+'
+
+  ID          : ecp_text_9a4dfdb5_emergencyContact_empty
+  Type        : ECP  subtype=text
+  Field       : emergencyContact (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : 
+  Expected    : error
+  Description : Empty value for required field Emergency Contact Name
+  AI-enhanced : False
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', bloodType='A+'
+
+  ID          : ecp_text_9a4dfdb5_emergencyContact_special
+  Type        : ECP  subtype=text
+  Field       : emergencyContact (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : <script>alert("XSS")</script>
+  Expected    : error
+  Description : Special characters/XSS attempt in Emergency Contact Name
+  AI-enhanced : False
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', bloodType='A+'
+
+  ID          : ecp_text_9a4dfdb5_emergencyContact_long
+  Type        : ECP  subtype=text
+  Field       : emergencyContact (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+  Expected    : error
+  Description : Very long text input (500 chars) for Emergency Contact Name — should exceed server maxlength
+  AI-enhanced : False
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', bloodType='A+'
+
+  ID          : ecp_text_9a4dfdb5_emergencyContact_unicode
+  Type        : ECP  subtype=text
+  Field       : emergencyContact (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : 测试数据🎉!测试数据
+  Expected    : success
+  Description : Unicode characters in Emergency Contact Name
+  AI-enhanced : False
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', bloodType='A+'
+
+  ID          : ecp_select_9a4dfdb5_bloodType_first
+  Type        : ECP  subtype=select
+  Field       : bloodType (select)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : A+
+  Expected    : success
+  Description : Select first option (A+)
+  AI-enhanced : False
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567'
+
+  ID          : ecp_select_9a4dfdb5_bloodType_middle
+  Type        : ECP  subtype=select
+  Field       : bloodType (select)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : AB+
+  Expected    : success
+  Description : Select middle option (AB+)
+  AI-enhanced : False
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567'
+
+  ID          : ecp_select_9a4dfdb5_bloodType_last
+  Type        : ECP  subtype=select
+  Field       : bloodType (select)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : O-
+  Expected    : success
+  Description : Select last option (O-)
+  AI-enhanced : False
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567'
+
+  [ State Transition - 3 tests ]
+  ----------------------------------------------------------------------
+  ID          : state_branch_0_0
+  Type        : State Transition  subtype=branching_flow
+  Form URL    : 
+  Test Value  : 
+  Expected    : success
+  Description : Branch 1 from Localhost:3008 (CarePoint Clinic - Home): → Appointment (CarePoint - Book Appointment)
+  AI-enhanced : False
+
+  ID          : state_branch_0_1
+  Type        : State Transition  subtype=branching_flow
+  Form URL    : 
+  Test Value  : 
+  Expected    : success
+  Description : Branch 2 from Localhost:3008 (CarePoint Clinic - Home): → Patient Register (CarePoint - Patient Registration
+  AI-enhanced : False
+
+  ID          : state_branch_0_2
+  Type        : State Transition  subtype=branching_flow
+  Form URL    : 
+  Test Value  : 
+  Expected    : success
+  Description : Branch 3 from Localhost:3008 (CarePoint Clinic - Home): → Doctors (CarePoint - Our Doctors)
+  AI-enhanced : False
+
+  [ Use Case - 5 tests ]
+  ----------------------------------------------------------------------
+  ID          : usecase_ecommerce_complete_purchase
+  Type        : Use Case  subtype=e-commerce
+  Form URL    : 
+  Test Value  : 
+  Expected    : success
+  Description : End-to-end purchase: Browse product → Add to cart → Checkout → Complete order
+  AI-enhanced : False
+
+  ID          : usecase_ecommerce_multiple_products
+  Type        : Use Case  subtype=e-commerce
+  Form URL    : 
+  Test Value  : 
+  Expected    : success
+  Description : Add multiple products: Add product 1 → Add product 2 → View cart
+  AI-enhanced : False
+
+  ID          : usecase_ecommerce_remove_from_cart
+  Type        : Use Case  subtype=e-commerce
+  Form URL    : 
+  Test Value  : 
+  Expected    : success
+  Description : Remove item from cart: View cart → Remove item → Verify removal
+  AI-enhanced : False
+
+  ID          : usecase_auth_login
+  Type        : Use Case  subtype=authentication
+  Form URL    : http://localhost:3008
+  Test Value  : 
+  Expected    : success
+  Description : User login: Navigate to login → Enter credentials → Submit → Verify logged in
+  AI-enhanced : False
+  Test Data   : doctor='TestValue', appDate='TestValue', appTime='TestValue', visitType='TestValue', reason='TestValue'
+
+  ID          : usecase_auth_register
+  Type        : Use Case  subtype=authentication
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : 
+  Expected    : success
+  Description : User registration: Navigate → Fill form → Submit → Verify account created
+  AI-enhanced : False
+  Test Data   : doctor='TestValue', appDate='TestValue', appTime='TestValue', visitType='TestValue', reason='TestValue'
+
+
+------------------------------------------------------------------------------
+
+==============================================================================
+  SECTION 3 — TEST CASES AFTER AI REFINEMENT (183 tests | delta +12)
+==============================================================================
+
+  File: site8_medical_after_20260401_174102.json
+
+  Type                                       Before    After    Delta
+  ----------------------------------------------------
+  BVA                                            60       65       +5
+  ECP                                           103      110       +7
+  DT                                              0        0       +0
+  ST                                              3        3       +0
+  UC                                              5        5       +0
+  ----------------------------------------------------
+  TOTAL                                         171      183      +12
+
+  [ BVA - 65 tests ]
+  ----------------------------------------------------------------------
+  ID          : bva_length_60d3767f_reason_0
+  Type        : BVA  subtype=length
+  Field       : reason (textarea)
+  Form URL    : http://localhost:3008/appointment
+  Test Value  : aaaaaaaaa
+  Expected    : error
+  Description : Verify error when Reason for Visit is 9 characters (below minimum of 10)
+  AI-enhanced : True
+  Test Data   : doctor='dr_johnson', appDate='2026-04-02', appTime='09:00', visitType='new', reason='aaaaaaaaa'
+
+  ID          : bva_length_60d3767f_reason_1
+  Type        : BVA  subtype=length
+  Field       : reason (textarea)
+  Form URL    : http://localhost:3008/appointment
+  Test Value  : aaaaaaaaaa
+  Expected    : success
+  Description : Verify success when Reason for Visit is exactly 10 characters (minimum boundary)
+  AI-enhanced : True
+  Test Data   : doctor='dr_johnson', appDate='2026-04-02', appTime='09:00', visitType='new', reason='aaaaaaaaaa'
+
+  ID          : bva_length_60d3767f_reason_2
+  Type        : BVA  subtype=length
+  Field       : reason (textarea)
+  Form URL    : http://localhost:3008/appointment
+  Test Value  : aaaaaaaaaaa
+  Expected    : success
+  Description : Verify success when Reason for Visit is 11 characters (above minimum boundary)
+  AI-enhanced : True
+  Test Data   : doctor='dr_johnson', appDate='2026-04-02', appTime='09:00', visitType='new', reason='aaaaaaaaaaa'
+
+  ID          : bva_length_60d3767f_reason_3
+  Type        : BVA  subtype=length
+  Field       : reason (textarea)
+  Form URL    : http://localhost:3008/appointment
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : success
+  Description : Verify success when Reason for Visit is 299 characters (below maximum boundary)
+  AI-enhanced : True
+  Test Data   : doctor='dr_johnson', appDate='2026-04-02', appTime='09:00', visitType='new', reason='aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
+
+  ID          : bva_length_60d3767f_reason_4
+  Type        : BVA  subtype=length
+  Field       : reason (textarea)
+  Form URL    : http://localhost:3008/appointment
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : success
+  Description : Verify success when Reason for Visit is exactly 300 characters (maximum boundary)
+  AI-enhanced : True
+  Test Data   : doctor='dr_johnson', appDate='2026-04-02', appTime='09:00', visitType='new', reason='aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
+
+  ID          : bva_length_60d3767f_reason_5
+  Type        : BVA  subtype=length
+  Field       : reason (textarea)
+  Form URL    : http://localhost:3008/appointment
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : error
+  Description : Verify error when Reason for Visit is 301 characters (above maximum boundary)
+  AI-enhanced : True
+  Test Data   : doctor='dr_johnson', appDate='2026-04-02', appTime='09:00', visitType='new', reason='aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
+
+  ID          : bva_length_3778a249_firstName_0
+  Type        : BVA  subtype=length
+  Field       : firstName (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : a
+  Expected    : error
+  Description : Verify error when First Name is 1 character (below minimum of 2)
+  AI-enhanced : True
+  Test Data   : lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567'
+
+  ID          : bva_length_3778a249_firstName_1
+  Type        : BVA  subtype=length
+  Field       : firstName (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : aa
+  Expected    : success
+  Description : Verify success when First Name is exactly 2 characters (minimum boundary)
+  AI-enhanced : True
+  Test Data   : lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567'
+
+  ID          : bva_length_3778a249_firstName_2
+  Type        : BVA  subtype=length
+  Field       : firstName (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : aaa
+  Expected    : success
+  Description : Verify success when First Name is 3 characters (above minimum boundary)
+  AI-enhanced : True
+  Test Data   : lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567'
+
+  ID          : bva_length_3778a249_firstName_3
+  Type        : BVA  subtype=length
+  Field       : firstName (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : success
+  Description : Verify success when First Name is 29 characters (below maximum boundary)
+  AI-enhanced : True
+  Test Data   : lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567'
+
+  ID          : bva_length_3778a249_firstName_4
+  Type        : BVA  subtype=length
+  Field       : firstName (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : success
+  Description : Verify success when First Name is exactly 30 characters (maximum boundary)
+  AI-enhanced : True
+  Test Data   : lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567'
+
+  ID          : bva_length_3778a249_firstName_5
+  Type        : BVA  subtype=length
+  Field       : firstName (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : error
+  Description : Verify error when First Name is 31 characters (above maximum boundary)
+  AI-enhanced : True
+  Test Data   : lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567'
+
+  ID          : bva_length_3778a249_firstName_4
+  Type        : BVA  subtype=length
+  Field       : firstName (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : success
+  Description : Verify First Name accepts the maximum boundary of 30 characters
+  AI-enhanced : True
+  Test Data   : lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567'
+
+  ID          : bva_length_3778a249_firstName_5
+  Type        : BVA  subtype=length
+  Field       : firstName (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : error
+  Description : Verify First Name rejects input exceeding the maximum boundary of 30 characters
+  AI-enhanced : True
+  Test Data   : lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567'
+
+  ID          : bva_length_3778a249_lastName_0
+  Type        : BVA  subtype=length
+  Field       : lastName (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : a
+  Expected    : error
+  Description : Verify Last Name rejects input below the minimum boundary of 2 characters
+  AI-enhanced : True
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567'
+
+  ID          : bva_length_3778a249_lastName_1
+  Type        : BVA  subtype=length
+  Field       : lastName (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : aa
+  Expected    : success
+  Description : Verify Last Name accepts the minimum boundary of 2 characters
+  AI-enhanced : True
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567'
+
+  ID          : bva_length_3778a249_lastName_2
+  Type        : BVA  subtype=length
+  Field       : lastName (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : aaa
+  Expected    : success
+  Description : Verify Last Name accepts input just above the minimum boundary of 2 characters
+  AI-enhanced : True
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567'
+
+  ID          : bva_length_3778a249_lastName_3
+  Type        : BVA  subtype=length
+  Field       : lastName (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : success
+  Description : Verify Last Name accepts input just below the maximum boundary of 30 characters
+  AI-enhanced : True
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567'
+
+  ID          : bva_length_3778a249_lastName_4
+  Type        : BVA  subtype=length
+  Field       : lastName (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : success
+  Description : Verify Last Name accepts the maximum boundary of 30 characters
+  AI-enhanced : True
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567'
+
+  ID          : bva_length_3778a249_lastName_5
+  Type        : BVA  subtype=length
+  Field       : lastName (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : error
+  Description : Verify Last Name rejects input exceeding the maximum boundary of 30 characters
+  AI-enhanced : True
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567'
+
+  ID          : bva_length_3778a249_patientPhone_0
+  Type        : BVA  subtype=length
+  Field       : patientPhone (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : 
+  Expected    : error
+  Description : Below minimum length (0 chars)
+  AI-enhanced : True
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientEmail='tester@example.com', emergencyContact='5551234567'
+
+  ID          : bva_length_3778a249_patientPhone_1
+  Type        : BVA  subtype=length
+  Field       : patientPhone (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : a
+  Expected    : success
+  Description : Verify Phone Number accepts the minimum boundary of 1 character
+  AI-enhanced : True
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientEmail='tester@example.com', emergencyContact='5551234567'
+
+  ID          : bva_length_3778a249_patientPhone_1
+  Type        : BVA  subtype=length
+  Field       : patientPhone (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : a
+  Expected    : success
+  Description : At minimum length (1 char) for Phone Number
+  AI-enhanced : True
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientEmail='tester@example.com', emergencyContact='5551234567'
+
+  ID          : bva_length_3778a249_patientPhone_2
+  Type        : BVA  subtype=length
+  Field       : patientPhone (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : aa
+  Expected    : success
+  Description : Just above minimum (2 chars) for Phone Number
+  AI-enhanced : True
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientEmail='tester@example.com', emergencyContact='5551234567'
+
+  ID          : bva_length_3778a249_patientPhone_3
+  Type        : BVA  subtype=length
+  Field       : patientPhone (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : success
+  Description : Just below maximum (254 chars) for Phone Number
+  AI-enhanced : True
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientEmail='tester@example.com', emergencyContact='5551234567'
+
+  ID          : bva_length_3778a249_patientPhone_4
+  Type        : BVA  subtype=length
+  Field       : patientPhone (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : success
+  Description : At maximum length (255 chars) for Phone Number
+  AI-enhanced : True
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientEmail='tester@example.com', emergencyContact='5551234567'
+
+  ID          : bva_length_3778a249_patientPhone_5
+  Type        : BVA  subtype=length
+  Field       : patientPhone (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : error
+  Description : Above maximum length (256 chars) for Phone Number
+  AI-enhanced : True
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientEmail='tester@example.com', emergencyContact='5551234567'
+
+  ID          : bva_length_3778a249_patientEmail_0
+  Type        : BVA  subtype=length
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : aaaa
+  Expected    : error
+  Description : Below minimum length (4 chars) for Email Address
+  AI-enhanced : True
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567'
+
+  ID          : bva_length_3778a249_patientEmail_1
+  Type        : BVA  subtype=length
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : a@b.c
+  Expected    : success
+  Description : At minimum length (5 chars) for Email Address
+  AI-enhanced : True
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567'
+
+  ID          : bva_length_3778a249_patientEmail_2
+  Type        : BVA  subtype=length
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : aa@b.c
+  Expected    : success
+  Description : Just above minimum (6 chars) for Email Address
+  AI-enhanced : True
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567'
+
+  ID          : bva_length_3778a249_patientEmail_3
+  Type        : BVA  subtype=length
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.c
+  Expected    : success
+  Description : Just below maximum (253 chars) for Email Address
+  AI-enhanced : True
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567'
+
+  ID          : bva_length_3778a249_patientEmail_4
+  Type        : BVA  subtype=length
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.c
+  Expected    : success
+  Description : At maximum length (254 chars) for Email Address
+  AI-enhanced : True
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567'
+
+  ID          : bva_length_3778a249_patientEmail_5
+  Type        : BVA  subtype=length
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.c
+  Expected    : error
+  Description : Above maximum length (255 chars) for Email Address
+  AI-enhanced : True
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567'
+
+  ID          : bva_length_3778a249_emergencyContact_0
+  Type        : BVA  subtype=length
+  Field       : emergencyContact (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : a
+  Expected    : error
+  Description : Verify error when Emergency Contact Name is below minimum length (1 character)
+  AI-enhanced : True
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com'
+
+  ID          : bva_length_3778a249_emergencyContact_1
+  Type        : BVA  subtype=length
+  Field       : emergencyContact (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : aa
+  Expected    : success
+  Description : Verify success when Emergency Contact Name is at minimum length (2 characters)
+  AI-enhanced : True
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com'
+
+  ID          : bva_length_3778a249_emergencyContact_2
+  Type        : BVA  subtype=length
+  Field       : emergencyContact (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : aaa
+  Expected    : success
+  Description : Verify success when Emergency Contact Name is just above minimum length (3 characters)
+  AI-enhanced : True
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com'
+
+  ID          : bva_length_3778a249_emergencyContact_3
+  Type        : BVA  subtype=length
+  Field       : emergencyContact (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : success
+  Description : Verify success when Emergency Contact Name is just below maximum length (49 characters)
+  AI-enhanced : True
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com'
+
+  ID          : bva_length_3778a249_emergencyContact_4
+  Type        : BVA  subtype=length
+  Field       : emergencyContact (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : success
+  Description : Verify success when Emergency Contact Name is at maximum length (50 characters)
+  AI-enhanced : True
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com'
+
+  ID          : bva_length_3778a249_emergencyContact_5
+  Type        : BVA  subtype=length
+  Field       : emergencyContact (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : error
+  Description : Verify error when Emergency Contact Name is above maximum length (51 characters)
+  AI-enhanced : True
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com'
+
+  ID          : bva_length_9a4dfdb5_firstName_0
+  Type        : BVA  subtype=length
+  Field       : firstName (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : a
+  Expected    : error
+  Description : Verify error when First Name is below minimum length (1 character)
+  AI-enhanced : True
+  Test Data   : dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : bva_length_9a4dfdb5_firstName_1
+  Type        : BVA  subtype=length
+  Field       : firstName (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : aa
+  Expected    : success
+  Description : Verify success when First Name is at minimum length (2 characters)
+  AI-enhanced : True
+  Test Data   : dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : bva_length_9a4dfdb5_firstName_2
+  Type        : BVA  subtype=length
+  Field       : firstName (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : aaa
+  Expected    : success
+  Description : Verify success when First Name is just above minimum length (3 characters)
+  AI-enhanced : True
+  Test Data   : dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : bva_length_9a4dfdb5_firstName_3
+  Type        : BVA  subtype=length
+  Field       : firstName (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : success
+  Description : Verify success when First Name is just below maximum length (29 characters)
+  AI-enhanced : True
+  Test Data   : dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : bva_length_9a4dfdb5_firstName_4
+  Type        : BVA  subtype=length
+  Field       : firstName (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : success
+  Description : Verify success when First Name is at maximum length (30 characters)
+  AI-enhanced : True
+  Test Data   : dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : bva_length_9a4dfdb5_firstName_4
+  Type        : BVA  subtype=length
+  Field       : firstName (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : success
+  Description : First Name at maximum length boundary (30 characters)
+  AI-enhanced : True
+  Test Data   : dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : bva_length_9a4dfdb5_firstName_5
+  Type        : BVA  subtype=length
+  Field       : firstName (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : error
+  Description : First Name above maximum length boundary (31 characters)
+  AI-enhanced : True
+  Test Data   : dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : bva_length_9a4dfdb5_patientPhone_0
+  Type        : BVA  subtype=length
+  Field       : patientPhone (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : 
+  Expected    : error
+  Description : Below minimum length (0 chars)
+  AI-enhanced : True
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientEmail='tester@example.com', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : bva_length_9a4dfdb5_patientPhone_1
+  Type        : BVA  subtype=length
+  Field       : patientPhone (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : a
+  Expected    : success
+  Description : Phone Number at minimum length boundary (1 character)
+  AI-enhanced : True
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientEmail='tester@example.com', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : bva_length_9a4dfdb5_patientPhone_2
+  Type        : BVA  subtype=length
+  Field       : patientPhone (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : aa
+  Expected    : success
+  Description : Phone Number just above minimum length boundary (2 characters)
+  AI-enhanced : True
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientEmail='tester@example.com', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : bva_length_9a4dfdb5_patientPhone_3
+  Type        : BVA  subtype=length
+  Field       : patientPhone (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : success
+  Description : Phone Number just below maximum length boundary (254 characters)
+  AI-enhanced : True
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientEmail='tester@example.com', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : bva_length_9a4dfdb5_patientPhone_4
+  Type        : BVA  subtype=length
+  Field       : patientPhone (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : success
+  Description : Phone Number at maximum length boundary (255 characters)
+  AI-enhanced : True
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientEmail='tester@example.com', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : bva_length_9a4dfdb5_patientPhone_5
+  Type        : BVA  subtype=length
+  Field       : patientPhone (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : error
+  Description : Phone Number above maximum length boundary (256 characters)
+  AI-enhanced : True
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientEmail='tester@example.com', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : bva_length_9a4dfdb5_patientEmail_0
+  Type        : BVA  subtype=length
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : aaaa
+  Expected    : error
+  Description : Email Address below minimum length boundary (4 characters)
+  AI-enhanced : True
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : bva_length_9a4dfdb5_patientEmail_1
+  Type        : BVA  subtype=length
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : a@b.c
+  Expected    : success
+  Description : Email Address at minimum length boundary (5 characters)
+  AI-enhanced : True
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : bva_length_9a4dfdb5_patientEmail_1
+  Type        : BVA  subtype=length
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : a@b.c
+  Expected    : error
+  Description : Below minimum length (5 chars)
+  AI-enhanced : True
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : bva_length_9a4dfdb5_patientEmail_2
+  Type        : BVA  subtype=length
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : aa@b.c
+  Expected    : success
+  Description : At minimum length (6 chars)
+  AI-enhanced : True
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : bva_length_9a4dfdb5_patientEmail_3
+  Type        : BVA  subtype=length
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.c
+  Expected    : success
+  Description : Just below maximum length (253 chars)
+  AI-enhanced : True
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : bva_length_9a4dfdb5_patientEmail_4
+  Type        : BVA  subtype=length
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.c
+  Expected    : success
+  Description : At maximum length (254 chars)
+  AI-enhanced : True
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : bva_length_9a4dfdb5_patientEmail_5
+  Type        : BVA  subtype=length
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.c
+  Expected    : error
+  Description : Above maximum length (255 chars)
+  AI-enhanced : True
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : bva_length_9a4dfdb5_emergencyContact_0
+  Type        : BVA  subtype=length
+  Field       : emergencyContact (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : a
+  Expected    : error
+  Description : Below minimum length (1 char)
+  AI-enhanced : True
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', bloodType='A+'
+
+  ID          : bva_length_9a4dfdb5_emergencyContact_1
+  Type        : BVA  subtype=length
+  Field       : emergencyContact (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : aa
+  Expected    : success
+  Description : At minimum length (2 chars)
+  AI-enhanced : True
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', bloodType='A+'
+
+  ID          : bva_length_9a4dfdb5_emergencyContact_2
+  Type        : BVA  subtype=length
+  Field       : emergencyContact (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : aaa
+  Expected    : success
+  Description : Just above minimum length (3 chars)
+  AI-enhanced : True
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', bloodType='A+'
+
+  ID          : bva_length_9a4dfdb5_emergencyContact_3
+  Type        : BVA  subtype=length
+  Field       : emergencyContact (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : success
+  Description : Just below maximum length (49 chars)
+  AI-enhanced : True
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', bloodType='A+'
+
+  ID          : bva_length_9a4dfdb5_emergencyContact_4
+  Type        : BVA  subtype=length
+  Field       : emergencyContact (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : success
+  Description : At maximum length (50 chars)
+  AI-enhanced : True
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', bloodType='A+'
+
+  ID          : bva_length_9a4dfdb5_emergencyContact_5
+  Type        : BVA  subtype=length
+  Field       : emergencyContact (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : error
+  Description : Above maximum length (51 chars)
+  AI-enhanced : True
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', bloodType='A+'
+
+  [ ECP - 110 tests ]
+  ----------------------------------------------------------------------
+  ID          : ecp_select_60d3767f_doctor_first
+  Type        : ECP  subtype=select
+  Field       : doctor (select)
+  Form URL    : http://localhost:3008/appointment
+  Test Value  : dr_johnson
+  Expected    : success
+  Description : Verify selection of the first doctor option: dr_johnson
+  AI-enhanced : True
+  Test Data   : appDate='2026-04-02', appTime='09:00', visitType='new', reason='This is a test submission.', doctor='dr_johnson'
+
+  ID          : ecp_select_60d3767f_doctor_middle
+  Type        : ECP  subtype=select
+  Field       : doctor (select)
+  Form URL    : http://localhost:3008/appointment
+  Test Value  : dr_davis
+  Expected    : success
+  Description : Verify selection of the middle doctor option: dr_davis
+  AI-enhanced : True
+  Test Data   : appDate='2026-04-02', appTime='09:00', visitType='new', reason='This is a test submission.', doctor='dr_davis'
+
+  ID          : ecp_select_60d3767f_doctor_last
+  Type        : ECP  subtype=select
+  Field       : doctor (select)
+  Form URL    : http://localhost:3008/appointment
+  Test Value  : dr_patel
+  Expected    : success
+  Description : Verify selection of the last doctor option: dr_patel
+  AI-enhanced : True
+  Test Data   : appDate='2026-04-02', appTime='09:00', visitType='new', reason='This is a test submission.', doctor='dr_patel'
+
+  ID          : ecp_date_60d3767f_appDate_valid
+  Type        : ECP  subtype=date
+  Field       : appDate (date)
+  Form URL    : http://localhost:3008/appointment
+  Test Value  : 2024-01-15
+  Expected    : success
+  Description : Verify valid date format input for Appointment Date
+  AI-enhanced : True
+  Test Data   : doctor='dr_johnson', appTime='09:00', visitType='new', reason='This is a test submission.', appDate='2024-01-15'
+
+  ID          : ecp_date_60d3767f_appDate_invalid
+  Type        : ECP  subtype=date
+  Field       : appDate (date)
+  Form URL    : http://localhost:3008/appointment
+  Test Value  : invalid-date
+  Expected    : error
+  Description : Verify error handling for invalid date format in Appointment Date
+  AI-enhanced : True
+  Test Data   : doctor='dr_johnson', appTime='09:00', visitType='new', reason='This is a test submission.', appDate='invalid-date'
+
+  ID          : ecp_select_60d3767f_appTime_first
+  Type        : ECP  subtype=select
+  Field       : appTime (select)
+  Form URL    : http://localhost:3008/appointment
+  Test Value  : 09:00
+  Expected    : success
+  Description : Verify selection of the first Preferred Time option: 09:00
+  AI-enhanced : True
+  Test Data   : doctor='dr_johnson', appDate='2026-04-02', visitType='new', reason='This is a test submission.', appTime='09:00'
+
+  ID          : ecp_select_60d3767f_appTime_middle
+  Type        : ECP  subtype=select
+  Field       : appTime (select)
+  Form URL    : http://localhost:3008/appointment
+  Test Value  : 14:00
+  Expected    : success
+  Description : Verify selection of the middle Preferred Time option: 14:00
+  AI-enhanced : True
+  Test Data   : doctor='dr_johnson', appDate='2026-04-02', visitType='new', reason='This is a test submission.', appTime='14:00'
+
+  ID          : ecp_select_60d3767f_appTime_last
+  Type        : ECP  subtype=select
+  Field       : appTime (select)
+  Form URL    : http://localhost:3008/appointment
+  Test Value  : 16:00
+  Expected    : success
+  Description : Verify selection of the last Preferred Time option: 16:00
+  AI-enhanced : True
+  Test Data   : doctor='dr_johnson', appDate='2026-04-02', visitType='new', reason='This is a test submission.', appTime='16:00'
+
+  ID          : ecp_select_60d3767f_visitType_first
+  Type        : ECP  subtype=select
+  Field       : visitType (select)
+  Form URL    : http://localhost:3008/appointment
+  Test Value  : new
+  Expected    : success
+  Description : Verify selection of the first Visit Type option: new
+  AI-enhanced : True
+  Test Data   : doctor='dr_johnson', appDate='2026-04-02', appTime='09:00', reason='This is a test submission.', visitType='new'
+
+  ID          : ecp_select_60d3767f_visitType_middle
+  Type        : ECP  subtype=select
+  Field       : visitType (select)
+  Form URL    : http://localhost:3008/appointment
+  Test Value  : emergency
+  Expected    : success
+  Description : Verify selection of the middle Visit Type option: emergency
+  AI-enhanced : True
+  Test Data   : doctor='dr_johnson', appDate='2026-04-02', appTime='09:00', reason='This is a test submission.', visitType='emergency'
+
+  ID          : ecp_text_60d3767f_reason_empty
+  Type        : ECP  subtype=text
+  Field       : reason (text)
+  Form URL    : http://localhost:3008/appointment
+  Test Value  : 
+  Expected    : error
+  Description : Verify error when Reason for Visit is left empty
+  AI-enhanced : True
+  Test Data   : doctor='dr_johnson', appDate='2026-04-02', appTime='09:00', visitType='new', reason=''
+
+  ID          : ecp_select_60d3767f_visitType_last
+  Type        : ECP  subtype=select
+  Field       : visitType (select)
+  Form URL    : http://localhost:3008/appointment
+  Test Value  : checkup
+  Expected    : success
+  Description : Verify successful selection of the last option 'checkup' in the Visit Type dropdown
+  AI-enhanced : True
+  Test Data   : doctor='dr_johnson', appDate='2026-04-02', appTime='09:00', reason='This is a test submission.', visitType='checkup'
+
+  ID          : ecp_text_60d3767f_reason_valid
+  Type        : ECP  subtype=text
+  Field       : reason (textarea)
+  Form URL    : http://localhost:3008/appointment
+  Test Value  : ValidInput123
+  Expected    : success
+  Description : Verify valid alphanumeric input is accepted in the Reason for Visit field
+  AI-enhanced : True
+  Test Data   : doctor='dr_johnson', appDate='2026-04-02', appTime='09:00', visitType='new', reason='ValidInput123'
+
+  ID          : ecp_text_60d3767f_reason_empty
+  Type        : ECP  subtype=text
+  Field       : reason (textarea)
+  Form URL    : http://localhost:3008/appointment
+  Test Value  : 
+  Expected    : error
+  Description : Empty value for required field Reason for Visit
+  AI-enhanced : True
+  Test Data   : doctor='dr_johnson', appDate='2026-04-02', appTime='09:00', visitType='new', reason=''
+
+  ID          : ecp_text_60d3767f_reason_special
+  Type        : ECP  subtype=text
+  Field       : reason (textarea)
+  Form URL    : http://localhost:3008/appointment
+  Test Value  : <script>alert("XSS")</script>
+  Expected    : error
+  Description : Verify security validation blocks XSS script injection in Reason for Visit
+  AI-enhanced : True
+  Test Data   : doctor='dr_johnson', appDate='2026-04-02', appTime='09:00', visitType='new', reason='<script>alert("XSS")</script>'
+
+  ID          : ecp_text_60d3767f_reason_long
+  Type        : ECP  subtype=text
+  Field       : reason (textarea)
+  Form URL    : http://localhost:3008/appointment
+  Test Value  : AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+  Expected    : error
+  Description : Verify validation error triggers when Reason for Visit exceeds maximum character limit
+  AI-enhanced : True
+  Test Data   : doctor='dr_johnson', appDate='2026-04-02', appTime='09:00', visitType='new', reason='AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'
+
+  ID          : ecp_text_60d3767f_reason_unicode
+  Type        : ECP  subtype=text
+  Field       : reason (textarea)
+  Form URL    : http://localhost:3008/appointment
+  Test Value  : 测试数据🎉!测试数据
+  Expected    : success
+  Description : Verify support for Unicode/Emoji characters in Reason for Visit
+  AI-enhanced : True
+  Test Data   : doctor='dr_johnson', appDate='2026-04-02', appTime='09:00', visitType='new', reason='测试数据🎉!测试数据'
+
+  ID          : ecp_text_3778a249_firstName_valid
+  Type        : ECP  subtype=text
+  Field       : firstName (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : ValidInput123
+  Expected    : success
+  Description : Verify valid text input is accepted in the First Name field
+  AI-enhanced : True
+  Test Data   : lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567'
+
+  ID          : ecp_text_3778a249_firstName_empty
+  Type        : ECP  subtype=text
+  Field       : firstName (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : 
+  Expected    : error
+  Description : Empty value for required field First Name
+  AI-enhanced : True
+  Test Data   : lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567'
+
+  ID          : ecp_text_3778a249_firstName_special
+  Type        : ECP  subtype=text
+  Field       : firstName (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : <script>alert("XSS")</script>
+  Expected    : error
+  Description : Verify security validation blocks XSS script injection in First Name
+  AI-enhanced : True
+  Test Data   : lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567'
+
+  ID          : ecp_text_3778a249_firstName_long
+  Type        : ECP  subtype=text
+  Field       : firstName (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+  Expected    : error
+  Description : Verify validation error triggers when First Name exceeds maximum character limit
+  AI-enhanced : True
+  Test Data   : lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567'
+
+  ID          : ecp_text_3778a249_firstName_unicode
+  Type        : ECP  subtype=text
+  Field       : firstName (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : 测试数据🎉!测试数据
+  Expected    : success
+  Description : Verify First Name field accepts Unicode characters and emojis
+  AI-enhanced : True
+  Test Data   : lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567'
+
+  ID          : ecp_text_3778a249_lastName_valid
+  Type        : ECP  subtype=text
+  Field       : lastName (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : ValidInput123
+  Expected    : success
+  Description : Verify Last Name field accepts alphanumeric valid text input
+  AI-enhanced : True
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567'
+
+  ID          : ecp_text_3778a249_lastName_empty
+  Type        : ECP  subtype=text
+  Field       : lastName (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : 
+  Expected    : error
+  Description : Empty value for required field Last Name
+  AI-enhanced : True
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567'
+
+  ID          : ecp_text_3778a249_lastName_special
+  Type        : ECP  subtype=text
+  Field       : lastName (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : <script>alert("XSS")</script>
+  Expected    : error
+  Description : Verify Last Name field sanitizes or rejects XSS injection attempts
+  AI-enhanced : True
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567'
+
+  ID          : ecp_text_3778a249_lastName_long
+  Type        : ECP  subtype=text
+  Field       : lastName (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+  Expected    : error
+  Description : Verify Last Name field rejects input exceeding maximum character limit
+  AI-enhanced : True
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567'
+
+  ID          : ecp_text_3778a249_lastName_unicode
+  Type        : ECP  subtype=text
+  Field       : lastName (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : 测试数据🎉!测试数据
+  Expected    : success
+  Description : Verify Last Name field accepts Unicode characters
+  AI-enhanced : True
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567'
+
+  ID          : ecp_date_3778a249_dob_valid
+  Type        : ECP  subtype=date
+  Field       : dob (date)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : 2024-01-15
+  Expected    : success
+  Description : Verify Date of Birth field accepts valid date format
+  AI-enhanced : True
+  Test Data   : firstName='John', lastName='Doe', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567'
+
+  ID          : ecp_date_3778a249_dob_invalid
+  Type        : ECP  subtype=date
+  Field       : dob (date)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : invalid-date
+  Expected    : error
+  Description : Verify Date of Birth field rejects invalid date formats
+  AI-enhanced : True
+  Test Data   : firstName='John', lastName='Doe', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567'
+
+  ID          : ecp_select_3778a249_gender_first
+  Type        : ECP  subtype=select
+  Field       : gender (select)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : male
+  Expected    : success
+  Description : Verify Gender field correctly selects the first option (male)
+  AI-enhanced : True
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567'
+
+  ID          : ecp_select_3778a249_gender_middle
+  Type        : ECP  subtype=select
+  Field       : gender (select)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : female
+  Expected    : success
+  Description : Verify Gender field correctly selects the middle option (female)
+  AI-enhanced : True
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567'
+
+  ID          : ecp_text_3778a249_email_invalid
+  Type        : ECP  subtype=text
+  Field       : patientEmail (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : invalid-email-format
+  Expected    : error
+  Description : Verify Email Address field rejects malformed email strings
+  AI-enhanced : True
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567'
+
+  ID          : ecp_select_3778a249_gender_last
+  Type        : ECP  subtype=select
+  Field       : gender (select)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : other
+  Expected    : success
+  Description : Verify selection of the last option 'other' in the Gender dropdown
+  AI-enhanced : True
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567'
+
+  ID          : ecp_text_3778a249_patientPhone_valid
+  Type        : ECP  subtype=text
+  Field       : patientPhone (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : ValidInput123
+  Expected    : success
+  Description : Verify acceptance of alphanumeric string in Phone Number field
+  AI-enhanced : True
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientEmail='tester@example.com', emergencyContact='5551234567'
+
+  ID          : ecp_text_3778a249_patientPhone_empty
+  Type        : ECP  subtype=text
+  Field       : patientPhone (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : 
+  Expected    : error
+  Description : Empty value for required field Phone Number
+  AI-enhanced : True
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientEmail='tester@example.com', emergencyContact='5551234567'
+
+  ID          : ecp_text_3778a249_patientPhone_special
+  Type        : ECP  subtype=text
+  Field       : patientPhone (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : <script>alert("XSS")</script>
+  Expected    : error
+  Description : Verify security rejection of XSS script injection in Phone Number field
+  AI-enhanced : True
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientEmail='tester@example.com', emergencyContact='5551234567'
+
+  ID          : ecp_text_3778a249_patientPhone_long
+  Type        : ECP  subtype=text
+  Field       : patientPhone (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+  Expected    : error
+  Description : Verify validation error when Phone Number exceeds maximum character limit
+  AI-enhanced : True
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientEmail='tester@example.com', emergencyContact='5551234567'
+
+  ID          : ecp_text_3778a249_patientPhone_unicode
+  Type        : ECP  subtype=text
+  Field       : patientPhone (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : 测试数据🎉!测试数据
+  Expected    : success
+  Description : Verify handling of Unicode/Emoji characters in Phone Number field
+  AI-enhanced : True
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientEmail='tester@example.com', emergencyContact='5551234567'
+
+  ID          : ecp_email_3778a249_patientEmail_valid_standard_0
+  Type        : ECP  subtype=email
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : user@example.com
+  Expected    : success
+  Description : Verify standard email format acceptance in Email Address field
+  AI-enhanced : True
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567'
+
+  ID          : ecp_email_3778a249_patientEmail_valid_standard_1
+  Type        : ECP  subtype=email
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : test@domain.co.uk
+  Expected    : success
+  Description : Verify multi-part domain email format acceptance in Email Address field
+  AI-enhanced : True
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567'
+
+  ID          : ecp_email_3778a249_patientEmail_valid_with_plus_0
+  Type        : ECP  subtype=email
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : user+tag@example.com
+  Expected    : success
+  Description : Verify email with plus addressing format acceptance in Email Address field
+  AI-enhanced : True
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567'
+
+  ID          : ecp_email_3778a249_patientEmail_valid_with_plus_1
+  Type        : ECP  subtype=email
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : test+filter@domain.com
+  Expected    : success
+  Description : Verify email with plus addressing format acceptance in Email Address field
+  AI-enhanced : True
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567'
+
+  ID          : ecp_email_3778a249_patientEmail_valid_with_dots_0
+  Type        : ECP  subtype=email
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : first.last@example.com
+  Expected    : success
+  Description : Verify that an email address with a dot in the local part is accepted.
+  AI-enhanced : True
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567'
+
+  ID          : ecp_email_3778a249_patientEmail_valid_with_dots_1
+  Type        : ECP  subtype=email
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : user.name@domain.org
+  Expected    : success
+  Description : Verify that an email address with a dot in the local part and .org TLD is accepted.
+  AI-enhanced : True
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567'
+
+  ID          : ecp_email_3778a249_patientEmail_valid_subdomain_0
+  Type        : ECP  subtype=email
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : user@mail.example.com
+  Expected    : success
+  Description : Verify that an email address with a valid subdomain is accepted.
+  AI-enhanced : True
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567'
+
+  ID          : ecp_email_3778a249_patientEmail_valid_subdomain_1
+  Type        : ECP  subtype=email
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : test@subdomain.domain.com
+  Expected    : success
+  Description : Verify that an email address with a multi-level subdomain is accepted.
+  AI-enhanced : True
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567'
+
+  ID          : ecp_email_3778a249_patientEmail_invalid_missing_at_0
+  Type        : ECP  subtype=email
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : userexample.com
+  Expected    : error
+  Description : Verify that an email address missing the '@' symbol is rejected.
+  AI-enhanced : True
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567'
+
+  ID          : ecp_email_3778a249_patientEmail_invalid_missing_at_1
+  Type        : ECP  subtype=email
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : test.domain.com
+  Expected    : error
+  Description : Verify that a string without an '@' symbol is rejected as an invalid email.
+  AI-enhanced : True
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567'
+
+  ID          : ecp_email_3778a249_patientEmail_invalid_missing_domain_0
+  Type        : ECP  subtype=email
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : user@
+  Expected    : error
+  Description : Verify that an email address missing the domain part is rejected.
+  AI-enhanced : True
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567'
+
+  ID          : ecp_email_3778a249_patientEmail_invalid_missing_domain_1
+  Type        : ECP  subtype=email
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : test@.com
+  Expected    : error
+  Description : Verify that an email address with an empty domain label is rejected.
+  AI-enhanced : True
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567'
+
+  ID          : ecp_email_3778a249_patientEmail_invalid_special_chars_0
+  Type        : ECP  subtype=email
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : user..name@example.com
+  Expected    : error
+  Description : Verify that an email address with consecutive dots in the local part is rejected.
+  AI-enhanced : True
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567'
+
+  ID          : ecp_email_3778a249_patientEmail_invalid_special_chars_1
+  Type        : ECP  subtype=email
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : .user@example.com
+  Expected    : error
+  Description : Verify that an email address with a leading dot in the local part is rejected.
+  AI-enhanced : True
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567'
+
+  ID          : ecp_email_3778a249_patientEmail_invalid_empty_0
+  Type        : ECP  subtype=email
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : 
+  Expected    : error
+  Description : Verify that an empty email field is rejected.
+  AI-enhanced : True
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567'
+
+  ID          : ecp_email_3778a249_patientEmail_invalid_empty_0
+  Type        : ECP  subtype=email
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : 
+  Expected    : error
+  Description : Empty or whitespace only
+  AI-enhanced : True
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567'
+
+  ID          : ecp_email_3778a249_patientEmail_invalid_empty_1
+  Type        : ECP  subtype=email
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  :    
+  Expected    : error
+  Description : Verify that whitespace-only input in Email Address triggers a validation error
+  AI-enhanced : True
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567'
+
+  ID          : ecp_email_3778a249_patientEmail_invalid_spaces_0
+  Type        : ECP  subtype=email
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : user name@example.com
+  Expected    : error
+  Description : Verify that an email address containing spaces in the local part is rejected
+  AI-enhanced : True
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567'
+
+  ID          : ecp_email_3778a249_patientEmail_invalid_spaces_1
+  Type        : ECP  subtype=email
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : test @domain.com
+  Expected    : error
+  Description : Verify that an email address containing spaces before the @ symbol is rejected
+  AI-enhanced : True
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567'
+
+  ID          : ecp_text_3778a249_emergencyContact_valid
+  Type        : ECP  subtype=text
+  Field       : emergencyContact (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : ValidInput123
+  Expected    : success
+  Description : Verify that alphanumeric input is accepted for Emergency Contact Name
+  AI-enhanced : True
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com'
+
+  ID          : ecp_text_3778a249_emergencyContact_empty
+  Type        : ECP  subtype=text
+  Field       : emergencyContact (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : 
+  Expected    : error
+  Description : Empty value for required field Emergency Contact Name
+  AI-enhanced : True
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com'
+
+  ID          : ecp_text_3778a249_emergencyContact_special
+  Type        : ECP  subtype=text
+  Field       : emergencyContact (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : <script>alert("XSS")</script>
+  Expected    : error
+  Description : Verify that XSS injection attempts in Emergency Contact Name are blocked
+  AI-enhanced : True
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com'
+
+  ID          : ecp_text_3778a249_emergencyContact_long
+  Type        : ECP  subtype=text
+  Field       : emergencyContact (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+  Expected    : error
+  Description : Verify that input exceeding the character limit for Emergency Contact Name is rejected
+  AI-enhanced : True
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com'
+
+  ID          : ecp_text_3778a249_emergencyContact_unicode
+  Type        : ECP  subtype=text
+  Field       : emergencyContact (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : 测试数据🎉!测试数据
+  Expected    : success
+  Description : Verify that Unicode characters are correctly processed in Emergency Contact Name
+  AI-enhanced : True
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com'
+
+  ID          : ecp_select_3778a249_bloodType_first
+  Type        : ECP  subtype=select
+  Field       : bloodType (select)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : A+
+  Expected    : success
+  Description : Verify that selecting the first option (A+) in Blood Type is successful
+  AI-enhanced : True
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com'
+
+  ID          : ecp_select_3778a249_bloodType_middle
+  Type        : ECP  subtype=select
+  Field       : bloodType (select)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : AB+
+  Expected    : success
+  Description : Verify successful selection of 'AB+' from the Blood Type dropdown
+  AI-enhanced : True
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com'
+
+  ID          : ecp_select_3778a249_bloodType_last
+  Type        : ECP  subtype=select
+  Field       : bloodType (select)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : O-
+  Expected    : success
+  Description : Verify successful selection of 'O-' from the Blood Type dropdown
+  AI-enhanced : True
+  Test Data   : firstName='John', lastName='Doe', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com'
+
+  ID          : ecp_text_9a4dfdb5_firstName_valid
+  Type        : ECP  subtype=text
+  Field       : firstName (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : ValidInput123
+  Expected    : success
+  Description : Verify acceptance of alphanumeric input for First Name
+  AI-enhanced : True
+  Test Data   : dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : ecp_text_9a4dfdb5_firstName_empty
+  Type        : ECP  subtype=text
+  Field       : firstName (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : 
+  Expected    : error
+  Description : Empty value for required field First Name
+  AI-enhanced : True
+  Test Data   : dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : ecp_text_9a4dfdb5_firstName_special
+  Type        : ECP  subtype=text
+  Field       : firstName (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : <script>alert("XSS")</script>
+  Expected    : error
+  Description : Verify security validation prevents XSS injection in First Name
+  AI-enhanced : True
+  Test Data   : dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : ecp_text_9a4dfdb5_firstName_long
+  Type        : ECP  subtype=text
+  Field       : firstName (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+  Expected    : error
+  Description : Verify validation error when First Name exceeds maximum character limit
+  AI-enhanced : True
+  Test Data   : dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : ecp_text_9a4dfdb5_firstName_unicode
+  Type        : ECP  subtype=text
+  Field       : firstName (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : 测试数据🎉!测试数据
+  Expected    : success
+  Description : Verify support for Unicode/Emoji characters in First Name
+  AI-enhanced : True
+  Test Data   : dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : ecp_date_9a4dfdb5_dob_valid
+  Type        : ECP  subtype=date
+  Field       : dob (date)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : 2024-01-15
+  Expected    : success
+  Description : Verify valid ISO date format acceptance for Date of Birth
+  AI-enhanced : True
+  Test Data   : firstName='John', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : ecp_date_9a4dfdb5_dob_invalid
+  Type        : ECP  subtype=date
+  Field       : dob (date)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : invalid-date
+  Expected    : error
+  Description : Verify validation error for non-date string in Date of Birth
+  AI-enhanced : True
+  Test Data   : firstName='John', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : ecp_select_9a4dfdb5_gender_first
+  Type        : ECP  subtype=select
+  Field       : gender (select)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : male
+  Expected    : success
+  Description : Verify successful selection of 'male' from the Gender dropdown
+  AI-enhanced : True
+  Test Data   : firstName='John', dob='2001-04-07', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : ecp_select_9a4dfdb5_gender_middle
+  Type        : ECP  subtype=select
+  Field       : gender (select)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : female
+  Expected    : success
+  Description : Verify successful selection of 'female' option in Gender dropdown
+  AI-enhanced : True
+  Test Data   : firstName='John', dob='2001-04-07', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : ecp_select_9a4dfdb5_gender_last
+  Type        : ECP  subtype=select
+  Field       : gender (select)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : other
+  Expected    : success
+  Description : Verify successful selection of 'other' option in Gender dropdown
+  AI-enhanced : True
+  Test Data   : firstName='John', dob='2001-04-07', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : ecp_text_9a4dfdb5_patientPhone_valid
+  Type        : ECP  subtype=text
+  Field       : patientPhone (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : ValidInput123
+  Expected    : success
+  Description : Verify acceptance of alphanumeric string in Phone Number field
+  AI-enhanced : True
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientEmail='tester@example.com', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : ecp_text_9a4dfdb5_patientPhone_empty
+  Type        : ECP  subtype=text
+  Field       : patientPhone (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : 
+  Expected    : error
+  Description : Empty value for required field Phone Number
+  AI-enhanced : True
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientEmail='tester@example.com', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : ecp_text_9a4dfdb5_patientPhone_special
+  Type        : ECP  subtype=text
+  Field       : patientPhone (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : <script>alert("XSS")</script>
+  Expected    : error
+  Description : Verify security validation prevents XSS injection in Phone Number field
+  AI-enhanced : True
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientEmail='tester@example.com', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : ecp_text_9a4dfdb5_patientPhone_long
+  Type        : ECP  subtype=text
+  Field       : patientPhone (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+  Expected    : error
+  Description : Verify validation error when Phone Number exceeds maximum character limit
+  AI-enhanced : True
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientEmail='tester@example.com', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : ecp_text_9a4dfdb5_patientPhone_unicode
+  Type        : ECP  subtype=text
+  Field       : patientPhone (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : 测试数据🎉!测试数据
+  Expected    : success
+  Description : Verify handling of Unicode/Emoji characters in Phone Number field
+  AI-enhanced : True
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientEmail='tester@example.com', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : ecp_email_9a4dfdb5_patientEmail_valid_standard_0
+  Type        : ECP  subtype=email
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : user@example.com
+  Expected    : success
+  Description : Verify standard email format is accepted in Email Address field
+  AI-enhanced : True
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : ecp_email_9a4dfdb5_patientEmail_valid_standard_1
+  Type        : ECP  subtype=email
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : test@domain.co.uk
+  Expected    : success
+  Description : Verify international domain email format is accepted in Email Address field
+  AI-enhanced : True
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : ecp_email_9a4dfdb5_patientEmail_valid_with_plus_0
+  Type        : ECP  subtype=email
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : user+tag@example.com
+  Expected    : success
+  Description : Verify email with plus addressing is accepted in Email Address field
+  AI-enhanced : True
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : ecp_text_9a4dfdb5_firstName_empty
+  Type        : ECP  subtype=text
+  Field       : firstName (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : 
+  Expected    : error
+  Description : Verify validation error when First Name is empty
+  AI-enhanced : True
+  Test Data   : firstName='', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567'
+
+  ID          : ecp_email_9a4dfdb5_patientEmail_valid_with_plus_1
+  Type        : ECP  subtype=email
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : test+filter@domain.com
+  Expected    : success
+  Description : Validates that email addresses containing a plus sign (+) are accepted.
+  AI-enhanced : True
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : ecp_email_9a4dfdb5_patientEmail_valid_with_dots_0
+  Type        : ECP  subtype=email
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : first.last@example.com
+  Expected    : success
+  Description : Validates that email addresses with a single dot in the local part are accepted.
+  AI-enhanced : True
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : ecp_email_9a4dfdb5_patientEmail_valid_with_dots_1
+  Type        : ECP  subtype=email
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : user.name@domain.org
+  Expected    : success
+  Description : Validates that email addresses with a dot in the local part and .org TLD are accepted.
+  AI-enhanced : True
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : ecp_email_9a4dfdb5_patientEmail_valid_subdomain_0
+  Type        : ECP  subtype=email
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : user@mail.example.com
+  Expected    : success
+  Description : Validates that email addresses with a single-level subdomain are accepted.
+  AI-enhanced : True
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : ecp_email_9a4dfdb5_patientEmail_valid_subdomain_1
+  Type        : ECP  subtype=email
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : test@subdomain.domain.com
+  Expected    : success
+  Description : Validates that email addresses with multi-level subdomains are accepted.
+  AI-enhanced : True
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : ecp_email_9a4dfdb5_patientEmail_invalid_missing_at_0
+  Type        : ECP  subtype=email
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : userexample.com
+  Expected    : error
+  Description : Validates that email addresses missing the '@' symbol are rejected.
+  AI-enhanced : True
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : ecp_email_9a4dfdb5_patientEmail_invalid_missing_at_1
+  Type        : ECP  subtype=email
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : test.domain.com
+  Expected    : error
+  Description : Validates that strings without an '@' symbol are rejected as invalid emails.
+  AI-enhanced : True
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : ecp_email_9a4dfdb5_patientEmail_invalid_missing_domain_0
+  Type        : ECP  subtype=email
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : user@
+  Expected    : error
+  Description : Validates that email addresses missing the domain part after '@' are rejected.
+  AI-enhanced : True
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : ecp_email_9a4dfdb5_patientEmail_invalid_missing_domain_1
+  Type        : ECP  subtype=email
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : test@.com
+  Expected    : error
+  Description : Validates that email addresses with an empty domain name are rejected.
+  AI-enhanced : True
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : ecp_email_9a4dfdb5_patientEmail_invalid_special_chars_0
+  Type        : ECP  subtype=email
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : user..name@example.com
+  Expected    : error
+  Description : Validates that email addresses with consecutive dots in the local part are rejected.
+  AI-enhanced : True
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : ecp_email_9a4dfdb5_patientEmail_invalid_empty_0
+  Type        : ECP  subtype=email
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : 
+  Expected    : error
+  Description : Validates that an empty email field is rejected.
+  AI-enhanced : True
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : ecp_email_9a4dfdb5_patientEmail_invalid_special_chars_1
+  Type        : ECP  subtype=email
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : .user@example.com
+  Expected    : error
+  Description : Validation error for email starting with a dot, which violates RFC 5322 standards.
+  AI-enhanced : True
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : ecp_email_9a4dfdb5_patientEmail_invalid_empty_0
+  Type        : ECP  subtype=email
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : 
+  Expected    : error
+  Description : Empty or whitespace only
+  AI-enhanced : True
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : ecp_email_9a4dfdb5_patientEmail_invalid_empty_1
+  Type        : ECP  subtype=email
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  :    
+  Expected    : error
+  Description : Validation error for whitespace-only string input in required email field.
+  AI-enhanced : True
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : ecp_email_9a4dfdb5_patientEmail_invalid_spaces_0
+  Type        : ECP  subtype=email
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : user name@example.com
+  Expected    : error
+  Description : Validation error for email address containing an illegal space character.
+  AI-enhanced : True
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : ecp_email_9a4dfdb5_patientEmail_invalid_spaces_1
+  Type        : ECP  subtype=email
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : test @domain.com
+  Expected    : error
+  Description : Validation error for email address containing a space before the @ symbol.
+  AI-enhanced : True
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : ecp_text_9a4dfdb5_emergencyContact_valid
+  Type        : ECP  subtype=text
+  Field       : emergencyContact (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : ValidInput123
+  Expected    : success
+  Description : Successful submission with alphanumeric characters in Emergency Contact Name.
+  AI-enhanced : True
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', bloodType='A+'
+
+  ID          : ecp_text_9a4dfdb5_emergencyContact_empty
+  Type        : ECP  subtype=text
+  Field       : emergencyContact (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : 
+  Expected    : error
+  Description : Empty value for required field Emergency Contact Name
+  AI-enhanced : True
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', bloodType='A+'
+
+  ID          : ecp_text_9a4dfdb5_emergencyContact_special
+  Type        : ECP  subtype=text
+  Field       : emergencyContact (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : <script>alert("XSS")</script>
+  Expected    : error
+  Description : Security validation error for XSS injection attempt in Emergency Contact Name.
+  AI-enhanced : True
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', bloodType='A+'
+
+  ID          : ecp_text_9a4dfdb5_emergencyContact_long
+  Type        : ECP  subtype=text
+  Field       : emergencyContact (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+  Expected    : error
+  Description : Validation error for input exceeding maximum character length (500 chars) for Emergency Contact Name.
+  AI-enhanced : True
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', bloodType='A+'
+
+  ID          : ecp_text_9a4dfdb5_emergencyContact_unicode
+  Type        : ECP  subtype=text
+  Field       : emergencyContact (text)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : 测试数据🎉!测试数据
+  Expected    : success
+  Description : Successful submission with valid Unicode/Emoji characters in Emergency Contact Name.
+  AI-enhanced : True
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', bloodType='A+'
+
+  ID          : ecp_email_9a4dfdb5_patientEmail_invalid_missing_at
+  Type        : ECP  subtype=email
+  Field       : patientEmail (email)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : userexample.com
+  Expected    : error
+  Description : Validation error for email address missing the @ symbol.
+  AI-enhanced : True
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', emergencyContact='5551234567', bloodType='A+'
+
+  ID          : ecp_select_9a4dfdb5_bloodType_first
+  Type        : ECP  subtype=select
+  Field       : bloodType (select)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : A+
+  Expected    : success
+  Description : Verify successful form submission when selecting the first blood type option (A+)
+  AI-enhanced : True
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567'
+
+  ID          : ecp_select_9a4dfdb5_bloodType_middle
+  Type        : ECP  subtype=select
+  Field       : bloodType (select)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : AB+
+  Expected    : success
+  Description : Verify successful form submission when selecting a middle blood type option (AB+)
+  AI-enhanced : True
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567'
+
+  ID          : ecp_select_9a4dfdb5_bloodType_last
+  Type        : ECP  subtype=select
+  Field       : bloodType (select)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : O-
+  Expected    : success
+  Description : Verify successful form submission when selecting the last blood type option (O-)
+  AI-enhanced : True
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567'
+
+  ID          : ecp_select_9a4dfdb5_bloodType_null
+  Type        : ECP  subtype=select
+  Field       : bloodType (select)
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : 
+  Expected    : failure
+  Description : Verify form validation error when no blood type is selected
+  AI-enhanced : True
+  Test Data   : firstName='John', dob='2001-04-07', gender='male', patientPhone='5551234567', patientEmail='tester@example.com', emergencyContact='5551234567'
+
+  [ State Transition - 3 tests ]
+  ----------------------------------------------------------------------
+  ID          : state_branch_0_0
+  Type        : State Transition  subtype=branching_flow
+  Form URL    : 
+  Test Value  : 
+  Expected    : success
+  Description : Branch 1 from Localhost:3008 (CarePoint Clinic - Home): → Appointment (CarePoint - Book Appointment)
+  AI-enhanced : True
+
+  ID          : state_branch_0_1
+  Type        : State Transition  subtype=branching_flow
+  Form URL    : 
+  Test Value  : 
+  Expected    : success
+  Description : Branch 2 from Localhost:3008 (CarePoint Clinic - Home): → Patient Register (CarePoint - Patient Registration
+  AI-enhanced : True
+
+  ID          : state_branch_0_2
+  Type        : State Transition  subtype=branching_flow
+  Form URL    : 
+  Test Value  : 
+  Expected    : success
+  Description : Branch 3 from Localhost:3008 (CarePoint Clinic - Home): → Doctors (CarePoint - Our Doctors)
+  AI-enhanced : True
+
+  [ Use Case - 5 tests ]
+  ----------------------------------------------------------------------
+  ID          : usecase_ecommerce_complete_purchase
+  Type        : Use Case  subtype=e-commerce
+  Form URL    : 
+  Test Value  : 
+  Expected    : success
+  Description : End-to-end purchase: Browse product → Add to cart → Checkout → Complete order
+  AI-enhanced : True
+
+  ID          : usecase_ecommerce_multiple_products
+  Type        : Use Case  subtype=e-commerce
+  Form URL    : 
+  Test Value  : 
+  Expected    : success
+  Description : Add multiple products: Add product 1 → Add product 2 → View cart
+  AI-enhanced : True
+
+  ID          : usecase_ecommerce_remove_from_cart
+  Type        : Use Case  subtype=e-commerce
+  Form URL    : 
+  Test Value  : 
+  Expected    : success
+  Description : Remove item from cart: View cart → Remove item → Verify removal
+  AI-enhanced : True
+
+  ID          : usecase_auth_login
+  Type        : Use Case  subtype=authentication
+  Form URL    : http://localhost:3008
+  Test Value  : 
+  Expected    : success
+  Description : User login: Navigate to login → Enter credentials → Submit → Verify logged in
+  AI-enhanced : True
+  Test Data   : doctor='TestValue', appDate='TestValue', appTime='TestValue', visitType='TestValue', reason='TestValue'
+
+  ID          : usecase_auth_register
+  Type        : Use Case  subtype=authentication
+  Form URL    : http://localhost:3008/patient-register
+  Test Value  : 
+  Expected    : success
+  Description : User registration: Navigate → Fill form → Submit → Verify account created
+  AI-enhanced : True
+  Test Data   : doctor='TestValue', appDate='TestValue', appTime='TestValue', visitType='TestValue', reason='TestValue'

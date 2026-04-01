@@ -1,0 +1,3602 @@
+{
+  "stage": "before_refinement",
+  "generated_at": "2026-04-01T11:13:59.307280",
+  "crawl_file": "C:\\Users\\Kamra\\Desktop\\fyp crawler (5)\\fyp crawler\\data\\crawled_graphs\\site6_ecommerce_verify_20260401_105848.json",
+  "crawl_url": "http://localhost:3006",
+  "site_id": "site6_ecommerce",
+  "test_results": {
+    "metadata": {
+      "source_file": "C:\\Users\\Kamra\\Desktop\\fyp crawler (5)\\fyp crawler\\data\\crawled_graphs\\site6_ecommerce_verify_20260401_105848.json",
+      "total_nodes": 4,
+      "total_edges": 3,
+      "total_forms": 2
+    },
+    "test_cases": {
+      "bva": [
+        {
+          "id": "bva_length_65096150_loginEmail_0",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3006",
+          "form_id": "65096150",
+          "field_name": "loginEmail",
+          "field_type": "email",
+          "test_value": "aaaa",
+          "expected_result": "error",
+          "description": "Below minimum length (4 chars)",
+          "test_data": {
+            "loginPassword": "Test@12345",
+            "loginEmail": "aaaa"
+          },
+          "constraints": {
+            "minlength": 5,
+            "maxlength": 254
+          }
+        },
+        {
+          "id": "bva_length_65096150_loginEmail_1",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3006",
+          "form_id": "65096150",
+          "field_name": "loginEmail",
+          "field_type": "email",
+          "test_value": "a@b.c",
+          "expected_result": "success",
+          "description": "At minimum length (5 chars)",
+          "test_data": {
+            "loginPassword": "Test@12345",
+            "loginEmail": "a@b.c"
+          },
+          "constraints": {
+            "minlength": 5,
+            "maxlength": 254
+          }
+        },
+        {
+          "id": "bva_length_65096150_loginEmail_2",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3006",
+          "form_id": "65096150",
+          "field_name": "loginEmail",
+          "field_type": "email",
+          "test_value": "aa@b.c",
+          "expected_result": "success",
+          "description": "Just above minimum (6 chars)",
+          "test_data": {
+            "loginPassword": "Test@12345",
+            "loginEmail": "aa@b.c"
+          },
+          "constraints": {
+            "minlength": 5,
+            "maxlength": 254
+          }
+        },
+        {
+          "id": "bva_length_65096150_loginEmail_3",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3006",
+          "form_id": "65096150",
+          "field_name": "loginEmail",
+          "field_type": "email",
+          "test_value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.c",
+          "expected_result": "success",
+          "description": "Just below maximum (253 chars)",
+          "test_data": {
+            "loginPassword": "Test@12345",
+            "loginEmail": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.c"
+          },
+          "constraints": {
+            "minlength": 5,
+            "maxlength": 254
+          }
+        },
+        {
+          "id": "bva_length_65096150_loginEmail_4",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3006",
+          "form_id": "65096150",
+          "field_name": "loginEmail",
+          "field_type": "email",
+          "test_value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.c",
+          "expected_result": "success",
+          "description": "At maximum length (254 chars)",
+          "test_data": {
+            "loginPassword": "Test@12345",
+            "loginEmail": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.c"
+          },
+          "constraints": {
+            "minlength": 5,
+            "maxlength": 254
+          }
+        },
+        {
+          "id": "bva_length_65096150_loginEmail_5",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3006",
+          "form_id": "65096150",
+          "field_name": "loginEmail",
+          "field_type": "email",
+          "test_value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.c",
+          "expected_result": "error",
+          "description": "Above maximum length (255 chars)",
+          "test_data": {
+            "loginPassword": "Test@12345",
+            "loginEmail": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.c"
+          },
+          "constraints": {
+            "minlength": 5,
+            "maxlength": 254
+          }
+        },
+        {
+          "id": "bva_length_65096150_loginPassword_0",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3006",
+          "form_id": "65096150",
+          "field_name": "loginPassword",
+          "field_type": "password",
+          "test_value": "Aa1!a",
+          "expected_result": "error",
+          "description": "Below minimum length (5 chars)",
+          "test_data": {
+            "loginEmail": "tester@example.com",
+            "loginPassword": "Aa1!a"
+          },
+          "constraints": {
+            "minlength": 6,
+            "maxlength": 255
+          }
+        },
+        {
+          "id": "bva_length_65096150_loginPassword_1",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3006",
+          "form_id": "65096150",
+          "field_name": "loginPassword",
+          "field_type": "password",
+          "test_value": "Aa1!aa",
+          "expected_result": "success",
+          "description": "At minimum length (6 chars)",
+          "test_data": {
+            "loginEmail": "tester@example.com",
+            "loginPassword": "Aa1!aa"
+          },
+          "constraints": {
+            "minlength": 6,
+            "maxlength": 255
+          }
+        },
+        {
+          "id": "bva_length_65096150_loginPassword_2",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3006",
+          "form_id": "65096150",
+          "field_name": "loginPassword",
+          "field_type": "password",
+          "test_value": "Aa1!aaa",
+          "expected_result": "success",
+          "description": "Just above minimum (7 chars)",
+          "test_data": {
+            "loginEmail": "tester@example.com",
+            "loginPassword": "Aa1!aaa"
+          },
+          "constraints": {
+            "minlength": 6,
+            "maxlength": 255
+          }
+        },
+        {
+          "id": "bva_length_65096150_loginPassword_3",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3006",
+          "form_id": "65096150",
+          "field_name": "loginPassword",
+          "field_type": "password",
+          "test_value": "Aa1!aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expected_result": "success",
+          "description": "Just below maximum (254 chars)",
+          "test_data": {
+            "loginEmail": "tester@example.com",
+            "loginPassword": "Aa1!aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "constraints": {
+            "minlength": 6,
+            "maxlength": 255
+          }
+        },
+        {
+          "id": "bva_length_65096150_loginPassword_4",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3006",
+          "form_id": "65096150",
+          "field_name": "loginPassword",
+          "field_type": "password",
+          "test_value": "Aa1!aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expected_result": "success",
+          "description": "At maximum length (255 chars)",
+          "test_data": {
+            "loginEmail": "tester@example.com",
+            "loginPassword": "Aa1!aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "constraints": {
+            "minlength": 6,
+            "maxlength": 255
+          }
+        },
+        {
+          "id": "bva_length_65096150_loginPassword_5",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3006",
+          "form_id": "65096150",
+          "field_name": "loginPassword",
+          "field_type": "password",
+          "test_value": "Aa1!aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expected_result": "error",
+          "description": "Above maximum length (256 chars)",
+          "test_data": {
+            "loginEmail": "tester@example.com",
+            "loginPassword": "Aa1!aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "constraints": {
+            "minlength": 6,
+            "maxlength": 255
+          }
+        },
+        {
+          "id": "bva_length_72f7c4c7_fullName_0",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "field_name": "fullName",
+          "field_type": "text",
+          "test_value": "a",
+          "expected_result": "error",
+          "description": "Below minimum length (1 chars)",
+          "test_data": {
+            "shippingEmail": "tester@example.com",
+            "address": "123 Main Street",
+            "city": "New York",
+            "zipCode": "10001",
+            "cardNumber": "4111111111111111",
+            "expiry": "12/26",
+            "cvv": "123",
+            "fullName": "a"
+          },
+          "constraints": {
+            "minlength": 2,
+            "maxlength": 60
+          }
+        },
+        {
+          "id": "bva_length_72f7c4c7_fullName_1",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "field_name": "fullName",
+          "field_type": "text",
+          "test_value": "aa",
+          "expected_result": "success",
+          "description": "At minimum length (2 chars)",
+          "test_data": {
+            "shippingEmail": "tester@example.com",
+            "address": "123 Main Street",
+            "city": "New York",
+            "zipCode": "10001",
+            "cardNumber": "4111111111111111",
+            "expiry": "12/26",
+            "cvv": "123",
+            "fullName": "aa"
+          },
+          "constraints": {
+            "minlength": 2,
+            "maxlength": 60
+          }
+        },
+        {
+          "id": "bva_length_72f7c4c7_fullName_2",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "field_name": "fullName",
+          "field_type": "text",
+          "test_value": "aaa",
+          "expected_result": "success",
+          "description": "Just above minimum (3 chars)",
+          "test_data": {
+            "shippingEmail": "tester@example.com",
+            "address": "123 Main Street",
+            "city": "New York",
+            "zipCode": "10001",
+            "cardNumber": "4111111111111111",
+            "expiry": "12/26",
+            "cvv": "123",
+            "fullName": "aaa"
+          },
+          "constraints": {
+            "minlength": 2,
+            "maxlength": 60
+          }
+        },
+        {
+          "id": "bva_length_72f7c4c7_fullName_3",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "field_name": "fullName",
+          "field_type": "text",
+          "test_value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expected_result": "success",
+          "description": "Just below maximum (59 chars)",
+          "test_data": {
+            "shippingEmail": "tester@example.com",
+            "address": "123 Main Street",
+            "city": "New York",
+            "zipCode": "10001",
+            "cardNumber": "4111111111111111",
+            "expiry": "12/26",
+            "cvv": "123",
+            "fullName": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "constraints": {
+            "minlength": 2,
+            "maxlength": 60
+          }
+        },
+        {
+          "id": "bva_length_72f7c4c7_fullName_4",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "field_name": "fullName",
+          "field_type": "text",
+          "test_value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expected_result": "success",
+          "description": "At maximum length (60 chars)",
+          "test_data": {
+            "shippingEmail": "tester@example.com",
+            "address": "123 Main Street",
+            "city": "New York",
+            "zipCode": "10001",
+            "cardNumber": "4111111111111111",
+            "expiry": "12/26",
+            "cvv": "123",
+            "fullName": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "constraints": {
+            "minlength": 2,
+            "maxlength": 60
+          }
+        },
+        {
+          "id": "bva_length_72f7c4c7_fullName_5",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "field_name": "fullName",
+          "field_type": "text",
+          "test_value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expected_result": "error",
+          "description": "Above maximum length (61 chars)",
+          "test_data": {
+            "shippingEmail": "tester@example.com",
+            "address": "123 Main Street",
+            "city": "New York",
+            "zipCode": "10001",
+            "cardNumber": "4111111111111111",
+            "expiry": "12/26",
+            "cvv": "123",
+            "fullName": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "constraints": {
+            "minlength": 2,
+            "maxlength": 60
+          }
+        },
+        {
+          "id": "bva_length_72f7c4c7_shippingEmail_0",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "field_name": "shippingEmail",
+          "field_type": "email",
+          "test_value": "aaaa",
+          "expected_result": "error",
+          "description": "Below minimum length (4 chars)",
+          "test_data": {
+            "fullName": "John Doe",
+            "address": "123 Main Street",
+            "city": "New York",
+            "zipCode": "10001",
+            "cardNumber": "4111111111111111",
+            "expiry": "12/26",
+            "cvv": "123",
+            "shippingEmail": "aaaa"
+          },
+          "constraints": {
+            "minlength": 5,
+            "maxlength": 254
+          }
+        },
+        {
+          "id": "bva_length_72f7c4c7_shippingEmail_1",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "field_name": "shippingEmail",
+          "field_type": "email",
+          "test_value": "a@b.c",
+          "expected_result": "success",
+          "description": "At minimum length (5 chars)",
+          "test_data": {
+            "fullName": "John Doe",
+            "address": "123 Main Street",
+            "city": "New York",
+            "zipCode": "10001",
+            "cardNumber": "4111111111111111",
+            "expiry": "12/26",
+            "cvv": "123",
+            "shippingEmail": "a@b.c"
+          },
+          "constraints": {
+            "minlength": 5,
+            "maxlength": 254
+          }
+        },
+        {
+          "id": "bva_length_72f7c4c7_shippingEmail_2",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "field_name": "shippingEmail",
+          "field_type": "email",
+          "test_value": "aa@b.c",
+          "expected_result": "success",
+          "description": "Just above minimum (6 chars)",
+          "test_data": {
+            "fullName": "John Doe",
+            "address": "123 Main Street",
+            "city": "New York",
+            "zipCode": "10001",
+            "cardNumber": "4111111111111111",
+            "expiry": "12/26",
+            "cvv": "123",
+            "shippingEmail": "aa@b.c"
+          },
+          "constraints": {
+            "minlength": 5,
+            "maxlength": 254
+          }
+        },
+        {
+          "id": "bva_length_72f7c4c7_shippingEmail_3",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "field_name": "shippingEmail",
+          "field_type": "email",
+          "test_value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.c",
+          "expected_result": "success",
+          "description": "Just below maximum (253 chars)",
+          "test_data": {
+            "fullName": "John Doe",
+            "address": "123 Main Street",
+            "city": "New York",
+            "zipCode": "10001",
+            "cardNumber": "4111111111111111",
+            "expiry": "12/26",
+            "cvv": "123",
+            "shippingEmail": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.c"
+          },
+          "constraints": {
+            "minlength": 5,
+            "maxlength": 254
+          }
+        },
+        {
+          "id": "bva_length_72f7c4c7_shippingEmail_4",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "field_name": "shippingEmail",
+          "field_type": "email",
+          "test_value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.c",
+          "expected_result": "success",
+          "description": "At maximum length (254 chars)",
+          "test_data": {
+            "fullName": "John Doe",
+            "address": "123 Main Street",
+            "city": "New York",
+            "zipCode": "10001",
+            "cardNumber": "4111111111111111",
+            "expiry": "12/26",
+            "cvv": "123",
+            "shippingEmail": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.c"
+          },
+          "constraints": {
+            "minlength": 5,
+            "maxlength": 254
+          }
+        },
+        {
+          "id": "bva_length_72f7c4c7_shippingEmail_5",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "field_name": "shippingEmail",
+          "field_type": "email",
+          "test_value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.c",
+          "expected_result": "error",
+          "description": "Above maximum length (255 chars)",
+          "test_data": {
+            "fullName": "John Doe",
+            "address": "123 Main Street",
+            "city": "New York",
+            "zipCode": "10001",
+            "cardNumber": "4111111111111111",
+            "expiry": "12/26",
+            "cvv": "123",
+            "shippingEmail": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.c"
+          },
+          "constraints": {
+            "minlength": 5,
+            "maxlength": 254
+          }
+        },
+        {
+          "id": "bva_length_72f7c4c7_address_0",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "field_name": "address",
+          "field_type": "text",
+          "test_value": "aaaa",
+          "expected_result": "error",
+          "description": "Below minimum length (4 chars)",
+          "test_data": {
+            "fullName": "John Doe",
+            "shippingEmail": "tester@example.com",
+            "city": "New York",
+            "zipCode": "10001",
+            "cardNumber": "4111111111111111",
+            "expiry": "12/26",
+            "cvv": "123",
+            "address": "aaaa"
+          },
+          "constraints": {
+            "minlength": 5,
+            "maxlength": 120
+          }
+        },
+        {
+          "id": "bva_length_72f7c4c7_address_1",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "field_name": "address",
+          "field_type": "text",
+          "test_value": "aaaaa",
+          "expected_result": "success",
+          "description": "At minimum length (5 chars)",
+          "test_data": {
+            "fullName": "John Doe",
+            "shippingEmail": "tester@example.com",
+            "city": "New York",
+            "zipCode": "10001",
+            "cardNumber": "4111111111111111",
+            "expiry": "12/26",
+            "cvv": "123",
+            "address": "aaaaa"
+          },
+          "constraints": {
+            "minlength": 5,
+            "maxlength": 120
+          }
+        },
+        {
+          "id": "bva_length_72f7c4c7_address_2",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "field_name": "address",
+          "field_type": "text",
+          "test_value": "aaaaaa",
+          "expected_result": "success",
+          "description": "Just above minimum (6 chars)",
+          "test_data": {
+            "fullName": "John Doe",
+            "shippingEmail": "tester@example.com",
+            "city": "New York",
+            "zipCode": "10001",
+            "cardNumber": "4111111111111111",
+            "expiry": "12/26",
+            "cvv": "123",
+            "address": "aaaaaa"
+          },
+          "constraints": {
+            "minlength": 5,
+            "maxlength": 120
+          }
+        },
+        {
+          "id": "bva_length_72f7c4c7_address_3",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "field_name": "address",
+          "field_type": "text",
+          "test_value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expected_result": "success",
+          "description": "Just below maximum (119 chars)",
+          "test_data": {
+            "fullName": "John Doe",
+            "shippingEmail": "tester@example.com",
+            "city": "New York",
+            "zipCode": "10001",
+            "cardNumber": "4111111111111111",
+            "expiry": "12/26",
+            "cvv": "123",
+            "address": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "constraints": {
+            "minlength": 5,
+            "maxlength": 120
+          }
+        },
+        {
+          "id": "bva_length_72f7c4c7_address_4",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "field_name": "address",
+          "field_type": "text",
+          "test_value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expected_result": "success",
+          "description": "At maximum length (120 chars)",
+          "test_data": {
+            "fullName": "John Doe",
+            "shippingEmail": "tester@example.com",
+            "city": "New York",
+            "zipCode": "10001",
+            "cardNumber": "4111111111111111",
+            "expiry": "12/26",
+            "cvv": "123",
+            "address": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "constraints": {
+            "minlength": 5,
+            "maxlength": 120
+          }
+        },
+        {
+          "id": "bva_length_72f7c4c7_address_5",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "field_name": "address",
+          "field_type": "text",
+          "test_value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expected_result": "error",
+          "description": "Above maximum length (121 chars)",
+          "test_data": {
+            "fullName": "John Doe",
+            "shippingEmail": "tester@example.com",
+            "city": "New York",
+            "zipCode": "10001",
+            "cardNumber": "4111111111111111",
+            "expiry": "12/26",
+            "cvv": "123",
+            "address": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "constraints": {
+            "minlength": 5,
+            "maxlength": 120
+          }
+        },
+        {
+          "id": "bva_length_72f7c4c7_city_0",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "field_name": "city",
+          "field_type": "text",
+          "test_value": "a",
+          "expected_result": "error",
+          "description": "Below minimum length (1 chars)",
+          "test_data": {
+            "fullName": "John Doe",
+            "shippingEmail": "tester@example.com",
+            "address": "123 Main Street",
+            "zipCode": "10001",
+            "cardNumber": "4111111111111111",
+            "expiry": "12/26",
+            "cvv": "123",
+            "city": "a"
+          },
+          "constraints": {
+            "minlength": 2,
+            "maxlength": 50
+          }
+        },
+        {
+          "id": "bva_length_72f7c4c7_city_1",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "field_name": "city",
+          "field_type": "text",
+          "test_value": "aa",
+          "expected_result": "success",
+          "description": "At minimum length (2 chars)",
+          "test_data": {
+            "fullName": "John Doe",
+            "shippingEmail": "tester@example.com",
+            "address": "123 Main Street",
+            "zipCode": "10001",
+            "cardNumber": "4111111111111111",
+            "expiry": "12/26",
+            "cvv": "123",
+            "city": "aa"
+          },
+          "constraints": {
+            "minlength": 2,
+            "maxlength": 50
+          }
+        },
+        {
+          "id": "bva_length_72f7c4c7_city_2",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "field_name": "city",
+          "field_type": "text",
+          "test_value": "aaa",
+          "expected_result": "success",
+          "description": "Just above minimum (3 chars)",
+          "test_data": {
+            "fullName": "John Doe",
+            "shippingEmail": "tester@example.com",
+            "address": "123 Main Street",
+            "zipCode": "10001",
+            "cardNumber": "4111111111111111",
+            "expiry": "12/26",
+            "cvv": "123",
+            "city": "aaa"
+          },
+          "constraints": {
+            "minlength": 2,
+            "maxlength": 50
+          }
+        },
+        {
+          "id": "bva_length_72f7c4c7_city_3",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "field_name": "city",
+          "field_type": "text",
+          "test_value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expected_result": "success",
+          "description": "Just below maximum (49 chars)",
+          "test_data": {
+            "fullName": "John Doe",
+            "shippingEmail": "tester@example.com",
+            "address": "123 Main Street",
+            "zipCode": "10001",
+            "cardNumber": "4111111111111111",
+            "expiry": "12/26",
+            "cvv": "123",
+            "city": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "constraints": {
+            "minlength": 2,
+            "maxlength": 50
+          }
+        },
+        {
+          "id": "bva_length_72f7c4c7_city_4",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "field_name": "city",
+          "field_type": "text",
+          "test_value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expected_result": "success",
+          "description": "At maximum length (50 chars)",
+          "test_data": {
+            "fullName": "John Doe",
+            "shippingEmail": "tester@example.com",
+            "address": "123 Main Street",
+            "zipCode": "10001",
+            "cardNumber": "4111111111111111",
+            "expiry": "12/26",
+            "cvv": "123",
+            "city": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "constraints": {
+            "minlength": 2,
+            "maxlength": 50
+          }
+        },
+        {
+          "id": "bva_length_72f7c4c7_city_5",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "field_name": "city",
+          "field_type": "text",
+          "test_value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expected_result": "error",
+          "description": "Above maximum length (51 chars)",
+          "test_data": {
+            "fullName": "John Doe",
+            "shippingEmail": "tester@example.com",
+            "address": "123 Main Street",
+            "zipCode": "10001",
+            "cardNumber": "4111111111111111",
+            "expiry": "12/26",
+            "cvv": "123",
+            "city": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "constraints": {
+            "minlength": 2,
+            "maxlength": 50
+          }
+        },
+        {
+          "id": "bva_length_72f7c4c7_zipCode_0",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "field_name": "zipCode",
+          "field_type": "text",
+          "test_value": "",
+          "expected_result": "error",
+          "description": "Below minimum length (0 chars)",
+          "test_data": {
+            "fullName": "John Doe",
+            "shippingEmail": "tester@example.com",
+            "address": "123 Main Street",
+            "city": "New York",
+            "cardNumber": "4111111111111111",
+            "expiry": "12/26",
+            "cvv": "123",
+            "zipCode": ""
+          },
+          "constraints": {
+            "minlength": 1,
+            "maxlength": 255
+          }
+        },
+        {
+          "id": "bva_length_72f7c4c7_zipCode_1",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "field_name": "zipCode",
+          "field_type": "text",
+          "test_value": "a",
+          "expected_result": "success",
+          "description": "At minimum length (1 chars)",
+          "test_data": {
+            "fullName": "John Doe",
+            "shippingEmail": "tester@example.com",
+            "address": "123 Main Street",
+            "city": "New York",
+            "cardNumber": "4111111111111111",
+            "expiry": "12/26",
+            "cvv": "123",
+            "zipCode": "a"
+          },
+          "constraints": {
+            "minlength": 1,
+            "maxlength": 255
+          }
+        },
+        {
+          "id": "bva_length_72f7c4c7_zipCode_2",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "field_name": "zipCode",
+          "field_type": "text",
+          "test_value": "aa",
+          "expected_result": "success",
+          "description": "Just above minimum (2 chars)",
+          "test_data": {
+            "fullName": "John Doe",
+            "shippingEmail": "tester@example.com",
+            "address": "123 Main Street",
+            "city": "New York",
+            "cardNumber": "4111111111111111",
+            "expiry": "12/26",
+            "cvv": "123",
+            "zipCode": "aa"
+          },
+          "constraints": {
+            "minlength": 1,
+            "maxlength": 255
+          }
+        },
+        {
+          "id": "bva_length_72f7c4c7_zipCode_3",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "field_name": "zipCode",
+          "field_type": "text",
+          "test_value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expected_result": "success",
+          "description": "Just below maximum (254 chars)",
+          "test_data": {
+            "fullName": "John Doe",
+            "shippingEmail": "tester@example.com",
+            "address": "123 Main Street",
+            "city": "New York",
+            "cardNumber": "4111111111111111",
+            "expiry": "12/26",
+            "cvv": "123",
+            "zipCode": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "constraints": {
+            "minlength": 1,
+            "maxlength": 255
+          }
+        },
+        {
+          "id": "bva_length_72f7c4c7_zipCode_4",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "field_name": "zipCode",
+          "field_type": "text",
+          "test_value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expected_result": "success",
+          "description": "At maximum length (255 chars)",
+          "test_data": {
+            "fullName": "John Doe",
+            "shippingEmail": "tester@example.com",
+            "address": "123 Main Street",
+            "city": "New York",
+            "cardNumber": "4111111111111111",
+            "expiry": "12/26",
+            "cvv": "123",
+            "zipCode": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "constraints": {
+            "minlength": 1,
+            "maxlength": 255
+          }
+        },
+        {
+          "id": "bva_length_72f7c4c7_zipCode_5",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "field_name": "zipCode",
+          "field_type": "text",
+          "test_value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expected_result": "error",
+          "description": "Above maximum length (256 chars)",
+          "test_data": {
+            "fullName": "John Doe",
+            "shippingEmail": "tester@example.com",
+            "address": "123 Main Street",
+            "city": "New York",
+            "cardNumber": "4111111111111111",
+            "expiry": "12/26",
+            "cvv": "123",
+            "zipCode": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "constraints": {
+            "minlength": 1,
+            "maxlength": 255
+          }
+        },
+        {
+          "id": "bva_length_72f7c4c7_cardNumber_0",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "field_name": "cardNumber",
+          "field_type": "text",
+          "test_value": "aaaaaaaaaaaa",
+          "expected_result": "error",
+          "description": "Below minimum length (12 chars)",
+          "test_data": {
+            "fullName": "John Doe",
+            "shippingEmail": "tester@example.com",
+            "address": "123 Main Street",
+            "city": "New York",
+            "zipCode": "10001",
+            "expiry": "12/26",
+            "cvv": "123",
+            "cardNumber": "aaaaaaaaaaaa"
+          },
+          "constraints": {
+            "minlength": 13,
+            "maxlength": 19
+          }
+        },
+        {
+          "id": "bva_length_72f7c4c7_cardNumber_1",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "field_name": "cardNumber",
+          "field_type": "text",
+          "test_value": "aaaaaaaaaaaaa",
+          "expected_result": "error",
+          "description": "At minimum length (13 chars)",
+          "test_data": {
+            "fullName": "John Doe",
+            "shippingEmail": "tester@example.com",
+            "address": "123 Main Street",
+            "city": "New York",
+            "zipCode": "10001",
+            "expiry": "12/26",
+            "cvv": "123",
+            "cardNumber": "aaaaaaaaaaaaa"
+          },
+          "constraints": {
+            "minlength": 13,
+            "maxlength": 19
+          },
+          "_fix_note": "Auto-fixed: cardNumber='aaaaaaaaaaaaa' cannot pass format validation"
+        },
+        {
+          "id": "bva_length_72f7c4c7_cardNumber_2",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "field_name": "cardNumber",
+          "field_type": "text",
+          "test_value": "aaaaaaaaaaaaaa",
+          "expected_result": "error",
+          "description": "Just above minimum (14 chars)",
+          "test_data": {
+            "fullName": "John Doe",
+            "shippingEmail": "tester@example.com",
+            "address": "123 Main Street",
+            "city": "New York",
+            "zipCode": "10001",
+            "expiry": "12/26",
+            "cvv": "123",
+            "cardNumber": "aaaaaaaaaaaaaa"
+          },
+          "constraints": {
+            "minlength": 13,
+            "maxlength": 19
+          },
+          "_fix_note": "Auto-fixed: cardNumber='aaaaaaaaaaaaaa' cannot pass format validation"
+        },
+        {
+          "id": "bva_length_72f7c4c7_cardNumber_3",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "field_name": "cardNumber",
+          "field_type": "text",
+          "test_value": "aaaaaaaaaaaaaaaaaa",
+          "expected_result": "error",
+          "description": "Just below maximum (18 chars)",
+          "test_data": {
+            "fullName": "John Doe",
+            "shippingEmail": "tester@example.com",
+            "address": "123 Main Street",
+            "city": "New York",
+            "zipCode": "10001",
+            "expiry": "12/26",
+            "cvv": "123",
+            "cardNumber": "aaaaaaaaaaaaaaaaaa"
+          },
+          "constraints": {
+            "minlength": 13,
+            "maxlength": 19
+          },
+          "_fix_note": "Auto-fixed: cardNumber='aaaaaaaaaaaaaaaaaa' cannot pass format validation"
+        },
+        {
+          "id": "bva_length_72f7c4c7_cardNumber_4",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "field_name": "cardNumber",
+          "field_type": "text",
+          "test_value": "aaaaaaaaaaaaaaaaaaa",
+          "expected_result": "error",
+          "description": "At maximum length (19 chars)",
+          "test_data": {
+            "fullName": "John Doe",
+            "shippingEmail": "tester@example.com",
+            "address": "123 Main Street",
+            "city": "New York",
+            "zipCode": "10001",
+            "expiry": "12/26",
+            "cvv": "123",
+            "cardNumber": "aaaaaaaaaaaaaaaaaaa"
+          },
+          "constraints": {
+            "minlength": 13,
+            "maxlength": 19
+          },
+          "_fix_note": "Auto-fixed: cardNumber='aaaaaaaaaaaaaaaaaaa' cannot pass format validation"
+        },
+        {
+          "id": "bva_length_72f7c4c7_cardNumber_5",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "field_name": "cardNumber",
+          "field_type": "text",
+          "test_value": "aaaaaaaaaaaaaaaaaaaa",
+          "expected_result": "error",
+          "description": "Above maximum length (20 chars)",
+          "test_data": {
+            "fullName": "John Doe",
+            "shippingEmail": "tester@example.com",
+            "address": "123 Main Street",
+            "city": "New York",
+            "zipCode": "10001",
+            "expiry": "12/26",
+            "cvv": "123",
+            "cardNumber": "aaaaaaaaaaaaaaaaaaaa"
+          },
+          "constraints": {
+            "minlength": 13,
+            "maxlength": 19
+          }
+        },
+        {
+          "id": "bva_length_72f7c4c7_expiry_0",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "field_name": "expiry",
+          "field_type": "text",
+          "test_value": "",
+          "expected_result": "error",
+          "description": "Below minimum length (0 chars)",
+          "test_data": {
+            "fullName": "John Doe",
+            "shippingEmail": "tester@example.com",
+            "address": "123 Main Street",
+            "city": "New York",
+            "zipCode": "10001",
+            "cardNumber": "4111111111111111",
+            "cvv": "123",
+            "expiry": ""
+          },
+          "constraints": {
+            "minlength": 1,
+            "maxlength": 255
+          }
+        },
+        {
+          "id": "bva_length_72f7c4c7_expiry_1",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "field_name": "expiry",
+          "field_type": "text",
+          "test_value": "a",
+          "expected_result": "error",
+          "description": "At minimum length (1 chars)",
+          "test_data": {
+            "fullName": "John Doe",
+            "shippingEmail": "tester@example.com",
+            "address": "123 Main Street",
+            "city": "New York",
+            "zipCode": "10001",
+            "cardNumber": "4111111111111111",
+            "cvv": "123",
+            "expiry": "a"
+          },
+          "constraints": {
+            "minlength": 1,
+            "maxlength": 255
+          },
+          "_fix_note": "Auto-fixed: expiry='a' cannot pass format validation"
+        },
+        {
+          "id": "bva_length_72f7c4c7_expiry_2",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "field_name": "expiry",
+          "field_type": "text",
+          "test_value": "aa",
+          "expected_result": "error",
+          "description": "Just above minimum (2 chars)",
+          "test_data": {
+            "fullName": "John Doe",
+            "shippingEmail": "tester@example.com",
+            "address": "123 Main Street",
+            "city": "New York",
+            "zipCode": "10001",
+            "cardNumber": "4111111111111111",
+            "cvv": "123",
+            "expiry": "aa"
+          },
+          "constraints": {
+            "minlength": 1,
+            "maxlength": 255
+          },
+          "_fix_note": "Auto-fixed: expiry='aa' cannot pass format validation"
+        },
+        {
+          "id": "bva_length_72f7c4c7_expiry_3",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "field_name": "expiry",
+          "field_type": "text",
+          "test_value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expected_result": "error",
+          "description": "Just below maximum (254 chars)",
+          "test_data": {
+            "fullName": "John Doe",
+            "shippingEmail": "tester@example.com",
+            "address": "123 Main Street",
+            "city": "New York",
+            "zipCode": "10001",
+            "cardNumber": "4111111111111111",
+            "cvv": "123",
+            "expiry": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "constraints": {
+            "minlength": 1,
+            "maxlength": 255
+          },
+          "_fix_note": "Auto-fixed: expiry='aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa' cannot pass format validation"
+        },
+        {
+          "id": "bva_length_72f7c4c7_expiry_4",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "field_name": "expiry",
+          "field_type": "text",
+          "test_value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expected_result": "error",
+          "description": "At maximum length (255 chars)",
+          "test_data": {
+            "fullName": "John Doe",
+            "shippingEmail": "tester@example.com",
+            "address": "123 Main Street",
+            "city": "New York",
+            "zipCode": "10001",
+            "cardNumber": "4111111111111111",
+            "cvv": "123",
+            "expiry": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "constraints": {
+            "minlength": 1,
+            "maxlength": 255
+          },
+          "_fix_note": "Auto-fixed: expiry='aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa' cannot pass format validation"
+        },
+        {
+          "id": "bva_length_72f7c4c7_expiry_5",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "field_name": "expiry",
+          "field_type": "text",
+          "test_value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expected_result": "error",
+          "description": "Above maximum length (256 chars)",
+          "test_data": {
+            "fullName": "John Doe",
+            "shippingEmail": "tester@example.com",
+            "address": "123 Main Street",
+            "city": "New York",
+            "zipCode": "10001",
+            "cardNumber": "4111111111111111",
+            "cvv": "123",
+            "expiry": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "constraints": {
+            "minlength": 1,
+            "maxlength": 255
+          }
+        },
+        {
+          "id": "bva_length_72f7c4c7_cvv_0",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "field_name": "cvv",
+          "field_type": "text",
+          "test_value": "aa",
+          "expected_result": "error",
+          "description": "Below minimum length (2 chars)",
+          "test_data": {
+            "fullName": "John Doe",
+            "shippingEmail": "tester@example.com",
+            "address": "123 Main Street",
+            "city": "New York",
+            "zipCode": "10001",
+            "cardNumber": "4111111111111111",
+            "expiry": "12/26",
+            "cvv": "aa"
+          },
+          "constraints": {
+            "minlength": 3,
+            "maxlength": 4
+          }
+        },
+        {
+          "id": "bva_length_72f7c4c7_cvv_1",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "field_name": "cvv",
+          "field_type": "text",
+          "test_value": "aaa",
+          "expected_result": "error",
+          "description": "At minimum length (3 chars)",
+          "test_data": {
+            "fullName": "John Doe",
+            "shippingEmail": "tester@example.com",
+            "address": "123 Main Street",
+            "city": "New York",
+            "zipCode": "10001",
+            "cardNumber": "4111111111111111",
+            "expiry": "12/26",
+            "cvv": "aaa"
+          },
+          "constraints": {
+            "minlength": 3,
+            "maxlength": 4
+          },
+          "_fix_note": "Auto-fixed: cvv='aaa' cannot pass format validation"
+        },
+        {
+          "id": "bva_length_72f7c4c7_cvv_2",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "field_name": "cvv",
+          "field_type": "text",
+          "test_value": "aaaa",
+          "expected_result": "error",
+          "description": "Just above minimum (4 chars)",
+          "test_data": {
+            "fullName": "John Doe",
+            "shippingEmail": "tester@example.com",
+            "address": "123 Main Street",
+            "city": "New York",
+            "zipCode": "10001",
+            "cardNumber": "4111111111111111",
+            "expiry": "12/26",
+            "cvv": "aaaa"
+          },
+          "constraints": {
+            "minlength": 3,
+            "maxlength": 4
+          },
+          "_fix_note": "Auto-fixed: cvv='aaaa' cannot pass format validation"
+        },
+        {
+          "id": "bva_length_72f7c4c7_cvv_3",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "field_name": "cvv",
+          "field_type": "text",
+          "test_value": "aaa",
+          "expected_result": "error",
+          "description": "Just below maximum (3 chars)",
+          "test_data": {
+            "fullName": "John Doe",
+            "shippingEmail": "tester@example.com",
+            "address": "123 Main Street",
+            "city": "New York",
+            "zipCode": "10001",
+            "cardNumber": "4111111111111111",
+            "expiry": "12/26",
+            "cvv": "aaa"
+          },
+          "constraints": {
+            "minlength": 3,
+            "maxlength": 4
+          },
+          "_fix_note": "Auto-fixed: cvv='aaa' cannot pass format validation"
+        },
+        {
+          "id": "bva_length_72f7c4c7_cvv_4",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "field_name": "cvv",
+          "field_type": "text",
+          "test_value": "aaaa",
+          "expected_result": "error",
+          "description": "At maximum length (4 chars)",
+          "test_data": {
+            "fullName": "John Doe",
+            "shippingEmail": "tester@example.com",
+            "address": "123 Main Street",
+            "city": "New York",
+            "zipCode": "10001",
+            "cardNumber": "4111111111111111",
+            "expiry": "12/26",
+            "cvv": "aaaa"
+          },
+          "constraints": {
+            "minlength": 3,
+            "maxlength": 4
+          },
+          "_fix_note": "Auto-fixed: cvv='aaaa' cannot pass format validation"
+        },
+        {
+          "id": "bva_length_72f7c4c7_cvv_5",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "field_name": "cvv",
+          "field_type": "text",
+          "test_value": "aaaaa",
+          "expected_result": "error",
+          "description": "Above maximum length (5 chars)",
+          "test_data": {
+            "fullName": "John Doe",
+            "shippingEmail": "tester@example.com",
+            "address": "123 Main Street",
+            "city": "New York",
+            "zipCode": "10001",
+            "cardNumber": "4111111111111111",
+            "expiry": "12/26",
+            "cvv": "aaaaa"
+          },
+          "constraints": {
+            "minlength": 3,
+            "maxlength": 4
+          }
+        }
+      ],
+      "ecp": [
+        {
+          "id": "ecp_email_65096150_loginEmail_valid_standard_0",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3006",
+          "form_id": "65096150",
+          "field_name": "loginEmail",
+          "field_type": "email",
+          "equivalence_class": "valid_standard",
+          "test_value": "user@example.com",
+          "expected_result": "success",
+          "description": "Valid standard email format",
+          "test_data": {
+            "loginPassword": "Test@12345",
+            "loginEmail": "user@example.com"
+          }
+        },
+        {
+          "id": "ecp_email_65096150_loginEmail_valid_standard_1",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3006",
+          "form_id": "65096150",
+          "field_name": "loginEmail",
+          "field_type": "email",
+          "equivalence_class": "valid_standard",
+          "test_value": "test@domain.co.uk",
+          "expected_result": "success",
+          "description": "Valid standard email format",
+          "test_data": {
+            "loginPassword": "Test@12345",
+            "loginEmail": "test@domain.co.uk"
+          }
+        },
+        {
+          "id": "ecp_email_65096150_loginEmail_valid_with_plus_0",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3006",
+          "form_id": "65096150",
+          "field_name": "loginEmail",
+          "field_type": "email",
+          "equivalence_class": "valid_with_plus",
+          "test_value": "user+tag@example.com",
+          "expected_result": "success",
+          "description": "Valid email with plus addressing",
+          "test_data": {
+            "loginPassword": "Test@12345",
+            "loginEmail": "user+tag@example.com"
+          }
+        },
+        {
+          "id": "ecp_email_65096150_loginEmail_valid_with_plus_1",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3006",
+          "form_id": "65096150",
+          "field_name": "loginEmail",
+          "field_type": "email",
+          "equivalence_class": "valid_with_plus",
+          "test_value": "test+filter@domain.com",
+          "expected_result": "success",
+          "description": "Valid email with plus addressing",
+          "test_data": {
+            "loginPassword": "Test@12345",
+            "loginEmail": "test+filter@domain.com"
+          }
+        },
+        {
+          "id": "ecp_email_65096150_loginEmail_valid_with_dots_0",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3006",
+          "form_id": "65096150",
+          "field_name": "loginEmail",
+          "field_type": "email",
+          "equivalence_class": "valid_with_dots",
+          "test_value": "first.last@example.com",
+          "expected_result": "success",
+          "description": "Valid email with dots in local part",
+          "test_data": {
+            "loginPassword": "Test@12345",
+            "loginEmail": "first.last@example.com"
+          }
+        },
+        {
+          "id": "ecp_email_65096150_loginEmail_valid_with_dots_1",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3006",
+          "form_id": "65096150",
+          "field_name": "loginEmail",
+          "field_type": "email",
+          "equivalence_class": "valid_with_dots",
+          "test_value": "user.name@domain.org",
+          "expected_result": "success",
+          "description": "Valid email with dots in local part",
+          "test_data": {
+            "loginPassword": "Test@12345",
+            "loginEmail": "user.name@domain.org"
+          }
+        },
+        {
+          "id": "ecp_email_65096150_loginEmail_valid_subdomain_0",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3006",
+          "form_id": "65096150",
+          "field_name": "loginEmail",
+          "field_type": "email",
+          "equivalence_class": "valid_subdomain",
+          "test_value": "user@mail.example.com",
+          "expected_result": "success",
+          "description": "Valid email with subdomain",
+          "test_data": {
+            "loginPassword": "Test@12345",
+            "loginEmail": "user@mail.example.com"
+          }
+        },
+        {
+          "id": "ecp_email_65096150_loginEmail_valid_subdomain_1",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3006",
+          "form_id": "65096150",
+          "field_name": "loginEmail",
+          "field_type": "email",
+          "equivalence_class": "valid_subdomain",
+          "test_value": "test@subdomain.domain.com",
+          "expected_result": "success",
+          "description": "Valid email with subdomain",
+          "test_data": {
+            "loginPassword": "Test@12345",
+            "loginEmail": "test@subdomain.domain.com"
+          }
+        },
+        {
+          "id": "ecp_email_65096150_loginEmail_invalid_missing_at_0",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3006",
+          "form_id": "65096150",
+          "field_name": "loginEmail",
+          "field_type": "email",
+          "equivalence_class": "invalid_missing_at",
+          "test_value": "userexample.com",
+          "expected_result": "error",
+          "description": "Missing @ symbol",
+          "test_data": {
+            "loginPassword": "Test@12345",
+            "loginEmail": "userexample.com"
+          }
+        },
+        {
+          "id": "ecp_email_65096150_loginEmail_invalid_missing_at_1",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3006",
+          "form_id": "65096150",
+          "field_name": "loginEmail",
+          "field_type": "email",
+          "equivalence_class": "invalid_missing_at",
+          "test_value": "test.domain.com",
+          "expected_result": "error",
+          "description": "Missing @ symbol",
+          "test_data": {
+            "loginPassword": "Test@12345",
+            "loginEmail": "test.domain.com"
+          }
+        },
+        {
+          "id": "ecp_email_65096150_loginEmail_invalid_missing_domain_0",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3006",
+          "form_id": "65096150",
+          "field_name": "loginEmail",
+          "field_type": "email",
+          "equivalence_class": "invalid_missing_domain",
+          "test_value": "user@",
+          "expected_result": "error",
+          "description": "Missing or invalid domain",
+          "test_data": {
+            "loginPassword": "Test@12345",
+            "loginEmail": "user@"
+          }
+        },
+        {
+          "id": "ecp_email_65096150_loginEmail_invalid_missing_domain_1",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3006",
+          "form_id": "65096150",
+          "field_name": "loginEmail",
+          "field_type": "email",
+          "equivalence_class": "invalid_missing_domain",
+          "test_value": "test@.com",
+          "expected_result": "error",
+          "description": "Missing or invalid domain",
+          "test_data": {
+            "loginPassword": "Test@12345",
+            "loginEmail": "test@.com"
+          }
+        },
+        {
+          "id": "ecp_email_65096150_loginEmail_invalid_special_chars_0",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3006",
+          "form_id": "65096150",
+          "field_name": "loginEmail",
+          "field_type": "email",
+          "equivalence_class": "invalid_special_chars",
+          "test_value": "user..name@example.com",
+          "expected_result": "error",
+          "description": "Invalid format: consecutive dots / leading dot (rejected by HTML5)",
+          "test_data": {
+            "loginPassword": "Test@12345",
+            "loginEmail": "user..name@example.com"
+          }
+        },
+        {
+          "id": "ecp_email_65096150_loginEmail_invalid_special_chars_1",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3006",
+          "form_id": "65096150",
+          "field_name": "loginEmail",
+          "field_type": "email",
+          "equivalence_class": "invalid_special_chars",
+          "test_value": ".user@example.com",
+          "expected_result": "error",
+          "description": "Invalid format: consecutive dots / leading dot (rejected by HTML5)",
+          "test_data": {
+            "loginPassword": "Test@12345",
+            "loginEmail": ".user@example.com"
+          }
+        },
+        {
+          "id": "ecp_email_65096150_loginEmail_invalid_empty_0",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3006",
+          "form_id": "65096150",
+          "field_name": "loginEmail",
+          "field_type": "email",
+          "equivalence_class": "invalid_empty",
+          "test_value": "",
+          "expected_result": "error",
+          "description": "Empty or whitespace only",
+          "test_data": {
+            "loginPassword": "Test@12345",
+            "loginEmail": ""
+          }
+        },
+        {
+          "id": "ecp_email_65096150_loginEmail_invalid_empty_1",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3006",
+          "form_id": "65096150",
+          "field_name": "loginEmail",
+          "field_type": "email",
+          "equivalence_class": "invalid_empty",
+          "test_value": "   ",
+          "expected_result": "error",
+          "description": "Empty or whitespace only",
+          "test_data": {
+            "loginPassword": "Test@12345",
+            "loginEmail": "   "
+          }
+        },
+        {
+          "id": "ecp_email_65096150_loginEmail_invalid_spaces_0",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3006",
+          "form_id": "65096150",
+          "field_name": "loginEmail",
+          "field_type": "email",
+          "equivalence_class": "invalid_spaces",
+          "test_value": "user name@example.com",
+          "expected_result": "error",
+          "description": "Contains spaces",
+          "test_data": {
+            "loginPassword": "Test@12345",
+            "loginEmail": "user name@example.com"
+          }
+        },
+        {
+          "id": "ecp_email_65096150_loginEmail_invalid_spaces_1",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3006",
+          "form_id": "65096150",
+          "field_name": "loginEmail",
+          "field_type": "email",
+          "equivalence_class": "invalid_spaces",
+          "test_value": "test @domain.com",
+          "expected_result": "error",
+          "description": "Contains spaces",
+          "test_data": {
+            "loginPassword": "Test@12345",
+            "loginEmail": "test @domain.com"
+          }
+        },
+        {
+          "id": "ecp_text_65096150_loginPassword_valid",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3006",
+          "form_id": "65096150",
+          "form_action": "http://localhost:3006/",
+          "page_title": "ShopEasy - Home",
+          "field_label": "Password",
+          "field_name": "loginPassword",
+          "field_type": "password",
+          "equivalence_class": "valid_text",
+          "test_value": "ValidInput123",
+          "expected_result": "success",
+          "description": "Valid text input for Password",
+          "test_data": {
+            "loginEmail": "tester@example.com",
+            "loginPassword": "ValidInput123"
+          }
+        },
+        {
+          "id": "ecp_text_65096150_loginPassword_empty",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3006",
+          "form_id": "65096150",
+          "form_action": "http://localhost:3006/",
+          "page_title": "ShopEasy - Home",
+          "field_label": "Password",
+          "field_name": "loginPassword",
+          "field_type": "password",
+          "equivalence_class": "empty_required",
+          "test_value": "",
+          "expected_result": "error",
+          "description": "Empty value for required field Password",
+          "test_data": {
+            "loginEmail": "tester@example.com",
+            "loginPassword": ""
+          }
+        },
+        {
+          "id": "ecp_text_65096150_loginPassword_special",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3006",
+          "form_id": "65096150",
+          "form_action": "http://localhost:3006/",
+          "page_title": "ShopEasy - Home",
+          "field_label": "Password",
+          "field_name": "loginPassword",
+          "field_type": "password",
+          "equivalence_class": "special_characters",
+          "test_value": "<script>alert(\"XSS\")</script>",
+          "expected_result": "error",
+          "description": "Special characters/XSS attempt in Password",
+          "test_data": {
+            "loginEmail": "tester@example.com",
+            "loginPassword": "<script>alert(\"XSS\")</script>"
+          }
+        },
+        {
+          "id": "ecp_text_65096150_loginPassword_long",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3006",
+          "form_id": "65096150",
+          "form_action": "http://localhost:3006/",
+          "page_title": "ShopEasy - Home",
+          "field_label": "Password",
+          "field_name": "loginPassword",
+          "field_type": "password",
+          "equivalence_class": "long_text",
+          "test_value": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+          "expected_result": "error",
+          "description": "Very long text input (500 chars) for Password — should exceed server maxlength",
+          "test_data": {
+            "loginEmail": "tester@example.com",
+            "loginPassword": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          }
+        },
+        {
+          "id": "ecp_text_65096150_loginPassword_unicode",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3006",
+          "form_id": "65096150",
+          "form_action": "http://localhost:3006/",
+          "page_title": "ShopEasy - Home",
+          "field_label": "Password",
+          "field_name": "loginPassword",
+          "field_type": "password",
+          "equivalence_class": "unicode",
+          "test_value": "测试数据🎉!测试数据",
+          "expected_result": "success",
+          "description": "Unicode characters in Password",
+          "test_data": {
+            "loginEmail": "tester@example.com",
+            "loginPassword": "测试数据🎉!测试数据"
+          }
+        },
+        {
+          "id": "ecp_text_72f7c4c7_fullName_valid",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "form_action": "http://localhost:3006/checkout",
+          "page_title": "ShopEasy - Checkout",
+          "field_label": "Full Name",
+          "field_name": "fullName",
+          "field_type": "text",
+          "equivalence_class": "valid_text",
+          "test_value": "ValidInput123",
+          "expected_result": "success",
+          "description": "Valid text input for Full Name",
+          "test_data": {
+            "shippingEmail": "tester@example.com",
+            "address": "123 Main Street",
+            "city": "New York",
+            "zipCode": "10001",
+            "cardNumber": "4111111111111111",
+            "expiry": "12/26",
+            "cvv": "123",
+            "fullName": "ValidInput123"
+          }
+        },
+        {
+          "id": "ecp_text_72f7c4c7_fullName_empty",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "form_action": "http://localhost:3006/checkout",
+          "page_title": "ShopEasy - Checkout",
+          "field_label": "Full Name",
+          "field_name": "fullName",
+          "field_type": "text",
+          "equivalence_class": "empty_required",
+          "test_value": "",
+          "expected_result": "error",
+          "description": "Empty value for required field Full Name",
+          "test_data": {
+            "shippingEmail": "tester@example.com",
+            "address": "123 Main Street",
+            "city": "New York",
+            "zipCode": "10001",
+            "cardNumber": "4111111111111111",
+            "expiry": "12/26",
+            "cvv": "123",
+            "fullName": ""
+          }
+        },
+        {
+          "id": "ecp_text_72f7c4c7_fullName_special",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "form_action": "http://localhost:3006/checkout",
+          "page_title": "ShopEasy - Checkout",
+          "field_label": "Full Name",
+          "field_name": "fullName",
+          "field_type": "text",
+          "equivalence_class": "special_characters",
+          "test_value": "<script>alert(\"XSS\")</script>",
+          "expected_result": "error",
+          "description": "Special characters/XSS attempt in Full Name",
+          "test_data": {
+            "shippingEmail": "tester@example.com",
+            "address": "123 Main Street",
+            "city": "New York",
+            "zipCode": "10001",
+            "cardNumber": "4111111111111111",
+            "expiry": "12/26",
+            "cvv": "123",
+            "fullName": "<script>alert(\"XSS\")</script>"
+          }
+        },
+        {
+          "id": "ecp_text_72f7c4c7_fullName_long",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "form_action": "http://localhost:3006/checkout",
+          "page_title": "ShopEasy - Checkout",
+          "field_label": "Full Name",
+          "field_name": "fullName",
+          "field_type": "text",
+          "equivalence_class": "long_text",
+          "test_value": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+          "expected_result": "error",
+          "description": "Very long text input (500 chars) for Full Name — should exceed server maxlength",
+          "test_data": {
+            "shippingEmail": "tester@example.com",
+            "address": "123 Main Street",
+            "city": "New York",
+            "zipCode": "10001",
+            "cardNumber": "4111111111111111",
+            "expiry": "12/26",
+            "cvv": "123",
+            "fullName": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          }
+        },
+        {
+          "id": "ecp_text_72f7c4c7_fullName_unicode",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "form_action": "http://localhost:3006/checkout",
+          "page_title": "ShopEasy - Checkout",
+          "field_label": "Full Name",
+          "field_name": "fullName",
+          "field_type": "text",
+          "equivalence_class": "unicode",
+          "test_value": "测试数据🎉!测试数据",
+          "expected_result": "success",
+          "description": "Unicode characters in Full Name",
+          "test_data": {
+            "shippingEmail": "tester@example.com",
+            "address": "123 Main Street",
+            "city": "New York",
+            "zipCode": "10001",
+            "cardNumber": "4111111111111111",
+            "expiry": "12/26",
+            "cvv": "123",
+            "fullName": "测试数据🎉!测试数据"
+          }
+        },
+        {
+          "id": "ecp_email_72f7c4c7_shippingEmail_valid_standard_0",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "field_name": "shippingEmail",
+          "field_type": "email",
+          "equivalence_class": "valid_standard",
+          "test_value": "user@example.com",
+          "expected_result": "success",
+          "description": "Valid standard email format",
+          "test_data": {
+            "fullName": "John Doe",
+            "address": "123 Main Street",
+            "city": "New York",
+            "zipCode": "10001",
+            "cardNumber": "4111111111111111",
+            "expiry": "12/26",
+            "cvv": "123",
+            "shippingEmail": "user@example.com"
+          }
+        },
+        {
+          "id": "ecp_email_72f7c4c7_shippingEmail_valid_standard_1",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "field_name": "shippingEmail",
+          "field_type": "email",
+          "equivalence_class": "valid_standard",
+          "test_value": "test@domain.co.uk",
+          "expected_result": "success",
+          "description": "Valid standard email format",
+          "test_data": {
+            "fullName": "John Doe",
+            "address": "123 Main Street",
+            "city": "New York",
+            "zipCode": "10001",
+            "cardNumber": "4111111111111111",
+            "expiry": "12/26",
+            "cvv": "123",
+            "shippingEmail": "test@domain.co.uk"
+          }
+        },
+        {
+          "id": "ecp_email_72f7c4c7_shippingEmail_valid_with_plus_0",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "field_name": "shippingEmail",
+          "field_type": "email",
+          "equivalence_class": "valid_with_plus",
+          "test_value": "user+tag@example.com",
+          "expected_result": "success",
+          "description": "Valid email with plus addressing",
+          "test_data": {
+            "fullName": "John Doe",
+            "address": "123 Main Street",
+            "city": "New York",
+            "zipCode": "10001",
+            "cardNumber": "4111111111111111",
+            "expiry": "12/26",
+            "cvv": "123",
+            "shippingEmail": "user+tag@example.com"
+          }
+        },
+        {
+          "id": "ecp_email_72f7c4c7_shippingEmail_valid_with_plus_1",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "field_name": "shippingEmail",
+          "field_type": "email",
+          "equivalence_class": "valid_with_plus",
+          "test_value": "test+filter@domain.com",
+          "expected_result": "success",
+          "description": "Valid email with plus addressing",
+          "test_data": {
+            "fullName": "John Doe",
+            "address": "123 Main Street",
+            "city": "New York",
+            "zipCode": "10001",
+            "cardNumber": "4111111111111111",
+            "expiry": "12/26",
+            "cvv": "123",
+            "shippingEmail": "test+filter@domain.com"
+          }
+        },
+        {
+          "id": "ecp_email_72f7c4c7_shippingEmail_valid_with_dots_0",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "field_name": "shippingEmail",
+          "field_type": "email",
+          "equivalence_class": "valid_with_dots",
+          "test_value": "first.last@example.com",
+          "expected_result": "success",
+          "description": "Valid email with dots in local part",
+          "test_data": {
+            "fullName": "John Doe",
+            "address": "123 Main Street",
+            "city": "New York",
+            "zipCode": "10001",
+            "cardNumber": "4111111111111111",
+            "expiry": "12/26",
+            "cvv": "123",
+            "shippingEmail": "first.last@example.com"
+          }
+        },
+        {
+          "id": "ecp_email_72f7c4c7_shippingEmail_valid_with_dots_1",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "field_name": "shippingEmail",
+          "field_type": "email",
+          "equivalence_class": "valid_with_dots",
+          "test_value": "user.name@domain.org",
+          "expected_result": "success",
+          "description": "Valid email with dots in local part",
+          "test_data": {
+            "fullName": "John Doe",
+            "address": "123 Main Street",
+            "city": "New York",
+            "zipCode": "10001",
+            "cardNumber": "4111111111111111",
+            "expiry": "12/26",
+            "cvv": "123",
+            "shippingEmail": "user.name@domain.org"
+          }
+        },
+        {
+          "id": "ecp_email_72f7c4c7_shippingEmail_valid_subdomain_0",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "field_name": "shippingEmail",
+          "field_type": "email",
+          "equivalence_class": "valid_subdomain",
+          "test_value": "user@mail.example.com",
+          "expected_result": "success",
+          "description": "Valid email with subdomain",
+          "test_data": {
+            "fullName": "John Doe",
+            "address": "123 Main Street",
+            "city": "New York",
+            "zipCode": "10001",
+            "cardNumber": "4111111111111111",
+            "expiry": "12/26",
+            "cvv": "123",
+            "shippingEmail": "user@mail.example.com"
+          }
+        },
+        {
+          "id": "ecp_email_72f7c4c7_shippingEmail_valid_subdomain_1",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "field_name": "shippingEmail",
+          "field_type": "email",
+          "equivalence_class": "valid_subdomain",
+          "test_value": "test@subdomain.domain.com",
+          "expected_result": "success",
+          "description": "Valid email with subdomain",
+          "test_data": {
+            "fullName": "John Doe",
+            "address": "123 Main Street",
+            "city": "New York",
+            "zipCode": "10001",
+            "cardNumber": "4111111111111111",
+            "expiry": "12/26",
+            "cvv": "123",
+            "shippingEmail": "test@subdomain.domain.com"
+          }
+        },
+        {
+          "id": "ecp_email_72f7c4c7_shippingEmail_invalid_missing_at_0",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "field_name": "shippingEmail",
+          "field_type": "email",
+          "equivalence_class": "invalid_missing_at",
+          "test_value": "userexample.com",
+          "expected_result": "error",
+          "description": "Missing @ symbol",
+          "test_data": {
+            "fullName": "John Doe",
+            "address": "123 Main Street",
+            "city": "New York",
+            "zipCode": "10001",
+            "cardNumber": "4111111111111111",
+            "expiry": "12/26",
+            "cvv": "123",
+            "shippingEmail": "userexample.com"
+          }
+        },
+        {
+          "id": "ecp_email_72f7c4c7_shippingEmail_invalid_missing_at_1",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "field_name": "shippingEmail",
+          "field_type": "email",
+          "equivalence_class": "invalid_missing_at",
+          "test_value": "test.domain.com",
+          "expected_result": "error",
+          "description": "Missing @ symbol",
+          "test_data": {
+            "fullName": "John Doe",
+            "address": "123 Main Street",
+            "city": "New York",
+            "zipCode": "10001",
+            "cardNumber": "4111111111111111",
+            "expiry": "12/26",
+            "cvv": "123",
+            "shippingEmail": "test.domain.com"
+          }
+        },
+        {
+          "id": "ecp_email_72f7c4c7_shippingEmail_invalid_missing_domain_0",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "field_name": "shippingEmail",
+          "field_type": "email",
+          "equivalence_class": "invalid_missing_domain",
+          "test_value": "user@",
+          "expected_result": "error",
+          "description": "Missing or invalid domain",
+          "test_data": {
+            "fullName": "John Doe",
+            "address": "123 Main Street",
+            "city": "New York",
+            "zipCode": "10001",
+            "cardNumber": "4111111111111111",
+            "expiry": "12/26",
+            "cvv": "123",
+            "shippingEmail": "user@"
+          }
+        },
+        {
+          "id": "ecp_email_72f7c4c7_shippingEmail_invalid_missing_domain_1",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "field_name": "shippingEmail",
+          "field_type": "email",
+          "equivalence_class": "invalid_missing_domain",
+          "test_value": "test@.com",
+          "expected_result": "error",
+          "description": "Missing or invalid domain",
+          "test_data": {
+            "fullName": "John Doe",
+            "address": "123 Main Street",
+            "city": "New York",
+            "zipCode": "10001",
+            "cardNumber": "4111111111111111",
+            "expiry": "12/26",
+            "cvv": "123",
+            "shippingEmail": "test@.com"
+          }
+        },
+        {
+          "id": "ecp_email_72f7c4c7_shippingEmail_invalid_special_chars_0",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "field_name": "shippingEmail",
+          "field_type": "email",
+          "equivalence_class": "invalid_special_chars",
+          "test_value": "user..name@example.com",
+          "expected_result": "error",
+          "description": "Invalid format: consecutive dots / leading dot (rejected by HTML5)",
+          "test_data": {
+            "fullName": "John Doe",
+            "address": "123 Main Street",
+            "city": "New York",
+            "zipCode": "10001",
+            "cardNumber": "4111111111111111",
+            "expiry": "12/26",
+            "cvv": "123",
+            "shippingEmail": "user..name@example.com"
+          }
+        },
+        {
+          "id": "ecp_email_72f7c4c7_shippingEmail_invalid_special_chars_1",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "field_name": "shippingEmail",
+          "field_type": "email",
+          "equivalence_class": "invalid_special_chars",
+          "test_value": ".user@example.com",
+          "expected_result": "error",
+          "description": "Invalid format: consecutive dots / leading dot (rejected by HTML5)",
+          "test_data": {
+            "fullName": "John Doe",
+            "address": "123 Main Street",
+            "city": "New York",
+            "zipCode": "10001",
+            "cardNumber": "4111111111111111",
+            "expiry": "12/26",
+            "cvv": "123",
+            "shippingEmail": ".user@example.com"
+          }
+        },
+        {
+          "id": "ecp_email_72f7c4c7_shippingEmail_invalid_empty_0",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "field_name": "shippingEmail",
+          "field_type": "email",
+          "equivalence_class": "invalid_empty",
+          "test_value": "",
+          "expected_result": "error",
+          "description": "Empty or whitespace only",
+          "test_data": {
+            "fullName": "John Doe",
+            "address": "123 Main Street",
+            "city": "New York",
+            "zipCode": "10001",
+            "cardNumber": "4111111111111111",
+            "expiry": "12/26",
+            "cvv": "123",
+            "shippingEmail": ""
+          }
+        },
+        {
+          "id": "ecp_email_72f7c4c7_shippingEmail_invalid_empty_1",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "field_name": "shippingEmail",
+          "field_type": "email",
+          "equivalence_class": "invalid_empty",
+          "test_value": "   ",
+          "expected_result": "error",
+          "description": "Empty or whitespace only",
+          "test_data": {
+            "fullName": "John Doe",
+            "address": "123 Main Street",
+            "city": "New York",
+            "zipCode": "10001",
+            "cardNumber": "4111111111111111",
+            "expiry": "12/26",
+            "cvv": "123",
+            "shippingEmail": "   "
+          }
+        },
+        {
+          "id": "ecp_email_72f7c4c7_shippingEmail_invalid_spaces_0",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "field_name": "shippingEmail",
+          "field_type": "email",
+          "equivalence_class": "invalid_spaces",
+          "test_value": "user name@example.com",
+          "expected_result": "error",
+          "description": "Contains spaces",
+          "test_data": {
+            "fullName": "John Doe",
+            "address": "123 Main Street",
+            "city": "New York",
+            "zipCode": "10001",
+            "cardNumber": "4111111111111111",
+            "expiry": "12/26",
+            "cvv": "123",
+            "shippingEmail": "user name@example.com"
+          }
+        },
+        {
+          "id": "ecp_email_72f7c4c7_shippingEmail_invalid_spaces_1",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "field_name": "shippingEmail",
+          "field_type": "email",
+          "equivalence_class": "invalid_spaces",
+          "test_value": "test @domain.com",
+          "expected_result": "error",
+          "description": "Contains spaces",
+          "test_data": {
+            "fullName": "John Doe",
+            "address": "123 Main Street",
+            "city": "New York",
+            "zipCode": "10001",
+            "cardNumber": "4111111111111111",
+            "expiry": "12/26",
+            "cvv": "123",
+            "shippingEmail": "test @domain.com"
+          }
+        },
+        {
+          "id": "ecp_text_72f7c4c7_address_valid",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "form_action": "http://localhost:3006/checkout",
+          "page_title": "ShopEasy - Checkout",
+          "field_label": "Street Address",
+          "field_name": "address",
+          "field_type": "text",
+          "equivalence_class": "valid_text",
+          "test_value": "ValidInput123",
+          "expected_result": "success",
+          "description": "Valid text input for Street Address",
+          "test_data": {
+            "fullName": "John Doe",
+            "shippingEmail": "tester@example.com",
+            "city": "New York",
+            "zipCode": "10001",
+            "cardNumber": "4111111111111111",
+            "expiry": "12/26",
+            "cvv": "123",
+            "address": "ValidInput123"
+          }
+        },
+        {
+          "id": "ecp_text_72f7c4c7_address_empty",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "form_action": "http://localhost:3006/checkout",
+          "page_title": "ShopEasy - Checkout",
+          "field_label": "Street Address",
+          "field_name": "address",
+          "field_type": "text",
+          "equivalence_class": "empty_required",
+          "test_value": "",
+          "expected_result": "error",
+          "description": "Empty value for required field Street Address",
+          "test_data": {
+            "fullName": "John Doe",
+            "shippingEmail": "tester@example.com",
+            "city": "New York",
+            "zipCode": "10001",
+            "cardNumber": "4111111111111111",
+            "expiry": "12/26",
+            "cvv": "123",
+            "address": ""
+          }
+        },
+        {
+          "id": "ecp_text_72f7c4c7_address_special",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "form_action": "http://localhost:3006/checkout",
+          "page_title": "ShopEasy - Checkout",
+          "field_label": "Street Address",
+          "field_name": "address",
+          "field_type": "text",
+          "equivalence_class": "special_characters",
+          "test_value": "<script>alert(\"XSS\")</script>",
+          "expected_result": "error",
+          "description": "Special characters/XSS attempt in Street Address",
+          "test_data": {
+            "fullName": "John Doe",
+            "shippingEmail": "tester@example.com",
+            "city": "New York",
+            "zipCode": "10001",
+            "cardNumber": "4111111111111111",
+            "expiry": "12/26",
+            "cvv": "123",
+            "address": "<script>alert(\"XSS\")</script>"
+          }
+        },
+        {
+          "id": "ecp_text_72f7c4c7_address_long",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "form_action": "http://localhost:3006/checkout",
+          "page_title": "ShopEasy - Checkout",
+          "field_label": "Street Address",
+          "field_name": "address",
+          "field_type": "text",
+          "equivalence_class": "long_text",
+          "test_value": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+          "expected_result": "error",
+          "description": "Very long text input (500 chars) for Street Address — should exceed server maxlength",
+          "test_data": {
+            "fullName": "John Doe",
+            "shippingEmail": "tester@example.com",
+            "city": "New York",
+            "zipCode": "10001",
+            "cardNumber": "4111111111111111",
+            "expiry": "12/26",
+            "cvv": "123",
+            "address": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          }
+        },
+        {
+          "id": "ecp_text_72f7c4c7_address_unicode",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "form_action": "http://localhost:3006/checkout",
+          "page_title": "ShopEasy - Checkout",
+          "field_label": "Street Address",
+          "field_name": "address",
+          "field_type": "text",
+          "equivalence_class": "unicode",
+          "test_value": "测试数据🎉!测试数据",
+          "expected_result": "success",
+          "description": "Unicode characters in Street Address",
+          "test_data": {
+            "fullName": "John Doe",
+            "shippingEmail": "tester@example.com",
+            "city": "New York",
+            "zipCode": "10001",
+            "cardNumber": "4111111111111111",
+            "expiry": "12/26",
+            "cvv": "123",
+            "address": "测试数据🎉!测试数据"
+          }
+        },
+        {
+          "id": "ecp_text_72f7c4c7_city_valid",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "form_action": "http://localhost:3006/checkout",
+          "page_title": "ShopEasy - Checkout",
+          "field_label": "City",
+          "field_name": "city",
+          "field_type": "text",
+          "equivalence_class": "valid_text",
+          "test_value": "ValidInput123",
+          "expected_result": "success",
+          "description": "Valid text input for City",
+          "test_data": {
+            "fullName": "John Doe",
+            "shippingEmail": "tester@example.com",
+            "address": "123 Main Street",
+            "zipCode": "10001",
+            "cardNumber": "4111111111111111",
+            "expiry": "12/26",
+            "cvv": "123",
+            "city": "ValidInput123"
+          }
+        },
+        {
+          "id": "ecp_text_72f7c4c7_city_empty",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "form_action": "http://localhost:3006/checkout",
+          "page_title": "ShopEasy - Checkout",
+          "field_label": "City",
+          "field_name": "city",
+          "field_type": "text",
+          "equivalence_class": "empty_required",
+          "test_value": "",
+          "expected_result": "error",
+          "description": "Empty value for required field City",
+          "test_data": {
+            "fullName": "John Doe",
+            "shippingEmail": "tester@example.com",
+            "address": "123 Main Street",
+            "zipCode": "10001",
+            "cardNumber": "4111111111111111",
+            "expiry": "12/26",
+            "cvv": "123",
+            "city": ""
+          }
+        },
+        {
+          "id": "ecp_text_72f7c4c7_city_special",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "form_action": "http://localhost:3006/checkout",
+          "page_title": "ShopEasy - Checkout",
+          "field_label": "City",
+          "field_name": "city",
+          "field_type": "text",
+          "equivalence_class": "special_characters",
+          "test_value": "<script>alert(\"XSS\")</script>",
+          "expected_result": "error",
+          "description": "Special characters/XSS attempt in City",
+          "test_data": {
+            "fullName": "John Doe",
+            "shippingEmail": "tester@example.com",
+            "address": "123 Main Street",
+            "zipCode": "10001",
+            "cardNumber": "4111111111111111",
+            "expiry": "12/26",
+            "cvv": "123",
+            "city": "<script>alert(\"XSS\")</script>"
+          }
+        },
+        {
+          "id": "ecp_text_72f7c4c7_city_long",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "form_action": "http://localhost:3006/checkout",
+          "page_title": "ShopEasy - Checkout",
+          "field_label": "City",
+          "field_name": "city",
+          "field_type": "text",
+          "equivalence_class": "long_text",
+          "test_value": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+          "expected_result": "error",
+          "description": "Very long text input (500 chars) for City — should exceed server maxlength",
+          "test_data": {
+            "fullName": "John Doe",
+            "shippingEmail": "tester@example.com",
+            "address": "123 Main Street",
+            "zipCode": "10001",
+            "cardNumber": "4111111111111111",
+            "expiry": "12/26",
+            "cvv": "123",
+            "city": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          }
+        },
+        {
+          "id": "ecp_text_72f7c4c7_city_unicode",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "form_action": "http://localhost:3006/checkout",
+          "page_title": "ShopEasy - Checkout",
+          "field_label": "City",
+          "field_name": "city",
+          "field_type": "text",
+          "equivalence_class": "unicode",
+          "test_value": "测试数据🎉!测试数据",
+          "expected_result": "success",
+          "description": "Unicode characters in City",
+          "test_data": {
+            "fullName": "John Doe",
+            "shippingEmail": "tester@example.com",
+            "address": "123 Main Street",
+            "zipCode": "10001",
+            "cardNumber": "4111111111111111",
+            "expiry": "12/26",
+            "cvv": "123",
+            "city": "测试数据🎉!测试数据"
+          }
+        },
+        {
+          "id": "ecp_text_72f7c4c7_zipCode_valid",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "form_action": "http://localhost:3006/checkout",
+          "page_title": "ShopEasy - Checkout",
+          "field_label": "ZIP Code",
+          "field_name": "zipCode",
+          "field_type": "text",
+          "equivalence_class": "valid_text",
+          "test_value": "ValidInput123",
+          "expected_result": "success",
+          "description": "Valid text input for ZIP Code",
+          "test_data": {
+            "fullName": "John Doe",
+            "shippingEmail": "tester@example.com",
+            "address": "123 Main Street",
+            "city": "New York",
+            "cardNumber": "4111111111111111",
+            "expiry": "12/26",
+            "cvv": "123",
+            "zipCode": "ValidInput123"
+          }
+        },
+        {
+          "id": "ecp_text_72f7c4c7_zipCode_empty",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "form_action": "http://localhost:3006/checkout",
+          "page_title": "ShopEasy - Checkout",
+          "field_label": "ZIP Code",
+          "field_name": "zipCode",
+          "field_type": "text",
+          "equivalence_class": "empty_required",
+          "test_value": "",
+          "expected_result": "error",
+          "description": "Empty value for required field ZIP Code",
+          "test_data": {
+            "fullName": "John Doe",
+            "shippingEmail": "tester@example.com",
+            "address": "123 Main Street",
+            "city": "New York",
+            "cardNumber": "4111111111111111",
+            "expiry": "12/26",
+            "cvv": "123",
+            "zipCode": ""
+          }
+        },
+        {
+          "id": "ecp_text_72f7c4c7_zipCode_special",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "form_action": "http://localhost:3006/checkout",
+          "page_title": "ShopEasy - Checkout",
+          "field_label": "ZIP Code",
+          "field_name": "zipCode",
+          "field_type": "text",
+          "equivalence_class": "special_characters",
+          "test_value": "<script>alert(\"XSS\")</script>",
+          "expected_result": "error",
+          "description": "Special characters/XSS attempt in ZIP Code",
+          "test_data": {
+            "fullName": "John Doe",
+            "shippingEmail": "tester@example.com",
+            "address": "123 Main Street",
+            "city": "New York",
+            "cardNumber": "4111111111111111",
+            "expiry": "12/26",
+            "cvv": "123",
+            "zipCode": "<script>alert(\"XSS\")</script>"
+          }
+        },
+        {
+          "id": "ecp_text_72f7c4c7_zipCode_long",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "form_action": "http://localhost:3006/checkout",
+          "page_title": "ShopEasy - Checkout",
+          "field_label": "ZIP Code",
+          "field_name": "zipCode",
+          "field_type": "text",
+          "equivalence_class": "long_text",
+          "test_value": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+          "expected_result": "error",
+          "description": "Very long text input (500 chars) for ZIP Code — should exceed server maxlength",
+          "test_data": {
+            "fullName": "John Doe",
+            "shippingEmail": "tester@example.com",
+            "address": "123 Main Street",
+            "city": "New York",
+            "cardNumber": "4111111111111111",
+            "expiry": "12/26",
+            "cvv": "123",
+            "zipCode": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          }
+        },
+        {
+          "id": "ecp_text_72f7c4c7_zipCode_unicode",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "form_action": "http://localhost:3006/checkout",
+          "page_title": "ShopEasy - Checkout",
+          "field_label": "ZIP Code",
+          "field_name": "zipCode",
+          "field_type": "text",
+          "equivalence_class": "unicode",
+          "test_value": "测试数据🎉!测试数据",
+          "expected_result": "success",
+          "description": "Unicode characters in ZIP Code",
+          "test_data": {
+            "fullName": "John Doe",
+            "shippingEmail": "tester@example.com",
+            "address": "123 Main Street",
+            "city": "New York",
+            "cardNumber": "4111111111111111",
+            "expiry": "12/26",
+            "cvv": "123",
+            "zipCode": "测试数据🎉!测试数据"
+          }
+        },
+        {
+          "id": "ecp_text_72f7c4c7_cardNumber_valid",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "form_action": "http://localhost:3006/checkout",
+          "page_title": "ShopEasy - Checkout",
+          "field_label": "Card Number",
+          "field_name": "cardNumber",
+          "field_type": "text",
+          "equivalence_class": "valid_text",
+          "test_value": "ValidInput123",
+          "expected_result": "error",
+          "description": "Valid text input for Card Number",
+          "test_data": {
+            "fullName": "John Doe",
+            "shippingEmail": "tester@example.com",
+            "address": "123 Main Street",
+            "city": "New York",
+            "zipCode": "10001",
+            "expiry": "12/26",
+            "cvv": "123",
+            "cardNumber": "ValidInput123"
+          },
+          "_fix_note": "Auto-fixed: cardNumber='ValidInput123' cannot pass format validation"
+        },
+        {
+          "id": "ecp_text_72f7c4c7_cardNumber_empty",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "form_action": "http://localhost:3006/checkout",
+          "page_title": "ShopEasy - Checkout",
+          "field_label": "Card Number",
+          "field_name": "cardNumber",
+          "field_type": "text",
+          "equivalence_class": "empty_required",
+          "test_value": "",
+          "expected_result": "error",
+          "description": "Empty value for required field Card Number",
+          "test_data": {
+            "fullName": "John Doe",
+            "shippingEmail": "tester@example.com",
+            "address": "123 Main Street",
+            "city": "New York",
+            "zipCode": "10001",
+            "expiry": "12/26",
+            "cvv": "123",
+            "cardNumber": ""
+          }
+        },
+        {
+          "id": "ecp_text_72f7c4c7_cardNumber_special",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "form_action": "http://localhost:3006/checkout",
+          "page_title": "ShopEasy - Checkout",
+          "field_label": "Card Number",
+          "field_name": "cardNumber",
+          "field_type": "text",
+          "equivalence_class": "special_characters",
+          "test_value": "<script>alert(\"XSS\")</script>",
+          "expected_result": "error",
+          "description": "Special characters/XSS attempt in Card Number",
+          "test_data": {
+            "fullName": "John Doe",
+            "shippingEmail": "tester@example.com",
+            "address": "123 Main Street",
+            "city": "New York",
+            "zipCode": "10001",
+            "expiry": "12/26",
+            "cvv": "123",
+            "cardNumber": "<script>alert(\"XSS\")</script>"
+          }
+        },
+        {
+          "id": "ecp_text_72f7c4c7_cardNumber_long",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "form_action": "http://localhost:3006/checkout",
+          "page_title": "ShopEasy - Checkout",
+          "field_label": "Card Number",
+          "field_name": "cardNumber",
+          "field_type": "text",
+          "equivalence_class": "long_text",
+          "test_value": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+          "expected_result": "error",
+          "description": "Very long text input (500 chars) for Card Number — should exceed server maxlength",
+          "test_data": {
+            "fullName": "John Doe",
+            "shippingEmail": "tester@example.com",
+            "address": "123 Main Street",
+            "city": "New York",
+            "zipCode": "10001",
+            "expiry": "12/26",
+            "cvv": "123",
+            "cardNumber": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          }
+        },
+        {
+          "id": "ecp_text_72f7c4c7_cardNumber_unicode",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "form_action": "http://localhost:3006/checkout",
+          "page_title": "ShopEasy - Checkout",
+          "field_label": "Card Number",
+          "field_name": "cardNumber",
+          "field_type": "text",
+          "equivalence_class": "unicode",
+          "test_value": "测试数据🎉!测试数据",
+          "expected_result": "error",
+          "description": "Unicode characters in Card Number",
+          "test_data": {
+            "fullName": "John Doe",
+            "shippingEmail": "tester@example.com",
+            "address": "123 Main Street",
+            "city": "New York",
+            "zipCode": "10001",
+            "expiry": "12/26",
+            "cvv": "123",
+            "cardNumber": "测试数据🎉!测试数据"
+          },
+          "_fix_note": "Auto-fixed: cardNumber='测试数据🎉!测试数据' cannot pass format validation"
+        },
+        {
+          "id": "ecp_text_72f7c4c7_expiry_valid",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "form_action": "http://localhost:3006/checkout",
+          "page_title": "ShopEasy - Checkout",
+          "field_label": "Expiry (MM/YY)",
+          "field_name": "expiry",
+          "field_type": "text",
+          "equivalence_class": "valid_text",
+          "test_value": "ValidInput123",
+          "expected_result": "error",
+          "description": "Valid text input for Expiry (MM/YY)",
+          "test_data": {
+            "fullName": "John Doe",
+            "shippingEmail": "tester@example.com",
+            "address": "123 Main Street",
+            "city": "New York",
+            "zipCode": "10001",
+            "cardNumber": "4111111111111111",
+            "cvv": "123",
+            "expiry": "ValidInput123"
+          },
+          "_fix_note": "Auto-fixed: expiry='ValidInput123' cannot pass format validation"
+        },
+        {
+          "id": "ecp_text_72f7c4c7_expiry_empty",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "form_action": "http://localhost:3006/checkout",
+          "page_title": "ShopEasy - Checkout",
+          "field_label": "Expiry (MM/YY)",
+          "field_name": "expiry",
+          "field_type": "text",
+          "equivalence_class": "empty_required",
+          "test_value": "",
+          "expected_result": "error",
+          "description": "Empty value for required field Expiry (MM/YY)",
+          "test_data": {
+            "fullName": "John Doe",
+            "shippingEmail": "tester@example.com",
+            "address": "123 Main Street",
+            "city": "New York",
+            "zipCode": "10001",
+            "cardNumber": "4111111111111111",
+            "cvv": "123",
+            "expiry": ""
+          }
+        },
+        {
+          "id": "ecp_text_72f7c4c7_expiry_special",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "form_action": "http://localhost:3006/checkout",
+          "page_title": "ShopEasy - Checkout",
+          "field_label": "Expiry (MM/YY)",
+          "field_name": "expiry",
+          "field_type": "text",
+          "equivalence_class": "special_characters",
+          "test_value": "<script>alert(\"XSS\")</script>",
+          "expected_result": "error",
+          "description": "Special characters/XSS attempt in Expiry (MM/YY)",
+          "test_data": {
+            "fullName": "John Doe",
+            "shippingEmail": "tester@example.com",
+            "address": "123 Main Street",
+            "city": "New York",
+            "zipCode": "10001",
+            "cardNumber": "4111111111111111",
+            "cvv": "123",
+            "expiry": "<script>alert(\"XSS\")</script>"
+          }
+        },
+        {
+          "id": "ecp_text_72f7c4c7_expiry_long",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "form_action": "http://localhost:3006/checkout",
+          "page_title": "ShopEasy - Checkout",
+          "field_label": "Expiry (MM/YY)",
+          "field_name": "expiry",
+          "field_type": "text",
+          "equivalence_class": "long_text",
+          "test_value": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+          "expected_result": "error",
+          "description": "Very long text input (500 chars) for Expiry (MM/YY) — should exceed server maxlength",
+          "test_data": {
+            "fullName": "John Doe",
+            "shippingEmail": "tester@example.com",
+            "address": "123 Main Street",
+            "city": "New York",
+            "zipCode": "10001",
+            "cardNumber": "4111111111111111",
+            "cvv": "123",
+            "expiry": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          }
+        },
+        {
+          "id": "ecp_text_72f7c4c7_expiry_unicode",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "form_action": "http://localhost:3006/checkout",
+          "page_title": "ShopEasy - Checkout",
+          "field_label": "Expiry (MM/YY)",
+          "field_name": "expiry",
+          "field_type": "text",
+          "equivalence_class": "unicode",
+          "test_value": "测试数据🎉!测试数据",
+          "expected_result": "error",
+          "description": "Unicode characters in Expiry (MM/YY)",
+          "test_data": {
+            "fullName": "John Doe",
+            "shippingEmail": "tester@example.com",
+            "address": "123 Main Street",
+            "city": "New York",
+            "zipCode": "10001",
+            "cardNumber": "4111111111111111",
+            "cvv": "123",
+            "expiry": "测试数据🎉!测试数据"
+          },
+          "_fix_note": "Auto-fixed: expiry='测试数据🎉!测试数据' cannot pass format validation"
+        },
+        {
+          "id": "ecp_text_72f7c4c7_cvv_valid",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "form_action": "http://localhost:3006/checkout",
+          "page_title": "ShopEasy - Checkout",
+          "field_label": "CVV",
+          "field_name": "cvv",
+          "field_type": "text",
+          "equivalence_class": "valid_text",
+          "test_value": "ValidInput123",
+          "expected_result": "error",
+          "description": "Valid text input for CVV",
+          "test_data": {
+            "fullName": "John Doe",
+            "shippingEmail": "tester@example.com",
+            "address": "123 Main Street",
+            "city": "New York",
+            "zipCode": "10001",
+            "cardNumber": "4111111111111111",
+            "expiry": "12/26",
+            "cvv": "ValidInput123"
+          },
+          "_fix_note": "Auto-fixed: cvv='ValidInput123' cannot pass format validation"
+        },
+        {
+          "id": "ecp_text_72f7c4c7_cvv_empty",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "form_action": "http://localhost:3006/checkout",
+          "page_title": "ShopEasy - Checkout",
+          "field_label": "CVV",
+          "field_name": "cvv",
+          "field_type": "text",
+          "equivalence_class": "empty_required",
+          "test_value": "",
+          "expected_result": "error",
+          "description": "Empty value for required field CVV",
+          "test_data": {
+            "fullName": "John Doe",
+            "shippingEmail": "tester@example.com",
+            "address": "123 Main Street",
+            "city": "New York",
+            "zipCode": "10001",
+            "cardNumber": "4111111111111111",
+            "expiry": "12/26",
+            "cvv": ""
+          }
+        },
+        {
+          "id": "ecp_text_72f7c4c7_cvv_special",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "form_action": "http://localhost:3006/checkout",
+          "page_title": "ShopEasy - Checkout",
+          "field_label": "CVV",
+          "field_name": "cvv",
+          "field_type": "text",
+          "equivalence_class": "special_characters",
+          "test_value": "<script>alert(\"XSS\")</script>",
+          "expected_result": "error",
+          "description": "Special characters/XSS attempt in CVV",
+          "test_data": {
+            "fullName": "John Doe",
+            "shippingEmail": "tester@example.com",
+            "address": "123 Main Street",
+            "city": "New York",
+            "zipCode": "10001",
+            "cardNumber": "4111111111111111",
+            "expiry": "12/26",
+            "cvv": "<script>alert(\"XSS\")</script>"
+          }
+        },
+        {
+          "id": "ecp_text_72f7c4c7_cvv_long",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "form_action": "http://localhost:3006/checkout",
+          "page_title": "ShopEasy - Checkout",
+          "field_label": "CVV",
+          "field_name": "cvv",
+          "field_type": "text",
+          "equivalence_class": "long_text",
+          "test_value": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+          "expected_result": "error",
+          "description": "Very long text input (500 chars) for CVV — should exceed server maxlength",
+          "test_data": {
+            "fullName": "John Doe",
+            "shippingEmail": "tester@example.com",
+            "address": "123 Main Street",
+            "city": "New York",
+            "zipCode": "10001",
+            "cardNumber": "4111111111111111",
+            "expiry": "12/26",
+            "cvv": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          }
+        },
+        {
+          "id": "ecp_text_72f7c4c7_cvv_unicode",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3006/checkout",
+          "form_id": "72f7c4c7",
+          "form_action": "http://localhost:3006/checkout",
+          "page_title": "ShopEasy - Checkout",
+          "field_label": "CVV",
+          "field_name": "cvv",
+          "field_type": "text",
+          "equivalence_class": "unicode",
+          "test_value": "测试数据🎉!测试数据",
+          "expected_result": "error",
+          "description": "Unicode characters in CVV",
+          "test_data": {
+            "fullName": "John Doe",
+            "shippingEmail": "tester@example.com",
+            "address": "123 Main Street",
+            "city": "New York",
+            "zipCode": "10001",
+            "cardNumber": "4111111111111111",
+            "expiry": "12/26",
+            "cvv": "测试数据🎉!测试数据"
+          },
+          "_fix_note": "Auto-fixed: cvv='测试数据🎉!测试数据' cannot pass format validation"
+        }
+      ],
+      "decision_table": [],
+      "state_transition": [
+        {
+          "id": "state_branch_0_0",
+          "type": "State Transition",
+          "subtype": "branching_flow",
+          "decision_point": "51236ca7",
+          "branch_taken": "3df7fc06",
+          "total_branches": 3,
+          "steps": [
+            {
+              "step": 1,
+              "action": "navigate",
+              "from_url": "start",
+              "to_url": "51236ca7",
+              "description": "Navigate to decision point: Localhost:3006 (ShopEasy - Home)"
+            },
+            {
+              "step": 2,
+              "action": "click",
+              "from_url": "51236ca7",
+              "to_url": "3df7fc06",
+              "description": "Take branch 1/3: Products (ShopEasy - Products)"
+            }
+          ],
+          "expected_result": "success",
+          "description": "Branch 1 from Localhost:3006 (ShopEasy - Home): → Products (ShopEasy - Products)",
+          "flow_description": "Localhost:3006 (ShopEasy - Home) → Products (ShopEasy - Products) (Branch 1/3)"
+        },
+        {
+          "id": "state_branch_0_1",
+          "type": "State Transition",
+          "subtype": "branching_flow",
+          "decision_point": "51236ca7",
+          "branch_taken": "3c2ddc26",
+          "total_branches": 3,
+          "steps": [
+            {
+              "step": 1,
+              "action": "navigate",
+              "from_url": "start",
+              "to_url": "51236ca7",
+              "description": "Navigate to decision point: Localhost:3006 (ShopEasy - Home)"
+            },
+            {
+              "step": 2,
+              "action": "click",
+              "from_url": "51236ca7",
+              "to_url": "3c2ddc26",
+              "description": "Take branch 2/3: Checkout (ShopEasy - Checkout)"
+            }
+          ],
+          "expected_result": "success",
+          "description": "Branch 2 from Localhost:3006 (ShopEasy - Home): → Checkout (ShopEasy - Checkout)",
+          "flow_description": "Localhost:3006 (ShopEasy - Home) → Checkout (ShopEasy - Checkout) (Branch 2/3)"
+        },
+        {
+          "id": "state_branch_0_2",
+          "type": "State Transition",
+          "subtype": "branching_flow",
+          "decision_point": "51236ca7",
+          "branch_taken": "3fdaa8e9",
+          "total_branches": 3,
+          "steps": [
+            {
+              "step": 1,
+              "action": "navigate",
+              "from_url": "start",
+              "to_url": "51236ca7",
+              "description": "Navigate to decision point: Localhost:3006 (ShopEasy - Home)"
+            },
+            {
+              "step": 2,
+              "action": "click",
+              "from_url": "51236ca7",
+              "to_url": "3fdaa8e9",
+              "description": "Take branch 3/3: Cart (ShopEasy - Cart)"
+            }
+          ],
+          "expected_result": "success",
+          "description": "Branch 3 from Localhost:3006 (ShopEasy - Home): → Cart (ShopEasy - Cart)",
+          "flow_description": "Localhost:3006 (ShopEasy - Home) → Cart (ShopEasy - Cart) (Branch 3/3)"
+        }
+      ],
+      "use_case": [
+        {
+          "id": "usecase_ecommerce_complete_purchase",
+          "type": "Use Case",
+          "subtype": "e-commerce",
+          "scenario_name": "Complete Purchase Flow",
+          "steps": [
+            {
+              "step": 1,
+              "action": "navigate",
+              "target": "http://localhost:3006/products",
+              "description": "Navigate to product page",
+              "verification": "Product page loaded successfully"
+            },
+            {
+              "step": 2,
+              "action": "click",
+              "target": ".add-to-cart, .add-to-bag, [data-action=\"add-to-cart\"]",
+              "description": "Click Add to Cart button",
+              "verification": "Product added to cart"
+            },
+            {
+              "step": 3,
+              "action": "navigate",
+              "target": "http://localhost:3006/cart",
+              "description": "Navigate to cart page",
+              "verification": "Cart shows 1 item"
+            },
+            {
+              "step": 4,
+              "action": "click",
+              "target": ".checkout-button, .proceed-to-checkout, [data-action=\"checkout\"]",
+              "description": "Proceed to checkout",
+              "verification": "Checkout page loaded"
+            },
+            {
+              "step": 5,
+              "action": "fill_form",
+              "target": "checkout_form",
+              "description": "Fill checkout form with shipping details",
+              "verification": "Form validation passed"
+            },
+            {
+              "step": 6,
+              "action": "submit",
+              "target": "checkout_form",
+              "description": "Submit order",
+              "verification": "Order confirmation page displayed"
+            }
+          ],
+          "expected_result": "success",
+          "description": "End-to-end purchase: Browse product → Add to cart → Checkout → Complete order",
+          "preconditions": [
+            "User not logged in",
+            "Empty cart"
+          ],
+          "postconditions": [
+            "Order placed",
+            "Cart empty"
+          ]
+        },
+        {
+          "id": "usecase_ecommerce_multiple_products",
+          "type": "Use Case",
+          "subtype": "e-commerce",
+          "scenario_name": "Add Multiple Products to Cart",
+          "steps": [
+            {
+              "step": 1,
+              "action": "navigate",
+              "target": "http://localhost:3006/products",
+              "description": "Navigate to first product",
+              "verification": "Product page loaded"
+            },
+            {
+              "step": 2,
+              "action": "click",
+              "target": ".add-to-cart",
+              "description": "Add first product to cart",
+              "verification": "Cart count = 1"
+            },
+            {
+              "step": 3,
+              "action": "navigate",
+              "target": "http://localhost:3006/products",
+              "description": "Navigate to second product",
+              "verification": "Different product page loaded"
+            },
+            {
+              "step": 4,
+              "action": "click",
+              "target": ".add-to-cart",
+              "description": "Add second product to cart",
+              "verification": "Cart count = 2"
+            },
+            {
+              "step": 5,
+              "action": "navigate",
+              "target": "http://localhost:3006/cart",
+              "description": "View cart",
+              "verification": "Cart shows 2 items"
+            }
+          ],
+          "expected_result": "success",
+          "description": "Add multiple products: Add product 1 → Add product 2 → View cart",
+          "preconditions": [
+            "Empty cart"
+          ],
+          "postconditions": [
+            "Cart contains 2 items"
+          ]
+        },
+        {
+          "id": "usecase_ecommerce_remove_from_cart",
+          "type": "Use Case",
+          "subtype": "e-commerce",
+          "scenario_name": "Remove Item from Cart",
+          "steps": [
+            {
+              "step": 1,
+              "action": "navigate",
+              "target": "http://localhost:3006/cart",
+              "description": "Navigate to cart page",
+              "verification": "Cart page loaded with items"
+            },
+            {
+              "step": 2,
+              "action": "click",
+              "target": ".remove-item, .delete-item, [data-action=\"remove\"]",
+              "description": "Click remove item button",
+              "verification": "Item removed from cart"
+            },
+            {
+              "step": 3,
+              "action": "verify",
+              "description": "Verify cart updated",
+              "verification": "Cart count decreased by 1"
+            }
+          ],
+          "expected_result": "success",
+          "description": "Remove item from cart: View cart → Remove item → Verify removal",
+          "preconditions": [
+            "Cart has at least 1 item"
+          ],
+          "postconditions": [
+            "Item removed from cart"
+          ]
+        },
+        {
+          "id": "usecase_auth_login",
+          "type": "Use Case",
+          "subtype": "authentication",
+          "scenario_name": "User Login Flow",
+          "form_url": "http://localhost:3006",
+          "test_data": {
+            "loginEmail": "test@example.com",
+            "loginPassword": "TestPass1!"
+          },
+          "steps": [
+            {
+              "step": 1,
+              "action": "navigate",
+              "target": null,
+              "description": "Navigate to login page",
+              "verification": "Login form displayed"
+            },
+            {
+              "step": 2,
+              "action": "fill",
+              "target": "email",
+              "value": "test@example.com",
+              "description": "Enter email address",
+              "verification": "Email field populated"
+            },
+            {
+              "step": 3,
+              "action": "fill",
+              "target": "password",
+              "value": "Test123!@#",
+              "description": "Enter password",
+              "verification": "Password field populated"
+            },
+            {
+              "step": 4,
+              "action": "submit",
+              "target": "login_form",
+              "description": "Submit login form",
+              "verification": "Successfully logged in, redirected to dashboard/profile"
+            }
+          ],
+          "expected_result": "success",
+          "description": "User login: Navigate to login → Enter credentials → Submit → Verify logged in",
+          "preconditions": [
+            "User not logged in",
+            "Valid credentials exist"
+          ],
+          "postconditions": [
+            "User logged in",
+            "Session created"
+          ]
+        },
+        {
+          "id": "usecase_auth_register",
+          "type": "Use Case",
+          "subtype": "authentication",
+          "scenario_name": "New User Registration",
+          "form_url": "http://localhost:3006",
+          "test_data": {
+            "loginEmail": "test@example.com",
+            "loginPassword": "TestPass1!"
+          },
+          "steps": [
+            {
+              "step": 1,
+              "action": "navigate",
+              "target": null,
+              "description": "Navigate to registration page",
+              "verification": "Registration form displayed"
+            },
+            {
+              "step": 2,
+              "action": "fill_form",
+              "target": "registration_form",
+              "description": "Fill registration form",
+              "verification": "All fields populated"
+            },
+            {
+              "step": 3,
+              "action": "submit",
+              "target": "registration_form",
+              "description": "Submit registration",
+              "verification": "Account created, confirmation message shown"
+            }
+          ],
+          "expected_result": "success",
+          "description": "User registration: Navigate → Fill form → Submit → Verify account created",
+          "preconditions": [
+            "User not registered"
+          ],
+          "postconditions": [
+            "New account created",
+            "User logged in or verification email sent"
+          ]
+        }
+      ]
+    },
+    "summary": {
+      "total_test_cases": 144,
+      "bva_count": 60,
+      "ecp_count": 76,
+      "decision_table_count": 0,
+      "state_transition_count": 3,
+      "use_case_count": 5
+    }
+  },
+  "counts": {
+    "bva": 60,
+    "ecp": 76,
+    "decision_table": 0,
+    "state_transition": 3,
+    "use_case": 5
+  },
+  "total": 144
+}

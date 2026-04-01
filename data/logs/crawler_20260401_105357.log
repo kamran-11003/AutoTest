@@ -1,0 +1,52 @@
+2026-04-01 10:54:11 | crawler.ai_site_analyzer | INFO | 🧠 AI Site Analyzer initialized (pattern detection + URL normalization)
+2026-04-01 10:54:11 | crawler.orchestrator | INFO | 🧠 AI Site Analyzer enabled (smart URL normalization)
+2026-04-01 10:54:11 | crawler.orchestrator | INFO | 🤖 Gemini detector initialized for form/navigation detection
+2026-04-01 10:54:11 | crawler.orchestrator | INFO | 🤖 AI-enhanced form detection enabled in DOMAnalyzer
+2026-04-01 10:54:11 | crawler.graph_builder | INFO | GraphBuilder initialized
+2026-04-01 10:54:11 | crawler.orchestrator | INFO | 🧙 Form wizard detector initialized
+2026-04-01 10:54:11 | crawler.orchestrator | INFO | 🚫 Modal handler initialized
+2026-04-01 10:54:11 | crawler.orchestrator | INFO | 📎 File upload detector initialized
+2026-04-01 10:54:11 | crawler.orchestrator | INFO | 🌑 Shadow DOM detector initialized
+2026-04-01 10:54:11 | crawler.orchestrator | INFO | ⏱️  Rate limiter initialized
+2026-04-01 10:54:11 | crawler.orchestrator | INFO | 🚀 CrawlerOrchestrator initialized
+2026-04-01 10:54:11 | crawler.orchestrator | INFO | 🎯 Starting crawl: http://localhost:3006
+2026-04-01 10:54:11 | crawler.orchestrator | INFO | 📊 Config: max_depth=3, max_pages=10
+2026-04-01 10:54:19 | crawler.orchestrator | INFO | 🚫 Checking for initial popups/modals...
+2026-04-01 10:54:21 | crawler.orchestrator | INFO | 🧠 Performing ONE-TIME site structure analysis...
+2026-04-01 10:54:21 | crawler.orchestrator | INFO | 📡 Collecting sample URLs for pattern detection...
+2026-04-01 10:54:37 | crawler.ai_site_analyzer | INFO | 🔍 Analyzing site structure for localhost:3006 (ONE-TIME analysis)
+2026-04-01 10:54:39 | crawler.ai_site_analyzer | INFO | ✅ Site analysis complete for localhost:3006
+2026-04-01 10:54:39 | crawler.ai_site_analyzer | INFO |    Navigation style: topnav
+2026-04-01 10:54:39 | crawler.ai_site_analyzer | INFO |    URL patterns detected: 0
+2026-04-01 10:54:39 | crawler.ai_site_analyzer | INFO |    Component types: ['has_product_cards', 'has_user_cards', 'has_category_cards', 'has_accordions', 'card_selector']
+2026-04-01 10:54:39 | crawler.ai_site_analyzer | INFO |    📦 Cached in Redis (accessible across all crawler instances)
+2026-04-01 10:54:39 | crawler.orchestrator | INFO | ✅ Site analysis complete - patterns cached for all pages
+2026-04-01 10:54:39 | crawler.orchestrator | INFO | 🔄 Starting BFS crawl...
+2026-04-01 10:54:39 | crawler.orchestrator | INFO | 🌐 Crawling [0]: http://localhost:3006
+2026-04-01 10:55:14 | crawler.orchestrator | INFO | ✅ New state: 51236ca7 | / | 2 inputs, 1 forms
+2026-04-01 10:55:14 | crawler.orchestrator | INFO | 📦 Processing 2 component states
+2026-04-01 10:55:14 | crawler.orchestrator | INFO | 📊 Progress: 1/10 pages | Queue: 4 | Depth: 0
+2026-04-01 10:55:14 | crawler.orchestrator | INFO | 🌐 Crawling [1]: http://localhost:3006/products
+2026-04-01 10:55:50 | crawler.orchestrator | INFO | ✅ New state: 3df7fc06 | /products | 0 inputs, 0 forms
+2026-04-01 10:55:50 | crawler.orchestrator | INFO | 📊 Progress: 2/10 pages | Queue: 3 | Depth: 1
+2026-04-01 10:55:50 | crawler.orchestrator | INFO | 🌐 Crawling [1]: http://localhost:3006/checkout
+2026-04-01 10:56:34 | crawler.orchestrator | INFO | ✅ New state: 3c2ddc26 | /checkout | 8 inputs, 1 forms
+2026-04-01 10:56:34 | crawler.orchestrator | INFO | 📦 Processing 1 component states
+2026-04-01 10:56:34 | crawler.orchestrator | INFO | 📊 Progress: 3/10 pages | Queue: 3 | Depth: 1
+2026-04-01 10:56:34 | crawler.orchestrator | INFO | 🌐 Crawling [1]: http://localhost:3006/cart
+2026-04-01 10:57:24 | crawler.orchestrator | INFO | ✅ New state: 3fdaa8e9 | /cart | 0 inputs, 0 forms
+2026-04-01 10:57:24 | crawler.orchestrator | INFO | 📊 Progress: 4/10 pages | Queue: 2 | Depth: 1
+2026-04-01 10:57:24 | crawler.orchestrator | INFO | 🌐 Crawling [1]: http://localhost:3006/
+2026-04-01 10:58:09 | crawler.orchestrator | INFO | ⏭️  Duplicate state: 51236ca7 | http://localhost:3006/ | Queueing child links anyway
+2026-04-01 10:58:09 | crawler.orchestrator | INFO | 📦 Processing 2 component states
+2026-04-01 10:58:09 | crawler.orchestrator | INFO | 📊 Progress: 5/10 pages | Queue: 1 | Depth: 1
+2026-04-01 10:58:09 | crawler.orchestrator | INFO | 🌐 Crawling [2]: http://localhost:3006/checkout?fullName=&shippingEmail=&address=&city=&zipCode=&cardNumber=&expiry=&cvv=
+2026-04-01 10:58:45 | crawler.orchestrator | INFO | ⏭️  Duplicate state: 3c2ddc26 | http://localhost:3006/checkout?fullName=&shippingEmail=&address=&city=&zipCode=&cardNumber=&expiry=&cvv= | Queueing child links anyway
+2026-04-01 10:58:45 | crawler.orchestrator | INFO | 📦 Processing 1 component states
+2026-04-01 10:58:45 | crawler.orchestrator | INFO | 📊 Progress: 6/10 pages | Queue: 0 | Depth: 2
+2026-04-01 10:58:45 | crawler.orchestrator | INFO | 🏁 Crawl finished: 6 pages crawled
+2026-04-01 10:58:45 | crawler.orchestrator | INFO | ✅ Fixed 3 graph edges, removed 0 orphans
+2026-04-01 10:58:45 | crawler.orchestrator | INFO | 📊 Final graph: 9 nodes, 5 edges
+2026-04-01 10:58:45 | crawler.orchestrator | INFO | 🧹 Removed 5 orphan placeholder nodes
+2026-04-01 10:58:45 | crawler.orchestrator | INFO | 📊 Clean graph: 4 nodes, 3 edges
+2026-04-01 10:58:45 | crawler.orchestrator | INFO | ✅ Crawl completed successfully

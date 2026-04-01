@@ -1,0 +1,4 @@
+2026-04-01 10:51:00 | crawler.gemini_key_rotator | INFO | 🔑 Loaded 12 Gemini API keys for rotation
+2026-04-01 10:51:12 | crawler.gemini_key_rotator | INFO | 🔑 Loaded 12 Gemini API keys for rotation
+2026-04-01 10:51:13 | crawler.gemini_key_rotator | INFO | 🔑 Loaded 12 Gemini API keys for rotation
+2026-04-01 10:51:27 | crawler.gemini_key_rotator | INFO | 🔄 Rotated API key: ...iXtO13KI → ...vvdOTYio (reason: rate_limit)

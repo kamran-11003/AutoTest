@@ -12,10 +12,10 @@ from typing import Dict
 # Keywords that strongly suggest a successful submission
 SUCCESS_KEYWORDS = [
     "success", "successfully", "thank you", "thank-you", "thankyou",
-    "submitted", "submission received", "confirmed", "complete",
+    "submitted", "submission received", "confirmed", "confirmation", "complete",
     "congratulations", "welcome", "logged in", "signed in",
     "registration complete", "account created", "order placed",
-    "payment accepted", "saved", "updated", "created",
+    "payment accepted", "saved", "updated", "created", "booked",
 ]
 
 # Keywords that strongly suggest an error / rejection
@@ -111,6 +111,8 @@ class HeuristicOracle:
             try:
                 elements = await page.query_selector_all(selector)
                 for el in elements[:3]:
+                    if not await el.is_visible():
+                        continue
                     text = (await el.inner_text()).strip().lower()
                     if not text:
                         continue
@@ -125,10 +127,13 @@ class HeuristicOracle:
 
         # ── 5. FORM STILL PRESENT ─────────────────────────────────────────
         try:
-            form_present = await page.query_selector("form")
-            if form_present:
-                signals.append("Form is still present on page (possible failure)")
+            form_el = await page.query_selector("form")
+            if form_el and await form_el.is_visible():
+                signals.append("Form is still visible on page (possible failure)")
                 score_negative += 5
+            elif form_el:
+                signals.append("Form hidden after submission (likely success)")
+                score_positive += 10
             else:
                 signals.append("No form on page (likely navigated away)")
                 score_positive += 10
@@ -161,7 +166,12 @@ class HeuristicOracle:
                 score_negative += 15  # any dialog after submit is likely validation
         # ── 6. MAP AGAINST EXPECTED RESULT ────────────────────────────────
         expected_lower = expected_result.lower()
-        if "valid" in expected_lower and "invalid" not in expected_lower:
+        expects_success = (
+            ("valid" in expected_lower and "invalid" not in expected_lower)
+            or expected_lower == "success"
+        )
+        expects_error = "invalid" in expected_lower or "error" in expected_lower or expected_lower == "failure"
+        if expects_success:
             # Test expected success — positive signals are confirmations
             total = score_positive + score_negative
             if total == 0:
@@ -173,7 +183,7 @@ class HeuristicOracle:
             else:
                 confidence = min(85, 50 + score_negative)
                 outcome = "error"
-        elif "invalid" in expected_lower or "error" in expected_lower:
+        elif expects_error:
             # Test expected error — negative signals confirm correct rejection
             if score_negative >= score_positive:
                 confidence = min(90, 50 + score_negative)

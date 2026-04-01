@@ -1,0 +1,4361 @@
+{
+  "stage": "before_refinement",
+  "generated_at": "2026-04-01T23:12:35.876586",
+  "crawl_file": "C:\\Users\\Kamra\\Desktop\\fyp crawler (5)\\fyp crawler\\data\\crawled_graphs\\site8_medical_verify_20260401_110836.json",
+  "crawl_url": "http://localhost:3008",
+  "site_id": "site8_medical",
+  "test_results": {
+    "metadata": {
+      "source_file": "C:\\Users\\Kamra\\Desktop\\fyp crawler (5)\\fyp crawler\\data\\crawled_graphs\\site8_medical_verify_20260401_110836.json",
+      "total_nodes": 4,
+      "total_edges": 3,
+      "total_forms": 3
+    },
+    "test_cases": {
+      "bva": [
+        {
+          "id": "bva_length_60d3767f_reason_0",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3008/appointment",
+          "form_id": "60d3767f",
+          "field_name": "reason",
+          "field_type": "textarea",
+          "test_value": "aaaaaaaaa",
+          "expected_result": "error",
+          "description": "Below minimum length (9 chars)",
+          "test_data": {
+            "doctor": "dr_johnson",
+            "appDate": "2026-04-02",
+            "appTime": "09:00",
+            "visitType": "new",
+            "reason": "aaaaaaaaa"
+          },
+          "constraints": {
+            "minlength": 10,
+            "maxlength": 300
+          }
+        },
+        {
+          "id": "bva_length_60d3767f_reason_1",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3008/appointment",
+          "form_id": "60d3767f",
+          "field_name": "reason",
+          "field_type": "textarea",
+          "test_value": "aaaaaaaaaa",
+          "expected_result": "success",
+          "description": "At minimum length (10 chars)",
+          "test_data": {
+            "doctor": "dr_johnson",
+            "appDate": "2026-04-02",
+            "appTime": "09:00",
+            "visitType": "new",
+            "reason": "aaaaaaaaaa"
+          },
+          "constraints": {
+            "minlength": 10,
+            "maxlength": 300
+          }
+        },
+        {
+          "id": "bva_length_60d3767f_reason_2",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3008/appointment",
+          "form_id": "60d3767f",
+          "field_name": "reason",
+          "field_type": "textarea",
+          "test_value": "aaaaaaaaaaa",
+          "expected_result": "success",
+          "description": "Just above minimum (11 chars)",
+          "test_data": {
+            "doctor": "dr_johnson",
+            "appDate": "2026-04-02",
+            "appTime": "09:00",
+            "visitType": "new",
+            "reason": "aaaaaaaaaaa"
+          },
+          "constraints": {
+            "minlength": 10,
+            "maxlength": 300
+          }
+        },
+        {
+          "id": "bva_length_60d3767f_reason_3",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3008/appointment",
+          "form_id": "60d3767f",
+          "field_name": "reason",
+          "field_type": "textarea",
+          "test_value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expected_result": "success",
+          "description": "Just below maximum (299 chars)",
+          "test_data": {
+            "doctor": "dr_johnson",
+            "appDate": "2026-04-02",
+            "appTime": "09:00",
+            "visitType": "new",
+            "reason": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "constraints": {
+            "minlength": 10,
+            "maxlength": 300
+          }
+        },
+        {
+          "id": "bva_length_60d3767f_reason_4",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3008/appointment",
+          "form_id": "60d3767f",
+          "field_name": "reason",
+          "field_type": "textarea",
+          "test_value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expected_result": "success",
+          "description": "At maximum length (300 chars)",
+          "test_data": {
+            "doctor": "dr_johnson",
+            "appDate": "2026-04-02",
+            "appTime": "09:00",
+            "visitType": "new",
+            "reason": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "constraints": {
+            "minlength": 10,
+            "maxlength": 300
+          }
+        },
+        {
+          "id": "bva_length_60d3767f_reason_5",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3008/appointment",
+          "form_id": "60d3767f",
+          "field_name": "reason",
+          "field_type": "textarea",
+          "test_value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expected_result": "error",
+          "description": "Above maximum length (301 chars)",
+          "test_data": {
+            "doctor": "dr_johnson",
+            "appDate": "2026-04-02",
+            "appTime": "09:00",
+            "visitType": "new",
+            "reason": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "constraints": {
+            "minlength": 10,
+            "maxlength": 300
+          }
+        },
+        {
+          "id": "bva_length_3778a249_firstName_0",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "3778a249",
+          "field_name": "firstName",
+          "field_type": "text",
+          "test_value": "a",
+          "expected_result": "error",
+          "description": "Below minimum length (1 chars)",
+          "test_data": {
+            "lastName": "Doe",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "patientEmail": "tester@example.com",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "firstName": "a"
+          },
+          "constraints": {
+            "minlength": 2,
+            "maxlength": 30
+          }
+        },
+        {
+          "id": "bva_length_3778a249_firstName_1",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "3778a249",
+          "field_name": "firstName",
+          "field_type": "text",
+          "test_value": "aa",
+          "expected_result": "success",
+          "description": "At minimum length (2 chars)",
+          "test_data": {
+            "lastName": "Doe",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "patientEmail": "tester@example.com",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "firstName": "aa"
+          },
+          "constraints": {
+            "minlength": 2,
+            "maxlength": 30
+          }
+        },
+        {
+          "id": "bva_length_3778a249_firstName_2",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "3778a249",
+          "field_name": "firstName",
+          "field_type": "text",
+          "test_value": "aaa",
+          "expected_result": "success",
+          "description": "Just above minimum (3 chars)",
+          "test_data": {
+            "lastName": "Doe",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "patientEmail": "tester@example.com",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "firstName": "aaa"
+          },
+          "constraints": {
+            "minlength": 2,
+            "maxlength": 30
+          }
+        },
+        {
+          "id": "bva_length_3778a249_firstName_3",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "3778a249",
+          "field_name": "firstName",
+          "field_type": "text",
+          "test_value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expected_result": "success",
+          "description": "Just below maximum (29 chars)",
+          "test_data": {
+            "lastName": "Doe",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "patientEmail": "tester@example.com",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "firstName": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "constraints": {
+            "minlength": 2,
+            "maxlength": 30
+          }
+        },
+        {
+          "id": "bva_length_3778a249_firstName_4",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "3778a249",
+          "field_name": "firstName",
+          "field_type": "text",
+          "test_value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expected_result": "success",
+          "description": "At maximum length (30 chars)",
+          "test_data": {
+            "lastName": "Doe",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "patientEmail": "tester@example.com",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "firstName": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "constraints": {
+            "minlength": 2,
+            "maxlength": 30
+          }
+        },
+        {
+          "id": "bva_length_3778a249_firstName_5",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "3778a249",
+          "field_name": "firstName",
+          "field_type": "text",
+          "test_value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expected_result": "error",
+          "description": "Above maximum length (31 chars)",
+          "test_data": {
+            "lastName": "Doe",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "patientEmail": "tester@example.com",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "firstName": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "constraints": {
+            "minlength": 2,
+            "maxlength": 30
+          }
+        },
+        {
+          "id": "bva_length_3778a249_lastName_0",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "3778a249",
+          "field_name": "lastName",
+          "field_type": "text",
+          "test_value": "a",
+          "expected_result": "error",
+          "description": "Below minimum length (1 chars)",
+          "test_data": {
+            "firstName": "John",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "patientEmail": "tester@example.com",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "lastName": "a"
+          },
+          "constraints": {
+            "minlength": 2,
+            "maxlength": 30
+          }
+        },
+        {
+          "id": "bva_length_3778a249_lastName_1",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "3778a249",
+          "field_name": "lastName",
+          "field_type": "text",
+          "test_value": "aa",
+          "expected_result": "success",
+          "description": "At minimum length (2 chars)",
+          "test_data": {
+            "firstName": "John",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "patientEmail": "tester@example.com",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "lastName": "aa"
+          },
+          "constraints": {
+            "minlength": 2,
+            "maxlength": 30
+          }
+        },
+        {
+          "id": "bva_length_3778a249_lastName_2",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "3778a249",
+          "field_name": "lastName",
+          "field_type": "text",
+          "test_value": "aaa",
+          "expected_result": "success",
+          "description": "Just above minimum (3 chars)",
+          "test_data": {
+            "firstName": "John",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "patientEmail": "tester@example.com",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "lastName": "aaa"
+          },
+          "constraints": {
+            "minlength": 2,
+            "maxlength": 30
+          }
+        },
+        {
+          "id": "bva_length_3778a249_lastName_3",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "3778a249",
+          "field_name": "lastName",
+          "field_type": "text",
+          "test_value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expected_result": "success",
+          "description": "Just below maximum (29 chars)",
+          "test_data": {
+            "firstName": "John",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "patientEmail": "tester@example.com",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "lastName": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "constraints": {
+            "minlength": 2,
+            "maxlength": 30
+          }
+        },
+        {
+          "id": "bva_length_3778a249_lastName_4",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "3778a249",
+          "field_name": "lastName",
+          "field_type": "text",
+          "test_value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expected_result": "success",
+          "description": "At maximum length (30 chars)",
+          "test_data": {
+            "firstName": "John",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "patientEmail": "tester@example.com",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "lastName": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "constraints": {
+            "minlength": 2,
+            "maxlength": 30
+          }
+        },
+        {
+          "id": "bva_length_3778a249_lastName_5",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "3778a249",
+          "field_name": "lastName",
+          "field_type": "text",
+          "test_value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expected_result": "error",
+          "description": "Above maximum length (31 chars)",
+          "test_data": {
+            "firstName": "John",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "patientEmail": "tester@example.com",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "lastName": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "constraints": {
+            "minlength": 2,
+            "maxlength": 30
+          }
+        },
+        {
+          "id": "bva_length_3778a249_patientPhone_0",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "3778a249",
+          "field_name": "patientPhone",
+          "field_type": "text",
+          "test_value": "",
+          "expected_result": "error",
+          "description": "Below minimum length (0 chars)",
+          "test_data": {
+            "firstName": "John",
+            "lastName": "Doe",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientEmail": "tester@example.com",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "patientPhone": ""
+          },
+          "constraints": {
+            "minlength": 1,
+            "maxlength": 255
+          }
+        },
+        {
+          "id": "bva_length_3778a249_patientPhone_1",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "3778a249",
+          "field_name": "patientPhone",
+          "field_type": "text",
+          "test_value": "1",
+          "expected_result": "success",
+          "description": "At minimum length (1 chars)",
+          "test_data": {
+            "firstName": "John",
+            "lastName": "Doe",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientEmail": "tester@example.com",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "patientPhone": "1"
+          },
+          "constraints": {
+            "minlength": 1,
+            "maxlength": 255
+          }
+        },
+        {
+          "id": "bva_length_3778a249_patientPhone_2",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "3778a249",
+          "field_name": "patientPhone",
+          "field_type": "text",
+          "test_value": "11",
+          "expected_result": "success",
+          "description": "Just above minimum (2 chars)",
+          "test_data": {
+            "firstName": "John",
+            "lastName": "Doe",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientEmail": "tester@example.com",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "patientPhone": "11"
+          },
+          "constraints": {
+            "minlength": 1,
+            "maxlength": 255
+          }
+        },
+        {
+          "id": "bva_length_3778a249_patientPhone_3",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "3778a249",
+          "field_name": "patientPhone",
+          "field_type": "text",
+          "test_value": "11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111",
+          "expected_result": "success",
+          "description": "Just below maximum (254 chars)",
+          "test_data": {
+            "firstName": "John",
+            "lastName": "Doe",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientEmail": "tester@example.com",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "patientPhone": "11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111"
+          },
+          "constraints": {
+            "minlength": 1,
+            "maxlength": 255
+          }
+        },
+        {
+          "id": "bva_length_3778a249_patientPhone_4",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "3778a249",
+          "field_name": "patientPhone",
+          "field_type": "text",
+          "test_value": "111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111",
+          "expected_result": "success",
+          "description": "At maximum length (255 chars)",
+          "test_data": {
+            "firstName": "John",
+            "lastName": "Doe",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientEmail": "tester@example.com",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "patientPhone": "111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111"
+          },
+          "constraints": {
+            "minlength": 1,
+            "maxlength": 255
+          }
+        },
+        {
+          "id": "bva_length_3778a249_patientPhone_5",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "3778a249",
+          "field_name": "patientPhone",
+          "field_type": "text",
+          "test_value": "1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111",
+          "expected_result": "error",
+          "description": "Above maximum length (256 chars)",
+          "test_data": {
+            "firstName": "John",
+            "lastName": "Doe",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientEmail": "tester@example.com",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "patientPhone": "1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111"
+          },
+          "constraints": {
+            "minlength": 1,
+            "maxlength": 255
+          }
+        },
+        {
+          "id": "bva_length_3778a249_patientEmail_0",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "3778a249",
+          "field_name": "patientEmail",
+          "field_type": "email",
+          "test_value": "aaaa",
+          "expected_result": "error",
+          "description": "Below minimum length (4 chars)",
+          "test_data": {
+            "firstName": "John",
+            "lastName": "Doe",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "patientEmail": "aaaa"
+          },
+          "constraints": {
+            "minlength": 5,
+            "maxlength": 254
+          }
+        },
+        {
+          "id": "bva_length_3778a249_patientEmail_1",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "3778a249",
+          "field_name": "patientEmail",
+          "field_type": "email",
+          "test_value": "a@b.c",
+          "expected_result": "success",
+          "description": "At minimum length (5 chars)",
+          "test_data": {
+            "firstName": "John",
+            "lastName": "Doe",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "patientEmail": "a@b.c"
+          },
+          "constraints": {
+            "minlength": 5,
+            "maxlength": 254
+          }
+        },
+        {
+          "id": "bva_length_3778a249_patientEmail_2",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "3778a249",
+          "field_name": "patientEmail",
+          "field_type": "email",
+          "test_value": "aa@b.c",
+          "expected_result": "success",
+          "description": "Just above minimum (6 chars)",
+          "test_data": {
+            "firstName": "John",
+            "lastName": "Doe",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "patientEmail": "aa@b.c"
+          },
+          "constraints": {
+            "minlength": 5,
+            "maxlength": 254
+          }
+        },
+        {
+          "id": "bva_length_3778a249_patientEmail_3",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "3778a249",
+          "field_name": "patientEmail",
+          "field_type": "email",
+          "test_value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.c",
+          "expected_result": "success",
+          "description": "Just below maximum (253 chars)",
+          "test_data": {
+            "firstName": "John",
+            "lastName": "Doe",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "patientEmail": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.c"
+          },
+          "constraints": {
+            "minlength": 5,
+            "maxlength": 254
+          }
+        },
+        {
+          "id": "bva_length_3778a249_patientEmail_4",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "3778a249",
+          "field_name": "patientEmail",
+          "field_type": "email",
+          "test_value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.c",
+          "expected_result": "success",
+          "description": "At maximum length (254 chars)",
+          "test_data": {
+            "firstName": "John",
+            "lastName": "Doe",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "patientEmail": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.c"
+          },
+          "constraints": {
+            "minlength": 5,
+            "maxlength": 254
+          }
+        },
+        {
+          "id": "bva_length_3778a249_patientEmail_5",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "3778a249",
+          "field_name": "patientEmail",
+          "field_type": "email",
+          "test_value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.c",
+          "expected_result": "error",
+          "description": "Above maximum length (255 chars)",
+          "test_data": {
+            "firstName": "John",
+            "lastName": "Doe",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "patientEmail": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.c"
+          },
+          "constraints": {
+            "minlength": 5,
+            "maxlength": 254
+          }
+        },
+        {
+          "id": "bva_length_3778a249_emergencyContact_0",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "3778a249",
+          "field_name": "emergencyContact",
+          "field_type": "text",
+          "test_value": "a",
+          "expected_result": "error",
+          "description": "Below minimum length (1 chars)",
+          "test_data": {
+            "firstName": "John",
+            "lastName": "Doe",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "patientEmail": "tester@example.com",
+            "bloodType": "A+",
+            "emergencyContact": "a"
+          },
+          "constraints": {
+            "minlength": 2,
+            "maxlength": 50
+          }
+        },
+        {
+          "id": "bva_length_3778a249_emergencyContact_1",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "3778a249",
+          "field_name": "emergencyContact",
+          "field_type": "text",
+          "test_value": "aa",
+          "expected_result": "success",
+          "description": "At minimum length (2 chars)",
+          "test_data": {
+            "firstName": "John",
+            "lastName": "Doe",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "patientEmail": "tester@example.com",
+            "bloodType": "A+",
+            "emergencyContact": "aa"
+          },
+          "constraints": {
+            "minlength": 2,
+            "maxlength": 50
+          }
+        },
+        {
+          "id": "bva_length_3778a249_emergencyContact_2",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "3778a249",
+          "field_name": "emergencyContact",
+          "field_type": "text",
+          "test_value": "aaa",
+          "expected_result": "success",
+          "description": "Just above minimum (3 chars)",
+          "test_data": {
+            "firstName": "John",
+            "lastName": "Doe",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "patientEmail": "tester@example.com",
+            "bloodType": "A+",
+            "emergencyContact": "aaa"
+          },
+          "constraints": {
+            "minlength": 2,
+            "maxlength": 50
+          }
+        },
+        {
+          "id": "bva_length_3778a249_emergencyContact_3",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "3778a249",
+          "field_name": "emergencyContact",
+          "field_type": "text",
+          "test_value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expected_result": "success",
+          "description": "Just below maximum (49 chars)",
+          "test_data": {
+            "firstName": "John",
+            "lastName": "Doe",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "patientEmail": "tester@example.com",
+            "bloodType": "A+",
+            "emergencyContact": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "constraints": {
+            "minlength": 2,
+            "maxlength": 50
+          }
+        },
+        {
+          "id": "bva_length_3778a249_emergencyContact_4",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "3778a249",
+          "field_name": "emergencyContact",
+          "field_type": "text",
+          "test_value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expected_result": "success",
+          "description": "At maximum length (50 chars)",
+          "test_data": {
+            "firstName": "John",
+            "lastName": "Doe",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "patientEmail": "tester@example.com",
+            "bloodType": "A+",
+            "emergencyContact": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "constraints": {
+            "minlength": 2,
+            "maxlength": 50
+          }
+        },
+        {
+          "id": "bva_length_3778a249_emergencyContact_5",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "3778a249",
+          "field_name": "emergencyContact",
+          "field_type": "text",
+          "test_value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expected_result": "error",
+          "description": "Above maximum length (51 chars)",
+          "test_data": {
+            "firstName": "John",
+            "lastName": "Doe",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "patientEmail": "tester@example.com",
+            "bloodType": "A+",
+            "emergencyContact": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "constraints": {
+            "minlength": 2,
+            "maxlength": 50
+          }
+        },
+        {
+          "id": "bva_length_9a4dfdb5_firstName_0",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "9a4dfdb5",
+          "field_name": "firstName",
+          "field_type": "text",
+          "test_value": "a",
+          "expected_result": "error",
+          "description": "Below minimum length (1 chars)",
+          "test_data": {
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "patientEmail": "tester@example.com",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "firstName": "a",
+            "lastName": "Doe"
+          },
+          "constraints": {
+            "minlength": 2,
+            "maxlength": 30
+          }
+        },
+        {
+          "id": "bva_length_9a4dfdb5_firstName_1",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "9a4dfdb5",
+          "field_name": "firstName",
+          "field_type": "text",
+          "test_value": "aa",
+          "expected_result": "success",
+          "description": "At minimum length (2 chars)",
+          "test_data": {
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "patientEmail": "tester@example.com",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "firstName": "aa",
+            "lastName": "Doe"
+          },
+          "constraints": {
+            "minlength": 2,
+            "maxlength": 30
+          }
+        },
+        {
+          "id": "bva_length_9a4dfdb5_firstName_2",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "9a4dfdb5",
+          "field_name": "firstName",
+          "field_type": "text",
+          "test_value": "aaa",
+          "expected_result": "success",
+          "description": "Just above minimum (3 chars)",
+          "test_data": {
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "patientEmail": "tester@example.com",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "firstName": "aaa",
+            "lastName": "Doe"
+          },
+          "constraints": {
+            "minlength": 2,
+            "maxlength": 30
+          }
+        },
+        {
+          "id": "bva_length_9a4dfdb5_firstName_3",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "9a4dfdb5",
+          "field_name": "firstName",
+          "field_type": "text",
+          "test_value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expected_result": "success",
+          "description": "Just below maximum (29 chars)",
+          "test_data": {
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "patientEmail": "tester@example.com",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "firstName": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "lastName": "Doe"
+          },
+          "constraints": {
+            "minlength": 2,
+            "maxlength": 30
+          }
+        },
+        {
+          "id": "bva_length_9a4dfdb5_firstName_4",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "9a4dfdb5",
+          "field_name": "firstName",
+          "field_type": "text",
+          "test_value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expected_result": "success",
+          "description": "At maximum length (30 chars)",
+          "test_data": {
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "patientEmail": "tester@example.com",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "firstName": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "lastName": "Doe"
+          },
+          "constraints": {
+            "minlength": 2,
+            "maxlength": 30
+          }
+        },
+        {
+          "id": "bva_length_9a4dfdb5_firstName_5",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "9a4dfdb5",
+          "field_name": "firstName",
+          "field_type": "text",
+          "test_value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expected_result": "error",
+          "description": "Above maximum length (31 chars)",
+          "test_data": {
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "patientEmail": "tester@example.com",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "firstName": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "lastName": "Doe"
+          },
+          "constraints": {
+            "minlength": 2,
+            "maxlength": 30
+          }
+        },
+        {
+          "id": "bva_length_9a4dfdb5_patientPhone_0",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "9a4dfdb5",
+          "field_name": "patientPhone",
+          "field_type": "text",
+          "test_value": "",
+          "expected_result": "error",
+          "description": "Below minimum length (0 chars)",
+          "test_data": {
+            "firstName": "John",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientEmail": "tester@example.com",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "patientPhone": "",
+            "lastName": "Doe"
+          },
+          "constraints": {
+            "minlength": 1,
+            "maxlength": 255
+          }
+        },
+        {
+          "id": "bva_length_9a4dfdb5_patientPhone_1",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "9a4dfdb5",
+          "field_name": "patientPhone",
+          "field_type": "text",
+          "test_value": "1",
+          "expected_result": "success",
+          "description": "At minimum length (1 chars)",
+          "test_data": {
+            "firstName": "John",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientEmail": "tester@example.com",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "patientPhone": "1",
+            "lastName": "Doe"
+          },
+          "constraints": {
+            "minlength": 1,
+            "maxlength": 255
+          }
+        },
+        {
+          "id": "bva_length_9a4dfdb5_patientPhone_2",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "9a4dfdb5",
+          "field_name": "patientPhone",
+          "field_type": "text",
+          "test_value": "11",
+          "expected_result": "success",
+          "description": "Just above minimum (2 chars)",
+          "test_data": {
+            "firstName": "John",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientEmail": "tester@example.com",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "patientPhone": "11",
+            "lastName": "Doe"
+          },
+          "constraints": {
+            "minlength": 1,
+            "maxlength": 255
+          }
+        },
+        {
+          "id": "bva_length_9a4dfdb5_patientPhone_3",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "9a4dfdb5",
+          "field_name": "patientPhone",
+          "field_type": "text",
+          "test_value": "11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111",
+          "expected_result": "success",
+          "description": "Just below maximum (254 chars)",
+          "test_data": {
+            "firstName": "John",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientEmail": "tester@example.com",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "patientPhone": "11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111",
+            "lastName": "Doe"
+          },
+          "constraints": {
+            "minlength": 1,
+            "maxlength": 255
+          }
+        },
+        {
+          "id": "bva_length_9a4dfdb5_patientPhone_4",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "9a4dfdb5",
+          "field_name": "patientPhone",
+          "field_type": "text",
+          "test_value": "111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111",
+          "expected_result": "success",
+          "description": "At maximum length (255 chars)",
+          "test_data": {
+            "firstName": "John",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientEmail": "tester@example.com",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "patientPhone": "111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111",
+            "lastName": "Doe"
+          },
+          "constraints": {
+            "minlength": 1,
+            "maxlength": 255
+          }
+        },
+        {
+          "id": "bva_length_9a4dfdb5_patientPhone_5",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "9a4dfdb5",
+          "field_name": "patientPhone",
+          "field_type": "text",
+          "test_value": "1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111",
+          "expected_result": "error",
+          "description": "Above maximum length (256 chars)",
+          "test_data": {
+            "firstName": "John",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientEmail": "tester@example.com",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "patientPhone": "1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111",
+            "lastName": "Doe"
+          },
+          "constraints": {
+            "minlength": 1,
+            "maxlength": 255
+          }
+        },
+        {
+          "id": "bva_length_9a4dfdb5_patientEmail_0",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "9a4dfdb5",
+          "field_name": "patientEmail",
+          "field_type": "email",
+          "test_value": "aaaa",
+          "expected_result": "error",
+          "description": "Below minimum length (4 chars)",
+          "test_data": {
+            "firstName": "John",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "patientEmail": "aaaa",
+            "lastName": "Doe"
+          },
+          "constraints": {
+            "minlength": 5,
+            "maxlength": 254
+          }
+        },
+        {
+          "id": "bva_length_9a4dfdb5_patientEmail_1",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "9a4dfdb5",
+          "field_name": "patientEmail",
+          "field_type": "email",
+          "test_value": "a@b.c",
+          "expected_result": "success",
+          "description": "At minimum length (5 chars)",
+          "test_data": {
+            "firstName": "John",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "patientEmail": "a@b.c",
+            "lastName": "Doe"
+          },
+          "constraints": {
+            "minlength": 5,
+            "maxlength": 254
+          }
+        },
+        {
+          "id": "bva_length_9a4dfdb5_patientEmail_2",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "9a4dfdb5",
+          "field_name": "patientEmail",
+          "field_type": "email",
+          "test_value": "aa@b.c",
+          "expected_result": "success",
+          "description": "Just above minimum (6 chars)",
+          "test_data": {
+            "firstName": "John",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "patientEmail": "aa@b.c",
+            "lastName": "Doe"
+          },
+          "constraints": {
+            "minlength": 5,
+            "maxlength": 254
+          }
+        },
+        {
+          "id": "bva_length_9a4dfdb5_patientEmail_3",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "9a4dfdb5",
+          "field_name": "patientEmail",
+          "field_type": "email",
+          "test_value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.c",
+          "expected_result": "success",
+          "description": "Just below maximum (253 chars)",
+          "test_data": {
+            "firstName": "John",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "patientEmail": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.c",
+            "lastName": "Doe"
+          },
+          "constraints": {
+            "minlength": 5,
+            "maxlength": 254
+          }
+        },
+        {
+          "id": "bva_length_9a4dfdb5_patientEmail_4",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "9a4dfdb5",
+          "field_name": "patientEmail",
+          "field_type": "email",
+          "test_value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.c",
+          "expected_result": "success",
+          "description": "At maximum length (254 chars)",
+          "test_data": {
+            "firstName": "John",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "patientEmail": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.c",
+            "lastName": "Doe"
+          },
+          "constraints": {
+            "minlength": 5,
+            "maxlength": 254
+          }
+        },
+        {
+          "id": "bva_length_9a4dfdb5_patientEmail_5",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "9a4dfdb5",
+          "field_name": "patientEmail",
+          "field_type": "email",
+          "test_value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.c",
+          "expected_result": "error",
+          "description": "Above maximum length (255 chars)",
+          "test_data": {
+            "firstName": "John",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "patientEmail": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.c",
+            "lastName": "Doe"
+          },
+          "constraints": {
+            "minlength": 5,
+            "maxlength": 254
+          }
+        },
+        {
+          "id": "bva_length_9a4dfdb5_emergencyContact_0",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "9a4dfdb5",
+          "field_name": "emergencyContact",
+          "field_type": "text",
+          "test_value": "a",
+          "expected_result": "error",
+          "description": "Below minimum length (1 chars)",
+          "test_data": {
+            "firstName": "John",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "patientEmail": "tester@example.com",
+            "bloodType": "A+",
+            "emergencyContact": "a",
+            "lastName": "Doe"
+          },
+          "constraints": {
+            "minlength": 2,
+            "maxlength": 50
+          }
+        },
+        {
+          "id": "bva_length_9a4dfdb5_emergencyContact_1",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "9a4dfdb5",
+          "field_name": "emergencyContact",
+          "field_type": "text",
+          "test_value": "aa",
+          "expected_result": "success",
+          "description": "At minimum length (2 chars)",
+          "test_data": {
+            "firstName": "John",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "patientEmail": "tester@example.com",
+            "bloodType": "A+",
+            "emergencyContact": "aa",
+            "lastName": "Doe"
+          },
+          "constraints": {
+            "minlength": 2,
+            "maxlength": 50
+          }
+        },
+        {
+          "id": "bva_length_9a4dfdb5_emergencyContact_2",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "9a4dfdb5",
+          "field_name": "emergencyContact",
+          "field_type": "text",
+          "test_value": "aaa",
+          "expected_result": "success",
+          "description": "Just above minimum (3 chars)",
+          "test_data": {
+            "firstName": "John",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "patientEmail": "tester@example.com",
+            "bloodType": "A+",
+            "emergencyContact": "aaa",
+            "lastName": "Doe"
+          },
+          "constraints": {
+            "minlength": 2,
+            "maxlength": 50
+          }
+        },
+        {
+          "id": "bva_length_9a4dfdb5_emergencyContact_3",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "9a4dfdb5",
+          "field_name": "emergencyContact",
+          "field_type": "text",
+          "test_value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expected_result": "success",
+          "description": "Just below maximum (49 chars)",
+          "test_data": {
+            "firstName": "John",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "patientEmail": "tester@example.com",
+            "bloodType": "A+",
+            "emergencyContact": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "lastName": "Doe"
+          },
+          "constraints": {
+            "minlength": 2,
+            "maxlength": 50
+          }
+        },
+        {
+          "id": "bva_length_9a4dfdb5_emergencyContact_4",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "9a4dfdb5",
+          "field_name": "emergencyContact",
+          "field_type": "text",
+          "test_value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expected_result": "success",
+          "description": "At maximum length (50 chars)",
+          "test_data": {
+            "firstName": "John",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "patientEmail": "tester@example.com",
+            "bloodType": "A+",
+            "emergencyContact": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "lastName": "Doe"
+          },
+          "constraints": {
+            "minlength": 2,
+            "maxlength": 50
+          }
+        },
+        {
+          "id": "bva_length_9a4dfdb5_emergencyContact_5",
+          "type": "BVA",
+          "subtype": "length",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "9a4dfdb5",
+          "field_name": "emergencyContact",
+          "field_type": "text",
+          "test_value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expected_result": "error",
+          "description": "Above maximum length (51 chars)",
+          "test_data": {
+            "firstName": "John",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "patientEmail": "tester@example.com",
+            "bloodType": "A+",
+            "emergencyContact": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "lastName": "Doe"
+          },
+          "constraints": {
+            "minlength": 2,
+            "maxlength": 50
+          }
+        }
+      ],
+      "ecp": [
+        {
+          "id": "ecp_select_60d3767f_doctor_first",
+          "type": "ECP",
+          "subtype": "select",
+          "form_url": "http://localhost:3008/appointment",
+          "form_id": "60d3767f",
+          "field_name": "doctor",
+          "field_type": "select",
+          "equivalence_class": "valid_first_option",
+          "test_value": "dr_johnson",
+          "expected_result": "success",
+          "description": "Select first option (dr_johnson)",
+          "test_data": {
+            "appDate": "2026-04-02",
+            "appTime": "09:00",
+            "visitType": "new",
+            "reason": "This is a test submission.",
+            "doctor": "dr_johnson"
+          }
+        },
+        {
+          "id": "ecp_select_60d3767f_doctor_middle",
+          "type": "ECP",
+          "subtype": "select",
+          "form_url": "http://localhost:3008/appointment",
+          "form_id": "60d3767f",
+          "field_name": "doctor",
+          "field_type": "select",
+          "equivalence_class": "valid_middle_option",
+          "test_value": "dr_davis",
+          "expected_result": "success",
+          "description": "Select middle option (dr_davis)",
+          "test_data": {
+            "appDate": "2026-04-02",
+            "appTime": "09:00",
+            "visitType": "new",
+            "reason": "This is a test submission.",
+            "doctor": "dr_davis"
+          }
+        },
+        {
+          "id": "ecp_select_60d3767f_doctor_last",
+          "type": "ECP",
+          "subtype": "select",
+          "form_url": "http://localhost:3008/appointment",
+          "form_id": "60d3767f",
+          "field_name": "doctor",
+          "field_type": "select",
+          "equivalence_class": "valid_last_option",
+          "test_value": "dr_patel",
+          "expected_result": "success",
+          "description": "Select last option (dr_patel)",
+          "test_data": {
+            "appDate": "2026-04-02",
+            "appTime": "09:00",
+            "visitType": "new",
+            "reason": "This is a test submission.",
+            "doctor": "dr_patel"
+          }
+        },
+        {
+          "id": "ecp_date_60d3767f_appDate_valid",
+          "type": "ECP",
+          "subtype": "date",
+          "form_url": "http://localhost:3008/appointment",
+          "form_id": "60d3767f",
+          "field_label": "Appointment Date",
+          "field_name": "appDate",
+          "field_type": "date",
+          "equivalence_class": "valid",
+          "test_value": "2024-01-15",
+          "expected_result": "success",
+          "description": "Valid date format for Appointment Date",
+          "test_data": {
+            "doctor": "dr_johnson",
+            "appTime": "09:00",
+            "visitType": "new",
+            "reason": "This is a test submission.",
+            "appDate": "2024-01-15"
+          }
+        },
+        {
+          "id": "ecp_date_60d3767f_appDate_invalid",
+          "type": "ECP",
+          "subtype": "date",
+          "form_url": "http://localhost:3008/appointment",
+          "form_id": "60d3767f",
+          "field_label": "Appointment Date",
+          "field_name": "appDate",
+          "field_type": "date",
+          "equivalence_class": "invalid_format",
+          "test_value": "invalid-date",
+          "expected_result": "error",
+          "description": "Invalid format for Appointment Date",
+          "test_data": {
+            "doctor": "dr_johnson",
+            "appTime": "09:00",
+            "visitType": "new",
+            "reason": "This is a test submission.",
+            "appDate": "invalid-date"
+          }
+        },
+        {
+          "id": "ecp_select_60d3767f_appTime_first",
+          "type": "ECP",
+          "subtype": "select",
+          "form_url": "http://localhost:3008/appointment",
+          "form_id": "60d3767f",
+          "field_name": "appTime",
+          "field_type": "select",
+          "equivalence_class": "valid_first_option",
+          "test_value": "09:00",
+          "expected_result": "success",
+          "description": "Select first option (09:00)",
+          "test_data": {
+            "doctor": "dr_johnson",
+            "appDate": "2026-04-02",
+            "visitType": "new",
+            "reason": "This is a test submission.",
+            "appTime": "09:00"
+          }
+        },
+        {
+          "id": "ecp_select_60d3767f_appTime_middle",
+          "type": "ECP",
+          "subtype": "select",
+          "form_url": "http://localhost:3008/appointment",
+          "form_id": "60d3767f",
+          "field_name": "appTime",
+          "field_type": "select",
+          "equivalence_class": "valid_middle_option",
+          "test_value": "14:00",
+          "expected_result": "success",
+          "description": "Select middle option (14:00)",
+          "test_data": {
+            "doctor": "dr_johnson",
+            "appDate": "2026-04-02",
+            "visitType": "new",
+            "reason": "This is a test submission.",
+            "appTime": "14:00"
+          }
+        },
+        {
+          "id": "ecp_select_60d3767f_appTime_last",
+          "type": "ECP",
+          "subtype": "select",
+          "form_url": "http://localhost:3008/appointment",
+          "form_id": "60d3767f",
+          "field_name": "appTime",
+          "field_type": "select",
+          "equivalence_class": "valid_last_option",
+          "test_value": "16:00",
+          "expected_result": "success",
+          "description": "Select last option (16:00)",
+          "test_data": {
+            "doctor": "dr_johnson",
+            "appDate": "2026-04-02",
+            "visitType": "new",
+            "reason": "This is a test submission.",
+            "appTime": "16:00"
+          }
+        },
+        {
+          "id": "ecp_select_60d3767f_visitType_first",
+          "type": "ECP",
+          "subtype": "select",
+          "form_url": "http://localhost:3008/appointment",
+          "form_id": "60d3767f",
+          "field_name": "visitType",
+          "field_type": "select",
+          "equivalence_class": "valid_first_option",
+          "test_value": "new",
+          "expected_result": "success",
+          "description": "Select first option (new)",
+          "test_data": {
+            "doctor": "dr_johnson",
+            "appDate": "2026-04-02",
+            "appTime": "09:00",
+            "reason": "This is a test submission.",
+            "visitType": "new"
+          }
+        },
+        {
+          "id": "ecp_select_60d3767f_visitType_middle",
+          "type": "ECP",
+          "subtype": "select",
+          "form_url": "http://localhost:3008/appointment",
+          "form_id": "60d3767f",
+          "field_name": "visitType",
+          "field_type": "select",
+          "equivalence_class": "valid_middle_option",
+          "test_value": "emergency",
+          "expected_result": "success",
+          "description": "Select middle option (emergency)",
+          "test_data": {
+            "doctor": "dr_johnson",
+            "appDate": "2026-04-02",
+            "appTime": "09:00",
+            "reason": "This is a test submission.",
+            "visitType": "emergency"
+          }
+        },
+        {
+          "id": "ecp_select_60d3767f_visitType_last",
+          "type": "ECP",
+          "subtype": "select",
+          "form_url": "http://localhost:3008/appointment",
+          "form_id": "60d3767f",
+          "field_name": "visitType",
+          "field_type": "select",
+          "equivalence_class": "valid_last_option",
+          "test_value": "checkup",
+          "expected_result": "success",
+          "description": "Select last option (checkup)",
+          "test_data": {
+            "doctor": "dr_johnson",
+            "appDate": "2026-04-02",
+            "appTime": "09:00",
+            "reason": "This is a test submission.",
+            "visitType": "checkup"
+          }
+        },
+        {
+          "id": "ecp_text_60d3767f_reason_valid",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3008/appointment",
+          "form_id": "60d3767f",
+          "form_action": "http://localhost:3008/appointment",
+          "page_title": "CarePoint - Book Appointment",
+          "field_label": "Reason for Visit",
+          "field_name": "reason",
+          "field_type": "textarea",
+          "equivalence_class": "valid_text",
+          "test_value": "ValidInput123",
+          "expected_result": "success",
+          "description": "Valid text input for Reason for Visit",
+          "test_data": {
+            "doctor": "dr_johnson",
+            "appDate": "2026-04-02",
+            "appTime": "09:00",
+            "visitType": "new",
+            "reason": "ValidInput123"
+          }
+        },
+        {
+          "id": "ecp_text_60d3767f_reason_empty",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3008/appointment",
+          "form_id": "60d3767f",
+          "form_action": "http://localhost:3008/appointment",
+          "page_title": "CarePoint - Book Appointment",
+          "field_label": "Reason for Visit",
+          "field_name": "reason",
+          "field_type": "textarea",
+          "equivalence_class": "empty_required",
+          "test_value": "",
+          "expected_result": "error",
+          "description": "Empty value for required field Reason for Visit",
+          "test_data": {
+            "doctor": "dr_johnson",
+            "appDate": "2026-04-02",
+            "appTime": "09:00",
+            "visitType": "new",
+            "reason": ""
+          }
+        },
+        {
+          "id": "ecp_text_60d3767f_reason_special",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3008/appointment",
+          "form_id": "60d3767f",
+          "form_action": "http://localhost:3008/appointment",
+          "page_title": "CarePoint - Book Appointment",
+          "field_label": "Reason for Visit",
+          "field_name": "reason",
+          "field_type": "textarea",
+          "equivalence_class": "special_characters",
+          "test_value": "<script>alert(\"XSS\")</script>",
+          "expected_result": "error",
+          "description": "Special characters/XSS attempt in Reason for Visit",
+          "test_data": {
+            "doctor": "dr_johnson",
+            "appDate": "2026-04-02",
+            "appTime": "09:00",
+            "visitType": "new",
+            "reason": "<script>alert(\"XSS\")</script>"
+          }
+        },
+        {
+          "id": "ecp_text_60d3767f_reason_long",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3008/appointment",
+          "form_id": "60d3767f",
+          "form_action": "http://localhost:3008/appointment",
+          "page_title": "CarePoint - Book Appointment",
+          "field_label": "Reason for Visit",
+          "field_name": "reason",
+          "field_type": "textarea",
+          "equivalence_class": "long_text",
+          "test_value": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+          "expected_result": "error",
+          "description": "Very long text input (500 chars) for Reason for Visit — should exceed server maxlength",
+          "test_data": {
+            "doctor": "dr_johnson",
+            "appDate": "2026-04-02",
+            "appTime": "09:00",
+            "visitType": "new",
+            "reason": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          }
+        },
+        {
+          "id": "ecp_text_60d3767f_reason_unicode",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3008/appointment",
+          "form_id": "60d3767f",
+          "form_action": "http://localhost:3008/appointment",
+          "page_title": "CarePoint - Book Appointment",
+          "field_label": "Reason for Visit",
+          "field_name": "reason",
+          "field_type": "textarea",
+          "equivalence_class": "unicode",
+          "test_value": "测试数据🎉!测试数据",
+          "expected_result": "success",
+          "description": "Unicode characters in Reason for Visit",
+          "test_data": {
+            "doctor": "dr_johnson",
+            "appDate": "2026-04-02",
+            "appTime": "09:00",
+            "visitType": "new",
+            "reason": "测试数据🎉!测试数据"
+          }
+        },
+        {
+          "id": "ecp_text_3778a249_firstName_valid",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "3778a249",
+          "form_action": "http://localhost:3008/patient-register",
+          "page_title": "CarePoint - Patient Registration",
+          "field_label": "First Name",
+          "field_name": "firstName",
+          "field_type": "text",
+          "equivalence_class": "valid_text",
+          "test_value": "ValidInput123",
+          "expected_result": "success",
+          "description": "Valid text input for First Name",
+          "test_data": {
+            "lastName": "Doe",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "patientEmail": "tester@example.com",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "firstName": "ValidInput123"
+          }
+        },
+        {
+          "id": "ecp_text_3778a249_firstName_empty",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "3778a249",
+          "form_action": "http://localhost:3008/patient-register",
+          "page_title": "CarePoint - Patient Registration",
+          "field_label": "First Name",
+          "field_name": "firstName",
+          "field_type": "text",
+          "equivalence_class": "empty_required",
+          "test_value": "",
+          "expected_result": "error",
+          "description": "Empty value for required field First Name",
+          "test_data": {
+            "lastName": "Doe",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "patientEmail": "tester@example.com",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "firstName": ""
+          }
+        },
+        {
+          "id": "ecp_text_3778a249_firstName_special",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "3778a249",
+          "form_action": "http://localhost:3008/patient-register",
+          "page_title": "CarePoint - Patient Registration",
+          "field_label": "First Name",
+          "field_name": "firstName",
+          "field_type": "text",
+          "equivalence_class": "special_characters",
+          "test_value": "<script>alert(\"XSS\")</script>",
+          "expected_result": "error",
+          "description": "Special characters/XSS attempt in First Name",
+          "test_data": {
+            "lastName": "Doe",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "patientEmail": "tester@example.com",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "firstName": "<script>alert(\"XSS\")</script>"
+          }
+        },
+        {
+          "id": "ecp_text_3778a249_firstName_long",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "3778a249",
+          "form_action": "http://localhost:3008/patient-register",
+          "page_title": "CarePoint - Patient Registration",
+          "field_label": "First Name",
+          "field_name": "firstName",
+          "field_type": "text",
+          "equivalence_class": "long_text",
+          "test_value": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+          "expected_result": "error",
+          "description": "Very long text input (500 chars) for First Name — should exceed server maxlength",
+          "test_data": {
+            "lastName": "Doe",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "patientEmail": "tester@example.com",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "firstName": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          }
+        },
+        {
+          "id": "ecp_text_3778a249_firstName_unicode",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "3778a249",
+          "form_action": "http://localhost:3008/patient-register",
+          "page_title": "CarePoint - Patient Registration",
+          "field_label": "First Name",
+          "field_name": "firstName",
+          "field_type": "text",
+          "equivalence_class": "unicode",
+          "test_value": "测试数据🎉!测试数据",
+          "expected_result": "success",
+          "description": "Unicode characters in First Name",
+          "test_data": {
+            "lastName": "Doe",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "patientEmail": "tester@example.com",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "firstName": "测试数据🎉!测试数据"
+          }
+        },
+        {
+          "id": "ecp_text_3778a249_lastName_valid",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "3778a249",
+          "form_action": "http://localhost:3008/patient-register",
+          "page_title": "CarePoint - Patient Registration",
+          "field_label": "Last Name",
+          "field_name": "lastName",
+          "field_type": "text",
+          "equivalence_class": "valid_text",
+          "test_value": "ValidInput123",
+          "expected_result": "success",
+          "description": "Valid text input for Last Name",
+          "test_data": {
+            "firstName": "John",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "patientEmail": "tester@example.com",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "lastName": "ValidInput123"
+          }
+        },
+        {
+          "id": "ecp_text_3778a249_lastName_empty",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "3778a249",
+          "form_action": "http://localhost:3008/patient-register",
+          "page_title": "CarePoint - Patient Registration",
+          "field_label": "Last Name",
+          "field_name": "lastName",
+          "field_type": "text",
+          "equivalence_class": "empty_required",
+          "test_value": "",
+          "expected_result": "error",
+          "description": "Empty value for required field Last Name",
+          "test_data": {
+            "firstName": "John",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "patientEmail": "tester@example.com",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "lastName": ""
+          }
+        },
+        {
+          "id": "ecp_text_3778a249_lastName_special",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "3778a249",
+          "form_action": "http://localhost:3008/patient-register",
+          "page_title": "CarePoint - Patient Registration",
+          "field_label": "Last Name",
+          "field_name": "lastName",
+          "field_type": "text",
+          "equivalence_class": "special_characters",
+          "test_value": "<script>alert(\"XSS\")</script>",
+          "expected_result": "error",
+          "description": "Special characters/XSS attempt in Last Name",
+          "test_data": {
+            "firstName": "John",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "patientEmail": "tester@example.com",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "lastName": "<script>alert(\"XSS\")</script>"
+          }
+        },
+        {
+          "id": "ecp_text_3778a249_lastName_long",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "3778a249",
+          "form_action": "http://localhost:3008/patient-register",
+          "page_title": "CarePoint - Patient Registration",
+          "field_label": "Last Name",
+          "field_name": "lastName",
+          "field_type": "text",
+          "equivalence_class": "long_text",
+          "test_value": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+          "expected_result": "error",
+          "description": "Very long text input (500 chars) for Last Name — should exceed server maxlength",
+          "test_data": {
+            "firstName": "John",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "patientEmail": "tester@example.com",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "lastName": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          }
+        },
+        {
+          "id": "ecp_text_3778a249_lastName_unicode",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "3778a249",
+          "form_action": "http://localhost:3008/patient-register",
+          "page_title": "CarePoint - Patient Registration",
+          "field_label": "Last Name",
+          "field_name": "lastName",
+          "field_type": "text",
+          "equivalence_class": "unicode",
+          "test_value": "测试数据🎉!测试数据",
+          "expected_result": "success",
+          "description": "Unicode characters in Last Name",
+          "test_data": {
+            "firstName": "John",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "patientEmail": "tester@example.com",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "lastName": "测试数据🎉!测试数据"
+          }
+        },
+        {
+          "id": "ecp_date_3778a249_dob_valid",
+          "type": "ECP",
+          "subtype": "date",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "3778a249",
+          "field_label": "Date of Birth",
+          "field_name": "dob",
+          "field_type": "date",
+          "equivalence_class": "valid",
+          "test_value": "2024-01-15",
+          "expected_result": "success",
+          "description": "Valid date format for Date of Birth",
+          "test_data": {
+            "firstName": "John",
+            "lastName": "Doe",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "patientEmail": "tester@example.com",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "dob": "2024-01-15"
+          }
+        },
+        {
+          "id": "ecp_date_3778a249_dob_invalid",
+          "type": "ECP",
+          "subtype": "date",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "3778a249",
+          "field_label": "Date of Birth",
+          "field_name": "dob",
+          "field_type": "date",
+          "equivalence_class": "invalid_format",
+          "test_value": "invalid-date",
+          "expected_result": "error",
+          "description": "Invalid format for Date of Birth",
+          "test_data": {
+            "firstName": "John",
+            "lastName": "Doe",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "patientEmail": "tester@example.com",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "dob": "invalid-date"
+          }
+        },
+        {
+          "id": "ecp_select_3778a249_gender_first",
+          "type": "ECP",
+          "subtype": "select",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "3778a249",
+          "field_name": "gender",
+          "field_type": "select",
+          "equivalence_class": "valid_first_option",
+          "test_value": "male",
+          "expected_result": "success",
+          "description": "Select first option (male)",
+          "test_data": {
+            "firstName": "John",
+            "lastName": "Doe",
+            "dob": "2001-04-07",
+            "patientPhone": "5551234567",
+            "patientEmail": "tester@example.com",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "gender": "male"
+          }
+        },
+        {
+          "id": "ecp_select_3778a249_gender_middle",
+          "type": "ECP",
+          "subtype": "select",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "3778a249",
+          "field_name": "gender",
+          "field_type": "select",
+          "equivalence_class": "valid_middle_option",
+          "test_value": "female",
+          "expected_result": "success",
+          "description": "Select middle option (female)",
+          "test_data": {
+            "firstName": "John",
+            "lastName": "Doe",
+            "dob": "2001-04-07",
+            "patientPhone": "5551234567",
+            "patientEmail": "tester@example.com",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "gender": "female"
+          }
+        },
+        {
+          "id": "ecp_select_3778a249_gender_last",
+          "type": "ECP",
+          "subtype": "select",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "3778a249",
+          "field_name": "gender",
+          "field_type": "select",
+          "equivalence_class": "valid_last_option",
+          "test_value": "other",
+          "expected_result": "success",
+          "description": "Select last option (other)",
+          "test_data": {
+            "firstName": "John",
+            "lastName": "Doe",
+            "dob": "2001-04-07",
+            "patientPhone": "5551234567",
+            "patientEmail": "tester@example.com",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "gender": "other"
+          }
+        },
+        {
+          "id": "ecp_text_3778a249_patientPhone_valid",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "3778a249",
+          "form_action": "http://localhost:3008/patient-register",
+          "page_title": "CarePoint - Patient Registration",
+          "field_label": "Phone Number",
+          "field_name": "patientPhone",
+          "field_type": "text",
+          "equivalence_class": "valid_text",
+          "test_value": "5551234567",
+          "expected_result": "success",
+          "description": "Valid text input for Phone Number",
+          "test_data": {
+            "firstName": "John",
+            "lastName": "Doe",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientEmail": "tester@example.com",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "patientPhone": "5551234567"
+          }
+        },
+        {
+          "id": "ecp_text_3778a249_patientPhone_empty",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "3778a249",
+          "form_action": "http://localhost:3008/patient-register",
+          "page_title": "CarePoint - Patient Registration",
+          "field_label": "Phone Number",
+          "field_name": "patientPhone",
+          "field_type": "text",
+          "equivalence_class": "empty_required",
+          "test_value": "",
+          "expected_result": "error",
+          "description": "Empty value for required field Phone Number",
+          "test_data": {
+            "firstName": "John",
+            "lastName": "Doe",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientEmail": "tester@example.com",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "patientPhone": ""
+          }
+        },
+        {
+          "id": "ecp_text_3778a249_patientPhone_special",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "3778a249",
+          "form_action": "http://localhost:3008/patient-register",
+          "page_title": "CarePoint - Patient Registration",
+          "field_label": "Phone Number",
+          "field_name": "patientPhone",
+          "field_type": "text",
+          "equivalence_class": "special_characters",
+          "test_value": "<script>alert(\"XSS\")</script>",
+          "expected_result": "error",
+          "description": "Special characters/XSS attempt in Phone Number",
+          "test_data": {
+            "firstName": "John",
+            "lastName": "Doe",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientEmail": "tester@example.com",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "patientPhone": "<script>alert(\"XSS\")</script>"
+          }
+        },
+        {
+          "id": "ecp_text_3778a249_patientPhone_long",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "3778a249",
+          "form_action": "http://localhost:3008/patient-register",
+          "page_title": "CarePoint - Patient Registration",
+          "field_label": "Phone Number",
+          "field_name": "patientPhone",
+          "field_type": "text",
+          "equivalence_class": "long_text",
+          "test_value": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+          "expected_result": "error",
+          "description": "Very long text input (500 chars) for Phone Number — should exceed server maxlength",
+          "test_data": {
+            "firstName": "John",
+            "lastName": "Doe",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientEmail": "tester@example.com",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "patientPhone": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          }
+        },
+        {
+          "id": "ecp_text_3778a249_patientPhone_unicode",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "3778a249",
+          "form_action": "http://localhost:3008/patient-register",
+          "page_title": "CarePoint - Patient Registration",
+          "field_label": "Phone Number",
+          "field_name": "patientPhone",
+          "field_type": "text",
+          "equivalence_class": "unicode",
+          "test_value": "1234567890123",
+          "expected_result": "success",
+          "description": "Unicode characters in Phone Number",
+          "test_data": {
+            "firstName": "John",
+            "lastName": "Doe",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientEmail": "tester@example.com",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "patientPhone": "1234567890123"
+          }
+        },
+        {
+          "id": "ecp_email_3778a249_patientEmail_valid_standard_0",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "3778a249",
+          "field_name": "patientEmail",
+          "field_type": "email",
+          "equivalence_class": "valid_standard",
+          "test_value": "user@example.com",
+          "expected_result": "success",
+          "description": "Valid standard email format",
+          "test_data": {
+            "firstName": "John",
+            "lastName": "Doe",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "patientEmail": "user@example.com"
+          }
+        },
+        {
+          "id": "ecp_email_3778a249_patientEmail_valid_standard_1",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "3778a249",
+          "field_name": "patientEmail",
+          "field_type": "email",
+          "equivalence_class": "valid_standard",
+          "test_value": "test@domain.co.uk",
+          "expected_result": "success",
+          "description": "Valid standard email format",
+          "test_data": {
+            "firstName": "John",
+            "lastName": "Doe",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "patientEmail": "test@domain.co.uk"
+          }
+        },
+        {
+          "id": "ecp_email_3778a249_patientEmail_valid_with_plus_0",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "3778a249",
+          "field_name": "patientEmail",
+          "field_type": "email",
+          "equivalence_class": "valid_with_plus",
+          "test_value": "user+tag@example.com",
+          "expected_result": "success",
+          "description": "Valid email with plus addressing",
+          "test_data": {
+            "firstName": "John",
+            "lastName": "Doe",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "patientEmail": "user+tag@example.com"
+          }
+        },
+        {
+          "id": "ecp_email_3778a249_patientEmail_valid_with_plus_1",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "3778a249",
+          "field_name": "patientEmail",
+          "field_type": "email",
+          "equivalence_class": "valid_with_plus",
+          "test_value": "test+filter@domain.com",
+          "expected_result": "success",
+          "description": "Valid email with plus addressing",
+          "test_data": {
+            "firstName": "John",
+            "lastName": "Doe",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "patientEmail": "test+filter@domain.com"
+          }
+        },
+        {
+          "id": "ecp_email_3778a249_patientEmail_valid_with_dots_0",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "3778a249",
+          "field_name": "patientEmail",
+          "field_type": "email",
+          "equivalence_class": "valid_with_dots",
+          "test_value": "first.last@example.com",
+          "expected_result": "success",
+          "description": "Valid email with dots in local part",
+          "test_data": {
+            "firstName": "John",
+            "lastName": "Doe",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "patientEmail": "first.last@example.com"
+          }
+        },
+        {
+          "id": "ecp_email_3778a249_patientEmail_valid_with_dots_1",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "3778a249",
+          "field_name": "patientEmail",
+          "field_type": "email",
+          "equivalence_class": "valid_with_dots",
+          "test_value": "user.name@domain.org",
+          "expected_result": "success",
+          "description": "Valid email with dots in local part",
+          "test_data": {
+            "firstName": "John",
+            "lastName": "Doe",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "patientEmail": "user.name@domain.org"
+          }
+        },
+        {
+          "id": "ecp_email_3778a249_patientEmail_valid_subdomain_0",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "3778a249",
+          "field_name": "patientEmail",
+          "field_type": "email",
+          "equivalence_class": "valid_subdomain",
+          "test_value": "user@mail.example.com",
+          "expected_result": "success",
+          "description": "Valid email with subdomain",
+          "test_data": {
+            "firstName": "John",
+            "lastName": "Doe",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "patientEmail": "user@mail.example.com"
+          }
+        },
+        {
+          "id": "ecp_email_3778a249_patientEmail_valid_subdomain_1",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "3778a249",
+          "field_name": "patientEmail",
+          "field_type": "email",
+          "equivalence_class": "valid_subdomain",
+          "test_value": "test@subdomain.domain.com",
+          "expected_result": "success",
+          "description": "Valid email with subdomain",
+          "test_data": {
+            "firstName": "John",
+            "lastName": "Doe",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "patientEmail": "test@subdomain.domain.com"
+          }
+        },
+        {
+          "id": "ecp_email_3778a249_patientEmail_invalid_missing_at_0",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "3778a249",
+          "field_name": "patientEmail",
+          "field_type": "email",
+          "equivalence_class": "invalid_missing_at",
+          "test_value": "userexample.com",
+          "expected_result": "error",
+          "description": "Missing @ symbol",
+          "test_data": {
+            "firstName": "John",
+            "lastName": "Doe",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "patientEmail": "userexample.com"
+          }
+        },
+        {
+          "id": "ecp_email_3778a249_patientEmail_invalid_missing_at_1",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "3778a249",
+          "field_name": "patientEmail",
+          "field_type": "email",
+          "equivalence_class": "invalid_missing_at",
+          "test_value": "test.domain.com",
+          "expected_result": "error",
+          "description": "Missing @ symbol",
+          "test_data": {
+            "firstName": "John",
+            "lastName": "Doe",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "patientEmail": "test.domain.com"
+          }
+        },
+        {
+          "id": "ecp_email_3778a249_patientEmail_invalid_missing_domain_0",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "3778a249",
+          "field_name": "patientEmail",
+          "field_type": "email",
+          "equivalence_class": "invalid_missing_domain",
+          "test_value": "user@",
+          "expected_result": "error",
+          "description": "Missing or invalid domain",
+          "test_data": {
+            "firstName": "John",
+            "lastName": "Doe",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "patientEmail": "user@"
+          }
+        },
+        {
+          "id": "ecp_email_3778a249_patientEmail_invalid_missing_domain_1",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "3778a249",
+          "field_name": "patientEmail",
+          "field_type": "email",
+          "equivalence_class": "invalid_missing_domain",
+          "test_value": "test@.com",
+          "expected_result": "error",
+          "description": "Missing or invalid domain",
+          "test_data": {
+            "firstName": "John",
+            "lastName": "Doe",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "patientEmail": "test@.com"
+          }
+        },
+        {
+          "id": "ecp_email_3778a249_patientEmail_invalid_special_chars_0",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "3778a249",
+          "field_name": "patientEmail",
+          "field_type": "email",
+          "equivalence_class": "invalid_special_chars",
+          "test_value": "user..name@example.com",
+          "expected_result": "error",
+          "description": "Invalid format: consecutive dots / leading dot (rejected by HTML5)",
+          "test_data": {
+            "firstName": "John",
+            "lastName": "Doe",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "patientEmail": "user..name@example.com"
+          }
+        },
+        {
+          "id": "ecp_email_3778a249_patientEmail_invalid_special_chars_1",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "3778a249",
+          "field_name": "patientEmail",
+          "field_type": "email",
+          "equivalence_class": "invalid_special_chars",
+          "test_value": ".user@example.com",
+          "expected_result": "error",
+          "description": "Invalid format: consecutive dots / leading dot (rejected by HTML5)",
+          "test_data": {
+            "firstName": "John",
+            "lastName": "Doe",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "patientEmail": ".user@example.com"
+          }
+        },
+        {
+          "id": "ecp_email_3778a249_patientEmail_invalid_empty_0",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "3778a249",
+          "field_name": "patientEmail",
+          "field_type": "email",
+          "equivalence_class": "invalid_empty",
+          "test_value": "",
+          "expected_result": "error",
+          "description": "Empty or whitespace only",
+          "test_data": {
+            "firstName": "John",
+            "lastName": "Doe",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "patientEmail": ""
+          }
+        },
+        {
+          "id": "ecp_email_3778a249_patientEmail_invalid_empty_1",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "3778a249",
+          "field_name": "patientEmail",
+          "field_type": "email",
+          "equivalence_class": "invalid_empty",
+          "test_value": "   ",
+          "expected_result": "error",
+          "description": "Empty or whitespace only",
+          "test_data": {
+            "firstName": "John",
+            "lastName": "Doe",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "patientEmail": "   "
+          }
+        },
+        {
+          "id": "ecp_email_3778a249_patientEmail_invalid_spaces_0",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "3778a249",
+          "field_name": "patientEmail",
+          "field_type": "email",
+          "equivalence_class": "invalid_spaces",
+          "test_value": "user name@example.com",
+          "expected_result": "error",
+          "description": "Contains spaces",
+          "test_data": {
+            "firstName": "John",
+            "lastName": "Doe",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "patientEmail": "user name@example.com"
+          }
+        },
+        {
+          "id": "ecp_email_3778a249_patientEmail_invalid_spaces_1",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "3778a249",
+          "field_name": "patientEmail",
+          "field_type": "email",
+          "equivalence_class": "invalid_spaces",
+          "test_value": "test @domain.com",
+          "expected_result": "error",
+          "description": "Contains spaces",
+          "test_data": {
+            "firstName": "John",
+            "lastName": "Doe",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "patientEmail": "test @domain.com"
+          }
+        },
+        {
+          "id": "ecp_text_3778a249_emergencyContact_valid",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "3778a249",
+          "form_action": "http://localhost:3008/patient-register",
+          "page_title": "CarePoint - Patient Registration",
+          "field_label": "Emergency Contact Name",
+          "field_name": "emergencyContact",
+          "field_type": "text",
+          "equivalence_class": "valid_text",
+          "test_value": "ValidInput123",
+          "expected_result": "success",
+          "description": "Valid text input for Emergency Contact Name",
+          "test_data": {
+            "firstName": "John",
+            "lastName": "Doe",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "patientEmail": "tester@example.com",
+            "bloodType": "A+",
+            "emergencyContact": "ValidInput123"
+          }
+        },
+        {
+          "id": "ecp_text_3778a249_emergencyContact_empty",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "3778a249",
+          "form_action": "http://localhost:3008/patient-register",
+          "page_title": "CarePoint - Patient Registration",
+          "field_label": "Emergency Contact Name",
+          "field_name": "emergencyContact",
+          "field_type": "text",
+          "equivalence_class": "empty_required",
+          "test_value": "",
+          "expected_result": "error",
+          "description": "Empty value for required field Emergency Contact Name",
+          "test_data": {
+            "firstName": "John",
+            "lastName": "Doe",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "patientEmail": "tester@example.com",
+            "bloodType": "A+",
+            "emergencyContact": ""
+          }
+        },
+        {
+          "id": "ecp_text_3778a249_emergencyContact_special",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "3778a249",
+          "form_action": "http://localhost:3008/patient-register",
+          "page_title": "CarePoint - Patient Registration",
+          "field_label": "Emergency Contact Name",
+          "field_name": "emergencyContact",
+          "field_type": "text",
+          "equivalence_class": "special_characters",
+          "test_value": "<script>alert(\"XSS\")</script>",
+          "expected_result": "error",
+          "description": "Special characters/XSS attempt in Emergency Contact Name",
+          "test_data": {
+            "firstName": "John",
+            "lastName": "Doe",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "patientEmail": "tester@example.com",
+            "bloodType": "A+",
+            "emergencyContact": "<script>alert(\"XSS\")</script>"
+          }
+        },
+        {
+          "id": "ecp_text_3778a249_emergencyContact_long",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "3778a249",
+          "form_action": "http://localhost:3008/patient-register",
+          "page_title": "CarePoint - Patient Registration",
+          "field_label": "Emergency Contact Name",
+          "field_name": "emergencyContact",
+          "field_type": "text",
+          "equivalence_class": "long_text",
+          "test_value": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+          "expected_result": "error",
+          "description": "Very long text input (500 chars) for Emergency Contact Name — should exceed server maxlength",
+          "test_data": {
+            "firstName": "John",
+            "lastName": "Doe",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "patientEmail": "tester@example.com",
+            "bloodType": "A+",
+            "emergencyContact": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          }
+        },
+        {
+          "id": "ecp_text_3778a249_emergencyContact_unicode",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "3778a249",
+          "form_action": "http://localhost:3008/patient-register",
+          "page_title": "CarePoint - Patient Registration",
+          "field_label": "Emergency Contact Name",
+          "field_name": "emergencyContact",
+          "field_type": "text",
+          "equivalence_class": "unicode",
+          "test_value": "测试数据🎉!测试数据",
+          "expected_result": "success",
+          "description": "Unicode characters in Emergency Contact Name",
+          "test_data": {
+            "firstName": "John",
+            "lastName": "Doe",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "patientEmail": "tester@example.com",
+            "bloodType": "A+",
+            "emergencyContact": "测试数据🎉!测试数据"
+          }
+        },
+        {
+          "id": "ecp_select_3778a249_bloodType_first",
+          "type": "ECP",
+          "subtype": "select",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "3778a249",
+          "field_name": "bloodType",
+          "field_type": "select",
+          "equivalence_class": "valid_first_option",
+          "test_value": "A+",
+          "expected_result": "success",
+          "description": "Select first option (A+)",
+          "test_data": {
+            "firstName": "John",
+            "lastName": "Doe",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "patientEmail": "tester@example.com",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+"
+          }
+        },
+        {
+          "id": "ecp_select_3778a249_bloodType_middle",
+          "type": "ECP",
+          "subtype": "select",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "3778a249",
+          "field_name": "bloodType",
+          "field_type": "select",
+          "equivalence_class": "valid_middle_option",
+          "test_value": "AB+",
+          "expected_result": "success",
+          "description": "Select middle option (AB+)",
+          "test_data": {
+            "firstName": "John",
+            "lastName": "Doe",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "patientEmail": "tester@example.com",
+            "emergencyContact": "5551234567",
+            "bloodType": "AB+"
+          }
+        },
+        {
+          "id": "ecp_select_3778a249_bloodType_last",
+          "type": "ECP",
+          "subtype": "select",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "3778a249",
+          "field_name": "bloodType",
+          "field_type": "select",
+          "equivalence_class": "valid_last_option",
+          "test_value": "O-",
+          "expected_result": "success",
+          "description": "Select last option (O-)",
+          "test_data": {
+            "firstName": "John",
+            "lastName": "Doe",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "patientEmail": "tester@example.com",
+            "emergencyContact": "5551234567",
+            "bloodType": "O-"
+          }
+        },
+        {
+          "id": "ecp_text_9a4dfdb5_firstName_valid",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "9a4dfdb5",
+          "form_action": null,
+          "page_title": "CarePoint - Patient Registration",
+          "field_label": "First Name",
+          "field_name": "firstName",
+          "field_type": "text",
+          "equivalence_class": "valid_text",
+          "test_value": "ValidInput123",
+          "expected_result": "success",
+          "description": "Valid text input for First Name",
+          "test_data": {
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "patientEmail": "tester@example.com",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "firstName": "ValidInput123",
+            "lastName": "Doe"
+          }
+        },
+        {
+          "id": "ecp_text_9a4dfdb5_firstName_empty",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "9a4dfdb5",
+          "form_action": null,
+          "page_title": "CarePoint - Patient Registration",
+          "field_label": "First Name",
+          "field_name": "firstName",
+          "field_type": "text",
+          "equivalence_class": "empty_required",
+          "test_value": "",
+          "expected_result": "error",
+          "description": "Empty value for required field First Name",
+          "test_data": {
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "patientEmail": "tester@example.com",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "firstName": "",
+            "lastName": "Doe"
+          }
+        },
+        {
+          "id": "ecp_text_9a4dfdb5_firstName_special",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "9a4dfdb5",
+          "form_action": null,
+          "page_title": "CarePoint - Patient Registration",
+          "field_label": "First Name",
+          "field_name": "firstName",
+          "field_type": "text",
+          "equivalence_class": "special_characters",
+          "test_value": "<script>alert(\"XSS\")</script>",
+          "expected_result": "error",
+          "description": "Special characters/XSS attempt in First Name",
+          "test_data": {
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "patientEmail": "tester@example.com",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "firstName": "<script>alert(\"XSS\")</script>",
+            "lastName": "Doe"
+          }
+        },
+        {
+          "id": "ecp_text_9a4dfdb5_firstName_long",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "9a4dfdb5",
+          "form_action": null,
+          "page_title": "CarePoint - Patient Registration",
+          "field_label": "First Name",
+          "field_name": "firstName",
+          "field_type": "text",
+          "equivalence_class": "long_text",
+          "test_value": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+          "expected_result": "error",
+          "description": "Very long text input (500 chars) for First Name — should exceed server maxlength",
+          "test_data": {
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "patientEmail": "tester@example.com",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "firstName": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+            "lastName": "Doe"
+          }
+        },
+        {
+          "id": "ecp_text_9a4dfdb5_firstName_unicode",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "9a4dfdb5",
+          "form_action": null,
+          "page_title": "CarePoint - Patient Registration",
+          "field_label": "First Name",
+          "field_name": "firstName",
+          "field_type": "text",
+          "equivalence_class": "unicode",
+          "test_value": "测试数据🎉!测试数据",
+          "expected_result": "success",
+          "description": "Unicode characters in First Name",
+          "test_data": {
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "patientEmail": "tester@example.com",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "firstName": "测试数据🎉!测试数据",
+            "lastName": "Doe"
+          }
+        },
+        {
+          "id": "ecp_date_9a4dfdb5_dob_valid",
+          "type": "ECP",
+          "subtype": "date",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "9a4dfdb5",
+          "field_label": "Date of Birth",
+          "field_name": "dob",
+          "field_type": "date",
+          "equivalence_class": "valid",
+          "test_value": "2024-01-15",
+          "expected_result": "success",
+          "description": "Valid date format for Date of Birth",
+          "test_data": {
+            "firstName": "John",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "patientEmail": "tester@example.com",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "dob": "2024-01-15",
+            "lastName": "Doe"
+          }
+        },
+        {
+          "id": "ecp_date_9a4dfdb5_dob_invalid",
+          "type": "ECP",
+          "subtype": "date",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "9a4dfdb5",
+          "field_label": "Date of Birth",
+          "field_name": "dob",
+          "field_type": "date",
+          "equivalence_class": "invalid_format",
+          "test_value": "invalid-date",
+          "expected_result": "error",
+          "description": "Invalid format for Date of Birth",
+          "test_data": {
+            "firstName": "John",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "patientEmail": "tester@example.com",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "dob": "invalid-date",
+            "lastName": "Doe"
+          }
+        },
+        {
+          "id": "ecp_select_9a4dfdb5_gender_first",
+          "type": "ECP",
+          "subtype": "select",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "9a4dfdb5",
+          "field_name": "gender",
+          "field_type": "select",
+          "equivalence_class": "valid_first_option",
+          "test_value": "male",
+          "expected_result": "success",
+          "description": "Select first option (male)",
+          "test_data": {
+            "firstName": "John",
+            "dob": "2001-04-07",
+            "patientPhone": "5551234567",
+            "patientEmail": "tester@example.com",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "gender": "male",
+            "lastName": "Doe"
+          }
+        },
+        {
+          "id": "ecp_select_9a4dfdb5_gender_middle",
+          "type": "ECP",
+          "subtype": "select",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "9a4dfdb5",
+          "field_name": "gender",
+          "field_type": "select",
+          "equivalence_class": "valid_middle_option",
+          "test_value": "female",
+          "expected_result": "success",
+          "description": "Select middle option (female)",
+          "test_data": {
+            "firstName": "John",
+            "dob": "2001-04-07",
+            "patientPhone": "5551234567",
+            "patientEmail": "tester@example.com",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "gender": "female",
+            "lastName": "Doe"
+          }
+        },
+        {
+          "id": "ecp_select_9a4dfdb5_gender_last",
+          "type": "ECP",
+          "subtype": "select",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "9a4dfdb5",
+          "field_name": "gender",
+          "field_type": "select",
+          "equivalence_class": "valid_last_option",
+          "test_value": "other",
+          "expected_result": "success",
+          "description": "Select last option (other)",
+          "test_data": {
+            "firstName": "John",
+            "dob": "2001-04-07",
+            "patientPhone": "5551234567",
+            "patientEmail": "tester@example.com",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "gender": "other",
+            "lastName": "Doe"
+          }
+        },
+        {
+          "id": "ecp_text_9a4dfdb5_patientPhone_valid",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "9a4dfdb5",
+          "form_action": null,
+          "page_title": "CarePoint - Patient Registration",
+          "field_label": "Phone Number",
+          "field_name": "patientPhone",
+          "field_type": "text",
+          "equivalence_class": "valid_text",
+          "test_value": "5551234567",
+          "expected_result": "success",
+          "description": "Valid text input for Phone Number",
+          "test_data": {
+            "firstName": "John",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientEmail": "tester@example.com",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "patientPhone": "5551234567",
+            "lastName": "Doe"
+          }
+        },
+        {
+          "id": "ecp_text_9a4dfdb5_patientPhone_empty",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "9a4dfdb5",
+          "form_action": null,
+          "page_title": "CarePoint - Patient Registration",
+          "field_label": "Phone Number",
+          "field_name": "patientPhone",
+          "field_type": "text",
+          "equivalence_class": "empty_required",
+          "test_value": "",
+          "expected_result": "error",
+          "description": "Empty value for required field Phone Number",
+          "test_data": {
+            "firstName": "John",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientEmail": "tester@example.com",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "patientPhone": "",
+            "lastName": "Doe"
+          }
+        },
+        {
+          "id": "ecp_text_9a4dfdb5_patientPhone_special",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "9a4dfdb5",
+          "form_action": null,
+          "page_title": "CarePoint - Patient Registration",
+          "field_label": "Phone Number",
+          "field_name": "patientPhone",
+          "field_type": "text",
+          "equivalence_class": "special_characters",
+          "test_value": "<script>alert(\"XSS\")</script>",
+          "expected_result": "error",
+          "description": "Special characters/XSS attempt in Phone Number",
+          "test_data": {
+            "firstName": "John",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientEmail": "tester@example.com",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "patientPhone": "<script>alert(\"XSS\")</script>",
+            "lastName": "Doe"
+          }
+        },
+        {
+          "id": "ecp_text_9a4dfdb5_patientPhone_long",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "9a4dfdb5",
+          "form_action": null,
+          "page_title": "CarePoint - Patient Registration",
+          "field_label": "Phone Number",
+          "field_name": "patientPhone",
+          "field_type": "text",
+          "equivalence_class": "long_text",
+          "test_value": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+          "expected_result": "error",
+          "description": "Very long text input (500 chars) for Phone Number — should exceed server maxlength",
+          "test_data": {
+            "firstName": "John",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientEmail": "tester@example.com",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "patientPhone": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+            "lastName": "Doe"
+          }
+        },
+        {
+          "id": "ecp_text_9a4dfdb5_patientPhone_unicode",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "9a4dfdb5",
+          "form_action": null,
+          "page_title": "CarePoint - Patient Registration",
+          "field_label": "Phone Number",
+          "field_name": "patientPhone",
+          "field_type": "text",
+          "equivalence_class": "unicode",
+          "test_value": "1234567890123",
+          "expected_result": "success",
+          "description": "Unicode characters in Phone Number",
+          "test_data": {
+            "firstName": "John",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientEmail": "tester@example.com",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "patientPhone": "1234567890123",
+            "lastName": "Doe"
+          }
+        },
+        {
+          "id": "ecp_email_9a4dfdb5_patientEmail_valid_standard_0",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "9a4dfdb5",
+          "field_name": "patientEmail",
+          "field_type": "email",
+          "equivalence_class": "valid_standard",
+          "test_value": "user@example.com",
+          "expected_result": "success",
+          "description": "Valid standard email format",
+          "test_data": {
+            "firstName": "John",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "patientEmail": "user@example.com",
+            "lastName": "Doe"
+          }
+        },
+        {
+          "id": "ecp_email_9a4dfdb5_patientEmail_valid_standard_1",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "9a4dfdb5",
+          "field_name": "patientEmail",
+          "field_type": "email",
+          "equivalence_class": "valid_standard",
+          "test_value": "test@domain.co.uk",
+          "expected_result": "success",
+          "description": "Valid standard email format",
+          "test_data": {
+            "firstName": "John",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "patientEmail": "test@domain.co.uk",
+            "lastName": "Doe"
+          }
+        },
+        {
+          "id": "ecp_email_9a4dfdb5_patientEmail_valid_with_plus_0",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "9a4dfdb5",
+          "field_name": "patientEmail",
+          "field_type": "email",
+          "equivalence_class": "valid_with_plus",
+          "test_value": "user+tag@example.com",
+          "expected_result": "success",
+          "description": "Valid email with plus addressing",
+          "test_data": {
+            "firstName": "John",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "patientEmail": "user+tag@example.com",
+            "lastName": "Doe"
+          }
+        },
+        {
+          "id": "ecp_email_9a4dfdb5_patientEmail_valid_with_plus_1",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "9a4dfdb5",
+          "field_name": "patientEmail",
+          "field_type": "email",
+          "equivalence_class": "valid_with_plus",
+          "test_value": "test+filter@domain.com",
+          "expected_result": "success",
+          "description": "Valid email with plus addressing",
+          "test_data": {
+            "firstName": "John",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "patientEmail": "test+filter@domain.com",
+            "lastName": "Doe"
+          }
+        },
+        {
+          "id": "ecp_email_9a4dfdb5_patientEmail_valid_with_dots_0",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "9a4dfdb5",
+          "field_name": "patientEmail",
+          "field_type": "email",
+          "equivalence_class": "valid_with_dots",
+          "test_value": "first.last@example.com",
+          "expected_result": "success",
+          "description": "Valid email with dots in local part",
+          "test_data": {
+            "firstName": "John",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "patientEmail": "first.last@example.com",
+            "lastName": "Doe"
+          }
+        },
+        {
+          "id": "ecp_email_9a4dfdb5_patientEmail_valid_with_dots_1",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "9a4dfdb5",
+          "field_name": "patientEmail",
+          "field_type": "email",
+          "equivalence_class": "valid_with_dots",
+          "test_value": "user.name@domain.org",
+          "expected_result": "success",
+          "description": "Valid email with dots in local part",
+          "test_data": {
+            "firstName": "John",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "patientEmail": "user.name@domain.org",
+            "lastName": "Doe"
+          }
+        },
+        {
+          "id": "ecp_email_9a4dfdb5_patientEmail_valid_subdomain_0",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "9a4dfdb5",
+          "field_name": "patientEmail",
+          "field_type": "email",
+          "equivalence_class": "valid_subdomain",
+          "test_value": "user@mail.example.com",
+          "expected_result": "success",
+          "description": "Valid email with subdomain",
+          "test_data": {
+            "firstName": "John",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "patientEmail": "user@mail.example.com",
+            "lastName": "Doe"
+          }
+        },
+        {
+          "id": "ecp_email_9a4dfdb5_patientEmail_valid_subdomain_1",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "9a4dfdb5",
+          "field_name": "patientEmail",
+          "field_type": "email",
+          "equivalence_class": "valid_subdomain",
+          "test_value": "test@subdomain.domain.com",
+          "expected_result": "success",
+          "description": "Valid email with subdomain",
+          "test_data": {
+            "firstName": "John",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "patientEmail": "test@subdomain.domain.com",
+            "lastName": "Doe"
+          }
+        },
+        {
+          "id": "ecp_email_9a4dfdb5_patientEmail_invalid_missing_at_0",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "9a4dfdb5",
+          "field_name": "patientEmail",
+          "field_type": "email",
+          "equivalence_class": "invalid_missing_at",
+          "test_value": "userexample.com",
+          "expected_result": "error",
+          "description": "Missing @ symbol",
+          "test_data": {
+            "firstName": "John",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "patientEmail": "userexample.com",
+            "lastName": "Doe"
+          }
+        },
+        {
+          "id": "ecp_email_9a4dfdb5_patientEmail_invalid_missing_at_1",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "9a4dfdb5",
+          "field_name": "patientEmail",
+          "field_type": "email",
+          "equivalence_class": "invalid_missing_at",
+          "test_value": "test.domain.com",
+          "expected_result": "error",
+          "description": "Missing @ symbol",
+          "test_data": {
+            "firstName": "John",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "patientEmail": "test.domain.com",
+            "lastName": "Doe"
+          }
+        },
+        {
+          "id": "ecp_email_9a4dfdb5_patientEmail_invalid_missing_domain_0",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "9a4dfdb5",
+          "field_name": "patientEmail",
+          "field_type": "email",
+          "equivalence_class": "invalid_missing_domain",
+          "test_value": "user@",
+          "expected_result": "error",
+          "description": "Missing or invalid domain",
+          "test_data": {
+            "firstName": "John",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "patientEmail": "user@",
+            "lastName": "Doe"
+          }
+        },
+        {
+          "id": "ecp_email_9a4dfdb5_patientEmail_invalid_missing_domain_1",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "9a4dfdb5",
+          "field_name": "patientEmail",
+          "field_type": "email",
+          "equivalence_class": "invalid_missing_domain",
+          "test_value": "test@.com",
+          "expected_result": "error",
+          "description": "Missing or invalid domain",
+          "test_data": {
+            "firstName": "John",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "patientEmail": "test@.com",
+            "lastName": "Doe"
+          }
+        },
+        {
+          "id": "ecp_email_9a4dfdb5_patientEmail_invalid_special_chars_0",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "9a4dfdb5",
+          "field_name": "patientEmail",
+          "field_type": "email",
+          "equivalence_class": "invalid_special_chars",
+          "test_value": "user..name@example.com",
+          "expected_result": "error",
+          "description": "Invalid format: consecutive dots / leading dot (rejected by HTML5)",
+          "test_data": {
+            "firstName": "John",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "patientEmail": "user..name@example.com",
+            "lastName": "Doe"
+          }
+        },
+        {
+          "id": "ecp_email_9a4dfdb5_patientEmail_invalid_special_chars_1",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "9a4dfdb5",
+          "field_name": "patientEmail",
+          "field_type": "email",
+          "equivalence_class": "invalid_special_chars",
+          "test_value": ".user@example.com",
+          "expected_result": "error",
+          "description": "Invalid format: consecutive dots / leading dot (rejected by HTML5)",
+          "test_data": {
+            "firstName": "John",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "patientEmail": ".user@example.com",
+            "lastName": "Doe"
+          }
+        },
+        {
+          "id": "ecp_email_9a4dfdb5_patientEmail_invalid_empty_0",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "9a4dfdb5",
+          "field_name": "patientEmail",
+          "field_type": "email",
+          "equivalence_class": "invalid_empty",
+          "test_value": "",
+          "expected_result": "error",
+          "description": "Empty or whitespace only",
+          "test_data": {
+            "firstName": "John",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "patientEmail": "",
+            "lastName": "Doe"
+          }
+        },
+        {
+          "id": "ecp_email_9a4dfdb5_patientEmail_invalid_empty_1",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "9a4dfdb5",
+          "field_name": "patientEmail",
+          "field_type": "email",
+          "equivalence_class": "invalid_empty",
+          "test_value": "   ",
+          "expected_result": "error",
+          "description": "Empty or whitespace only",
+          "test_data": {
+            "firstName": "John",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "patientEmail": "   ",
+            "lastName": "Doe"
+          }
+        },
+        {
+          "id": "ecp_email_9a4dfdb5_patientEmail_invalid_spaces_0",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "9a4dfdb5",
+          "field_name": "patientEmail",
+          "field_type": "email",
+          "equivalence_class": "invalid_spaces",
+          "test_value": "user name@example.com",
+          "expected_result": "error",
+          "description": "Contains spaces",
+          "test_data": {
+            "firstName": "John",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "patientEmail": "user name@example.com",
+            "lastName": "Doe"
+          }
+        },
+        {
+          "id": "ecp_email_9a4dfdb5_patientEmail_invalid_spaces_1",
+          "type": "ECP",
+          "subtype": "email",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "9a4dfdb5",
+          "field_name": "patientEmail",
+          "field_type": "email",
+          "equivalence_class": "invalid_spaces",
+          "test_value": "test @domain.com",
+          "expected_result": "error",
+          "description": "Contains spaces",
+          "test_data": {
+            "firstName": "John",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "patientEmail": "test @domain.com",
+            "lastName": "Doe"
+          }
+        },
+        {
+          "id": "ecp_text_9a4dfdb5_emergencyContact_valid",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "9a4dfdb5",
+          "form_action": null,
+          "page_title": "CarePoint - Patient Registration",
+          "field_label": "Emergency Contact Name",
+          "field_name": "emergencyContact",
+          "field_type": "text",
+          "equivalence_class": "valid_text",
+          "test_value": "ValidInput123",
+          "expected_result": "success",
+          "description": "Valid text input for Emergency Contact Name",
+          "test_data": {
+            "firstName": "John",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "patientEmail": "tester@example.com",
+            "bloodType": "A+",
+            "emergencyContact": "ValidInput123",
+            "lastName": "Doe"
+          }
+        },
+        {
+          "id": "ecp_text_9a4dfdb5_emergencyContact_empty",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "9a4dfdb5",
+          "form_action": null,
+          "page_title": "CarePoint - Patient Registration",
+          "field_label": "Emergency Contact Name",
+          "field_name": "emergencyContact",
+          "field_type": "text",
+          "equivalence_class": "empty_required",
+          "test_value": "",
+          "expected_result": "error",
+          "description": "Empty value for required field Emergency Contact Name",
+          "test_data": {
+            "firstName": "John",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "patientEmail": "tester@example.com",
+            "bloodType": "A+",
+            "emergencyContact": "",
+            "lastName": "Doe"
+          }
+        },
+        {
+          "id": "ecp_text_9a4dfdb5_emergencyContact_special",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "9a4dfdb5",
+          "form_action": null,
+          "page_title": "CarePoint - Patient Registration",
+          "field_label": "Emergency Contact Name",
+          "field_name": "emergencyContact",
+          "field_type": "text",
+          "equivalence_class": "special_characters",
+          "test_value": "<script>alert(\"XSS\")</script>",
+          "expected_result": "error",
+          "description": "Special characters/XSS attempt in Emergency Contact Name",
+          "test_data": {
+            "firstName": "John",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "patientEmail": "tester@example.com",
+            "bloodType": "A+",
+            "emergencyContact": "<script>alert(\"XSS\")</script>",
+            "lastName": "Doe"
+          }
+        },
+        {
+          "id": "ecp_text_9a4dfdb5_emergencyContact_long",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "9a4dfdb5",
+          "form_action": null,
+          "page_title": "CarePoint - Patient Registration",
+          "field_label": "Emergency Contact Name",
+          "field_name": "emergencyContact",
+          "field_type": "text",
+          "equivalence_class": "long_text",
+          "test_value": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+          "expected_result": "error",
+          "description": "Very long text input (500 chars) for Emergency Contact Name — should exceed server maxlength",
+          "test_data": {
+            "firstName": "John",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "patientEmail": "tester@example.com",
+            "bloodType": "A+",
+            "emergencyContact": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+            "lastName": "Doe"
+          }
+        },
+        {
+          "id": "ecp_text_9a4dfdb5_emergencyContact_unicode",
+          "type": "ECP",
+          "subtype": "text",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "9a4dfdb5",
+          "form_action": null,
+          "page_title": "CarePoint - Patient Registration",
+          "field_label": "Emergency Contact Name",
+          "field_name": "emergencyContact",
+          "field_type": "text",
+          "equivalence_class": "unicode",
+          "test_value": "测试数据🎉!测试数据",
+          "expected_result": "success",
+          "description": "Unicode characters in Emergency Contact Name",
+          "test_data": {
+            "firstName": "John",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "patientEmail": "tester@example.com",
+            "bloodType": "A+",
+            "emergencyContact": "测试数据🎉!测试数据",
+            "lastName": "Doe"
+          }
+        },
+        {
+          "id": "ecp_select_9a4dfdb5_bloodType_first",
+          "type": "ECP",
+          "subtype": "select",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "9a4dfdb5",
+          "field_name": "bloodType",
+          "field_type": "select",
+          "equivalence_class": "valid_first_option",
+          "test_value": "A+",
+          "expected_result": "success",
+          "description": "Select first option (A+)",
+          "test_data": {
+            "firstName": "John",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "patientEmail": "tester@example.com",
+            "emergencyContact": "5551234567",
+            "bloodType": "A+",
+            "lastName": "Doe"
+          }
+        },
+        {
+          "id": "ecp_select_9a4dfdb5_bloodType_middle",
+          "type": "ECP",
+          "subtype": "select",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "9a4dfdb5",
+          "field_name": "bloodType",
+          "field_type": "select",
+          "equivalence_class": "valid_middle_option",
+          "test_value": "AB+",
+          "expected_result": "success",
+          "description": "Select middle option (AB+)",
+          "test_data": {
+            "firstName": "John",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "patientEmail": "tester@example.com",
+            "emergencyContact": "5551234567",
+            "bloodType": "AB+",
+            "lastName": "Doe"
+          }
+        },
+        {
+          "id": "ecp_select_9a4dfdb5_bloodType_last",
+          "type": "ECP",
+          "subtype": "select",
+          "form_url": "http://localhost:3008/patient-register",
+          "form_id": "9a4dfdb5",
+          "field_name": "bloodType",
+          "field_type": "select",
+          "equivalence_class": "valid_last_option",
+          "test_value": "O-",
+          "expected_result": "success",
+          "description": "Select last option (O-)",
+          "test_data": {
+            "firstName": "John",
+            "dob": "2001-04-07",
+            "gender": "male",
+            "patientPhone": "5551234567",
+            "patientEmail": "tester@example.com",
+            "emergencyContact": "5551234567",
+            "bloodType": "O-",
+            "lastName": "Doe"
+          }
+        }
+      ],
+      "decision_table": [],
+      "state_transition": [
+        {
+          "id": "state_branch_0_0",
+          "type": "State Transition",
+          "subtype": "branching_flow",
+          "decision_point": "fb871217",
+          "branch_taken": "6c3cc6ef",
+          "total_branches": 3,
+          "steps": [
+            {
+              "step": 1,
+              "action": "navigate",
+              "from_url": "start",
+              "to_url": "fb871217",
+              "description": "Navigate to decision point: Localhost:3008 (CarePoint Clinic - Home)"
+            },
+            {
+              "step": 2,
+              "action": "click",
+              "from_url": "fb871217",
+              "to_url": "6c3cc6ef",
+              "description": "Take branch 1/3: Appointment (CarePoint - Book Appointment)"
+            }
+          ],
+          "expected_result": "success",
+          "description": "Branch 1 from Localhost:3008 (CarePoint Clinic - Home): → Appointment (CarePoint - Book Appointment)",
+          "flow_description": "Localhost:3008 (CarePoint Clinic - Home) → Appointment (CarePoint - Book Appointment) (Branch 1/3)"
+        },
+        {
+          "id": "state_branch_0_1",
+          "type": "State Transition",
+          "subtype": "branching_flow",
+          "decision_point": "fb871217",
+          "branch_taken": "982962c0",
+          "total_branches": 3,
+          "steps": [
+            {
+              "step": 1,
+              "action": "navigate",
+              "from_url": "start",
+              "to_url": "fb871217",
+              "description": "Navigate to decision point: Localhost:3008 (CarePoint Clinic - Home)"
+            },
+            {
+              "step": 2,
+              "action": "click",
+              "from_url": "fb871217",
+              "to_url": "982962c0",
+              "description": "Take branch 2/3: Patient Register (CarePoint - Patient Registration"
+            }
+          ],
+          "expected_result": "success",
+          "description": "Branch 2 from Localhost:3008 (CarePoint Clinic - Home): → Patient Register (CarePoint - Patient Registration",
+          "flow_description": "Localhost:3008 (CarePoint Clinic - Home) → Patient Register (CarePoint - Patient Registration (Branch 2/3)"
+        },
+        {
+          "id": "state_branch_0_2",
+          "type": "State Transition",
+          "subtype": "branching_flow",
+          "decision_point": "fb871217",
+          "branch_taken": "8066a9bd",
+          "total_branches": 3,
+          "steps": [
+            {
+              "step": 1,
+              "action": "navigate",
+              "from_url": "start",
+              "to_url": "fb871217",
+              "description": "Navigate to decision point: Localhost:3008 (CarePoint Clinic - Home)"
+            },
+            {
+              "step": 2,
+              "action": "click",
+              "from_url": "fb871217",
+              "to_url": "8066a9bd",
+              "description": "Take branch 3/3: Doctors (CarePoint - Our Doctors)"
+            }
+          ],
+          "expected_result": "success",
+          "description": "Branch 3 from Localhost:3008 (CarePoint Clinic - Home): → Doctors (CarePoint - Our Doctors)",
+          "flow_description": "Localhost:3008 (CarePoint Clinic - Home) → Doctors (CarePoint - Our Doctors) (Branch 3/3)"
+        }
+      ],
+      "use_case": [
+        {
+          "id": "usecase_ecommerce_complete_purchase",
+          "type": "Use Case",
+          "subtype": "e-commerce",
+          "scenario_name": "Complete Purchase Flow",
+          "steps": [
+            {
+              "step": 1,
+              "action": "navigate",
+              "target": null,
+              "description": "Navigate to product page",
+              "verification": "Product page loaded successfully"
+            },
+            {
+              "step": 2,
+              "action": "click",
+              "target": ".add-to-cart, .add-to-bag, [data-action=\"add-to-cart\"]",
+              "description": "Click Add to Cart button",
+              "verification": "Product added to cart"
+            },
+            {
+              "step": 3,
+              "action": "navigate",
+              "target": null,
+              "description": "Navigate to cart page",
+              "verification": "Cart shows 1 item"
+            },
+            {
+              "step": 4,
+              "action": "click",
+              "target": ".checkout-button, .proceed-to-checkout, [data-action=\"checkout\"]",
+              "description": "Proceed to checkout",
+              "verification": "Checkout page loaded"
+            },
+            {
+              "step": 5,
+              "action": "fill_form",
+              "target": "checkout_form",
+              "description": "Fill checkout form with shipping details",
+              "verification": "Form validation passed"
+            },
+            {
+              "step": 6,
+              "action": "submit",
+              "target": "checkout_form",
+              "description": "Submit order",
+              "verification": "Order confirmation page displayed"
+            }
+          ],
+          "expected_result": "success",
+          "description": "End-to-end purchase: Browse product → Add to cart → Checkout → Complete order",
+          "preconditions": [
+            "User not logged in",
+            "Empty cart"
+          ],
+          "postconditions": [
+            "Order placed",
+            "Cart empty"
+          ]
+        },
+        {
+          "id": "usecase_ecommerce_multiple_products",
+          "type": "Use Case",
+          "subtype": "e-commerce",
+          "scenario_name": "Add Multiple Products to Cart",
+          "steps": [
+            {
+              "step": 1,
+              "action": "navigate",
+              "target": null,
+              "description": "Navigate to first product",
+              "verification": "Product page loaded"
+            },
+            {
+              "step": 2,
+              "action": "click",
+              "target": ".add-to-cart",
+              "description": "Add first product to cart",
+              "verification": "Cart count = 1"
+            },
+            {
+              "step": 3,
+              "action": "navigate",
+              "target": null,
+              "description": "Navigate to second product",
+              "verification": "Different product page loaded"
+            },
+            {
+              "step": 4,
+              "action": "click",
+              "target": ".add-to-cart",
+              "description": "Add second product to cart",
+              "verification": "Cart count = 2"
+            },
+            {
+              "step": 5,
+              "action": "navigate",
+              "target": null,
+              "description": "View cart",
+              "verification": "Cart shows 2 items"
+            }
+          ],
+          "expected_result": "success",
+          "description": "Add multiple products: Add product 1 → Add product 2 → View cart",
+          "preconditions": [
+            "Empty cart"
+          ],
+          "postconditions": [
+            "Cart contains 2 items"
+          ]
+        },
+        {
+          "id": "usecase_ecommerce_remove_from_cart",
+          "type": "Use Case",
+          "subtype": "e-commerce",
+          "scenario_name": "Remove Item from Cart",
+          "steps": [
+            {
+              "step": 1,
+              "action": "navigate",
+              "target": null,
+              "description": "Navigate to cart page",
+              "verification": "Cart page loaded with items"
+            },
+            {
+              "step": 2,
+              "action": "click",
+              "target": ".remove-item, .delete-item, [data-action=\"remove\"]",
+              "description": "Click remove item button",
+              "verification": "Item removed from cart"
+            },
+            {
+              "step": 3,
+              "action": "verify",
+              "description": "Verify cart updated",
+              "verification": "Cart count decreased by 1"
+            }
+          ],
+          "expected_result": "success",
+          "description": "Remove item from cart: View cart → Remove item → Verify removal",
+          "preconditions": [
+            "Cart has at least 1 item"
+          ],
+          "postconditions": [
+            "Item removed from cart"
+          ]
+        },
+        {
+          "id": "usecase_auth_login",
+          "type": "Use Case",
+          "subtype": "authentication",
+          "scenario_name": "User Login Flow",
+          "form_url": "http://localhost:3008",
+          "test_data": {
+            "doctor": "TestValue",
+            "appDate": "TestValue",
+            "appTime": "TestValue",
+            "visitType": "TestValue",
+            "reason": "TestValue"
+          },
+          "steps": [
+            {
+              "step": 1,
+              "action": "navigate",
+              "target": null,
+              "description": "Navigate to login page",
+              "verification": "Login form displayed"
+            },
+            {
+              "step": 2,
+              "action": "fill",
+              "target": "email",
+              "value": "test@example.com",
+              "description": "Enter email address",
+              "verification": "Email field populated"
+            },
+            {
+              "step": 3,
+              "action": "fill",
+              "target": "password",
+              "value": "Test123!@#",
+              "description": "Enter password",
+              "verification": "Password field populated"
+            },
+            {
+              "step": 4,
+              "action": "submit",
+              "target": "login_form",
+              "description": "Submit login form",
+              "verification": "Successfully logged in, redirected to dashboard/profile"
+            }
+          ],
+          "expected_result": "success",
+          "description": "User login: Navigate to login → Enter credentials → Submit → Verify logged in",
+          "preconditions": [
+            "User not logged in",
+            "Valid credentials exist"
+          ],
+          "postconditions": [
+            "User logged in",
+            "Session created"
+          ]
+        },
+        {
+          "id": "usecase_auth_register",
+          "type": "Use Case",
+          "subtype": "authentication",
+          "scenario_name": "New User Registration",
+          "form_url": "http://localhost:3008/patient-register",
+          "test_data": {
+            "doctor": "TestValue",
+            "appDate": "TestValue",
+            "appTime": "TestValue",
+            "visitType": "TestValue",
+            "reason": "TestValue"
+          },
+          "steps": [
+            {
+              "step": 1,
+              "action": "navigate",
+              "target": "http://localhost:3008/patient-register",
+              "description": "Navigate to registration page",
+              "verification": "Registration form displayed"
+            },
+            {
+              "step": 2,
+              "action": "fill_form",
+              "target": "registration_form",
+              "description": "Fill registration form",
+              "verification": "All fields populated"
+            },
+            {
+              "step": 3,
+              "action": "submit",
+              "target": "registration_form",
+              "description": "Submit registration",
+              "verification": "Account created, confirmation message shown"
+            }
+          ],
+          "expected_result": "success",
+          "description": "User registration: Navigate → Fill form → Submit → Verify account created",
+          "preconditions": [
+            "User not registered"
+          ],
+          "postconditions": [
+            "New account created",
+            "User logged in or verification email sent"
+          ]
+        }
+      ]
+    },
+    "summary": {
+      "total_test_cases": 171,
+      "bva_count": 60,
+      "ecp_count": 103,
+      "decision_table_count": 0,
+      "state_transition_count": 3,
+      "use_case_count": 5
+    }
+  },
+  "counts": {
+    "bva": 60,
+    "ecp": 103,
+    "decision_table": 0,
+    "state_transition": 3,
+    "use_case": 5
+  },
+  "total": 171
+}

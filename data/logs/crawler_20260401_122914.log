@@ -1,0 +1,43 @@
+2026-04-01 12:29:35 | execution.rl_agent.dqn_agent | INFO | RL model loaded (ε=0.057)
+2026-04-01 12:29:46 | execution.cache_manager | WARNING | Redis cache unavailable: Error 10061 connecting to 127.0.0.1:6379. No connection could be made because the target machine actively refused it.. Running without cache.
+2026-04-01 12:29:47 | execution.adaptive_runner | INFO | 
+=== Test Failure Probability Report (Top 10) ===
+Priority   Test ID              Type            Risk     Risk Factors                                                
+------------------------------------------------------------------------------------------------------------------------
+35         ecp_email_65096150_  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_email_65096150_  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_email_65096150_  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_email_65096150_  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_email_65096150_  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_email_65096150_  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_email_65096150_  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_email_65096150_  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_email_65096150_  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_text_65096150_l  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+------------------------------------------------------------------------------------------------------------------------
+Average failure probability: 47.50%
+
+2026-04-01 12:29:47 | execution.adaptive_runner | INFO | 
+================================================================================
+TEST CLASSIFICATION REPORT
+================================================================================
+
+Classification | Count | Risk
+--------------------------------------------------
+BVA/payment_boundaries         |    49 |      90%
+BVA/numeric_boundaries         |    13 |      70%
+ECP/invalid_partition          |    49 |      65%
+STATE TRANSITION/unknown       |     3 |      50%
+USE CASE/unknown               |     5 |      50%
+ECP/valid_partition            |    32 |      30%
+
+================================================================================
+
+2026-04-01 12:30:50 | execution.adaptive_runner | INFO | [1/151] ecp_email_65096150_loginEmail_invalid_missing_at_0 → passed (conf=65%, oracle=heuristic)
+2026-04-01 12:30:55 | execution.adaptive_runner | INFO | [2/151] ecp_email_65096150_loginEmail_invalid_missing_at_1 → passed (conf=65%, oracle=heuristic)
+2026-04-01 12:31:01 | execution.adaptive_runner | INFO | [3/151] ecp_email_65096150_loginEmail_invalid_missing_domain_0 → passed (conf=65%, oracle=heuristic)
+2026-04-01 12:31:05 | execution.adaptive_runner | INFO | [4/151] ecp_email_65096150_loginEmail_invalid_missing_domain_1 → passed (conf=65%, oracle=heuristic)
+2026-04-01 12:31:08 | execution.adaptive_runner | INFO | [5/151] ecp_email_65096150_loginEmail_invalid_special_chars_0 → failed (conf=85%, oracle=heuristic)
+2026-04-01 12:31:12 | execution.adaptive_runner | INFO | [6/151] ecp_email_65096150_loginEmail_invalid_special_chars_1 → failed (conf=85%, oracle=heuristic)
+2026-04-01 12:31:15 | execution.adaptive_runner | INFO | [7/151] ecp_email_65096150_loginEmail_invalid_empty_1 → passed (conf=65%, oracle=heuristic)
+2026-04-01 12:31:18 | execution.adaptive_runner | INFO | [8/151] ecp_email_65096150_loginEmail_invalid_spaces_0 → passed (conf=65%, oracle=heuristic)

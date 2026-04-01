@@ -1,0 +1,173 @@
+2026-04-01 10:53:57 | crawler.gemini_key_rotator | INFO | 🔑 Loaded 12 Gemini API keys for rotation
+2026-04-01 10:54:11 | crawler.redis_cache | INFO | ℹ️  Redis not available (using in-memory cache): Error 10061 connecting to 127.0.0.1:6379. No connection could be made because the target machine actively refused it.
+2026-04-01 10:54:11 | crawler.ai_detector | INFO | 🤖 Gemini element detector initialized (model: gemini-3.1-flash-lite-preview)
+2026-04-01 10:54:11 | crawler.gemini_key_rotator | INFO | 🔑 Loaded 12 Gemini API keys for rotation
+2026-04-01 10:54:11 | crawler.ai_detector | INFO | 🤖 Gemini element detector initialized (model: gemini-3.1-flash-lite-preview)
+2026-04-01 10:54:11 | crawler.link_extractor | INFO | 🤖 Gemini AI detector enabled with 12 API keys
+2026-04-01 10:54:11 | crawler.link_extractor | INFO | LinkExtractor initialized (same_origin=True, AVB=ON, intelligent_filter=ON, snapshots=ON)
+2026-04-01 10:54:11 | crawler.gemini_key_rotator | INFO | 🔑 Loaded 12 Gemini API keys for rotation
+2026-04-01 10:54:11 | crawler.ai_enricher | INFO | ✅ Gemini AI enrichment enabled with 12 API keys (gemini-3.1-flash-lite-preview)
+2026-04-01 10:54:11 | crawler.interaction_sim | INFO | InteractionSimulator initialized (submit_forms=False, expand=True)
+2026-04-01 10:54:21 | crawler.link_extractor | INFO | 🎯 Found 5 clickable elements (traditional detection)
+2026-04-01 10:54:21 | crawler.link_extractor | INFO | 🌓 Added 7 shadow DOM elements
+2026-04-01 10:54:21 | crawler.link_extractor | INFO | 🔄 Deduplication: 12 → 6 elements (removed 6 duplicates)
+2026-04-01 10:54:21 | crawler.link_extractor | INFO | 🧠 After intelligent filtering: 6 unique components
+2026-04-01 10:54:28 | crawler.link_extractor | INFO | ✅ AVB: 'Products' → http://localhost:3006/products
+2026-04-01 10:54:28 | crawler.link_extractor | INFO | ✅ AVB: 'Cart' → http://localhost:3006/cart
+2026-04-01 10:54:28 | crawler.link_extractor | INFO | ✅ AVB: 'Checkout' → http://localhost:3006/checkout
+2026-04-01 10:54:33 | crawler.ai_detector | INFO | 🤖 Form detection: Analyzing screenshot with Gemini (API call #1)
+2026-04-01 10:54:34 | crawler.ai_detector | WARNING | ⚠️  API key quota exceeded (attempt 1/12)
+2026-04-01 10:54:34 | crawler.gemini_key_rotator | INFO | 🔄 Rotated API key: ...iXtO13KI → ...vvdOTYio (reason: rate_limit)
+2026-04-01 10:54:34 | crawler.ai_detector | INFO | 🔄 Switching to next API key...
+2026-04-01 10:54:37 | crawler.ai_detector | INFO | ✅ AI Vision: Detected 1 forms
+2026-04-01 10:54:37 | crawler.link_extractor | INFO | 📦 Stored component state: http://localhost:3006/#component-sign-in
+2026-04-01 10:54:37 | crawler.link_extractor | INFO | 🔍 Action-Verify-Back: 3/5 clicks discovered URLs (3 unique)
+2026-04-01 10:54:37 | crawler.link_extractor | INFO | 🔗 Extracted 4 unique links
+2026-04-01 10:54:45 | crawler.interaction_sim | INFO | 🔍 Hidden elements discovered: 0 accordions, 0 menus
+2026-04-01 10:54:46 | crawler.ai_detector | INFO | 🤖 Form detection: Analyzing screenshot with Gemini (API call #2)
+2026-04-01 10:54:48 | crawler.ai_detector | INFO | ✅ AI Vision: Detected 1 forms
+2026-04-01 10:54:50 | crawler.ai_enricher | INFO | 🤖 AI enrichment: Found 0 forms, 1 buttons, 0 interactive elements
+2026-04-01 10:54:50 | crawler.link_extractor | INFO | 🤖 Using GEMINI AI to detect navigation elements on homepage
+2026-04-01 10:54:50 | crawler.ai_detector | INFO | 🤖 Sending screenshot to Gemini: snapshots/ai_analysis_4295.png (API call #3)
+2026-04-01 10:54:50 | crawler.ai_detector | INFO | 📋 Generic parser found 6 potential navigation elements
+2026-04-01 10:54:50 | crawler.ai_detector | INFO | 📤 Requesting Gemini analysis...
+2026-04-01 10:54:52 | crawler.ai_detector | INFO | 🤖 Gemini detected 4 navigation elements (confidence >= 70%)
+2026-04-01 10:54:52 | crawler.ai_detector | INFO | ✅ 4 high-confidence elements validated
+2026-04-01 10:54:52 | crawler.ai_detector | INFO | 📦 Detected layout signature (caching disabled): nav:|accordions:0
+2026-04-01 10:54:52 | crawler.link_extractor | INFO | 🤖 AI found 4 navigation elements: ['Home', 'Products', 'Cart', 'Checkout']
+2026-04-01 10:54:52 | crawler.link_extractor | INFO | 🤖 Using 4 AI-detected navigation elements
+2026-04-01 10:54:52 | crawler.link_extractor | INFO | 🌓 Added 7 shadow DOM elements
+2026-04-01 10:54:52 | crawler.link_extractor | INFO | 🔄 Deduplication: 11 → 10 elements (removed 1 duplicates)
+2026-04-01 10:54:53 | crawler.link_extractor | INFO | 🧠 After intelligent filtering: 10 unique components
+2026-04-01 10:54:56 | crawler.link_extractor | INFO | ✅ AVB: 'Products' → http://localhost:3006/products
+2026-04-01 10:54:56 | crawler.link_extractor | INFO | ✅ AVB: 'Cart' → http://localhost:3006/cart
+2026-04-01 10:55:03 | crawler.link_extractor | INFO | ✅ AVB: 'Checkout' → http://localhost:3006/checkout
+2026-04-01 10:55:08 | crawler.ai_detector | INFO | 🤖 Form detection: Analyzing screenshot with Gemini (API call #4)
+2026-04-01 10:55:11 | crawler.ai_detector | INFO | ✅ AI Vision: Detected 1 forms
+2026-04-01 10:55:11 | crawler.link_extractor | INFO | 📦 Stored component state: http://localhost:3006/#component-sign-in
+2026-04-01 10:55:14 | crawler.link_extractor | INFO | 🔍 Action-Verify-Back: 3/9 clicks discovered URLs (3 unique)
+2026-04-01 10:55:14 | crawler.link_extractor | INFO | ⏭️  Skipped 3 duplicate URLs during AVB
+2026-04-01 10:55:14 | crawler.link_extractor | INFO | 🔗 Extracted 4 unique links
+2026-04-01 10:55:20 | crawler.interaction_sim | INFO | 🔍 Hidden elements discovered: 0 accordions, 0 menus
+2026-04-01 10:55:21 | crawler.ai_detector | INFO | 🤖 Form detection: Analyzing screenshot with Gemini (API call #5)
+2026-04-01 10:55:23 | crawler.ai_detector | INFO | ✅ AI Vision: Detected 1 forms
+2026-04-01 10:55:25 | crawler.ai_enricher | INFO | 🤖 AI enrichment: Found 0 forms, 2 buttons, 0 interactive elements
+2026-04-01 10:55:25 | crawler.link_extractor | INFO | 🤖 Using GEMINI AI to detect navigation elements on sub-page
+2026-04-01 10:55:25 | crawler.ai_detector | INFO | 🤖 Sending screenshot to Gemini: snapshots/ai_analysis_8609.png (API call #6)
+2026-04-01 10:55:25 | crawler.ai_detector | INFO | 📋 Generic parser found 10 potential navigation elements
+2026-04-01 10:55:25 | crawler.ai_detector | INFO | 📤 Requesting Gemini analysis...
+2026-04-01 10:55:27 | crawler.ai_detector | INFO | 🤖 Gemini detected 5 navigation elements (confidence >= 70%)
+2026-04-01 10:55:27 | crawler.ai_detector | INFO | ✅ 5 high-confidence elements validated
+2026-04-01 10:55:27 | crawler.ai_detector | INFO | 📦 Detected layout signature (caching disabled): nav:|accordions:0
+2026-04-01 10:55:27 | crawler.link_extractor | INFO | 🤖 AI found 5 navigation elements: ['Home', 'Products', 'Cart', 'Checkout', 'View Cart →']
+2026-04-01 10:55:27 | crawler.link_extractor | INFO | 🤖 Using 5 AI-detected navigation elements
+2026-04-01 10:55:27 | crawler.link_extractor | INFO | 🌓 Added 8 shadow DOM elements
+2026-04-01 10:55:27 | crawler.link_extractor | INFO | 🔄 Deduplication: 13 → 11 elements (removed 2 duplicates)
+2026-04-01 10:55:27 | crawler.link_extractor | INFO | 🧠 After intelligent filtering: 11 unique components
+2026-04-01 10:55:31 | crawler.link_extractor | INFO | ✅ AVB: 'Home' → http://localhost:3006/
+2026-04-01 10:55:31 | crawler.link_extractor | INFO | ✅ AVB: 'Cart' → http://localhost:3006/cart
+2026-04-01 10:55:37 | crawler.link_extractor | INFO | ✅ AVB: 'Checkout' → http://localhost:3006/checkout
+2026-04-01 10:55:50 | crawler.link_extractor | INFO | 🔍 Action-Verify-Back: 3/10 clicks discovered URLs (3 unique)
+2026-04-01 10:55:50 | crawler.link_extractor | INFO | ⏭️  Skipped 5 duplicate URLs during AVB
+2026-04-01 10:55:50 | crawler.link_extractor | INFO | 🔗 Extracted 4 unique links
+2026-04-01 10:55:58 | crawler.interaction_sim | INFO | 🔍 Hidden elements discovered: 0 accordions, 0 menus
+2026-04-01 10:55:59 | crawler.ai_detector | INFO | 🤖 Form detection: Analyzing screenshot with Gemini (API call #7)
+2026-04-01 10:56:02 | crawler.ai_detector | INFO | ✅ AI Vision: Detected 1 forms
+2026-04-01 10:56:05 | crawler.ai_enricher | INFO | 🤖 AI enrichment: Found 1 forms, 1 buttons, 0 interactive elements
+2026-04-01 10:56:05 | crawler.link_extractor | INFO | 🤖 Using GEMINI AI to detect navigation elements on sub-page
+2026-04-01 10:56:05 | crawler.ai_detector | INFO | 🤖 Sending screenshot to Gemini: snapshots/ai_analysis_1106.png (API call #8)
+2026-04-01 10:56:05 | crawler.ai_detector | INFO | 📋 Generic parser found 7 potential navigation elements
+2026-04-01 10:56:05 | crawler.ai_detector | INFO | 📤 Requesting Gemini analysis...
+2026-04-01 10:56:08 | crawler.ai_detector | INFO | 🤖 Gemini detected 5 navigation elements (confidence >= 70%)
+2026-04-01 10:56:08 | crawler.ai_detector | INFO | ✅ 5 high-confidence elements validated
+2026-04-01 10:56:08 | crawler.ai_detector | INFO | 📦 Detected layout signature (caching disabled): nav:|accordions:0
+2026-04-01 10:56:08 | crawler.link_extractor | INFO | 🤖 AI found 5 navigation elements: ['Home', 'Products', 'Cart', 'Checkout', 'Place Order']
+2026-04-01 10:56:08 | crawler.link_extractor | INFO | 🤖 Using 5 AI-detected navigation elements
+2026-04-01 10:56:08 | crawler.link_extractor | INFO | 🌓 Added 13 shadow DOM elements
+2026-04-01 10:56:08 | crawler.link_extractor | INFO | 🔄 Deduplication: 18 → 10 elements (removed 8 duplicates)
+2026-04-01 10:56:08 | crawler.link_extractor | INFO | 🧠 After intelligent filtering: 10 unique components
+2026-04-01 10:56:15 | crawler.link_extractor | INFO | ✅ AVB: 'Home' → http://localhost:3006/
+2026-04-01 10:56:15 | crawler.link_extractor | INFO | ✅ AVB: 'Products' → http://localhost:3006/products
+2026-04-01 10:56:15 | crawler.link_extractor | INFO | ✅ AVB: 'Cart' → http://localhost:3006/cart
+2026-04-01 10:56:22 | crawler.ai_detector | INFO | 🤖 Form detection: Analyzing screenshot with Gemini (API call #9)
+2026-04-01 10:56:25 | crawler.ai_detector | INFO | ✅ AI Vision: Detected 1 forms
+2026-04-01 10:56:25 | crawler.link_extractor | INFO | 📦 Stored component state: http://localhost:3006/checkout#component-checkout
+2026-04-01 10:56:25 | crawler.link_extractor | INFO | ✅ AVB: 'Place Order' → http://localhost:3006/checkout?fullName=&shippingEmail=&address=&city=&zipCode=&cardNumber=&expiry=&cvv=
+2026-04-01 10:56:34 | crawler.link_extractor | INFO | 🔍 Action-Verify-Back: 4/9 clicks discovered URLs (4 unique)
+2026-04-01 10:56:34 | crawler.link_extractor | INFO | ⏭️  Skipped 3 duplicate URLs during AVB
+2026-04-01 10:56:34 | crawler.link_extractor | INFO | 🔗 Extracted 5 unique links
+2026-04-01 10:56:42 | crawler.interaction_sim | INFO | 🔍 Hidden elements discovered: 0 accordions, 0 menus
+2026-04-01 10:56:43 | crawler.ai_detector | INFO | 🤖 Form detection: Analyzing screenshot with Gemini (API call #10)
+2026-04-01 10:56:45 | crawler.ai_detector | INFO | ✅ AI Vision: Detected 0 forms
+2026-04-01 10:56:48 | crawler.ai_enricher | INFO | 🤖 AI enrichment: Found 1 forms, 1 buttons, 0 interactive elements
+2026-04-01 10:56:48 | crawler.link_extractor | INFO | 🤖 Using GEMINI AI to detect navigation elements on sub-page
+2026-04-01 10:56:49 | crawler.ai_detector | INFO | 🤖 Sending screenshot to Gemini: snapshots/ai_analysis_4897.png (API call #11)
+2026-04-01 10:56:49 | crawler.ai_detector | INFO | 📋 Generic parser found 6 potential navigation elements
+2026-04-01 10:56:49 | crawler.ai_detector | INFO | 📤 Requesting Gemini analysis...
+2026-04-01 10:56:51 | crawler.ai_detector | INFO | 🤖 Gemini detected 5 navigation elements (confidence >= 70%)
+2026-04-01 10:56:51 | crawler.ai_detector | INFO | ✅ 5 high-confidence elements validated
+2026-04-01 10:56:51 | crawler.ai_detector | INFO | 📦 Detected layout signature (caching disabled): nav:|accordions:0
+2026-04-01 10:56:51 | crawler.link_extractor | INFO | 🤖 AI found 5 navigation elements: ['Home', 'Products', 'Cart', 'Checkout', 'Proceed to Checkout →']
+2026-04-01 10:56:51 | crawler.link_extractor | INFO | 🤖 Using 5 AI-detected navigation elements
+2026-04-01 10:56:51 | crawler.link_extractor | INFO | 🌓 Added 5 shadow DOM elements
+2026-04-01 10:56:51 | crawler.link_extractor | INFO | 🧠 After intelligent filtering: 10 unique components
+2026-04-01 10:57:00 | crawler.link_extractor | INFO | ✅ AVB: 'Home' → http://localhost:3006/
+2026-04-01 10:57:00 | crawler.link_extractor | INFO | ✅ AVB: 'Products' → http://localhost:3006/products
+2026-04-01 10:57:09 | crawler.link_extractor | INFO | ✅ AVB: 'Checkout' → http://localhost:3006/checkout
+2026-04-01 10:57:24 | crawler.link_extractor | INFO | 🔍 Action-Verify-Back: 3/9 clicks discovered URLs (3 unique)
+2026-04-01 10:57:24 | crawler.link_extractor | INFO | ⏭️  Skipped 5 duplicate URLs during AVB
+2026-04-01 10:57:24 | crawler.link_extractor | INFO | 🔗 Extracted 4 unique links
+2026-04-01 10:57:32 | crawler.interaction_sim | INFO | 🔍 Hidden elements discovered: 0 accordions, 0 menus
+2026-04-01 10:57:32 | crawler.ai_detector | INFO | 🤖 Form detection: Analyzing screenshot with Gemini (API call #12)
+2026-04-01 10:57:34 | crawler.ai_detector | INFO | ✅ AI Vision: Detected 1 forms
+2026-04-01 10:57:37 | crawler.ai_enricher | INFO | 🤖 AI enrichment: Found 0 forms, 2 buttons, 0 interactive elements
+2026-04-01 10:57:37 | crawler.link_extractor | INFO | 🤖 Using GEMINI AI to detect navigation elements on homepage
+2026-04-01 10:57:37 | crawler.ai_detector | INFO | 🤖 Sending screenshot to Gemini: snapshots/ai_analysis_4295.png (API call #13)
+2026-04-01 10:57:37 | crawler.ai_detector | INFO | 📋 Generic parser found 6 potential navigation elements
+2026-04-01 10:57:37 | crawler.ai_detector | INFO | 📤 Requesting Gemini analysis...
+2026-04-01 10:57:40 | crawler.ai_detector | INFO | 🤖 Gemini detected 4 navigation elements (confidence >= 70%)
+2026-04-01 10:57:40 | crawler.ai_detector | INFO | ✅ 4 high-confidence elements validated
+2026-04-01 10:57:40 | crawler.ai_detector | INFO | 📦 Detected layout signature (caching disabled): nav:|accordions:0
+2026-04-01 10:57:40 | crawler.link_extractor | INFO | 🤖 AI found 4 navigation elements: ['Home', 'Products', 'Cart', 'Checkout']
+2026-04-01 10:57:40 | crawler.link_extractor | INFO | 🤖 Using 4 AI-detected navigation elements
+2026-04-01 10:57:40 | crawler.link_extractor | INFO | 🌓 Added 7 shadow DOM elements
+2026-04-01 10:57:40 | crawler.link_extractor | INFO | 🔄 Deduplication: 11 → 10 elements (removed 1 duplicates)
+2026-04-01 10:57:40 | crawler.link_extractor | INFO | 🧠 After intelligent filtering: 10 unique components
+2026-04-01 10:57:50 | crawler.ai_detector | INFO | 🤖 Form detection: Analyzing screenshot with Gemini (API call #14)
+2026-04-01 10:57:52 | crawler.ai_detector | INFO | ✅ AI Vision: Detected 1 forms
+2026-04-01 10:57:52 | crawler.link_extractor | INFO | 📦 Stored component state: http://localhost:3006/#component-home
+2026-04-01 10:57:53 | crawler.link_extractor | INFO | ✅ AVB: 'Products' → http://localhost:3006/products
+2026-04-01 10:57:53 | crawler.link_extractor | INFO | ✅ AVB: 'Cart' → http://localhost:3006/cart
+2026-04-01 10:58:00 | crawler.link_extractor | INFO | ✅ AVB: 'Checkout' → http://localhost:3006/checkout
+2026-04-01 10:58:05 | crawler.ai_detector | INFO | 🤖 Form detection: Analyzing screenshot with Gemini (API call #15)
+2026-04-01 10:58:06 | crawler.ai_detector | INFO | ✅ AI Vision: Detected 1 forms
+2026-04-01 10:58:06 | crawler.link_extractor | INFO | 📦 Stored component state: http://localhost:3006/#component-sign-in
+2026-04-01 10:58:09 | crawler.link_extractor | INFO | 🔍 Action-Verify-Back: 3/9 clicks discovered URLs (3 unique)
+2026-04-01 10:58:09 | crawler.link_extractor | INFO | ⏭️  Skipped 3 duplicate URLs during AVB
+2026-04-01 10:58:09 | crawler.link_extractor | INFO | 🔗 Extracted 4 unique links
+2026-04-01 10:58:15 | crawler.interaction_sim | INFO | 🔍 Hidden elements discovered: 0 accordions, 0 menus
+2026-04-01 10:58:16 | crawler.ai_detector | INFO | 🤖 Form detection: Analyzing screenshot with Gemini (API call #16)
+2026-04-01 10:58:19 | crawler.ai_detector | INFO | ✅ AI Vision: Detected 1 forms
+2026-04-01 10:58:21 | crawler.ai_enricher | INFO | 🤖 AI enrichment: Found 1 forms, 0 buttons, 0 interactive elements
+2026-04-01 10:58:21 | crawler.link_extractor | INFO | 🤖 Using GEMINI AI to detect navigation elements on sub-page
+2026-04-01 10:58:22 | crawler.ai_detector | INFO | 🤖 Sending screenshot to Gemini: snapshots/ai_analysis_5047.png (API call #17)
+2026-04-01 10:58:22 | crawler.ai_detector | INFO | 📋 Generic parser found 7 potential navigation elements
+2026-04-01 10:58:22 | crawler.ai_detector | INFO | 📤 Requesting Gemini analysis...
+2026-04-01 10:58:24 | crawler.ai_detector | INFO | 🤖 Gemini detected 5 navigation elements (confidence >= 70%)
+2026-04-01 10:58:24 | crawler.ai_detector | INFO | ✅ 5 high-confidence elements validated
+2026-04-01 10:58:24 | crawler.ai_detector | INFO | 📦 Detected layout signature (caching disabled): nav:|accordions:0
+2026-04-01 10:58:24 | crawler.link_extractor | INFO | 🤖 AI found 5 navigation elements: ['Home', 'Products', 'Cart', 'Checkout', 'Place Order']
+2026-04-01 10:58:24 | crawler.link_extractor | INFO | 🤖 Using 5 AI-detected navigation elements
+2026-04-01 10:58:24 | crawler.link_extractor | INFO | 🌓 Added 13 shadow DOM elements
+2026-04-01 10:58:24 | crawler.link_extractor | INFO | 🔄 Deduplication: 18 → 10 elements (removed 8 duplicates)
+2026-04-01 10:58:24 | crawler.link_extractor | INFO | 🧠 After intelligent filtering: 10 unique components
+2026-04-01 10:58:28 | crawler.link_extractor | INFO | ✅ AVB: 'Home' → http://localhost:3006/
+2026-04-01 10:58:28 | crawler.link_extractor | INFO | ✅ AVB: 'Products' → http://localhost:3006/products
+2026-04-01 10:58:28 | crawler.link_extractor | INFO | ✅ AVB: 'Cart' → http://localhost:3006/cart
+2026-04-01 10:58:34 | crawler.ai_detector | INFO | 🤖 Form detection: Analyzing screenshot with Gemini (API call #18)
+2026-04-01 10:58:37 | crawler.ai_detector | INFO | ✅ AI Vision: Detected 1 forms
+2026-04-01 10:58:37 | crawler.link_extractor | INFO | 📦 Stored component state: http://localhost:3006/checkout?fullName=&shippingEmail=&address=&city=&zipCode=&cardNumber=&expiry=&cvv=#component-place-order
+2026-04-01 10:58:37 | crawler.link_extractor | INFO | ✅ AVB: 'Checkout' → http://localhost:3006/checkout
+2026-04-01 10:58:45 | crawler.link_extractor | INFO | 🔍 Action-Verify-Back: 4/9 clicks discovered URLs (4 unique)
+2026-04-01 10:58:45 | crawler.link_extractor | INFO | ⏭️  Skipped 3 duplicate URLs during AVB
+2026-04-01 10:58:45 | crawler.link_extractor | INFO | 🔗 Extracted 4 unique links

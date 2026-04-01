@@ -1,0 +1,43 @@
+2026-04-01 11:57:03 | execution.rl_agent.dqn_agent | INFO | RL model loaded (ε=0.057)
+2026-04-01 11:57:15 | execution.cache_manager | WARNING | Redis cache unavailable: Error 10061 connecting to 127.0.0.1:6379. No connection could be made because the target machine actively refused it.. Running without cache.
+2026-04-01 11:57:15 | execution.adaptive_runner | INFO | 
+=== Test Failure Probability Report (Top 10) ===
+Priority   Test ID              Type            Risk     Risk Factors                                                
+------------------------------------------------------------------------------------------------------------------------
+35         ecp_email_65096150_  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_email_65096150_  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_email_65096150_  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_email_65096150_  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_email_65096150_  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_email_65096150_  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_email_65096150_  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_email_65096150_  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_email_65096150_  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+35         ecp_text_65096150_l  ECP             65.00%   Subtype: ECP/invalid_partition (base risk: 0.65, confidence: 90%); Expected result indicates error: error
+------------------------------------------------------------------------------------------------------------------------
+Average failure probability: 47.50%
+
+2026-04-01 11:57:15 | execution.adaptive_runner | INFO | 
+================================================================================
+TEST CLASSIFICATION REPORT
+================================================================================
+
+Classification | Count | Risk
+--------------------------------------------------
+BVA/payment_boundaries         |    49 |      90%
+BVA/numeric_boundaries         |    13 |      70%
+ECP/invalid_partition          |    49 |      65%
+STATE TRANSITION/unknown       |     3 |      50%
+USE CASE/unknown               |     5 |      50%
+ECP/valid_partition            |    32 |      30%
+
+================================================================================
+
+2026-04-01 11:57:19 | execution.adaptive_runner | INFO | API budget exhausted — stopping
+2026-04-01 11:57:19 | execution.rl_agent.dqn_agent | INFO | RL model saved → data\rl_model\dqn_checkpoint.pth
+2026-04-01 11:57:19 | execution.adaptive_runner | INFO | Performance metrics saved to data\rl_performance
+2026-04-01 11:57:19 | execution.heuristics_logger | INFO | Heuristics analysis saved to data\heuristics_logs\heuristics_analysis.txt
+2026-04-01 11:57:19 | execution.adaptive_runner | INFO | Heuristics analysis: 515 tests, 94.8% heuristic, 5.2% LLM, avg reward: +1.58
+2026-04-01 11:57:19 | execution.rl_heuristics_optimizer | INFO | Optimization report: data\rl_optimizations\optimization_report.txt
+2026-04-01 11:57:19 | execution.adaptive_runner | INFO | Heuristics optimization: 5 subtypes updated | Risk increases: 0 | Risk decreases: 0 | Avg change: +0.0000
+2026-04-01 11:57:19 | execution.adaptive_runner | INFO | Execution complete: 0/151 passed | 0 LLM calls ($0.000) | stop_reason=budget_exhausted

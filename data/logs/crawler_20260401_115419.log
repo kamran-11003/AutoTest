@@ -1,0 +1,20 @@
+2026-04-01 11:54:33 | execution.rl_agent.dqn_agent | INFO | RL model loaded (ε=0.057)
+2026-04-01 11:54:47 | execution.cache_manager | WARNING | Redis cache unavailable: Error 10061 connecting to 127.0.0.1:6379. No connection could be made because the target machine actively refused it.. Running without cache.
+2026-04-01 11:54:47 | execution.adaptive_runner | INFO | 
+=== Test Failure Probability Report (Top 10) ===
+Priority   Test ID              Type            Risk     Risk Factors                                                
+------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------
+Average failure probability: 0.00%
+
+2026-04-01 11:54:47 | execution.adaptive_runner | INFO | 
+================================================================================
+TEST CLASSIFICATION REPORT
+================================================================================
+
+Classification | Count | Risk
+--------------------------------------------------
+
+================================================================================
+
+2026-04-01 11:54:47 | execution.adaptive_runner | WARNING | No test cases found in suite

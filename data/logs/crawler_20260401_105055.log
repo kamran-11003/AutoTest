@@ -1,0 +1,6 @@
+2026-04-01 10:51:12 | crawler.intelligent_link_filter | INFO | IntelligentLinkFilter initialized
+2026-04-01 10:51:12 | crawler.page_snapshot | INFO | PageSnapshot initialized (output: data/snapshots)
+2026-04-01 10:51:31 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260401_105131_localhost:5500_test_websites_site2_booking_index.h
+   ├─ Total clickables: 6
+   ├─ After filtering: 2 (66.67% reduction)
+   └─ Discovered: 0 URLs

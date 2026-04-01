@@ -1,0 +1,110 @@
+2026-04-01 11:00:16 | crawler.gemini_key_rotator | INFO | 🔑 Loaded 12 Gemini API keys for rotation
+2026-04-01 11:00:18 | crawler.redis_cache | INFO | ℹ️  Redis not available (using in-memory cache): Error 10061 connecting to 127.0.0.1:6379. No connection could be made because the target machine actively refused it.
+2026-04-01 11:00:18 | crawler.ai_detector | INFO | 🤖 Gemini element detector initialized (model: gemini-3.1-flash-lite-preview)
+2026-04-01 11:00:18 | crawler.gemini_key_rotator | INFO | 🔑 Loaded 12 Gemini API keys for rotation
+2026-04-01 11:00:18 | crawler.ai_detector | INFO | 🤖 Gemini element detector initialized (model: gemini-3.1-flash-lite-preview)
+2026-04-01 11:00:18 | crawler.link_extractor | INFO | 🤖 Gemini AI detector enabled with 12 API keys
+2026-04-01 11:00:18 | crawler.link_extractor | INFO | LinkExtractor initialized (same_origin=True, AVB=ON, intelligent_filter=ON, snapshots=ON)
+2026-04-01 11:00:18 | crawler.gemini_key_rotator | INFO | 🔑 Loaded 12 Gemini API keys for rotation
+2026-04-01 11:00:18 | crawler.ai_enricher | INFO | ✅ Gemini AI enrichment enabled with 12 API keys (gemini-3.1-flash-lite-preview)
+2026-04-01 11:00:18 | crawler.interaction_sim | INFO | InteractionSimulator initialized (submit_forms=False, expand=True)
+2026-04-01 11:00:28 | crawler.link_extractor | INFO | 🎯 Found 4 clickable elements (traditional detection)
+2026-04-01 11:00:28 | crawler.link_extractor | INFO | 🌓 Added 8 shadow DOM elements
+2026-04-01 11:00:28 | crawler.link_extractor | INFO | 🔄 Deduplication: 12 → 6 elements (removed 6 duplicates)
+2026-04-01 11:00:28 | crawler.link_extractor | INFO | 🧠 After intelligent filtering: 6 unique components
+2026-04-01 11:00:34 | crawler.link_extractor | INFO | ✅ AVB: 'New Task' → http://localhost:3007/tasks
+2026-04-01 11:00:34 | crawler.link_extractor | INFO | ✅ AVB: 'Settings' → http://localhost:3007/settings
+2026-04-01 11:00:38 | crawler.link_extractor | INFO | 🔍 Action-Verify-Back: 2/5 clicks discovered URLs (2 unique)
+2026-04-01 11:00:38 | crawler.link_extractor | INFO | 🔗 Extracted 3 unique links
+2026-04-01 11:00:45 | crawler.interaction_sim | INFO | 🔍 Hidden elements discovered: 0 accordions, 0 menus
+2026-04-01 11:00:46 | crawler.ai_detector | INFO | 🤖 Form detection: Analyzing screenshot with Gemini (API call #1)
+2026-04-01 11:00:47 | crawler.ai_detector | WARNING | ⚠️  API key quota exceeded (attempt 1/12)
+2026-04-01 11:00:47 | crawler.gemini_key_rotator | INFO | 🔄 Rotated API key: ...iXtO13KI → ...vvdOTYio (reason: rate_limit)
+2026-04-01 11:00:47 | crawler.ai_detector | INFO | 🔄 Switching to next API key...
+2026-04-01 11:00:51 | crawler.ai_detector | INFO | ✅ AI Vision: Detected 1 forms
+2026-04-01 11:00:53 | crawler.ai_enricher | INFO | 🤖 AI enrichment: Found 1 forms, 1 buttons, 1 interactive elements
+2026-04-01 11:00:53 | crawler.link_extractor | INFO | 🤖 Using GEMINI AI to detect navigation elements on homepage
+2026-04-01 11:00:53 | crawler.ai_detector | INFO | 🤖 Sending screenshot to Gemini: snapshots/ai_analysis_215.png (API call #2)
+2026-04-01 11:00:53 | crawler.ai_detector | INFO | 📋 Generic parser found 4 potential navigation elements
+2026-04-01 11:00:53 | crawler.ai_detector | INFO | 📤 Requesting Gemini analysis...
+2026-04-01 11:00:55 | crawler.ai_detector | INFO | 🤖 Gemini detected 3 navigation elements (confidence >= 70%)
+2026-04-01 11:00:55 | crawler.ai_detector | INFO | ✅ 3 high-confidence elements validated
+2026-04-01 11:00:55 | crawler.ai_detector | INFO | 📦 Detected layout signature (caching disabled): nav:|accordions:0
+2026-04-01 11:00:55 | crawler.link_extractor | INFO | 🤖 AI found 3 navigation elements: ['Sign Up', 'New Task', 'Settings']
+2026-04-01 11:00:55 | crawler.link_extractor | INFO | 🤖 Using 3 AI-detected navigation elements
+2026-04-01 11:00:55 | crawler.link_extractor | INFO | 🌓 Added 8 shadow DOM elements
+2026-04-01 11:00:55 | crawler.link_extractor | INFO | 🔄 Deduplication: 11 → 9 elements (removed 2 duplicates)
+2026-04-01 11:00:55 | crawler.link_extractor | INFO | 🧠 After intelligent filtering: 9 unique components
+2026-04-01 11:00:59 | crawler.link_extractor | INFO | ✅ AVB: 'New Task' → http://localhost:3007/tasks
+2026-04-01 11:00:59 | crawler.link_extractor | INFO | ✅ AVB: 'Settings' → http://localhost:3007/settings
+2026-04-01 11:01:09 | crawler.link_extractor | INFO | 🔍 Action-Verify-Back: 2/8 clicks discovered URLs (2 unique)
+2026-04-01 11:01:09 | crawler.link_extractor | INFO | ⏭️  Skipped 2 duplicate URLs during AVB
+2026-04-01 11:01:09 | crawler.link_extractor | INFO | 🔗 Extracted 3 unique links
+2026-04-01 11:01:15 | crawler.interaction_sim | INFO | 🔍 Hidden elements discovered: 0 accordions, 0 menus
+2026-04-01 11:01:16 | crawler.ai_detector | INFO | 🤖 Form detection: Analyzing screenshot with Gemini (API call #3)
+2026-04-01 11:01:19 | crawler.ai_detector | INFO | ✅ AI Vision: Detected 1 forms
+2026-04-01 11:01:22 | crawler.ai_enricher | INFO | 🤖 AI enrichment: Found 1 forms, 1 buttons, 0 interactive elements
+2026-04-01 11:01:22 | crawler.link_extractor | INFO | 🤖 Using GEMINI AI to detect navigation elements on sub-page
+2026-04-01 11:01:22 | crawler.ai_detector | INFO | 🤖 Sending screenshot to Gemini: snapshots/ai_analysis_897.png (API call #4)
+2026-04-01 11:01:22 | crawler.ai_detector | INFO | 📋 Generic parser found 5 potential navigation elements
+2026-04-01 11:01:22 | crawler.ai_detector | INFO | 📤 Requesting Gemini analysis...
+2026-04-01 11:01:24 | crawler.ai_detector | INFO | 🤖 Gemini detected 2 navigation elements (confidence >= 70%)
+2026-04-01 11:01:24 | crawler.ai_detector | INFO | ✅ 2 high-confidence elements validated
+2026-04-01 11:01:24 | crawler.ai_detector | INFO | 📦 Detected layout signature (caching disabled): nav:|accordions:0
+2026-04-01 11:01:24 | crawler.link_extractor | INFO | 🤖 AI found 2 navigation elements: ['New Task', 'Settings']
+2026-04-01 11:01:24 | crawler.link_extractor | INFO | 🤖 Using 2 AI-detected navigation elements
+2026-04-01 11:01:24 | crawler.link_extractor | INFO | 🌓 Added 7 shadow DOM elements
+2026-04-01 11:01:24 | crawler.link_extractor | INFO | 🧠 After intelligent filtering: 9 unique components
+2026-04-01 11:01:28 | crawler.link_extractor | INFO | ✅ AVB: 'New Task' → http://localhost:3007/tasks
+2026-04-01 11:01:33 | crawler.link_extractor | INFO | ✅ AVB: 'Sign Up' → http://localhost:3007/
+2026-04-01 11:01:37 | crawler.ai_detector | INFO | 🤖 Form detection: Analyzing screenshot with Gemini (API call #5)
+2026-04-01 11:01:40 | crawler.ai_detector | INFO | ✅ AI Vision: Detected 1 forms
+2026-04-01 11:01:40 | crawler.link_extractor | INFO | 📦 Stored component state: http://localhost:3007/settings#component-save-settings
+2026-04-01 11:01:40 | crawler.link_extractor | INFO | 🔍 Action-Verify-Back: 2/8 clicks discovered URLs (2 unique)
+2026-04-01 11:01:40 | crawler.link_extractor | INFO | ⏭️  Skipped 1 duplicate URLs during AVB
+2026-04-01 11:01:40 | crawler.link_extractor | INFO | 🔗 Extracted 3 unique links
+2026-04-01 11:01:46 | crawler.interaction_sim | INFO | 🔍 Hidden elements discovered: 0 accordions, 0 menus
+2026-04-01 11:01:47 | crawler.ai_detector | INFO | 🤖 Form detection: Analyzing screenshot with Gemini (API call #6)
+2026-04-01 11:01:51 | crawler.ai_detector | INFO | ✅ AI Vision: Detected 1 forms
+2026-04-01 11:01:54 | crawler.ai_enricher | INFO | 🤖 AI enrichment: Found 1 forms, 1 buttons, 0 interactive elements
+2026-04-01 11:01:54 | crawler.link_extractor | INFO | 🤖 Using GEMINI AI to detect navigation elements on sub-page
+2026-04-01 11:01:54 | crawler.ai_detector | INFO | 🤖 Sending screenshot to Gemini: snapshots/ai_analysis_3078.png (API call #7)
+2026-04-01 11:01:54 | crawler.ai_detector | INFO | 📋 Generic parser found 4 potential navigation elements
+2026-04-01 11:01:54 | crawler.ai_detector | INFO | 📤 Requesting Gemini analysis...
+2026-04-01 11:01:56 | crawler.ai_detector | INFO | 🤖 Gemini detected 2 navigation elements (confidence >= 70%)
+2026-04-01 11:01:56 | crawler.ai_detector | INFO | ✅ 2 high-confidence elements validated
+2026-04-01 11:01:56 | crawler.ai_detector | INFO | 📦 Detected layout signature (caching disabled): nav:|accordions:0
+2026-04-01 11:01:56 | crawler.link_extractor | INFO | 🤖 AI found 2 navigation elements: ['New Task', 'Settings']
+2026-04-01 11:01:56 | crawler.link_extractor | INFO | 🤖 Using 2 AI-detected navigation elements
+2026-04-01 11:01:56 | crawler.link_extractor | INFO | 🌓 Added 7 shadow DOM elements
+2026-04-01 11:01:56 | crawler.link_extractor | INFO | 🔄 Deduplication: 9 → 8 elements (removed 1 duplicates)
+2026-04-01 11:01:56 | crawler.link_extractor | INFO | 🧠 After intelligent filtering: 8 unique components
+2026-04-01 11:02:00 | crawler.link_extractor | INFO | ✅ AVB: 'Settings' → http://localhost:3007/settings
+2026-04-01 11:02:05 | crawler.link_extractor | INFO | ✅ AVB: 'Sign Up' → http://localhost:3007/
+2026-04-01 11:02:09 | crawler.ai_detector | INFO | 🤖 Form detection: Analyzing screenshot with Gemini (API call #8)
+2026-04-01 11:02:12 | crawler.ai_detector | INFO | ✅ AI Vision: Detected 1 forms
+2026-04-01 11:02:12 | crawler.link_extractor | INFO | 📦 Stored component state: http://localhost:3007/tasks#component-add-task
+2026-04-01 11:02:12 | crawler.link_extractor | INFO | 🔍 Action-Verify-Back: 2/7 clicks discovered URLs (2 unique)
+2026-04-01 11:02:12 | crawler.link_extractor | INFO | ⏭️  Skipped 1 duplicate URLs during AVB
+2026-04-01 11:02:12 | crawler.link_extractor | INFO | 🔗 Extracted 3 unique links
+2026-04-01 11:02:18 | crawler.interaction_sim | INFO | 🔍 Hidden elements discovered: 0 accordions, 0 menus
+2026-04-01 11:02:18 | crawler.ai_detector | INFO | 🤖 Form detection: Analyzing screenshot with Gemini (API call #9)
+2026-04-01 11:02:21 | crawler.ai_detector | INFO | ✅ AI Vision: Detected 1 forms
+2026-04-01 11:02:24 | crawler.ai_enricher | INFO | 🤖 AI enrichment: Found 1 forms, 1 buttons, 1 interactive elements
+2026-04-01 11:02:24 | crawler.link_extractor | INFO | 🤖 Using GEMINI AI to detect navigation elements on homepage
+2026-04-01 11:02:24 | crawler.ai_detector | INFO | 🤖 Sending screenshot to Gemini: snapshots/ai_analysis_215.png (API call #10)
+2026-04-01 11:02:24 | crawler.ai_detector | INFO | 📋 Generic parser found 4 potential navigation elements
+2026-04-01 11:02:24 | crawler.ai_detector | INFO | 📤 Requesting Gemini analysis...
+2026-04-01 11:02:26 | crawler.ai_detector | INFO | 🤖 Gemini detected 3 navigation elements (confidence >= 70%)
+2026-04-01 11:02:26 | crawler.ai_detector | INFO | ✅ 3 high-confidence elements validated
+2026-04-01 11:02:26 | crawler.ai_detector | INFO | 📦 Detected layout signature (caching disabled): nav:|accordions:0
+2026-04-01 11:02:26 | crawler.link_extractor | INFO | 🤖 AI found 3 navigation elements: ['Sign Up', 'New Task', 'Settings']
+2026-04-01 11:02:26 | crawler.link_extractor | INFO | 🤖 Using 3 AI-detected navigation elements
+2026-04-01 11:02:26 | crawler.link_extractor | INFO | 🌓 Added 8 shadow DOM elements
+2026-04-01 11:02:26 | crawler.link_extractor | INFO | 🔄 Deduplication: 11 → 9 elements (removed 2 duplicates)
+2026-04-01 11:02:26 | crawler.link_extractor | INFO | 🧠 After intelligent filtering: 9 unique components
+2026-04-01 11:02:29 | crawler.link_extractor | INFO | ✅ AVB: 'New Task' → http://localhost:3007/tasks
+2026-04-01 11:02:29 | crawler.link_extractor | INFO | ✅ AVB: 'Settings' → http://localhost:3007/settings
+2026-04-01 11:02:45 | crawler.link_extractor | INFO | 🔍 Action-Verify-Back: 2/8 clicks discovered URLs (2 unique)
+2026-04-01 11:02:45 | crawler.link_extractor | INFO | ⏭️  Skipped 2 duplicate URLs during AVB
+2026-04-01 11:02:45 | crawler.link_extractor | INFO | 🔗 Extracted 3 unique links

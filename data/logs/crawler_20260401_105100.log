@@ -1,0 +1,25 @@
+2026-04-01 10:51:12 | crawler.ai_site_analyzer | INFO | 🧠 AI Site Analyzer initialized (pattern detection + URL normalization)
+2026-04-01 10:51:12 | crawler.orchestrator | INFO | 🧠 AI Site Analyzer enabled (smart URL normalization)
+2026-04-01 10:51:12 | crawler.orchestrator | INFO | 🤖 Gemini detector initialized for form/navigation detection
+2026-04-01 10:51:13 | crawler.orchestrator | INFO | 🤖 AI-enhanced form detection enabled in DOMAnalyzer
+2026-04-01 10:51:13 | crawler.graph_builder | INFO | GraphBuilder initialized
+2026-04-01 10:51:13 | crawler.orchestrator | INFO | 🧙 Form wizard detector initialized
+2026-04-01 10:51:13 | crawler.orchestrator | INFO | 🚫 Modal handler initialized
+2026-04-01 10:51:13 | crawler.orchestrator | INFO | 📎 File upload detector initialized
+2026-04-01 10:51:13 | crawler.orchestrator | INFO | 🌑 Shadow DOM detector initialized
+2026-04-01 10:51:13 | crawler.orchestrator | INFO | ⏱️  Rate limiter initialized
+2026-04-01 10:51:13 | crawler.orchestrator | INFO | 🚀 CrawlerOrchestrator initialized
+2026-04-01 10:51:13 | crawler.orchestrator | INFO | 🎯 Starting crawl: http://localhost:5500/test_websites/site2_booking/index.html
+2026-04-01 10:51:13 | crawler.orchestrator | INFO | 📊 Config: max_depth=3, max_pages=10
+2026-04-01 10:51:21 | crawler.orchestrator | INFO | 🚫 Checking for initial popups/modals...
+2026-04-01 10:51:23 | crawler.orchestrator | INFO | 🧠 Performing ONE-TIME site structure analysis...
+2026-04-01 10:51:23 | crawler.orchestrator | INFO | 📡 Collecting sample URLs for pattern detection...
+2026-04-01 10:51:31 | crawler.ai_site_analyzer | INFO | 🔍 Analyzing site structure for localhost:5500 (ONE-TIME analysis)
+2026-04-01 10:51:34 | crawler.ai_site_analyzer | INFO | ✅ Site analysis complete for localhost:5500
+2026-04-01 10:51:34 | crawler.ai_site_analyzer | INFO |    Navigation style: minimal
+2026-04-01 10:51:34 | crawler.ai_site_analyzer | INFO |    URL patterns detected: 0
+2026-04-01 10:51:34 | crawler.ai_site_analyzer | INFO |    Component types: ['has_product_cards', 'has_user_cards', 'has_category_cards', 'has_accordions', 'card_selector']
+2026-04-01 10:51:34 | crawler.ai_site_analyzer | INFO |    📦 Cached in Redis (accessible across all crawler instances)
+2026-04-01 10:51:34 | crawler.orchestrator | INFO | ✅ Site analysis complete - patterns cached for all pages
+2026-04-01 10:51:34 | crawler.orchestrator | INFO | 🔄 Starting BFS crawl...
+2026-04-01 10:51:34 | crawler.orchestrator | INFO | 🌐 Crawling [0]: http://localhost:5500/test_websites/site2_booking/index.html

@@ -1,0 +1,31 @@
+2026-04-01 11:05:09 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 6 detection strategies
+2026-04-01 11:05:09 | crawler.state_manager | INFO | StateManager initialized (normalization=ON)
+2026-04-01 11:05:09 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-04-01 11:05:09 | crawler.page_loader | INFO | PageLoader initialized: chromium, headless=False
+2026-04-01 11:05:11 | crawler.page_loader | INFO | 📂 Loaded session from: auth_session.json
+2026-04-01 11:05:12 | crawler.page_loader | INFO | ✅ Font bypass and animation disable injected
+2026-04-01 11:05:12 | crawler.page_loader | INFO | ✅ Browser started successfully
+2026-04-01 11:05:12 | crawler.page_loader | INFO | 🌐 Loading: http://localhost:3008
+2026-04-01 11:05:33 | crawler.page_loader | INFO | 🌐 Loading: http://localhost:3008
+2026-04-01 11:05:43 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-04-01 11:05:43 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 0 buttons, 4 links
+2026-04-01 11:06:12 | crawler.state_manager | INFO | ✅ New state: fb871217 | / | 0 inputs, 0 forms
+2026-04-01 11:06:12 | crawler.page_loader | INFO | 🌐 Loading: http://localhost:3008/appointment
+2026-04-01 11:06:22 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 1 forms from screenshot analysis
+2026-04-01 11:06:22 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 5 inputs, 1 forms, 1 buttons, 4 links
+2026-04-01 11:06:42 | crawler.state_manager | INFO | ✅ New state: 6c3cc6ef | /appointment | 5 inputs, 1 forms
+2026-04-01 11:06:42 | crawler.page_loader | INFO | 🌐 Loading: http://localhost:3008/
+2026-04-01 11:06:50 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-04-01 11:06:50 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 0 buttons, 4 links
+2026-04-01 11:07:21 | crawler.page_loader | INFO | 🌐 Loading: http://localhost:3008/patient-register
+2026-04-01 11:07:31 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 1 forms from screenshot analysis
+2026-04-01 11:07:31 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 8 inputs, 2 forms, 1 buttons, 4 links
+2026-04-01 11:07:51 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-04-01 11:07:55 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 1 forms from screenshot analysis
+2026-04-01 11:07:55 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 8 inputs, 2 forms, 1 buttons, 4 links
+2026-04-01 11:07:57 | crawler.state_manager | INFO | ✅ New state: 982962c0 | /patient-register | 8 inputs, 2 forms
+2026-04-01 11:07:57 | crawler.page_loader | INFO | 🌐 Loading: http://localhost:3008/doctors
+2026-04-01 11:08:05 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-04-01 11:08:05 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 0 buttons, 4 links
+2026-04-01 11:08:33 | crawler.state_manager | INFO | ✅ New state: 8066a9bd | /doctors | 0 inputs, 0 forms
+2026-04-01 11:08:36 | crawler.page_loader | INFO | 🛑 Browser closed

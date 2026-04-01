@@ -1,0 +1,11 @@
+2026-04-01 10:48:38 | crawler.intelligent_link_filter | INFO | IntelligentLinkFilter initialized
+2026-04-01 10:48:38 | crawler.page_snapshot | INFO | PageSnapshot initialized (output: data/snapshots)
+2026-04-01 10:49:10 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260401_104910_localhost:5500_test_websites_site1_contact_index.h
+   ├─ Total clickables: 4
+   ├─ After filtering: 2 (50.0% reduction)
+   └─ Discovered: 0 URLs
+2026-04-01 10:49:29 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260401_104929_localhost:5500_test_websites_site1_contact_index.h
+   ├─ Total clickables: 4
+   ├─ After filtering: 2 (50.0% reduction)
+   └─ Discovered: 0 URLs
+2026-04-01 10:49:30 | crawler.page_snapshot | INFO | 📋 Snapshot summary saved: data\snapshots\snapshots_summary.json

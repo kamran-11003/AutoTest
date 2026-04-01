@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CarePoint - Book Appointment</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <%- include('partials/nav', { active: 'appointment' }) %>
+  <div class="container">
+    <h1>Book an Appointment</h1>
+    <p>Select your doctor, preferred date and time.</p>
+
+    <form id="appointmentForm" novalidate>
+      <div class="form-group">
+        <label for="doctor">Doctor</label>
+        <select id="doctor" name="doctor" required>
+          <option value="">-- Select a doctor --</option>
+          <option value="dr_johnson">Dr. Sarah Johnson — General Medicine</option>
+          <option value="dr_chen">Dr. Michael Chen — Cardiology</option>
+          <option value="dr_davis">Dr. Emily Davis — Dermatology</option>
+          <option value="dr_patel">Dr. Raj Patel — Orthopedics</option>
+        </select>
+        <div class="error-msg" id="doctor-error"></div>
+      </div>
+
+      <div class="row-2col">
+        <div class="form-group">
+          <label for="appDate">Appointment Date</label>
+          <input type="date" id="appDate" name="appDate" required>
+          <div class="error-msg" id="appDate-error"></div>
+        </div>
+        <div class="form-group">
+          <label for="appTime">Preferred Time</label>
+          <select id="appTime" name="appTime" required>
+            <option value="">-- Select time --</option>
+            <option value="09:00">09:00 AM</option>
+            <option value="10:00">10:00 AM</option>
+            <option value="11:00">11:00 AM</option>
+            <option value="14:00">02:00 PM</option>
+            <option value="15:00">03:00 PM</option>
+            <option value="16:00">04:00 PM</option>
+          </select>
+          <div class="error-msg" id="appTime-error"></div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="visitType">Visit Type</label>
+        <select id="visitType" name="visitType" required>
+          <option value="">-- Select visit type --</option>
+          <option value="new">New Patient Visit</option>
+          <option value="followup">Follow-Up</option>
+          <option value="emergency">Urgent Care</option>
+          <option value="checkup">Annual Checkup</option>
+        </select>
+        <div class="error-msg" id="visitType-error"></div>
+      </div>
+
+      <div class="form-group">
+        <label for="reason">Reason for Visit</label>
+        <textarea id="reason" name="reason" rows="4"
+                  placeholder="Describe your symptoms or reason (10-300 chars)"
+                  required minlength="10" maxlength="300"></textarea>
+        <div class="error-msg" id="reason-error"></div>
+      </div>
+
+      <button type="submit">Book Appointment</button>
+    </form>
+
+    <div class="success-banner" id="appointmentSuccess">
+      <h1>&#10004; Appointment Booked</h1>
+      <p>You will receive a confirmation email shortly.</p>
+      <a href="/" class="back-link">&larr; Back to Home</a>
+    </div>
+  </div>
+
+  <script src="/js/validate.js"></script>
+</body>
+</html>

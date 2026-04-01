@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CarePoint - Patient Registration</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <%- include('partials/nav', { active: 'patient' }) %>
+  <div class="container">
+    <h1>Patient Registration</h1>
+    <p>Register as a new patient at CarePoint Clinic.</p>
+
+    <form id="patientForm" novalidate>
+      <div class="row-2col">
+        <div class="form-group">
+          <label for="firstName">First Name</label>
+          <input type="text" id="firstName" name="firstName"
+                 placeholder="2-30 characters" required minlength="2" maxlength="30">
+          <div class="error-msg" id="firstName-error"></div>
+        </div>
+        <div class="form-group">
+          <label for="lastName">Last Name</label>
+          <input type="text" id="lastName" name="lastName"
+                 placeholder="2-30 characters" required minlength="2" maxlength="30">
+          <div class="error-msg" id="lastName-error"></div>
+        </div>
+      </div>
+
+      <div class="row-2col">
+        <div class="form-group">
+          <label for="dob">Date of Birth</label>
+          <input type="date" id="dob" name="dob" required>
+          <div class="error-msg" id="dob-error"></div>
+        </div>
+        <div class="form-group">
+          <label for="gender">Gender</label>
+          <select id="gender" name="gender" required>
+            <option value="">-- Select --</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+          </select>
+          <div class="error-msg" id="gender-error"></div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="patientPhone">Phone Number</label>
+        <input type="text" id="patientPhone" name="patientPhone"
+               placeholder="10-15 digits" required>
+        <div class="error-msg" id="patientPhone-error"></div>
+      </div>
+
+      <div class="form-group">
+        <label for="patientEmail">Email Address</label>
+        <input type="email" id="patientEmail" name="patientEmail"
+               placeholder="you@example.com" required>
+        <div class="error-msg" id="patientEmail-error"></div>
+      </div>
+
+      <div class="form-group">
+        <label for="emergencyContact">Emergency Contact Name</label>
+        <input type="text" id="emergencyContact" name="emergencyContact"
+               placeholder="2-50 characters" required minlength="2" maxlength="50">
+        <div class="error-msg" id="emergencyContact-error"></div>
+      </div>
+
+      <div class="form-group">
+        <label for="bloodType">Blood Type</label>
+        <select id="bloodType" name="bloodType" required>
+          <option value="">-- Select --</option>
+          <option value="A+">A+</option>
+          <option value="A-">A-</option>
+          <option value="B+">B+</option>
+          <option value="B-">B-</option>
+          <option value="AB+">AB+</option>
+          <option value="AB-">AB-</option>
+          <option value="O+">O+</option>
+          <option value="O-">O-</option>
+        </select>
+        <div class="error-msg" id="bloodType-error"></div>
+      </div>
+
+      <button type="submit">Register Patient</button>
+    </form>
+
+    <div class="success-banner" id="patientSuccess">
+      <h1>&#10004; Registration Complete</h1>
+      <p>Welcome to CarePoint Clinic. You can now book an appointment.</p>
+      <a href="/appointment" class="back-link">Book Appointment &rarr;</a>
+    </div>
+  </div>
+
+  <script src="/js/validate.js"></script>
+</body>
+</html>

@@ -455,6 +455,14 @@ class TestOrchestrator:
                 if pwd is not None and 'confirmPassword' in tc['test_data']:
                     tc['test_data']['confirmPassword'] = pwd
 
+                # Name-pair fix: if firstName present but lastName missing
+                # (common with duplicate/mis-crawled forms), auto-add it.
+                td = tc['test_data']
+                has_first = any(k for k in td if re.search(r'first.?name', k, re.I))
+                has_last = any(k for k in td if re.search(r'last.?name|surname', k, re.I))
+                if has_first and not has_last:
+                    td['lastName'] = 'Doe'
+
                 enriched_count += 1
 
         logger.info(f"Enriched {enriched_count} test cases with companion field data")
@@ -502,25 +510,38 @@ class TestOrchestrator:
         if ftype == 'checkbox':
             return True
 
-        # For select fields, use the first real option value if available
+        # For select fields, use the first real (non-empty) option value
         if ftype in ('select', 'select-one', 'select-multiple'):
             options = field.get('options') or []
-            if options:
-                # options can be list of str or list of {value, text} dicts
-                first = options[0]
-                return first.get('value', first) if isinstance(first, dict) else first
+            for opt in options:
+                val = opt.get('value', opt) if isinstance(opt, dict) else opt
+                if val and str(val).strip() and not str(val).strip().startswith('--'):
+                    return val
+            # If all options are empty/placeholder, try the second option
+            if len(options) > 1:
+                second = options[1]
+                return second.get('value', second) if isinstance(second, dict) else second
             return 'general'  # safe fallback that works for most dropdowns
 
-        # For date fields, return a valid ISO future date
+        # For date fields, return a valid ISO date (past for DOB, future otherwise)
         if ftype in ('date', 'datetime', 'datetime-local'):
             from datetime import date, timedelta
-            # Combine identifiers for checkout/end-date detection
+            # Combine identifiers for context detection
             fname_check = ' '.join(filter(None, [
                 field.get('name', ''), field.get('id', ''), field.get('label', ''),
+                field.get('placeholder', ''),
             ])).lower()
+            # Birth/DOB fields must be in the past
+            if re.search(r'birth|\bdob\b|date.?of.?birth|born', fname_check):
+                return (date.today() - timedelta(days=365 * 25)).strftime('%Y-%m-%d')
+            # Checkout/end dates slightly further in the future
             if re.search(r'check.?out|end.?date|departure|return|check_out', fname_check):
                 return (date.today() + timedelta(days=2)).strftime('%Y-%m-%d')
-            return (date.today() + timedelta(days=1)).strftime('%Y-%m-%d')
+            # Default: tomorrow (weekday — avoid Sunday for appointment-style forms)
+            future = date.today() + timedelta(days=1)
+            if future.weekday() == 6:  # Sunday
+                future += timedelta(days=1)  # push to Monday
+            return future.strftime('%Y-%m-%d')
 
         # Combine all text identifiers for keyword matching
         fname = ' '.join(filter(None, [
@@ -590,11 +611,25 @@ class TestOrchestrator:
         if 'country' in fname:
             return 'US'
 
+        # ── Payment / Credit-card fields ─────────────────────────────────
+        if re.search(r'card.?num|credit.?card|payment.?num|cardnumber|cc.?num', fname):
+            return '4111111111111111'
+        if re.search(r'expir|exp.?date|exp.?month|exp.?year|card.?exp', fname):
+            return '12/26'
+        if re.search(r'cvv|cvc|ccv|security.?code|card.?code', fname):
+            return '123'
+        if re.search(r'card.?holder|card.?name|name.?on.?card', fname):
+            return 'John Doe'
+
         # ── Account fields ────────────────────────────────────────────────
         if 'age' in fname:
             return 25
         if re.search(r'subject|title', fname):
             return 'Test Subject'
+        if re.search(r'company|organization|org.?name', fname):
+            return 'Acme Corp'
+        if re.search(r'search|query|keyword', fname):
+            return 'test query'
 
         # ── Generic fallback ──────────────────────────────────────────────
         return 'test'

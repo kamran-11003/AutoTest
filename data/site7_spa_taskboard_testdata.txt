@@ -1,0 +1,2282 @@
+==============================================================================
+  SITE: Task Board (React SPA)
+  ID  : site7_spa_taskboard
+  URL : http://localhost:3007
+  DATE: 2026-04-01 11:51
+==============================================================================
+
+==============================================================================
+  SECTION 1 — CRAWL DATA
+==============================================================================
+
+  Crawl file : site7_spa_taskboard_verify_20260401_110251.json
+  Pages: 3   Edges: 2   Forms: 3   Fields: 13
+
+  Page: http://localhost:3007  (forms=1 inputs=4)
+    Form #signupForm               method=GET
+      username                   type=text            REQUIRED
+      signupEmail                type=email           REQUIRED
+      signupPassword             type=password        REQUIRED
+      role                       type=select-one      REQUIRED
+
+  Page: http://localhost:3007/settings  (forms=1 inputs=4)
+    Form #settingsForm             method=GET
+      displayName                type=text            REQUIRED
+      bio                        type=textarea       
+      timezone                   type=select-one      REQUIRED
+      emailNotify                type=checkbox       
+
+  Page: http://localhost:3007/tasks  (forms=1 inputs=5)
+    Form #taskForm                 method=GET
+      taskTitle                  type=text            REQUIRED
+      taskDesc                   type=textarea        REQUIRED
+      priority                   type=select-one      REQUIRED
+      category                   type=select-one      REQUIRED
+      dueDate                    type=date            REQUIRED
+
+  Navigation Edges:
+    097a3375  ->  ae4fa27d
+    097a3375  ->  ff37852c
+
+------------------------------------------------------------------------------
+
+==============================================================================
+  SECTION 2 — TEST CASES BEFORE AI REFINEMENT (119 tests)
+==============================================================================
+
+  File: site7_spa_taskboard_before_20260401_111945.json
+
+  Type                                  Count
+  --------------------------------------------
+  BVA - Boundary Value Analysis         48
+  ECP - Equivalence Class Partitioning  63
+  DT  - Decision Table                  0
+  ST  - State Transition                2
+  UC  - Use Case                        6
+  --------------------------------------------
+  TOTAL                                 119
+
+  [ BVA - 48 tests ]
+  ----------------------------------------------------------------------
+  ID          : bva_length_55bcc9ee_username_0
+  Type        : BVA  subtype=length
+  Field       : username (text)
+  Form URL    : http://localhost:3007
+  Test Value  : aa
+  Expected    : error
+  Description : Below minimum length (2 chars)
+  AI-enhanced : False
+
+  ID          : bva_length_55bcc9ee_username_1
+  Type        : BVA  subtype=length
+  Field       : username (text)
+  Form URL    : http://localhost:3007
+  Test Value  : aaa
+  Expected    : success
+  Description : At minimum length (3 chars)
+  AI-enhanced : False
+
+  ID          : bva_length_55bcc9ee_username_2
+  Type        : BVA  subtype=length
+  Field       : username (text)
+  Form URL    : http://localhost:3007
+  Test Value  : aaaa
+  Expected    : success
+  Description : Just above minimum (4 chars)
+  AI-enhanced : False
+
+  ID          : bva_length_55bcc9ee_username_3
+  Type        : BVA  subtype=length
+  Field       : username (text)
+  Form URL    : http://localhost:3007
+  Test Value  : aaaaaaaaaaaaaaaaaaa
+  Expected    : success
+  Description : Just below maximum (19 chars)
+  AI-enhanced : False
+
+  ID          : bva_length_55bcc9ee_username_4
+  Type        : BVA  subtype=length
+  Field       : username (text)
+  Form URL    : http://localhost:3007
+  Test Value  : aaaaaaaaaaaaaaaaaaaa
+  Expected    : success
+  Description : At maximum length (20 chars)
+  AI-enhanced : False
+
+  ID          : bva_length_55bcc9ee_username_5
+  Type        : BVA  subtype=length
+  Field       : username (text)
+  Form URL    : http://localhost:3007
+  Test Value  : aaaaaaaaaaaaaaaaaaaaa
+  Expected    : error
+  Description : Above maximum length (21 chars)
+  AI-enhanced : False
+
+  ID          : bva_length_55bcc9ee_signupEmail_0
+  Type        : BVA  subtype=length
+  Field       : signupEmail (email)
+  Form URL    : http://localhost:3007
+  Test Value  : aaaa
+  Expected    : error
+  Description : Below minimum length (4 chars)
+  AI-enhanced : False
+
+  ID          : bva_length_55bcc9ee_signupEmail_1
+  Type        : BVA  subtype=length
+  Field       : signupEmail (email)
+  Form URL    : http://localhost:3007
+  Test Value  : a@b.c
+  Expected    : success
+  Description : At minimum length (5 chars)
+  AI-enhanced : False
+
+  ID          : bva_length_55bcc9ee_signupEmail_2
+  Type        : BVA  subtype=length
+  Field       : signupEmail (email)
+  Form URL    : http://localhost:3007
+  Test Value  : aa@b.c
+  Expected    : success
+  Description : Just above minimum (6 chars)
+  AI-enhanced : False
+
+  ID          : bva_length_55bcc9ee_signupEmail_3
+  Type        : BVA  subtype=length
+  Field       : signupEmail (email)
+  Form URL    : http://localhost:3007
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+  Expected    : success
+  Description : Just below maximum (253 chars)
+  AI-enhanced : False
+
+  ID          : bva_length_55bcc9ee_signupEmail_4
+  Type        : BVA  subtype=length
+  Field       : signupEmail (email)
+  Form URL    : http://localhost:3007
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+  Expected    : success
+  Description : At maximum length (254 chars)
+  AI-enhanced : False
+
+  ID          : bva_length_55bcc9ee_signupEmail_5
+  Type        : BVA  subtype=length
+  Field       : signupEmail (email)
+  Form URL    : http://localhost:3007
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+  Expected    : error
+  Description : Above maximum length (255 chars)
+  AI-enhanced : False
+
+  ID          : bva_length_55bcc9ee_signupPassword_0
+  Type        : BVA  subtype=length
+  Field       : signupPassword (password)
+  Form URL    : http://localhost:3007
+  Test Value  : Aa1!aaa
+  Expected    : error
+  Description : Below minimum length (7 chars)
+  AI-enhanced : False
+
+  ID          : bva_length_55bcc9ee_signupPassword_1
+  Type        : BVA  subtype=length
+  Field       : signupPassword (password)
+  Form URL    : http://localhost:3007
+  Test Value  : Aa1!aaaa
+  Expected    : success
+  Description : At minimum length (8 chars)
+  AI-enhanced : False
+
+  ID          : bva_length_55bcc9ee_signupPassword_2
+  Type        : BVA  subtype=length
+  Field       : signupPassword (password)
+  Form URL    : http://localhost:3007
+  Test Value  : Aa1!aaaaa
+  Expected    : success
+  Description : Just above minimum (9 chars)
+  AI-enhanced : False
+
+  ID          : bva_length_55bcc9ee_signupPassword_3
+  Type        : BVA  subtype=length
+  Field       : signupPassword (password)
+  Form URL    : http://localhost:3007
+  Test Value  : Aa1!aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : success
+  Description : Just below maximum (254 chars)
+  AI-enhanced : False
+
+  ID          : bva_length_55bcc9ee_signupPassword_4
+  Type        : BVA  subtype=length
+  Field       : signupPassword (password)
+  Form URL    : http://localhost:3007
+  Test Value  : Aa1!aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : success
+  Description : At maximum length (255 chars)
+  AI-enhanced : False
+
+  ID          : bva_length_55bcc9ee_signupPassword_5
+  Type        : BVA  subtype=length
+  Field       : signupPassword (password)
+  Form URL    : http://localhost:3007
+  Test Value  : Aa1!aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : error
+  Description : Above maximum length (256 chars)
+  AI-enhanced : False
+
+  ID          : bva_length_c918c1a1_displayName_0
+  Type        : BVA  subtype=length
+  Field       : displayName (text)
+  Form URL    : http://localhost:3007/settings
+  Test Value  : a
+  Expected    : error
+  Description : Below minimum length (1 chars)
+  AI-enhanced : False
+
+  ID          : bva_length_c918c1a1_displayName_1
+  Type        : BVA  subtype=length
+  Field       : displayName (text)
+  Form URL    : http://localhost:3007/settings
+  Test Value  : aa
+  Expected    : success
+  Description : At minimum length (2 chars)
+  AI-enhanced : False
+
+  ID          : bva_length_c918c1a1_displayName_2
+  Type        : BVA  subtype=length
+  Field       : displayName (text)
+  Form URL    : http://localhost:3007/settings
+  Test Value  : aaa
+  Expected    : success
+  Description : Just above minimum (3 chars)
+  AI-enhanced : False
+
+  ID          : bva_length_c918c1a1_displayName_3
+  Type        : BVA  subtype=length
+  Field       : displayName (text)
+  Form URL    : http://localhost:3007/settings
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : success
+  Description : Just below maximum (49 chars)
+  AI-enhanced : False
+
+  ID          : bva_length_c918c1a1_displayName_4
+  Type        : BVA  subtype=length
+  Field       : displayName (text)
+  Form URL    : http://localhost:3007/settings
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : success
+  Description : At maximum length (50 chars)
+  AI-enhanced : False
+
+  ID          : bva_length_c918c1a1_displayName_5
+  Type        : BVA  subtype=length
+  Field       : displayName (text)
+  Form URL    : http://localhost:3007/settings
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : error
+  Description : Above maximum length (51 chars)
+  AI-enhanced : False
+
+  ID          : bva_length_c918c1a1_bio_0
+  Type        : BVA  subtype=length
+  Field       : bio (textarea)
+  Form URL    : http://localhost:3007/settings
+  Test Value  : 
+  Expected    : success
+  Description : Below minimum length (-1 chars)
+  AI-enhanced : False
+
+  ID          : bva_length_c918c1a1_bio_1
+  Type        : BVA  subtype=length
+  Field       : bio (textarea)
+  Form URL    : http://localhost:3007/settings
+  Test Value  : 
+  Expected    : success
+  Description : At minimum length (0 chars)
+  AI-enhanced : False
+
+  ID          : bva_length_c918c1a1_bio_2
+  Type        : BVA  subtype=length
+  Field       : bio (textarea)
+  Form URL    : http://localhost:3007/settings
+  Test Value  : a
+  Expected    : success
+  Description : Just above minimum (1 chars)
+  AI-enhanced : False
+
+  ID          : bva_length_c918c1a1_bio_3
+  Type        : BVA  subtype=length
+  Field       : bio (textarea)
+  Form URL    : http://localhost:3007/settings
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : success
+  Description : Just below maximum (199 chars)
+  AI-enhanced : False
+
+  ID          : bva_length_c918c1a1_bio_4
+  Type        : BVA  subtype=length
+  Field       : bio (textarea)
+  Form URL    : http://localhost:3007/settings
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : success
+  Description : At maximum length (200 chars)
+  AI-enhanced : False
+
+  ID          : bva_length_c918c1a1_bio_5
+  Type        : BVA  subtype=length
+  Field       : bio (textarea)
+  Form URL    : http://localhost:3007/settings
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : error
+  Description : Above maximum length (201 chars)
+  AI-enhanced : False
+
+  ID          : bva_length_c918c1a1_emailNotify_0
+  Type        : BVA  subtype=length
+  Field       : emailNotify (checkbox)
+  Form URL    : http://localhost:3007/settings
+  Test Value  : aaaa
+  Expected    : error
+  Description : Below minimum length (4 chars)
+  AI-enhanced : False
+
+  ID          : bva_length_c918c1a1_emailNotify_1
+  Type        : BVA  subtype=length
+  Field       : emailNotify (checkbox)
+  Form URL    : http://localhost:3007/settings
+  Test Value  : aaaaa
+  Expected    : success
+  Description : At minimum length (5 chars)
+  AI-enhanced : False
+
+  ID          : bva_length_c918c1a1_emailNotify_2
+  Type        : BVA  subtype=length
+  Field       : emailNotify (checkbox)
+  Form URL    : http://localhost:3007/settings
+  Test Value  : aaaaaa
+  Expected    : success
+  Description : Just above minimum (6 chars)
+  AI-enhanced : False
+
+  ID          : bva_length_c918c1a1_emailNotify_3
+  Type        : BVA  subtype=length
+  Field       : emailNotify (checkbox)
+  Form URL    : http://localhost:3007/settings
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : success
+  Description : Just below maximum (253 chars)
+  AI-enhanced : False
+
+  ID          : bva_length_c918c1a1_emailNotify_4
+  Type        : BVA  subtype=length
+  Field       : emailNotify (checkbox)
+  Form URL    : http://localhost:3007/settings
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : success
+  Description : At maximum length (254 chars)
+  AI-enhanced : False
+
+  ID          : bva_length_c918c1a1_emailNotify_5
+  Type        : BVA  subtype=length
+  Field       : emailNotify (checkbox)
+  Form URL    : http://localhost:3007/settings
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : error
+  Description : Above maximum length (255 chars)
+  AI-enhanced : False
+
+  ID          : bva_length_794e3b70_taskTitle_0
+  Type        : BVA  subtype=length
+  Field       : taskTitle (text)
+  Form URL    : http://localhost:3007/tasks
+  Test Value  : aa
+  Expected    : error
+  Description : Below minimum length (2 chars)
+  AI-enhanced : False
+
+  ID          : bva_length_794e3b70_taskTitle_1
+  Type        : BVA  subtype=length
+  Field       : taskTitle (text)
+  Form URL    : http://localhost:3007/tasks
+  Test Value  : aaa
+  Expected    : success
+  Description : At minimum length (3 chars)
+  AI-enhanced : False
+
+  ID          : bva_length_794e3b70_taskTitle_2
+  Type        : BVA  subtype=length
+  Field       : taskTitle (text)
+  Form URL    : http://localhost:3007/tasks
+  Test Value  : aaaa
+  Expected    : success
+  Description : Just above minimum (4 chars)
+  AI-enhanced : False
+
+  ID          : bva_length_794e3b70_taskTitle_3
+  Type        : BVA  subtype=length
+  Field       : taskTitle (text)
+  Form URL    : http://localhost:3007/tasks
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : success
+  Description : Just below maximum (99 chars)
+  AI-enhanced : False
+
+  ID          : bva_length_794e3b70_taskTitle_4
+  Type        : BVA  subtype=length
+  Field       : taskTitle (text)
+  Form URL    : http://localhost:3007/tasks
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : success
+  Description : At maximum length (100 chars)
+  AI-enhanced : False
+
+  ID          : bva_length_794e3b70_taskTitle_5
+  Type        : BVA  subtype=length
+  Field       : taskTitle (text)
+  Form URL    : http://localhost:3007/tasks
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : error
+  Description : Above maximum length (101 chars)
+  AI-enhanced : False
+
+  ID          : bva_length_794e3b70_taskDesc_0
+  Type        : BVA  subtype=length
+  Field       : taskDesc (textarea)
+  Form URL    : http://localhost:3007/tasks
+  Test Value  : aaaaaaaaa
+  Expected    : error
+  Description : Below minimum length (9 chars)
+  AI-enhanced : False
+
+  ID          : bva_length_794e3b70_taskDesc_1
+  Type        : BVA  subtype=length
+  Field       : taskDesc (textarea)
+  Form URL    : http://localhost:3007/tasks
+  Test Value  : aaaaaaaaaa
+  Expected    : success
+  Description : At minimum length (10 chars)
+  AI-enhanced : False
+
+  ID          : bva_length_794e3b70_taskDesc_2
+  Type        : BVA  subtype=length
+  Field       : taskDesc (textarea)
+  Form URL    : http://localhost:3007/tasks
+  Test Value  : aaaaaaaaaaa
+  Expected    : success
+  Description : Just above minimum (11 chars)
+  AI-enhanced : False
+
+  ID          : bva_length_794e3b70_taskDesc_3
+  Type        : BVA  subtype=length
+  Field       : taskDesc (textarea)
+  Form URL    : http://localhost:3007/tasks
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : success
+  Description : Just below maximum (499 chars)
+  AI-enhanced : False
+
+  ID          : bva_length_794e3b70_taskDesc_4
+  Type        : BVA  subtype=length
+  Field       : taskDesc (textarea)
+  Form URL    : http://localhost:3007/tasks
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : success
+  Description : At maximum length (500 chars)
+  AI-enhanced : False
+
+  ID          : bva_length_794e3b70_taskDesc_5
+  Type        : BVA  subtype=length
+  Field       : taskDesc (textarea)
+  Form URL    : http://localhost:3007/tasks
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : error
+  Description : Above maximum length (501 chars)
+  AI-enhanced : False
+
+
+  [ ECP - 63 tests ]
+  ----------------------------------------------------------------------
+  ID          : ecp_text_55bcc9ee_username_valid
+  Type        : ECP  subtype=valid_text
+  Field       : username (text)
+  Form URL    : http://localhost:3007
+  Test Value  : ValidInput123
+  Expected    : success
+  Description : Valid text input for Username
+  AI-enhanced : False
+
+  ID          : ecp_text_55bcc9ee_username_empty
+  Type        : ECP  subtype=empty_required
+  Field       : username (text)
+  Form URL    : http://localhost:3007
+  Test Value  : 
+  Expected    : error
+  Description : Empty value for required field Username
+  AI-enhanced : False
+
+  ID          : ecp_text_55bcc9ee_username_special
+  Type        : ECP  subtype=special_characters
+  Field       : username (text)
+  Form URL    : http://localhost:3007
+  Test Value  : <script>alert("XSS")</script>
+  Expected    : error
+  Description : Special characters/XSS attempt in Username
+  AI-enhanced : False
+
+  ID          : ecp_text_55bcc9ee_username_long
+  Type        : ECP  subtype=long_text
+  Field       : username (text)
+  Form URL    : http://localhost:3007
+  Test Value  : AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+  Expected    : error
+  Description : Very long text input (500 chars) for Username — should exceed server maxlength
+  AI-enhanced : False
+
+  ID          : ecp_text_55bcc9ee_username_unicode
+  Type        : ECP  subtype=unicode
+  Field       : username (text)
+  Form URL    : http://localhost:3007
+  Test Value  : 测试数据🎉!测试数据
+  Expected    : success
+  Description : Unicode characters in Username
+  AI-enhanced : False
+
+  ID          : ecp_email_55bcc9ee_signupEmail_valid_standard_0
+  Type        : ECP  subtype=valid_standard
+  Field       : signupEmail (email)
+  Form URL    : http://localhost:3007
+  Test Value  : user@example.com
+  Expected    : success
+  Description : Valid standard email format
+  AI-enhanced : False
+
+  ID          : ecp_email_55bcc9ee_signupEmail_valid_standard_1
+  Type        : ECP  subtype=valid_standard
+  Field       : signupEmail (email)
+  Form URL    : http://localhost:3007
+  Test Value  : test@domain.co.uk
+  Expected    : success
+  Description : Valid standard email format
+  AI-enhanced : False
+
+  ID          : ecp_email_55bcc9ee_signupEmail_valid_with_plus_0
+  Type        : ECP  subtype=valid_with_plus
+  Field       : signupEmail (email)
+  Form URL    : http://localhost:3007
+  Test Value  : user+tag@example.com
+  Expected    : success
+  Description : Valid email with plus addressing
+  AI-enhanced : False
+
+  ID          : ecp_email_55bcc9ee_signupEmail_valid_with_plus_1
+  Type        : ECP  subtype=valid_with_plus
+  Field       : signupEmail (email)
+  Form URL    : http://localhost:3007
+  Test Value  : test+filter@domain.com
+  Expected    : success
+  Description : Valid email with plus addressing
+  AI-enhanced : False
+
+  ID          : ecp_email_55bcc9ee_signupEmail_valid_with_dots_0
+  Type        : ECP  subtype=valid_with_dots
+  Field       : signupEmail (email)
+  Form URL    : http://localhost:3007
+  Test Value  : first.last@example.com
+  Expected    : success
+  Description : Valid email with dots in local part
+  AI-enhanced : False
+
+  ID          : ecp_email_55bcc9ee_signupEmail_valid_with_dots_1
+  Type        : ECP  subtype=valid_with_dots
+  Field       : signupEmail (email)
+  Form URL    : http://localhost:3007
+  Test Value  : user.name@domain.org
+  Expected    : success
+  Description : Valid email with dots in local part
+  AI-enhanced : False
+
+  ID          : ecp_email_55bcc9ee_signupEmail_valid_subdomain_0
+  Type        : ECP  subtype=valid_subdomain
+  Field       : signupEmail (email)
+  Form URL    : http://localhost:3007
+  Test Value  : user@mail.example.com
+  Expected    : success
+  Description : Valid email with subdomain
+  AI-enhanced : False
+
+  ID          : ecp_email_55bcc9ee_signupEmail_valid_subdomain_1
+  Type        : ECP  subtype=valid_subdomain
+  Field       : signupEmail (email)
+  Form URL    : http://localhost:3007
+  Test Value  : test@subdomain.domain.com
+  Expected    : success
+  Description : Valid email with subdomain
+  AI-enhanced : False
+
+  ID          : ecp_email_55bcc9ee_signupEmail_invalid_missing_at_0
+  Type        : ECP  subtype=invalid_missing_at
+  Field       : signupEmail (email)
+  Form URL    : http://localhost:3007
+  Test Value  : userexample.com
+  Expected    : error
+  Description : Missing @ symbol
+  AI-enhanced : False
+
+  ID          : ecp_email_55bcc9ee_signupEmail_invalid_missing_at_1
+  Type        : ECP  subtype=invalid_missing_at
+  Field       : signupEmail (email)
+  Form URL    : http://localhost:3007
+  Test Value  : test.domain.com
+  Expected    : error
+  Description : Missing @ symbol
+  AI-enhanced : False
+
+  ID          : ecp_email_55bcc9ee_signupEmail_invalid_missing_domain_0
+  Type        : ECP  subtype=invalid_missing_domain
+  Field       : signupEmail (email)
+  Form URL    : http://localhost:3007
+  Test Value  : user@
+  Expected    : error
+  Description : Missing or invalid domain
+  AI-enhanced : False
+
+  ID          : ecp_email_55bcc9ee_signupEmail_invalid_missing_domain_1
+  Type        : ECP  subtype=invalid_missing_domain
+  Field       : signupEmail (email)
+  Form URL    : http://localhost:3007
+  Test Value  : test@.com
+  Expected    : error
+  Description : Missing or invalid domain
+  AI-enhanced : False
+
+  ID          : ecp_email_55bcc9ee_signupEmail_invalid_special_chars_0
+  Type        : ECP  subtype=invalid_special_chars
+  Field       : signupEmail (email)
+  Form URL    : http://localhost:3007
+  Test Value  : user..name@example.com
+  Expected    : error
+  Description : Invalid format: consecutive dots / leading dot (rejected by HTML5)
+  AI-enhanced : False
+
+  ID          : ecp_email_55bcc9ee_signupEmail_invalid_special_chars_1
+  Type        : ECP  subtype=invalid_special_chars
+  Field       : signupEmail (email)
+  Form URL    : http://localhost:3007
+  Test Value  : .user@example.com
+  Expected    : error
+  Description : Invalid format: consecutive dots / leading dot (rejected by HTML5)
+  AI-enhanced : False
+
+  ID          : ecp_email_55bcc9ee_signupEmail_invalid_empty_0
+  Type        : ECP  subtype=invalid_empty
+  Field       : signupEmail (email)
+  Form URL    : http://localhost:3007
+  Test Value  : 
+  Expected    : error
+  Description : Empty or whitespace only
+  AI-enhanced : False
+
+  ID          : ecp_email_55bcc9ee_signupEmail_invalid_empty_1
+  Type        : ECP  subtype=invalid_empty
+  Field       : signupEmail (email)
+  Form URL    : http://localhost:3007
+  Test Value  :    
+  Expected    : error
+  Description : Empty or whitespace only
+  AI-enhanced : False
+
+  ID          : ecp_email_55bcc9ee_signupEmail_invalid_spaces_0
+  Type        : ECP  subtype=invalid_spaces
+  Field       : signupEmail (email)
+  Form URL    : http://localhost:3007
+  Test Value  : user name@example.com
+  Expected    : error
+  Description : Contains spaces
+  AI-enhanced : False
+
+  ID          : ecp_email_55bcc9ee_signupEmail_invalid_spaces_1
+  Type        : ECP  subtype=invalid_spaces
+  Field       : signupEmail (email)
+  Form URL    : http://localhost:3007
+  Test Value  : test @domain.com
+  Expected    : error
+  Description : Contains spaces
+  AI-enhanced : False
+
+  ID          : ecp_text_55bcc9ee_signupPassword_valid
+  Type        : ECP  subtype=valid_text
+  Field       : signupPassword (password)
+  Form URL    : http://localhost:3007
+  Test Value  : ValidInput123
+  Expected    : success
+  Description : Valid text input for Password
+  AI-enhanced : False
+
+  ID          : ecp_text_55bcc9ee_signupPassword_empty
+  Type        : ECP  subtype=empty_required
+  Field       : signupPassword (password)
+  Form URL    : http://localhost:3007
+  Test Value  : 
+  Expected    : error
+  Description : Empty value for required field Password
+  AI-enhanced : False
+
+  ID          : ecp_text_55bcc9ee_signupPassword_special
+  Type        : ECP  subtype=special_characters
+  Field       : signupPassword (password)
+  Form URL    : http://localhost:3007
+  Test Value  : <script>alert("XSS")</script>
+  Expected    : error
+  Description : Special characters/XSS attempt in Password
+  AI-enhanced : False
+
+  ID          : ecp_text_55bcc9ee_signupPassword_long
+  Type        : ECP  subtype=long_text
+  Field       : signupPassword (password)
+  Form URL    : http://localhost:3007
+  Test Value  : AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+  Expected    : error
+  Description : Very long text input (500 chars) for Password — should exceed server maxlength
+  AI-enhanced : False
+
+  ID          : ecp_text_55bcc9ee_signupPassword_unicode
+  Type        : ECP  subtype=unicode
+  Field       : signupPassword (password)
+  Form URL    : http://localhost:3007
+  Test Value  : 测试数据🎉!测试数据
+  Expected    : success
+  Description : Unicode characters in Password
+  AI-enhanced : False
+
+  ID          : ecp_select_55bcc9ee_role_first
+  Type        : ECP  subtype=valid_first_option
+  Field       : role (select)
+  Form URL    : http://localhost:3007
+  Test Value  : developer
+  Expected    : success
+  Description : Select first option (developer)
+  AI-enhanced : False
+
+  ID          : ecp_select_55bcc9ee_role_middle
+  Type        : ECP  subtype=valid_middle_option
+  Field       : role (select)
+  Form URL    : http://localhost:3007
+  Test Value  : manager
+  Expected    : success
+  Description : Select middle option (manager)
+  AI-enhanced : False
+
+  ID          : ecp_select_55bcc9ee_role_last
+  Type        : ECP  subtype=valid_last_option
+  Field       : role (select)
+  Form URL    : http://localhost:3007
+  Test Value  : qa
+  Expected    : success
+  Description : Select last option (qa)
+  AI-enhanced : False
+
+  ID          : ecp_text_c918c1a1_displayName_valid
+  Type        : ECP  subtype=valid_text
+  Field       : displayName (text)
+  Form URL    : http://localhost:3007/settings
+  Test Value  : ValidInput123
+  Expected    : success
+  Description : Valid text input for Display Name
+  AI-enhanced : False
+
+  ID          : ecp_text_c918c1a1_displayName_empty
+  Type        : ECP  subtype=empty_required
+  Field       : displayName (text)
+  Form URL    : http://localhost:3007/settings
+  Test Value  : 
+  Expected    : error
+  Description : Empty value for required field Display Name
+  AI-enhanced : False
+
+  ID          : ecp_text_c918c1a1_displayName_special
+  Type        : ECP  subtype=special_characters
+  Field       : displayName (text)
+  Form URL    : http://localhost:3007/settings
+  Test Value  : <script>alert("XSS")</script>
+  Expected    : error
+  Description : Special characters/XSS attempt in Display Name
+  AI-enhanced : False
+
+  ID          : ecp_text_c918c1a1_displayName_long
+  Type        : ECP  subtype=long_text
+  Field       : displayName (text)
+  Form URL    : http://localhost:3007/settings
+  Test Value  : AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+  Expected    : error
+  Description : Very long text input (500 chars) for Display Name — should exceed server maxlength
+  AI-enhanced : False
+
+  ID          : ecp_text_c918c1a1_displayName_unicode
+  Type        : ECP  subtype=unicode
+  Field       : displayName (text)
+  Form URL    : http://localhost:3007/settings
+  Test Value  : 测试数据🎉!测试数据
+  Expected    : success
+  Description : Unicode characters in Display Name
+  AI-enhanced : False
+
+  ID          : ecp_text_c918c1a1_bio_valid
+  Type        : ECP  subtype=valid_text
+  Field       : bio (textarea)
+  Form URL    : http://localhost:3007/settings
+  Test Value  : ValidInput123
+  Expected    : success
+  Description : Valid text input for Bio
+  AI-enhanced : False
+
+  ID          : ecp_text_c918c1a1_bio_special
+  Type        : ECP  subtype=special_characters
+  Field       : bio (textarea)
+  Form URL    : http://localhost:3007/settings
+  Test Value  : <script>alert("XSS")</script>
+  Expected    : error
+  Description : Special characters/XSS attempt in Bio
+  AI-enhanced : False
+
+  ID          : ecp_text_c918c1a1_bio_long
+  Type        : ECP  subtype=long_text
+  Field       : bio (textarea)
+  Form URL    : http://localhost:3007/settings
+  Test Value  : AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+  Expected    : error
+  Description : Very long text input (500 chars) for Bio — should exceed server maxlength
+  AI-enhanced : False
+
+  ID          : ecp_text_c918c1a1_bio_unicode
+  Type        : ECP  subtype=unicode
+  Field       : bio (textarea)
+  Form URL    : http://localhost:3007/settings
+  Test Value  : 测试数据🎉!测试数据
+  Expected    : success
+  Description : Unicode characters in Bio
+  AI-enhanced : False
+
+  ID          : ecp_select_c918c1a1_timezone_first
+  Type        : ECP  subtype=valid_first_option
+  Field       : timezone (select)
+  Form URL    : http://localhost:3007/settings
+  Test Value  : UTC-8
+  Expected    : success
+  Description : Select first option (UTC-8)
+  AI-enhanced : False
+
+  ID          : ecp_select_c918c1a1_timezone_middle
+  Type        : ECP  subtype=valid_middle_option
+  Field       : timezone (select)
+  Form URL    : http://localhost:3007/settings
+  Test Value  : UTC+1
+  Expected    : success
+  Description : Select middle option (UTC+1)
+  AI-enhanced : False
+
+  ID          : ecp_select_c918c1a1_timezone_last
+  Type        : ECP  subtype=valid_last_option
+  Field       : timezone (select)
+  Form URL    : http://localhost:3007/settings
+  Test Value  : UTC+8
+  Expected    : success
+  Description : Select last option (UTC+8)
+  AI-enhanced : False
+
+  ID          : ecp_boolean_c918c1a1_emailNotify_emailNotify
+  Type        : ECP  subtype=checked
+  Field       : emailNotify (checkbox)
+  Form URL    : http://localhost:3007/settings
+  Test Value  : True
+  Expected    : success
+  Description : Checkbox checked/selected for Receive email notifications for task updates
+  AI-enhanced : False
+
+  ID          : ecp_boolean_c918c1a1_emailNotify_emailNotify_unchecked
+  Type        : ECP  subtype=unchecked
+  Field       : emailNotify (checkbox)
+  Form URL    : http://localhost:3007/settings
+  Test Value  : False
+  Expected    : success
+  Description : Checkbox not checked
+  AI-enhanced : False
+
+  ID          : ecp_text_794e3b70_taskTitle_valid
+  Type        : ECP  subtype=valid_text
+  Field       : taskTitle (text)
+  Form URL    : http://localhost:3007/tasks
+  Test Value  : ValidInput123
+  Expected    : success
+  Description : Valid text input for Task Title
+  AI-enhanced : False
+
+  ID          : ecp_text_794e3b70_taskTitle_empty
+  Type        : ECP  subtype=empty_required
+  Field       : taskTitle (text)
+  Form URL    : http://localhost:3007/tasks
+  Test Value  : 
+  Expected    : error
+  Description : Empty value for required field Task Title
+  AI-enhanced : False
+
+  ID          : ecp_text_794e3b70_taskTitle_special
+  Type        : ECP  subtype=special_characters
+  Field       : taskTitle (text)
+  Form URL    : http://localhost:3007/tasks
+  Test Value  : <script>alert("XSS")</script>
+  Expected    : error
+  Description : Special characters/XSS attempt in Task Title
+  AI-enhanced : False
+
+  ID          : ecp_text_794e3b70_taskTitle_long
+  Type        : ECP  subtype=long_text
+  Field       : taskTitle (text)
+  Form URL    : http://localhost:3007/tasks
+  Test Value  : AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+  Expected    : error
+  Description : Very long text input (500 chars) for Task Title — should exceed server maxlength
+  AI-enhanced : False
+
+  ID          : ecp_text_794e3b70_taskTitle_unicode
+  Type        : ECP  subtype=unicode
+  Field       : taskTitle (text)
+  Form URL    : http://localhost:3007/tasks
+  Test Value  : 测试数据🎉!测试数据
+  Expected    : success
+  Description : Unicode characters in Task Title
+  AI-enhanced : False
+
+  ID          : ecp_text_794e3b70_taskDesc_valid
+  Type        : ECP  subtype=valid_text
+  Field       : taskDesc (textarea)
+  Form URL    : http://localhost:3007/tasks
+  Test Value  : ValidInput123
+  Expected    : success
+  Description : Valid text input for Description
+  AI-enhanced : False
+
+  ID          : ecp_text_794e3b70_taskDesc_empty
+  Type        : ECP  subtype=empty_required
+  Field       : taskDesc (textarea)
+  Form URL    : http://localhost:3007/tasks
+  Test Value  : 
+  Expected    : error
+  Description : Empty value for required field Description
+  AI-enhanced : False
+
+  ID          : ecp_text_794e3b70_taskDesc_special
+  Type        : ECP  subtype=special_characters
+  Field       : taskDesc (textarea)
+  Form URL    : http://localhost:3007/tasks
+  Test Value  : <script>alert("XSS")</script>
+  Expected    : error
+  Description : Special characters/XSS attempt in Description
+  AI-enhanced : False
+
+  ID          : ecp_text_794e3b70_taskDesc_long
+  Type        : ECP  subtype=long_text
+  Field       : taskDesc (textarea)
+  Form URL    : http://localhost:3007/tasks
+  Test Value  : AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+  Expected    : error
+  Description : Very long text input (500 chars) for Description — should exceed server maxlength
+  AI-enhanced : False
+
+  ID          : ecp_text_794e3b70_taskDesc_unicode
+  Type        : ECP  subtype=unicode
+  Field       : taskDesc (textarea)
+  Form URL    : http://localhost:3007/tasks
+  Test Value  : 测试数据🎉!测试数据
+  Expected    : success
+  Description : Unicode characters in Description
+  AI-enhanced : False
+
+  ID          : ecp_select_794e3b70_priority_first
+  Type        : ECP  subtype=valid_first_option
+  Field       : priority (select)
+  Form URL    : http://localhost:3007/tasks
+  Test Value  : low
+  Expected    : success
+  Description : Select first option (low)
+  AI-enhanced : False
+
+  ID          : ecp_select_794e3b70_priority_middle
+  Type        : ECP  subtype=valid_middle_option
+  Field       : priority (select)
+  Form URL    : http://localhost:3007/tasks
+  Test Value  : high
+  Expected    : success
+  Description : Select middle option (high)
+  AI-enhanced : False
+
+  ID          : ecp_select_794e3b70_priority_last
+  Type        : ECP  subtype=valid_last_option
+  Field       : priority (select)
+  Form URL    : http://localhost:3007/tasks
+  Test Value  : critical
+  Expected    : success
+  Description : Select last option (critical)
+  AI-enhanced : False
+
+  ID          : ecp_select_794e3b70_category_first
+  Type        : ECP  subtype=valid_first_option
+  Field       : category (select)
+  Form URL    : http://localhost:3007/tasks
+  Test Value  : frontend
+  Expected    : success
+  Description : Select first option (frontend)
+  AI-enhanced : False
+
+  ID          : ecp_select_794e3b70_category_middle
+  Type        : ECP  subtype=valid_middle_option
+  Field       : category (select)
+  Form URL    : http://localhost:3007/tasks
+  Test Value  : devops
+  Expected    : success
+  Description : Select middle option (devops)
+  AI-enhanced : False
+
+  ID          : ecp_select_794e3b70_category_last
+  Type        : ECP  subtype=valid_last_option
+  Field       : category (select)
+  Form URL    : http://localhost:3007/tasks
+  Test Value  : design
+  Expected    : success
+  Description : Select last option (design)
+  AI-enhanced : False
+
+  ID          : ecp_date_794e3b70_dueDate_valid
+  Type        : ECP  subtype=valid
+  Field       : dueDate (date)
+  Form URL    : http://localhost:3007/tasks
+  Test Value  : 2024-01-15
+  Expected    : success
+  Description : Valid date format for Due Date
+  AI-enhanced : False
+
+  ID          : ecp_date_794e3b70_dueDate_invalid
+  Type        : ECP  subtype=invalid_format
+  Field       : dueDate (date)
+  Form URL    : http://localhost:3007/tasks
+  Test Value  : invalid-date
+  Expected    : error
+  Description : Invalid format for Due Date
+  AI-enhanced : False
+
+
+  [ STATE_TRANSITION - 2 tests ]
+  ----------------------------------------------------------------------
+  ID          : state_branch_0_0
+  Type        : State Transition  subtype=branching_flow
+  Test Value  : [{'step': 1, 'action': 'navigate', 'from_url': 'start', 'to_url': '097a3375', 'description': 'Navigate to decision point
+  Expected    : success
+  Description : Branch 1 from Localhost:3007 (TaskBoard — SPA Task Manager): → Settings (TaskBoard — SPA Task Manager)
+  AI-enhanced : False
+
+  ID          : state_branch_0_1
+  Type        : State Transition  subtype=branching_flow
+  Test Value  : [{'step': 1, 'action': 'navigate', 'from_url': 'start', 'to_url': '097a3375', 'description': 'Navigate to decision point
+  Expected    : success
+  Description : Branch 2 from Localhost:3007 (TaskBoard — SPA Task Manager): → Tasks (TaskBoard — SPA Task Manager)
+  AI-enhanced : False
+
+
+  [ USE_CASE - 6 tests ]
+  ----------------------------------------------------------------------
+  ID          : usecase_ecommerce_complete_purchase
+  Type        : Use Case  subtype=e-commerce
+  Test Value  : [{'step': 1, 'action': 'navigate', 'target': None, 'description': 'Navigate to product page', 'verification': 'Product p
+  Expected    : success
+  Description : End-to-end purchase: Browse product → Add to cart → Checkout → Complete order
+  AI-enhanced : False
+
+  ID          : usecase_ecommerce_multiple_products
+  Type        : Use Case  subtype=e-commerce
+  Test Value  : [{'step': 1, 'action': 'navigate', 'target': None, 'description': 'Navigate to first product', 'verification': 'Product 
+  Expected    : success
+  Description : Add multiple products: Add product 1 → Add product 2 → View cart
+  AI-enhanced : False
+
+  ID          : usecase_ecommerce_remove_from_cart
+  Type        : Use Case  subtype=e-commerce
+  Test Value  : [{'step': 1, 'action': 'navigate', 'target': None, 'description': 'Navigate to cart page', 'verification': 'Cart page lo
+  Expected    : success
+  Description : Remove item from cart: View cart → Remove item → Verify removal
+  AI-enhanced : False
+
+  ID          : usecase_registration_unknown
+  Type        : Use Case  subtype=form_submission
+  Form URL    : http://localhost:3007
+  Test Value  : [{'step': 1, 'action': 'navigate', 'target': 'http://localhost:3007', 'description': 'Navigate to registration page', 'v
+  Expected    : success
+  Description : Registration: Navigate → Fill form → Submit → Verify account created
+  AI-enhanced : False
+
+  ID          : usecase_auth_login
+  Type        : Use Case  subtype=authentication
+  Form URL    : http://localhost:3007
+  Test Value  : [{'step': 1, 'action': 'navigate', 'target': None, 'description': 'Navigate to login page', 'verification': 'Login form 
+  Expected    : success
+  Description : User login: Navigate to login → Enter credentials → Submit → Verify logged in
+  AI-enhanced : False
+
+  ID          : usecase_auth_register
+  Type        : Use Case  subtype=authentication
+  Form URL    : http://localhost:3007
+  Test Value  : [{'step': 1, 'action': 'navigate', 'target': None, 'description': 'Navigate to registration page', 'verification': 'Regi
+  Expected    : success
+  Description : User registration: Navigate → Fill form → Submit → Verify account created
+  AI-enhanced : False
+
+
+------------------------------------------------------------------------------
+
+==============================================================================
+  SECTION 3 — TEST CASES AFTER AI REFINEMENT (126 tests | delta +7)
+==============================================================================
+
+  File: site7_spa_taskboard_after_20260401_111952.json
+
+  Type                                  Before    After     Delta
+  ----------------------------------------------------
+  BVA                                   48        52        +4
+  ECP                                   63        66        +3
+  DT                                    0         0         +0
+  ST                                    2         2         +0
+  UC                                    6         6         +0
+  ----------------------------------------------------
+  TOTAL                                 119       126       +7
+
+  [ BVA - 52 tests ]
+  ----------------------------------------------------------------------
+  ID          : bva_length_55bcc9ee_username_0
+  Type        : BVA  subtype=length
+  Field       : username (text)
+  Form URL    : http://localhost:3007
+  Test Value  : aa
+  Expected    : error
+  Description : Verify username validation fails when length is 2 (below minimum of 3)
+  AI-enhanced : True
+
+  ID          : bva_length_55bcc9ee_username_1
+  Type        : BVA  subtype=length
+  Field       : username (text)
+  Form URL    : http://localhost:3007
+  Test Value  : aaa
+  Expected    : success
+  Description : Verify username validation passes when length is 3 (at minimum boundary)
+  AI-enhanced : True
+
+  ID          : bva_length_55bcc9ee_username_2
+  Type        : BVA  subtype=length
+  Field       : username (text)
+  Form URL    : http://localhost:3007
+  Test Value  : aaaa
+  Expected    : success
+  Description : Verify username validation passes when length is 4 (above minimum boundary)
+  AI-enhanced : True
+
+  ID          : bva_length_55bcc9ee_username_3
+  Type        : BVA  subtype=length
+  Field       : username (text)
+  Form URL    : http://localhost:3007
+  Test Value  : aaaaaaaaaaaaaaaaaaa
+  Expected    : success
+  Description : Verify username validation passes when length is 19 (below maximum boundary)
+  AI-enhanced : True
+
+  ID          : bva_length_55bcc9ee_username_4
+  Type        : BVA  subtype=length
+  Field       : username (text)
+  Form URL    : http://localhost:3007
+  Test Value  : aaaaaaaaaaaaaaaaaaaa
+  Expected    : success
+  Description : Verify username validation passes when length is 20 (at maximum boundary)
+  AI-enhanced : True
+
+  ID          : bva_length_55bcc9ee_username_5
+  Type        : BVA  subtype=length
+  Field       : username (text)
+  Form URL    : http://localhost:3007
+  Test Value  : aaaaaaaaaaaaaaaaaaaaa
+  Expected    : error
+  Description : Verify username validation fails when length is 21 (above maximum boundary)
+  AI-enhanced : True
+
+  ID          : bva_length_55bcc9ee_signupEmail_0
+  Type        : BVA  subtype=length
+  Field       : signupEmail (email)
+  Form URL    : http://localhost:3007
+  Test Value  : aaaa
+  Expected    : error
+  Description : Verify email validation fails when length is 4 (below minimum of 5)
+  AI-enhanced : True
+
+  ID          : bva_length_55bcc9ee_signupEmail_1
+  Type        : BVA  subtype=length
+  Field       : signupEmail (email)
+  Form URL    : http://localhost:3007
+  Test Value  : a@b.c
+  Expected    : success
+  Description : Verify email validation passes when length is 5 (at minimum boundary)
+  AI-enhanced : True
+
+  ID          : bva_length_55bcc9ee_signupEmail_2
+  Type        : BVA  subtype=length
+  Field       : signupEmail (email)
+  Form URL    : http://localhost:3007
+  Test Value  : aa@b.c
+  Expected    : success
+  Description : Verify email validation passes when length is 6 (above minimum boundary)
+  AI-enhanced : True
+
+  ID          : bva_length_55bcc9ee_signupEmail_3
+  Type        : BVA  subtype=length
+  Field       : signupEmail (email)
+  Form URL    : http://localhost:3007
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+  Expected    : success
+  Description : Verify email validation passes when length is 253 (below maximum boundary)
+  AI-enhanced : True
+
+  ID          : bva_length_55bcc9ee_signupEmail_4
+  Type        : BVA  subtype=length
+  Field       : signupEmail (email)
+  Form URL    : http://localhost:3007
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+  Expected    : error
+  Description : Verify email validation fails when length is 255 (above maximum boundary)
+  AI-enhanced : True
+
+  ID          : bva_length_55bcc9ee_signupEmail_4
+  Type        : BVA  subtype=length
+  Field       : signupEmail (email)
+  Form URL    : http://localhost:3007
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+  Expected    : success
+  Description : Verify Email field accepts valid input at maximum boundary of 254 characters
+  AI-enhanced : True
+
+  ID          : bva_length_55bcc9ee_signupEmail_5
+  Type        : BVA  subtype=length
+  Field       : signupEmail (email)
+  Form URL    : http://localhost:3007
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+  Expected    : error
+  Description : Verify Email field rejects input exceeding maximum boundary of 254 characters (255 chars)
+  AI-enhanced : True
+
+  ID          : bva_length_55bcc9ee_signupPassword_0
+  Type        : BVA  subtype=length
+  Field       : signupPassword (password)
+  Form URL    : http://localhost:3007
+  Test Value  : Aa1!aaa
+  Expected    : error
+  Description : Verify Password field rejects input below minimum boundary of 8 characters (7 chars)
+  AI-enhanced : True
+
+  ID          : bva_length_55bcc9ee_signupPassword_1
+  Type        : BVA  subtype=length
+  Field       : signupPassword (password)
+  Form URL    : http://localhost:3007
+  Test Value  : Aa1!aaaa
+  Expected    : success
+  Description : Verify Password field accepts input at minimum boundary of 8 characters
+  AI-enhanced : True
+
+  ID          : bva_length_55bcc9ee_signupPassword_2
+  Type        : BVA  subtype=length
+  Field       : signupPassword (password)
+  Form URL    : http://localhost:3007
+  Test Value  : Aa1!aaaaa
+  Expected    : success
+  Description : Verify Password field accepts input just above minimum boundary (9 characters)
+  AI-enhanced : True
+
+  ID          : bva_length_55bcc9ee_signupPassword_3
+  Type        : BVA  subtype=length
+  Field       : signupPassword (password)
+  Form URL    : http://localhost:3007
+  Test Value  : Aa1!aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : success
+  Description : Verify Password field accepts input just below maximum boundary (254 characters)
+  AI-enhanced : True
+
+  ID          : bva_length_55bcc9ee_signupPassword_4
+  Type        : BVA  subtype=length
+  Field       : signupPassword (password)
+  Form URL    : http://localhost:3007
+  Test Value  : Aa1!aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : success
+  Description : Verify Password field accepts input at maximum boundary of 255 characters
+  AI-enhanced : True
+
+  ID          : bva_length_55bcc9ee_signupPassword_5
+  Type        : BVA  subtype=length
+  Field       : signupPassword (password)
+  Form URL    : http://localhost:3007
+  Test Value  : Aa1!aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : error
+  Description : Verify Password field rejects input exceeding maximum boundary of 255 characters (256 chars)
+  AI-enhanced : True
+
+  ID          : bva_length_c918c1a1_displayName_0
+  Type        : BVA  subtype=length
+  Field       : displayName (text)
+  Form URL    : http://localhost:3007/settings
+  Test Value  : a
+  Expected    : error
+  Description : Verify Display Name field rejects input below minimum boundary of 2 characters (1 char)
+  AI-enhanced : True
+
+  ID          : bva_length_c918c1a1_displayName_1
+  Type        : BVA  subtype=length
+  Field       : displayName (text)
+  Form URL    : http://localhost:3007/settings
+  Test Value  : aa
+  Expected    : success
+  Description : Verify Display Name field accepts input at minimum boundary of 2 characters
+  AI-enhanced : True
+
+  ID          : bva_length_c918c1a1_displayName_1
+  Type        : BVA  subtype=length
+  Field       : displayName (text)
+  Form URL    : http://localhost:3007/settings
+  Test Value  : aa
+  Expected    : success
+  Description : At minimum length (2 chars)
+  AI-enhanced : True
+
+  ID          : bva_length_c918c1a1_displayName_2
+  Type        : BVA  subtype=length
+  Field       : displayName (text)
+  Form URL    : http://localhost:3007/settings
+  Test Value  : aaa
+  Expected    : success
+  Description : Just above minimum length (3 chars)
+  AI-enhanced : True
+
+  ID          : bva_length_c918c1a1_displayName_3
+  Type        : BVA  subtype=length
+  Field       : displayName (text)
+  Form URL    : http://localhost:3007/settings
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : success
+  Description : Just below maximum length (49 chars)
+  AI-enhanced : True
+
+  ID          : bva_length_c918c1a1_displayName_4
+  Type        : BVA  subtype=length
+  Field       : displayName (text)
+  Form URL    : http://localhost:3007/settings
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : success
+  Description : At maximum length (50 chars)
+  AI-enhanced : True
+
+  ID          : bva_length_c918c1a1_displayName_5
+  Type        : BVA  subtype=length
+  Field       : displayName (text)
+  Form URL    : http://localhost:3007/settings
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : error
+  Description : Above maximum length (51 chars)
+  AI-enhanced : True
+
+  ID          : bva_length_c918c1a1_bio_0
+  Type        : BVA  subtype=length
+  Field       : bio (textarea)
+  Form URL    : http://localhost:3007/settings
+  Test Value  : a
+  Expected    : success
+  Description : Just above minimum length (1 char)
+  AI-enhanced : True
+
+  ID          : bva_length_c918c1a1_bio_1
+  Type        : BVA  subtype=length
+  Field       : bio (textarea)
+  Form URL    : http://localhost:3007/settings
+  Test Value  : 
+  Expected    : success
+  Description : At minimum length (0 chars)
+  AI-enhanced : True
+
+  ID          : bva_length_c918c1a1_bio_3
+  Type        : BVA  subtype=length
+  Field       : bio (textarea)
+  Form URL    : http://localhost:3007/settings
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : success
+  Description : Just below maximum length (199 chars)
+  AI-enhanced : True
+
+  ID          : bva_length_c918c1a1_bio_4
+  Type        : BVA  subtype=length
+  Field       : bio (textarea)
+  Form URL    : http://localhost:3007/settings
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : success
+  Description : At maximum length (200 chars)
+  AI-enhanced : True
+
+  ID          : bva_length_c918c1a1_bio_5
+  Type        : BVA  subtype=length
+  Field       : bio (textarea)
+  Form URL    : http://localhost:3007/settings
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : error
+  Description : Above maximum length (201 chars)
+  AI-enhanced : True
+
+  ID          : bva_length_c918c1a1_emailNotify_0
+  Type        : BVA  subtype=length
+  Field       : emailNotify (checkbox)
+  Form URL    : http://localhost:3007/settings
+  Test Value  : aaaa
+  Expected    : error
+  Description : Verify validation error when Receive email notifications for task updates length is 4 (below minimum of 5)
+  AI-enhanced : True
+
+  ID          : bva_length_c918c1a1_emailNotify_1
+  Type        : BVA  subtype=length
+  Field       : emailNotify (checkbox)
+  Form URL    : http://localhost:3007/settings
+  Test Value  : aaaaa
+  Expected    : success
+  Description : Verify successful submission when Receive email notifications for task updates length is 5 (at minimum boundary)
+  AI-enhanced : True
+
+  ID          : bva_length_c918c1a1_emailNotify_2
+  Type        : BVA  subtype=length
+  Field       : emailNotify (checkbox)
+  Form URL    : http://localhost:3007/settings
+  Test Value  : aaaaaa
+  Expected    : success
+  Description : Verify successful submission when Receive email notifications for task updates length is 6 (above minimum boundary)
+  AI-enhanced : True
+
+  ID          : bva_length_c918c1a1_emailNotify_3
+  Type        : BVA  subtype=length
+  Field       : emailNotify (checkbox)
+  Form URL    : http://localhost:3007/settings
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : success
+  Description : Verify successful submission when Receive email notifications for task updates length is 253 (below maximum boundary)
+  AI-enhanced : True
+
+  ID          : bva_length_c918c1a1_emailNotify_4
+  Type        : BVA  subtype=length
+  Field       : emailNotify (checkbox)
+  Form URL    : http://localhost:3007/settings
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : success
+  Description : Verify successful submission when Receive email notifications for task updates length is 254 (at maximum boundary)
+  AI-enhanced : True
+
+  ID          : bva_length_c918c1a1_emailNotify_5
+  Type        : BVA  subtype=length
+  Field       : emailNotify (checkbox)
+  Form URL    : http://localhost:3007/settings
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : error
+  Description : Verify validation error when Receive email notifications for task updates length is 255 (above maximum boundary)
+  AI-enhanced : True
+
+  ID          : bva_length_794e3b70_taskTitle_0
+  Type        : BVA  subtype=length
+  Field       : taskTitle (text)
+  Form URL    : http://localhost:3007/tasks
+  Test Value  : aa
+  Expected    : error
+  Description : Verify validation error when Task Title length is 2 (below minimum of 3)
+  AI-enhanced : True
+
+  ID          : bva_length_794e3b70_taskTitle_1
+  Type        : BVA  subtype=length
+  Field       : taskTitle (text)
+  Form URL    : http://localhost:3007/tasks
+  Test Value  : aaa
+  Expected    : success
+  Description : Verify successful submission when Task Title length is 3 (at minimum boundary)
+  AI-enhanced : True
+
+  ID          : bva_length_794e3b70_taskTitle_2
+  Type        : BVA  subtype=length
+  Field       : taskTitle (text)
+  Form URL    : http://localhost:3007/tasks
+  Test Value  : aaaa
+  Expected    : success
+  Description : Verify successful submission when Task Title length is 4 (above minimum boundary)
+  AI-enhanced : True
+
+  ID          : bva_length_794e3b70_taskTitle_3
+  Type        : BVA  subtype=length
+  Field       : taskTitle (text)
+  Form URL    : http://localhost:3007/tasks
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : success
+  Description : Verify successful submission when Task Title length is 99 (below maximum boundary)
+  AI-enhanced : True
+
+  ID          : bva_length_794e3b70_taskTitle_4
+  Type        : BVA  subtype=length
+  Field       : taskTitle (text)
+  Form URL    : http://localhost:3007/tasks
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : success
+  Description : Verify successful submission when Task Title length is 100 (at maximum boundary)
+  AI-enhanced : True
+
+  ID          : bva_length_794e3b70_taskTitle_5
+  Type        : BVA  subtype=length
+  Field       : taskTitle (text)
+  Form URL    : http://localhost:3007/tasks
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : error
+  Description : Verify validation error when Task Title length is 101 (above maximum boundary)
+  AI-enhanced : True
+
+  ID          : bva_length_794e3b70_taskTitle_4
+  Type        : BVA  subtype=length
+  Field       : taskTitle (text)
+  Form URL    : http://localhost:3007/tasks
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : success
+  Description : Task Title at maximum boundary (100 characters)
+  AI-enhanced : True
+
+  ID          : bva_length_794e3b70_taskTitle_5
+  Type        : BVA  subtype=length
+  Field       : taskTitle (text)
+  Form URL    : http://localhost:3007/tasks
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : error
+  Description : Task Title above maximum boundary (101 characters)
+  AI-enhanced : True
+
+  ID          : bva_length_794e3b70_taskDesc_0
+  Type        : BVA  subtype=length
+  Field       : taskDesc (textarea)
+  Form URL    : http://localhost:3007/tasks
+  Test Value  : aaaaaaaaa
+  Expected    : error
+  Description : Description below minimum boundary (9 characters)
+  AI-enhanced : True
+
+  ID          : bva_length_794e3b70_taskDesc_1
+  Type        : BVA  subtype=length
+  Field       : taskDesc (textarea)
+  Form URL    : http://localhost:3007/tasks
+  Test Value  : aaaaaaaaaa
+  Expected    : success
+  Description : Description at minimum boundary (10 characters)
+  AI-enhanced : True
+
+  ID          : bva_length_794e3b70_taskDesc_2
+  Type        : BVA  subtype=length
+  Field       : taskDesc (textarea)
+  Form URL    : http://localhost:3007/tasks
+  Test Value  : aaaaaaaaaaa
+  Expected    : success
+  Description : Description just above minimum boundary (11 characters)
+  AI-enhanced : True
+
+  ID          : bva_length_794e3b70_taskDesc_3
+  Type        : BVA  subtype=length
+  Field       : taskDesc (textarea)
+  Form URL    : http://localhost:3007/tasks
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : success
+  Description : Description just below maximum boundary (499 characters)
+  AI-enhanced : True
+
+  ID          : bva_length_794e3b70_taskDesc_4
+  Type        : BVA  subtype=length
+  Field       : taskDesc (textarea)
+  Form URL    : http://localhost:3007/tasks
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : success
+  Description : Description at maximum boundary (500 characters)
+  AI-enhanced : True
+
+  ID          : bva_length_794e3b70_taskDesc_5
+  Type        : BVA  subtype=length
+  Field       : taskDesc (textarea)
+  Form URL    : http://localhost:3007/tasks
+  Test Value  : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  Expected    : error
+  Description : Description above maximum boundary (501 characters)
+  AI-enhanced : True
+
+  ID          : bva_length_794e3b70_taskTitle_min
+  Type        : BVA  subtype=length
+  Field       : taskTitle (text)
+  Form URL    : http://localhost:3007/tasks
+  Test Value  : aaa
+  Expected    : success
+  Description : Task Title at minimum boundary (3 characters)
+  AI-enhanced : True
+
+
+  [ ECP - 66 tests ]
+  ----------------------------------------------------------------------
+  ID          : ecp_text_55bcc9ee_username_valid
+  Type        : ECP  subtype=valid_text
+  Field       : username (text)
+  Form URL    : http://localhost:3007
+  Test Value  : ValidInput123
+  Expected    : success
+  Description : Verify that a standard alphanumeric username is accepted
+  AI-enhanced : True
+
+  ID          : ecp_text_55bcc9ee_username_empty
+  Type        : ECP  subtype=empty_required
+  Field       : username (text)
+  Form URL    : http://localhost:3007
+  Test Value  : 
+  Expected    : error
+  Description : Empty value for required field Username
+  AI-enhanced : True
+
+  ID          : ecp_text_55bcc9ee_username_special
+  Type        : ECP  subtype=special_characters
+  Field       : username (text)
+  Form URL    : http://localhost:3007
+  Test Value  : <script>alert("XSS")</script>
+  Expected    : error
+  Description : Verify that XSS injection attempts via script tags in the Username field are sanitized or rejected
+  AI-enhanced : True
+
+  ID          : ecp_text_55bcc9ee_username_long
+  Type        : ECP  subtype=long_text
+  Field       : username (text)
+  Form URL    : http://localhost:3007
+  Test Value  : AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+  Expected    : error
+  Description : Verify that a 500-character string exceeds the maximum allowed length for the Username field
+  AI-enhanced : True
+
+  ID          : ecp_text_55bcc9ee_username_unicode
+  Type        : ECP  subtype=unicode
+  Field       : username (text)
+  Form URL    : http://localhost:3007
+  Test Value  : 测试数据🎉!测试数据
+  Expected    : success
+  Description : Verify that multi-byte Unicode characters and emojis are correctly processed in the Username field
+  AI-enhanced : True
+
+  ID          : ecp_email_55bcc9ee_signupEmail_valid_standard_0
+  Type        : ECP  subtype=valid_standard
+  Field       : signupEmail (email)
+  Form URL    : http://localhost:3007
+  Test Value  : user@example.com
+  Expected    : success
+  Description : Verify that a standard email format is accepted in the Email field
+  AI-enhanced : True
+
+  ID          : ecp_email_55bcc9ee_signupEmail_valid_standard_1
+  Type        : ECP  subtype=valid_standard
+  Field       : signupEmail (email)
+  Form URL    : http://localhost:3007
+  Test Value  : test@domain.co.uk
+  Expected    : success
+  Description : Verify that an email with a multi-part TLD is accepted in the Email field
+  AI-enhanced : True
+
+  ID          : ecp_email_55bcc9ee_signupEmail_valid_with_plus_0
+  Type        : ECP  subtype=valid_with_plus
+  Field       : signupEmail (email)
+  Form URL    : http://localhost:3007
+  Test Value  : user+tag@example.com
+  Expected    : success
+  Description : Verify that email addresses using plus-addressing are accepted in the Email field
+  AI-enhanced : True
+
+  ID          : ecp_email_55bcc9ee_signupEmail_valid_with_plus_1
+  Type        : ECP  subtype=valid_with_plus
+  Field       : signupEmail (email)
+  Form URL    : http://localhost:3007
+  Test Value  : test+filter@domain.com
+  Expected    : success
+  Description : Verify that email addresses with plus-addressing and custom domains are accepted in the Email field
+  AI-enhanced : True
+
+  ID          : ecp_email_55bcc9ee_signupEmail_valid_with_dots_0
+  Type        : ECP  subtype=valid_with_dots
+  Field       : signupEmail (email)
+  Form URL    : http://localhost:3007
+  Test Value  : first.last@example.com
+  Expected    : success
+  Description : Verify that email addresses with dots in the local part are accepted in the Email field
+  AI-enhanced : True
+
+  ID          : ecp_email_55bcc9ee_signupEmail_valid_with_dots_1
+  Type        : ECP  subtype=valid_with_dots
+  Field       : signupEmail (email)
+  Form URL    : http://localhost:3007
+  Test Value  : user.name@domain.org
+  Expected    : success
+  Description : Valid email address containing a dot in the local part before the @ symbol
+  AI-enhanced : True
+
+  ID          : ecp_email_55bcc9ee_signupEmail_valid_subdomain_0
+  Type        : ECP  subtype=valid_subdomain
+  Field       : signupEmail (email)
+  Form URL    : http://localhost:3007
+  Test Value  : user@mail.example.com
+  Expected    : success
+  Description : Valid email address using a standard subdomain structure
+  AI-enhanced : True
+
+  ID          : ecp_email_55bcc9ee_signupEmail_valid_subdomain_1
+  Type        : ECP  subtype=valid_subdomain
+  Field       : signupEmail (email)
+  Form URL    : http://localhost:3007
+  Test Value  : test@subdomain.domain.com
+  Expected    : success
+  Description : Valid email address using a multi-level subdomain structure
+  AI-enhanced : True
+
+  ID          : ecp_email_55bcc9ee_signupEmail_invalid_missing_at_0
+  Type        : ECP  subtype=invalid_missing_at
+  Field       : signupEmail (email)
+  Form URL    : http://localhost:3007
+  Test Value  : userexample.com
+  Expected    : error
+  Description : Invalid email format due to missing @ symbol
+  AI-enhanced : True
+
+  ID          : ecp_email_55bcc9ee_signupEmail_invalid_missing_at_1
+  Type        : ECP  subtype=invalid_missing_at
+  Field       : signupEmail (email)
+  Form URL    : http://localhost:3007
+  Test Value  : test.domain.com
+  Expected    : error
+  Description : Invalid email format due to missing @ symbol in a domain-like string
+  AI-enhanced : True
+
+  ID          : ecp_email_55bcc9ee_signupEmail_invalid_missing_domain_0
+  Type        : ECP  subtype=invalid_missing_domain
+  Field       : signupEmail (email)
+  Form URL    : http://localhost:3007
+  Test Value  : user@
+  Expected    : error
+  Description : Invalid email format due to missing domain part after @
+  AI-enhanced : True
+
+  ID          : ecp_email_55bcc9ee_signupEmail_invalid_missing_domain_1
+  Type        : ECP  subtype=invalid_missing_domain
+  Field       : signupEmail (email)
+  Form URL    : http://localhost:3007
+  Test Value  : test@.com
+  Expected    : error
+  Description : Invalid email format due to missing domain name before TLD
+  AI-enhanced : True
+
+  ID          : ecp_email_55bcc9ee_signupEmail_invalid_special_chars_0
+  Type        : ECP  subtype=invalid_special_chars
+  Field       : signupEmail (email)
+  Form URL    : http://localhost:3007
+  Test Value  : user..name@example.com
+  Expected    : error
+  Description : Invalid email format due to consecutive dots in the local part
+  AI-enhanced : True
+
+  ID          : ecp_email_55bcc9ee_signupEmail_invalid_special_chars_1
+  Type        : ECP  subtype=invalid_special_chars
+  Field       : signupEmail (email)
+  Form URL    : http://localhost:3007
+  Test Value  : .user@example.com
+  Expected    : error
+  Description : Invalid email format due to leading dot in the local part
+  AI-enhanced : True
+
+  ID          : ecp_email_55bcc9ee_signupEmail_invalid_empty_0
+  Type        : ECP  subtype=invalid_empty
+  Field       : signupEmail (email)
+  Form URL    : http://localhost:3007
+  Test Value  : 
+  Expected    : error
+  Description : Empty or whitespace only
+  AI-enhanced : True
+
+  ID          : ecp_email_55bcc9ee_signupEmail_invalid_whitespace_0
+  Type        : ECP  subtype=invalid_whitespace
+  Field       : signupEmail (email)
+  Form URL    : http://localhost:3007
+  Test Value  : user name@example.com
+  Expected    : error
+  Description : Invalid email format due to whitespace character in the local part
+  AI-enhanced : True
+
+  ID          : ecp_email_55bcc9ee_signupEmail_invalid_empty_1
+  Type        : ECP  subtype=invalid_empty
+  Field       : signupEmail (email)
+  Form URL    : http://localhost:3007
+  Test Value  :    
+  Expected    : error
+  Description : Verify that an empty or whitespace-only Email field triggers a validation error.
+  AI-enhanced : True
+
+  ID          : ecp_email_55bcc9ee_signupEmail_invalid_spaces_0
+  Type        : ECP  subtype=invalid_spaces
+  Field       : signupEmail (email)
+  Form URL    : http://localhost:3007
+  Test Value  : user name@example.com
+  Expected    : error
+  Description : Verify that an Email address containing spaces in the local part triggers a validation error.
+  AI-enhanced : True
+
+  ID          : ecp_email_55bcc9ee_signupEmail_invalid_spaces_1
+  Type        : ECP  subtype=invalid_spaces
+  Field       : signupEmail (email)
+  Form URL    : http://localhost:3007
+  Test Value  : test @domain.com
+  Expected    : error
+  Description : Verify that an Email address containing spaces around the @ symbol triggers a validation error.
+  AI-enhanced : True
+
+  ID          : ecp_text_55bcc9ee_signupPassword_valid
+  Type        : ECP  subtype=valid_text
+  Field       : signupPassword (password)
+  Form URL    : http://localhost:3007
+  Test Value  : ValidInput123
+  Expected    : success
+  Description : Verify that a standard alphanumeric Password is accepted.
+  AI-enhanced : True
+
+  ID          : ecp_text_55bcc9ee_signupPassword_empty
+  Type        : ECP  subtype=empty_required
+  Field       : signupPassword (password)
+  Form URL    : http://localhost:3007
+  Test Value  : 
+  Expected    : error
+  Description : Empty value for required field Password
+  AI-enhanced : True
+
+  ID          : ecp_text_55bcc9ee_signupPassword_special
+  Type        : ECP  subtype=special_characters
+  Field       : signupPassword (password)
+  Form URL    : http://localhost:3007
+  Test Value  : <script>alert("XSS")</script>
+  Expected    : error
+  Description : Verify that script injection attempts in the Password field are sanitized or rejected.
+  AI-enhanced : True
+
+  ID          : ecp_text_55bcc9ee_signupPassword_long
+  Type        : ECP  subtype=long_text
+  Field       : signupPassword (password)
+  Form URL    : http://localhost:3007
+  Test Value  : AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+  Expected    : error
+  Description : Verify that a Password exceeding the maximum character limit triggers a validation error.
+  AI-enhanced : True
+
+  ID          : ecp_text_55bcc9ee_signupPassword_unicode
+  Type        : ECP  subtype=unicode
+  Field       : signupPassword (password)
+  Form URL    : http://localhost:3007
+  Test Value  : 测试数据🎉!测试数据
+  Expected    : success
+  Description : Verify that Unicode characters are correctly handled in the Password field.
+  AI-enhanced : True
+
+  ID          : ecp_select_55bcc9ee_role_first
+  Type        : ECP  subtype=valid_first_option
+  Field       : role (select)
+  Form URL    : http://localhost:3007
+  Test Value  : developer
+  Expected    : success
+  Description : Verify that the first option (developer) can be successfully selected for the Role field.
+  AI-enhanced : True
+
+  ID          : ecp_select_55bcc9ee_role_middle
+  Type        : ECP  subtype=valid_middle_option
+  Field       : role (select)
+  Form URL    : http://localhost:3007
+  Test Value  : manager
+  Expected    : success
+  Description : Verify that the middle option (manager) can be successfully selected for the Role field.
+  AI-enhanced : True
+
+  ID          : ecp_text_55bcc9ee_username_empty
+  Type        : ECP  subtype=invalid_empty
+  Field       : username (text)
+  Form URL    : http://localhost:3007
+  Test Value  : 
+  Expected    : error
+  Description : Verify that an empty Username field triggers a validation error.
+  AI-enhanced : True
+
+  ID          : ecp_select_55bcc9ee_role_last
+  Type        : ECP  subtype=valid_last_option
+  Field       : role (select)
+  Form URL    : http://localhost:3007
+  Test Value  : qa
+  Expected    : success
+  Description : Verify that selecting the last option 'qa' in the Role dropdown results in a successful update.
+  AI-enhanced : True
+
+  ID          : ecp_text_c918c1a1_displayName_valid
+  Type        : ECP  subtype=valid_text
+  Field       : displayName (text)
+  Form URL    : http://localhost:3007/settings
+  Test Value  : ValidInput123
+  Expected    : success
+  Description : Verify that a standard alphanumeric string is accepted in the Display Name field.
+  AI-enhanced : True
+
+  ID          : ecp_text_c918c1a1_displayName_empty
+  Type        : ECP  subtype=empty_required
+  Field       : displayName (text)
+  Form URL    : http://localhost:3007/settings
+  Test Value  : 
+  Expected    : error
+  Description : Empty value for required field Display Name
+  AI-enhanced : True
+
+  ID          : ecp_text_c918c1a1_displayName_special
+  Type        : ECP  subtype=special_characters
+  Field       : displayName (text)
+  Form URL    : http://localhost:3007/settings
+  Test Value  : <script>alert("XSS")</script>
+  Expected    : error
+  Description : Verify that XSS injection attempts in the Display Name field are sanitized or rejected.
+  AI-enhanced : True
+
+  ID          : ecp_text_c918c1a1_displayName_long
+  Type        : ECP  subtype=long_text
+  Field       : displayName (text)
+  Form URL    : http://localhost:3007/settings
+  Test Value  : AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+  Expected    : error
+  Description : Verify that input exceeding the maximum character limit for Display Name is rejected by the server.
+  AI-enhanced : True
+
+  ID          : ecp_text_c918c1a1_displayName_unicode
+  Type        : ECP  subtype=unicode
+  Field       : displayName (text)
+  Form URL    : http://localhost:3007/settings
+  Test Value  : 测试数据🎉!测试数据
+  Expected    : success
+  Description : Verify that Unicode characters and emojis are correctly processed in the Display Name field.
+  AI-enhanced : True
+
+  ID          : ecp_text_c918c1a1_bio_valid
+  Type        : ECP  subtype=valid_text
+  Field       : bio (textarea)
+  Form URL    : http://localhost:3007/settings
+  Test Value  : ValidInput123
+  Expected    : success
+  Description : Verify that a standard alphanumeric string is accepted in the Bio textarea.
+  AI-enhanced : True
+
+  ID          : ecp_text_c918c1a1_bio_special
+  Type        : ECP  subtype=special_characters
+  Field       : bio (textarea)
+  Form URL    : http://localhost:3007/settings
+  Test Value  : <script>alert("XSS")</script>
+  Expected    : error
+  Description : Verify that XSS injection attempts in the Bio field are sanitized or rejected.
+  AI-enhanced : True
+
+  ID          : ecp_text_c918c1a1_bio_long
+  Type        : ECP  subtype=long_text
+  Field       : bio (textarea)
+  Form URL    : http://localhost:3007/settings
+  Test Value  : AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+  Expected    : error
+  Description : Verify that input exceeding the maximum character limit for Bio is rejected by the server.
+  AI-enhanced : True
+
+  ID          : ecp_text_c918c1a1_bio_unicode
+  Type        : ECP  subtype=unicode
+  Field       : bio (textarea)
+  Form URL    : http://localhost:3007/settings
+  Test Value  : 测试数据🎉!测试数据
+  Expected    : success
+  Description : Verify that Unicode characters and emojis are correctly processed in the Bio field.
+  AI-enhanced : True
+
+  ID          : ecp_select_c918c1a1_timezone_first
+  Type        : ECP  subtype=valid_first_option
+  Field       : timezone (select)
+  Form URL    : http://localhost:3007/settings
+  Test Value  : UTC-8
+  Expected    : success
+  Description : Verify selection of the first available option (UTC-8) in the Timezone dropdown
+  AI-enhanced : True
+
+  ID          : ecp_select_c918c1a1_timezone_middle
+  Type        : ECP  subtype=valid_middle_option
+  Field       : timezone (select)
+  Form URL    : http://localhost:3007/settings
+  Test Value  : UTC+1
+  Expected    : success
+  Description : Verify selection of a middle option (UTC+1) in the Timezone dropdown
+  AI-enhanced : True
+
+  ID          : ecp_select_c918c1a1_timezone_last
+  Type        : ECP  subtype=valid_last_option
+  Field       : timezone (select)
+  Form URL    : http://localhost:3007/settings
+  Test Value  : UTC+8
+  Expected    : success
+  Description : Verify selection of the last available option (UTC+8) in the Timezone dropdown
+  AI-enhanced : True
+
+  ID          : ecp_boolean_c918c1a1_emailNotify_emailNotify
+  Type        : ECP  subtype=checked
+  Field       : emailNotify (checkbox)
+  Form URL    : http://localhost:3007/settings
+  Test Value  : True
+  Expected    : success
+  Description : Verify that the 'Receive email notifications for task updates' checkbox can be successfully checked
+  AI-enhanced : True
+
+  ID          : ecp_boolean_c918c1a1_emailNotify_emailNotify_unchecked
+  Type        : ECP  subtype=unchecked
+  Field       : emailNotify (checkbox)
+  Form URL    : http://localhost:3007/settings
+  Test Value  : False
+  Expected    : success
+  Description : Checkbox not checked
+  AI-enhanced : True
+
+  ID          : ecp_text_794e3b70_taskTitle_valid
+  Type        : ECP  subtype=valid_text
+  Field       : taskTitle (text)
+  Form URL    : http://localhost:3007/tasks
+  Test Value  : ValidInput123
+  Expected    : success
+  Description : Verify that a standard alphanumeric string is accepted in the Task Title field
+  AI-enhanced : True
+
+  ID          : ecp_text_794e3b70_taskTitle_empty
+  Type        : ECP  subtype=empty_required
+  Field       : taskTitle (text)
+  Form URL    : http://localhost:3007/tasks
+  Test Value  : 
+  Expected    : error
+  Description : Empty value for required field Task Title
+  AI-enhanced : True
+
+  ID          : ecp_text_794e3b70_taskTitle_special
+  Type        : ECP  subtype=special_characters
+  Field       : taskTitle (text)
+  Form URL    : http://localhost:3007/tasks
+  Test Value  : <script>alert("XSS")</script>
+  Expected    : error
+  Description : Verify that XSS-prone special characters in the Task Title field are rejected or sanitized
+  AI-enhanced : True
+
+  ID          : ecp_text_794e3b70_taskTitle_long
+  Type        : ECP  subtype=long_text
+  Field       : taskTitle (text)
+  Form URL    : http://localhost:3007/tasks
+  Test Value  : AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+  Expected    : error
+  Description : Verify that input exceeding the maximum character limit for Task Title triggers a validation error
+  AI-enhanced : True
+
+  ID          : ecp_text_794e3b70_taskTitle_unicode
+  Type        : ECP  subtype=unicode
+  Field       : taskTitle (text)
+  Form URL    : http://localhost:3007/tasks
+  Test Value  : 测试数据🎉!测试数据
+  Expected    : success
+  Description : Verify that Unicode characters and emojis are correctly accepted in the Task Title field
+  AI-enhanced : True
+
+  ID          : ecp_text_794e3b70_taskDesc_valid
+  Type        : ECP  subtype=valid_text
+  Field       : taskDesc (textarea)
+  Form URL    : http://localhost:3007/tasks
+  Test Value  : ValidInput123
+  Expected    : success
+  Description : Verify that a standard alphanumeric string is accepted in the Description field.
+  AI-enhanced : True
+
+  ID          : ecp_text_794e3b70_taskDesc_empty
+  Type        : ECP  subtype=empty_required
+  Field       : taskDesc (textarea)
+  Form URL    : http://localhost:3007/tasks
+  Test Value  : 
+  Expected    : error
+  Description : Empty value for required field Description
+  AI-enhanced : True
+
+  ID          : ecp_text_794e3b70_taskDesc_special
+  Type        : ECP  subtype=special_characters
+  Field       : taskDesc (textarea)
+  Form URL    : http://localhost:3007/tasks
+  Test Value  : <script>alert("XSS")</script>
+  Expected    : error
+  Description : Verify that HTML/Script injection attempts in the Description field are sanitized or rejected.
+  AI-enhanced : True
+
+  ID          : ecp_text_794e3b70_taskDesc_long
+  Type        : ECP  subtype=long_text
+  Field       : taskDesc (textarea)
+  Form URL    : http://localhost:3007/tasks
+  Test Value  : AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+  Expected    : error
+  Description : Verify that input exceeding the maximum character limit for the Description field is rejected.
+  AI-enhanced : True
+
+  ID          : ecp_text_794e3b70_taskDesc_unicode
+  Type        : ECP  subtype=unicode
+  Field       : taskDesc (textarea)
+  Form URL    : http://localhost:3007/tasks
+  Test Value  : 测试数据🎉!测试数据
+  Expected    : success
+  Description : Verify that multi-byte Unicode characters and emojis are correctly processed in the Description field.
+  AI-enhanced : True
+
+  ID          : ecp_select_794e3b70_priority_first
+  Type        : ECP  subtype=valid_first_option
+  Field       : priority (select)
+  Form URL    : http://localhost:3007/tasks
+  Test Value  : low
+  Expected    : success
+  Description : Verify that the first option 'low' can be successfully selected in the Priority dropdown.
+  AI-enhanced : True
+
+  ID          : ecp_select_794e3b70_priority_middle
+  Type        : ECP  subtype=valid_middle_option
+  Field       : priority (select)
+  Form URL    : http://localhost:3007/tasks
+  Test Value  : high
+  Expected    : success
+  Description : Verify that the middle option 'high' can be successfully selected in the Priority dropdown.
+  AI-enhanced : True
+
+  ID          : ecp_select_794e3b70_priority_last
+  Type        : ECP  subtype=valid_last_option
+  Field       : priority (select)
+  Form URL    : http://localhost:3007/tasks
+  Test Value  : critical
+  Expected    : success
+  Description : Verify that the last option 'critical' can be successfully selected in the Priority dropdown.
+  AI-enhanced : True
+
+  ID          : ecp_select_794e3b70_category_first
+  Type        : ECP  subtype=valid_first_option
+  Field       : category (select)
+  Form URL    : http://localhost:3007/tasks
+  Test Value  : frontend
+  Expected    : success
+  Description : Verify that the first option 'frontend' can be successfully selected in the Category dropdown.
+  AI-enhanced : True
+
+  ID          : ecp_select_794e3b70_category_middle
+  Type        : ECP  subtype=valid_middle_option
+  Field       : category (select)
+  Form URL    : http://localhost:3007/tasks
+  Test Value  : devops
+  Expected    : success
+  Description : Verify that the middle option 'devops' can be successfully selected in the Category dropdown.
+  AI-enhanced : True
+
+  ID          : ecp_select_794e3b70_category_last
+  Type        : ECP  subtype=valid_last_option
+  Field       : category (select)
+  Form URL    : http://localhost:3007/tasks
+  Test Value  : design
+  Expected    : success
+  Description : Verify that selecting the last option 'design' in the Category dropdown results in a successful submission.
+  AI-enhanced : True
+
+  ID          : ecp_date_794e3b70_dueDate_valid
+  Type        : ECP  subtype=valid
+  Field       : dueDate (date)
+  Form URL    : http://localhost:3007/tasks
+  Test Value  : 2024-01-15
+  Expected    : success
+  Description : Verify that a valid YYYY-MM-DD date format in the Due Date field results in a successful submission.
+  AI-enhanced : True
+
+  ID          : ecp_date_794e3b70_dueDate_invalid
+  Type        : ECP  subtype=invalid_format
+  Field       : dueDate (date)
+  Form URL    : http://localhost:3007/tasks
+  Test Value  : invalid-date
+  Expected    : error
+  Description : Verify that an invalid date string in the Due Date field triggers a validation error.
+  AI-enhanced : True
+
+  ID          : ecp_text_794e3b70_taskTitle_empty
+  Type        : ECP  subtype=invalid_empty
+  Field       : taskTitle (text)
+  Form URL    : http://localhost:3007/tasks
+  Test Value  : 
+  Expected    : error
+  Description : Verify that submitting the form with an empty Task Title triggers a validation error.
+  AI-enhanced : True
+
+
+  [ STATE_TRANSITION - 2 tests ]
+  ----------------------------------------------------------------------
+  ID          : state_branch_0_0
+  Type        : State Transition  subtype=branching_flow
+  Test Value  : [{'step': 1, 'action': 'navigate', 'from_url': 'start', 'to_url': '097a3375', 'description': 'Navigate to decision point
+  Expected    : success
+  Description : Branch 1 from Localhost:3007 (TaskBoard — SPA Task Manager): → Settings (TaskBoard — SPA Task Manager)
+  AI-enhanced : True
+
+  ID          : state_branch_0_1
+  Type        : State Transition  subtype=branching_flow
+  Test Value  : [{'step': 1, 'action': 'navigate', 'from_url': 'start', 'to_url': '097a3375', 'description': 'Navigate to decision point
+  Expected    : success
+  Description : Branch 2 from Localhost:3007 (TaskBoard — SPA Task Manager): → Tasks (TaskBoard — SPA Task Manager)
+  AI-enhanced : True
+
+
+  [ USE_CASE - 6 tests ]
+  ----------------------------------------------------------------------
+  ID          : usecase_ecommerce_complete_purchase
+  Type        : Use Case  subtype=e-commerce
+  Test Value  : [{'step': 1, 'action': 'navigate', 'target': None, 'description': 'Navigate to product page', 'verification': 'Product p
+  Expected    : success
+  Description : End-to-end purchase: Browse product → Add to cart → Checkout → Complete order
+  AI-enhanced : True
+
+  ID          : usecase_ecommerce_multiple_products
+  Type        : Use Case  subtype=e-commerce
+  Test Value  : [{'step': 1, 'action': 'navigate', 'target': None, 'description': 'Navigate to first product', 'verification': 'Product 
+  Expected    : success
+  Description : Add multiple products: Add product 1 → Add product 2 → View cart
+  AI-enhanced : True
+
+  ID          : usecase_ecommerce_remove_from_cart
+  Type        : Use Case  subtype=e-commerce
+  Test Value  : [{'step': 1, 'action': 'navigate', 'target': None, 'description': 'Navigate to cart page', 'verification': 'Cart page lo
+  Expected    : success
+  Description : Remove item from cart: View cart → Remove item → Verify removal
+  AI-enhanced : True
+
+  ID          : usecase_registration_unknown
+  Type        : Use Case  subtype=form_submission
+  Form URL    : http://localhost:3007
+  Test Value  : [{'step': 1, 'action': 'navigate', 'target': 'http://localhost:3007', 'description': 'Navigate to registration page', 'v
+  Expected    : success
+  Description : Registration: Navigate → Fill form → Submit → Verify account created
+  AI-enhanced : True
+
+  ID          : usecase_auth_login
+  Type        : Use Case  subtype=authentication
+  Form URL    : http://localhost:3007
+  Test Value  : [{'step': 1, 'action': 'navigate', 'target': None, 'description': 'Navigate to login page', 'verification': 'Login form 
+  Expected    : success
+  Description : User login: Navigate to login → Enter credentials → Submit → Verify logged in
+  AI-enhanced : True
+
+  ID          : usecase_auth_register
+  Type        : Use Case  subtype=authentication
+  Form URL    : http://localhost:3007
+  Test Value  : [{'step': 1, 'action': 'navigate', 'target': None, 'description': 'Navigate to registration page', 'verification': 'Regi
+  Expected    : success
+  Description : User registration: Navigate → Fill form → Submit → Verify account created
+  AI-enhanced : True
+
+
+==============================================================================
+  END — site7_spa_taskboard
+==============================================================================

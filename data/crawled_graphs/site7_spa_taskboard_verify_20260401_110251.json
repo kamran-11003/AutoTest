@@ -1,0 +1,1565 @@
+{
+  "crawl_stats": {
+    "pages_crawled": 4,
+    "start_url": "http://localhost:3007",
+    "max_depth_reached": 1,
+    "total_states": 3,
+    "unique_urls": 3,
+    "total_inputs": 13,
+    "total_forms": 3,
+    "total_links": 9,
+    "avg_inputs_per_page": 4.333333333333333,
+    "avg_forms_per_page": 1.0
+  },
+  "graph_stats": {
+    "node_count": 6,
+    "edge_count": 3,
+    "isolated_nodes": 2,
+    "is_connected": false,
+    "max_depth": 1,
+    "avg_depth": 0.75
+  },
+  "ai_stats": {
+    "enabled": true,
+    "total_calls": 4,
+    "sdk_available": true
+  },
+  "states": [
+    {
+      "hash": "097a3375",
+      "url": "http://localhost:3007",
+      "normalized_url": "/",
+      "title": "TaskBoard — SPA Task Manager",
+      "timestamp": "2026-04-01T11:01:09.611592",
+      "input_count": 4,
+      "button_count": 1,
+      "link_count": 3,
+      "form_count": 1,
+      "inputs": [
+        {
+          "type": "text",
+          "name": "username",
+          "id": "username",
+          "label": "Username",
+          "placeholder": "3-20 characters, letters/numbers only",
+          "required": true,
+          "pattern": null,
+          "minLength": 3,
+          "maxLength": 20,
+          "min": null,
+          "max": null,
+          "step": null,
+          "visible": true,
+          "parent_form": "signupForm",
+          "selector": "input[name=\"username\"]",
+          "disabled": false,
+          "options": null
+        },
+        {
+          "type": "email",
+          "name": "signupEmail",
+          "id": "signupEmail",
+          "label": "Email",
+          "placeholder": "you@example.com",
+          "required": true,
+          "pattern": null,
+          "minLength": null,
+          "maxLength": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "visible": true,
+          "parent_form": "signupForm",
+          "selector": "input[name=\"signupEmail\"]",
+          "disabled": false,
+          "options": null
+        },
+        {
+          "type": "password",
+          "name": "signupPassword",
+          "id": "signupPassword",
+          "label": "Password",
+          "placeholder": "Min 8 chars, 1 uppercase, 1 digit",
+          "required": true,
+          "pattern": null,
+          "minLength": 8,
+          "maxLength": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "visible": true,
+          "parent_form": "signupForm",
+          "selector": "input[name=\"signupPassword\"]",
+          "disabled": false,
+          "options": null
+        },
+        {
+          "type": "select-one",
+          "name": "role",
+          "id": "role",
+          "label": "Role",
+          "placeholder": "",
+          "required": true,
+          "pattern": null,
+          "minLength": null,
+          "maxLength": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "visible": true,
+          "parent_form": "signupForm",
+          "selector": "select[name=\"role\"]",
+          "disabled": false,
+          "options": [
+            {
+              "value": "developer",
+              "text": "Developer"
+            },
+            {
+              "value": "designer",
+              "text": "Designer"
+            },
+            {
+              "value": "manager",
+              "text": "Project Manager"
+            },
+            {
+              "value": "qa",
+              "text": "QA Tester"
+            }
+          ]
+        }
+      ],
+      "buttons": [
+        "Create Account"
+      ],
+      "links": [
+        "http://localhost:3007/settings",
+        "http://localhost:3007/tasks",
+        "http://localhost:3007/"
+      ],
+      "forms": [
+        {
+          "signature": "55bcc9ee",
+          "inputs": [
+            {
+              "type": "text",
+              "name": "username",
+              "id": "username",
+              "label": "Username",
+              "placeholder": "3-20 characters, letters/numbers only",
+              "required": true,
+              "pattern": null,
+              "minLength": 3,
+              "maxLength": 20,
+              "min": null,
+              "max": null,
+              "step": null,
+              "visible": true,
+              "parent_form": "#signupForm",
+              "selector": "#username",
+              "disabled": false,
+              "options": null
+            },
+            {
+              "type": "email",
+              "name": "signupEmail",
+              "id": "signupEmail",
+              "label": "Email",
+              "placeholder": "you@example.com",
+              "required": true,
+              "pattern": null,
+              "minLength": null,
+              "maxLength": null,
+              "min": null,
+              "max": null,
+              "step": null,
+              "visible": true,
+              "parent_form": "#signupForm",
+              "selector": "#signupEmail",
+              "disabled": false,
+              "options": null
+            },
+            {
+              "type": "password",
+              "name": "signupPassword",
+              "id": "signupPassword",
+              "label": "Password",
+              "placeholder": "Min 8 chars, 1 uppercase, 1 digit",
+              "required": true,
+              "pattern": null,
+              "minLength": 8,
+              "maxLength": null,
+              "min": null,
+              "max": null,
+              "step": null,
+              "visible": true,
+              "parent_form": "#signupForm",
+              "selector": "#signupPassword",
+              "disabled": false,
+              "options": null
+            },
+            {
+              "type": "select-one",
+              "name": "role",
+              "id": "role",
+              "label": "Role",
+              "placeholder": "",
+              "required": true,
+              "pattern": null,
+              "minLength": null,
+              "maxLength": null,
+              "min": null,
+              "max": null,
+              "step": null,
+              "visible": true,
+              "parent_form": "#signupForm",
+              "selector": "#role",
+              "disabled": false,
+              "options": [
+                {
+                  "value": "developer",
+                  "text": "Developer"
+                },
+                {
+                  "value": "designer",
+                  "text": "Designer"
+                },
+                {
+                  "value": "manager",
+                  "text": "Project Manager"
+                },
+                {
+                  "value": "qa",
+                  "text": "QA Tester"
+                }
+              ]
+            }
+          ],
+          "submit_button": "Create Account",
+          "action": "http://localhost:3007/",
+          "method": "get",
+          "selector": "#signupForm",
+          "detection_method": "semantic"
+        }
+      ]
+    },
+    {
+      "hash": "ae4fa27d",
+      "url": "http://localhost:3007/settings",
+      "normalized_url": "/settings",
+      "title": "TaskBoard — SPA Task Manager",
+      "timestamp": "2026-04-01T11:01:40.461791",
+      "input_count": 4,
+      "button_count": 1,
+      "link_count": 3,
+      "form_count": 1,
+      "inputs": [
+        {
+          "type": "text",
+          "name": "displayName",
+          "id": "displayName",
+          "label": "Display Name",
+          "placeholder": "2-50 characters",
+          "required": true,
+          "pattern": null,
+          "minLength": 2,
+          "maxLength": 50,
+          "min": null,
+          "max": null,
+          "step": null,
+          "visible": true,
+          "parent_form": "settingsForm",
+          "selector": "input[name=\"displayName\"]",
+          "disabled": false,
+          "options": null
+        },
+        {
+          "type": "textarea",
+          "name": "bio",
+          "id": "bio",
+          "label": "Bio",
+          "placeholder": "Short bio (max 200 chars)",
+          "required": false,
+          "pattern": null,
+          "minLength": null,
+          "maxLength": 200,
+          "min": null,
+          "max": null,
+          "step": null,
+          "visible": true,
+          "parent_form": "settingsForm",
+          "selector": "textarea[name=\"bio\"]",
+          "disabled": false,
+          "options": null
+        },
+        {
+          "type": "select-one",
+          "name": "timezone",
+          "id": "timezone",
+          "label": "Timezone",
+          "placeholder": "",
+          "required": true,
+          "pattern": null,
+          "minLength": null,
+          "maxLength": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "visible": true,
+          "parent_form": "settingsForm",
+          "selector": "select[name=\"timezone\"]",
+          "disabled": false,
+          "options": [
+            {
+              "value": "UTC-8",
+              "text": "Pacific (UTC-8)"
+            },
+            {
+              "value": "UTC-5",
+              "text": "Eastern (UTC-5)"
+            },
+            {
+              "value": "UTC+0",
+              "text": "GMT (UTC+0)"
+            },
+            {
+              "value": "UTC+1",
+              "text": "CET (UTC+1)"
+            },
+            {
+              "value": "UTC+5",
+              "text": "PKT (UTC+5)"
+            },
+            {
+              "value": "UTC+8",
+              "text": "CST (UTC+8)"
+            }
+          ]
+        },
+        {
+          "type": "checkbox",
+          "name": "emailNotify",
+          "id": "emailNotify",
+          "label": "Receive email notifications for task updates",
+          "placeholder": "",
+          "required": false,
+          "pattern": null,
+          "minLength": null,
+          "maxLength": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "visible": true,
+          "parent_form": "settingsForm",
+          "selector": "input[name=\"emailNotify\"]",
+          "disabled": false,
+          "options": null
+        }
+      ],
+      "buttons": [
+        "Save Settings"
+      ],
+      "links": [
+        "http://localhost:3007/settings",
+        "http://localhost:3007/tasks",
+        "http://localhost:3007/"
+      ],
+      "forms": [
+        {
+          "signature": "c918c1a1",
+          "inputs": [
+            {
+              "type": "text",
+              "name": "displayName",
+              "id": "displayName",
+              "label": "Display Name",
+              "placeholder": "2-50 characters",
+              "required": true,
+              "pattern": null,
+              "minLength": 2,
+              "maxLength": 50,
+              "min": null,
+              "max": null,
+              "step": null,
+              "visible": true,
+              "parent_form": "#settingsForm",
+              "selector": "#displayName",
+              "disabled": false,
+              "options": null
+            },
+            {
+              "type": "textarea",
+              "name": "bio",
+              "id": "bio",
+              "label": "Bio",
+              "placeholder": "Short bio (max 200 chars)",
+              "required": false,
+              "pattern": null,
+              "minLength": null,
+              "maxLength": 200,
+              "min": null,
+              "max": null,
+              "step": null,
+              "visible": true,
+              "parent_form": "#settingsForm",
+              "selector": "#bio",
+              "disabled": false,
+              "options": null
+            },
+            {
+              "type": "select-one",
+              "name": "timezone",
+              "id": "timezone",
+              "label": "Timezone",
+              "placeholder": "",
+              "required": true,
+              "pattern": null,
+              "minLength": null,
+              "maxLength": null,
+              "min": null,
+              "max": null,
+              "step": null,
+              "visible": true,
+              "parent_form": "#settingsForm",
+              "selector": "#timezone",
+              "disabled": false,
+              "options": [
+                {
+                  "value": "UTC-8",
+                  "text": "Pacific (UTC-8)"
+                },
+                {
+                  "value": "UTC-5",
+                  "text": "Eastern (UTC-5)"
+                },
+                {
+                  "value": "UTC+0",
+                  "text": "GMT (UTC+0)"
+                },
+                {
+                  "value": "UTC+1",
+                  "text": "CET (UTC+1)"
+                },
+                {
+                  "value": "UTC+5",
+                  "text": "PKT (UTC+5)"
+                },
+                {
+                  "value": "UTC+8",
+                  "text": "CST (UTC+8)"
+                }
+              ]
+            },
+            {
+              "type": "checkbox",
+              "name": "emailNotify",
+              "id": "emailNotify",
+              "label": "Receive email notifications for task updates",
+              "placeholder": "",
+              "required": false,
+              "pattern": null,
+              "minLength": null,
+              "maxLength": null,
+              "min": null,
+              "max": null,
+              "step": null,
+              "visible": true,
+              "parent_form": "#settingsForm",
+              "selector": "#emailNotify",
+              "disabled": false,
+              "options": null
+            }
+          ],
+          "submit_button": "Save Settings",
+          "action": "http://localhost:3007/settings",
+          "method": "get",
+          "selector": "#settingsForm",
+          "detection_method": "semantic"
+        }
+      ]
+    },
+    {
+      "hash": "ff37852c",
+      "url": "http://localhost:3007/tasks",
+      "normalized_url": "/tasks",
+      "title": "TaskBoard — SPA Task Manager",
+      "timestamp": "2026-04-01T11:02:12.362607",
+      "input_count": 5,
+      "button_count": 1,
+      "link_count": 3,
+      "form_count": 1,
+      "inputs": [
+        {
+          "type": "text",
+          "name": "taskTitle",
+          "id": "taskTitle",
+          "label": "Task Title",
+          "placeholder": "3-100 characters",
+          "required": true,
+          "pattern": null,
+          "minLength": 3,
+          "maxLength": 100,
+          "min": null,
+          "max": null,
+          "step": null,
+          "visible": true,
+          "parent_form": "taskForm",
+          "selector": "input[name=\"taskTitle\"]",
+          "disabled": false,
+          "options": null
+        },
+        {
+          "type": "textarea",
+          "name": "taskDesc",
+          "id": "taskDesc",
+          "label": "Description",
+          "placeholder": "Describe the task (10-500 chars)",
+          "required": true,
+          "pattern": null,
+          "minLength": 10,
+          "maxLength": 500,
+          "min": null,
+          "max": null,
+          "step": null,
+          "visible": true,
+          "parent_form": "taskForm",
+          "selector": "textarea[name=\"taskDesc\"]",
+          "disabled": false,
+          "options": null
+        },
+        {
+          "type": "select-one",
+          "name": "priority",
+          "id": "priority",
+          "label": "Priority",
+          "placeholder": "",
+          "required": true,
+          "pattern": null,
+          "minLength": null,
+          "maxLength": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "visible": true,
+          "parent_form": "taskForm",
+          "selector": "select[name=\"priority\"]",
+          "disabled": false,
+          "options": [
+            {
+              "value": "low",
+              "text": "Low"
+            },
+            {
+              "value": "medium",
+              "text": "Medium"
+            },
+            {
+              "value": "high",
+              "text": "High"
+            },
+            {
+              "value": "critical",
+              "text": "Critical"
+            }
+          ]
+        },
+        {
+          "type": "select-one",
+          "name": "category",
+          "id": "category",
+          "label": "Category",
+          "placeholder": "",
+          "required": true,
+          "pattern": null,
+          "minLength": null,
+          "maxLength": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "visible": true,
+          "parent_form": "taskForm",
+          "selector": "select[name=\"category\"]",
+          "disabled": false,
+          "options": [
+            {
+              "value": "frontend",
+              "text": "Frontend"
+            },
+            {
+              "value": "backend",
+              "text": "Backend"
+            },
+            {
+              "value": "devops",
+              "text": "DevOps"
+            },
+            {
+              "value": "testing",
+              "text": "Testing"
+            },
+            {
+              "value": "design",
+              "text": "Design"
+            }
+          ]
+        },
+        {
+          "type": "date",
+          "name": "dueDate",
+          "id": "dueDate",
+          "label": "Due Date",
+          "placeholder": "",
+          "required": true,
+          "pattern": null,
+          "minLength": null,
+          "maxLength": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "visible": true,
+          "parent_form": "taskForm",
+          "selector": "input[name=\"dueDate\"]",
+          "disabled": false,
+          "options": null
+        }
+      ],
+      "buttons": [
+        "Add Task"
+      ],
+      "links": [
+        "http://localhost:3007/settings",
+        "http://localhost:3007/tasks",
+        "http://localhost:3007/"
+      ],
+      "forms": [
+        {
+          "signature": "794e3b70",
+          "inputs": [
+            {
+              "type": "text",
+              "name": "taskTitle",
+              "id": "taskTitle",
+              "label": "Task Title",
+              "placeholder": "3-100 characters",
+              "required": true,
+              "pattern": null,
+              "minLength": 3,
+              "maxLength": 100,
+              "min": null,
+              "max": null,
+              "step": null,
+              "visible": true,
+              "parent_form": "#taskForm",
+              "selector": "#taskTitle",
+              "disabled": false,
+              "options": null
+            },
+            {
+              "type": "textarea",
+              "name": "taskDesc",
+              "id": "taskDesc",
+              "label": "Description",
+              "placeholder": "Describe the task (10-500 chars)",
+              "required": true,
+              "pattern": null,
+              "minLength": 10,
+              "maxLength": 500,
+              "min": null,
+              "max": null,
+              "step": null,
+              "visible": true,
+              "parent_form": "#taskForm",
+              "selector": "#taskDesc",
+              "disabled": false,
+              "options": null
+            },
+            {
+              "type": "select-one",
+              "name": "priority",
+              "id": "priority",
+              "label": "Priority",
+              "placeholder": "",
+              "required": true,
+              "pattern": null,
+              "minLength": null,
+              "maxLength": null,
+              "min": null,
+              "max": null,
+              "step": null,
+              "visible": true,
+              "parent_form": "#taskForm",
+              "selector": "#priority",
+              "disabled": false,
+              "options": [
+                {
+                  "value": "low",
+                  "text": "Low"
+                },
+                {
+                  "value": "medium",
+                  "text": "Medium"
+                },
+                {
+                  "value": "high",
+                  "text": "High"
+                },
+                {
+                  "value": "critical",
+                  "text": "Critical"
+                }
+              ]
+            },
+            {
+              "type": "select-one",
+              "name": "category",
+              "id": "category",
+              "label": "Category",
+              "placeholder": "",
+              "required": true,
+              "pattern": null,
+              "minLength": null,
+              "maxLength": null,
+              "min": null,
+              "max": null,
+              "step": null,
+              "visible": true,
+              "parent_form": "#taskForm",
+              "selector": "#category",
+              "disabled": false,
+              "options": [
+                {
+                  "value": "frontend",
+                  "text": "Frontend"
+                },
+                {
+                  "value": "backend",
+                  "text": "Backend"
+                },
+                {
+                  "value": "devops",
+                  "text": "DevOps"
+                },
+                {
+                  "value": "testing",
+                  "text": "Testing"
+                },
+                {
+                  "value": "design",
+                  "text": "Design"
+                }
+              ]
+            },
+            {
+              "type": "date",
+              "name": "dueDate",
+              "id": "dueDate",
+              "label": "Due Date",
+              "placeholder": "",
+              "required": true,
+              "pattern": null,
+              "minLength": null,
+              "maxLength": null,
+              "min": null,
+              "max": null,
+              "step": null,
+              "visible": true,
+              "parent_form": "#taskForm",
+              "selector": "#dueDate",
+              "disabled": false,
+              "options": null
+            }
+          ],
+          "submit_button": "Add Task",
+          "action": "http://localhost:3007/tasks",
+          "method": "get",
+          "selector": "#taskForm",
+          "detection_method": "semantic"
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "id": "097a3375",
+      "hash": "097a3375",
+      "url": "http://localhost:3007",
+      "normalized_url": "/",
+      "title": "TaskBoard — SPA Task Manager",
+      "input_count": 4,
+      "button_count": 1,
+      "link_count": 3,
+      "form_count": 1,
+      "inputs": [
+        {
+          "type": "text",
+          "name": "username",
+          "id": "username",
+          "label": "Username",
+          "placeholder": "3-20 characters, letters/numbers only",
+          "required": true,
+          "pattern": null,
+          "minLength": 3,
+          "maxLength": 20,
+          "min": null,
+          "max": null,
+          "step": null,
+          "visible": true,
+          "parent_form": "signupForm",
+          "selector": "input[name=\"username\"]",
+          "disabled": false,
+          "options": null
+        },
+        {
+          "type": "email",
+          "name": "signupEmail",
+          "id": "signupEmail",
+          "label": "Email",
+          "placeholder": "you@example.com",
+          "required": true,
+          "pattern": null,
+          "minLength": null,
+          "maxLength": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "visible": true,
+          "parent_form": "signupForm",
+          "selector": "input[name=\"signupEmail\"]",
+          "disabled": false,
+          "options": null
+        },
+        {
+          "type": "password",
+          "name": "signupPassword",
+          "id": "signupPassword",
+          "label": "Password",
+          "placeholder": "Min 8 chars, 1 uppercase, 1 digit",
+          "required": true,
+          "pattern": null,
+          "minLength": 8,
+          "maxLength": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "visible": true,
+          "parent_form": "signupForm",
+          "selector": "input[name=\"signupPassword\"]",
+          "disabled": false,
+          "options": null
+        },
+        {
+          "type": "select-one",
+          "name": "role",
+          "id": "role",
+          "label": "Role",
+          "placeholder": "",
+          "required": true,
+          "pattern": null,
+          "minLength": null,
+          "maxLength": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "visible": true,
+          "parent_form": "signupForm",
+          "selector": "select[name=\"role\"]",
+          "disabled": false,
+          "options": [
+            {
+              "value": "developer",
+              "text": "Developer"
+            },
+            {
+              "value": "designer",
+              "text": "Designer"
+            },
+            {
+              "value": "manager",
+              "text": "Project Manager"
+            },
+            {
+              "value": "qa",
+              "text": "QA Tester"
+            }
+          ]
+        }
+      ],
+      "buttons": [
+        "Create Account"
+      ],
+      "links": [
+        "http://localhost:3007/settings",
+        "http://localhost:3007/tasks",
+        "http://localhost:3007/"
+      ],
+      "forms": [
+        {
+          "signature": "55bcc9ee",
+          "inputs": [
+            {
+              "type": "text",
+              "name": "username",
+              "id": "username",
+              "label": "Username",
+              "placeholder": "3-20 characters, letters/numbers only",
+              "required": true,
+              "pattern": null,
+              "minLength": 3,
+              "maxLength": 20,
+              "min": null,
+              "max": null,
+              "step": null,
+              "visible": true,
+              "parent_form": "#signupForm",
+              "selector": "#username",
+              "disabled": false,
+              "options": null
+            },
+            {
+              "type": "email",
+              "name": "signupEmail",
+              "id": "signupEmail",
+              "label": "Email",
+              "placeholder": "you@example.com",
+              "required": true,
+              "pattern": null,
+              "minLength": null,
+              "maxLength": null,
+              "min": null,
+              "max": null,
+              "step": null,
+              "visible": true,
+              "parent_form": "#signupForm",
+              "selector": "#signupEmail",
+              "disabled": false,
+              "options": null
+            },
+            {
+              "type": "password",
+              "name": "signupPassword",
+              "id": "signupPassword",
+              "label": "Password",
+              "placeholder": "Min 8 chars, 1 uppercase, 1 digit",
+              "required": true,
+              "pattern": null,
+              "minLength": 8,
+              "maxLength": null,
+              "min": null,
+              "max": null,
+              "step": null,
+              "visible": true,
+              "parent_form": "#signupForm",
+              "selector": "#signupPassword",
+              "disabled": false,
+              "options": null
+            },
+            {
+              "type": "select-one",
+              "name": "role",
+              "id": "role",
+              "label": "Role",
+              "placeholder": "",
+              "required": true,
+              "pattern": null,
+              "minLength": null,
+              "maxLength": null,
+              "min": null,
+              "max": null,
+              "step": null,
+              "visible": true,
+              "parent_form": "#signupForm",
+              "selector": "#role",
+              "disabled": false,
+              "options": [
+                {
+                  "value": "developer",
+                  "text": "Developer"
+                },
+                {
+                  "value": "designer",
+                  "text": "Designer"
+                },
+                {
+                  "value": "manager",
+                  "text": "Project Manager"
+                },
+                {
+                  "value": "qa",
+                  "text": "QA Tester"
+                }
+              ]
+            }
+          ],
+          "submit_button": "Create Account",
+          "action": "http://localhost:3007/",
+          "method": "get",
+          "selector": "#signupForm",
+          "detection_method": "semantic"
+        }
+      ],
+      "timestamp": "2026-04-01T11:01:09.611592",
+      "metadata": {}
+    },
+    {
+      "id": "ae4fa27d",
+      "hash": "ae4fa27d",
+      "url": "http://localhost:3007/settings",
+      "normalized_url": "/settings",
+      "title": "TaskBoard — SPA Task Manager",
+      "input_count": 4,
+      "button_count": 1,
+      "link_count": 3,
+      "form_count": 1,
+      "inputs": [
+        {
+          "type": "text",
+          "name": "displayName",
+          "id": "displayName",
+          "label": "Display Name",
+          "placeholder": "2-50 characters",
+          "required": true,
+          "pattern": null,
+          "minLength": 2,
+          "maxLength": 50,
+          "min": null,
+          "max": null,
+          "step": null,
+          "visible": true,
+          "parent_form": "settingsForm",
+          "selector": "input[name=\"displayName\"]",
+          "disabled": false,
+          "options": null
+        },
+        {
+          "type": "textarea",
+          "name": "bio",
+          "id": "bio",
+          "label": "Bio",
+          "placeholder": "Short bio (max 200 chars)",
+          "required": false,
+          "pattern": null,
+          "minLength": null,
+          "maxLength": 200,
+          "min": null,
+          "max": null,
+          "step": null,
+          "visible": true,
+          "parent_form": "settingsForm",
+          "selector": "textarea[name=\"bio\"]",
+          "disabled": false,
+          "options": null
+        },
+        {
+          "type": "select-one",
+          "name": "timezone",
+          "id": "timezone",
+          "label": "Timezone",
+          "placeholder": "",
+          "required": true,
+          "pattern": null,
+          "minLength": null,
+          "maxLength": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "visible": true,
+          "parent_form": "settingsForm",
+          "selector": "select[name=\"timezone\"]",
+          "disabled": false,
+          "options": [
+            {
+              "value": "UTC-8",
+              "text": "Pacific (UTC-8)"
+            },
+            {
+              "value": "UTC-5",
+              "text": "Eastern (UTC-5)"
+            },
+            {
+              "value": "UTC+0",
+              "text": "GMT (UTC+0)"
+            },
+            {
+              "value": "UTC+1",
+              "text": "CET (UTC+1)"
+            },
+            {
+              "value": "UTC+5",
+              "text": "PKT (UTC+5)"
+            },
+            {
+              "value": "UTC+8",
+              "text": "CST (UTC+8)"
+            }
+          ]
+        },
+        {
+          "type": "checkbox",
+          "name": "emailNotify",
+          "id": "emailNotify",
+          "label": "Receive email notifications for task updates",
+          "placeholder": "",
+          "required": false,
+          "pattern": null,
+          "minLength": null,
+          "maxLength": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "visible": true,
+          "parent_form": "settingsForm",
+          "selector": "input[name=\"emailNotify\"]",
+          "disabled": false,
+          "options": null
+        }
+      ],
+      "buttons": [
+        "Save Settings"
+      ],
+      "links": [
+        "http://localhost:3007/settings",
+        "http://localhost:3007/tasks",
+        "http://localhost:3007/"
+      ],
+      "forms": [
+        {
+          "signature": "c918c1a1",
+          "inputs": [
+            {
+              "type": "text",
+              "name": "displayName",
+              "id": "displayName",
+              "label": "Display Name",
+              "placeholder": "2-50 characters",
+              "required": true,
+              "pattern": null,
+              "minLength": 2,
+              "maxLength": 50,
+              "min": null,
+              "max": null,
+              "step": null,
+              "visible": true,
+              "parent_form": "#settingsForm",
+              "selector": "#displayName",
+              "disabled": false,
+              "options": null
+            },
+            {
+              "type": "textarea",
+              "name": "bio",
+              "id": "bio",
+              "label": "Bio",
+              "placeholder": "Short bio (max 200 chars)",
+              "required": false,
+              "pattern": null,
+              "minLength": null,
+              "maxLength": 200,
+              "min": null,
+              "max": null,
+              "step": null,
+              "visible": true,
+              "parent_form": "#settingsForm",
+              "selector": "#bio",
+              "disabled": false,
+              "options": null
+            },
+            {
+              "type": "select-one",
+              "name": "timezone",
+              "id": "timezone",
+              "label": "Timezone",
+              "placeholder": "",
+              "required": true,
+              "pattern": null,
+              "minLength": null,
+              "maxLength": null,
+              "min": null,
+              "max": null,
+              "step": null,
+              "visible": true,
+              "parent_form": "#settingsForm",
+              "selector": "#timezone",
+              "disabled": false,
+              "options": [
+                {
+                  "value": "UTC-8",
+                  "text": "Pacific (UTC-8)"
+                },
+                {
+                  "value": "UTC-5",
+                  "text": "Eastern (UTC-5)"
+                },
+                {
+                  "value": "UTC+0",
+                  "text": "GMT (UTC+0)"
+                },
+                {
+                  "value": "UTC+1",
+                  "text": "CET (UTC+1)"
+                },
+                {
+                  "value": "UTC+5",
+                  "text": "PKT (UTC+5)"
+                },
+                {
+                  "value": "UTC+8",
+                  "text": "CST (UTC+8)"
+                }
+              ]
+            },
+            {
+              "type": "checkbox",
+              "name": "emailNotify",
+              "id": "emailNotify",
+              "label": "Receive email notifications for task updates",
+              "placeholder": "",
+              "required": false,
+              "pattern": null,
+              "minLength": null,
+              "maxLength": null,
+              "min": null,
+              "max": null,
+              "step": null,
+              "visible": true,
+              "parent_form": "#settingsForm",
+              "selector": "#emailNotify",
+              "disabled": false,
+              "options": null
+            }
+          ],
+          "submit_button": "Save Settings",
+          "action": "http://localhost:3007/settings",
+          "method": "get",
+          "selector": "#settingsForm",
+          "detection_method": "semantic"
+        }
+      ],
+      "timestamp": "2026-04-01T11:01:40.463790",
+      "metadata": {}
+    },
+    {
+      "id": "ff37852c",
+      "hash": "ff37852c",
+      "url": "http://localhost:3007/tasks",
+      "normalized_url": "/tasks",
+      "title": "TaskBoard — SPA Task Manager",
+      "input_count": 5,
+      "button_count": 1,
+      "link_count": 3,
+      "form_count": 1,
+      "inputs": [
+        {
+          "type": "text",
+          "name": "taskTitle",
+          "id": "taskTitle",
+          "label": "Task Title",
+          "placeholder": "3-100 characters",
+          "required": true,
+          "pattern": null,
+          "minLength": 3,
+          "maxLength": 100,
+          "min": null,
+          "max": null,
+          "step": null,
+          "visible": true,
+          "parent_form": "taskForm",
+          "selector": "input[name=\"taskTitle\"]",
+          "disabled": false,
+          "options": null
+        },
+        {
+          "type": "textarea",
+          "name": "taskDesc",
+          "id": "taskDesc",
+          "label": "Description",
+          "placeholder": "Describe the task (10-500 chars)",
+          "required": true,
+          "pattern": null,
+          "minLength": 10,
+          "maxLength": 500,
+          "min": null,
+          "max": null,
+          "step": null,
+          "visible": true,
+          "parent_form": "taskForm",
+          "selector": "textarea[name=\"taskDesc\"]",
+          "disabled": false,
+          "options": null
+        },
+        {
+          "type": "select-one",
+          "name": "priority",
+          "id": "priority",
+          "label": "Priority",
+          "placeholder": "",
+          "required": true,
+          "pattern": null,
+          "minLength": null,
+          "maxLength": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "visible": true,
+          "parent_form": "taskForm",
+          "selector": "select[name=\"priority\"]",
+          "disabled": false,
+          "options": [
+            {
+              "value": "low",
+              "text": "Low"
+            },
+            {
+              "value": "medium",
+              "text": "Medium"
+            },
+            {
+              "value": "high",
+              "text": "High"
+            },
+            {
+              "value": "critical",
+              "text": "Critical"
+            }
+          ]
+        },
+        {
+          "type": "select-one",
+          "name": "category",
+          "id": "category",
+          "label": "Category",
+          "placeholder": "",
+          "required": true,
+          "pattern": null,
+          "minLength": null,
+          "maxLength": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "visible": true,
+          "parent_form": "taskForm",
+          "selector": "select[name=\"category\"]",
+          "disabled": false,
+          "options": [
+            {
+              "value": "frontend",
+              "text": "Frontend"
+            },
+            {
+              "value": "backend",
+              "text": "Backend"
+            },
+            {
+              "value": "devops",
+              "text": "DevOps"
+            },
+            {
+              "value": "testing",
+              "text": "Testing"
+            },
+            {
+              "value": "design",
+              "text": "Design"
+            }
+          ]
+        },
+        {
+          "type": "date",
+          "name": "dueDate",
+          "id": "dueDate",
+          "label": "Due Date",
+          "placeholder": "",
+          "required": true,
+          "pattern": null,
+          "minLength": null,
+          "maxLength": null,
+          "min": null,
+          "max": null,
+          "step": null,
+          "visible": true,
+          "parent_form": "taskForm",
+          "selector": "input[name=\"dueDate\"]",
+          "disabled": false,
+          "options": null
+        }
+      ],
+      "buttons": [
+        "Add Task"
+      ],
+      "links": [
+        "http://localhost:3007/settings",
+        "http://localhost:3007/tasks",
+        "http://localhost:3007/"
+      ],
+      "forms": [
+        {
+          "signature": "794e3b70",
+          "inputs": [
+            {
+              "type": "text",
+              "name": "taskTitle",
+              "id": "taskTitle",
+              "label": "Task Title",
+              "placeholder": "3-100 characters",
+              "required": true,
+              "pattern": null,
+              "minLength": 3,
+              "maxLength": 100,
+              "min": null,
+              "max": null,
+              "step": null,
+              "visible": true,
+              "parent_form": "#taskForm",
+              "selector": "#taskTitle",
+              "disabled": false,
+              "options": null
+            },
+            {
+              "type": "textarea",
+              "name": "taskDesc",
+              "id": "taskDesc",
+              "label": "Description",
+              "placeholder": "Describe the task (10-500 chars)",
+              "required": true,
+              "pattern": null,
+              "minLength": 10,
+              "maxLength": 500,
+              "min": null,
+              "max": null,
+              "step": null,
+              "visible": true,
+              "parent_form": "#taskForm",
+              "selector": "#taskDesc",
+              "disabled": false,
+              "options": null
+            },
+            {
+              "type": "select-one",
+              "name": "priority",
+              "id": "priority",
+              "label": "Priority",
+              "placeholder": "",
+              "required": true,
+              "pattern": null,
+              "minLength": null,
+              "maxLength": null,
+              "min": null,
+              "max": null,
+              "step": null,
+              "visible": true,
+              "parent_form": "#taskForm",
+              "selector": "#priority",
+              "disabled": false,
+              "options": [
+                {
+                  "value": "low",
+                  "text": "Low"
+                },
+                {
+                  "value": "medium",
+                  "text": "Medium"
+                },
+                {
+                  "value": "high",
+                  "text": "High"
+                },
+                {
+                  "value": "critical",
+                  "text": "Critical"
+                }
+              ]
+            },
+            {
+              "type": "select-one",
+              "name": "category",
+              "id": "category",
+              "label": "Category",
+              "placeholder": "",
+              "required": true,
+              "pattern": null,
+              "minLength": null,
+              "maxLength": null,
+              "min": null,
+              "max": null,
+              "step": null,
+              "visible": true,
+              "parent_form": "#taskForm",
+              "selector": "#category",
+              "disabled": false,
+              "options": [
+                {
+                  "value": "frontend",
+                  "text": "Frontend"
+                },
+                {
+                  "value": "backend",
+                  "text": "Backend"
+                },
+                {
+                  "value": "devops",
+                  "text": "DevOps"
+                },
+                {
+                  "value": "testing",
+                  "text": "Testing"
+                },
+                {
+                  "value": "design",
+                  "text": "Design"
+                }
+              ]
+            },
+            {
+              "type": "date",
+              "name": "dueDate",
+              "id": "dueDate",
+              "label": "Due Date",
+              "placeholder": "",
+              "required": true,
+              "pattern": null,
+              "minLength": null,
+              "maxLength": null,
+              "min": null,
+              "max": null,
+              "step": null,
+              "visible": true,
+              "parent_form": "#taskForm",
+              "selector": "#dueDate",
+              "disabled": false,
+              "options": null
+            }
+          ],
+          "submit_button": "Add Task",
+          "action": "http://localhost:3007/tasks",
+          "method": "get",
+          "selector": "#taskForm",
+          "detection_method": "semantic"
+        }
+      ],
+      "timestamp": "2026-04-01T11:02:12.362607",
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "from_hash": "097a3375",
+      "to_hash": "ae4fa27d",
+      "source": "097a3375",
+      "target": "ae4fa27d",
+      "action": "click",
+      "element": "a[href=\"http://localhost:3007/settings\"]",
+      "label": "Link to http://localhost:3007/settings",
+      "timestamp": "2026-04-01T11:01:09.612590"
+    },
+    {
+      "from_hash": "097a3375",
+      "to_hash": "ff37852c",
+      "source": "097a3375",
+      "target": "ff37852c",
+      "action": "click",
+      "element": "a[href=\"http://localhost:3007/tasks\"]",
+      "label": "Link to http://localhost:3007/tasks",
+      "timestamp": "2026-04-01T11:01:09.612590"
+    }
+  ]
+}

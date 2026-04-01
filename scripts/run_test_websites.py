@@ -3,7 +3,7 @@ run_test_websites.py  —  Single-website crawl → generate → AI-refine → e
 =========================================================================================
 
 Runs the FULL pipeline for ONE website at a time (API rate-limit safe).
-Run this script 5 times, once per website index (0-4).
+Run this script 8 times, once per website index (0-7).
 
 Usage
 -----
@@ -12,8 +12,11 @@ Usage
     python scripts/run_test_websites.py --site 2   # site3_register
     python scripts/run_test_websites.py --site 3   # site4_search
     python scripts/run_test_websites.py --site 4   # site5_feedback
+    python scripts/run_test_websites.py --site 5   # site6_ecommerce (SSR multi-page)
+    python scripts/run_test_websites.py --site 6   # site7_spa_taskboard (SPA)
+    python scripts/run_test_websites.py --site 7   # site8_medical (multi-page clinic)
 
-    # Or run all 5 sequentially (long — waits between each for API cool-down):
+    # Or run all 8 sequentially (long — waits between each for API cool-down):
     python scripts/run_test_websites.py --site all
 
 All artefacts are written to the standard data/ directories so the Streamlit
@@ -152,6 +155,111 @@ SITES = [
             }
         ],
     },
+    # ── NEW: Site 6 — Next.js SSR E-Commerce (port 3006, 4 pages, 2 forms) ──
+    {
+        "id":          "site6_ecommerce",
+        "name":        "E-Commerce (Next.js SSR)",
+        "url":         "http://localhost:3006",
+        "description": "Next.js SSR e-commerce: login(email,password≥6) + checkout(name,email,address,city,zip 5-digit,card 13-19,expiry MM/YY,cvv 3-4)",
+        "forms": [
+            {
+                "name": "loginForm",
+                "submit_button": "Sign In",
+                "fields": {
+                    "loginEmail":    {"type": "email",    "required": True},
+                    "loginPassword": {"type": "password", "min": 6, "required": True},
+                },
+            },
+            {
+                "name": "checkoutForm",
+                "submit_button": "Place Order",
+                "fields": {
+                    "fullName":      {"type": "text",  "min": 2, "max": 60, "required": True},
+                    "shippingEmail": {"type": "email", "required": True},
+                    "address":       {"type": "text",  "min": 5, "max": 120, "required": True},
+                    "city":          {"type": "text",  "min": 2, "max": 50,  "required": True},
+                    "zipCode":       {"type": "text",  "required": True, "pattern": r"^\d{5}$"},
+                    "cardNumber":    {"type": "text",  "min": 13, "max": 19, "required": True, "pattern": r"^\d{13,19}$"},
+                    "expiry":        {"type": "text",  "required": True, "pattern": r"^(0[1-9]|1[0-2])\/\d{2}$"},
+                    "cvv":           {"type": "text",  "min": 3, "max": 4,  "required": True, "pattern": r"^\d{3,4}$"},
+                },
+            },
+        ],
+    },
+    # ── NEW: Site 7 — React+Vite SPA TaskBoard (port 3007, 3 routes, 3 forms) ──
+    {
+        "id":          "site7_spa_taskboard",
+        "name":        "Task Board (React SPA)",
+        "url":         "http://localhost:3007",
+        "description": "React+Vite SPA with 3 routes/forms: signup(user,email,pw≥8+upper+digit,role), task(title,desc,priority,category,dueDate), settings(displayName,bio≤200,timezone)",
+        "forms": [
+            {
+                "name": "signupForm",
+                "submit_button": "Create Account",
+                "fields": {
+                    "username":       {"type": "text",     "min": 3, "max": 20, "pattern": r"^[a-zA-Z0-9_]+$", "required": True},
+                    "signupEmail":    {"type": "email",    "required": True},
+                    "signupPassword": {"type": "password", "min": 8, "required": True, "rules": "uppercase+digit"},
+                    "role":           {"type": "select",   "options": ["developer","designer","manager","qa"], "required": True},
+                },
+            },
+            {
+                "name": "taskForm",
+                "submit_button": "Add Task",
+                "fields": {
+                    "taskTitle": {"type": "text",     "min": 3, "max": 100, "required": True},
+                    "taskDesc":  {"type": "textarea", "min": 10, "max": 500, "required": True},
+                    "priority":  {"type": "select",   "options": ["low","medium","high","critical"], "required": True},
+                    "category":  {"type": "select",   "options": ["frontend","backend","devops","testing","design"], "required": True},
+                    "dueDate":   {"type": "date",     "required": True, "min": "today"},
+                },
+            },
+            {
+                "name": "settingsForm",
+                "submit_button": "Save Settings",
+                "fields": {
+                    "displayName":  {"type": "text",     "min": 2, "max": 50, "required": True},
+                    "bio":          {"type": "textarea", "required": False, "max": 200},
+                    "timezone":     {"type": "select",   "options": ["UTC-8","UTC-5","UTC+0","UTC+1","UTC+5","UTC+8"], "required": True},
+                    "emailNotify":  {"type": "checkbox", "required": False},
+                },
+            },
+        ],
+    },
+    # ── NEW: Site 8 — Express+EJS Medical Clinic (port 3008, 4 routes, 2 forms) ──
+    {
+        "id":          "site8_medical",
+        "name":        "Medical Clinic",
+        "url":         "http://localhost:3008",
+        "description": "Express+EJS clinic: appointment(doctor,date≥today+noSunday,time,visitType,reason 10-300) + patient(first/lastName 2-30,dob past,gender,phone 10-15 digits,email,emergency 2-50,bloodType)",
+        "forms": [
+            {
+                "name": "appointmentForm",
+                "submit_button": "Book Appointment",
+                "fields": {
+                    "doctor":    {"type": "select",   "options": ["dr_johnson","dr_chen","dr_davis","dr_patel"], "required": True},
+                    "appDate":   {"type": "date",     "required": True, "min": "today", "rules": "no_sunday"},
+                    "appTime":   {"type": "select",   "options": ["09:00","10:00","11:00","14:00","15:00","16:00"], "required": True},
+                    "visitType": {"type": "select",   "options": ["new","followup","emergency","checkup"], "required": True},
+                    "reason":    {"type": "textarea", "min": 10, "max": 300, "required": True},
+                },
+            },
+            {
+                "name": "patientForm",
+                "submit_button": "Register Patient",
+                "fields": {
+                    "firstName":        {"type": "text",   "min": 2, "max": 30, "required": True},
+                    "lastName":         {"type": "text",   "min": 2, "max": 30, "required": True},
+                    "dob":              {"type": "date",   "required": True, "max": "today", "rules": "past_date_max_120y"},
+                    "gender":           {"type": "select", "options": ["male","female","other"], "required": True},
+                    "patientPhone":     {"type": "text",   "required": True, "pattern": r"^\d{10,15}$"},
+                    "patientEmail":     {"type": "email",  "required": True},
+                    "emergencyContact": {"type": "text",   "min": 2, "max": 50, "required": True},
+                    "bloodType":        {"type": "select", "options": ["A+","A-","B+","B-","AB+","AB-","O+","O-"], "required": True},
+                },
+            },
+        ],
+    },
 ]
 
 # ── Pipeline constants ────────────────────────────────────────────────────────
@@ -159,7 +267,7 @@ API_BUDGET    = 60    # Gemini LLM calls per site during execution
 TIME_LIMIT_S  = 600   # 10 min wall-clock per site
 API_COOLDOWN  = 15    # seconds to wait between sites (rate-limit guard)
 HEADLESS      = True
-MAX_PAGES     = 5     # each test site is 1-2 pages, so 5 is plenty
+MAX_PAGES     = 10    # multi-page sites need more (site6=4, site8=4)
 MAX_DEPTH     = 3
 
 
@@ -510,7 +618,7 @@ async def main():
     parser.add_argument(
         "--site",
         default="all",
-        help="Site index (0-4) or 'all' to run every site sequentially",
+        help="Site index (0-7) or 'all' to run every site sequentially",
     )
     parser.add_argument(
         "--headless",

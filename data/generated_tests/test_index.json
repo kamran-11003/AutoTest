@@ -67,5 +67,59 @@
     "version": 1,
     "ai_refined": false,
     "last_updated": "2026-04-01T02:27:38.746078"
+  },
+  "site6_ecommerce": {
+    "site_id": "site6_ecommerce",
+    "filename": "site6_ecommerce_after_20260401_111403.json",
+    "timestamp": "20260401_111403",
+    "total": 151,
+    "version": 2,
+    "ai_refined": true,
+    "last_updated": "2026-04-01T11:17:11.549189"
+  },
+  "site7_spa_taskboard": {
+    "site_id": "site7_spa_taskboard",
+    "filename": "site7_spa_taskboard_after_20260401_111952.json",
+    "timestamp": "20260401_111952",
+    "total": 126,
+    "version": 2,
+    "ai_refined": true,
+    "last_updated": "2026-04-01T11:22:18.109923"
+  },
+  "site8_medical": {
+    "site_id": "site8_medical",
+    "filename": "site8_medical_after_20260401_231242.json",
+    "timestamp": "20260401_231242",
+    "total": 181,
+    "version": 6,
+    "ai_refined": true,
+    "last_updated": "2026-04-01T23:16:33.465990"
+  },
+  "191b0be841efedc634ec58bb36c6de17": {
+    "site_id": "site6_ecommerce",
+    "filename": "site6_ecommerce_after_20260401_111403.json",
+    "timestamp": "20260401_111403",
+    "total_tests": 151,
+    "version": 2,
+    "ai_refined": true,
+    "last_updated": "2026-04-01T11:17:11.549189"
+  },
+  "d57f4e33b3fff5a6f66dc4d3af769ba7": {
+    "site_id": "site7_spa_taskboard",
+    "filename": "site7_spa_taskboard_after_20260401_111952.json",
+    "timestamp": "20260401_111952",
+    "total_tests": 126,
+    "version": 2,
+    "ai_refined": true,
+    "last_updated": "2026-04-01T11:22:18.109923"
+  },
+  "d79b0a9d695a7091a36e022af30fef58": {
+    "site_id": "site8_medical",
+    "filename": "site8_medical_after_20260401_112247.json",
+    "timestamp": "20260401_112247",
+    "total_tests": 182,
+    "version": 2,
+    "ai_refined": true,
+    "last_updated": "2026-04-01T11:26:42.265631"
   }
 }

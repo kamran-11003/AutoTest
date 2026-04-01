@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CarePoint - Our Doctors</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <%- include('partials/nav', { active: 'doctors' }) %>
+  <div class="container" style="max-width:680px">
+    <h1>Our Doctors</h1>
+    <p>Choose a specialist and book your appointment.</p>
+    <div class="doctor-grid">
+      <div class="doctor-card"><h3>Dr. Sarah Johnson</h3><div class="specialty">General Medicine</div></div>
+      <div class="doctor-card"><h3>Dr. Michael Chen</h3><div class="specialty">Cardiology</div></div>
+      <div class="doctor-card"><h3>Dr. Emily Davis</h3><div class="specialty">Dermatology</div></div>
+      <div class="doctor-card"><h3>Dr. Raj Patel</h3><div class="specialty">Orthopedics</div></div>
+    </div>
+    <p style="margin-top:24px;text-align:center">
+      <a href="/appointment" class="back-link">Book an Appointment &rarr;</a>
+    </p>
+  </div>
+</body>
+</html>

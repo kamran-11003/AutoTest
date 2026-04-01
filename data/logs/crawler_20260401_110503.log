@@ -1,0 +1,27 @@
+2026-04-01 11:05:09 | crawler.intelligent_link_filter | INFO | IntelligentLinkFilter initialized
+2026-04-01 11:05:09 | crawler.page_snapshot | INFO | PageSnapshot initialized (output: data/snapshots)
+2026-04-01 11:05:32 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260401_110532_localhost:3008_
+   ├─ Total clickables: 14
+   ├─ After filtering: 6 (57.14% reduction)
+   └─ Discovered: 3 URLs
+2026-04-01 11:06:12 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260401_110612_localhost:3008_
+   ├─ Total clickables: 14
+   ├─ After filtering: 13 (7.14% reduction)
+   └─ Discovered: 3 URLs
+2026-04-01 11:06:42 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260401_110642_localhost:3008_appointment
+   ├─ Total clickables: 10
+   ├─ After filtering: 8 (20.0% reduction)
+   └─ Discovered: 3 URLs
+2026-04-01 11:07:21 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260401_110721_localhost:3008_
+   ├─ Total clickables: 14
+   ├─ After filtering: 13 (7.14% reduction)
+   └─ Discovered: 3 URLs
+2026-04-01 11:07:57 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260401_110757_localhost:3008_patient-register
+   ├─ Total clickables: 15
+   ├─ After filtering: 9 (40.0% reduction)
+   └─ Discovered: 3 URLs
+2026-04-01 11:08:33 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260401_110833_localhost:3008_doctors
+   ├─ Total clickables: 14
+   ├─ After filtering: 13 (7.14% reduction)
+   └─ Discovered: 3 URLs
+2026-04-01 11:08:33 | crawler.page_snapshot | INFO | 📋 Snapshot summary saved: data\snapshots\snapshots_summary.json

@@ -1,0 +1,80 @@
+2026-04-01 10:54:11 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 6 detection strategies
+2026-04-01 10:54:11 | crawler.state_manager | INFO | StateManager initialized (normalization=ON)
+2026-04-01 10:54:11 | crawler.intelligent_link_filter | INFO | IntelligentLinkFilter initialized
+2026-04-01 10:54:11 | crawler.page_snapshot | INFO | PageSnapshot initialized (output: data/snapshots)
+2026-04-01 10:54:11 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-04-01 10:54:11 | crawler.page_loader | INFO | PageLoader initialized: chromium, headless=False
+2026-04-01 10:54:13 | crawler.page_loader | INFO | 📂 Loaded session from: auth_session.json
+2026-04-01 10:54:13 | crawler.page_loader | INFO | ✅ Font bypass and animation disable injected
+2026-04-01 10:54:13 | crawler.page_loader | INFO | ✅ Browser started successfully
+2026-04-01 10:54:13 | crawler.page_loader | INFO | 🌐 Loading: http://localhost:3006
+2026-04-01 10:54:32 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-04-01 10:54:37 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 1 forms from screenshot analysis
+2026-04-01 10:54:37 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 2 inputs, 1 forms, 1 buttons, 4 links
+2026-04-01 10:54:37 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260401_105437_localhost:3006_
+   ├─ Total clickables: 12
+   ├─ After filtering: 5 (58.33% reduction)
+   └─ Discovered: 3 URLs
+2026-04-01 10:54:39 | crawler.page_loader | INFO | 🌐 Loading: http://localhost:3006
+2026-04-01 10:54:48 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 1 forms from screenshot analysis
+2026-04-01 10:54:48 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 2 inputs, 1 forms, 1 buttons, 4 links
+2026-04-01 10:55:07 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-04-01 10:55:11 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 1 forms from screenshot analysis
+2026-04-01 10:55:11 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 2 inputs, 1 forms, 1 buttons, 4 links
+2026-04-01 10:55:14 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260401_105514_localhost:3006_
+   ├─ Total clickables: 11
+   ├─ After filtering: 9 (18.18% reduction)
+   └─ Discovered: 3 URLs
+2026-04-01 10:55:14 | crawler.state_manager | INFO | ✅ New state: 51236ca7 | / | 2 inputs, 1 forms
+2026-04-01 10:55:14 | crawler.page_loader | INFO | 🌐 Loading: http://localhost:3006/products
+2026-04-01 10:55:23 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-04-01 10:55:23 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 3 buttons, 4 links
+2026-04-01 10:55:50 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260401_105550_localhost:3006_products
+   ├─ Total clickables: 13
+   ├─ After filtering: 10 (23.08% reduction)
+   └─ Discovered: 3 URLs
+2026-04-01 10:55:50 | crawler.state_manager | INFO | ✅ New state: 3df7fc06 | /products | 0 inputs, 0 forms
+2026-04-01 10:55:50 | crawler.page_loader | INFO | 🌐 Loading: http://localhost:3006/checkout
+2026-04-01 10:56:02 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 1 forms from screenshot analysis
+2026-04-01 10:56:02 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 8 inputs, 1 forms, 1 buttons, 4 links
+2026-04-01 10:56:21 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-04-01 10:56:25 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 1 forms from screenshot analysis
+2026-04-01 10:56:25 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 8 inputs, 1 forms, 1 buttons, 4 links
+2026-04-01 10:56:34 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260401_105634_localhost:3006_checkout
+   ├─ Total clickables: 18
+   ├─ After filtering: 9 (50.0% reduction)
+   └─ Discovered: 4 URLs
+2026-04-01 10:56:34 | crawler.state_manager | INFO | ✅ New state: 3c2ddc26 | /checkout | 8 inputs, 1 forms
+2026-04-01 10:56:34 | crawler.page_loader | INFO | 🌐 Loading: http://localhost:3006/cart
+2026-04-01 10:56:45 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 0 forms from screenshot analysis
+2026-04-01 10:56:45 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 0 inputs, 0 forms, 0 buttons, 4 links
+2026-04-01 10:57:24 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260401_105724_localhost:3006_cart
+   ├─ Total clickables: 10
+   ├─ After filtering: 9 (10.0% reduction)
+   └─ Discovered: 3 URLs
+2026-04-01 10:57:24 | crawler.state_manager | INFO | ✅ New state: 3fdaa8e9 | /cart | 0 inputs, 0 forms
+2026-04-01 10:57:24 | crawler.page_loader | INFO | 🌐 Loading: http://localhost:3006/
+2026-04-01 10:57:34 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 1 forms from screenshot analysis
+2026-04-01 10:57:34 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 2 inputs, 1 forms, 1 buttons, 4 links
+2026-04-01 10:57:49 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-04-01 10:57:52 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 1 forms from screenshot analysis
+2026-04-01 10:57:52 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 2 inputs, 1 forms, 1 buttons, 4 links
+2026-04-01 10:58:04 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-04-01 10:58:06 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 1 forms from screenshot analysis
+2026-04-01 10:58:06 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 2 inputs, 1 forms, 1 buttons, 4 links
+2026-04-01 10:58:09 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260401_105809_localhost:3006_
+   ├─ Total clickables: 11
+   ├─ After filtering: 9 (18.18% reduction)
+   └─ Discovered: 3 URLs
+2026-04-01 10:58:09 | crawler.page_loader | INFO | 🌐 Loading: http://localhost:3006/checkout?fullName=&shippingEmail=&address=&city=&zipCode=&cardNumber=&expiry=&cvv=
+2026-04-01 10:58:19 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 1 forms from screenshot analysis
+2026-04-01 10:58:19 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 8 inputs, 1 forms, 1 buttons, 4 links
+2026-04-01 10:58:32 | crawler.dom_analyzer | INFO | DOMAnalyzer initialized with 7 detection strategies (AI vision enabled)
+2026-04-01 10:58:37 | crawler.dom_analyzer | INFO | 🤖 AI Vision: Detected 1 forms from screenshot analysis
+2026-04-01 10:58:37 | crawler.dom_analyzer | INFO | 📊 Analysis complete: 8 inputs, 1 forms, 1 buttons, 4 links
+2026-04-01 10:58:45 | crawler.page_snapshot | INFO | 📸 Snapshot saved: 20260401_105845_localhost:3006_checkout?fullName=&shippingEmail=&a
+   ├─ Total clickables: 18
+   ├─ After filtering: 9 (50.0% reduction)
+   └─ Discovered: 4 URLs
+2026-04-01 10:58:45 | crawler.page_snapshot | INFO | 📋 Snapshot summary saved: data\snapshots\snapshots_summary.json
+2026-04-01 10:58:48 | crawler.page_loader | INFO | 🛑 Browser closed

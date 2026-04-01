@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CarePoint Clinic - Home</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <%- include('partials/nav', { active: 'home' }) %>
+  <div class="container">
+    <h1>Welcome to CarePoint Clinic</h1>
+    <p>Quality healthcare you can trust. Book an appointment or register as a new patient.</p>
+    <h2>Quick Links</h2>
+    <ul style="list-style:none;padding:0">
+      <li style="margin-bottom:10px"><a href="/doctors" class="back-link">&#128105;&#8205;&#9877;&#65039; View Our Doctors</a></li>
+      <li style="margin-bottom:10px"><a href="/appointment" class="back-link">&#128197; Book an Appointment</a></li>
+      <li style="margin-bottom:10px"><a href="/patient-register" class="back-link">&#128221; Register as a Patient</a></li>
+    </ul>
+  </div>
+</body>
+</html>
