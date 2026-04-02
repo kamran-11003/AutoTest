@@ -19,26 +19,26 @@
     },
     "656ff218c068e02f97df60121d801493": {
       "crawl_file": "site5_feedback_20260331_015707.json",
-      "registered_at": "2026-04-01T13:01:16.959195",
+      "registered_at": "2026-04-02T10:57:12.279579",
       "metadata": {
         "url": "http://localhost:5500/test_websites/site5_feedback/index.html",
-        "timestamp": "2026-04-01T13:01:16.958097"
+        "timestamp": "2026-04-02T10:57:12.279579"
       }
     },
     "7d3613ebfcd3de7cf9da113c402267df": {
       "crawl_file": "site3_register_20260401_023726.json",
-      "registered_at": "2026-04-01T20:48:01.645676",
+      "registered_at": "2026-04-02T11:07:57.334782",
       "metadata": {
         "url": "http://localhost:5500/test_websites/site3_register/index.html",
-        "timestamp": "2026-04-01T20:48:01.644679"
+        "timestamp": "2026-04-02T11:07:57.334782"
       }
     },
     "191b0be841efedc634ec58bb36c6de17": {
       "crawl_file": "site6_ecommerce_verify_20260401_105848.json",
-      "registered_at": "2026-04-01T13:33:54.825698",
+      "registered_at": "2026-04-02T10:53:46.982085",
       "metadata": {
         "url": "http://localhost:3006",
-        "timestamp": "2026-04-01T13:33:54.825698"
+        "timestamp": "2026-04-02T10:53:46.982085"
       }
     },
     "d57f4e33b3fff5a6f66dc4d3af769ba7": {
@@ -55,6 +55,30 @@
       "metadata": {
         "url": "http://localhost:3008",
         "timestamp": "2026-04-01T22:53:07.289275"
+      }
+    },
+    "ad2a47e04f463df8db9bf572c0e7bad9": {
+      "crawl_file": "site1_contact_20260331_012545.json",
+      "registered_at": "2026-04-02T10:44:39.166964",
+      "metadata": {
+        "url": "http://localhost:5500/test_websites/site1_contact/index.html",
+        "timestamp": "2026-04-02T10:44:39.166964"
+      }
+    },
+    "07206cab692512dab0a3fde007ad61fd": {
+      "crawl_file": "site2_booking_20260331_013334.json",
+      "registered_at": "2026-04-02T10:52:10.702538",
+      "metadata": {
+        "url": "http://localhost:5500/test_websites/site2_booking/index.html",
+        "timestamp": "2026-04-02T10:52:10.702538"
+      }
+    },
+    "21f16f6186132b0c4220fd4441d40349": {
+      "crawl_file": "site4_search_20260331_014814.json",
+      "registered_at": "2026-04-02T10:56:50.697497",
+      "metadata": {
+        "url": "http://localhost:5500/test_websites/site4_search/index.html",
+        "timestamp": "2026-04-02T10:56:50.697497"
       }
     }
   },
